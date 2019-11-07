@@ -998,6 +998,8 @@ a.tc-tiddlylink:hover {
 }.tc-tag-label svg, .tc-tag-label img {
 	height: 1em;
 	width: 1em;
+	margin-right: 3px; 
+	margin-bottom: 1px;
 	vertical-align: text-bottom;
 }.tc-edit-tags button.tc-remove-tag-button svg {
 	font-size: 0.7em;
