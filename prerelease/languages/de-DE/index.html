@@ -179,8 +179,8 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
 
 &lt;&lt;list-links filter:&quot;[tag{!!title}]&quot;&gt;&gt;</pre>
 </div>
-<div commit="613f0b25590166177f317dc15027cac175005340" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 613f0b25590166177f317dc15027cac175005340 of https://github.com/Jermolene/TiddlyWiki5.git at 2019-11-12 21:52:48 UTC
+<div commit="afb7435a8872270058c26b148a826e6bfca4ce8b" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit afb7435a8872270058c26b148a826e6bfca4ce8b of https://github.com/Jermolene/TiddlyWiki5.git at 2019-11-14 09:26:11 UTC
 </pre>
 </div>
 <div created="20140909085347212" modified="20140909085346177" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home" type="text/vnd.tiddlywiki">
@@ -3331,10 +3331,6 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
         &quot;$:/language/Docs/Fields/footer&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/Fields/footer&quot;,
             &quot;text&quot;: &quot;The footer text for a wizard&quot;
-        },
-        &quot;$:/language/Docs/Fields/hack-to-give-us-something-to-compare-against&quot;: {
-            &quot;title&quot;: &quot;$:/language/Docs/Fields/hack-to-give-us-something-to-compare-against&quot;,
-            &quot;text&quot;: &quot;A temporary storage field used in [[$:/core/templates/static.content]]&quot;
         },
         &quot;$:/language/Docs/Fields/hide-body&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/Fields/hide-body&quot;,
@@ -9461,11 +9457,12 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
     }
 }</pre>
 </div>
-<div hack-to-give-us-something-to-compare-against="yes" title="$:/core/templates/static.content" type="text/vnd.tiddlywiki">
+<div title="$:/core/templates/static.content" type="text/vnd.tiddlywiki">
 <pre>\define tv-wikilink-template() https://tiddlywiki.com/static/$uri_doubleencoded$.html
 
 &lt;!-- For Google, and people without JavaScript--&gt;
-&lt;$reveal state=&quot;!!hack-to-give-us-something-to-compare-against&quot; type=&quot;nomatch&quot; text=&lt;&lt;savingEmpty&gt;&gt;&gt;
+
+&lt;$reveal default=&quot;yes&quot; text=&lt;&lt;savingEmpty&gt;&gt; type=&quot;nomatch&quot;&gt;
 
 Es scheint, dass bei diesem Browser JavaScript deaktiviert wurde. Sie können die statische HTML Version verwenden:
 
@@ -12128,10 +12125,6 @@ $src$
         &quot;$:/language/Docs/Fields/footer&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/Fields/footer&quot;,
             &quot;text&quot;: &quot;Der Fußnoten Text bei einem \&quot;~Wizard-Dialog\&quot;&quot;
-        },
-        &quot;$:/language/Docs/Fields/hack-to-give-us-something-to-compare-against&quot;: {
-            &quot;title&quot;: &quot;$:/language/Docs/Fields/hack-to-give-us-something-to-compare-against&quot;,
-            &quot;text&quot;: &quot;Ein temporäres Feld, verwendet in [[$:/core/templates/static.content]]&quot;
         },
         &quot;$:/language/Docs/Fields/hide-body&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/Fields/hide-body&quot;,
