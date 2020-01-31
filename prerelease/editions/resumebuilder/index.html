@@ -315,8 +315,8 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div commit="96eca32b1105416c317101aa91dd284f835a8ba8" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 96eca32b1105416c317101aa91dd284f835a8ba8 of https://github.com/Jermolene/TiddlyWiki5.git at 2020-01-31 09:15:41 UTC
+<div commit="db13e49724af87e2f8c227fb5e879d8dccafb8c4" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit db13e49724af87e2f8c227fb5e879d8dccafb8c4 of https://github.com/Jermolene/TiddlyWiki5.git at 2020-01-31 14:11:15 UTC
 </pre>
 </div>
 <div created="20150719185223155" modified="20150719185226532" title="$:/config/DefaultSidebarTab">
@@ -13446,6 +13446,7 @@ $tw.boot.startup = function(options) {
 	$tw.utils.registerFileType("application/json","utf8",".json");
 	$tw.utils.registerFileType("application/pdf","base64",".pdf",{flags:["image"]});
 	$tw.utils.registerFileType("application/zip","base64",".zip");
+	$tw.utils.registerFileType("application/x-zip-compressed","base64",".zip");
 	$tw.utils.registerFileType("image/jpeg","base64",[".jpg",".jpeg"],{flags:["image"]});
 	$tw.utils.registerFileType("image/png","base64",".png",{flags:["image"]});
 	$tw.utils.registerFileType("image/gif","base64",".gif",{flags:["image"]});
