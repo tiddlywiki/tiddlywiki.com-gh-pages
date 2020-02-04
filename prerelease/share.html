@@ -71,20 +71,28 @@ Read tiddlers from the browser location hash
 // Get the hash
 var rawHash = document.location.hash.substring(1);
 if(rawHash.charAt(0) === "#") {
-	var hash = decodeURIComponent(rawHash.substring(1));
-	// Try to parse the hash as JSON
-	var tiddlers;
-	try {
-		tiddlers= JSON.parse(hash);
+	var hash;
+	try{
+		hash = decodeURIComponent(rawHash.substring(1));
 	} catch(ex) {
+		console.log("Error decoding location hash",ex);
 	}
-	if(tiddlers) {
-		// Need to initialise these because we run before bootprefix.js and boot.js
-		window.$tw = window.$tw || {};
-		$tw.boot = $tw.boot || {};
-		$tw.preloadTiddlers = $tw.preloadTiddlers || [];
-		// Load our tiddlers
-		$tw.preloadTiddlers = $tw.preloadTiddlers.concat(tiddlers);
+	// Try to parse the hash as JSON
+	if(hash) {
+		var tiddlers;
+		try {
+			tiddlers= JSON.parse(hash);
+		} catch(ex) {
+			console.log("Error parsing JSON from location hash",ex);
+		}
+		if(tiddlers) {
+			// Need to initialise these because we run before bootprefix.js and boot.js
+			window.$tw = window.$tw || {};
+			$tw.boot = $tw.boot || {};
+			$tw.preloadTiddlers = $tw.preloadTiddlers || [];
+			// Load our tiddlers
+			$tw.preloadTiddlers = $tw.preloadTiddlers.concat(tiddlers);
+		}		
 	}
 }
 
@@ -211,8 +219,8 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div commit="90366e9b3b83320c53304d9dd8de4f11b3a8947e" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 90366e9b3b83320c53304d9dd8de4f11b3a8947e of https://github.com/Jermolene/TiddlyWiki5.git at 2020-02-04 16:07:51 UTC
+<div commit="b9d20f1868610caa8b62e028b6c4b26f4e1d7c83" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit b9d20f1868610caa8b62e028b6c4b26f4e1d7c83 of https://github.com/Jermolene/TiddlyWiki5.git at 2020-02-04 16:24:52 UTC
 </pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.22-prerelease">
@@ -9525,7 +9533,7 @@ Error message and password prompt
         },
         &quot;$:/plugins/tiddlywiki/share/rawmarkup.js&quot;: {
             &quot;title&quot;: &quot;$:/plugins/tiddlywiki/share/rawmarkup.js&quot;,
-            &quot;text&quot;: &quot;/*\\\ntitle: $:/plugins/tiddlywiki/share/rawmarkup.js\ntype: application/javascript\nmodule-type: library\n\nRead tiddlers from the browser location hash\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n// Get the hash\nvar rawHash = document.location.hash.substring(1);\nif(rawHash.charAt(0) === \&quot;#\&quot;) {\n\tvar hash = decodeURIComponent(rawHash.substring(1));\n\t// Try to parse the hash as JSON\n\tvar tiddlers;\n\ttry {\n\t\ttiddlers= JSON.parse(hash);\n\t} catch(ex) {\n\t}\n\tif(tiddlers) {\n\t\t// Need to initialise these because we run before bootprefix.js and boot.js\n\t\twindow.$tw = window.$tw || {};\n\t\t$tw.boot = $tw.boot || {};\n\t\t$tw.preloadTiddlers = $tw.preloadTiddlers || [];\n\t\t// Load our tiddlers\n\t\t$tw.preloadTiddlers = $tw.preloadTiddlers.concat(tiddlers);\n\t}\n}\n\n})();\n&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/plugins/tiddlywiki/share/rawmarkup.js\ntype: application/javascript\nmodule-type: library\n\nRead tiddlers from the browser location hash\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n// Get the hash\nvar rawHash = document.location.hash.substring(1);\nif(rawHash.charAt(0) === \&quot;#\&quot;) {\n\tvar hash;\n\ttry{\n\t\thash = decodeURIComponent(rawHash.substring(1));\n\t} catch(ex) {\n\t\tconsole.log(\&quot;Error decoding location hash\&quot;,ex);\n\t}\n\t// Try to parse the hash as JSON\n\tif(hash) {\n\t\tvar tiddlers;\n\t\ttry {\n\t\t\ttiddlers= JSON.parse(hash);\n\t\t} catch(ex) {\n\t\t\tconsole.log(\&quot;Error parsing JSON from location hash\&quot;,ex);\n\t\t}\n\t\tif(tiddlers) {\n\t\t\t// Need to initialise these because we run before bootprefix.js and boot.js\n\t\t\twindow.$tw = window.$tw || {};\n\t\t\t$tw.boot = $tw.boot || {};\n\t\t\t$tw.preloadTiddlers = $tw.preloadTiddlers || [];\n\t\t\t// Load our tiddlers\n\t\t\t$tw.preloadTiddlers = $tw.preloadTiddlers.concat(tiddlers);\n\t\t}\t\t\n\t}\n}\n\n})();\n&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;library&quot;
         },
