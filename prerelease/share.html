@@ -54,6 +54,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 
 
 <script>
+var tiddlywikiSharePluginStartupWarningHtml = "<div class=\"startup-warning-wrapper\">\n<h1>\nWarning: This site is designed to share untrusted content\n</h1>\n<h2>\nPlease do not proceed unless you are certain you understand the warnings below\n</h2>\n<p>\nThis is a special site that allows users to share content for <a href=\"https://tiddlywiki.com/\" target=\"_blank\" rel=\"noopener noreferrer\">TiddlyWiki</a> without needing conventional hosting. Instead, the content is encoded in the URL used to access the site. This means that there are no controls or protections on the content that is shared, and as such it may contain malicious links or any kind of content.\n</p>\n<p>\nViewing links to this site in the browser is generally safe because web pages are designed to run in a sandbox that prevents them from accessing or harming your data. However, please exercise caution before downloading content to your own computer, or importing content into your own TiddlyWiki.\n</p>\n\n<details>\n<summary>\nClick here to see the tiddlers that are being shared\n</summary>\n<ul id=\"startup-warning-preview\">\n</ul>\n</details>\n\n<p>\n<strong><em>Only continue if you understand the risks</em></strong>\n</p>\n\n<p>\n<button id=\"startup-warning-proceed\">\nProceed\n</button>\n<button id=\"startup-warning-cancel\">\nCancel\n</button>\n</p>\n\n<h2>\nTechnical details\n</h2>\n\n<p>\nThis web page is a <a href=\"https://tiddlywiki.com/\" target=\"_blank\" rel=\"noopener noreferrer\">TiddlyWiki</a> loaded with the <a href=\"https://github.com/Jermolene/TiddlyWiki5/tree/master/plugins/tiddlywiki/share\" target=\"_blank\" rel=\"noopener noreferrer\">Share plugin</a>. It has the special capability that at startup it can load raw tiddlers from a block of JSON encoded into the location hash part of the URL (ie the part after the # character).\n</p>\n<p>\nThis is useful because it enables people to share working examples of TiddlyWikis without needing to arrange special hosting. The only restriction is that browsers and other Internet infrastructure frequently limit the length of URLs to a few tens of kilobytes.\n</p>\n\n</div>\n";
+var tiddlywikiSharePluginStartupWarningCss = "\n.startup-warning-wrapper {\n\x09font-family: sans-serif;\n\x09line-height: 1.4;\n\x09width: 50%;\n\x09margin: 1em auto 0 auto;\n\x09padding: 0 1em;\n\x09border: 6px solid transparent;\n\x09border-radius: 8px;\n\x09background: linear-gradient(white, white) padding-box, repeating-linear-gradient(-45deg, red 0, red 25%, transparent 0, transparent 50%) 0 / .6em .6em;\n\x09animation: marching-ants 20s linear infinite;\n}\n\n@media (max-width: 600px) {\n\x09.startup-warning-wrapper {\n\x09\x09width: 85%;\n\x09}\n}\n\n#startup-warning-preview {\n    list-style-type: none;\n    padding-left: 0;\n}\n\n#startup-warning-preview .tiddler-title {\n    font-weight: bold;\n    font-size: 1.2em;\n}\n\n#startup-warning-preview table {\n\x09margin-left: 1em;\n}\n\n#startup-warning-preview th {\n\x09vertical-align: top;\n\x09font-weight: normal;\n}\n\n#startup-warning-preview td {\n\x09font-family: monospace;\n    white-space: pre-wrap;\n    background: #f8f8f8;\n}\n\n.startup-warning-wrapper button {\n    padding: 0.3em;\n    border-radius: 4px;\n    font-size: 1.5em;\n}\n\n#startup-warning-cancel {\n\x09background: #DB2828;\n\x09color: #fff;\n}\n\n#startup-warning-cancel:hover {\n\x09background: #E75C60;\n\x09color: #fff;\n}\n\n#startup-warning-cancel:active {\n\x09background: #ec8d8d;\n\x09color: #fff;\n}\n\n#startup-warning-proceed {\n\x09background: #24BA4C;\n\x09color: #fff;\n}\n\n#startup-warning-proceed:hover {\n\x09background: #59e27e;\n\x09color: #fff;\n}\n\n#startup-warning-proceed:active {\n\x09background: #ABF5BD;\n\x09color: #fff;\n}\n\n.startup-warning-wrapper h1,\n.startup-warning-wrapper h2 {\n\x09font-weight: bold;\n}\n \n@keyframes marching-ants { to { background-position: 100% 100% } }\n\n";
 /*\
 title: $:/plugins/tiddlywiki/share/rawmarkup.js
 type: application/javascript
@@ -75,7 +77,7 @@ if(rawHash.charAt(0) === "#") {
 	try{
 		hash = decodeURIComponent(rawHash.substring(1));
 	} catch(ex) {
-		console.log("Error decoding location hash",ex);
+		console.log("Share plugin: Error decoding location hash",ex);
 	}
 	// Try to parse the hash as JSON
 	if(hash) {
@@ -83,17 +85,88 @@ if(rawHash.charAt(0) === "#") {
 		try {
 			tiddlers= JSON.parse(hash);
 		} catch(ex) {
-			console.log("Error parsing JSON from location hash",ex);
+			console.log("Share plugin: Error parsing JSON from location hash",ex);
 		}
 		if(tiddlers) {
 			// Need to initialise these because we run before bootprefix.js and boot.js
 			window.$tw = window.$tw || {};
 			$tw.boot = $tw.boot || {};
 			$tw.preloadTiddlers = $tw.preloadTiddlers || [];
-			// Load our tiddlers
-			$tw.preloadTiddlers = $tw.preloadTiddlers.concat(tiddlers);
-		}		
+			// Prevent TiddlyWiki from booting
+			$tw.boot.suppressBoot = true;
+			// Load our styles
+			var stylesWrapper = document.createElement("style");
+			stylesWrapper.innerHTML = tiddlywikiSharePluginStartupWarningCss;
+			document.documentElement.appendChild(stylesWrapper);
+			// Display the warning banner
+			var warningWrapper = document.createElement("div");
+			warningWrapper.innerHTML = tiddlywikiSharePluginStartupWarningHtml;
+			document.documentElement.appendChild(warningWrapper);
+			// Add our event handlers
+			document.getElementById("startup-warning-proceed").addEventListener("click",actionProceed,false);
+			document.getElementById("startup-warning-cancel").addEventListener("click",actionCancel,false);
+			// Sort the incoming tiddlers by title
+			tiddlers = tiddlers.sort(function(a,b) {
+				if(a.title < b.title) {
+					return -1;
+				} else if(a.title > b.title) {
+					return +1;
+				} else {
+					return 0;
+				}
+			});
+			// Load the tiddler preview						
+			var previewWrapper = document.getElementById("startup-warning-preview");
+			for(var index=0; index < tiddlers.length; index++) {
+				var tiddler = tiddlers[index],
+					tiddlerWrapper = document.createElement("li"),
+					titleTextWrapper = document.createElement("span"),
+					titleText = document.createTextNode(tiddler.title),
+					fieldsTable = document.createElement("table"),
+					fieldsTableBody = document.createElement("tbody");
+				titleTextWrapper.appendChild(titleText);
+				titleTextWrapper.className = "tiddler-title";
+				tiddlerWrapper.appendChild(titleTextWrapper);
+				fieldsTable.appendChild(fieldsTableBody);
+				var fields = Object.keys(tiddler).sort();
+				for(var fieldIndex = 0; fieldIndex < fields.length; fieldIndex++) {
+					var fieldName = fields[fieldIndex],
+						fieldValue = tiddler[fieldName];
+					if(fieldName !== "title") {
+						var fieldRow = document.createElement("tr"),
+							fieldRowHeader = document.createElement("th"),
+							fieldRowValue = document.createElement("td");
+						fieldRowHeader.appendChild(document.createTextNode(fieldName));
+						fieldRowValue.appendChild(document.createTextNode(fieldValue));
+						fieldRow.appendChild(fieldRowHeader);
+						fieldRow.appendChild(fieldRowValue);
+						fieldsTableBody.appendChild(fieldRow);
+					}
+				}
+				tiddlerWrapper.appendChild(fieldsTable);
+				previewWrapper.appendChild(tiddlerWrapper);
+			}
+		}
 	}
+}
+
+function actionProceed() {
+	// Remove the banner, load our tiddlers, and boot TiddlyWiki
+	removeWarningBanner();
+	$tw.preloadTiddlers = $tw.preloadTiddlers.concat(tiddlers);
+	$tw.boot.boot();
+}
+
+function actionCancel() {
+	// Remove the banner, clear the location hash, and boot TiddlyWiki
+	removeWarningBanner();
+	document.location.hash = "#";
+	$tw.boot.boot();
+}
+
+function removeWarningBanner() {
+	warningWrapper.parentNode.removeChild(warningWrapper);
+	stylesWrapper.parentNode.removeChild(stylesWrapper);
 }
 
 })();
@@ -219,8 +292,8 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div commit="04c28ba5f23dc62c0be68c45e403fb7ebd497984" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 04c28ba5f23dc62c0be68c45e403fb7ebd497984 of https://github.com/Jermolene/TiddlyWiki5.git at 2020-02-05 12:17:09 UTC
+<div commit="07c2c21dbf9bc6411b1f8d05c9243522f50b2ca5" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit 07c2c21dbf9bc6411b1f8d05c9243522f50b2ca5 of https://github.com/Jermolene/TiddlyWiki5.git at 2020-02-14 15:04:29 UTC
 </pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.22-prerelease">
@@ -9533,14 +9606,14 @@ Error message and password prompt
         },
         &quot;$:/plugins/tiddlywiki/share/rawmarkup.js&quot;: {
             &quot;title&quot;: &quot;$:/plugins/tiddlywiki/share/rawmarkup.js&quot;,
-            &quot;text&quot;: &quot;/*\\\ntitle: $:/plugins/tiddlywiki/share/rawmarkup.js\ntype: application/javascript\nmodule-type: library\n\nRead tiddlers from the browser location hash\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n// Get the hash\nvar rawHash = document.location.hash.substring(1);\nif(rawHash.charAt(0) === \&quot;#\&quot;) {\n\tvar hash;\n\ttry{\n\t\thash = decodeURIComponent(rawHash.substring(1));\n\t} catch(ex) {\n\t\tconsole.log(\&quot;Error decoding location hash\&quot;,ex);\n\t}\n\t// Try to parse the hash as JSON\n\tif(hash) {\n\t\tvar tiddlers;\n\t\ttry {\n\t\t\ttiddlers= JSON.parse(hash);\n\t\t} catch(ex) {\n\t\t\tconsole.log(\&quot;Error parsing JSON from location hash\&quot;,ex);\n\t\t}\n\t\tif(tiddlers) {\n\t\t\t// Need to initialise these because we run before bootprefix.js and boot.js\n\t\t\twindow.$tw = window.$tw || {};\n\t\t\t$tw.boot = $tw.boot || {};\n\t\t\t$tw.preloadTiddlers = $tw.preloadTiddlers || [];\n\t\t\t// Load our tiddlers\n\t\t\t$tw.preloadTiddlers = $tw.preloadTiddlers.concat(tiddlers);\n\t\t}\t\t\n\t}\n}\n\n})();\n&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/plugins/tiddlywiki/share/rawmarkup.js\ntype: application/javascript\nmodule-type: library\n\nRead tiddlers from the browser location hash\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n// Get the hash\nvar rawHash = document.location.hash.substring(1);\nif(rawHash.charAt(0) === \&quot;#\&quot;) {\n\tvar hash;\n\ttry{\n\t\thash = decodeURIComponent(rawHash.substring(1));\n\t} catch(ex) {\n\t\tconsole.log(\&quot;Share plugin: Error decoding location hash\&quot;,ex);\n\t}\n\t// Try to parse the hash as JSON\n\tif(hash) {\n\t\tvar tiddlers;\n\t\ttry {\n\t\t\ttiddlers= JSON.parse(hash);\n\t\t} catch(ex) {\n\t\t\tconsole.log(\&quot;Share plugin: Error parsing JSON from location hash\&quot;,ex);\n\t\t}\n\t\tif(tiddlers) {\n\t\t\t// Need to initialise these because we run before bootprefix.js and boot.js\n\t\t\twindow.$tw = window.$tw || {};\n\t\t\t$tw.boot = $tw.boot || {};\n\t\t\t$tw.preloadTiddlers = $tw.preloadTiddlers || [];\n\t\t\t// Prevent TiddlyWiki from booting\n\t\t\t$tw.boot.suppressBoot = true;\n\t\t\t// Load our styles\n\t\t\tvar stylesWrapper = document.createElement(\&quot;style\&quot;);\n\t\t\tstylesWrapper.innerHTML = tiddlywikiSharePluginStartupWarningCss;\n\t\t\tdocument.documentElement.appendChild(stylesWrapper);\n\t\t\t// Display the warning banner\n\t\t\tvar warningWrapper = document.createElement(\&quot;div\&quot;);\n\t\t\twarningWrapper.innerHTML = tiddlywikiSharePluginStartupWarningHtml;\n\t\t\tdocument.documentElement.appendChild(warningWrapper);\n\t\t\t// Add our event handlers\n\t\t\tdocument.getElementById(\&quot;startup-warning-proceed\&quot;).addEventListener(\&quot;click\&quot;,actionProceed,false);\n\t\t\tdocument.getElementById(\&quot;startup-warning-cancel\&quot;).addEventListener(\&quot;click\&quot;,actionCancel,false);\n\t\t\t// Sort the incoming tiddlers by title\n\t\t\ttiddlers = tiddlers.sort(function(a,b) {\n\t\t\t\tif(a.title &lt; b.title) {\n\t\t\t\t\treturn -1;\n\t\t\t\t} else if(a.title &gt; b.title) {\n\t\t\t\t\treturn +1;\n\t\t\t\t} else {\n\t\t\t\t\treturn 0;\n\t\t\t\t}\n\t\t\t});\n\t\t\t// Load the tiddler preview\t\t\t\t\t\t\n\t\t\tvar previewWrapper = document.getElementById(\&quot;startup-warning-preview\&quot;);\n\t\t\tfor(var index=0; index &lt; tiddlers.length; index++) {\n\t\t\t\tvar tiddler = tiddlers[index],\n\t\t\t\t\ttiddlerWrapper = document.createElement(\&quot;li\&quot;),\n\t\t\t\t\ttitleTextWrapper = document.createElement(\&quot;span\&quot;),\n\t\t\t\t\ttitleText = document.createTextNode(tiddler.title),\n\t\t\t\t\tfieldsTable = document.createElement(\&quot;table\&quot;),\n\t\t\t\t\tfieldsTableBody = document.createElement(\&quot;tbody\&quot;);\n\t\t\t\ttitleTextWrapper.appendChild(titleText);\n\t\t\t\ttitleTextWrapper.className = \&quot;tiddler-title\&quot;;\n\t\t\t\ttiddlerWrapper.appendChild(titleTextWrapper);\n\t\t\t\tfieldsTable.appendChild(fieldsTableBody);\n\t\t\t\tvar fields = Object.keys(tiddler).sort();\n\t\t\t\tfor(var fieldIndex = 0; fieldIndex &lt; fields.length; fieldIndex++) {\n\t\t\t\t\tvar fieldName = fields[fieldIndex],\n\t\t\t\t\t\tfieldValue = tiddler[fieldName];\n\t\t\t\t\tif(fieldName !== \&quot;title\&quot;) {\n\t\t\t\t\t\tvar fieldRow = document.createElement(\&quot;tr\&quot;),\n\t\t\t\t\t\t\tfieldRowHeader = document.createElement(\&quot;th\&quot;),\n\t\t\t\t\t\t\tfieldRowValue = document.createElement(\&quot;td\&quot;);\n\t\t\t\t\t\tfieldRowHeader.appendChild(document.createTextNode(fieldName));\n\t\t\t\t\t\tfieldRowValue.appendChild(document.createTextNode(fieldValue));\n\t\t\t\t\t\tfieldRow.appendChild(fieldRowHeader);\n\t\t\t\t\t\tfieldRow.appendChild(fieldRowValue);\n\t\t\t\t\t\tfieldsTableBody.appendChild(fieldRow);\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\ttiddlerWrapper.appendChild(fieldsTable);\n\t\t\t\tpreviewWrapper.appendChild(tiddlerWrapper);\n\t\t\t}\n\t\t}\n\t}\n}\n\nfunction actionProceed() {\n\t// Remove the banner, load our tiddlers, and boot TiddlyWiki\n\tremoveWarningBanner();\n\t$tw.preloadTiddlers = $tw.preloadTiddlers.concat(tiddlers);\n\t$tw.boot.boot();\n}\n\nfunction actionCancel() {\n\t// Remove the banner, clear the location hash, and boot TiddlyWiki\n\tremoveWarningBanner();\n\tdocument.location.hash = \&quot;#\&quot;;\n\t$tw.boot.boot();\n}\n\nfunction removeWarningBanner() {\n\twarningWrapper.parentNode.removeChild(warningWrapper);\n\tstylesWrapper.parentNode.removeChild(stylesWrapper);\n}\n\n})();\n&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;library&quot;
         },
         &quot;$:/plugins/tiddlywiki/share/rawmarkup&quot;: {
             &quot;title&quot;: &quot;$:/plugins/tiddlywiki/share/rawmarkup&quot;,
             &quot;tags&quot;: &quot;$:/tags/RawMarkupWikified&quot;,
-            &quot;text&quot;: &quot;`&lt;script&gt;`\n{{$:/plugins/tiddlywiki/share/rawmarkup.js}}\n`&lt;/script&gt;`\n&quot;
+            &quot;text&quot;: &quot;`&lt;script&gt;`\n`var tiddlywikiSharePluginStartupWarningHtml = \&quot;`&lt;$view tiddler=\&quot;$:/plugins/tiddlywiki/share/startup-warning.html\&quot; format=\&quot;jsencoded\&quot;/&gt;`\&quot;;`\n`var tiddlywikiSharePluginStartupWarningCss = \&quot;`&lt;$view tiddler=\&quot;$:/plugins/tiddlywiki/share/startup-warning.css\&quot; format=\&quot;jsencoded\&quot;/&gt;`\&quot;;`\n{{$:/plugins/tiddlywiki/share/rawmarkup.js}}\n`&lt;/script&gt;`\n&quot;
         },
         &quot;$:/plugins/tiddlywiki/share/readme&quot;: {
             &quot;title&quot;: &quot;$:/plugins/tiddlywiki/share/readme&quot;,
@@ -9549,6 +9622,16 @@ Error message and password prompt
         &quot;$:/plugins/tiddlywiki/share/settings&quot;: {
             &quot;title&quot;: &quot;$:/plugins/tiddlywiki/share/settings&quot;,
             &quot;text&quot;: &quot;!! Base sharing URL\n\n//Defaults to the current location//\n\n&lt;$edit-text tiddler=\&quot;$:/config/plugins/share/base-url\&quot; tag=\&quot;input\&quot; class=\&quot;tc-sharing-wizard-editor\&quot;/&gt;\n&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/share/startup-warning.css&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/share/startup-warning.css&quot;,
+            &quot;text&quot;: &quot;\n.startup-warning-wrapper {\n\tfont-family: sans-serif;\n\tline-height: 1.4;\n\twidth: 50%;\n\tmargin: 1em auto 0 auto;\n\tpadding: 0 1em;\n\tborder: 6px solid transparent;\n\tborder-radius: 8px;\n\tbackground: linear-gradient(white, white) padding-box, repeating-linear-gradient(-45deg, red 0, red 25%, transparent 0, transparent 50%) 0 / .6em .6em;\n\tanimation: marching-ants 20s linear infinite;\n}\n\n@media (max-width: 600px) {\n\t.startup-warning-wrapper {\n\t\twidth: 85%;\n\t}\n}\n\n#startup-warning-preview {\n    list-style-type: none;\n    padding-left: 0;\n}\n\n#startup-warning-preview .tiddler-title {\n    font-weight: bold;\n    font-size: 1.2em;\n}\n\n#startup-warning-preview table {\n\tmargin-left: 1em;\n}\n\n#startup-warning-preview th {\n\tvertical-align: top;\n\tfont-weight: normal;\n}\n\n#startup-warning-preview td {\n\tfont-family: monospace;\n    white-space: pre-wrap;\n    background: #f8f8f8;\n}\n\n.startup-warning-wrapper button {\n    padding: 0.3em;\n    border-radius: 4px;\n    font-size: 1.5em;\n}\n\n#startup-warning-cancel {\n\tbackground: #DB2828;\n\tcolor: #fff;\n}\n\n#startup-warning-cancel:hover {\n\tbackground: #E75C60;\n\tcolor: #fff;\n}\n\n#startup-warning-cancel:active {\n\tbackground: #ec8d8d;\n\tcolor: #fff;\n}\n\n#startup-warning-proceed {\n\tbackground: #24BA4C;\n\tcolor: #fff;\n}\n\n#startup-warning-proceed:hover {\n\tbackground: #59e27e;\n\tcolor: #fff;\n}\n\n#startup-warning-proceed:active {\n\tbackground: #ABF5BD;\n\tcolor: #fff;\n}\n\n.startup-warning-wrapper h1,\n.startup-warning-wrapper h2 {\n\tfont-weight: bold;\n}\n \n@keyframes marching-ants { to { background-position: 100% 100% } }\n\n&quot;,
+            &quot;type&quot;: &quot;text/css&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/share/startup-warning.html&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/share/startup-warning.html&quot;,
+            &quot;text&quot;: &quot;&lt;div class=\&quot;startup-warning-wrapper\&quot;&gt;\n&lt;h1&gt;\nWarning: This site is designed to share untrusted content\n&lt;/h1&gt;\n&lt;h2&gt;\nPlease do not proceed unless you are certain you understand the warnings below\n&lt;/h2&gt;\n&lt;p&gt;\nThis is a special site that allows users to share content for &lt;a href=\&quot;https://tiddlywiki.com/\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener noreferrer\&quot;&gt;TiddlyWiki&lt;/a&gt; without needing conventional hosting. Instead, the content is encoded in the URL used to access the site. This means that there are no controls or protections on the content that is shared, and as such it may contain malicious links or any kind of content.\n&lt;/p&gt;\n&lt;p&gt;\nViewing links to this site in the browser is generally safe because web pages are designed to run in a sandbox that prevents them from accessing or harming your data. However, please exercise caution before downloading content to your own computer, or importing content into your own TiddlyWiki.\n&lt;/p&gt;\n\n&lt;details&gt;\n&lt;summary&gt;\nClick here to see the tiddlers that are being shared\n&lt;/summary&gt;\n&lt;ul id=\&quot;startup-warning-preview\&quot;&gt;\n&lt;/ul&gt;\n&lt;/details&gt;\n\n&lt;p&gt;\n&lt;strong&gt;&lt;em&gt;Only continue if you understand the risks&lt;/em&gt;&lt;/strong&gt;\n&lt;/p&gt;\n\n&lt;p&gt;\n&lt;button id=\&quot;startup-warning-proceed\&quot;&gt;\nProceed\n&lt;/button&gt;\n&lt;button id=\&quot;startup-warning-cancel\&quot;&gt;\nCancel\n&lt;/button&gt;\n&lt;/p&gt;\n\n&lt;h2&gt;\nTechnical details\n&lt;/h2&gt;\n\n&lt;p&gt;\nThis web page is a &lt;a href=\&quot;https://tiddlywiki.com/\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener noreferrer\&quot;&gt;TiddlyWiki&lt;/a&gt; loaded with the &lt;a href=\&quot;https://github.com/Jermolene/TiddlyWiki5/tree/master/plugins/tiddlywiki/share\&quot; target=\&quot;_blank\&quot; rel=\&quot;noopener noreferrer\&quot;&gt;Share plugin&lt;/a&gt;. It has the special capability that at startup it can load raw tiddlers from a block of JSON encoded into the location hash part of the URL (ie the part after the # character).\n&lt;/p&gt;\n&lt;p&gt;\nThis is useful because it enables people to share working examples of TiddlyWikis without needing to arrange special hosting. The only restriction is that browsers and other Internet infrastructure frequently limit the length of URLs to a few tens of kilobytes.\n&lt;/p&gt;\n\n&lt;/div&gt;\n&quot;,
+            &quot;type&quot;: &quot;text/html&quot;
         },
         &quot;$:/plugins/tiddlywiki/share/styles&quot;: {
             &quot;title&quot;: &quot;$:/plugins/tiddlywiki/share/styles&quot;,
