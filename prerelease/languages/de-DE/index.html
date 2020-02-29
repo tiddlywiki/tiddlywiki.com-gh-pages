@@ -183,8 +183,8 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
 
 &lt;&lt;list-links filter:&quot;[tag{!!title}]&quot;&gt;&gt;</pre>
 </div>
-<div commit="7ffe3fc91fb994fc62b68a87afb345c44aa188a7" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 7ffe3fc91fb994fc62b68a87afb345c44aa188a7 of https://github.com/Jermolene/TiddlyWiki5.git at 2020-02-29 15:54:19 UTC
+<div commit="6cdffc4eae9643b5f236598794cf0262d26f4944" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit 6cdffc4eae9643b5f236598794cf0262d26f4944 of https://github.com/Jermolene/TiddlyWiki5.git at 2020-02-29 15:58:54 UTC
 </pre>
 </div>
 <div created="20140909085347212" modified="20140909085346177" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home" type="text/vnd.tiddlywiki">
@@ -8322,7 +8322,7 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
         &quot;$:/core/ui/TopBar/menu&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/TopBar/menu&quot;,
             &quot;tags&quot;: &quot;$:/tags/TopRightBar&quot;,
-            &quot;text&quot;: &quot;&lt;$list filter=\&quot;[[$:/state/sidebar]get[text]!match[no]]\&quot; variable=\&quot;ignore\&quot;&gt;\n&lt;$button set=\&quot;$:/state/sidebar\&quot; setTo=\&quot;no\&quot; tooltip={{$:/language/Buttons/HideSideBar/Hint}} aria-label={{$:/language/Buttons/HideSideBar/Caption}} class=\&quot;tc-btn-invisible\&quot;&gt;{{$:/core/images/chevron-right}}&lt;/$button&gt;\n&lt;/$list&gt;\n&lt;$list filter=\&quot;[[$:/state/sidebar]get[text]match[no]]\&quot; variable=\&quot;ignore\&quot;&gt;\n&lt;$button set=\&quot;$:/state/sidebar\&quot; setTo=\&quot;yes\&quot; tooltip={{$:/language/Buttons/ShowSideBar/Hint}} aria-label={{$:/language/Buttons/ShowSideBar/Caption}} class=\&quot;tc-btn-invisible\&quot;&gt;{{$:/core/images/chevron-left}}&lt;/$button&gt;\n&lt;/$list&gt;\n&quot;
+            &quot;text&quot;: &quot;&lt;$list filter=\&quot;[[$:/state/sidebar]get[text]] +[else[yes]!match[no]]\&quot; variable=\&quot;ignore\&quot;&gt;\n&lt;$button set=\&quot;$:/state/sidebar\&quot; setTo=\&quot;no\&quot; tooltip={{$:/language/Buttons/HideSideBar/Hint}} aria-label={{$:/language/Buttons/HideSideBar/Caption}} class=\&quot;tc-btn-invisible\&quot;&gt;{{$:/core/images/chevron-right}}&lt;/$button&gt;\n&lt;/$list&gt;\n&lt;$list filter=\&quot;[[$:/state/sidebar]get[text]] +[else[yes]match[no]]\&quot; variable=\&quot;ignore\&quot;&gt;\n&lt;$button set=\&quot;$:/state/sidebar\&quot; setTo=\&quot;yes\&quot; tooltip={{$:/language/Buttons/ShowSideBar/Hint}} aria-label={{$:/language/Buttons/ShowSideBar/Caption}} class=\&quot;tc-btn-invisible\&quot;&gt;{{$:/core/images/chevron-left}}&lt;/$button&gt;\n&lt;/$list&gt;\n&quot;
         },
         &quot;$:/core/ui/UntaggedTemplate&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/UntaggedTemplate&quot;,
