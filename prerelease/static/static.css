@@ -2645,7 +2645,7 @@ Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
 
 nav.tc-menubar {
 	position: fixed;
-	z-index: 1100;
+	z-index: 1050;
 	display: inline-block;
 	top: 0;
 	right: 0;
