@@ -1444,6 +1444,8 @@ a.tc-tiddlylink:hover {
 	fill: #333333;
 }.tc-drop-down button.tc-btn-invisible:hover svg {
 	fill: #333333;
+}.tc-drop-down .tc-drop-down-info {
+	padding-left: 14px;
 }.tc-drop-down p {
 	padding: 0 14px 0 14px;
 }.tc-drop-down svg {
@@ -1804,25 +1806,31 @@ a.tc-tiddlylink:hover {
 ** Alerts
 */.tc-alerts {
 	position: fixed;
-	top: 0;
+	top: 28px;
 	left: 0;
-	max-width: 500px;
+	right: 0;
+	max-width: 50%;
 	z-index: 20000;
 }.tc-alert {
 	position: relative;
-	margin: 28px;
-	padding: 14px 14px 14px 14px;
-	border: 2px solid #b99e2f;
+	margin: 14px;
+	padding: 7px;
+	border: 1px solid #b99e2f;
 	background-color: #ffe476;
 }.tc-alert-toolbar {
 	position: absolute;
-	top: 14px;
-	right: 14px;
+	top: 7px;
+	right: 7px;
+    line-height: 0;
 }.tc-alert-toolbar svg {
 	fill: #b99e2f;
 }.tc-alert-subtitle {
 	color: #b99e2f;
 	font-weight: bold;
+    font-size: 0.8em;
+    margin-bottom: 0.5em;
+}.tc-alert-body > p {
+	margin: 0;
 }.tc-alert-highlight {
 	color: #881122;
 }@media (min-width: 960px) {.tc-static-alert {
