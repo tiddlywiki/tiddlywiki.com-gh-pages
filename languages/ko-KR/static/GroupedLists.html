@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.21" />
+<meta name="tiddlywiki-version" content="5.1.22" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -43,14 +43,7 @@ GroupedLists
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
 </div><div class=" tc-reveal" hidden="true"></div>
-<div class=" tc-reveal">
-<div class="tc-subtitle">
-<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
-
-</a> 2015년 2월 21일 오후 11:01
-</div>
-</div>
-<div class=" tc-reveal">
+<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a>2015년 2월 21일 오후 11:01</div></div><div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
@@ -94,6 +87,7 @@ color:#333333;">
 &lt;/div&gt;
 &lt;/$list&gt;
 </code></pre></p><h2 class="">Recent Tab</h2><p>The list in the <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fui%252FSideBar%252FRecent.html">Recent</a> tab is generated using the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="timeline%2520Macro.html"><code class="doc-var">timeline</code></a> macro. Here, the outer list filter selects each discrete day found in the <code>modified</code> field, while the inner list filter selects all the tiddlers dated the same day in the <code>modified</code> field.</p><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fmacros%252Ftimeline.html">$:/core/macros/timeline</a>:</p><p><pre><code>\define timeline-title()
+\whitespace trim
 &lt;!-- Override this macro with a global macro 
      of the same name if you need to change 
      how titles are displayed on the timeline 
@@ -107,9 +101,7 @@ color:#333333;">
 &lt;$view field=&quot;$dateField$&quot; format=&quot;date&quot; template=&quot;$format$&quot;/&gt;
 &lt;$list filter=&quot;[sameday:$dateField${!!$dateField$}!is[system]$subfilter$!sort[$dateField$]]&quot;&gt;
 &lt;div class=&quot;tc-menu-list-subitem&quot;&gt;
-&lt;$link to={{!!title}}&gt;
-&lt;&lt;timeline-title&gt;&gt;
-&lt;/$link&gt;
+&lt;$link to={{!!title}}&gt;&lt;&lt;timeline-title&gt;&gt;&lt;/$link&gt;
 &lt;/div&gt;
 &lt;/$list&gt;
 &lt;/div&gt;

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.21" />
+<meta name="tiddlywiki-version" content="5.1.22" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -42,14 +42,7 @@ Les listes de WikiText
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
 </div><div class=" tc-reveal" hidden="true"></div>
-<div class=" tc-reveal">
-<div class="tc-subtitle">
-<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
-
-</a> 1 juin 2015 à 7h44
-</div>
-</div>
-<div class=" tc-reveal">
+<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a>1 juin 2015 à 7h44</div></div><div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
@@ -98,7 +91,7 @@ color:#333333;">
 **&gt; Un bloc
 **&gt; Un autre bloc
 * Liste trois
-</code></pre><p>Affichera ceci :</p><ul><li>Liste Une <ul><li>Liste deux<blockquote><p>Un bloc</p><p>Un autre bloc</p></blockquote></li></ul></li><li>Liste trois</li></ul><p>... Génération du HTML :</p><pre>&lt;ul&gt;&lt;li&gt;Liste Une &lt;ul&gt;&lt;li&gt;Liste deux&lt;blockquote&gt;&lt;p&gt;Un bloc&lt;/p&gt;&lt;p&gt;Un autre bloc&lt;/p&gt;&lt;/blockquote&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;Liste trois&lt;/li&gt;&lt;/ul&gt;</pre></div><h1 class="">Les paragraphes dans les listes</h1><p>Les entrées d'une liste sont séparées par des sauts de ligne, rendant impossible d'y inclure des sauts de lignes, sans passer à l'entrée suivante. Il y a deux façons de passer outre.</p><p>En un, vous pouvez transclure dans le paragraphe le contenu d'un autre tiddler. Par exemple :</p><pre><code>* Première entrée
+</code></pre><p>Affichera ceci :</p><ul><li>Liste Une <ul><li>Liste deux<blockquote><div>Un bloc</div><div>Un autre bloc</div></blockquote></li></ul></li><li>Liste trois</li></ul><p>... Génération du HTML :</p><pre>&lt;ul&gt;&lt;li&gt;Liste Une &lt;ul&gt;&lt;li&gt;Liste deux&lt;blockquote&gt;&lt;div&gt;Un bloc&lt;/div&gt;&lt;div&gt;Un autre bloc&lt;/div&gt;&lt;/blockquote&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;Liste trois&lt;/li&gt;&lt;/ul&gt;</pre></div><h1 class="">Les paragraphes dans les listes</h1><p>Les entrées d'une liste sont séparées par des sauts de ligne, rendant impossible d'y inclure des sauts de lignes, sans passer à l'entrée suivante. Il y a deux façons de passer outre.</p><p>En un, vous pouvez transclure dans le paragraphe le contenu d'un autre tiddler. Par exemple :</p><pre><code>* Première entrée
 * &lt;$transclude tiddler=&quot;MonTiddler&quot; mode=&quot;block&quot;/&gt;
 * Troisième</code></pre><p>En deux, vous pouvez utiliser le tag HTML &quot;div&quot; pour inclure un contenu multiligne. Par exemple :</p><pre><code># Étape 1
 # Étape 2

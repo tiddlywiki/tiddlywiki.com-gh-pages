@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.21" />
+<meta name="tiddlywiki-version" content="5.1.22" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -43,14 +43,7 @@ Keyboard Shortcut Descriptor
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
 </div><div class=" tc-reveal" hidden="true"></div>
-<div class=" tc-reveal">
-<div class="tc-subtitle">
-<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
-
-</a> 
-</div>
-</div>
-<div class=" tc-reveal">
+<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a></div></div><div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
@@ -77,7 +70,7 @@ color:#333333;">
 <span class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
- $:/tags/KeyboardShortcut
+$:/tags/KeyboardShortcut
 </span>
 
 </span> to link actions with a keyboard combination</p><p>A <code>Keyboard Shortcut Descriptor</code> has the following format:</p><pre><code>	ctrl+enter
@@ -88,7 +81,7 @@ color:#333333;">
 <span class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
- $:/tags/KeyboardShortcut
+$:/tags/KeyboardShortcut
 </span>
 
 </span></li></ul></li><li>with a <strong>reference</strong> to a configuration Tiddler<ul><li>A <strong>configuration Tiddler</strong> for Keyboard Shortcuts follows some naming rules:<ul><li>The title starts with <code>$:/config/</code></li><li>Followed by either the string <code>shortcuts</code> or one of the following <strong>platform descriptors</strong>:<ul><li><code class="doc-tiddler">shortcuts-linux</code></li><li><code class="doc-tiddler">shortcuts-not-linux</code></li><li><code class="doc-tiddler">shortcuts-mac</code></li><li><code class="doc-tiddler">shortcuts-not-mac</code></li><li><code class="doc-tiddler">shortcuts-windows</code></li><li><code class="doc-tiddler">shortcuts-not-windows</code></li></ul></li><li>The title ends with another <code>/</code> followed by a suffix that can be chosen freely<ul><li>This suffix is the <strong>identifier</strong> for the <code>Keyboard Shortcut Descriptor</code> (A)</li></ul></li></ul></li><li>The <strong>reference</strong> to the configuration Tiddler is made of <code>((</code> + the <strong>identifier</strong> (A) + <code>))</code><ul><li>Example: <code>((my-shortcut))</code> is the <strong>reference</strong> to these configuration Tiddlers:<ul><li><code class="doc-tiddler"><a class="tc-tiddlylink tc-tiddlylink-missing" href="%2524%253A%252Fconfig%252Fshortcuts%252Fmy-shortcut.html">$:/config/shortcuts/my-shortcut</a></code></li><li><code class="doc-tiddler"><a class="tc-tiddlylink tc-tiddlylink-missing" href="%2524%253A%252Fconfig%252Fshortcuts-linux%252Fmy-shortcut.html">$:/config/shortcuts-linux/my-shortcut</a></code></li><li><code class="doc-tiddler"><a class="tc-tiddlylink tc-tiddlylink-missing" href="%2524%253A%252Fconfig%252Fshortcuts-not-linux%252Fmy-shortcut.html">$:/config/shortcuts-not-linux/my-shortcut</a></code></li><li><code class="doc-tiddler"><a class="tc-tiddlylink tc-tiddlylink-missing" href="%2524%253A%252Fconfig%252Fshortcuts-mac%252Fmy-shortcut.html">$:/config/shortcuts-mac/my-shortcut</a></code></li><li><code class="doc-tiddler"><a class="tc-tiddlylink tc-tiddlylink-missing" href="%2524%253A%252Fconfig%252Fshortcuts-not-mac%252Fmy-shortcut.html">$:/config/shortcuts-not-mac/my-shortcut</a></code></li><li><code class="doc-tiddler"><a class="tc-tiddlylink tc-tiddlylink-missing" href="%2524%253A%252Fconfig%252Fshortcuts-windows%252Fmy-shortcut.html">$:/config/shortcuts-windows/my-shortcut</a></code></li><li><code class="doc-tiddler"><a class="tc-tiddlylink tc-tiddlylink-missing" href="%2524%253A%252Fconfig%252Fshortcuts-not-windows%252Fmy-shortcut.html">$:/config/shortcuts-not-windows/my-shortcut</a></code></li></ul></li></ul></li><li>Finally, the referenced configuration Tiddler stores the Keyboard Shortcut Descriptor in its <strong>text</strong> field</li></ul></li></ul></div>
