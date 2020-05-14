@@ -183,8 +183,8 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
 
 &lt;&lt;list-links filter:&quot;[tag{!!title}]&quot;&gt;&gt;</pre>
 </div>
-<div commit="9c22537b4ed8ee44e5727546297d6302d8cab288" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 9c22537b4ed8ee44e5727546297d6302d8cab288 of https://github.com/Jermolene/TiddlyWiki5.git at 2020-05-14 12:58:01 UTC
+<div commit="3440f0f308893c63f517f967694e53ed91547996" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit 3440f0f308893c63f517f967694e53ed91547996 of https://github.com/Jermolene/TiddlyWiki5.git at 2020-05-14 13:32:53 UTC
 </pre>
 </div>
 <div created="20140909085347212" modified="20140909085346177" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home" type="text/vnd.tiddlywiki">
@@ -5023,7 +5023,7 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
         },
         &quot;$:/core/modules/filters/has.js&quot;: {
             &quot;title&quot;: &quot;$:/core/modules/filters/has.js&quot;,
-            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/filters/has.js\ntype: application/javascript\nmodule-type: filteroperator\n\nFilter operator for checking if a tiddler has the specified field or index\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nExport our filter function\n*/\nexports.has = function(source,operator,options) {\n\tvar results = [],\n\t\tinvert = operator.prefix === \&quot;!\&quot;;\n\n\tif(operator.suffix === \&quot;field\&quot;) {\n\t\tif(invert) {\n\t\t\tsource(function(tiddler,title) {\n\t\t\t\tif(!tiddler || (tiddler &amp;&amp; (!$tw.utils.hop(tiddler.fields,operator.operand)))) {\n\t\t\t\t\tresults.push(title);\n\t\t\t\t}\n\t\t\t});\n\t\t} else {\n\t\t\tsource(function(tiddler,title) {\n\t\t\t\tif(tiddler &amp;&amp; $tw.utils.hop(tiddler.fields,operator.operand)) {\n\t\t\t\t\tresults.push(title);\n\t\t\t\t}\n\t\t\t});\n\t\t}\n\t}\n\telse if(operator.suffix === \&quot;index\&quot;) {\n\t\tif(invert) {\n\t\t\tsource(function(tiddler,title) {\n\t\t\t\tif(!tiddler || (tiddler &amp;&amp; (!$tw.utils.hop(options.wiki.getTiddlerDataCached(tiddler,Object.create(null)),operator.operand)))) {\n\t\t\t\t\tresults.push(title);\n\t\t\t\t}\n\t\t\t});\n\t\t} else {\n\t\t\tsource(function(tiddler,title) {\n\t\t\t\tif(tiddler &amp;&amp; $tw.utils.hop(options.wiki.getTiddlerDataCached(tiddler,Object.create(null)),operator.operand)) {\n\t\t\t\t\tresults.push(title);\n\t\t\t\t}\n\t\t\t});\n\t\t}\n\t}\n\telse {\n\t\tif(invert) {\n\t\t\tsource(function(tiddler,title) {\n\t\t\t\tif(!tiddler || !$tw.utils.hop(tiddler.fields,operator.operand) || (tiddler.fields[operator.operand] === \&quot;\&quot;)) {\n\t\t\t\t\tresults.push(title);\n\t\t\t\t}\n\t\t\t});\n\t\t} else {\n\t\t\tsource(function(tiddler,title) {\n\t\t\t\tif(tiddler &amp;&amp; $tw.utils.hop(tiddler.fields,operator.operand) &amp;&amp; !(tiddler.fields[operator.operand] === \&quot;\&quot; || tiddler.fields[operator.operand].length === 0)) {\n\t\t\t\t\tresults.push(title);\n\t\t\t\t}\n\t\t\t});\t\t\t\t\n\t\t}\n\t}\n\treturn results;\n};\n\n})();\n&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/filters/has.js\ntype: application/javascript\nmodule-type: filteroperator\n\nFilter operator for checking if a tiddler has the specified field or index\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nExport our filter function\n*/\nexports.has = function(source,operator,options) {\n\tvar results = [],\n\t\tinvert = operator.prefix === \&quot;!\&quot;;\n\n\tif(operator.suffix === \&quot;field\&quot;) {\n\t\tif(invert) {\n\t\t\tsource(function(tiddler,title) {\n\t\t\t\tif(!tiddler || (tiddler &amp;&amp; (!$tw.utils.hop(tiddler.fields,operator.operand)))) {\n\t\t\t\t\tresults.push(title);\n\t\t\t\t}\n\t\t\t});\n\t\t} else {\n\t\t\tsource(function(tiddler,title) {\n\t\t\t\tif(tiddler &amp;&amp; $tw.utils.hop(tiddler.fields,operator.operand)) {\n\t\t\t\t\tresults.push(title);\n\t\t\t\t}\n\t\t\t});\n\t\t}\n\t}\n\telse if(operator.suffix === \&quot;index\&quot;) {\n\t\tif(invert) {\n\t\t\tsource(function(tiddler,title) {\n\t\t\t\tif(!tiddler || (tiddler &amp;&amp; (!$tw.utils.hop(options.wiki.getTiddlerDataCached(tiddler,Object.create(null)),operator.operand)))) {\n\t\t\t\t\tresults.push(title);\n\t\t\t\t}\n\t\t\t});\n\t\t} else {\n\t\t\tsource(function(tiddler,title) {\n\t\t\t\tif(tiddler &amp;&amp; $tw.utils.hop(options.wiki.getTiddlerDataCached(tiddler,Object.create(null)),operator.operand)) {\n\t\t\t\t\tresults.push(title);\n\t\t\t\t}\n\t\t\t});\n\t\t}\n\t}\n\telse {\n\t\tif(invert) {\n\t\t\tsource(function(tiddler,title) {\n\t\t\t\tif(!tiddler || !$tw.utils.hop(tiddler.fields,operator.operand) || (tiddler.fields[operator.operand].length === 0)) {\n\t\t\t\t\tresults.push(title);\n\t\t\t\t}\n\t\t\t});\n\t\t} else {\n\t\t\tsource(function(tiddler,title) {\n\t\t\t\tif(tiddler &amp;&amp; $tw.utils.hop(tiddler.fields,operator.operand) &amp;&amp; (tiddler.fields[operator.operand].length !== 0)) {\n\t\t\t\t\tresults.push(title);\n\t\t\t\t}\n\t\t\t});\t\t\t\t\n\t\t}\n\t}\n\treturn results;\n};\n\n})();\n&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;filteroperator&quot;
         },
@@ -13574,7 +13574,7 @@ Benutzer Stylesheets in diesem Wiki:
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20200514125905892&quot;
+            &quot;text&quot;: &quot;20200514133355829&quot;
         }
     }
 }</pre>
