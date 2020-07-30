@@ -183,8 +183,8 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
 
 &lt;&lt;list-links filter:&quot;[tag{!!title}]&quot;&gt;&gt;</pre>
 </div>
-<div commit="4de95a64c1e367993cfea964093d9ad19758fdd6" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 4de95a64c1e367993cfea964093d9ad19758fdd6 of https://github.com/Jermolene/TiddlyWiki5.git at 2020-07-17 07:50:57 UTC
+<div commit="a9d79a1a841fb782b955eeeed6fc69a7b4e9136f" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit a9d79a1a841fb782b955eeeed6fc69a7b4e9136f of https://github.com/Jermolene/TiddlyWiki5.git at 2020-07-30 17:27:09 UTC
 </pre>
 </div>
 <div created="20140909085347212" modified="20140909085346177" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home" type="text/vnd.tiddlywiki">
@@ -5889,7 +5889,7 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
         },
         &quot;$:/core/modules/server/authenticators/header.js&quot;: {
             &quot;title&quot;: &quot;$:/core/modules/server/authenticators/header.js&quot;,
-            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/server/authenticators/header.js\ntype: application/javascript\nmodule-type: authenticator\n\nAuthenticator for trusted header authentication\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nfunction HeaderAuthenticator(server) {\n\tthis.server = server;\n\tthis.header = server.get(\&quot;authenticated-user-header\&quot;);\n}\n\n/*\nReturns true if the authenticator is active, false if it is inactive, or a string if there is an error\n*/\nHeaderAuthenticator.prototype.init = function() {\n\treturn !!this.header;\n};\n\n/*\nReturns true if the request is authenticated and assigns the \&quot;authenticatedUsername\&quot; state variable.\nReturns false if the request couldn't be authenticated having sent an appropriate response to the browser\n*/\nHeaderAuthenticator.prototype.authenticateRequest = function(request,response,state) {\n\t// Otherwise, authenticate as the username in the specified header\n\tvar username = request.headers[this.header];\n\tif(!username &amp;&amp; !state.allowAnon) {\n\t\tresponse.writeHead(401,\&quot;Authorization header required to login to '\&quot; + state.server.servername + \&quot;'\&quot;);\n\t\tresponse.end();\n\t\treturn false;\n\t} else {\n\t\t// authenticatedUsername will be undefined for anonymous users\n\t\tstate.authenticatedUsername = username;\n\t\treturn true;\n\t}\n};\n\nexports.AuthenticatorClass = HeaderAuthenticator;\n\n})();\n&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/server/authenticators/header.js\ntype: application/javascript\nmodule-type: authenticator\n\nAuthenticator for trusted header authentication\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nfunction HeaderAuthenticator(server) {\n\tthis.server = server;\n\tthis.header = server.get(\&quot;authenticated-user-header\&quot;).toLowerCase();\n}\n\n/*\nReturns true if the authenticator is active, false if it is inactive, or a string if there is an error\n*/\nHeaderAuthenticator.prototype.init = function() {\n\treturn !!this.header;\n};\n\n/*\nReturns true if the request is authenticated and assigns the \&quot;authenticatedUsername\&quot; state variable.\nReturns false if the request couldn't be authenticated having sent an appropriate response to the browser\n*/\nHeaderAuthenticator.prototype.authenticateRequest = function(request,response,state) {\n\t// Otherwise, authenticate as the username in the specified header\n\tvar username = request.headers[this.header];\n\tif(!username &amp;&amp; !state.allowAnon) {\n\t\tresponse.writeHead(401,\&quot;Authorization header required to login to '\&quot; + state.server.servername + \&quot;'\&quot;);\n\t\tresponse.end();\n\t\treturn false;\n\t} else {\n\t\t// authenticatedUsername will be undefined for anonymous users\n\t\tstate.authenticatedUsername = username;\n\t\treturn true;\n\t}\n};\n\nexports.AuthenticatorClass = HeaderAuthenticator;\n\n})();\n&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;authenticator&quot;
         },
@@ -13643,7 +13643,7 @@ Benutzer Stylesheets in diesem Wiki:
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20200717075148855&quot;
+            &quot;text&quot;: &quot;20200730172758552&quot;
         }
     }
 }</pre>
