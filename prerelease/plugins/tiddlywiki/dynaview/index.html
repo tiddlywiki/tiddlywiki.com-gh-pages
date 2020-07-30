@@ -1881,8 +1881,8 @@ Error message and password prompt
 &lt;/div&gt;
 </pre>
 </div>
-<div commit="a9d79a1a841fb782b955eeeed6fc69a7b4e9136f" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit a9d79a1a841fb782b955eeeed6fc69a7b4e9136f of https://github.com/Jermolene/TiddlyWiki5.git at 2020-07-30 17:27:09 UTC
+<div commit="97d2af7ebd9cd53790cc0baaa88aa916c53eb343" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit 97d2af7ebd9cd53790cc0baaa88aa916c53eb343 of https://github.com/Jermolene/TiddlyWiki5.git at 2020-07-30 18:17:38 UTC
 </pre>
 </div>
 <div title="$:/config/AnimationDuration">
@@ -3648,6 +3648,10 @@ Error message and password prompt
         &quot;$:/language/ControlPanel/Saving/TiddlySpot/BackupDir&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/TiddlySpot/BackupDir&quot;,
             &quot;text&quot;: &quot;Backup Directory&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/TiddlySpot/ControlPanel&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/TiddlySpot/ControlPanel&quot;,
+            &quot;text&quot;: &quot;~TiddlySpot Control Panel&quot;
         },
         &quot;$:/language/ControlPanel/Saving/TiddlySpot/Backups&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/TiddlySpot/Backups&quot;,
@@ -8807,7 +8811,7 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/core/ui/ControlPanel/Saving/TiddlySpot&quot;,
             &quot;tags&quot;: &quot;$:/tags/ControlPanel/Saving&quot;,
             &quot;caption&quot;: &quot;{{$:/language/ControlPanel/Saving/TiddlySpot/Caption}}&quot;,
-            &quot;text&quot;: &quot;\\define lingo-base() $:/language/ControlPanel/Saving/TiddlySpot/\n\n\\define backupURL()\nhttp://$(userName)$.tiddlyspot.com/backup/\n\\end\n\\define backupLink()\n&lt;$reveal type=\&quot;nomatch\&quot; state=\&quot;$:/UploadName\&quot; text=\&quot;\&quot;&gt;\n&lt;$set name=\&quot;userName\&quot; value={{$:/UploadName}}&gt;\n&lt;$reveal type=\&quot;match\&quot; state=\&quot;$:/UploadURL\&quot; text=\&quot;\&quot;&gt;\n&lt;&lt;backupURL&gt;&gt;\n&lt;/$reveal&gt;\n&lt;$reveal type=\&quot;nomatch\&quot; state=\&quot;$:/UploadURL\&quot; text=\&quot;\&quot;&gt;\n&lt;$macrocall $name=resolvePath source={{$:/UploadBackupDir}} root={{$:/UploadURL}}&gt;&gt;\n&lt;/$reveal&gt;\n&lt;/$set&gt;\n&lt;/$reveal&gt;\n\\end\n\n&lt;&lt;lingo Description&gt;&gt;\n\n|&lt;&lt;lingo UserName&gt;&gt; |&lt;$edit-text tiddler=\&quot;$:/UploadName\&quot; default=\&quot;\&quot; tag=\&quot;input\&quot;/&gt; |\n|&lt;&lt;lingo Password&gt;&gt; |&lt;$password name=\&quot;upload\&quot;/&gt; |\n|&lt;&lt;lingo Backups&gt;&gt; |&lt;&lt;backupLink&gt;&gt; |\n\n''&lt;&lt;lingo Advanced/Heading&gt;&gt;''\n\n|&lt;&lt;lingo ServerURL&gt;&gt;  |&lt;$edit-text tiddler=\&quot;$:/UploadURL\&quot; default=\&quot;\&quot; tag=\&quot;input\&quot;/&gt; |\n|&lt;&lt;lingo Filename&gt;&gt; |&lt;$edit-text tiddler=\&quot;$:/UploadFilename\&quot; default=\&quot;index.html\&quot; tag=\&quot;input\&quot;/&gt; |\n|&lt;&lt;lingo UploadDir&gt;&gt; |&lt;$edit-text tiddler=\&quot;$:/UploadDir\&quot; default=\&quot;.\&quot; tag=\&quot;input\&quot;/&gt; |\n|&lt;&lt;lingo BackupDir&gt;&gt; |&lt;$edit-text tiddler=\&quot;$:/UploadBackupDir\&quot; default=\&quot;.\&quot; tag=\&quot;input\&quot;/&gt; |\n\n&lt;&lt;lingo TiddlySpot/Hint&gt;&gt;&quot;
+            &quot;text&quot;: &quot;\\define lingo-base() $:/language/ControlPanel/Saving/TiddlySpot/\n\n\\define siteURL(path)\nhttp://$(userName)$.tiddlyspot.com/$path$/\n\\end\n\\define siteLink(path)\n&lt;$reveal type=\&quot;nomatch\&quot; state=\&quot;$:/UploadName\&quot; text=\&quot;\&quot;&gt;\n&lt;$set name=\&quot;userName\&quot; value={{$:/UploadName}}&gt;\n&lt;$reveal type=\&quot;match\&quot; state=\&quot;$:/UploadURL\&quot; text=\&quot;\&quot;&gt;\n&lt;&lt;siteURL $path$&gt;&gt;\n&lt;/$reveal&gt;\n&lt;$reveal type=\&quot;nomatch\&quot; state=\&quot;$:/UploadURL\&quot; text=\&quot;\&quot;&gt;\n&lt;$macrocall $name=resolvePath source={{$:/UploadBackupDir}} root={{$:/UploadURL}}&gt;&gt;\n&lt;/$reveal&gt;\n&lt;/$set&gt;\n&lt;/$reveal&gt;\n\\end\n\n&lt;&lt;lingo Description&gt;&gt;\n\n|&lt;&lt;lingo UserName&gt;&gt; |&lt;$edit-text tiddler=\&quot;$:/UploadName\&quot; default=\&quot;\&quot; tag=\&quot;input\&quot;/&gt; |\n|&lt;&lt;lingo Password&gt;&gt; |&lt;$password name=\&quot;upload\&quot;/&gt; |\n|&lt;&lt;lingo Backups&gt;&gt; |&lt;&lt;siteLink backup&gt;&gt; |\n|&lt;&lt;lingo ControlPanel&gt;&gt; |&lt;&lt;siteLink controlpanel&gt;&gt; |\n\n''&lt;&lt;lingo Advanced/Heading&gt;&gt;''\n\n|&lt;&lt;lingo ServerURL&gt;&gt;  |&lt;$edit-text tiddler=\&quot;$:/UploadURL\&quot; default=\&quot;\&quot; tag=\&quot;input\&quot;/&gt; |\n|&lt;&lt;lingo Filename&gt;&gt; |&lt;$edit-text tiddler=\&quot;$:/UploadFilename\&quot; default=\&quot;index.html\&quot; tag=\&quot;input\&quot;/&gt; |\n|&lt;&lt;lingo UploadDir&gt;&gt; |&lt;$edit-text tiddler=\&quot;$:/UploadDir\&quot; default=\&quot;.\&quot; tag=\&quot;input\&quot;/&gt; |\n|&lt;&lt;lingo BackupDir&gt;&gt; |&lt;$edit-text tiddler=\&quot;$:/UploadBackupDir\&quot; default=\&quot;.\&quot; tag=\&quot;input\&quot;/&gt; |\n\n&lt;&lt;lingo TiddlySpot/Hint&gt;&gt;&quot;
         },
         &quot;$:/core/ui/ControlPanel/Saving/Gitea&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/ControlPanel/Saving/Gitea&quot;,
@@ -11671,7 +11675,7 @@ $:/plugins/tiddlywiki/dynaview
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20200730172749329&quot;
+            &quot;text&quot;: &quot;20200730181819768&quot;
         }
     }
 }</pre>
