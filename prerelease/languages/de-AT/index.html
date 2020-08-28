@@ -183,8 +183,8 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
 
 &lt;&lt;list-links filter:&quot;[tag{!!title}]&quot;&gt;&gt;</pre>
 </div>
-<div commit="8497e5b95d9311e2443c4517752a2befb9b92a72" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 8497e5b95d9311e2443c4517752a2befb9b92a72 of https://github.com/Jermolene/TiddlyWiki5.git at 2020-08-28 14:36:43 UTC
+<div commit="4f376fba353d635189a3798c75a1b09810acdfaa" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit 4f376fba353d635189a3798c75a1b09810acdfaa of https://github.com/Jermolene/TiddlyWiki5.git at 2020-08-28 14:46:25 UTC
 </pre>
 </div>
 <div created="20140909085347212" modified="20140909085346177" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home" type="text/vnd.tiddlywiki">
@@ -13666,7 +13666,7 @@ Benutzer Stylesheets in diesem Wiki:
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20200828143732224&quot;
+            &quot;text&quot;: &quot;20200828144720675&quot;
         }
     }
 }</pre>
@@ -18380,8 +18380,7 @@ $tw.loadTiddlersNode = function() {
 /*
 Startup TiddlyWiki
 */
-$tw.boot.startup = function(options) {
-	options = options || {};
+$tw.boot.initStartup = function(options) {
 	// Get the URL hash and check for safe mode
 	$tw.locationHash = "#";
 	if($tw.browser && !$tw.node) {
@@ -18514,6 +18513,9 @@ $tw.boot.startup = function(options) {
 			return result;
 		}
 	}
+};
+$tw.boot.loadStartup = function(options){
+
 	// Load tiddlers
 	if($tw.boot.tasks.readBrowserTiddlers) {
 		$tw.loadTiddlersBrowser();
@@ -18526,6 +18528,8 @@ $tw.boot.startup = function(options) {
 	}
 	// Give hooks a chance to modify the store
 	$tw.hooks.invokeHook("th-boot-tiddlers-loaded");
+}
+$tw.boot.execStartup = function(options){
 	// Unpack plugin tiddlers
 	$tw.wiki.readPluginInfo();
 	$tw.wiki.registerPluginTiddlers("plugin",$tw.safeMode ? ["$:/core"] : undefined);
@@ -18554,6 +18558,16 @@ $tw.boot.startup = function(options) {
 	$tw.boot.disabledStartupModules = $tw.boot.disabledStartupModules || [];
 	// Repeatedly execute the next eligible task
 	$tw.boot.executeNextStartupTask(options.callback);
+}
+/*
+Startup TiddlyWiki
+*/
+$tw.boot.startup = function(options) {
+	options = options || {};
+	// Get the URL hash and check for safe mode
+	$tw.boot.initStartup(options);
+	$tw.boot.loadStartup(options);
+	$tw.boot.execStartup(options);
 };
 
 /*
