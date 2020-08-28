@@ -872,6 +872,19 @@
         "requires-reload": "no"
     },
     {
+        "title": "$:/languages/ar-PS",
+        "name": "ar-PS",
+        "plugin-type": "language",
+        "description": "Arabic (Palestine)",
+        "author": "Kamal-Habash",
+        "core-version": ">=5.1.23",
+        "version": "5.1.23-prerelease",
+        "dependents": "",
+        "type": "application/json",
+        "requires-reload": "no",
+        "icon": "data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22600%22%20viewBox%3D%220%200%206%203%22%3E%3Crect%20fill%3D%22%23007A3D%22%20width%3D%226%22%20height%3D%223%22%2F%3E%3Crect%20fill%3D%22%23FFF%22%20width%3D%226%22%20height%3D%222%22%2F%3E%3Crect%20width%3D%226%22%20height%3D%221%22%2F%3E%3Cpath%20fill%3D%22%23CE1126%22%20d%3D%22M0%2C0l2%2C1.5L0%2C3Z%22%2F%3E%3C%2Fsvg%3E%0A"
+    },
+    {
         "title": "$:/languages/ca-ES",
         "name": "ca-ES",
         "plugin-type": "language",
