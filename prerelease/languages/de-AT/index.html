@@ -183,8 +183,8 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
 
 &lt;&lt;list-links filter:&quot;[tag{!!title}]&quot;&gt;&gt;</pre>
 </div>
-<div commit="9716c326952c16f63345a135e73cf36670dca0d8" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 9716c326952c16f63345a135e73cf36670dca0d8 of https://github.com/Jermolene/TiddlyWiki5 at 2020-09-30 17:01:14 UTC
+<div commit="14a28b77796461c9167898793ab9851e029e0354" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit 14a28b77796461c9167898793ab9851e029e0354 of https://github.com/Jermolene/TiddlyWiki5 at 2020-10-06 18:21:48 UTC
 </pre>
 </div>
 <div created="20140909085347212" modified="20140909085346177" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home" type="text/vnd.tiddlywiki">
@@ -5031,6 +5031,12 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;filteroperator&quot;
         },
+        &quot;$:/core/modules/filters/filter.js&quot;: {
+            &quot;title&quot;: &quot;$:/core/modules/filters/filter.js&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/filters/filter.js\ntype: application/javascript\nmodule-type: filteroperator\n\nFilter operator returning those input titles that pass a subfilter\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nExport our filter function\n*/\nexports.filter = function(source,operator,options) {\n\tvar filterFn = options.wiki.compileFilter(operator.operand),\n\t\tresults = [],\n\t\ttarget = operator.prefix !== \&quot;!\&quot;;\n\tsource(function(tiddler,title) {\n\t\tvar list = filterFn.call(options.wiki,options.wiki.makeTiddlerIterator([title]));\n\t\tif((list.length &gt; 0) === target) {\n\t\t\tresults.push(title);\n\t\t}\n\t});\n\treturn results;\n};\n\n})();\n&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;module-type&quot;: &quot;filteroperator&quot;
+        },
         &quot;$:/core/modules/filters/format/date.js&quot;: {
             &quot;title&quot;: &quot;$:/core/modules/filters/format/date.js&quot;,
             &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/filters/format/date.js\ntype: application/javascript\nmodule-type: formatfilteroperator\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nExport our filter function\n*/\nexports.date = function(source,operand,options) {\n\tvar results = [];\t\n\tsource(function(tiddler,title) {\n\t\tvar value = $tw.utils.parseDate(title);\n\t\tif(value &amp;&amp; $tw.utils.isDate(value) &amp;&amp; value.toString() !== \&quot;Invalid Date\&quot;) {\n\t\t\tresults.push($tw.utils.formatDateString(value,operand || \&quot;YYYY MM DD 0hh:0mm\&quot;));\n\t\t}\n\t});\t\n\treturn results;\n};\n\n})();&quot;,
@@ -5256,6 +5262,12 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
         &quot;$:/core/modules/filters/range.js&quot;: {
             &quot;title&quot;: &quot;$:/core/modules/filters/range.js&quot;,
             &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/filters/range.js\ntype: application/javascript\nmodule-type: filteroperator\n\nFilter operator for generating a numeric range.\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nExport our filter function\n*/\nexports.range = function(source,operator,options) {\n\tvar results = [];\n\t// Split the operand into numbers delimited by these symbols\n\tvar parts = operator.operand.split(/[,:;]/g),\n\t\tbeg, end, inc, i, fixed = 0;\n\tfor (i=0; i&lt;parts.length; i++) {\n\t\t// Validate real number\n\t\tif(!/^\\s*[+-]?((\\d+(\\.\\d*)?)|(\\.\\d+))\\s*$/.test(parts[i])) {\n\t\t\treturn [\&quot;range: bad number \\\&quot;\&quot; + parts[i] + \&quot;\\\&quot;\&quot;];\n\t\t}\n\t\t// Count digits; the most precise number determines decimal places in output.\n\t\tvar frac = /\\.\\d+/.exec(parts[i]);\n\t\tif(frac) {\n\t\t\tfixed = Math.max(fixed,frac[0].length-1);\n\t\t}\n\t\tparts[i] = parseFloat(parts[i]);\n\t}\n\tswitch(parts.length) {\n\t\tcase 1:\n\t\t\tend = parts[0];\n\t\t\tif (end &gt;= 1) {\n\t\t\t\tbeg = 1;\n\t\t\t}\n\t\t\telse if (end &lt;= -1) {\n\t\t\t\tbeg = -1;\n\t\t\t}\n\t\t\telse {\n\t\t\t\treturn [];\n\t\t\t}\n\t\t\tinc = 1;\n\t\t\tbreak;\n\t\tcase 2:\n\t\t\tbeg = parts[0];\n\t\t\tend = parts[1];\n\t\t\tinc = 1;\n\t\t\tbreak;\n\t\tcase 3:\n\t\t\tbeg = parts[0];\n\t\t\tend = parts[1];\n\t\t\tinc = Math.abs(parts[2]);\n\t\t\tbreak;\n\t}\n\tif(inc === 0) {\n\t\treturn [\&quot;range: increment 0 causes infinite loop\&quot;];\n\t}\n\t// May need to count backwards\n\tvar direction = ((end &lt; beg) ? -1 : 1);\n\tinc *= direction;\n\t// Estimate number of resulting elements\n\tif((end - beg) / inc &gt; 10000) {\n\t\treturn [\&quot;range: too many steps (over 10K)\&quot;];\n\t}\n\t// Avoid rounding error on last step\n\tend += direction * 0.5 * Math.pow(0.1,fixed);\n\tvar safety = 10010;\n\t// Enumerate the range\n\tif (end&lt;beg) {\n\t\tfor(i=beg; i&gt;end; i+=inc) {\n\t\t\tresults.push(i.toFixed(fixed));\n\t\t\tif(--safety&lt;0) {\n\t\t\t\tbreak;\n\t\t\t}\n\t\t}\n\t} else {\n\t\tfor(i=beg; i&lt;end; i+=inc) {\n\t\t\tresults.push(i.toFixed(fixed));\n\t\t\tif(--safety&lt;0) {\n\t\t\t\tbreak;\n\t\t\t}\n\t\t}\n\t}\n\tif(safety&lt;0) {\n\t\treturn [\&quot;range: unexpectedly large output\&quot;];\n\t}\n\t// Reverse?\n\tif(operator.prefix === \&quot;!\&quot;) {\n\t\tresults.reverse();\n\t}\n\treturn results;\n};\n\n})();\n&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;module-type&quot;: &quot;filteroperator&quot;
+        },
+        &quot;$:/core/modules/filters/reduce.js&quot;: {
+            &quot;title&quot;: &quot;$:/core/modules/filters/reduce.js&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/filters/reduce.js\ntype: application/javascript\nmodule-type: filteroperator\n\nFilter operator evaluats a subfilter for each item, making the running total available in the variable `accumulator`, and the current index available in the variable `index`\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nExport our filter function\n*/\nexports.reduce = function(source,operator,options) {\n\t// Accumulate the list\n\tvar results = [];\n\tsource(function(tiddler,title) {\n\t\tresults.push(title);\n\t});\n\t// Run the filter over each item\n\tvar filterFn = options.wiki.compileFilter(operator.operand),\n\t\taccumulator = operator.suffix || \&quot;\&quot;;\n\tfor(var index=0; index&lt;results.length; index++) {\n\t\tvar title = results[index],\n\t\t\tlist = filterFn.call(options.wiki,options.wiki.makeTiddlerIterator([title]),{\n\t\t\t\tgetVariable: function(name) {\n\t\t\t\t\tswitch(name) {\n\t\t\t\t\t\tcase \&quot;currentTiddler\&quot;:\n\t\t\t\t\t\t\treturn \&quot;\&quot; + title;\n\t\t\t\t\t\tcase \&quot;accumulator\&quot;:\n\t\t\t\t\t\t\treturn \&quot;\&quot; + accumulator;\n\t\t\t\t\t\tcase \&quot;index\&quot;:\n\t\t\t\t\t\t\treturn \&quot;\&quot; + index;\n\t\t\t\t\t\tcase \&quot;revIndex\&quot;:\n\t\t\t\t\t\t\treturn \&quot;\&quot; + (results.length - 1 - index);\n\t\t\t\t\t\tcase \&quot;length\&quot;:\n\t\t\t\t\t\t\treturn \&quot;\&quot; + results.length;\n\t\t\t\t\t\tdefault:\n\t\t\t\t\t\t\treturn options.widget.getVariable(name);\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t});\n\t\tif(list.length &gt; 0) {\n\t\t\taccumulator = \&quot;\&quot; +  list[0];\n\t\t}\n\t}\n\treturn [accumulator];\n};\n\n})();\n&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;filteroperator&quot;
         },
@@ -13688,7 +13700,7 @@ Benutzer Stylesheets in diesem Wiki:
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20200930170207341&quot;
+            &quot;text&quot;: &quot;20201006182242088&quot;
         }
     }
 }</pre>
