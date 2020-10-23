@@ -227,8 +227,8 @@ Error message and password prompt
 &lt;/div&gt;
 </pre>
 </div>
-<div commit="d2546128268f21668433436c3a25db749d327252" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit d2546128268f21668433436c3a25db749d327252 of https://github.com/Jermolene/TiddlyWiki5 at 2020-10-19 08:52:42 UTC
+<div commit="794dfb96f219292b5074e6f5282e7d6e71bd615d" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit 794dfb96f219292b5074e6f5282e7d6e71bd615d of https://github.com/Jermolene/TiddlyWiki5 at 2020-10-23 14:39:09 UTC
 </pre>
 </div>
 <div title="$:/config/AnimationDuration">
@@ -9839,7 +9839,7 @@ $:/state/folded/$(currentTiddler)$
 $:/plugins/tiddlywiki/dynaview
 [list[Alice in Wonderland:]]</pre>
 </div>
-<div created="20201019085329652" current-tiddler="HelloThere" modified="20201019085329652" title="$:/HistoryList" type="application/json">
+<div created="20201023143954433" current-tiddler="HelloThere" modified="20201023143954433" title="$:/HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;HelloThere&quot;
@@ -10081,7 +10081,7 @@ $:/plugins/tiddlywiki/dynaview
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20201019085329510&quot;
+            &quot;text&quot;: &quot;20201023143954302&quot;
         }
     }
 }</pre>
@@ -11663,7 +11663,7 @@ $tw.Wiki = function(options) {
 		$tw.utils.each(titles || getTiddlerTitles(),function(title) {
 			var tiddler = tiddlers[title];
 			if(tiddler) {
-				if(tiddler.fields.type === "application/json" && tiddler.hasField("plugin-type")) {
+				if(tiddler.fields.type === "application/json" && tiddler.hasField("plugin-type") && tiddler.fields.text) {
 					pluginInfo[tiddler.fields.title] = JSON.parse(tiddler.fields.text);
 					results.modifiedPlugins.push(tiddler.fields.title);
 				}
