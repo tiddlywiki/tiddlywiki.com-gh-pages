@@ -9738,7 +9738,7 @@ Error message and password prompt
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20201026173845951&quot;
+            &quot;text&quot;: &quot;20201026174915386&quot;
         }
     }
 }</pre>
@@ -12312,6 +12312,7 @@ $tw.boot.initStartup = function(options) {
 	$tw.utils.registerFileType("application/zip","base64",".zip");
 	$tw.utils.registerFileType("application/x-zip-compressed","base64",".zip");
 	$tw.utils.registerFileType("image/jpeg","base64",[".jpg",".jpeg"],{flags:["image"]});
+	$tw.utils.registerFileType("image/jpg","base64",[".jpg",".jpeg"],{flags:["image"]});
 	$tw.utils.registerFileType("image/png","base64",".png",{flags:["image"]});
 	$tw.utils.registerFileType("image/gif","base64",".gif",{flags:["image"]});
 	$tw.utils.registerFileType("image/webp","base64",".webp",{flags:["image"]});

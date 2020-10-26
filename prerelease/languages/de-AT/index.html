@@ -183,8 +183,8 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
 
 &lt;&lt;list-links filter:&quot;[tag{!!title}]&quot;&gt;&gt;</pre>
 </div>
-<div commit="83f976ea5485f399b5930b4f82fe93b9ac5b4bb6" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 83f976ea5485f399b5930b4f82fe93b9ac5b4bb6 of https://github.com/Jermolene/TiddlyWiki5 at 2020-10-26 17:38:16 UTC
+<div commit="4c6de2271124fc3a4b01e4324a0d5e401500cca2" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit 4c6de2271124fc3a4b01e4324a0d5e401500cca2 of https://github.com/Jermolene/TiddlyWiki5 at 2020-10-26 17:48:42 UTC
 </pre>
 </div>
 <div created="20140909085347212" modified="20140909085346177" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home" type="text/vnd.tiddlywiki">
@@ -13726,7 +13726,7 @@ Benutzer Stylesheets in diesem Wiki:
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20201026173910741&quot;
+            &quot;text&quot;: &quot;20201026174939485&quot;
         }
     }
 }</pre>
@@ -18532,6 +18532,7 @@ $tw.boot.initStartup = function(options) {
 	$tw.utils.registerFileType("application/zip","base64",".zip");
 	$tw.utils.registerFileType("application/x-zip-compressed","base64",".zip");
 	$tw.utils.registerFileType("image/jpeg","base64",[".jpg",".jpeg"],{flags:["image"]});
+	$tw.utils.registerFileType("image/jpg","base64",[".jpg",".jpeg"],{flags:["image"]});
 	$tw.utils.registerFileType("image/png","base64",".png",{flags:["image"]});
 	$tw.utils.registerFileType("image/gif","base64",".gif",{flags:["image"]});
 	$tw.utils.registerFileType("image/webp","base64",".webp",{flags:["image"]});
