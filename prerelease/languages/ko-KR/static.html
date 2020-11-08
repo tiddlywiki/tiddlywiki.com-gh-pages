@@ -2413,10 +2413,20 @@ nav.tc-menubar .tc-drop-down .tc-menubar-dropdown-sidebar button {
 	width: 100%;
 }@media (max-width: 620px) {.tc-menubar-wide {
 		display: none;
+	}nav.tc-menubar .tc-menubar-item .tc-show-sidebar-btn svg.tc-image-chevron-left, nav.tc-menubar .tc-menubar-item .tc-hide-sidebar-btn svg.tc-image-chevron-right {
+		transform: rotate(-90deg);
 	}}@media (min-width: 621px) {nav.tc-menubar li.tc-menubar-item.tc-menubar-narrow,
 	.tc-menubar-narrow {
 		display: none;
-	}}
+	}}@media (max-width: 959px) {.tc-sidebar-scrollable {
+		margin-top: 2em;
+	}
+	
+	}@media (max-width: 620px) {.tc-sidebar-scrollable {
+		margin-top: 2em;
+	}
+}
+
 
 /* CSS modified for TiddlyWiki */svg.railroad-diagram {
 	background-color: #ffffff;
@@ -3288,10 +3298,6 @@ embedded databases available, <a class="tc-tiddlylink-external" href="http://www
 
 
 
-
-
-
-
 </ul>
 </div>
 <div class="tc-menubar-wide">
@@ -3307,19 +3313,6 @@ embedded databases available, <a class="tc-tiddlylink-external" href="http://www
 <button class="">
 <svg class="tc-image-menu-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><rect height="16" rx="8" width="128" y="16"></rect><rect height="16" rx="8" width="128" y="56"></rect><rect height="16" rx="8" width="128" y="96"></rect></svg>
 </button>
-
-
-
-
-
-</li>
-
-
-
-
-
-<li class="tc-menubar-item" style="">
-
 
 
 
@@ -3391,7 +3384,7 @@ embedded databases available, <a class="tc-tiddlylink-external" href="http://www
 
 
 
-<button aria-label="사이드바 숨기기" class="tc-btn-invisible" title="사이드바를 숨깁니다"><svg class="tc-image-chevron-right tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><g fill-rule="evenodd"><path d="M83.456 63.947c0 2.027-.77 4.054-2.316 5.6l-55.98 55.98a7.92 7.92 0 01-11.196 0c-3.085-3.086-3.092-8.105 0-11.196L64.344 63.95 13.963 13.567a7.92 7.92 0 010-11.195c3.086-3.085 8.105-3.092 11.196 0l55.98 55.98a7.892 7.892 0 012.317 5.595z"></path><path d="M122.069 63.947c0 2.027-.77 4.054-2.316 5.6l-55.98 55.98a7.92 7.92 0 01-11.196 0c-3.085-3.086-3.092-8.105 0-11.196l50.382-50.382-50.382-50.382a7.92 7.92 0 010-11.195c3.086-3.085 8.104-3.092 11.196 0l55.98 55.98a7.892 7.892 0 012.316 5.595z"></path></g></svg></button>
+<button aria-label="사이드바 숨기기" class="tc-btn-invisible tc-hide-sidebar-btn" title="사이드바를 숨깁니다"><svg class="tc-image-chevron-right tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><g fill-rule="evenodd"><path d="M83.456 63.947c0 2.027-.77 4.054-2.316 5.6l-55.98 55.98a7.92 7.92 0 01-11.196 0c-3.085-3.086-3.092-8.105 0-11.196L64.344 63.95 13.963 13.567a7.92 7.92 0 010-11.195c3.086-3.085 8.105-3.092 11.196 0l55.98 55.98a7.892 7.892 0 012.317 5.595z"></path><path d="M122.069 63.947c0 2.027-.77 4.054-2.316 5.6l-55.98 55.98a7.92 7.92 0 01-11.196 0c-3.085-3.086-3.092-8.105 0-11.196l50.382-50.382-50.382-50.382a7.92 7.92 0 010-11.195c3.086-3.085 8.104-3.092 11.196 0l55.98 55.98a7.892 7.892 0 012.316 5.595z"></path></g></svg></button>
 
 
 

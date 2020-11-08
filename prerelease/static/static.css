@@ -2788,10 +2788,20 @@ nav.tc-menubar .tc-drop-down .tc-menubar-dropdown-sidebar button {
 	width: 100%;
 }@media (max-width: 620px) {.tc-menubar-wide {
 		display: none;
+	}nav.tc-menubar .tc-menubar-item .tc-show-sidebar-btn svg.tc-image-chevron-left, nav.tc-menubar .tc-menubar-item .tc-hide-sidebar-btn svg.tc-image-chevron-right {
+		transform: rotate(-90deg);
 	}}@media (min-width: 621px) {nav.tc-menubar li.tc-menubar-item.tc-menubar-narrow,
 	.tc-menubar-narrow {
 		display: none;
-	}}
+	}}@media (max-width: 959px) {.tc-sidebar-scrollable {
+		margin-top: 2em;
+	}
+	
+	}@media (max-width: 620px) {.tc-sidebar-scrollable {
+		margin-top: 2em;
+	}
+}
+
 
 .tc-powered-by-tiddlywiki-banner {
 	position: fixed;
