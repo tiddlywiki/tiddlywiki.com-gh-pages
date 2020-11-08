@@ -932,7 +932,7 @@ a.tc-tiddlylink:hover {
 	bottom: 6px;
 }.tc-fold-banner:hover {
 	background: #f8f8f8;
-}@media (max-width: 960px) {.tc-unfold-banner {
+}@media (max-width: 959px) {.tc-unfold-banner {
 		position: static;
 		width: calc(100% + 59px);
 	}.tc-fold-banner {
@@ -1054,7 +1054,7 @@ a.tc-tiddlylink:hover {
 	padding-left: 7px;
 }.tc-story-river {
 	position: relative;
-}@media (max-width: 960px) {.tc-sidebar-header {
+}@media (max-width: 959px) {.tc-sidebar-header {
 		padding: 14px;
 		min-height: 32px;
 		margin-top: 0px;
@@ -1123,7 +1123,7 @@ a.tc-tiddlylink:hover {
 	font-style: italic;
 	font-weight: 200;
 }.tc-view-field-value {
-}@media (max-width: 960px) {
+}@media (max-width: 959px) {
 	.tc-tiddler-frame {
 		padding: 14px 14px 14px 14px;
 	}.tc-tiddler-info {
@@ -1386,8 +1386,9 @@ a.tc-tiddlylink:hover {
 	display: inline-block;
 }.tc-edit-field-add-value {
 	display: inline-block;
-	width: 35%;
-}.tc-edit-field-add-button {
+}@media (min-width: 960px) {.tc-edit-field-add-value {
+		width: 35%;
+	}}.tc-edit-field-add-button {
 	display: inline-block;
 	width: 10%;
 }/*
