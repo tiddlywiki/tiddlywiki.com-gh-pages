@@ -1754,6 +1754,12 @@ a.tc-tiddlylink:hover {
 ** Import table
 */.tc-import-table {
 	width: 100%;
+}.tc-import-table svg.tc-image-edit-button {
+	max-width: unset;
+}.tc-import-table th:first-of-type {
+	width: 10%;
+}.tc-import-table th:last-of-type {
+	width: 30%;
 }/*
 ** Alerts
 */.tc-alerts {
@@ -2266,8 +2272,9 @@ a.tc-tiddlylink:hover {
 	margin-left: 1em;
 }.tc-big-gap-right {
 	margin-right: 1em;
+}.tc-word-break {
+	word-break: break-all;
 }
-
 
 /* Left will inherit from right (so we don't need to duplicate code */
 .github-fork-ribbon {
