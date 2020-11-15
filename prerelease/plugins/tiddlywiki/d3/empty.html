@@ -185,8 +185,8 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div commit="f087a62c990885bcdacf620387278d16e3b4cef1" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit f087a62c990885bcdacf620387278d16e3b4cef1 of https://github.com/Jermolene/TiddlyWiki5 at 2020-11-15 11:36:46 UTC
+<div commit="04bf6e0fd83290fc1d97c7b1ed4789edd4414de2" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit 04bf6e0fd83290fc1d97c7b1ed4789edd4414de2 of https://github.com/Jermolene/TiddlyWiki5 at 2020-11-15 11:41:38 UTC
 </pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" name="Core" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.23-prerelease">
@@ -6458,6 +6458,12 @@ Error message and password prompt
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;widget&quot;
         },
+        &quot;$:/core/modules/widgets/action-confirm.js&quot;: {
+            &quot;title&quot;: &quot;$:/core/modules/widgets/action-confirm.js&quot;,
+            &quot;text&quot;: &quot;/*\\\n\ntitle: $:/core/modules/widgets/action-confirm.js\ntype: application/javascript\nmodule-type: widget\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nvar Widget = require(\&quot;$:/core/modules/widgets/widget.js\&quot;).widget;\n\nvar ConfirmWidget = function(parseTreeNode,options) {\n\tthis.initialise(parseTreeNode,options);\n};\n\n/*\nInherit from the base widget class\n*/\nConfirmWidget.prototype = new Widget();\n\n/*\nRender this widget into the DOM\n*/\nConfirmWidget.prototype.render = function(parent,nextSibling) {\n\tthis.computeAttributes();\n\tthis.execute();\n\tthis.parentDomNode = parent;\n\tthis.renderChildren(parent,nextSibling);\n};\n\n/*\nCompute the internal state of the widget\n*/\nConfirmWidget.prototype.execute = function() {\n\tthis.message = this.getAttribute(\&quot;$message\&quot;);\n\tthis.prompt = (this.getAttribute(\&quot;$prompt\&quot;,\&quot;yes\&quot;) == \&quot;yes\&quot; ? true : false);\n\tthis.makeChildWidgets();\n};\n\n/*\nRefresh the widget by ensuring our attributes are up to date\n*/\nConfirmWidget.prototype.refresh = function(changedTiddlers) {\n\tvar changedAttributes = this.computeAttributes();\n\tif(changedAttributes[\&quot;$message\&quot;] || changedAttributes[\&quot;$prompt\&quot;]) {\n\t\tthis.refreshSelf();\n\t\treturn true;\n\t}\n\treturn this.refreshChildren(changedTiddlers);\n};\n\n/*\nInvoke the action associated with this widget\n*/\nConfirmWidget.prototype.invokeAction = function(triggeringWidget,event) {\n\tvar invokeActions = true,\n\t\thandled = true;\n\tif(this.message &amp;&amp; this.prompt) {\n\t\tinvokeActions = confirm(this.message);\n\t}\n\tif(invokeActions) {\n\t\thandled = this.invokeActions(triggeringWidget,event);\n\t}\n\treturn handled;\n};\n\nConfirmWidget.prototype.allowActionPropagation = function() {\n\treturn false;\n};\n\nexports[\&quot;action-confirm\&quot;] = ConfirmWidget;\n\n})();&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;module-type&quot;: &quot;widget&quot;
+        },
         &quot;$:/core/modules/widgets/count.js&quot;: {
             &quot;title&quot;: &quot;$:/core/modules/widgets/count.js&quot;,
             &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/widgets/count.js\ntype: application/javascript\nmodule-type: widget\n\nCount widget\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nvar Widget = require(\&quot;$:/core/modules/widgets/widget.js\&quot;).widget;\n\nvar CountWidget = function(parseTreeNode,options) {\n\tthis.initialise(parseTreeNode,options);\n};\n\n/*\nInherit from the base widget class\n*/\nCountWidget.prototype = new Widget();\n\n/*\nRender this widget into the DOM\n*/\nCountWidget.prototype.render = function(parent,nextSibling) {\n\tthis.parentDomNode = parent;\n\tthis.computeAttributes();\n\tthis.execute();\n\tvar textNode = this.document.createTextNode(this.currentCount);\n\tparent.insertBefore(textNode,nextSibling);\n\tthis.domNodes.push(textNode);\n};\n\n/*\nCompute the internal state of the widget\n*/\nCountWidget.prototype.execute = function() {\n\t// Get parameters from our attributes\n\tthis.filter = this.getAttribute(\&quot;filter\&quot;);\n\t// Execute the filter\n\tif(this.filter) {\n\t\tthis.currentCount = this.wiki.filterTiddlers(this.filter,this).length;\n\t} else {\n\t\tthis.currentCount = \&quot;0\&quot;;\n\t}\n};\n\n/*\nSelectively refreshes the widget if needed. Returns true if the widget or any of its children needed re-rendering\n*/\nCountWidget.prototype.refresh = function(changedTiddlers) {\n\t// Re-execute the filter to get the count\n\tthis.computeAttributes();\n\tvar oldCount = this.currentCount;\n\tthis.execute();\n\tif(this.currentCount !== oldCount) {\n\t\t// Regenerate and rerender the widget and replace the existing DOM node\n\t\tthis.refreshSelf();\n\t\treturn true;\n\t} else {\n\t\treturn false;\n\t}\n\n};\n\nexports.count = CountWidget;\n\n})();\n&quot;,
@@ -7573,7 +7579,7 @@ Error message and password prompt
             &quot;icon&quot;: &quot;$:/core/images/erase&quot;,
             &quot;caption&quot;: &quot;{{$:/language/Buttons/Clear/Caption}}&quot;,
             &quot;description&quot;: &quot;{{$:/language/Buttons/Clear/Hint}}&quot;,
-            &quot;condition&quot;: &quot;[&lt;targetTiddler&gt;is[image]]&quot;,
+            &quot;condition&quot;: &quot;[&lt;targetTiddler&gt;is[image]] -[&lt;targetTiddler&gt;type[image/svg+xml]]&quot;,
             &quot;dropdown&quot;: &quot;$:/core/ui/EditorToolbar/clear-dropdown&quot;,
             &quot;text&quot;: &quot;&quot;
         },
@@ -7588,7 +7594,7 @@ Error message and password prompt
             &quot;custom-icon&quot;: &quot;yes&quot;,
             &quot;caption&quot;: &quot;{{$:/language/Buttons/EditorHeight/Caption}}&quot;,
             &quot;description&quot;: &quot;{{$:/language/Buttons/EditorHeight/Hint}}&quot;,
-            &quot;condition&quot;: &quot;[&lt;targetTiddler&gt;type[]] [&lt;targetTiddler&gt;get[type]prefix[text/]] [&lt;targetTiddler&gt;get[type]match[application/javascript]] [&lt;targetTiddler&gt;get[type]match[application/json]] [&lt;targetTiddler&gt;get[type]match[application/x-tiddler-dictionary]] +[first[]]&quot;,
+            &quot;condition&quot;: &quot;[&lt;targetTiddler&gt;type[]] [&lt;targetTiddler&gt;get[type]prefix[text/]] [&lt;targetTiddler&gt;get[type]match[application/javascript]] [&lt;targetTiddler&gt;get[type]match[application/json]] [&lt;targetTiddler&gt;get[type]match[application/x-tiddler-dictionary]] [&lt;targetTiddler&gt;get[type]match[image/svg+xml]] +[first[]]&quot;,
             &quot;dropdown&quot;: &quot;$:/core/ui/EditorToolbar/editor-height-dropdown&quot;,
             &quot;text&quot;: &quot;&lt;$reveal tag=\&quot;span\&quot; state=\&quot;$:/config/TextEditor/EditorHeight/Mode\&quot; type=\&quot;match\&quot; text=\&quot;fixed\&quot;&gt;\n{{$:/core/images/fixed-height}}\n&lt;/$reveal&gt;\n&lt;$reveal tag=\&quot;span\&quot; state=\&quot;$:/config/TextEditor/EditorHeight/Mode\&quot; type=\&quot;match\&quot; text=\&quot;auto\&quot;&gt;\n{{$:/core/images/auto-height}}\n&lt;/$reveal&gt;\n&quot;
         },
@@ -7688,9 +7694,9 @@ Error message and password prompt
             &quot;icon&quot;: &quot;$:/core/images/line-width&quot;,
             &quot;caption&quot;: &quot;{{$:/language/Buttons/LineWidth/Caption}}&quot;,
             &quot;description&quot;: &quot;{{$:/language/Buttons/LineWidth/Hint}}&quot;,
-            &quot;condition&quot;: &quot;[&lt;targetTiddler&gt;is[image]]&quot;,
+            &quot;condition&quot;: &quot;[&lt;targetTiddler&gt;is[image]] -[&lt;targetTiddler&gt;type[image/svg+xml]]&quot;,
             &quot;dropdown&quot;: &quot;$:/core/ui/EditorToolbar/line-width-dropdown&quot;,
-            &quot;text&quot;: &quot;&lt;$text text={{$:/config/BitmapEditor/LineWidth}}/&gt;&quot;
+            &quot;text&quot;: &quot;&lt;$text text={{$:/config/BitmapEditor/LineWidth}}/&gt;\n&quot;
         },
         &quot;$:/core/ui/EditorToolbar/link-dropdown&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/EditorToolbar/link-dropdown&quot;,
@@ -7784,7 +7790,7 @@ Error message and password prompt
             &quot;icon&quot;: &quot;$:/core/images/opacity&quot;,
             &quot;caption&quot;: &quot;{{$:/language/Buttons/Opacity/Caption}}&quot;,
             &quot;description&quot;: &quot;{{$:/language/Buttons/Opacity/Hint}}&quot;,
-            &quot;condition&quot;: &quot;[&lt;targetTiddler&gt;is[image]]&quot;,
+            &quot;condition&quot;: &quot;[&lt;targetTiddler&gt;is[image]] -[&lt;targetTiddler&gt;type[image/svg+xml]]&quot;,
             &quot;dropdown&quot;: &quot;$:/core/ui/EditorToolbar/opacity-dropdown&quot;,
             &quot;text&quot;: &quot;&lt;$text text={{$:/config/BitmapEditor/Opacity}}/&gt;\n&quot;
         },
@@ -7798,7 +7804,7 @@ Error message and password prompt
             &quot;icon&quot;: &quot;$:/core/images/paint&quot;,
             &quot;caption&quot;: &quot;{{$:/language/Buttons/Paint/Caption}}&quot;,
             &quot;description&quot;: &quot;{{$:/language/Buttons/Paint/Hint}}&quot;,
-            &quot;condition&quot;: &quot;[&lt;targetTiddler&gt;is[image]]&quot;,
+            &quot;condition&quot;: &quot;[&lt;targetTiddler&gt;is[image]] -[&lt;targetTiddler&gt;type[image/svg+xml]]&quot;,
             &quot;dropdown&quot;: &quot;$:/core/ui/EditorToolbar/paint-dropdown&quot;,
             &quot;text&quot;: &quot;\\define toolbar-paint()\n&lt;div style=\&quot;display: inline-block; vertical-align: middle; background-color: $(colour-picker-value)$; width: 1em; height: 1em; border-radius: 50%;\&quot;/&gt;\n\\end\n&lt;$set name=\&quot;colour-picker-value\&quot; value={{$:/config/BitmapEditor/Colour}}&gt;\n&lt;&lt;toolbar-paint&gt;&gt;\n&lt;/$set&gt;\n&quot;
         },
@@ -7859,7 +7865,7 @@ Error message and password prompt
             &quot;icon&quot;: &quot;$:/core/images/rotate-left&quot;,
             &quot;caption&quot;: &quot;{{$:/language/Buttons/RotateLeft/Caption}}&quot;,
             &quot;description&quot;: &quot;{{$:/language/Buttons/RotateLeft/Hint}}&quot;,
-            &quot;condition&quot;: &quot;[&lt;targetTiddler&gt;is[image]]&quot;,
+            &quot;condition&quot;: &quot;[&lt;targetTiddler&gt;is[image]] -[&lt;targetTiddler&gt;type[image/svg+xml]]&quot;,
             &quot;text&quot;: &quot;&lt;$action-sendmessage\n\t$message=\&quot;tm-edit-bitmap-operation\&quot;\n\t$param=\&quot;rotate-left\&quot;\n/&gt;\n&quot;
         },
         &quot;$:/core/ui/EditorToolbar/size-dropdown&quot;: {
@@ -7872,7 +7878,7 @@ Error message and password prompt
             &quot;icon&quot;: &quot;$:/core/images/size&quot;,
             &quot;caption&quot;: &quot;{{$:/language/Buttons/Size/Caption}}&quot;,
             &quot;description&quot;: &quot;{{$:/language/Buttons/Size/Hint}}&quot;,
-            &quot;condition&quot;: &quot;[&lt;targetTiddler&gt;is[image]]&quot;,
+            &quot;condition&quot;: &quot;[&lt;targetTiddler&gt;is[image]] -[&lt;targetTiddler&gt;type[image/svg+xml]]&quot;,
             &quot;dropdown&quot;: &quot;$:/core/ui/EditorToolbar/size-dropdown&quot;,
             &quot;text&quot;: &quot;&quot;
         },
@@ -7886,7 +7892,7 @@ Error message and password prompt
             &quot;icon&quot;: &quot;$:/core/images/stamp&quot;,
             &quot;caption&quot;: &quot;{{$:/language/Buttons/Stamp/Caption}}&quot;,
             &quot;description&quot;: &quot;{{$:/language/Buttons/Stamp/Hint}}&quot;,
-            &quot;condition&quot;: &quot;[&lt;targetTiddler&gt;type[]] [&lt;targetTiddler&gt;get[type]prefix[text/]] [&lt;targetTiddler&gt;get[type]match[application/javascript]] [&lt;targetTiddler&gt;get[type]match[application/json]] [&lt;targetTiddler&gt;get[type]match[application/x-tiddler-dictionary]] +[first[]]&quot;,
+            &quot;condition&quot;: &quot;[&lt;targetTiddler&gt;type[]] [&lt;targetTiddler&gt;get[type]prefix[text/]] [&lt;targetTiddler&gt;get[type]match[application/javascript]] [&lt;targetTiddler&gt;get[type]match[application/json]] [&lt;targetTiddler&gt;get[type]match[application/x-tiddler-dictionary]] [&lt;targetTiddler&gt;get[type]match[image/svg+xml]] +[first[]]&quot;,
             &quot;shortcuts&quot;: &quot;((stamp))&quot;,
             &quot;dropdown&quot;: &quot;$:/core/ui/EditorToolbar/stamp-dropdown&quot;,
             &quot;text&quot;: &quot;&quot;
@@ -9905,7 +9911,7 @@ Error message and password prompt
 <div title="$:/grouped">
 <pre>yes</pre>
 </div>
-<div created="20201115113741490" current-tiddler="HelloThere" modified="20201115113741490" title="$:/HistoryList" type="application/json">
+<div created="20201115114234366" current-tiddler="HelloThere" modified="20201115114234366" title="$:/HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;HelloThere&quot;
@@ -9982,7 +9988,7 @@ Error message and password prompt
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20201115113741322&quot;
+            &quot;text&quot;: &quot;20201115114234220&quot;
         }
     }
 }</pre>
