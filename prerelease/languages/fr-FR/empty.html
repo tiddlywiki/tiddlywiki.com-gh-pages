@@ -12744,12 +12744,12 @@ Error message and password prompt
         &quot;$:/language/Help/rendertiddler&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/rendertiddler&quot;,
             &quot;description&quot;: &quot;Exécute le contenu d'un tiddler pour le type spécifié&quot;,
-            &quot;text&quot;: &quot;Enregistre vers le chemin indiqué le résultat de l'exécution d'un tiddler pour le type de contenu (ContentType) spécifié — par défaut `text/html`.\n\nUn tiddler modèle (template) peut être indiqué optionnellement. Dans ce cas, le tiddler modèle est exécuté après initialisation de la variable \&quot;currentTiddler\&quot; avec le tiddler dont le titre est donné en premier paramètre de la commande.\n\nLe nom et la valeur d'une variable supplémentaire peuvent être spécifiés optionnellement.\n\n```\n--rendertiddler &lt;titre&gt; &lt;chemindufichier&gt; [&lt;type&gt;] [&lt;modèle&gt;] [&lt;nom&gt;] [&lt;valeur&gt;]\n```\n\nPar défaut, le nom de fichier est résolu relativement au sous-répertoire `output` du répertoire de l'édition. La commande `--output` peut servir à rediriger la sortie vers un répertoire différent.\n\nLes répertoires présents dans le chemin du fichier et qui n'existent pas encore sont créés automatiquement.\n\nPar exemple, la commande ci-dessous enregistre tous les tiddlers correspondant au filtre `[tag[done]]` vers un fichier JSON de nom `output.json`, en faisant appel au template prédéfini `$:/core/templates/exporters/JsonFile`.\n\n```\n--rendertiddler \&quot;$:/core/templates/exporters/JsonFile\&quot; output.json text/plain \&quot;\&quot; exportFilter \&quot;[tag[done]]\&quot;\n```\n&quot;
+            &quot;text&quot;: &quot;(À noter : la commande `--rendertiddler` est dépréciée. Il est préférable d'utiliser la nouvelle commande `--render`, plus souple)\n\nEnregistre vers le chemin indiqué le résultat de l'exécution d'un tiddler pour le type de contenu (ContentType) spécifié — par défaut `text/html`.\n\nUn tiddler modèle (template) peut être indiqué optionnellement. Dans ce cas, le tiddler modèle est exécuté après initialisation de la variable \&quot;currentTiddler\&quot; avec le tiddler dont le titre est donné en premier paramètre de la commande.\n\nLe nom et la valeur d'une variable supplémentaire peuvent être spécifiés optionnellement.\n\n```\n--rendertiddler &lt;titre&gt; &lt;chemindufichier&gt; [&lt;type&gt;] [&lt;modèle&gt;] [&lt;nom&gt;] [&lt;valeur&gt;]\n```\n\nPar défaut, le nom de fichier est résolu relativement au sous-répertoire `output` du répertoire de l'édition. La commande `--output` peut servir à rediriger la sortie vers un répertoire différent.\n\nLes répertoires présents dans le chemin du fichier et qui n'existent pas encore sont créés automatiquement.\n\nPar exemple, la commande ci-dessous enregistre tous les tiddlers correspondant au filtre `[tag[done]]` vers un fichier JSON de nom `output.json`, en faisant appel au template prédéfini `$:/core/templates/exporters/JsonFile`.\n\n```\n--rendertiddler \&quot;$:/core/templates/exporters/JsonFile\&quot; output.json text/plain \&quot;\&quot; exportFilter \&quot;[tag[done]]\&quot;\n```\n&quot;
         },
         &quot;$:/language/Help/rendertiddlers&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/rendertiddlers&quot;,
             &quot;description&quot;: &quot;Exécute le contenu d'un ensemble de tiddlers sélectionnés par un filtre, pour le type de contenu (ContentType) spécifié&quot;,
-            &quot;text&quot;: &quot;Enregistre vers le chemin indiqué et avec l'extension indiquée — par défaut `.html`, le résultat de l'exécution d'un ensemble de tiddlers (sélectionnés par un filtre). Le résultat de l'exécution est rendu selon le type de contenu (ContentType) spécifié — par défaut `text/html` :\n\n```\n--rendertiddlers &lt;filtre&gt; &lt;modèle&gt; &lt;chemindurépertoire&gt; [&lt;type&gt;] [&lt;extension&gt;] [\&quot;noclean\&quot;]\n```\n\nPar exemple :\n\n```\n--rendertiddlers [!is[system]] $:/core/templates/static.tiddler.html ./static text/plain\n```\n\nPar défaut, le nom de fichier est résolu relativement au sous-répertoire `output` du répertoire de l'édition. La commande `--output` peut servir à rediriger la sortie vers un répertoire différent.\n\nTous les fichiers du répertoire cible sont supprimés, sauf si le drapeau ''noclean'' est spécifié. Le répertoire cible est créé récursivement s'il n'existe pas.&quot;
+            &quot;text&quot;: &quot;(À noter : la commande `--rendertiddlers` est dépréciée. Il est préférable d'utiliser la nouvelle commande `--render`, plus souple)\n\nEnregistre vers le chemin indiqué et avec l'extension indiquée — par défaut `.html`, le résultat de l'exécution d'un ensemble de tiddlers (sélectionnés par un filtre). Le résultat de l'exécution est rendu selon le type de contenu (ContentType) spécifié — par défaut `text/html` :\n\n```\n--rendertiddlers '&lt;filtre&gt;' &lt;modèle&gt; &lt;chemindurépertoire&gt; [&lt;type&gt;] [&lt;extension&gt;] [\&quot;noclean\&quot;]\n```\n\nPar exemple :\n\n```\n--rendertiddlers '[!is[system]]' $:/core/templates/static.tiddler.html ./static text/plain\n```\n\nPar défaut, le nom de fichier est résolu relativement au sous-répertoire `output` du répertoire de l'édition. La commande `--output` peut servir à rediriger la sortie vers un répertoire différent.\n\nTous les fichiers du répertoire cible sont supprimés, sauf si le drapeau ''noclean'' est spécifié. Le répertoire cible est créé récursivement s'il n'existe pas.&quot;
         },
         &quot;$:/language/Help/save&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/save&quot;,
@@ -12759,12 +12759,12 @@ Error message and password prompt
         &quot;$:/language/Help/savetiddler&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/savetiddler&quot;,
             &quot;description&quot;: &quot;Enregistre un tiddler dans un fichier sous sa forme brute&quot;,
-            &quot;text&quot;: &quot;Enregistre un tiddler texte ou binaire dans le fichier spécifié, sous sa forme brute. \n\n```\n--savetiddler &lt;titre&gt; &lt;chemindufichier&gt;\n```\n\nPar défaut, le nom de fichier est résolu relativement au sous-répertoire `output` du répertoire de l'édition. La commande `--output` peut servir à rediriger la sortie vers un répertoire différent.\n\nLes répertoires présents dans le chemin du fichier et qui n'existent pas encore sont créés automatiquement. &quot;
+            &quot;text&quot;: &quot;(À noter : la commande `--savetiddler` est dépréciée. Il est préférable d'utiliser la nouvelle commande `--save`, plus souple)\n\nEnregistre un tiddler texte ou binaire dans le fichier spécifié, sous sa forme brute. \n\n```\n--savetiddler &lt;titre&gt; &lt;chemindufichier&gt;\n```\n\nPar défaut, le nom de fichier est résolu relativement au sous-répertoire `output` du répertoire de l'édition. La commande `--output` peut servir à rediriger la sortie vers un répertoire différent.\n\nLes répertoires présents dans le chemin du fichier et qui n'existent pas encore sont créés automatiquement. &quot;
         },
         &quot;$:/language/Help/savetiddlers&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/savetiddlers&quot;,
             &quot;description&quot;: &quot;Enregistre un groupe de tiddlers vers un répertoire&quot;,
-            &quot;text&quot;: &quot;Enregistre un groupe de tiddlers vers le chemin spécifié, sous leur forme brute, texte ou binaire. \n\n```\n--savetiddlers &lt;filtre&gt; &lt;chemin-de-répertoire&gt; [\&quot;noclean\&quot;]\n```\n\nPar défaut, le répertoire de sortie est calculé relativement au sous-répertoire `output` du répertoire de l'édition. La commande `--output` peut servir à diriger la sortie vers un répertoire différent.\n\nLes fichiers présents dans le répertoire de sortie sont supprimés avant que soient enregistrés les fichiers des tiddlers spécifiés par le filtre. Pour empêcher cette suppression, ajouter le drapeau ''noclean''.\n\nLes éventuels répertoires manquants dans le chemin spécifié sont créés automatiquement.\n&quot;
+            &quot;text&quot;: &quot;(À noter : la commande `--savetiddlers` est dépréciée. Il est préférable d'utiliser la nouvelle commande `--save`, plus souple)\n\nEnregistre un groupe de tiddlers vers le chemin spécifié, sous leur forme brute, texte ou binaire. \n\n```\n--savetiddlers &lt;filtre&gt; &lt;chemin-de-répertoire&gt; [\&quot;noclean\&quot;]\n```\n\nPar défaut, le répertoire de sortie est calculé relativement au sous-répertoire `output` du répertoire de l'édition. La commande `--output` peut servir à diriger la sortie vers un répertoire différent.\n\nLes fichiers présents dans le répertoire de sortie sont supprimés avant que soient enregistrés les fichiers des tiddlers spécifiés par le filtre. Pour empêcher cette suppression, ajouter le drapeau ''noclean''.\n\nLes éventuels répertoires manquants dans le chemin spécifié sont créés automatiquement.\n&quot;
         },
         &quot;$:/language/Help/savewikifolder&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/savewikifolder&quot;,
@@ -12847,6 +12847,26 @@ Error message and password prompt
         &quot;$:/language/Import/Listing/Preview/DiffFields&quot;: {
             &quot;title&quot;: &quot;$:/language/Import/Listing/Preview/DiffFields&quot;,
             &quot;text&quot;: &quot;Diff (champs)&quot;
+        },
+        &quot;$:/language/Import/Listing/Rename/Tooltip&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Listing/Rename/Tooltip&quot;,
+            &quot;text&quot;: &quot;Renommer le tiddler avant l'importation&quot;
+        },
+        &quot;$:/language/Import/Listing/Rename/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Listing/Rename/Prompt&quot;,
+            &quot;text&quot;: &quot;Renommer en :&quot;
+        },
+        &quot;$:/language/Import/Listing/Rename/ConfirmRename&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Listing/Rename/ConfirmRename&quot;,
+            &quot;text&quot;: &quot;Renommer le tiddler&quot;
+        },
+        &quot;$:/language/Import/Listing/Rename/CancelRename&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Listing/Rename/CancelRename&quot;,
+            &quot;text&quot;: &quot;Annuler&quot;
+        },
+        &quot;$:/language/Import/Listing/Rename/OverwriteWarning&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Listing/Rename/OverwriteWarning&quot;,
+            &quot;text&quot;: &quot;Un tiddler avec le même titre existe déjà&quot;
         },
         &quot;$:/language/Import/Upgrader/Plugins/Suppressed/Incompatible&quot;: {
             &quot;title&quot;: &quot;$:/language/Import/Upgrader/Plugins/Suppressed/Incompatible&quot;,
@@ -12984,9 +13004,17 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/language/Error/FilterSyntax&quot;,
             &quot;text&quot;: &quot;Erreur de syntaxe dans l'expression du filtre&quot;
         },
+        &quot;$:/language/Error/FilterRunPrefix&quot;: {
+            &quot;title&quot;: &quot;$:/language/Error/FilterRunPrefix&quot;,
+            &quot;text&quot;: &quot;Erreur de filtre : Préfixe de run inconnu pour le filtre&quot;
+        },
         &quot;$:/language/Error/IsFilterOperator&quot;: {
             &quot;title&quot;: &quot;$:/language/Error/IsFilterOperator&quot;,
             &quot;text&quot;: &quot;Erreur de filtre : Opérande inconnu pour l'opérateur de filtre 'is'&quot;
+        },
+        &quot;$:/language/Error/FormatFilterOperator&quot;: {
+            &quot;title&quot;: &quot;$:/language/Error/FormatFilterOperator&quot;,
+            &quot;text&quot;: &quot;Erreur de filtre : Suffixe inconnu pour l'opérateur de filtre 'format'&quot;
         },
         &quot;$:/language/Error/LoadingPluginLibrary&quot;: {
             &quot;title&quot;: &quot;$:/language/Error/LoadingPluginLibrary&quot;,
@@ -13128,6 +13156,42 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/language/RecentChanges/DateFormat&quot;,
             &quot;text&quot;: &quot;DD MMM YYYY&quot;
         },
+        &quot;$:/language/Shortcuts/Input/AdvancedSearch/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Shortcuts/Input/AdvancedSearch/Hint&quot;,
+            &quot;text&quot;: &quot;Ouvre le panneau Recherche Avancée depuis le champ de recherche de la barre latérale&quot;
+        },
+        &quot;$:/language/Shortcuts/Input/Accept/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Shortcuts/Input/Accept/Hint&quot;,
+            &quot;text&quot;: &quot;Accepte l'élément sélectionné&quot;
+        },
+        &quot;$:/language/Shortcuts/Input/AcceptVariant/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Shortcuts/Input/AcceptVariant/Hint&quot;,
+            &quot;text&quot;: &quot;Accepte l'élément sélectionné (variante)&quot;
+        },
+        &quot;$:/language/Shortcuts/Input/Cancel/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Shortcuts/Input/Cancel/Hint&quot;,
+            &quot;text&quot;: &quot;Efface le champ d'entrée&quot;
+        },
+        &quot;$:/language/Shortcuts/Input/Down/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Shortcuts/Input/Down/Hint&quot;,
+            &quot;text&quot;: &quot;Sélectionne l'élément suivant&quot;
+        },
+        &quot;$:/language/Shortcuts/Input/Tab-Left/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Shortcuts/Input/Tab-Left/Hint&quot;,
+            &quot;text&quot;: &quot;Sélectionne l'onglet précédent&quot;
+        },
+        &quot;$:/language/Shortcuts/Input/Tab-Right/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Shortcuts/Input/Tab-Right/Hint&quot;,
+            &quot;text&quot;: &quot;Sélectionne l'onglet suivant&quot;
+        },
+        &quot;$:/language/Shortcuts/Input/Up/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Shortcuts/Input/Up/Hint&quot;,
+            &quot;text&quot;: &quot;Sélectionne l'élément précédent&quot;
+        },
+        &quot;$:/language/Shortcuts/SidebarLayout/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Shortcuts/SidebarLayout/Hint&quot;,
+            &quot;text&quot;: &quot;Change la mise en forme de la barre latérale&quot;
+        },
         &quot;$:/language/SystemTiddler/Tooltip&quot;: {
             &quot;title&quot;: &quot;$:/language/SystemTiddler/Tooltip&quot;,
             &quot;text&quot;: &quot;Ceci est un tiddler système&quot;
@@ -13194,7 +13258,7 @@ Error message and password prompt
         },
         &quot;$:/config/NewJournal/Tags&quot;: {
             &quot;title&quot;: &quot;$:/config/NewJournal/Tags&quot;,
-            &quot;tags&quot;: &quot;Journal&quot;
+            &quot;text&quot;: &quot;Journal\n&quot;
         },
         &quot;$:/language/Notifications/Save/Done&quot;: {
             &quot;title&quot;: &quot;$:/language/Notifications/Save/Done&quot;,
