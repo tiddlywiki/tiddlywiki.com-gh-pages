@@ -1006,7 +1006,9 @@ a.tc-tiddlylink:hover {
 }.tc-topbar-right {
 	top: 5px;
 	right: 29px;
-}.tc-topbar button {
+}@media (max-width: 959px) {.tc-topbar-right {
+		right: 10px;
+	}}.tc-topbar button {
 	padding: 8px;
 }.tc-topbar svg {
 	fill: #bbb;
@@ -1117,7 +1119,9 @@ a.tc-tiddlylink:hover {
 }.tc-tiddler-info .tc-tab-buttons button.tc-tab-selected {
 	background-color: #f8f8f8;
 	border-bottom: 1px solid #f8f8f8;
-}.tc-view-field-table {
+}@media (max-width: 959px) {.tc-tiddler-info {
+		padding: 14px 14px 14px 14px;
+	}}.tc-view-field-table {
 	width: 100%;
 }.tc-view-field-name {
 	width: 1%; /* Makes this column be as narrow as possible */
@@ -1128,6 +1132,7 @@ a.tc-tiddlylink:hover {
 }@media (max-width: 959px) {
 	.tc-tiddler-frame {
 		padding: 14px 14px 14px 14px;
+		margin-bottom: .5em;
 	}.tc-tiddler-info {
 		margin: 0 -14px 0 -14px;
 	}
