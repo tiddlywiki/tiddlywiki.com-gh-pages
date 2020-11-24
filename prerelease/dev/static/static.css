@@ -533,7 +533,7 @@ summary {
 	border-color: ;
 }/*
 ** Basic element styles
-*/html {
+*/html, body {
 	font-family: "Georgia", serif;
 	text-rendering: optimizeLegibility; /* Enables kerning and ligatures etc. */
 	-webkit-font-smoothing: antialiased;
