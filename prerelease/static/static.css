@@ -2370,7 +2370,62 @@ a.tc-tiddlylink:hover {
 	font-size: 15px;
 }.CodeMirror-scroll {
 	overflow-x: auto;
-	overflow-y: hidden;	
+	overflow-y: hidden;
+}.cm-s-tiddlywiki {
+  color-profile: sRGB;
+  rendering-intent: auto;
+}.cm-s-tiddlywiki.CodeMirror, .cm-s-tiddlywiki .CodeMirror-gutters { background-color: #f8f8f8; color: #333333; }
+.cm-s-tiddlywiki .CodeMirror-gutters {background: #f8f8f8; border-right: 0px;}
+.cm-s-tiddlywiki .CodeMirror-linenumber {color: #5778d8;}
+.cm-s-tiddlywiki .CodeMirror-cursor { border-left: 2px solid #333333; }
+.cm-s-tiddlywiki div.CodeMirror-selected { background: ; }
+.cm-s-tiddlywiki .CodeMirror-selectedtext,
+.cm-s-tiddlywiki .CodeMirror-selected,
+.cm-s-tiddlywiki .CodeMirror-line::selection,
+.cm-s-tiddlywiki .CodeMirror-line > span::selection,
+.cm-s-tiddlywiki .CodeMirror-line > span > span::selection,
+.cm-s-tiddlywiki .CodeMirror-line::-moz-selection,
+.cm-s-tiddlywiki .CodeMirror-line > span::-moz-selection,
+.cm-s-tiddlywiki .CodeMirror-line > span > span::-moz-selection { background: ; }
+.cm-s-tiddlywiki span.cm-comment { color: #bbb; font-style:italic; font-weight:normal; }
+.cm-s-tiddlywiki .CodeMirror-activeline-background, .cm-s-tiddlywiki .CodeMirror-activeline-gutter .CodeMirror-linenumber { background: #ffffff; }
+.cm-s-tiddlywiki .CodeMirror-activeline .CodeMirror-linenumber.CodeMirror-gutter-elt { background: #ffffff; color: #333333; }
+.cm-s-tiddlywiki .CodeMirror-matchingbracket { background: #5778d8; color:#333333 !important; }
+.cm-s-tiddlywiki span.cm-matchhighlight { color: #333333; background-color: #5778d8; font-weight: normal;}
+.cm-s-tiddlywiki span.cm-searching { color: #333333; background-color: #5778d8; font-weight: normal;}.cm-s-tiddlywiki .CodeMirror-widget {
+  text-shadow: none;
+}.cm-s-tiddlywiki .cm-header { color: #586e75; }
+.cm-s-tiddlywiki .cm-quote { color: #93a1a1; }.cm-s-tiddlywiki .cm-keyword { color: #cb4b16; }
+.cm-s-tiddlywiki .cm-atom { color: #d33682; }
+.cm-s-tiddlywiki .cm-number { color: #d33682; }
+.cm-s-tiddlywiki .cm-def { color: #2aa198; }.cm-s-tiddlywiki .cm-variable { color: #839496; }
+.cm-s-tiddlywiki .cm-variable-2 { color: #b58900; }
+.cm-s-tiddlywiki .cm-variable-3, .cm-s-tiddlywiki .cm-type { color: #6c71c4; }.cm-s-tiddlywiki .cm-property { color: #2aa198; }
+.cm-s-tiddlywiki .cm-operator { color: #6c71c4; }.cm-s-tiddlywiki .cm-comment { color: #586e75; font-style:italic; }.cm-s-tiddlywiki .cm-string { color: #859900; }
+.cm-s-tiddlywiki .cm-string-2 { color: #b58900; }.cm-s-tiddlywiki .cm-meta { color: #859900; }
+.cm-s-tiddlywiki .cm-qualifier { color: #b58900; }
+.cm-s-tiddlywiki .cm-builtin { color: #d33682; }
+.cm-s-tiddlywiki .cm-bracket { color: #cb4b16; }
+.cm-s-tiddlywiki .CodeMirror-matchingbracket { color: #859900; }
+.cm-s-tiddlywiki .CodeMirror-nonmatchingbracket { color: #dc322f; }
+.cm-s-tiddlywiki .cm-tag { color: #93a1a1; }
+.cm-s-tiddlywiki .cm-attribute { color: #2aa198; }
+.cm-s-tiddlywiki .cm-hr {
+  color: transparent;
+  border-top: 1px solid #586e75;
+  display: block;
+}
+.cm-s-tiddlywiki .cm-link { color: #93a1a1; cursor: pointer; }
+.cm-s-tiddlywiki .cm-special { color: #6c71c4; }
+.cm-s-tiddlywiki .cm-em {
+  color: #999;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+.cm-s-tiddlywiki .cm-error,
+.cm-s-tiddlywiki .cm-invalidchar {
+  color: #586e75;
+  border-bottom: 1px dotted #dc322f;
 }
 
 
@@ -2715,7 +2770,66 @@ Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
 }
 
 
-.hljs{display:block;overflow-x:auto;padding:.5em;color:#333;background:#f8f8f8;-webkit-text-size-adjust:none}.hljs-comment,.diff .hljs-header,.hljs-javadoc{color:#998;font-style:italic}.hljs-keyword,.css .rule .hljs-keyword,.hljs-winutils,.nginx .hljs-title,.hljs-subst,.hljs-request,.hljs-status{color:#333;font-weight:bold}.hljs-number,.hljs-hexcolor,.ruby .hljs-constant{color:teal}.hljs-string,.hljs-tag .hljs-value,.hljs-phpdoc,.hljs-dartdoc,.tex .hljs-formula{color:#d14}.hljs-title,.hljs-id,.scss .hljs-preprocessor{color:#900;font-weight:bold}.hljs-list .hljs-keyword,.hljs-subst{font-weight:normal}.hljs-class .hljs-title,.hljs-type,.vhdl .hljs-literal,.tex .hljs-command{color:#458;font-weight:bold}.hljs-tag,.hljs-tag .hljs-title,.hljs-rule .hljs-property,.django .hljs-tag .hljs-keyword{color:navy;font-weight:normal}.hljs-attribute,.hljs-variable,.lisp .hljs-body,.hljs-name{color:teal}.hljs-regexp{color:#009926}.hljs-symbol,.ruby .hljs-symbol .hljs-string,.lisp .hljs-keyword,.clojure .hljs-keyword,.scheme .hljs-keyword,.tex .hljs-special,.hljs-prompt{color:#990073}.hljs-built_in{color:#0086b3}.hljs-preprocessor,.hljs-pragma,.hljs-pi,.hljs-doctype,.hljs-shebang,.hljs-cdata{color:#999;font-weight:bold}.hljs-deletion{background:#fdd}.hljs-addition{background:#dfd}.diff .hljs-change{background:#0086b3}.hljs-chunk{color:#aaa}
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #f8f8f8;
+  color: #333333;
+  -webkit-text-size-adjust:none
+}.hljs-comment,
+.hljs-quote {
+  color: #93a1a1;
+}/* Solarized Green */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-addition {
+  color: #859900;
+}/* Solarized Cyan */
+.hljs-number,
+.hljs-string,
+.hljs-meta .hljs-meta-string,
+.hljs-literal,
+.hljs-doctag,
+.hljs-regexp {
+  color: #2aa198;
+}/* Solarized Blue */
+.hljs-title,
+.hljs-section,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: #268bd2;
+}/* Solarized Yellow */
+.hljs-attribute,
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-class .hljs-title,
+.hljs-type {
+  color: #b58900;
+}/* Solarized Orange */
+.hljs-symbol,
+.hljs-bullet,
+.hljs-subst,
+.hljs-meta,
+.hljs-meta .hljs-keyword,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-link {
+  color: #cb4b16;
+}/* Solarized Red */
+.hljs-built_in,
+.hljs-deletion {
+  color: #dc322f;
+}.hljs-formula {
+  background: #eee8d5;
+}.hljs-emphasis {
+  font-style: italic;
+}.hljs-strong {
+  font-weight: bold;
+}
+
 
 
 

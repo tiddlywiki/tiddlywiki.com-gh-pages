@@ -199,8 +199,6 @@ Error message and password prompt
 
 <li>$:/temp/info-plugin</li>
 
-<li>$:/themes/codemirror/tiddlywiki</li>
-
 <li>$:/themes/tiddlywiki/snowwhite</li>
 
 <li>$:/themes/tiddlywiki/vanilla</li>
@@ -221,8 +219,8 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div commit="8005c91e79cf1cbafe7aee64ff99398149d83c18" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 8005c91e79cf1cbafe7aee64ff99398149d83c18 of https://github.com/Jermolene/TiddlyWiki5 at 2020-11-28 07:28:12 UTC
+<div commit="09d7a77f1b5ecf6b3519de13f960223b8ab8e864" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit 09d7a77f1b5ecf6b3519de13f960223b8ab8e864 of https://github.com/Jermolene/TiddlyWiki5 at 2020-11-28 14:08:45 UTC
 </pre>
 </div>
 <div caption="Keymap" tags="$:/tags/SideBar" title="$:/codemirrordemo/sidebar/cheatsheet">
@@ -10135,7 +10133,7 @@ $:/codemirrordemo/sidebar/cheatsheet
 [[Draft of 'LoremIpsum']]
 </pre>
 </div>
-<div created="20201128072907008" current-tiddler="HelloThere" modified="20201128072907008" title="$:/HistoryList" type="application/json">
+<div created="20201128140937970" current-tiddler="HelloThere" modified="20201128140937970" title="$:/HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;HelloThere&quot;
@@ -10248,7 +10246,7 @@ $:/codemirrordemo/sidebar/cheatsheet
         &quot;$:/config/codemirror/theme&quot;: {
             &quot;title&quot;: &quot;$:/config/codemirror/theme&quot;,
             &quot;type&quot;: &quot;string&quot;,
-            &quot;text&quot;: &quot;default&quot;
+            &quot;text&quot;: &quot;tiddlywiki&quot;
         },
         &quot;$:/language/codemirror/homeUrl&quot;: {
             &quot;title&quot;: &quot;$:/language/codemirror/homeUrl&quot;,
@@ -10435,7 +10433,9 @@ $:/codemirrordemo/sidebar/cheatsheet
         &quot;$:/plugins/tiddlywiki/codemirror/styles&quot;: {
             &quot;title&quot;: &quot;$:/plugins/tiddlywiki/codemirror/styles&quot;,
             &quot;tags&quot;: &quot;[[$:/tags/Stylesheet]]&quot;,
-            &quot;text&quot;: &quot;/* Make the editor resize to fit its content */\n\n.CodeMirror {\n\theight: auto;\n\tborder: 1px solid &lt;&lt;colour tiddler-editor-border&gt;&gt;;\n\tline-height: 1.5;\n\tfont-family: {{$:/themes/tiddlywiki/vanilla/settings/editorfontfamily}};\n\tfont-size: {{$:/themes/tiddlywiki/vanilla/metrics/bodyfontsize}};\n}\n\n.CodeMirror-scroll {\n\toverflow-x: auto;\n\toverflow-y: hidden;\t\n}\n&quot;
+            &quot;module-type&quot;: &quot;codemirror-theme&quot;,
+            &quot;name&quot;: &quot;tiddlywiki&quot;,
+            &quot;text&quot;: &quot;/* Make the editor resize to fit its content */\n\n.CodeMirror {\n\theight: auto;\n\tborder: 1px solid &lt;&lt;colour tiddler-editor-border&gt;&gt;;\n\tline-height: 1.5;\n\tfont-family: {{$:/themes/tiddlywiki/vanilla/settings/editorfontfamily}};\n\tfont-size: {{$:/themes/tiddlywiki/vanilla/metrics/bodyfontsize}};\n}\n\n.CodeMirror-scroll {\n\toverflow-x: auto;\n\toverflow-y: hidden;\n}\n\n.cm-s-tiddlywiki {\n  color-profile: sRGB;\n  rendering-intent: auto;\n}\n\n.cm-s-tiddlywiki.CodeMirror, .cm-s-tiddlywiki .CodeMirror-gutters { background-color: &lt;&lt;colour tiddler-editor-background&gt;&gt;; color: &lt;&lt;colour foreground&gt;&gt;; }\n.cm-s-tiddlywiki .CodeMirror-gutters {background: &lt;&lt;colour tiddler-editor-background&gt;&gt;; border-right: 0px;}\n.cm-s-tiddlywiki .CodeMirror-linenumber {color: &lt;&lt;colour primary&gt;&gt;;}\n.cm-s-tiddlywiki .CodeMirror-cursor { border-left: 2px solid &lt;&lt;colour foreground&gt;&gt;; }\n.cm-s-tiddlywiki div.CodeMirror-selected { background: &lt;&lt;colour selection-background&gt;&gt;; }\n.cm-s-tiddlywiki .CodeMirror-selectedtext,\n.cm-s-tiddlywiki .CodeMirror-selected,\n.cm-s-tiddlywiki .CodeMirror-line::selection,\n.cm-s-tiddlywiki .CodeMirror-line &gt; span::selection,\n.cm-s-tiddlywiki .CodeMirror-line &gt; span &gt; span::selection,\n.cm-s-tiddlywiki .CodeMirror-line::-moz-selection,\n.cm-s-tiddlywiki .CodeMirror-line &gt; span::-moz-selection,\n.cm-s-tiddlywiki .CodeMirror-line &gt; span &gt; span::-moz-selection { background: &lt;&lt;colour selection-background&gt;&gt;; }\n.cm-s-tiddlywiki span.cm-comment { color: &lt;&lt;colour muted-foreground&gt;&gt;; font-style:italic; font-weight:normal; }\n.cm-s-tiddlywiki .CodeMirror-activeline-background, .cm-s-tiddlywiki .CodeMirror-activeline-gutter .CodeMirror-linenumber { background: &lt;&lt;colour background&gt;&gt;; }\n.cm-s-tiddlywiki .CodeMirror-activeline .CodeMirror-linenumber.CodeMirror-gutter-elt { background: &lt;&lt;colour background&gt;&gt;; color: &lt;&lt;colour foreground&gt;&gt;; }\n.cm-s-tiddlywiki .CodeMirror-matchingbracket { background: &lt;&lt;colour primary&gt;&gt;; color:&lt;&lt;colour foreground&gt;&gt; !important; }\n.cm-s-tiddlywiki span.cm-matchhighlight { color: &lt;&lt;colour foreground&gt;&gt;; background-color: &lt;&lt;colour primary&gt;&gt;; font-weight: normal;}\n.cm-s-tiddlywiki span.cm-searching { color: &lt;&lt;colour foreground&gt;&gt;; background-color: &lt;&lt;colour primary&gt;&gt;; font-weight: normal;}\n\n\n.cm-s-tiddlywiki .CodeMirror-widget {\n  text-shadow: none;\n}\n\n.cm-s-tiddlywiki .cm-header { color: #586e75; }\n.cm-s-tiddlywiki .cm-quote { color: #93a1a1; }\n\n.cm-s-tiddlywiki .cm-keyword { color: #cb4b16; }\n.cm-s-tiddlywiki .cm-atom { color: #d33682; }\n.cm-s-tiddlywiki .cm-number { color: #d33682; }\n.cm-s-tiddlywiki .cm-def { color: #2aa198; }\n\n.cm-s-tiddlywiki .cm-variable { color: #839496; }\n.cm-s-tiddlywiki .cm-variable-2 { color: #b58900; }\n.cm-s-tiddlywiki .cm-variable-3, .cm-s-tiddlywiki .cm-type { color: #6c71c4; }\n\n.cm-s-tiddlywiki .cm-property { color: #2aa198; }\n.cm-s-tiddlywiki .cm-operator { color: #6c71c4; }\n\n.cm-s-tiddlywiki .cm-comment { color: #586e75; font-style:italic; }\n\n.cm-s-tiddlywiki .cm-string { color: #859900; }\n.cm-s-tiddlywiki .cm-string-2 { color: #b58900; }\n\n.cm-s-tiddlywiki .cm-meta { color: #859900; }\n.cm-s-tiddlywiki .cm-qualifier { color: #b58900; }\n.cm-s-tiddlywiki .cm-builtin { color: #d33682; }\n.cm-s-tiddlywiki .cm-bracket { color: #cb4b16; }\n.cm-s-tiddlywiki .CodeMirror-matchingbracket { color: #859900; }\n.cm-s-tiddlywiki .CodeMirror-nonmatchingbracket { color: #dc322f; }\n.cm-s-tiddlywiki .cm-tag { color: #93a1a1; }\n.cm-s-tiddlywiki .cm-attribute { color: #2aa198; }\n.cm-s-tiddlywiki .cm-hr {\n  color: transparent;\n  border-top: 1px solid #586e75;\n  display: block;\n}\n.cm-s-tiddlywiki .cm-link { color: #93a1a1; cursor: pointer; }\n.cm-s-tiddlywiki .cm-special { color: #6c71c4; }\n.cm-s-tiddlywiki .cm-em {\n  color: #999;\n  text-decoration: underline;\n  text-decoration-style: dotted;\n}\n.cm-s-tiddlywiki .cm-error,\n.cm-s-tiddlywiki .cm-invalidchar {\n  color: #586e75;\n  border-bottom: 1px dotted #dc322f;\n}\n&quot;
         },
         &quot;$:/core/ui/ControlPanel/Settings/CodeMirror&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/ControlPanel/Settings/CodeMirror&quot;,
@@ -10796,64 +10796,10 @@ $:/codemirrordemo/sidebar/cheatsheet
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20201128072906866&quot;
+            &quot;text&quot;: &quot;20201128140937818&quot;
         }
     }
 }</pre>
-</div>
-<div module-type="codemirror-theme" name="tiddlywiki" tags="$:/tags/Stylesheet" title="$:/themes/codemirror/tiddlywiki">
-<pre>.cm-s-tiddlywiki {
-	font-size: 1em;
-	line-height: 1.5em;
-	letter-spacing: 0.3px;
-	word-spacing: 1px;
-	background: &lt;&lt;colour page-background&gt;&gt;;
-	color: &lt;&lt;colour foreground&gt;&gt;;
-}
-.cm-s-tiddlywiki .CodeMirror-lines {
-	padding: 8px 0;
-}
-.cm-s-tiddlywiki .CodeMirror-gutters {
-	background-color: &lt;&lt;colour page-background&gt;&gt;;
-	padding-right: 10px;
-	z-index: 3;
-	border: none;
-}
-.cm-s-tiddlywiki div.CodeMirror-cursor {
-	border-left: 3px solid &lt;&lt;colour very-muted-foreground&gt;&gt;;
-}
-.cm-s-tiddlywiki .CodeMirror-activeline-background {
-	background: &lt;&lt;colour tiddler-editor-fields-even&gt;&gt;;
-}
-.cm-s-tiddlywiki .CodeMirror-selected {
-	background: &lt;&lt;colour muted-foreground&gt;&gt;;
-}
-.cm-s-tiddlywiki .cm-comment {
-	font-style: italic;
-	color: &lt;&lt;colour muted-foreground&gt;&gt;;
-}
-.cm-s-tiddlywiki .CodeMirror-linenumber {
-	color: italic;
-}
-
-.cm-s-tiddlywiki span.cm-atom, .cm-s-tiddlywiki span.cm-number, .cm-s-tiddlywiki span.cm-keyword, .cm-s-tiddlywiki span.cm-variable, .cm-s-tiddlywiki span.cm-attribute, .cm-s-tiddlywiki span.cm-quote, .cm-s-tiddlywiki-light span.cm-hr, .cm-s-tiddlywiki-light span.cm-link { color: #063289; }
-
-.cm-s-tiddlywiki span.cm-property { color: #b29762; }
-.cm-s-tiddlywiki span.cm-punctuation, .cm-s-tiddlywiki span.cm-unit, .cm-s-tiddlywiki span.cm-negative { color: #063289; }
-.cm-s-tiddlywiki span.cm-string, .cm-s-tiddlywiki span.cm-operator { color: #1659df; }
-.cm-s-tiddlywiki span.cm-positive { color: #896724; }
-
-.cm-s-tiddlywiki span.cm-variable-2, .cm-s-tiddlywiki span.cm-variable-3, .cm-s-tiddlywiki span.cm-type, .cm-s-tiddlywiki span.cm-string-2, .cm-s-tiddlywiki span.cm-url { color: #896724; }
-.cm-s-tiddlywiki span.cm-def, .cm-s-tiddlywiki span.cm-tag, .cm-s-tiddlywiki span.cm-builtin, .cm-s-tiddlywiki span.cm-qualifier, .cm-s-tiddlywiki span.cm-header, .cm-s-tiddlywiki span.cm-em { color: #2d2006; }
-.cm-s-tiddlywiki span.cm-bracket, .cm-s-tiddlywiki span.cm-comment { color: #b6ad9a; }
-
-/* using #f00 red for errors, don't think any of the colorscheme variables will stand out enough, ... maybe by giving it a background-color ... */
-/* .cm-s-tiddlywiki span.cm-error { background: #896724; color: #728fcb; } */
-.cm-s-tiddlywiki span.cm-error, .cm-s-tiddlywiki span.cm-invalidchar { color: #f00; }
-
-.cm-s-tiddlywiki span.cm-header { font-weight: normal; }
-.cm-s-tiddlywiki .CodeMirror-matchingbracket { text-decoration: underline; color: #faf8f5 !important; }
-</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23-prerelease">
 <pre>{
