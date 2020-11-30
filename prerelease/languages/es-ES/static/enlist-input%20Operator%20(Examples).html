@@ -16,7 +16,7 @@
 <body class="tc-body">
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
 </p>
-<section class="tc-story-river">
+<section class="tc-story-river tc-static-story-river">
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-enlist-input%20Operator tc-tagged-Operator%20Examples" data-tags="[[enlist-input Operator]] [[Operator Examples]]" data-tiddler-title="enlist-input Operator (Examples)"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
@@ -118,7 +118,30 @@ Contrast with: <div class="doc-example">
 	</dl>
 </span>
 <span class=" tc-reveal" hidden="true"></span>
-</div></p></div>
+</div>
+<div class="doc-example">
+<code>'HelloThere HelloThere GettingStarted [[Customise TiddlyWiki]]' +[enlist-input:raw[]]</code>
+
+
+<span class=" tc-reveal">
+	<dl>
+	<dd><button class="">Try it</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div>
+Contrast with: <div class="doc-example">
+<code>'HelloThere HelloThere GettingStarted [[Customise TiddlyWiki]]' +[enlist-input[]]</code>
+
+
+<span class=" tc-reveal">
+	<dl>
+	<dd><button class="">Try it</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div>
+</p></div>
 
 
 
@@ -128,3 +151,4 @@ Contrast with: <div class="doc-example">
 </section>
 </body>
 </html>
+
