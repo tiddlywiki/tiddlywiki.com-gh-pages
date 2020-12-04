@@ -2409,21 +2409,26 @@ a.tc-tiddlylink:hover {
 .cm-s-tiddlywiki .CodeMirror-line > span::-moz-selection,
 .cm-s-tiddlywiki .CodeMirror-line > span > span::-moz-selection { background: ; }
 .cm-s-tiddlywiki span.cm-comment { color: #bbb; font-style:italic; font-weight:normal; }
-.cm-s-tiddlywiki .CodeMirror-activeline-background, .cm-s-tiddlywiki .CodeMirror-activeline-gutter .CodeMirror-linenumber { background: #ffffff; }
-.cm-s-tiddlywiki .CodeMirror-activeline .CodeMirror-linenumber.CodeMirror-gutter-elt { background: #5778d8; color: #ffffff; }
-.cm-s-tiddlywiki .CodeMirror-matchingbracket { background: #5778d8; color:#333333 !important; }
-.cm-s-tiddlywiki span.cm-matchhighlight { color: #333333; background-color: #5778d8; font-weight: normal;}
-.cm-s-tiddlywiki span.cm-searching { color: #333333; background-color: #5778d8; font-weight: normal;}.cm-s-tiddlywiki .CodeMirror-widget {
+.cm-s-tiddlywiki .CodeMirror-activeline-background, .cm-s-tiddlywiki .CodeMirror-activeline-gutter .CodeMirror-linenumber { background: rgba(127,127,127,0.2); }
+.cm-s-tiddlywiki span.cm-matchhighlight { color: #ffffff; background-color: #5778d8; font-weight: normal;}
+.cm-s-tiddlywiki .CodeMirror-widget {
   text-shadow: none;
-}.cm-s-tiddlywiki .cm-header { color: #586e75; }
-.cm-s-tiddlywiki .cm-quote { color: #93a1a1; }.cm-s-tiddlywiki .cm-keyword { color: #cb4b16; }
+}
+.cm-s-tiddlywiki .cm-header { color: #586e75; }
+.cm-s-tiddlywiki .cm-quote { color: #93a1a1; }
+.cm-s-tiddlywiki .cm-keyword { color: #cb4b16; }
 .cm-s-tiddlywiki .cm-atom { color: #d33682; }
 .cm-s-tiddlywiki .cm-number { color: #d33682; }
-.cm-s-tiddlywiki .cm-def { color: #2aa198; }.cm-s-tiddlywiki .cm-variable { color: #839496; }
+.cm-s-tiddlywiki .cm-def { color: #2aa198; }
+.cm-s-tiddlywiki .cm-variable { color: #839496; }
 .cm-s-tiddlywiki .cm-variable-2 { color: #b58900; }
-.cm-s-tiddlywiki .cm-variable-3, .cm-s-tiddlywiki .cm-type { color: #6c71c4; }.cm-s-tiddlywiki .cm-property { color: #2aa198; }
-.cm-s-tiddlywiki .cm-operator { color: #6c71c4; }.cm-s-tiddlywiki .cm-comment { color: #586e75; font-style:italic; }.cm-s-tiddlywiki .cm-string { color: #859900; }
-.cm-s-tiddlywiki .cm-string-2 { color: #b58900; }.cm-s-tiddlywiki .cm-meta { color: #859900; }
+.cm-s-tiddlywiki .cm-variable-3, .cm-s-tiddlywiki .cm-type { color: #6c71c4; }
+.cm-s-tiddlywiki .cm-property { color: #2aa198; }
+.cm-s-tiddlywiki .cm-operator { color: #6c71c4; }
+.cm-s-tiddlywiki .cm-comment { color: #586e75; font-style:italic; }
+.cm-s-tiddlywiki .cm-string { color: #859900; }
+.cm-s-tiddlywiki .cm-string-2 { color: #b58900; }
+.cm-s-tiddlywiki .cm-meta { color: #859900; }
 .cm-s-tiddlywiki .cm-qualifier { color: #b58900; }
 .cm-s-tiddlywiki .cm-builtin { color: #d33682; }
 .cm-s-tiddlywiki .cm-bracket { color: #cb4b16; }
@@ -2448,6 +2453,13 @@ a.tc-tiddlylink:hover {
   color: #586e75;
   border-bottom: 1px dotted #dc322f;
 }
+.cm-s-tiddlywiki .CodeMirror-matchingbracket { color: #859900; }
+.cm-s-tiddlywiki .CodeMirror-nonmatchingbracket { color: #dc322f; }
+.cm-s-tiddlywiki .cm-searching { background: rgba(243, 155, 53, .3); outline: 1px solid #F39B35; }
+
+.cm-s-tiddlywiki.cm-fat-cursor .CodeMirror-cursor { background: #77ee77; }
+.cm-s-tiddlywiki .cm-animate-fat-cursor { background-color: #77ee77; }
+
 
 
 .tc-is-comment-header {
