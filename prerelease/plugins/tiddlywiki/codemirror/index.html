@@ -221,8 +221,8 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div commit="5df0225356ee734e5e847a86e186ecb203cd807f" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 5df0225356ee734e5e847a86e186ecb203cd807f of https://github.com/Jermolene/TiddlyWiki5 at 2020-12-07 10:23:33 UTC
+<div commit="90f05295a2c1db74665796926d8d3f21e968ffa1" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit 90f05295a2c1db74665796926d8d3f21e968ffa1 of https://github.com/Jermolene/TiddlyWiki5 at 2020-12-07 14:45:26 UTC
 </pre>
 </div>
 <div caption="Keymap" tags="$:/tags/SideBar" title="$:/codemirrordemo/sidebar/cheatsheet">
@@ -10295,9 +10295,17 @@ $:/codemirrordemo/sidebar/cheatsheet
             &quot;title&quot;: &quot;$:/language/codemirror/controlPanel/hint&quot;,
             &quot;text&quot;: &quot;These settings let you customise the behaviour of [[CodeMirror|$:/plugins/tiddlywiki/codemirror]].&quot;
         },
+        &quot;$:/language/codemirror/controlPanel/keyboard&quot;: {
+            &quot;title&quot;: &quot;$:/language/codemirror/controlPanel/keyboard&quot;,
+            &quot;text&quot;: &quot;Keyboard shortcuts&quot;
+        },
         &quot;$:/language/codemirror/controlPanel/usage&quot;: {
             &quot;title&quot;: &quot;$:/language/codemirror/controlPanel/usage&quot;,
             &quot;text&quot;: &quot;Usage information&quot;
+        },
+        &quot;$:/language/codemirror/cursorBlinkRate/hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/codemirror/cursorBlinkRate/hint&quot;,
+            &quot;text&quot;: &quot;Cursor blink rate&quot;
         },
         &quot;$:/language/codemirror/editorFont/hint&quot;: {
             &quot;title&quot;: &quot;$:/language/codemirror/editorFont/hint&quot;,
@@ -10307,9 +10315,17 @@ $:/codemirrordemo/sidebar/cheatsheet
             &quot;title&quot;: &quot;$:/language/codemirror/editorFont/info&quot;,
             &quot;text&quot;: &quot;Set the font family for the ~CodeMirror text-editor&quot;
         },
-        &quot;$:/language/codemirror/controlPanel/keyboard&quot;: {
-            &quot;title&quot;: &quot;$:/language/codemirror/controlPanel/keyboard&quot;,
-            &quot;text&quot;: &quot;Keyboard shortcuts&quot;
+        &quot;$:/language/codemirror/indentUnit/hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/codemirror/indentUnit/hint&quot;,
+            &quot;text&quot;: &quot;How many spaces a block should be indented&quot;
+        },
+        &quot;$:/language/codemirror/indentWithTabs/hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/codemirror/indentWithTabs/hint&quot;,
+            &quot;text&quot;: &quot;Enable indenting with tabs&quot;
+        },
+        &quot;$:/language/codemirror/indentWithTabs/info&quot;: {
+            &quot;title&quot;: &quot;$:/language/codemirror/indentWithTabs/info&quot;,
+            &quot;text&quot;: &quot;Whether, when indenting, the first N*`tabSize` spaces should be replaced by N tabs.&quot;
         },
         &quot;$:/language/codemirror/keyMap/hint&quot;: {
             &quot;title&quot;: &quot;$:/language/codemirror/keyMap/hint&quot;,
@@ -10343,6 +10359,14 @@ $:/codemirrordemo/sidebar/cheatsheet
             &quot;title&quot;: &quot;$:/language/codemirror/showCursorWhenSelecting/info&quot;,
             &quot;text&quot;: &quot;Whether the cursor should be drawn when a selection is active.&quot;
         },
+        &quot;$:/language/codemirror/smartIndent/hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/codemirror/smartIndent/hint&quot;,
+            &quot;text&quot;: &quot;Enable smart indent&quot;
+        },
+        &quot;$:/language/codemirror/smartIndent/info&quot;: {
+            &quot;title&quot;: &quot;$:/language/codemirror/smartIndent/info&quot;,
+            &quot;text&quot;: &quot;Whether to use the context-sensitive indentation that the mode provides (or just indent the same as the line before). Defaults to `true`.&quot;
+        },
         &quot;$:/language/codemirror/styleActiveLine/hint&quot;: {
             &quot;title&quot;: &quot;$:/language/codemirror/styleActiveLine/hint&quot;,
             &quot;text&quot;: &quot;Highlight active line&quot;
@@ -10350,6 +10374,10 @@ $:/codemirrordemo/sidebar/cheatsheet
         &quot;$:/language/codemirror/styleActiveLine/info&quot;: {
             &quot;title&quot;: &quot;$:/language/codemirror/styleActiveLine/info&quot;,
             &quot;text&quot;: &quot;Whether or not to highlight the active text-editor line&quot;
+        },
+        &quot;$:/language/codemirror/tabSize/hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/codemirror/tabSize/hint&quot;,
+            &quot;text&quot;: &quot;Width of a tab character&quot;
         },
         &quot;$:/language/codemirror/theme/hint&quot;: {
             &quot;title&quot;: &quot;$:/language/codemirror/theme/hint&quot;,
@@ -10419,11 +10447,29 @@ $:/codemirrordemo/sidebar/cheatsheet
             &quot;title&quot;: &quot;$:/plugins/tiddlywiki/codemirror/readme&quot;,
             &quot;text&quot;: &quot;This plugin provides an enhanced text editor component based on [[CodeMirror|http://codemirror.net]]. The basic configuration is designed to be as lightweight as possible and is just around 235kb of size. Additional features can be installed with ~CodeMirror ~AddOns from the plugin library.\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/codemirror]]\n\nBased on ~CodeMirror version 5.58.3\n&quot;
         },
+        &quot;$:/core/ui/ControlPanel/Settings/codemirror/cursorBlinkRate&quot;: {
+            &quot;title&quot;: &quot;$:/core/ui/ControlPanel/Settings/codemirror/cursorBlinkRate&quot;,
+            &quot;tags&quot;: &quot;$:/tags/ControlPanel/Settings/CodeMirror&quot;,
+            &quot;caption&quot;: &quot;{{$:/language/codemirror/cursorBlinkRate/hint}}&quot;,
+            &quot;text&quot;: &quot;\\define lingo-base() $:/language/codemirror/cursorBlinkRate/\n\n|&lt;$link to=\&quot;$:/config/codemirror/cursorBlinkRate\&quot;&gt;&lt;&lt;lingo hint&gt;&gt;&lt;/$link&gt; |&lt;$edit-text tiddler=\&quot;$:/config/codemirror/cursorBlinkRate\&quot; default=\&quot;\&quot; placeholder=\&quot;cursorBlinkRate\&quot; tag=\&quot;input\&quot;/&gt; |\n&quot;
+        },
         &quot;$:/core/ui/ControlPanel/Settings/codemirror/editorFont&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/ControlPanel/Settings/codemirror/editorFont&quot;,
             &quot;tags&quot;: &quot;$:/tags/ControlPanel/Settings/CodeMirror&quot;,
             &quot;caption&quot;: &quot;{{$:/language/codemirror/editorFont/hint}}&quot;,
             &quot;text&quot;: &quot;\\define lingo-base() $:/language/ThemeTweaks/\n\n|&lt;$link to=\&quot;$:/themes/tiddlywiki/vanilla/settings/editorfontfamily\&quot;&gt;&lt;&lt;lingo Settings/EditorFontFamily&gt;&gt;&lt;/$link&gt; |&lt;$edit-text tiddler=\&quot;$:/themes/tiddlywiki/vanilla/settings/editorfontfamily\&quot; default=\&quot;\&quot; tag=\&quot;input\&quot;/&gt; | |\n&quot;
+        },
+        &quot;$:/core/ui/ControlPanel/Settings/codemirror/indentUnit&quot;: {
+            &quot;title&quot;: &quot;$:/core/ui/ControlPanel/Settings/codemirror/indentUnit&quot;,
+            &quot;tags&quot;: &quot;$:/tags/ControlPanel/Settings/CodeMirror&quot;,
+            &quot;caption&quot;: &quot;{{$:/language/codemirror/indentUnit/hint}}&quot;,
+            &quot;text&quot;: &quot;\\define lingo-base() $:/language/codemirror/indentUnit/\n\n|&lt;$link to=\&quot;$:/config/codemirror/indentUnit\&quot;&gt;&lt;&lt;lingo hint&gt;&gt;&lt;/$link&gt; |&lt;$edit-text tiddler=\&quot;$:/config/codemirror/indentUnit\&quot; default=\&quot;\&quot; placeholder=\&quot;indentUnit\&quot; tag=\&quot;input\&quot;/&gt; |\n&quot;
+        },
+        &quot;$:/core/ui/ControlPanel/Settings/codemirror/indentWithTabs&quot;: {
+            &quot;title&quot;: &quot;$:/core/ui/ControlPanel/Settings/codemirror/indentWithTabs&quot;,
+            &quot;tags&quot;: &quot;$:/tags/ControlPanel/Settings/CodeMirror&quot;,
+            &quot;caption&quot;: &quot;{{$:/language/codemirror/indentWithTabs/hint}}&quot;,
+            &quot;text&quot;: &quot;\\define lingo-base() $:/language/codemirror/indentWithTabs/\n&lt;&lt;lingo hint&gt;&gt;\n\n&lt;$checkbox tiddler=\&quot;$:/config/codemirror/indentWithTabs\&quot; field=\&quot;text\&quot; checked=\&quot;true\&quot; unchecked=\&quot;false\&quot; default=\&quot;true\&quot;&gt; &lt;$link to=\&quot;$:/config/codemirror/indentWithTabs\&quot;&gt;&lt;&lt;lingo info&gt;&gt;&lt;/$link&gt; &lt;/$checkbox&gt;\n&quot;
         },
         &quot;$:/core/ui/ControlPanel/Settings/codemirror/keyMap&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/ControlPanel/Settings/codemirror/keyMap&quot;,
@@ -10449,11 +10495,23 @@ $:/codemirrordemo/sidebar/cheatsheet
             &quot;caption&quot;: &quot;{{$:/language/codemirror/showCursorWhenSelecting/hint}}&quot;,
             &quot;text&quot;: &quot;\\define lingo-base() $:/language/codemirror/showCursorWhenSelecting/\n&lt;&lt;lingo hint&gt;&gt;\n\n&lt;$checkbox tiddler=\&quot;$:/config/codemirror/showCursorWhenSelecting\&quot; field=\&quot;text\&quot; checked=\&quot;true\&quot; unchecked=\&quot;false\&quot; default=\&quot;true\&quot;&gt; &lt;$link to=\&quot;$:/config/codemirror/showCursorWhenSelecting\&quot;&gt;&lt;&lt;lingo info&gt;&gt;&lt;/$link&gt; &lt;/$checkbox&gt;\n\n&quot;
         },
+        &quot;$:/core/ui/ControlPanel/Settings/codemirror/smartIndent&quot;: {
+            &quot;title&quot;: &quot;$:/core/ui/ControlPanel/Settings/codemirror/smartIndent&quot;,
+            &quot;tags&quot;: &quot;$:/tags/ControlPanel/Settings/CodeMirror&quot;,
+            &quot;caption&quot;: &quot;{{$:/language/codemirror/smartIndent/hint}}&quot;,
+            &quot;text&quot;: &quot;\\define lingo-base() $:/language/codemirror/smartIndent/\n&lt;&lt;lingo hint&gt;&gt;\n\n&lt;$checkbox tiddler=\&quot;$:/config/codemirror/smartIndent\&quot; field=\&quot;text\&quot; checked=\&quot;true\&quot; unchecked=\&quot;false\&quot; default=\&quot;true\&quot;&gt; &lt;$link to=\&quot;$:/config/codemirror/smartIndent\&quot;&gt;&lt;&lt;lingo info&gt;&gt;&lt;/$link&gt; &lt;/$checkbox&gt;\n&quot;
+        },
         &quot;$:/core/ui/ControlPanel/Settings/codemirror/styleActiveLine&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/ControlPanel/Settings/codemirror/styleActiveLine&quot;,
             &quot;tags&quot;: &quot;$:/tags/ControlPanel/Settings/CodeMirror&quot;,
             &quot;caption&quot;: &quot;{{$:/language/codemirror/styleActiveLine/hint}}&quot;,
             &quot;text&quot;: &quot;\\define lingo-base() $:/language/codemirror/styleActiveLine/\n&lt;&lt;lingo hint&gt;&gt;\n\n&lt;$checkbox tiddler=\&quot;$:/config/codemirror/styleActiveLine\&quot; field=\&quot;text\&quot; checked=\&quot;true\&quot; unchecked=\&quot;false\&quot; default=\&quot;false\&quot;&gt; &lt;$link to=\&quot;$:/config/codemirror/styleActiveLine\&quot;&gt;&lt;&lt;lingo info&gt;&gt;&lt;/$link&gt; &lt;/$checkbox&gt;\n\n&quot;
+        },
+        &quot;$:/core/ui/ControlPanel/Settings/codemirror/tabSize&quot;: {
+            &quot;title&quot;: &quot;$:/core/ui/ControlPanel/Settings/codemirror/tabSize&quot;,
+            &quot;tags&quot;: &quot;$:/tags/ControlPanel/Settings/CodeMirror&quot;,
+            &quot;caption&quot;: &quot;{{$:/language/codemirror/tabSize/hint}}&quot;,
+            &quot;text&quot;: &quot;\\define lingo-base() $:/language/codemirror/tabSize/\n\n|&lt;$link to=\&quot;$:/config/codemirror/tabSize\&quot;&gt;&lt;&lt;lingo hint&gt;&gt;&lt;/$link&gt; |&lt;$edit-text tiddler=\&quot;$:/config/codemirror/tabSize\&quot; default=\&quot;\&quot; placeholder=\&quot;tabSize\&quot; tag=\&quot;input\&quot;/&gt; |\n&quot;
         },
         &quot;$:/core/ui/ControlPanel/Settings/codemirror/theme&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/ControlPanel/Settings/codemirror/theme&quot;,
