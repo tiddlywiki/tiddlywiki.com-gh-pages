@@ -6412,7 +6412,7 @@ Error message and password prompt
         },
         &quot;$:/core/modules/utils/linkedlist.js&quot;: {
             &quot;title&quot;: &quot;$:/core/modules/utils/linkedlist.js&quot;,
-            &quot;text&quot;: &quot;/*\\\nmodule-type: utils\ntitle: $:/core/modules/utils/linkedlist.js\ntype: application/javascript\n\nThis is a doubly-linked indexed list intended for manipulation, particularly\npushTop, which it does with significantly better performance than an array.\n\n\\*/\n(function(){\n\nfunction LinkedList() {\n\tthis.clear();\n};\n\nLinkedList.prototype.clear = function() {\n\tthis.index = Object.create(null);\n\t// LinkedList performs the duty of both the head and tail node\n\tthis.next = this;\n\tthis.prev = this;\n\tthis.length = 0;\n};\n\nLinkedList.prototype.remove = function(value) {\n\tif($tw.utils.isArray(value)) {\n\t\tfor(var t=0; t&lt;value.length; t++) {\n\t\t\tthis._removeOne(value[t]);\n\t\t}\n\t} else {\n\t\tthis._removeOne(value);\n\t}\n};\n\nLinkedList.prototype._removeOne = function(value) {\n\tvar node = this.index[value];\n\tif(node) {\n\t\tnode.prev.next = node.next;\n\t\tnode.next.prev = node.prev;\n\t\tthis.length -= 1;\n\t\t// Point index to the next instance of the same value, maybe nothing.\n\t\tthis.index[value] = node.copy;\n\t}\n\treturn node;\n};\n\nLinkedList.prototype._linkToEnd = function(node) {\n\t// Sticks the given node onto the end of the list.\n\tthis.prev.next = node;\n\tnode.prev = this.prev;\n\tthis.prev = node;\n\tnode.next = this;\n\tthis.length += 1;\n};\n\nLinkedList.prototype.push = function(/* values */) {\n\tfor(var i = 0; i &lt; arguments.length; i++) {\n\t\tvar value = arguments[i];\n\t\tvar node = {value: value};\n\t\tvar preexistingNode = this.index[value];\n\t\tthis._linkToEnd(node);\n\t\tif(preexistingNode) {\n\t\t\t// We want to keep pointing to the first instance, but we want\n\t\t\t// to have that instance (or chain of instances) point to the\n\t\t\t// new one.\n\t\t\twhile (preexistingNode.copy) {\n\t\t\t\tpreexistingNode = preexistingNode.copy;\n\t\t\t}\n\t\t\tpreexistingNode.copy = node;\n\t\t} else {\n\t\t\tthis.index[value] = node;\n\t\t}\n\t}\n};\n\nLinkedList.prototype.pushTop = function(value) {\n\tif($tw.utils.isArray(value)) {\n\t\tfor(var t=0; t&lt;value.length; t++) {\n\t\t\tthis._removeOne(value[t]);\n\t\t}\n\t\tthis.push.apply(this, value);\n\t} else {\n\t\tvar node = this._removeOne(value);\n\t\tif(!node) {\n\t\t\tnode = {value: value};\n\t\t\tthis.index[value] = node;\n\t\t} else {\n\t\t\t// Put this node at the end of the copy chain.\n\t\t\tvar preexistingNode = node;\n\t\t\twhile(preexistingNode.copy) {\n\t\t\t\tpreexistingNode = preexistingNode.copy;\n\t\t\t}\n\t\t\t// The order of these three statements is important,\n\t\t\t// because sometimes preexistingNode == node.\n\t\t\tpreexistingNode.copy = node;\n\t\t\tthis.index[value] = node.copy;\n\t\t\tnode.copy = undefined;\n\t\t}\n\t\tthis._linkToEnd(node);\n\t}\n};\n\nLinkedList.prototype.each = function(callback) {\n\tfor(var ptr = this.next; ptr !== this; ptr = ptr.next) {\n\t\tcallback(ptr.value);\n\t}\n};\n\nLinkedList.prototype.toArray = function() {\n\tvar output = [];\n\tfor(var ptr = this.next; ptr !== this; ptr = ptr.next) {\n\t\toutput.push(ptr.value);\n\t}\n\treturn output;\n};\n\nexports.LinkedList = LinkedList;\n\n})();\n&quot;,
+            &quot;text&quot;: &quot;/*\\\nmodule-type: utils\ntitle: $:/core/modules/utils/linkedlist.js\ntype: application/javascript\n\nThis is a doubly-linked indexed list intended for manipulation, particularly\npushTop, which it does with significantly better performance than an array.\n\n\\*/\n(function(){\n\nfunction LinkedList() {\n\tthis.clear();\n};\n\nLinkedList.prototype.clear = function() {\n\tthis.index = Object.create(null);\n\t// LinkedList performs the duty of both the head and tail node\n\tthis.next = this;\n\tthis.prev = this;\n\tthis.length = 0;\n};\n\nLinkedList.prototype.remove = function(value) {\n\tif($tw.utils.isArray(value)) {\n\t\tfor(var t=0; t&lt;value.length; t++) {\n\t\t\t_removeOne(this,value[t]);\n\t\t}\n\t} else {\n\t\t_removeOne(this,value);\n\t}\n};\n\nLinkedList.prototype.push = function(/* values */) {\n\tfor(var i = 0; i &lt; arguments.length; i++) {\n\t\tvar value = arguments[i];\n\t\tvar node = {value: value};\n\t\tvar preexistingNode = this.index[value];\n\t\t_linkToEnd(this,node);\n\t\tif(preexistingNode) {\n\t\t\t// We want to keep pointing to the first instance, but we want\n\t\t\t// to have that instance (or chain of instances) point to the\n\t\t\t// new one.\n\t\t\twhile (preexistingNode.copy) {\n\t\t\t\tpreexistingNode = preexistingNode.copy;\n\t\t\t}\n\t\t\tpreexistingNode.copy = node;\n\t\t} else {\n\t\t\tthis.index[value] = node;\n\t\t}\n\t}\n};\n\nLinkedList.prototype.pushTop = function(value) {\n\tif($tw.utils.isArray(value)) {\n\t\tfor(var t=0; t&lt;value.length; t++) {\n\t\t\t_removeOne(this,value[t]);\n\t\t}\n\t\tthis.push.apply(this,value);\n\t} else {\n\t\tvar node = _removeOne(this,value);\n\t\tif(!node) {\n\t\t\tnode = {value: value};\n\t\t\tthis.index[value] = node;\n\t\t} else {\n\t\t\t// Put this node at the end of the copy chain.\n\t\t\tvar preexistingNode = node;\n\t\t\twhile(preexistingNode.copy) {\n\t\t\t\tpreexistingNode = preexistingNode.copy;\n\t\t\t}\n\t\t\t// The order of these three statements is important,\n\t\t\t// because sometimes preexistingNode == node.\n\t\t\tpreexistingNode.copy = node;\n\t\t\tthis.index[value] = node.copy;\n\t\t\tnode.copy = undefined;\n\t\t}\n\t\t_linkToEnd(this,node);\n\t}\n};\n\nLinkedList.prototype.each = function(callback) {\n\tfor(var ptr = this.next; ptr !== this; ptr = ptr.next) {\n\t\tcallback(ptr.value);\n\t}\n};\n\nLinkedList.prototype.toArray = function() {\n\tvar output = [];\n\tfor(var ptr = this.next; ptr !== this; ptr = ptr.next) {\n\t\toutput.push(ptr.value);\n\t}\n\treturn output;\n};\n\nfunction _removeOne(list,value) {\n\tvar node = list.index[value];\n\tif(node) {\n\t\tnode.prev.next = node.next;\n\t\tnode.next.prev = node.prev;\n\t\tlist.length -= 1;\n\t\t// Point index to the next instance of the same value, maybe nothing.\n\t\tlist.index[value] = node.copy;\n\t}\n\treturn node;\n};\n\nfunction _linkToEnd(list,node) {\n\t// Sticks the given node onto the end of the list.\n\tlist.prev.next = node;\n\tnode.prev = list.prev;\n\tlist.prev = node;\n\tnode.next = list;\n\tlist.length += 1;\n};\n\nexports.LinkedList = LinkedList;\n\n})();\n&quot;,
             &quot;module-type&quot;: &quot;utils&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;
         },
@@ -11533,6 +11533,10 @@ Tests the utils.LinkedList class.
 LinkedList was built to behave exactly as $tw.utils.pushTop and
 Array.prototype.push would behave with an array.
 
+Many of these tests function by performing operations on a LinkedList while
+performing the equivalent actions on an array with the old utility methods.
+Then we confirm that the two come out functionally identical.
+
 \*/
 (function(){
 
@@ -11542,66 +11546,88 @@ Array.prototype.push would behave with an array.
 
 describe(&quot;LinkedList class tests&quot;, function() {
 
+	// pushTops a value or array of values into both the array and linked list.
+	function pushTop(array, linkedList, valueOrValues) {
+		$tw.utils.pushTop(array, valueOrValues);
+		linkedList.pushTop(valueOrValues);
+	};
+
+	// pushes values into both the array and the linked list.
+	function push(array, linkedList/*, other values */) {
+		var values = Array.prototype.slice(arguments, 2);
+		array.push.apply(array, values);
+		linkedList.push.apply(linkedList, values);
+	};
+
+	// operates a remove action on an array and a linked list in parallel.
+	function remove(array, linkedList, valueOrValues) {
+		$tw.utils.removeArrayEntries(array, valueOrValues);
+		linkedList.remove(valueOrValues);
+	};
+
+	// compares an array and a linked list to make sure they match up
+	function compare(array, linkedList) {
+		expect(linkedList.toArray()).toEqual(array);
+		expect(linkedList.length).toBe(array.length);
+	};
+
 	it(&quot;can pushTop&quot;, function() {
+		var array = [];
 		var list = new $tw.utils.LinkedList();
-		list.push('A', 'B', 'C');
+		push(array, list, 'A', 'B', 'C');
 		// singles
-		list.pushTop('X');
-		list.pushTop('B');
-		expect(list.toArray()).toEqual(['A', 'C', 'X', 'B']);
-		expect(list.length).toBe(4);
+		pushTop(array, list, 'X');
+		pushTop(array, list, 'B');
+		compare(array, list); // A C X B
 		//arrays
-		list.pushTop(['X', 'A', 'G', 'A']);
+		pushTop(array, list, ['X', 'A', 'G', 'A']);
 		// If the pushedTopped list has duplicates, they go in unempeded.
-		expect(list.toArray()).toEqual(['C', 'B', 'X', 'A', 'G', 'A']);
-		expect(list.length).toBe(6);
+		compare(array, list); // C B X A G A
 	});
 
 	it(&quot;can pushTop with tricky duplicates&quot;, function() {
+		var array = [];
 		var list = new $tw.utils.LinkedList();
-		list.push('A', 'B', 'A', 'C', 'A', 'end');
+		push(array, list, 'A', 'B', 'A', 'C', 'A', 'end');
 		// If the original list contains duplicates, only one instance is cut
-		list.pushTop('A');
-		expect(list.toArray()).toEqual(['B', 'A', 'C', 'A', 'end', 'A']);
-		expect(list.length).toBe(6);
+		pushTop(array, list, 'A');
+		compare(array, list); // B A C A end A
 
 		// And the Llist properly knows the next 'A' to cut if pushed again
-		list.pushTop(['X', 'A']);
-		expect(list.toArray()).toEqual(['B', 'C', 'A', 'end', 'A', 'X', 'A']);
-		expect(list.length).toBe(7);
+		pushTop(array, list, ['X', 'A']);
+		compare(array, list); // B C A end A X A
 
 		// One last time, to make sure we maintain the linked chain of copies
-		list.pushTop('A');
-		expect(list.toArray()).toEqual(['B', 'C', 'end', 'A', 'X', 'A', 'A']);
-		expect(list.length).toBe(7);
+		pushTop(array, list, 'A');
+		compare(array, list); // B C end A X A A
 	});
 
 	it(&quot;can handle particularly nasty pushTop pitfall&quot;, function() {
+		var array = [];
 		var list = new $tw.utils.LinkedList();
-		list.push('A', 'B', 'A', 'C');
-		list.pushTop('A'); // BACA
-		list.pushTop('X'); // BACAX
-		list.remove('A');  // BCAX
-		list.pushTop('A'); // BCXA
-		list.remove('A');  // BCX
+		push(array, list, 'A', 'B', 'A', 'C');
+		pushTop(array, list, 'A'); // BACA
+		pushTop(array, list, 'X'); // BACAX
+		remove(array, list, 'A');  // BCAX
+		pushTop(array, list, 'A'); // BCXA
+		remove(array, list, 'A');  // BCX
+
 		// But! The way I initially coded the copy chains, a mystery A could
 		// hang around.
-		expect(list.toArray()).toEqual(['B', 'C', 'X']);
-		expect(list.length).toBe(3);
+		compare(array, list); // B C X
 	});
 
 	it(&quot;can push&quot;, function() {
+		var array = [];
 		var list = new $tw.utils.LinkedList();
-		list.push('A', 'B', 'C');
+		push(array, list, 'A', 'B', 'C');
 		// singles
-		list.push('B');
-		expect(list.toArray()).toEqual(['A', 'B', 'C', 'B']);
-		expect(list.length).toBe(4);
+		push(array, list, 'B');
+		compare(array, list); // A B C B
 
 		// multiple args
-		list.push('A', 'B', 'C');
-		expect(list.toArray()).toEqual(['A', 'B', 'C', 'B', 'A', 'B', 'C']);
-		expect(list.length).toBe(7);
+		push(array, list, 'A', 'B', 'C');
+		compare(array, list); // A B C B A B C
 	});
 
 	it(&quot;can clear&quot;, function() {
@@ -11613,31 +11639,29 @@ describe(&quot;LinkedList class tests&quot;, function() {
 	});
 
 	it(&quot;can remove&quot;, function() {
+		var array = [];
 		var list = new $tw.utils.LinkedList();
-		list.push('A', 'x', 'C', 'x', 'D', 'x', 'E', 'x');
+		push(array, list, 'A', 'x', 'C', 'x', 'D', 'x', 'E', 'x');
 		// single
-		list.remove('x');
-		expect(list.toArray()).toEqual(['A', 'C', 'x', 'D', 'x', 'E', 'x']);
-		expect(list.length).toBe(7);
+		remove(array, list, 'x');
+		compare(array, list); // A C x D x E x
 
 		// arrays
-		list.remove(['x', 'A', 'x']);
-		expect(list.toArray()).toEqual(['C', 'D', 'E', 'x']);
-		expect(list.length).toBe(4);
+		remove(array, list, ['x', 'A', 'x']);
+		compare(array, list); // C D E x
 	});
 
 	it('can ignore removal of nonexistent items', function() {
+		var array = [];
 		var list = new $tw.utils.LinkedList();
-		list.push('A', 'B', 'C', 'D');
+		push(array, list, 'A', 'B', 'C', 'D');
 		// single
-		list.remove('Z');
-		expect(list.toArray()).toEqual(['A', 'B', 'C', 'D']);
-		expect(list.length).toBe(4);
+		remove(array, list, 'Z');
+		compare(array, list); // A B C D
 
 		// array
-		list.remove(['Z', 'B', 'X']);
-		expect(list.toArray()).toEqual(['A', 'C', 'D']);
-		expect(list.length).toBe(3);
+		remove(array, list, ['Z', 'B', 'X']);
+		compare(array, list); // A C D
 	});
 
 	it('can iterate with each', function() {
