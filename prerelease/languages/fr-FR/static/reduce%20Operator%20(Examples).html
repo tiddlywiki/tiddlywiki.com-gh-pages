@@ -77,7 +77,7 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>These examples use the following predefined variables:</p><ul><li><strong>add-price</strong>: <code>[get[price]multiply{!!quantity}add&lt;accumulator&gt;]</code></li><li><strong>num-items</strong>: <code>[get[quantity]add&lt;accumulator&gt;]</code></li><li><strong>join-with-commas</strong>: <code>[&lt;index&gt;compare:number:gt[0]then&lt;accumulator&gt;addsuffix[, ]addsuffix&lt;currentTiddler&gt;else&lt;currentTiddler&gt;]</code></li></ul><p>They also use the following data tiddlers:</p><p><ul>
+<div class="tc-tiddler-body tc-reveal"><p>These examples use the following predefined variables:</p><ul><li><strong>add-price</strong>: <code>[get[price]multiply{!!quantity}add&lt;accumulator&gt;]</code></li><li><strong>num-items</strong>: <code>[get[quantity]add&lt;accumulator&gt;]</code></li><li><strong>join-with-commas</strong>: <code>[&lt;index&gt;compare:number:gt[0]then&lt;accumulator&gt;addsuffix[, ]addsuffix&lt;currentTiddler&gt;else&lt;currentTiddler&gt;]</code></li><li><strong>multiply-input</strong>: <code>[multiply&lt;accumulator&gt;]</code></li></ul><p>They also use the following data tiddlers:</p><p><ul>
 
 <li>
 <strong><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Brownies.html">Brownies</a></strong> quantity: 1,  price: 4.99
@@ -95,7 +95,7 @@ color:#333333;">
 <strong><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Rice%2520Pudding.html">Rice Pudding</a></strong> quantity: 4,  price: 2.66
 </li>
 
-</ul></p><p>Number of items: </p><p><div class="doc-example">
+</ul></p><p><div class="doc-example">
 <code>[tag[shopping]reduce&lt;num-items&gt;]</code>
 
 
@@ -105,7 +105,7 @@ color:#333333;">
 	</dl>
 </span>
 <span class=" tc-reveal" hidden="true"></span>
-</div></p><p>Total price:</p><p><div class="doc-example">
+</div></p><p><div class="doc-example">
 <code>[tag[shopping]reduce&lt;add-price&gt;]</code>
 
 
@@ -115,9 +115,9 @@ color:#333333;">
 	</dl>
 </span>
 <span class=" tc-reveal" hidden="true"></span>
-</div></p><p>Using <code>&lt;index&gt;</code> to act differently on the first item than the rest:</p><p><div class="doc-example">
+</div></p><p><div class="doc-example">
 <code>[tag[shopping]reduce&lt;join-with-commas&gt;]</code>
-
+<dd>→ Uses <code>&lt;index&gt;</code> to act differently on the first item than the rest</dd>
 
 <span class=" tc-reveal">
 	<dl>
@@ -125,9 +125,9 @@ color:#333333;">
 	</dl>
 </span>
 <span class=" tc-reveal" hidden="true"></span>
-</div></p><p>Empty input, no second parameter:</p><p><div class="doc-example">
+</div></p><p><div class="doc-example">
 <code>[tag[non-existent]reduce&lt;add-price&gt;]</code>
-
+<dd>→ Empty input produces empty output</dd>
 
 <span class=" tc-reveal">
 	<dl>
@@ -135,9 +135,9 @@ color:#333333;">
 	</dl>
 </span>
 <span class=" tc-reveal" hidden="true"></span>
-</div></p><p>Note how the output contains a single item with no text. This is not &quot;empty output&quot; for the purposes of the <code class="doc-operator">else</code> operator.</p><p><div class="doc-icon-block"><div class="doc-block-icon"><svg class="tc-image-tip tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M64 128.242c35.346 0 64-28.654 64-64 0-35.346-28.654-64-64-64-35.346 0-64 28.654-64 64 0 35.346 28.654 64 64 64zm11.936-36.789c-.624 4.129-5.73 7.349-11.936 7.349-6.206 0-11.312-3.22-11.936-7.349C54.33 94.05 58.824 95.82 64 95.82c5.175 0 9.67-1.769 11.936-4.366zm0 4.492c-.624 4.13-5.73 7.349-11.936 7.349-6.206 0-11.312-3.22-11.936-7.349 2.266 2.597 6.76 4.366 11.936 4.366 5.175 0 9.67-1.769 11.936-4.366zm0 4.456c-.624 4.129-5.73 7.349-11.936 7.349-6.206 0-11.312-3.22-11.936-7.349 2.266 2.597 6.76 4.366 11.936 4.366 5.175 0 9.67-1.769 11.936-4.366zm0 4.492c-.624 4.13-5.73 7.349-11.936 7.349-6.206 0-11.312-3.22-11.936-7.349 2.266 2.597 6.76 4.366 11.936 4.366 5.175 0 9.67-1.769 11.936-4.366zM64.3 24.242c11.618 0 23.699 7.82 23.699 24.2S75.92 71.754 75.92 83.576c0 5.873-5.868 9.26-11.92 9.26s-12.027-3.006-12.027-9.26C51.973 71.147 40 65.47 40 48.442s12.683-24.2 24.301-24.2z" fill-rule="evenodd"></path></svg></div> Remember that <code class="doc-operator">reduce</code> always produces output, so <code class="doc-operator">else</code> will never trigger after <code class="doc-operator">reduce</code>.</div></p><p>Empty input, no second parameter, followed by <code class="doc-operator">else</code>:</p><p><div class="doc-example">
+</div></p><p><div class="doc-example">
 <code>[tag[non-existent]reduce&lt;add-price&gt;else[0]]</code>
-
+<dd>→ Use <code>else</code> to ensure output if input was empty</dd>
 
 <span class=" tc-reveal">
 	<dl>
@@ -145,9 +145,19 @@ color:#333333;">
 	</dl>
 </span>
 <span class=" tc-reveal" hidden="true"></span>
-</div></p><p>Note how the output still contains a single item with no text: <code class="doc-operator">else</code> did not trigger. If you want the value to be 0 when <code class="doc-operator">reduce</code> has no items to process, you need to specify 0 as the initial value by passing it as a second parameter to <code class="doc-operator">reduce</code>.</p><p>Empty input, second parameter provided:</p><p><div class="doc-example">
-<code>[tag[non-existent]reduce&lt;add-price&gt;,[0]]</code>
+</div></p><p><div class="doc-example">
+<code>=1 =2 =3 +[reduce&lt;multiply-input&gt;]</code>
+<dd>→ Empty initial value is treated as 0 by mathematical operators</dd>
 
+<span class=" tc-reveal">
+	<dl>
+	<dd><button class="">Essayez</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div></p><p><div class="doc-example">
+<code>=1 =2 =3 +[reduce&lt;multiply-input&gt;,[1]]</code>
+<dd>→ Setting initial value is sometimes necessary for correct results</dd>
 
 <span class=" tc-reveal">
 	<dl>
