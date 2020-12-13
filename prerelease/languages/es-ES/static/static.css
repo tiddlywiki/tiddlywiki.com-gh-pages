@@ -2454,6 +2454,9 @@ nav.tc-menubar .tc-drop-down .tc-menubar-dropdown-sidebar button {
 		margin-top: 2em;
 	}
 }
+@media print {nav.tc-menubar {
+		display: none;
+	}}
 
 
 /* CSS modified for TiddlyWiki */svg.railroad-diagram {
