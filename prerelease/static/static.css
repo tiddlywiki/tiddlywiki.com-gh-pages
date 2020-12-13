@@ -2428,10 +2428,14 @@ a.tc-tiddlylink:hover {
 .cm-s-tiddlywiki .cm-animate-fat-cursor { background-color: #77ee77; }
 
 
-.cm-s-tiddlywiki div.CodeMirror-selected { background: #eee8d5; }
-.cm-s-tiddlywiki.CodeMirror ::selection { background: #eee8d5; }
-.cm-s-tiddlywiki .CodeMirror-line::-moz-selection,  .CodeMirror-line > span::-moz-selection,  .CodeMirror-line > span > span::-moz-selection { background: #eee8d5; }
-.cm-s-tiddlywiki .CodeMirror-line::selection,  .CodeMirror-line > span::selection,  .CodeMirror-line > span > span::selection { background: #eee8d5; }
+
+
+.cm-s-tiddlywiki div.CodeMirror-selected { background: #eee8d5; color: #333333; }
+.cm-s-tiddlywiki.CodeMirror ::selection { background: #eee8d5; color: #333333; }
+.cm-s-tiddlywiki .CodeMirror-line::-moz-selection,  .CodeMirror-line > span::-moz-selection,  .CodeMirror-line > span > span::-moz-selection { background: #eee8d5; color: #333333; }
+.cm-s-tiddlywiki .CodeMirror-line::selection,  .CodeMirror-line > span::selection,  .CodeMirror-line > span > span::selection { background: #eee8d5; color: #333333; }
+
+
 
 
 
