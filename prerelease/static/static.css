@@ -3245,7 +3245,18 @@ a .doc-attr {
 	width: 1em;
 	height: 1em;
     vertical-align: text-bottom;
+}.doc-link-badge {
+    text-decoration: none;
+    background-color: #7eba4c;
+    color: #333333;
+    padding: 3px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.75em;
+}.doc-link-badge:hover {
+    text-decoration: underline;
 }
+
 
 .tc-double-spaced-list li {
 	padding-bottom: .5em;
