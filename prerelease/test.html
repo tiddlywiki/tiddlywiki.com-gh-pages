@@ -6415,7 +6415,7 @@ Error message and password prompt
         },
         &quot;$:/core/modules/utils/linkedlist.js&quot;: {
             &quot;title&quot;: &quot;$:/core/modules/utils/linkedlist.js&quot;,
-            &quot;text&quot;: &quot;/*\\\nmodule-type: utils\ntitle: $:/core/modules/utils/linkedlist.js\ntype: application/javascript\n\nThis is a doubly-linked indexed list intended for manipulation, particularly\npushTop, which it does with significantly better performance than an array.\n\n\\*/\n(function(){\n\nfunction LinkedList() {\n\tthis.clear();\n};\n\nLinkedList.prototype.clear = function() {\n\tthis.index = Object.create(null);\n\t// LinkedList performs the duty of both the head and tail node\n\tthis.next = this;\n\tthis.prev = this;\n\tthis.length = 0;\n};\n\nLinkedList.prototype.remove = function(value) {\n\tif($tw.utils.isArray(value)) {\n\t\tfor(var t=0; t&lt;value.length; t++) {\n\t\t\t_removeOne(this,value[t]);\n\t\t}\n\t} else {\n\t\t_removeOne(this,value);\n\t}\n};\n\nLinkedList.prototype.push = function(/* values */) {\n\tfor(var i = 0; i &lt; arguments.length; i++) {\n\t\tvar value = arguments[i];\n\t\tvar node = {value: value};\n\t\tvar preexistingNode = this.index[value];\n\t\t_linkToEnd(this,node);\n\t\tif(preexistingNode) {\n\t\t\t// We want to keep pointing to the first instance, but we want\n\t\t\t// to have that instance (or chain of instances) point to the\n\t\t\t// new one.\n\t\t\twhile (preexistingNode.copy) {\n\t\t\t\tpreexistingNode = preexistingNode.copy;\n\t\t\t}\n\t\t\tpreexistingNode.copy = node;\n\t\t} else {\n\t\t\tthis.index[value] = node;\n\t\t}\n\t}\n};\n\nLinkedList.prototype.pushTop = function(value) {\n\tif($tw.utils.isArray(value)) {\n\t\tfor(var t=0; t&lt;value.length; t++) {\n\t\t\t_removeOne(this,value[t]);\n\t\t}\n\t\tthis.push.apply(this,value);\n\t} else {\n\t\tvar node = _removeOne(this,value);\n\t\tif(!node) {\n\t\t\tnode = {value: value};\n\t\t\tthis.index[value] = node;\n\t\t} else {\n\t\t\t// Put this node at the end of the copy chain.\n\t\t\tvar preexistingNode = node;\n\t\t\twhile(preexistingNode.copy) {\n\t\t\t\tpreexistingNode = preexistingNode.copy;\n\t\t\t}\n\t\t\t// The order of these three statements is important,\n\t\t\t// because sometimes preexistingNode == node.\n\t\t\tpreexistingNode.copy = node;\n\t\t\tthis.index[value] = node.copy;\n\t\t\tnode.copy = undefined;\n\t\t}\n\t\t_linkToEnd(this,node);\n\t}\n};\n\nLinkedList.prototype.each = function(callback) {\n\tfor(var ptr = this.next; ptr !== this; ptr = ptr.next) {\n\t\tcallback(ptr.value);\n\t}\n};\n\nLinkedList.prototype.toArray = function() {\n\tvar output = [];\n\tfor(var ptr = this.next; ptr !== this; ptr = ptr.next) {\n\t\toutput.push(ptr.value);\n\t}\n\treturn output;\n};\n\nfunction _removeOne(list,value) {\n\tvar node = list.index[value];\n\tif(node) {\n\t\tnode.prev.next = node.next;\n\t\tnode.next.prev = node.prev;\n\t\tlist.length -= 1;\n\t\t// Point index to the next instance of the same value, maybe nothing.\n\t\tlist.index[value] = node.copy;\n\t}\n\treturn node;\n};\n\nfunction _linkToEnd(list,node) {\n\t// Sticks the given node onto the end of the list.\n\tlist.prev.next = node;\n\tnode.prev = list.prev;\n\tlist.prev = node;\n\tnode.next = list;\n\tlist.length += 1;\n};\n\nexports.LinkedList = LinkedList;\n\n})();\n&quot;,
+            &quot;text&quot;: &quot;/*\\\nmodule-type: utils\ntitle: $:/core/modules/utils/linkedlist.js\ntype: application/javascript\n\nThis is a doubly-linked indexed list intended for manipulation, particularly\npushTop, which it does with significantly better performance than an array.\n\n\\*/\n(function(){\n\nfunction LinkedList() {\n\tthis.clear();\n};\n\nLinkedList.prototype.clear = function() {\n\t// LinkedList performs the duty of both the head and tail node\n\tthis.next = Object.create(null);\n\tthis.prev = Object.create(null);\n\tthis.first = undefined;\n\tthis.last = undefined;\n\tthis.length = 0;\n};\n\nLinkedList.prototype.remove = function(value) {\n\tif($tw.utils.isArray(value)) {\n\t\tfor(var t=0; t&lt;value.length; t++) {\n\t\t\t_assertString(value[t]);\n\t\t}\n\t\tfor(var t=0; t&lt;value.length; t++) {\n\t\t\t_removeOne(this,value[t]);\n\t\t}\n\t} else {\n\t\t_assertString(value);\n\t\t_removeOne(this,value);\n\t}\n};\n\n/*\nPush behaves like array.push and accepts multiple string arguments. But it also\naccepts a single array argument too, to be consistent with its other methods.\n*/\nLinkedList.prototype.push = function(/* values */) {\n\tvar values = arguments;\n\tif($tw.utils.isArray(values[0])) {\n\t\tvalues = values[0];\n\t}\n\tfor(var i = 0; i &lt; values.length; i++) {\n\t\t_assertString(values[i]);\n\t}\n\tfor(var i = 0; i &lt; values.length; i++) {\n\t\t_linkToEnd(this,values[i]);\n\t}\n\treturn this.length;\n};\n\nLinkedList.prototype.pushTop = function(value) {\n\tif($tw.utils.isArray(value)) {\n\t\tfor (var t=0; t&lt;value.length; t++) {\n\t\t\t_assertString(value[t]);\n\t\t}\n\t\tfor(var t=0; t&lt;value.length; t++) {\n\t\t\t_removeOne(this,value[t]);\n\t\t}\n\t\tfor(var t=0; t&lt;value.length; t++) {\n\t\t\t_linkToEnd(this,value[t]);\n\t\t}\n\t} else {\n\t\t_assertString(value);\n\t\t_removeOne(this,value);\n\t\t_linkToEnd(this,value);\n\t}\n};\n\nLinkedList.prototype.each = function(callback) {\n\tvar visits = Object.create(null),\n\t\tvalue = this.first;\n\twhile(value !== undefined) {\n\t\tcallback(value);\n\t\tvar next = this.next[value];\n\t\tif(typeof next === \&quot;object\&quot;) {\n\t\t\tvar i = visits[value] || 0;\n\t\t\tvisits[value] = i+1;\n\t\t\tvalue = next[i];\n\t\t} else {\n\t\t\tvalue = next;\n\t\t}\n\t}\n};\n\nLinkedList.prototype.toArray = function() {\n\tvar output = [];\n\tthis.each(function(value) { output.push(value); });\n\treturn output;\n};\n\nfunction _removeOne(list,value) {\n\tvar prevEntry = list.prev[value],\n\t\tnextEntry = list.next[value],\n\t\tprev = prevEntry,\n\t\tnext = nextEntry;\n\tif(typeof nextEntry === \&quot;object\&quot;) {\n\t\tnext = nextEntry[0];\n\t\tprev = prevEntry[0];\n\t}\n\t// Relink preceding element.\n\tif(list.first === value) {\n\t\tlist.first = next\n\t} else if(prev !== undefined) {\n\t\tif(typeof list.next[prev] === \&quot;object\&quot;) {\n\t\t\tif(next === undefined) {\n\t\t\t\t// Must have been last, and 'i' would be last element.\n\t\t\t\tlist.next[prev].pop();\n\t\t\t} else {\n\t\t\t\tvar i = list.next[prev].indexOf(value);\n\t\t\t\tlist.next[prev][i] = next;\n\t\t\t}\n\t\t} else {\n\t\t\tlist.next[prev] = next;\n\t\t}\n\t} else {\n\t\treturn;\n\t}\n\t// Now relink following element\n\t// Check \&quot;next !== undefined\&quot; rather than \&quot;list.last === value\&quot; because\n\t// we need to know if the FIRST value is the last in the list, not the last.\n\tif(next !== undefined) {\n\t\tif(typeof list.prev[next] === \&quot;object\&quot;) {\n\t\t\tif(prev === undefined) {\n\t\t\t\t// Must have been first, and 'i' would be 0.\n\t\t\t\tlist.prev[next].shift();\n\t\t\t} else {\n\t\t\t\tvar i = list.prev[next].indexOf(value);\n\t\t\t\tlist.prev[next][i] = prev;\n\t\t\t}\n\t\t} else {\n\t\t\tlist.prev[next] = prev;\n\t\t}\n\t} else {\n\t\tlist.last = prev;\n\t}\n\t// Delink actual value. If it uses arrays, just remove first entries.\n\tif(typeof nextEntry === \&quot;object\&quot;) {\n\t\tnextEntry.shift();\n\t\tprevEntry.shift();\n\t} else {\n\t\tlist.next[value] = undefined;\n\t\tlist.prev[value] = undefined;\n\t}\n\tlist.length -= 1;\n};\n\n// Sticks the given node onto the end of the list.\nfunction _linkToEnd(list,value) {\n\tif(list.first === undefined) {\n\t\tlist.first = value;\n\t} else {\n\t\t// Does it already exists?\n\t\tif(list.first === value || list.prev[value] !== undefined) {\n\t\t\tif(typeof list.next[value] === \&quot;string\&quot;) {\n\t\t\t\tlist.next[value] = [list.next[value]];\n\t\t\t\tlist.prev[value] = [list.prev[value]];\n\t\t\t} else if(typeof list.next[value] === \&quot;undefined\&quot;) {\n\t\t\t\t// list.next[value] must be undefined.\n\t\t\t\t// Special case. List already has 1 value. It's at the end.\n\t\t\t\tlist.next[value] = [];\n\t\t\t\tlist.prev[value] = [list.prev[value]];\n\t\t\t}\n\t\t\tlist.prev[value].push(list.last);\n\t\t\t// We do NOT append a new value onto \&quot;next\&quot; list. Iteration will\n\t\t\t// figure out it must point to End-of-List on its own.\n\t\t} else {\n\t\t\tlist.prev[value] = list.last;\n\t\t}\n\t\t// Make the old last point to this new one.\n\t\tif(typeof list.next[list.last] === \&quot;object\&quot;) {\n\t\t\tlist.next[list.last].push(value);\n\t\t} else {\n\t\t\tlist.next[list.last] = value;\n\t\t}\n\t}\n\tlist.last = value;\n\tlist.length += 1;\n};\n\nfunction _assertString(value) {\n\tif(typeof value !== \&quot;string\&quot;) {\n\t\tthrow \&quot;Linked List only accepts string values, not \&quot; + value;\n\t}\n};\n\nexports.LinkedList = LinkedList;\n\n})();\n&quot;,
             &quot;module-type&quot;: &quot;utils&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;
         },
@@ -11537,10 +11537,18 @@ Tests the utils.LinkedList class.
 LinkedList was built to behave exactly as $tw.utils.pushTop and
 Array.prototype.push would behave with an array.
 
-Many of these tests function by performing operations on a LinkedList while
-performing the equivalent actions on an array with the old utility methods.
+Many of these tests function by performing operations on a paired set of
+an array and LinkedList. It uses equivalent actions on both.
 Then we confirm that the two come out functionally identical.
 
+NOTE TO FURTHER LINKED LIST DEVELOPERS:
+
+	If you want to add new functionality, like 'shift' or 'unshift', you'll
+	probably need to deal with the fact that Linked List will insert undefined
+	as a first entry into an item's 'prev' array when it's at the front of
+	the list, but it doesn't do the same for the 'next' array when it's at
+	the end. I think you'll probably be better off preventing 'prev' from ever
+	adding undefined.
 \*/
 (function(){
 
@@ -11550,133 +11558,241 @@ Then we confirm that the two come out functionally identical.
 
 describe(&quot;LinkedList class tests&quot;, function() {
 
+	// creates and initializes a new {array, list} pair for testing
+	function newPair(initialArray) {
+		var pair = {array: [], list: new $tw.utils.LinkedList()};
+		if (initialArray) {
+			push(pair, initialArray);
+		}
+		return pair;
+	};
+
 	// pushTops a value or array of values into both the array and linked list.
-	function pushTop(array, linkedList, valueOrValues) {
-		$tw.utils.pushTop(array, valueOrValues);
-		linkedList.pushTop(valueOrValues);
+	function pushTop(pair, valueOrValues) {
+		pair.list.pushTop(valueOrValues);
+		$tw.utils.pushTop(pair.array, valueOrValues);
+		return pair;
 	};
 
 	// pushes values into both the array and the linked list.
-	function push(array, linkedList/*, other values */) {
-		var values = Array.prototype.slice(arguments, 2);
-		array.push.apply(array, values);
-		linkedList.push.apply(linkedList, values);
+	function push(pair, values) {
+		pair.list.push(values);
+		pair.array.push.apply(pair.array, values);
+		return pair;
 	};
 
 	// operates a remove action on an array and a linked list in parallel.
-	function remove(array, linkedList, valueOrValues) {
-		$tw.utils.removeArrayEntries(array, valueOrValues);
-		linkedList.remove(valueOrValues);
+	function remove(pair, valueOrValues) {
+		pair.list.remove(valueOrValues);
+		$tw.utils.removeArrayEntries(pair.array, valueOrValues);
+		return pair;
 	};
 
 	// compares an array and a linked list to make sure they match up
-	function compare(array, linkedList) {
-		expect(linkedList.toArray()).toEqual(array);
-		expect(linkedList.length).toBe(array.length);
+	function compare(pair) {
+		expect(pair.list.toArray()).toEqual(pair.array);
+		expect(pair.list.length).toBe(pair.array.length);
+		return pair;
 	};
 
 	it(&quot;can pushTop&quot;, function() {
-		var array = [];
-		var list = new $tw.utils.LinkedList();
-		push(array, list, 'A', 'B', 'C');
+		var pair = newPair([&quot;A&quot;, &quot;B&quot;, &quot;C&quot;]);
 		// singles
-		pushTop(array, list, 'X');
-		pushTop(array, list, 'B');
-		compare(array, list); // A C X B
+		pushTop(pair, &quot;X&quot;);
+		pushTop(pair, &quot;B&quot;);
+		compare(pair); // ACXB
 		//arrays
-		pushTop(array, list, ['X', 'A', 'G', 'A']);
+		pushTop(pair, [&quot;X&quot;, &quot;A&quot;, &quot;G&quot;, &quot;A&quot;]);
 		// If the pushedTopped list has duplicates, they go in unempeded.
-		compare(array, list); // C B X A G A
+		compare(pair); // CBXAGA
 	});
 
 	it(&quot;can pushTop with tricky duplicates&quot;, function() {
-		var array = [];
-		var list = new $tw.utils.LinkedList();
-		push(array, list, 'A', 'B', 'A', 'C', 'A', 'end');
+		var pair = newPair([&quot;A&quot;, &quot;B&quot;, &quot;A&quot;, &quot;C&quot;, &quot;A&quot;, &quot;e&quot;]);
 		// If the original list contains duplicates, only one instance is cut
-		pushTop(array, list, 'A');
-		compare(array, list); // B A C A end A
+		compare(pushTop(pair, &quot;A&quot;)); // BACAeA
 
 		// And the Llist properly knows the next 'A' to cut if pushed again
-		pushTop(array, list, ['X', 'A']);
-		compare(array, list); // B C A end A X A
+		compare(pushTop(pair, [&quot;X&quot;, &quot;A&quot;])); // BCAeAXA
 
 		// One last time, to make sure we maintain the linked chain of copies
-		pushTop(array, list, 'A');
-		compare(array, list); // B C end A X A A
+		compare(pushTop(pair, &quot;A&quot;)); // BCeAXAA
+	});
+
+	it(&quot;can pushTop a single-value list with itself&quot;, function() {
+		// This simple case actually requires special handling in LinkedList.
+		compare(pushTop(newPair([&quot;A&quot;]), &quot;A&quot;)); // A
+	});
+
+	it(&quot;can remove all instances of a multi-instance value&quot;, function() {
+		var pair = compare(remove(newPair([&quot;A&quot;, &quot;A&quot;]), [&quot;A&quot;, &quot;A&quot;])); //
+		// Now add 'A' back in, since internally it might be using arrays,
+		// even though those arrays must be empty.
+		compare(pushTop(pair, &quot;A&quot;)); // A
+		// Same idea, but push something else before readding 'A'
+		compare(pushTop(remove(newPair([&quot;A&quot;, &quot;A&quot;]), [&quot;A&quot;, &quot;A&quot;]), [&quot;B&quot;, &quot;A&quot;])); // BA
+
+		// Again, but this time with other values mixed in
+		compare(remove(newPair([&quot;B&quot;, &quot;A&quot;, &quot;A&quot;, &quot;C&quot;]), [&quot;A&quot;, &quot;A&quot;])) // BC;
+		// And again, but this time with value inbetween too.
+		compare(remove(newPair([&quot;B&quot;, &quot;A&quot;, &quot;X&quot;, &quot;Y&quot;, &quot;Z&quot;, &quot;A&quot;, &quot;C&quot;]), [&quot;A&quot;, &quot;A&quot;])); // BXYZC
+
+		// One last test, where removing a pair from the end could corrupt
+		// list.last.
+		pair = remove(newPair([&quot;D&quot;, &quot;C&quot;, &quot;A&quot;, &quot;A&quot;]), [&quot;A&quot;, &quot;A&quot;]);
+		// But I can't figure out another way to test this. It's wrong
+		// for list.last to be anything other than a string, but I
+		// can't figure out how to make that corruption manifest a problem.
+		// So I dig into its private members. Bleh...
+		expect(typeof pair.list.last).toBe(&quot;string&quot;);
+	});
+
+	it(&quot;can pushTop value linked to by a repeat item&quot;, function() {
+		var pair = newPair([&quot;A&quot;, &quot;B&quot;, &quot;A&quot;, &quot;C&quot;, &quot;A&quot;, &quot;C&quot;, &quot;D&quot;]);
+		// This is tricky because that 'C' is referenced by a second 'A'
+		// It WAS a crash before
+		pushTop(pair, &quot;C&quot;);
+		compare(pair); // ABAACDC
+	});
+
+	it(&quot;can pushTop last value after pair&quot;, function() {
+		// The 'next' ptrs for A would be polluted with an extraneous
+		// undefined after the pop, which would make pushing the 'X'
+		// back on problematic.
+		compare(pushTop(newPair([&quot;A&quot;, &quot;A&quot;, &quot;X&quot;]), &quot;X&quot;)); // AACX
+		// And lets try a few other manipulations around pairs
+		compare(pushTop(newPair([&quot;A&quot;, &quot;A&quot;, &quot;X&quot;, &quot;C&quot;]), &quot;X&quot;)); // AACX
+		compare(pushTop(newPair([&quot;X&quot;, &quot;A&quot;, &quot;A&quot;]), &quot;X&quot;)); // AAX
+		compare(pushTop(newPair([&quot;C&quot;, &quot;X&quot;, &quot;A&quot;, &quot;A&quot;]), &quot;X&quot;)); // CAAX
 	});
 
 	it(&quot;can handle particularly nasty pushTop pitfall&quot;, function() {
-		var array = [];
-		var list = new $tw.utils.LinkedList();
-		push(array, list, 'A', 'B', 'A', 'C');
-		pushTop(array, list, 'A'); // BACA
-		pushTop(array, list, 'X'); // BACAX
-		remove(array, list, 'A');  // BCAX
-		pushTop(array, list, 'A'); // BCXA
-		remove(array, list, 'A');  // BCX
+		var pair = newPair([&quot;A&quot;, &quot;B&quot;, &quot;A&quot;, &quot;C&quot;]);
+		pushTop(pair, &quot;A&quot;); // BACA
+		pushTop(pair, &quot;X&quot;); // BACAX
+		remove(pair, &quot;A&quot;);  // BCAX
+		pushTop(pair, &quot;A&quot;); // BCXA
+		remove(pair, &quot;A&quot;);  // BCX
 
 		// But! The way I initially coded the copy chains, a mystery A could
 		// hang around.
-		compare(array, list); // B C X
+		compare(pair); // BCX
+	});
+
+	it(&quot;can handle past-duplicate items when pushing&quot;, function() {
+		var pair = newPair([&quot;X&quot;, &quot;Y&quot;, &quot;A&quot;, &quot;C&quot;, &quot;A&quot;]);
+		// Removing an item, when it has a duplicat at the list's end
+		remove(pair, &quot;A&quot;);
+		compare(pair); // XYCA
+		// This actually caused an infinite loop once. So important test here.
+		push(pair, [&quot;A&quot;]);
+		compare(pair); // XYCAA
+		pushTop(pair, &quot;A&quot;) // switch those last As
+		compare(pair); // XYCAA
+		remove(pair, [&quot;A&quot;, &quot;A&quot;]); // Remove all As, then add them back
+		pushTop(pair, [&quot;A&quot;, &quot;A&quot;])
+		compare(pair); // XYCAA
 	});
 
 	it(&quot;can push&quot;, function() {
-		var array = [];
 		var list = new $tw.utils.LinkedList();
-		push(array, list, 'A', 'B', 'C');
 		// singles
-		push(array, list, 'B');
-		compare(array, list); // A B C B
-
+		expect(list.push(&quot;A&quot;)).toBe(1);
+		expect(list.push(&quot;B&quot;)).toBe(2);
 		// multiple args
-		push(array, list, 'A', 'B', 'C');
-		compare(array, list); // A B C B A B C
+		expect(list.push(&quot;C&quot;, &quot;D&quot;, &quot;E&quot;)).toBe(5);
+		// array arg allowed
+		expect(list.push([&quot;F&quot;, &quot;G&quot;])).toBe(7);
+		// No-op
+		expect(list.push()).toBe(7);
+		expect(list.toArray()).toEqual([&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;E&quot;, &quot;F&quot;, &quot;G&quot;]);
+	});
+
+	it(&quot;can handle empty string&quot;, function() {
+		compare(newPair([&quot;&quot;, &quot;&quot;, &quot;&quot;])); // ___
+		compare(push(newPair([&quot;&quot;]), [&quot;&quot;])); // __
+		compare(pushTop(newPair([&quot;&quot;, &quot;&quot;, &quot;&quot;]), [&quot;A&quot;, &quot;&quot;])); // __A_
+		compare(remove(newPair([&quot;&quot;, &quot;A&quot;]), &quot;A&quot;)); // _
+		compare(push(newPair([&quot;&quot;, &quot;A&quot;]), [&quot;A&quot;])); // _AA
+		compare(remove(newPair([&quot;A&quot;, &quot;&quot;]), &quot;A&quot;)); // _
+		compare(push(newPair([&quot;A&quot;, &quot;&quot;]), [&quot;A&quot;])); // A_A
+
+		// This one is tricky but precise. Remove 'B', and 'A' might mistake
+		// it as being first in the list since it's before ''. 'C' would get
+		// blasted from A's prev reference array.
+		compare(remove(newPair([&quot;C&quot;, &quot;A&quot;, &quot;&quot;, &quot;B&quot;, &quot;A&quot;]), [&quot;B&quot;, &quot;A&quot;])); // C_A
+		// Same idea, but with A mistaking B for being at the list's end, and
+		// thus removing C from its 'next' reference array.
+		compare(remove(newPair([&quot;A&quot;, &quot;B&quot;, &quot;&quot;, &quot;A&quot;, &quot;C&quot;]), [&quot;B&quot;, &quot;A&quot;])); // _AC
+	});
+
+	it(&quot;will throw if told to push non-strings&quot;, function() {
+		var message = &quot;Linked List only accepts string values, not &quot;;
+		var list = new $tw.utils.LinkedList();
+		expect(() =&gt; list.push(undefined)).toThrow(message + &quot;undefined&quot;);
+		expect(() =&gt; list.pushTop(undefined)).toThrow(message + &quot;undefined&quot;);
+		expect(() =&gt; list.pushTop([&quot;c&quot;, undefined])).toThrow(message + &quot;undefined&quot;);
+		expect(() =&gt; list.pushTop(5)).toThrow(message + &quot;5&quot;);
+		expect(() =&gt; list.pushTop(null)).toThrow(message + &quot;null&quot;);
+
+		// now lets do a quick test to make sure this exception
+		// doesn't leave any side-effects
+		// A.K.A Strong guarantee
+		var pair = newPair([&quot;A&quot;, &quot;5&quot;, &quot;B&quot;, &quot;C&quot;]);
+		expect(() =&gt; pushTop(pair, 5)).toThrow(message + &quot;5&quot;);
+		compare(pair);
+		expect(() =&gt; push(pair, [&quot;D&quot;, 7])).toThrow(message + &quot;7&quot;);
+		compare(pair);
+		expect(() =&gt; remove(pair, 5)).toThrow(message + &quot;5&quot;);
+		compare(pair);
+		// This is the tricky one. 'A' and 'B' should not be removed or pushed.
+		expect(() =&gt; pushTop(pair, [&quot;A&quot;, &quot;B&quot;, null])).toThrow(message + &quot;null&quot;);
+		compare(pair);
+		expect(() =&gt; remove(pair, [&quot;A&quot;, &quot;B&quot;, null])).toThrow(message + &quot;null&quot;);
+		compare(pair);
 	});
 
 	it(&quot;can clear&quot;, function() {
 		var list = new $tw.utils.LinkedList();
-		list.push('A', 'B', 'C');
+		list.push(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;);
 		list.clear();
 		expect(list.toArray()).toEqual([]);
 		expect(list.length).toBe(0);
 	});
 
 	it(&quot;can remove&quot;, function() {
-		var array = [];
 		var list = new $tw.utils.LinkedList();
-		push(array, list, 'A', 'x', 'C', 'x', 'D', 'x', 'E', 'x');
+		list.push([&quot;A&quot;, &quot;x&quot;, &quot;C&quot;, &quot;x&quot;, &quot;D&quot;, &quot;x&quot;, &quot;E&quot;, &quot;x&quot;]);
 		// single
-		remove(array, list, 'x');
-		compare(array, list); // A C x D x E x
-
+		list.remove(&quot;x&quot;);
 		// arrays
-		remove(array, list, ['x', 'A', 'x']);
-		compare(array, list); // C D E x
+		list.remove([&quot;x&quot;, &quot;A&quot;, &quot;XXX&quot;, &quot;x&quot;]);
+		expect(list.toArray()).toEqual([&quot;C&quot;, &quot;D&quot;, &quot;E&quot;, &quot;x&quot;]);
 	});
 
-	it('can ignore removal of nonexistent items', function() {
-		var array = [];
-		var list = new $tw.utils.LinkedList();
-		push(array, list, 'A', 'B', 'C', 'D');
+	it(&quot;can ignore removal of nonexistent items&quot;, function() {
+		var pair = newPair([&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;]);
 		// single
-		remove(array, list, 'Z');
-		compare(array, list); // A B C D
+		compare(remove(pair, &quot;Z&quot;)); // ABCD
 
 		// array
-		remove(array, list, ['Z', 'B', 'X']);
-		compare(array, list); // A C D
+		compare(remove(pair, [&quot;Z&quot;, &quot;B&quot;, &quot;X&quot;])); // ACD
 	});
 
-	it('can iterate with each', function() {
+	it(&quot;can iterate with each&quot;, function() {
 		var list = new $tw.utils.LinkedList();
-		list.push('0', '1', '2', '3');
+		list.push(&quot;0&quot;, &quot;1&quot;, &quot;2&quot;, &quot;3&quot;);
 		var counter = 0;
 		list.each(function(value) {
 			expect(value).toBe(counter.toString());
 			counter = counter + 1;
 		});
 		expect(counter).toBe(4);
+	});
+
+	it(&quot;can iterate a list of the same item&quot;, function() {
+		// Seems simple. Caused an infinite loop during development.
+		compare(newPair([&quot;A&quot;, &quot;A&quot;]));
 	});
 });
 
