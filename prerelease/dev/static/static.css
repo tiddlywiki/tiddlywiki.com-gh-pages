@@ -938,9 +938,10 @@ a.tc-tiddlylink:hover {
 */.tc-tag-list-item {
 	position: relative;
 	display: inline-block;
-	margin-right: 7px;
 }.tc-tags-wrapper {
 	margin: 4px 0 14px 0;
+}.tc-tags-wrapper .tc-tag-list-item {
+	margin-right: 7px;
 }.tc-missing-tiddler-label {
 	font-style: italic;
 	font-weight: normal;
