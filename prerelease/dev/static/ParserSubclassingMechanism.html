@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.24-prerelease" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>ParserSubclassingMechanism: TiddlyWiki/Dev
+
+— documentation for developers
+</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/dev/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/dev/</a></div></div>
+</p>
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists " data-tags="" data-tiddler-title="ParserSubclassingMechanism"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span></span><span><h2 class="tc-title">ParserSubclassingMechanism</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a>3rd February 2021 at 3:08pm</div></div><div class=" tc-reveal">
+<div class="tc-tags-wrapper"></div>
+</div>
+
+<div class="tc-tiddler-body tc-reveal"><h2 class="">Introduction</h2><p>The wikitext parser subclassing mechanism makes it possible for custom parsers to use the wiki text parsing engine, but to customise the rules that are used.</p><h2 class="">Example</h2><p>Here is an example of a subclass of the checkbox widget that adds logging to the event handler:</p><pre class="js hljs"><code>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+
+<span class="hljs-comment">/*jslint node: true, browser: true */</span>
+<span class="hljs-comment">/*global $tw: false */</span>
+<span class="hljs-meta">"use strict"</span>;
+
+<span class="hljs-keyword">var</span> WikiParser = <span class="hljs-built_in">require</span>(<span class="hljs-string">"$:/core/modules/parsers/wikiparser/wikiparser.js"</span>)[<span class="hljs-string">"text/vnd.tiddlywiki"</span>],
+    HtmlParser = $tw.modules.createClassFromModule(<span class="hljs-built_in">require</span>(<span class="hljs-string">"$:/core/modules/parsers/wikiparser/rules/html.js"</span>),$tw.WikiRuleBase),
+    EntityParser = $tw.modules.createClassFromModule(<span class="hljs-built_in">require</span>(<span class="hljs-string">"$:/core/modules/parsers/wikiparser/rules/entity.js"</span>),$tw.WikiRuleBase);
+
+<span class="hljs-keyword">var</span> MyCustomWikiParser = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">type,text,options</span>) </span>{
+    <span class="hljs-keyword">var</span> parser = <span class="hljs-keyword">new</span> WikiParser(type,text,$tw.utils.extend({},options,{
+        <span class="hljs-comment">// Force the parser to parse in inline mode</span>
+        <span class="hljs-attr">parseAsInline</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-comment">// Specify which rules will be used</span>
+        <span class="hljs-attr">rules</span>: {
+            <span class="hljs-attr">pragma</span>: [],
+            <span class="hljs-attr">block</span>: [],
+            <span class="hljs-attr">inline</span>: [HtmlParser,EntityParser]
+        }
+    }));
+    <span class="hljs-keyword">this</span>.tree = parser.tree;
+    <span class="hljs-keyword">this</span>.prototype = parser.prototype;
+};
+
+exports[<span class="hljs-string">"text/vnd.my-custom-type"</span>] = MyCustomWikiParser;
+
+})();</code></pre></div>
+
+<div class="tc-tiddler-plugin-info tc-reveal"><p>
+</p></div>
+</div>
+
+</p>
+</section>
+</body>
+</html>
+
