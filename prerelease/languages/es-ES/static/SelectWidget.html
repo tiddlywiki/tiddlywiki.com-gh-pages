@@ -811,6 +811,17 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option>A New Kind of Science</option>
 <option>The Dice Man</option>
 </select>
+</p></div><h3 class="">Simple List with Placeholder Value</h3><p>To display a default value that is also disabled, effectively functioning as a placeholder, the following form can be used. Note that the targeted field must be empty, or not exist, for the placeholder to show in the widget:</p><div class="doc-example"><pre><code>&lt;$select tiddler='New Tiddler' field='text' default='Choose a new text'&gt;
+&lt;option disabled&gt;Choose a new text&lt;/option&gt;
+&lt;option&gt;A Tale of Two Cities&lt;/option&gt;
+&lt;option&gt;A New Kind of Science&lt;/option&gt;
+&lt;option&gt;The Dice Man&lt;/option&gt;
+&lt;/$select&gt;</code></pre><p>Este es su aspecto:</p><p><select value="Choose a new text">
+<option disabled="true">Choose a new text</option>
+<option>A Tale of Two Cities</option>
+<option>A New Kind of Science</option>
+<option>The Dice Man</option>
+</select>
 </p></div><h2 class="">Value lists</h2><p>In this example the <code>value</code> attribute has been used to specify the text that should be used as the value of the entry instead of the display text.</p><div class="doc-example"><pre><code>&lt;$select tiddler='$:/SiteTitle'&gt;
 &lt;option value='cities'&gt;A Tale of Two Cities&lt;/option&gt;
 &lt;option value='science'&gt;A New Kind of Science&lt;/option&gt;
@@ -925,7 +936,7 @@ Every time the user selects a new value in the menu, the selected value is writt
 </optgroup>
 
 </select>
-</p></div><h2 class="">Multiple Selections</h2><p>This example uses the <code>multiple</code> keyword to specify that we should be able to select multiple items.</p><p><div class="doc-example"><pre><code>&lt;$select tiddler='$:/generated-list-demo-state' field='testing' multiple size='8'&gt;
+</p></div><h2 class="">Multiple Selections</h2><p>This example uses the <code>multiple</code> keyword to specify that we should be able to select multiple items.</p><div class="doc-example"><pre><code>&lt;$select tiddler='$:/generated-list-demo-state' field='testing' multiple size='8'&gt;
 &lt;$list filter='[tag[TableOfContents]]'&gt;
 &lt;option&gt;&lt;$view field='title'/&gt;&lt;/option&gt;
 &lt;/$list&gt;
@@ -960,7 +971,7 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option>About</option>
 
 </select><br>
-</p></div></p></div>
+</p></div></div>
 
 <div class="tc-tiddler-plugin-info tc-reveal"><p>
 </p></div>
