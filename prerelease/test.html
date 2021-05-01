@@ -5207,7 +5207,7 @@ Error message and password prompt
         },
         "$:/core/modules/filters/filter.js": {
             "title": "$:/core/modules/filters/filter.js",
-            "text": "/*\\\ntitle: $:/core/modules/filters/filter.js\ntype: application/javascript\nmodule-type: filteroperator\n\nFilter operator returning those input titles that pass a subfilter\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\"use strict\";\n\n/*\nExport our filter function\n*/\nexports.filter = function(source,operator,options) {\n\tvar filterFn = options.wiki.compileFilter(operator.operand),\n\t\tresults = [],\n\t\ttarget = operator.prefix !== \"!\";\n\tsource(function(tiddler,title) {\n\t\tvar list = filterFn.call(options.wiki,options.wiki.makeTiddlerIterator([title]));\n\t\tif((list.length &gt; 0) === target) {\n\t\t\tresults.push(title);\n\t\t}\n\t});\n\treturn results;\n};\n\n})();\n",
+            "text": "/*\\\ntitle: $:/core/modules/filters/filter.js\ntype: application/javascript\nmodule-type: filteroperator\n\nFilter operator returning those input titles that pass a subfilter\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\"use strict\";\n\n/*\nExport our filter function\n*/\nexports.filter = function(source,operator,options) {\n\tvar filterFn = options.wiki.compileFilter(operator.operand),\n\t\tresults = [],\n\t\ttarget = operator.prefix !== \"!\";\n\tsource(function(tiddler,title) {\n\t\tvar list = filterFn.call(options.wiki,options.wiki.makeTiddlerIterator([title]),options.widget);\n\t\tif((list.length &gt; 0) === target) {\n\t\t\tresults.push(title);\n\t\t}\n\t});\n\treturn results;\n};\n\n})();\n",
             "type": "application/javascript",
             "module-type": "filteroperator"
         },
@@ -12186,9 +12186,12 @@ describe("'reduce' and 'intersection' filter prefix tests", function() {
 		rootWidget.makeChildWidgets();
 		var anchorWidget = rootWidget.children[0];
 		rootWidget.setVariable("larger-than-18","[get[text]length[]compare:integer:gteq[18]]");
+		rootWidget.setVariable("nr","18");
+		rootWidget.setVariable("larger-than-18-with-var","[get[text]length[]compare:integer:gteq&lt;nr&gt;]");
 		expect(wiki.filterTiddlers("[tag[textexample]] :filter[get[text]length[]compare:integer:gteq[18]]",anchorWidget).join(",")).toBe("Red wine,Cheesecake,Chocolate Cake");
 		expect(wiki.filterTiddlers("[tag[textexample]]",anchorWidget).join(",")).toBe("Sparkling water,Red wine,Cheesecake,Chocolate Cake");
 		expect(wiki.filterTiddlers("[tag[textexample]filter&lt;larger-than-18&gt;]",anchorWidget).join(",")).toBe("Red wine,Cheesecake,Chocolate Cake");
+		expect(wiki.filterTiddlers("[tag[textexample]filter&lt;larger-than-18-with-var&gt;]",anchorWidget).join(",")).toBe("Red wine,Cheesecake,Chocolate Cake");
 	})
 
 });
