@@ -222,8 +222,8 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div commit="81b5fe944a8ebdb27b9972d3fa7093fe5f5ce68c" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 81b5fe944a8ebdb27b9972d3fa7093fe5f5ce68c of https://github.com/Jermolene/TiddlyWiki5 at 2021-05-21 09:12:53 UTC
+<div commit="0003d70132995bfd5e0005692438f2f8e04b27b3" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit 0003d70132995bfd5e0005692438f2f8e04b27b3 of https://github.com/Jermolene/TiddlyWiki5 at 2021-05-21 09:37:16 UTC
 </pre>
 </div>
 <div caption="Keymap" tags="$:/tags/SideBar" title="$:/codemirrordemo/sidebar/cheatsheet">
@@ -5057,6 +5057,12 @@ $:/codemirrordemo/sidebar/cheatsheet
             "type": "application/javascript",
             "module-type": "texteditoroperation"
         },
+        "$:/core/modules/editor/operations/text/insert-text.js": {
+            "title": "$:/core/modules/editor/operations/text/insert-text.js",
+            "text": "/*\\\ntitle: $:/core/modules/editor/operations/text/insert-text.js\ntype: application/javascript\nmodule-type: texteditoroperation\n\nText editor operation insert text at the caret position. If there is a selection it is replaced.\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\"use strict\";\n\nexports[\"insert-text\"] = function(event,operation) {\n\toperation.replacement = event.paramObject.text;\n\toperation.cutStart = operation.selStart;\n\toperation.cutEnd = operation.selEnd;\n\toperation.newSelStart = operation.selStart + operation.replacement.length;\n\toperation.newSelEnd = operation.newSelStart;\n};\n\n})();\n",
+            "type": "application/javascript",
+            "module-type": "texteditoroperation"
+        },
         "$:/core/modules/editor/operations/text/make-link.js": {
             "title": "$:/core/modules/editor/operations/text/make-link.js",
             "text": "/*\\\ntitle: $:/core/modules/editor/operations/text/make-link.js\ntype: application/javascript\nmodule-type: texteditoroperation\n\nText editor operation to make a link\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\"use strict\";\n\nexports[\"make-link\"] = function(event,operation) {\n\tif(operation.selection) {\n\t\toperation.replacement = \"[[\" + operation.selection + \"|\" + event.paramObject.text + \"]]\";\n\t\toperation.cutStart = operation.selStart;\n\t\toperation.cutEnd = operation.selEnd;\n\t} else {\n\t\toperation.replacement = \"[[\" + event.paramObject.text + \"]]\";\n\t\toperation.cutStart = operation.selStart;\n\t\toperation.cutEnd = operation.selEnd;\n\t}\n\toperation.newSelStart = operation.selStart + operation.replacement.length;\n\toperation.newSelEnd = operation.newSelStart;\n};\n\n})();\n",
@@ -7865,7 +7871,7 @@ $:/codemirrordemo/sidebar/cheatsheet
             "title": "$:/core/ui/EditorToolbar/file-import",
             "tags": "$:/tags/EditorTools",
             "condition": "[&lt;targetTiddler&gt;!has[type]] [&lt;targetTiddler&gt;type[text/vnd.tiddlywiki]]",
-            "text": "\\define lingo-base() $:/language/Import/\n\n\\define closePopupActions()\n&lt;$action-deletetiddler $filter=\"[title&lt;importState&gt;] [title&lt;importTitle&gt;]\"/&gt;\n\\end\n\n\\define replacement-text-image() [img[$title$]]\n\n\\define replacement-text-file() [[$title$]]\n\n\\define postImportActions()\n&lt;$list filter=\"[&lt;importTitle&gt;links[]] :reduce[get[type]prefix[image]then&lt;replacement-text-image&gt;else&lt;replacement-text-file&gt;search-replace[$title$],&lt;currentTiddler&gt;addprefix&lt;accumulator&gt;]\" variable=\"imageTitle\"&gt;\n&lt;$action-sendmessage\n\t$message=\"tm-edit-text-operation\"\n\t$param=\"replace-selection\"\n\ttext=&lt;&lt;imageTitle&gt;&gt;\n/&gt;\n&lt;/$list&gt;\n&lt;&lt;closePopupActions&gt;&gt;\n\\end\n\n\\define buttons()\n&lt;$button class=\"tc-btn-invisible\" actions=&lt;&lt;closePopupActions&gt;&gt; &gt;&lt;&lt;lingo Listing/Cancel/Caption&gt;&gt;&lt;/$button&gt;\n&lt;$button class=\"tc-btn-invisible\" message=\"tm-perform-import\" param=&lt;&lt;importTitle&gt;&gt; actions=&lt;&lt;postImportActions&gt;&gt; &gt;&lt;&lt;lingo Listing/Import/Caption&gt;&gt;&lt;/$button&gt;\n\\end\n\n&lt;$reveal type=\"popup\" state=&lt;&lt;importState&gt;&gt; tag=\"div\" class=\"tc-editor-importpopup\"&gt;\n&lt;div class=\"tc-editor-import\"&gt;\n&lt;$list filter=\"[&lt;importTitle&gt;field:plugin-type[import]]\"&gt;\n&lt;h2&gt;&lt;&lt;lingo Editor/Import/Heading&gt;&gt;&lt;/h2&gt;\n&lt;$tiddler tiddler=&lt;&lt;importTitle&gt;&gt;&gt;\n{{||$:/core/ui/ImportListing}}\n&lt;&lt;buttons&gt;&gt;\n&lt;/$tiddler&gt;\n&lt;/$list&gt;\n&lt;/div&gt;\n&lt;/$reveal&gt;\n"
+            "text": "\\define lingo-base() $:/language/Import/\n\n\\define closePopupActions()\n&lt;$action-deletetiddler $filter=\"[title&lt;importState&gt;] [title&lt;importTitle&gt;]\"/&gt;\n\\end\n\n\\define replacement-text-image() [img[$title$]]\n\n\\define replacement-text-file() [[$title$]]\n\n\\define postImportActions()\n&lt;$list filter=\"[&lt;importTitle&gt;links[]] :reduce[get[type]prefix[image]then&lt;replacement-text-image&gt;else&lt;replacement-text-file&gt;search-replace[$title$],&lt;currentTiddler&gt;addprefix&lt;accumulator&gt;]\" variable=\"imageTitle\"&gt;\n&lt;$action-sendmessage\n\t$message=\"tm-edit-text-operation\"\n\t$param=\"insert-text\"\n\ttext=&lt;&lt;imageTitle&gt;&gt;\n/&gt;\n&lt;/$list&gt;\n&lt;&lt;closePopupActions&gt;&gt;\n\\end\n\n\\define buttons()\n&lt;$button class=\"tc-btn-invisible\" actions=&lt;&lt;closePopupActions&gt;&gt; &gt;&lt;&lt;lingo Listing/Cancel/Caption&gt;&gt;&lt;/$button&gt;\n&lt;$button class=\"tc-btn-invisible\" message=\"tm-perform-import\" param=&lt;&lt;importTitle&gt;&gt; actions=&lt;&lt;postImportActions&gt;&gt; &gt;&lt;&lt;lingo Listing/Import/Caption&gt;&gt;&lt;/$button&gt;\n\\end\n\n&lt;$reveal type=\"popup\" state=&lt;&lt;importState&gt;&gt; tag=\"div\" class=\"tc-editor-importpopup\"&gt;\n&lt;div class=\"tc-editor-import\"&gt;\n&lt;$list filter=\"[&lt;importTitle&gt;field:plugin-type[import]]\"&gt;\n&lt;h2&gt;&lt;&lt;lingo Editor/Import/Heading&gt;&gt;&lt;/h2&gt;\n&lt;$tiddler tiddler=&lt;&lt;importTitle&gt;&gt;&gt;\n{{||$:/core/ui/ImportListing}}\n&lt;&lt;buttons&gt;&gt;\n&lt;/$tiddler&gt;\n&lt;/$list&gt;\n&lt;/div&gt;\n&lt;/$reveal&gt;\n"
         },
         "$:/core/ui/EditorToolbar/heading-1": {
             "title": "$:/core/ui/EditorToolbar/heading-1",
@@ -10233,7 +10239,7 @@ $:/codemirrordemo/sidebar/cheatsheet
 [[Draft of 'LoremIpsum']]
 </pre>
 </div>
-<div created="20210521091344557" current-tiddler="HelloThere" modified="20210521091344557" title="$:/HistoryList" type="application/json">
+<div created="20210521093803369" current-tiddler="HelloThere" modified="20210521093803369" title="$:/HistoryList" type="application/json">
 <pre>[
     {
         "title": "HelloThere"
@@ -10954,7 +10960,7 @@ $:/codemirrordemo/sidebar/cheatsheet
         },
         "$:/info/startup-timestamp": {
             "title": "$:/info/startup-timestamp",
-            "text": "20210521091344409"
+            "text": "20210521093803242"
         }
     }
 }</pre>
