@@ -184,8 +184,8 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div commit="0003d70132995bfd5e0005692438f2f8e04b27b3" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 0003d70132995bfd5e0005692438f2f8e04b27b3 of https://github.com/Jermolene/TiddlyWiki5 at 2021-05-21 09:37:16 UTC
+<div commit="10b20657ccb88ec0b12c1e789f78e76ceead1add" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit 10b20657ccb88ec0b12c1e789f78e76ceead1add of https://github.com/Jermolene/TiddlyWiki5 at 2021-05-22 09:51:35 UTC
 </pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" name="Core" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.24-prerelease">
@@ -5142,6 +5142,12 @@ Error message and password prompt
         "$:/core/modules/filters/days.js": {
             "title": "$:/core/modules/filters/days.js",
             "text": "/*\\\ntitle: $:/core/modules/filters/days.js\ntype: application/javascript\nmodule-type: filteroperator\n\nFilter operator that selects tiddlers with a specified date field within a specified date interval.\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\"use strict\";\n\n/*\nExport our filter function\n*/\nexports.days = function(source,operator,options) {\n\tvar results = [],\n\t\tfieldName = operator.suffix || \"modified\",\n\t\tdayInterval = (parseInt(operator.operand,10)||0),\n\t\tdayIntervalSign = $tw.utils.sign(dayInterval),\n\t\ttargetTimeStamp = (new Date()).setHours(0,0,0,0) + 1000*60*60*24*dayInterval,\n\t\tisWithinDays = function(dateField) {\n\t\t\tvar sign = $tw.utils.sign(targetTimeStamp - (new Date(dateField)).setHours(0,0,0,0));\n\t\t\treturn sign === 0 || sign === dayIntervalSign;\n\t\t};\n\n\tif(operator.prefix === \"!\") {\n\t\ttargetTimeStamp = targetTimeStamp - 1000*60*60*24*dayIntervalSign;\n\t\tsource(function(tiddler,title) {\n\t\t\tif(tiddler &amp;&amp; tiddler.fields[fieldName]) {\n\t\t\t\tif(!isWithinDays($tw.utils.parseDate(tiddler.fields[fieldName]))) {\n\t\t\t\t\tresults.push(title);\n\t\t\t\t}\n\t\t\t}\n\t\t});\n\t} else {\n\t\tsource(function(tiddler,title) {\n\t\t\tif(tiddler &amp;&amp; tiddler.fields[fieldName]) {\n\t\t\t\tif(isWithinDays($tw.utils.parseDate(tiddler.fields[fieldName]))) {\n\t\t\t\t\tresults.push(title);\n\t\t\t\t}\n\t\t\t}\n\t\t});\n\t}\n\treturn results;\n};\n\n})();\n",
+            "type": "application/javascript",
+            "module-type": "filteroperator"
+        },
+        "$:/core/modules/filters/deserializers.js": {
+            "title": "$:/core/modules/filters/deserializers.js",
+            "text": "/*\\\ntitle: $:/core/modules/filters/deserializers.js\ntype: application/javascript\nmodule-type: filteroperator\n\nFilter operator for returning the names of the deserializers in this wiki\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\"use strict\";\n\n/*\nExport our filter function\n*/\nexports.deserializers = function(source,operator,options) {\n\tvar results = [];\n\t$tw.utils.each($tw.Wiki.tiddlerDeserializerModules,function(deserializer,type) {\n\t\tresults.push(type);\n\t});\n\tresults.sort();\n\treturn results;\n};\n\n})();",
             "type": "application/javascript",
             "module-type": "filteroperator"
         },
@@ -10123,7 +10129,7 @@ Error message and password prompt
 [[MarkdownExample]]
 </pre>
 </div>
-<div created="20210521093804055" current-tiddler="HelloThere" modified="20210521093804055" title="$:/HistoryList" type="application/json">
+<div created="20210522095235992" current-tiddler="HelloThere" modified="20210522095235992" title="$:/HistoryList" type="application/json">
 <pre>[
     {
         "title": "HelloThere"
@@ -10363,7 +10369,7 @@ Error message and password prompt
         },
         "$:/info/startup-timestamp": {
             "title": "$:/info/startup-timestamp",
-            "text": "20210521093803901"
+            "text": "20210522095235791"
         }
     }
 }</pre>
