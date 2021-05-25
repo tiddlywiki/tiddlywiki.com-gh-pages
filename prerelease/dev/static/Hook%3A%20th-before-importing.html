@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.24-prerelease" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>Hook: th-before-importing: TiddlyWiki/Dev
+
+— documentation for developers
+</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/dev/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/dev/</a></div></div>
+</p>
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-HookMechanism" data-tags="HookMechanism" data-tiddler-title="Hook: th-before-importing"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><span class=" tc-reveal"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span></span><span><h2 class="tc-title">Hook: th-before-importing</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a>8th February 2021 at 3:20pm</div></div><div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="HookMechanism">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#4e432f;
+color:#4e432f;">
+HookMechanism
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span></div>
+</div>
+
+<div class="tc-tiddler-body tc-reveal"><p>This hook allows plugins to inspect or modify the <code>importTiddler</code> object <strong>before</strong> any tiddlers are imported. It is invoked after the final &quot;Import&quot; button is clicked, but <strong>before</strong> the selected tiddlers are being imported into the store.</p><p><strong>Intended Usecases</strong>:</p><ul><li>Manipulate the import &quot;selection state&quot;</li><li>Eg: create a customized &quot;log-tiddler&quot; that contains a heading, that should only be written once</li></ul><p><strong>Important</strong>: </p><ul><li>This hook <strong>should not</strong> be used to manpulate the <code>importTiddler.fields.text</code> element!</li><li>If you want to give the users a possibility to verify the imported data, use ùpgraders like: <code>$:/core/modules/upgraders/</code> instead</li><li>If you need to manipulate the imported tiddler content, without default user interaction, consider: <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Hook%253A%2520th-importing-tiddler.html">Hook: th-importing-tiddler</a> instead</li></ul><p>The hook is part of the <code>NavigatorWidget.prototype.handlePerformImportEvent</code> function.</p><p>Hook function parameters:</p><ul><li><strong>importTiddler</strong>: an object, that contains information about &quot;selected / unselected&quot; tiddlers and more</li></ul><p>Return value:</p><ul><li><strong>importTiddler</strong>: object</li></ul><p>The hook must return the <code>importTiddler</code> object. For many usecases the object will be returned unmodified.</p><p><strong>Example code how to implement a hook in your project</strong></p><pre><code>/*\
+title: $:/plugins/&lt;author&gt;/&lt;plugin&gt;/th-before-importing.js
+type: application/javascript
+module-type: startup
+
+YOUR DISCRCRIPTION COMES HERE!
+
+\*/
+(function(){
+
+/*jslint node: true, browser: true */
+/*global $tw: false, exports: true */
+&quot;use strict&quot;;
+
+// Export name and synchronous status
+exports.name = &quot;&lt;yournamecomesherewithoutspaces&gt;&quot;;
+exports.platforms = [&quot;browser&quot;];
+exports.after = [&quot;startup&quot;];
+exports.synchronous = true;
+
+// Define your variables here!
+
+exports.startup = function() {
+	$tw.hooks.addHook(&quot;th-before-importing&quot;,function(importTiddler) {
+
+// YOUR CODE !
+
+		return importTiddler;
+	});
+};
+
+})();
+</code></pre></div>
+
+<div class="tc-tiddler-plugin-info tc-reveal"><p>
+</p></div>
+</div>
+
+</p>
+</section>
+</body>
+</html>
+
