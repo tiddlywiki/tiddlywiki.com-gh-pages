@@ -12520,6 +12520,14 @@ Error message and password prompt
             "title": "$:/language/EditTemplate/Body/Preview/Type/Output",
             "text": "输出"
         },
+        "$:/language/EditTemplate/Body/Preview/Type/DiffShadow": {
+            "title": "$:/language/EditTemplate/Body/Preview/Type/DiffShadow",
+            "text": "与影子条目的差异（如果有）"
+        },
+        "$:/language/EditTemplate/Body/Preview/Type/DiffCurrent": {
+            "title": "$:/language/EditTemplate/Body/Preview/Type/DiffCurrent",
+            "text": "与当前条目的差异"
+        },
         "$:/language/EditTemplate/Field/Remove/Caption": {
             "title": "$:/language/EditTemplate/Field/Remove/Caption",
             "text": "删除字段"
@@ -12903,7 +12911,7 @@ Error message and password prompt
         "$:/language/Help/listen": {
             "title": "$:/language/Help/listen",
             "description": "为 TiddlyWiki 提供一个 HTTP 服务器接口",
-            "text": "通过 HTTP 提供一个维基服务。\n\nlisten 命令使用[[命名的命令参数|NamedCommandParameters]]：\n\n```\n--listen [&lt;name&gt;=&lt;value&gt;]...\n```\n\n所有参数都是可选的, 具有安全的默认值, 可以按任意顺序指定。认可的参数有:\n\n* ''host'' - 可选的主机名称， (默认为 \"127.0.0.1\" 或名为 \"localhost\")\n* ''path-prefix'' - 可选的路径前缀\n* ''port'' - 侦听的埠号；非数值会被解译为一个系统环境变数，从其中提取埠号 (默认为 \"8080\")\n* ''credentials'' - 凭证 CSV 文件的路径名（相对于维基文件夹）\n* ''anon-username'' - 匿名用户的编辑署名\n* ''username'' - 可选的基本验证用户名称\n* ''password'' - 可选的基本验证密码\n* ''authenticated-user-header'' - 可选的标头名称，用于受信任身份验证\n* ''readers'' - 允许读取此维基的主体，以逗号分隔的清单\n* ''writers'' - 允许写入此维基的主体，以逗号分隔的清单\n* ''csrf-disable'' - 设置为 \"yes\" 以禁用 CSRF 检查 (默认为 \"no\")\n* ''sse-enabled'' - 设置为 \"yes\" 以启用服务器传送的事件 (默认为 \"no\")\n* ''root-tiddler'' - 服务的基本条目 (默认为 \"$:/core/save/all\")\n* ''root-render-type'' - 呈现的基本条目的内容类型 (默认为 \"text/plain\")\n* ''root-serve-type'' - 服务的基本条目的内容类型 (默认为 \"text/html\")\n* ''tls-cert'' - TLS 证书文件的路径名（相对于维基文件夹）\n* ''tls-key'' - TLS 密钥文件的路径名（相对于维基文件夹）\n* ''debug-level'' - 可选的调试级别；设置为 \"debug\" 来查看请求的详细信息；(默认为 \"none\")\n* ''gzip'' - 设为 \"yes\" 以启用某些 http 端点的 gzip 压缩 (默认为 \"no\")\n* ''use-browser-cache'' - 设置为 \"yes\" 允许浏览器缓存响应，以节省带宽（默认为 \"no\")\n\n有关向整个本地网络开启实例的信息，以及可能的安全问题，请参阅 TiddlyWiki.com 的 WebServer 条目。\n"
+            "text": "通过 HTTP 提供一个维基服务。\n\nlisten 命令使用[[命名的命令参数|NamedCommandParameters]]：\n\n```\n--listen [&lt;name&gt;=&lt;value&gt;]...\n```\n\n所有参数都是可选的, 具有安全的默认值, 可以按任意顺序指定。认可的参数有:\n\n* ''host'' - 可选的主机名称， (默认为 \"127.0.0.1\" 或名为 \"localhost\")\n* ''path-prefix'' - 可选的路径前缀\n* ''port'' - 侦听的埠号；非数值会被解译为一个系统环境变数，从其中提取埠号 (默认为 \"8080\")\n* ''credentials'' - 凭证 CSV 文件的路径名（相对于维基文件夹）\n* ''anon-username'' - 匿名用户的编辑署名\n* ''username'' - 可选的基本验证用户名称\n* ''password'' - 可选的基本验证密码\n* ''authenticated-user-header'' - 可选的标头名称，用于受信任身份验证\n* ''readers'' - 允许读取此维基，以逗号分隔的用户名称的清单\n* ''writers'' - 允许写入此维基，以逗号分隔的用户名称的清单\n* ''csrf-disable'' - 设置为 \"yes\" 以禁用 CSRF 检查 (默认为 \"no\")\n* ''sse-enabled'' - 设置为 \"yes\" 以启用服务器传送的事件 (默认为 \"no\")\n* ''root-tiddler'' - 服务的基本条目 (默认为 \"$:/core/save/all\")\n* ''root-render-type'' - 呈现的基本条目的内容类型 (默认为 \"text/plain\")\n* ''root-serve-type'' - 服务的基本条目的内容类型 (默认为 \"text/html\")\n* ''tls-cert'' - TLS 证书文件的路径名（相对于维基文件夹）\n* ''tls-key'' - TLS 密钥文件的路径名（相对于维基文件夹）\n* ''debug-level'' - 可选的调试级别；设置为 \"debug\" 来查看请求的详细信息；(默认为 \"none\")\n* ''gzip'' - 设为 \"yes\" 以启用某些 http 端点的 gzip 压缩 (默认为 \"no\")\n* ''use-browser-cache'' - 设置为 \"yes\" 允许浏览器缓存响应，以节省带宽（默认为 \"no\")\n\n有关向整个本地网络开启实例的信息，以及可能的安全问题，请参阅 TiddlyWiki.com 的 WebServer 条目。\n"
         },
         "$:/language/Help/load": {
             "title": "$:/language/Help/load",
@@ -12932,7 +12940,7 @@ Error message and password prompt
         "$:/language/Help/render": {
             "title": "$:/language/Help/render",
             "description": "呈现个别条目到文件",
-            "text": "呈现由筛选器标识的个别条目，并将结果保存到指定的文件。\n\n可选择性地指定范本条目名称。在此情况下，不是直接呈现每个条目，而是使用设为正在呈现的条目名称的 \"currentTiddler\" 变量，来呈现范本条目。\n\n也可以选择性地指定附加变量的名称和值。\n\n```\n--render &lt;tiddler-filter&gt; [&lt;filename-filter&gt;] [&lt;render-type&gt;] [&lt;template&gt;] [ [&lt;name&gt;] [&lt;value&gt;] ]*\n```\n\n* ''tiddler-filter'': 标识要呈现的条目的筛选器\n* ''filename-filter'': 可选的筛选器，转换条目名称至路径名。如果省略，默认为 `[is[tiddler]addsuffix[.html]]`，其使用未改变的条目名称为文件名\n* ''template'': 可选的范本，用于呈现每个条目\n* ''render-type'': 可选的呈现类型：`text/html` (默认值) 会传回完整的 HTML 文本，而 `text/plain` 只会传回文本内容 (即其忽略 HTML 标记与其他不可印出的数据)\n* ''name'': 可选的变量名称\n* ''value'': 可选的变量值\n\n默认情况下，文件名被解析为相对于发行版文件夹的 `output` 子文件夹。`--output` 命令可用于将输出指到一个不同的文件夹。\n\n附注：\n\n* 输出目录不清除任何现有的文件\n* 文件名的路径中，任何不存在的文件夹，将自动创建。\n* 当正呈现的条目名称中带有空格，请注意同时使用命令行接口所要求的引号，与 TiddlyWiki 的双重方括号；`--render \"[[Motovun Jack.jpg]]\"`\n* 所选的项目被设置为当前正在呈现的条目名称，以此评估文件名筛选器，允条目名称用作基础计算的文件名。例如，`[encodeuricomponent[]addprefix[static/]]` 为每个条目名称套用 URI 编码，然后增加首码 `static/`\n* `--render` 命令是已弃用的 `--rendertiddler` 和 `--rendertiddlers` 的一个更灵活的替代命令。\n\n例子：\n\n* `--render \"[!is[system]]\" \"[encodeuricomponent[]addprefix[tiddlers/]addsuffix[.html]]\"` -- 呈现所有非系统条目为 \"tiddlers\" 子文件夹中的文件，文件名为 URL 编码的条目名称和扩展名 HTML\n"
+            "text": "呈现由筛选器标识的个别条目，并将结果保存到指定的文件。\n\n可选择性地指定范本条目名称。在此情况下，不是直接呈现每个条目，而是使用设为正在呈现的条目名称的 \"currentTiddler\" 变量，来呈现范本条目。\n\n也可以选择性地指定附加变量的名称和值。\n\n```\n--render &lt;tiddler-filter&gt; [&lt;filename-filter&gt;] [&lt;render-type&gt;] [&lt;template&gt;] [ [&lt;name&gt;] [&lt;value&gt;] ]*\n```\n\n* ''tiddler-filter'': 标识要呈现的条目的筛选器\n* ''filename-filter'': 可选的筛选器，转换条目名称至路径名。如果省略，默认为 `[is[tiddler]addsuffix[.html]]`，其使用未改变的条目名称为文件名\n* ''template'': 可选的范本，用于呈现每个条目\n* ''render-type'': 可选的呈现类型：`text/html` (默认值) 会传回完整的 HTML 文本，而 `text/plain` 只会传回文本内容 (即其忽略 HTML 标记与其他不可印出的数据)\n* ''name'': 可选的变量名称\n* ''value'': 可选的变量值\n\n默认情况下，文件名被解析为相对于发行版文件夹的 `output` 子文件夹。`--output` 命令可用于将输出指到一个不同的文件夹。\n\n附注：\n\n* 输出目录不清除任何现有的文件\n* 文件名的路径中，任何不存在的文件夹，将自动创建。\n* 当正呈现的条目名称中带有空格，请注意同时使用命令行接口所要求的引号，与 TiddlyWiki 的双重方括号：`--render \"[[Motovun Jack.jpg]]\"`\n* 所选的项目被设置为当前正在呈现的条目名称，以此评估文件名筛选器，允条目名称用作基础计算的文件名。例如，`[encodeuricomponent[]addprefix[static/]]` 为每个条目名称套用 URI 编码，然后增加首码 `static/`\n* `--render` 命令是已弃用的 `--rendertiddler` 和 `--rendertiddlers` 的一个更灵活的替代命令。\n\n例子：\n\n* `--render \"[!is[system]]\" \"[encodeuricomponent[]addprefix[tiddlers/]addsuffix[.html]]\"` -- 呈现所有非系统条目为 \"tiddlers\" 子文件夹中的文件，文件名为 URL 编码的条目名称和扩展名 HTML\n"
         },
         "$:/language/Help/rendertiddler": {
             "title": "$:/language/Help/rendertiddler",
@@ -12947,7 +12955,7 @@ Error message and password prompt
         "$:/language/Help/save": {
             "title": "$:/language/Help/save",
             "description": "将个别原始条目保存到文件",
-            "text": "将筛选器标识的个别条目，以原始文本或二进位格式，保存到指定的文件。\n\n```\n--save &lt;tiddler-filter&gt; &lt;filename-filter&gt;\n```\n\n* ''tiddler-filter'': 标识要保存的条目的筛选器\n* ''filename-filter'': 可选的筛选器，转换条目名称至路径名。如果省略，默认为 `[is[tiddler]]`，其使用未改变的条目名称为文件名\n\n附注：\n\n* 输出文件夹不清除任何现有的文件\n* 文件名的路径中，任何不存在的文件夹，将自动创建。\n* 当正保存的条目的名称中带有空格，请注意同时使用命令行接口所要求的引号，与 TiddlyWiki 的双重方括号；`--save  \"[[Motovun Jack.jpg]]\"`\n* 所选的项目被设置为当前正在保存的条目名称，以此评估文件名筛选器，允条目名称用作基础计算的文件名。例如，`[encodeuricomponent[]addprefix[static/]]` 为每个条目名称套用 URI 编码，然后增加首码 `static/`\n* `--save` 命令是已被弃用的 `--savetiddler` 和 `--savetiddlers` 的一个更灵活的替代命令。\n\n例子：\n\n* `--save \"[!is[system]is[image]]\" \"[encodeuricomponent[]addprefix[tiddlers/]]\"` -- 保存所有非系统的图像条目为 \"tiddlers\" 子文件夹中的文件，文件名为 URL 编码的条目名称"
+            "text": "将筛选器标识的个别条目，以原始文本或二进位格式，保存到指定的文件。\n\n```\n--save &lt;tiddler-filter&gt; &lt;filename-filter&gt;\n```\n\n* ''tiddler-filter'': 标识要保存的条目的筛选器\n* ''filename-filter'': 可选的筛选器，转换条目名称至路径名。如果省略，默认为 `[is[tiddler]]`，其使用未改变的条目名称为文件名\n\n附注：\n\n* 输出文件夹不清除任何现有的文件\n* 文件名的路径中，任何不存在的文件夹，将自动创建。\n* 当正保存的条目的名称中带有空格，请注意同时使用命令行接口所要求的引号，与 TiddlyWiki 的双重方括号：`--save \"[[Motovun Jack.jpg]]\"`\n* 所选的项目被设置为当前正在保存的条目名称，以此评估文件名筛选器，允条目名称用作基础计算的文件名。例如，`[encodeuricomponent[]addprefix[static/]]` 为每个条目名称套用 URI 编码，然后增加首码 `static/`\n* `--save` 命令是已被弃用的 `--savetiddler` 和 `--savetiddlers` 的一个更灵活的替代命令。\n\n例子：\n\n* `--save \"[!is[system]is[image]]\" \"[encodeuricomponent[]addprefix[tiddlers/]]\"` -- 保存所有非系统的图像条目为 \"tiddlers\" 子文件夹中的文件，文件名为 URL 编码的条目名称"
         },
         "$:/language/Help/savetiddler": {
             "title": "$:/language/Help/savetiddler",
@@ -12991,7 +12999,7 @@ Error message and password prompt
         },
         "$:/language/Import/Editor/Import/Heading": {
             "title": "$:/language/Import/Editor/Import/Heading",
-            "text": "导入图像并插入至编辑器。"
+            "text": "导入图像并将其插入至编辑器。"
         },
         "$:/language/Import/Imported/Hint": {
             "title": "$:/language/Import/Imported/Hint",
