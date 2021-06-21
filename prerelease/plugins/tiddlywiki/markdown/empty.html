@@ -184,8 +184,8 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div commit="0b56d5fd379e01a86b7faef8e8a70ef49d721d0e" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 0b56d5fd379e01a86b7faef8e8a70ef49d721d0e of https://github.com/Jermolene/TiddlyWiki5 at 2021-06-21 11:16:05 UTC
+<div commit="afa653a7aad37fd4b351fbea6aab707bcdc5751c" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit afa653a7aad37fd4b351fbea6aab707bcdc5751c of https://github.com/Jermolene/TiddlyWiki5 at 2021-06-21 20:00:23 UTC
 </pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" name="Core" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.24-prerelease">
@@ -3714,6 +3714,10 @@ Error message and password prompt
         "$:/language/Import/Listing/Cancel/Caption": {
             "title": "$:/language/Import/Listing/Cancel/Caption",
             "text": "Cancel"
+        },
+        "$:/language/Import/Listing/Cancel/Warning": {
+            "title": "$:/language/Import/Listing/Cancel/Warning",
+            "text": "Do you wish to cancel the import?"
         },
         "$:/language/Import/Listing/Hint": {
             "title": "$:/language/Import/Listing/Hint",
@@ -8878,7 +8882,7 @@ Error message and password prompt
         "$:/core/ui/ViewTemplate/import": {
             "title": "$:/core/ui/ViewTemplate/import",
             "tags": "$:/tags/ViewTemplate",
-            "text": "\\define lingo-base() $:/language/Import/\n\n\\define buttons()\n&lt;$button message=\"tm-delete-tiddler\" param=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;&lt;lingo Listing/Cancel/Caption&gt;&gt;&lt;/$button&gt;\n&lt;$button message=\"tm-perform-import\" param=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;&lt;lingo Listing/Import/Caption&gt;&gt;&lt;/$button&gt;\n&lt;&lt;lingo Listing/Preview&gt;&gt; &lt;$select tiddler=\"$:/state/importpreviewtype\" default=\"$:/core/ui/ImportPreviews/Text\"&gt;\n&lt;$list filter=\"[all[shadows+tiddlers]tag[$:/tags/ImportPreview]!has[draft.of]]\"&gt;\n&lt;option value=&lt;&lt;currentTiddler&gt;&gt;&gt;{{!!caption}}&lt;/option&gt;\n&lt;/$list&gt;\n&lt;/$select&gt;\n\\end\n\n&lt;$list filter=\"[all[current]field:plugin-type[import]]\"&gt;\n\n&lt;div class=\"tc-import\"&gt;\n\n&lt;&lt;lingo Listing/Hint&gt;&gt;\n\n&lt;&lt;buttons&gt;&gt;\n\n{{||$:/core/ui/ImportListing}}\n\n&lt;&lt;buttons&gt;&gt;\n\n&lt;/div&gt;\n\n&lt;/$list&gt;\n"
+            "text": "\\define lingo-base() $:/language/Import/\n\n\\define confirmCancel()\n&lt;$action-confirm $message={{$:/language/Import/Listing/Cancel/Warning}} &gt;\n&lt;$action-deletetiddler $tiddler=&lt;&lt;currentTiddler&gt;&gt;/&gt;\n&lt;$action-sendmessage $message=\"tm-close-tiddler\" title=&lt;&lt;currentTiddler&gt;&gt;/&gt;\n&lt;/$action-confirm&gt;\n\\end\n\n\\define buttons()\n&lt;$button actions=&lt;&lt;confirmCancel&gt;&gt; &gt;&lt;&lt;lingo Listing/Cancel/Caption&gt;&gt;&lt;/$button&gt;\n&lt;$button message=\"tm-perform-import\" param=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;&lt;lingo Listing/Import/Caption&gt;&gt;&lt;/$button&gt;\n&lt;&lt;lingo Listing/Preview&gt;&gt; &lt;$select tiddler=\"$:/state/importpreviewtype\" default=\"$:/core/ui/ImportPreviews/Text\"&gt;\n&lt;$list filter=\"[all[shadows+tiddlers]tag[$:/tags/ImportPreview]!has[draft.of]]\"&gt;\n&lt;option value=&lt;&lt;currentTiddler&gt;&gt;&gt;{{!!caption}}&lt;/option&gt;\n&lt;/$list&gt;\n&lt;/$select&gt;\n\\end\n\n&lt;$list filter=\"[all[current]field:plugin-type[import]]\"&gt;\n\n&lt;div class=\"tc-import\"&gt;\n\n&lt;&lt;lingo Listing/Hint&gt;&gt;\n\n&lt;&lt;buttons&gt;&gt;\n\n{{||$:/core/ui/ImportListing}}\n\n&lt;&lt;buttons&gt;&gt;\n\n&lt;/div&gt;\n\n&lt;/$list&gt;\n"
         },
         "$:/core/ui/ViewTemplate/plugin": {
             "title": "$:/core/ui/ViewTemplate/plugin",
@@ -10177,7 +10181,7 @@ Error message and password prompt
 [[MarkdownExample]]
 </pre>
 </div>
-<div created="20210621111659507" current-tiddler="HelloThere" modified="20210621111659507" title="$:/HistoryList" type="application/json">
+<div created="20210621200117062" current-tiddler="HelloThere" modified="20210621200117062" title="$:/HistoryList" type="application/json">
 <pre>[
     {
         "title": "HelloThere"
@@ -10417,7 +10421,7 @@ Error message and password prompt
         },
         "$:/info/startup-timestamp": {
             "title": "$:/info/startup-timestamp",
-            "text": "20210621111659357"
+            "text": "20210621200116919"
         }
     }
 }</pre>
