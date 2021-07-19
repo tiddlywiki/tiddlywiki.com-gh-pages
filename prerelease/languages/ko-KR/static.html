@@ -557,7 +557,7 @@ summary {
 }/*
 ** Basic element styles
 */html, body {
-	font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;;
 	text-rendering: optimizeLegibility; /* Enables kerning and ligatures etc. */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -580,7 +580,7 @@ summary {
 	font-size: 2em;
 }h1, h2, h3, h4, h5, h6 {
 	line-height: 1.2;
-	font-weight: 300;
+	font-weight: normal;
 }pre {
 	display: block;
 	margin-top: 1em;
@@ -729,7 +729,7 @@ pre > code {
 */button.tc-tiddlylink,
 a.tc-tiddlylink {
 	text-decoration: none;
-	font-weight: 500;
+	font-weight: bold;
 	color: #5778d8;
 	-webkit-user-select: inherit; /* Otherwise the draggable attribute makes links impossible to select */
 }.tc-sidebar-lists a.tc-tiddlylink {
@@ -980,7 +980,7 @@ a.tc-tiddlylink:hover {
 	display: inline-block;
 	padding: 0.16em 0.7em;
 	font-size: 0.9em;
-	font-weight: 400;
+	font-weight: normal;
 	line-height: 1.2em;
 	color: #ffffff;
 	white-space: nowrap;
@@ -1042,7 +1042,7 @@ a.tc-tiddlylink:hover {
 	color: #acacac;
 	fill: #acacac;
 }.tc-sidebar-header .tc-title a.tc-tiddlylink-resolves {
-	font-weight: 300;
+	font-weight: normal;
 }.tc-sidebar-header .tc-sidebar-lists p {
 	margin-top: 3px;
 	margin-bottom: 3px;
@@ -1153,7 +1153,7 @@ a.tc-tiddlylink:hover {
 	width: 1%; /* Makes this column be as narrow as possible */
 	text-align: right;
 	font-style: italic;
-	font-weight: 200;
+	font-weight: normal;
 }.tc-view-field-value {
 	word-break: break-all;
 }@media (max-width: 959px) {
@@ -1173,7 +1173,7 @@ a.tc-tiddlylink:hover {
 	}
 }.tc-site-title,
 .tc-titlebar {
-	font-weight: 300;
+	font-weight: normal;
 	font-size: 2.35em;
 	line-height: 1.35em;
 	color: #182955;
@@ -1193,7 +1193,7 @@ a.tc-tiddlylink:hover {
 }.tc-subtitle {
 	font-size: 0.9em;
 	color: #c0c0c0;
-	font-weight: 300;
+	font-weight: normal;
 }.tc-subtitle .tc-tiddlylink {
 	margin-right: .3em;
 }.tc-tiddler-missing .tc-title {
@@ -1453,7 +1453,7 @@ a.tc-tiddlylink:hover {
 	justify-content: center;
 	background-color: #ffffff;
 	border: 4px dashed #999999;
-	font-weight: 600;
+	font-weight: bold;
 	font-size: 150%;
 	opacity: 0.8;
 	color: #333333;
@@ -1740,7 +1740,7 @@ a.tc-tiddlylink:hover {
 	color: #666666;
 	padding: 3px 5px 3px 5px;
 	margin-right: 0.3em;
-	font-weight: 300;
+	font-weight: normal;
 	border: none;
 	background: inherit;
 	background-color: #d8d8d8;
@@ -2172,11 +2172,11 @@ a.tc-tiddlylink:hover {
 	font-weight: normal;
 }.tc-table-of-contents li li li {
 	font-size: 0.95em;
-	font-weight: 200;
+	font-weight: normal;
 	line-height: 1.5;
 }.tc-table-of-contents li li li li {
 	font-size: 0.95em;
-	font-weight: 200;
+	font-weight: normal;
 }.tc-tabbed-table-of-contents {
 	display: -webkit-flex;
 	display: flex;
