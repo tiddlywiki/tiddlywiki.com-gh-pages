@@ -103,11 +103,11 @@ color:#333333;">
 </div></p><p>The filter can be used to highlight new items in a list. For example:
 <div class="doc-example"><pre><code>
 &lt;ul&gt;
-  &lt;$list filter=&quot;[tag[ReleaseNotes]!&lt;currentTiddler&gt;!sort[modified]]&quot;&gt;
+  &lt;$list filter="[tag[ReleaseNotes]!&lt;currentTiddler&gt;!sort[modified]]"&gt;
     &lt;li&gt;
-      &lt;$link&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;
-         &lt;$list filter=&quot;[&lt;currentTiddler&gt;days[-180]]&quot;&gt; @@color:red;^^new^^@@&lt;/$list&gt;
-         &lt;$list filter=&quot;[&lt;currentTiddler&gt;days[-500]!days[-180]]&quot;&gt; @@color:black;^^recent^^@@&lt;/$list&gt;
+      &lt;$link&gt;&lt;$view field="title"/&gt;&lt;/$link&gt;
+         &lt;$list filter="[&lt;currentTiddler&gt;days[-180]]"&gt; @@color:red;^^new^^@@&lt;/$list&gt;
+         &lt;$list filter="[&lt;currentTiddler&gt;days[-500]!days[-180]]"&gt; @@color:black;^^recent^^@@&lt;/$list&gt;
     &lt;/li&gt;
   &lt;/$list&gt;
 &lt;/ul&gt;

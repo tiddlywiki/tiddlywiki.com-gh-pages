@@ -153,23 +153,23 @@ color:#333333;">
 <td align="center"></td>
 </tr>
 </table></p><h1 class="">Examples</h1><p>In this example we shall populate and then clear a list in an ordinary field (myfield) of this tiddler (the default.)</p><div class="doc-example"><pre><code>&lt;$button&gt;
-&lt;$action-listops $field=&quot;myfield&quot; $subfilter=&quot;efg hlm pqr&quot;/&gt;
+&lt;$action-listops $field="myfield" $subfilter="efg hlm pqr"/&gt;
 Populate 'myfield'
 &lt;/$button&gt;
 &lt;$button&gt;
-&lt;$action-listops $field=&quot;myfield&quot; $subfilter=&quot;abc xyz&quot;/&gt;
+&lt;$action-listops $field="myfield" $subfilter="abc xyz"/&gt;
 Append More Items
 &lt;/$button&gt;
 &lt;$button&gt;
-&lt;$action-listops $field=&quot;myfield&quot; $subfilter=&quot;-abc -hlm&quot;/&gt;
+&lt;$action-listops $field="myfield" $subfilter="-abc -hlm"/&gt;
 Remove Items
 &lt;/$button&gt;
 &lt;$button&gt;
-&lt;$action-listops $field=&quot;myfield&quot; $filter=&quot;[[]]&quot;/&gt;
+&lt;$action-listops $field="myfield" $filter="[[]]"/&gt;
 Clear 'myfield'
 &lt;/$button&gt;
 
-&lt;$list filter=&quot;[list[!!myfield]]&quot;&gt;
+&lt;$list filter="[list[!!myfield]]"&gt;
 
 &lt;/$list&gt;</code></pre><p>Affichera ceci :</p><p><button class="">
 
@@ -187,15 +187,15 @@ Remove Items
 
 Clear 'myfield'
 </button></p></div><hr><p>In this example we shall append and remove items from a list in an ordinary field (myfield) of this tiddler (the default) and sort the resultant list. We shall then remove some of the appended items and sort the resulting list in reverse order.</p><div class="doc-example"><pre><code>&lt;$button&gt;
-&lt;$action-listops $field=&quot;myfield&quot; $subfilter=&quot;-efg ijk xyz [[this is a title]] +[sort[]]&quot;/&gt;
+&lt;$action-listops $field="myfield" $subfilter="-efg ijk xyz [[this is a title]] +[sort[]]"/&gt;
 Mangle List
 &lt;/$button&gt;
 &lt;$button&gt;
-&lt;$action-listops $field=&quot;myfield&quot; $subfilter=&quot;-xyz -[[this is a title]] +[!sort[]]&quot;/&gt;
+&lt;$action-listops $field="myfield" $subfilter="-xyz -[[this is a title]] +[!sort[]]"/&gt;
 Unmangle List
 &lt;/$button&gt;
 
-&lt;$list filter=&quot;[list[!!myfield]]&quot;&gt;
+&lt;$list filter="[list[!!myfield]]"&gt;
 
 &lt;/$list&gt;</code></pre><p>Affichera ceci :</p><p><button class="">
 
@@ -205,31 +205,31 @@ Mangle List
 
 Unmangle List
 </button></p></div><hr><p>In this example we shall append a few tags to the 'tags' field of this tiddler (the default.) We shall then remove some of the appended tags. </p><div class="doc-example"><pre><code>&lt;$button&gt;
-&lt;$action-listops $tags=&quot;+[append{Days of the Week!!short}] $:/tag1 $:/tag2 $:/tag3&quot;/&gt;
+&lt;$action-listops $tags="+[append{Days of the Week!!short}] $:/tag1 $:/tag2 $:/tag3"/&gt;
 Populate 'tags'
 &lt;/$button&gt;
 &lt;$button&gt;
-&lt;$action-listops $tags=&quot;+[!remove:2{!!tags}]&quot;/&gt;
+&lt;$action-listops $tags="+[!remove:2{!!tags}]"/&gt;
 Remove Last Two Tags
 &lt;/$button&gt;
 &lt;$button&gt;
-&lt;$action-listops $tags=&quot;+[!prefix[$:/]]&quot;/&gt;
+&lt;$action-listops $tags="+[!prefix[$:/]]"/&gt;
 Remove System Tags
 &lt;/$button&gt;
 &lt;$button&gt;
-&lt;$action-listops $tags=&quot;-Mon -Tue&quot;/&gt;
+&lt;$action-listops $tags="-Mon -Tue"/&gt;
 Remove Mon and Tue
 &lt;/$button&gt;
 &lt;$button&gt;
-&lt;$action-listops $tags=&quot;+[prefix[$:/]] ActionWidgets Widgets&quot;/&gt;
+&lt;$action-listops $tags="+[prefix[$:/]] ActionWidgets Widgets"/&gt;
 Remove User Tags
 &lt;/$button&gt;
 &lt;$button&gt;
-&lt;$action-listops $tags=&quot;+[[]] ActionWidgets Widgets&quot;/&gt;
+&lt;$action-listops $tags="+[[]] ActionWidgets Widgets"/&gt;
 Clear Tags
 &lt;/$button&gt;
 
-&lt;$list filter=&quot;[list[!!tags]]&quot;&gt;
+&lt;$list filter="[list[!!tags]]"&gt;
 
 &lt;/$list&gt;</code></pre><p>Affichera ceci :</p><p><button class="">
 

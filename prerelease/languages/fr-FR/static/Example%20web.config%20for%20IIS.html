@@ -58,27 +58,27 @@ Example web.config for IIS
 
 
 
-<div class="tc-tiddler-body tc-reveal"><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+<div class="tc-tiddler-body tc-reveal"><pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;configuration&gt;
     &lt;system.webServer&gt;
         &lt;handlers&gt;
             &lt;add 
-                name=&quot;httpplatformhandler&quot;
-                path=&quot;*&quot;
-                verb=&quot;*&quot;
-                modules=&quot;httpPlatformHandler&quot;
-                resourceType=&quot;Unspecified&quot;
-                requireAccess=&quot;Script&quot; /&gt;
+                name="httpplatformhandler"
+                path="*"
+                verb="*"
+                modules="httpPlatformHandler"
+                resourceType="Unspecified"
+                requireAccess="Script" /&gt;
         &lt;/handlers&gt;
         &lt;httpPlatform 
-           stdoutLogEnabled=&quot;true&quot;
-           stdoutLogFile=&quot;.\node.log&quot;
-           startupTimeLimit=&quot;20&quot;
-           processPath=&quot;C:\Program Files\nodejs\node.exe&quot;
-           arguments=&quot;.\node_modules\tiddlywiki\tiddlywiki.js ./wiki --listen port=PORT path-prefix=/MyApp&quot;&gt;
+           stdoutLogEnabled="true"
+           stdoutLogFile=".\node.log"
+           startupTimeLimit="20"
+           processPath="C:\Program Files\nodejs\node.exe"
+           arguments=".\node_modules\tiddlywiki\tiddlywiki.js ./wiki --listen port=PORT path-prefix=/MyApp"&gt;
             &lt;environmentVariables&gt;
-                &lt;environmentVariable name=&quot;PORT&quot; value=&quot;%HTTP_PLATFORM_PORT%&quot; /&gt;
-                &lt;environmentVariable name=&quot;NODE_ENV&quot; value=&quot;Production&quot; /&gt;
+                &lt;environmentVariable name="PORT" value="%HTTP_PLATFORM_PORT%" /&gt;
+                &lt;environmentVariable name="NODE_ENV" value="Production" /&gt;
             &lt;/environmentVariables&gt;            
         &lt;/httpPlatform&gt;
     &lt;/system.webServer&gt;

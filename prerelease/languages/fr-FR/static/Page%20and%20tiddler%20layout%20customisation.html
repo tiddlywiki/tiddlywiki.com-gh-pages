@@ -73,15 +73,15 @@ color:#333333;">
 \define newHereButton()
 &lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
 &lt;$action-sendmessage
-  $message=&quot;tm-new-tiddler&quot;
-$param=&quot;TITLE DE VOTRE BOUTON SQUELETTE&quot;
-title=&quot;New tiddler&quot;
+  $message="tm-new-tiddler"
+$param="TITLE DE VOTRE BOUTON SQUELETTE"
+title="New tiddler"
   tags=&lt;&lt;newHereButtonTags&gt;&gt; /&gt;
-&lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;match[yes]]&quot;&gt;
+&lt;$list filter="[&lt;tv-config-toolbar-icons&gt;match[yes]]"&gt;
 {{TITRE DE VOTRE TIDDLER IMAGE SVG}}
 &lt;/$list&gt;
-&lt;$list filter=&quot;[&lt;tv-config-toolbar-text&gt;match[yes]]&quot;&gt;
-&lt;span class=&quot;tc-btn-text&quot;&gt;&lt;$text text=&quot;CAPTION DE VOTRE BOUTON&quot;/&gt;&lt;/span&gt;
+&lt;$list filter="[&lt;tv-config-toolbar-text&gt;match[yes]]"&gt;
+&lt;span class="tc-btn-text"&gt;&lt;$text text="CAPTION DE VOTRE BOUTON"/&gt;&lt;/span&gt;
 &lt;/$list&gt;
 &lt;/$button&gt;
 \end

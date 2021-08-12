@@ -37,7 +37,7 @@ This raises the question, how these multiple tiddlers are build up to a single U
 But before answering this question we need to introduce text references and transclusion.</p><h3 class="">TextReference</h3><p>A text reference describes a special notation to indirectly refer to the contents of a specified tiddler field.
 The syntax of a text reference is:</p><pre><code>&lt;tiddlertitle&gt;
 &lt;tiddlertitle&gt;!!&lt;fieldname&gt;
-!!&lt;fieldname&gt; - specifies a field of the current tiddlers</code></pre><p>To obtain the actual text, the core plug-in adds a function to the wiki store <code>getTextReference(textRef,defaultText,currTiddlerTitle)</code>. The &quot;currentTiddlerTitle&quot; is the title of a tiddler which is used when no tiddlerTitle is specified in the text reference.
+!!&lt;fieldname&gt; - specifies a field of the current tiddlers</code></pre><p>To obtain the actual text, the core plug-in adds a function to the wiki store <code>getTextReference(textRef,defaultText,currTiddlerTitle)</code>. The "currentTiddlerTitle" is the title of a tiddler which is used when no tiddlerTitle is specified in the text reference.
 What the currentTiddler should be, depends on where the text reference is used.
 If it is for example used as a widget attribute, the current tiddler is the tiddler which contains this widget.
 Text references are used by widgets (attributes), filteroperators (parameter) and in transclusions.
@@ -45,17 +45,17 @@ These elements use the <code>getTextReference(textRef,defaultText,currTiddlerTit
 This is realized with a transclude widget which parses the tiddler to be included and adds the resulting nodes as children of its own parse node.
 The trick with transclusion is, that it shows the content of a different tiddler but by default it does not change the current tiddler.
 This enables us to create tiddlers with text references and use them as a templates.</p><p>For example:
-Tiddler <code>MyTask</code> having the fields and the content of:</p><pre><code>important: &quot;very&quot;
-assoc.person: &quot;Hans Dampf&quot;
+Tiddler <code>MyTask</code> having the fields and the content of:</p><pre><code>important: "very"
+assoc.person: "Hans Dampf"
 
-&lt;$transclude tiddler=&quot;TaskHeaderTemplate&quot; /&gt;
+&lt;$transclude tiddler="TaskHeaderTemplate" /&gt;
 
-Hans needs some more Dampf.</code></pre><p>And Tiddler <code>TaskHeaderTemplate</code> with a content of:</p><pre><code>&lt;$view field=&quot;assoc.person&quot;/&gt; has a &lt;$view field=&quot;important&quot;/&gt; important task for us:</code></pre><p>When showing tiddler <code>MyTask</code> it would result in:</p><pre><code>Hans Dampf has a very important task for us:
+Hans needs some more Dampf.</code></pre><p>And Tiddler <code>TaskHeaderTemplate</code> with a content of:</p><pre><code>&lt;$view field="assoc.person"/&gt; has a &lt;$view field="important"/&gt; important task for us:</code></pre><p>When showing tiddler <code>MyTask</code> it would result in:</p><pre><code>Hans Dampf has a very important task for us:
 
 Hans needs some more Dampf.</code></pre><p>Transclusion and templates is one of the most important concepts in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a>.
 It allows us to include other tiddlers using the metadata for our current tiddler.
-It also allows us to transclude a template tiddler with a third tiddler set as the currentTiddler with the TiddlerWidget:</p><pre><code>&lt;$tiddler tiddler=&quot;MyTiddler&quot;&gt;
-&lt;$transclude tiddler=&quot;EditTemplate&quot; /&gt;
+It also allows us to transclude a template tiddler with a third tiddler set as the currentTiddler with the TiddlerWidget:</p><pre><code>&lt;$tiddler tiddler="MyTiddler"&gt;
+&lt;$transclude tiddler="EditTemplate" /&gt;
 &lt;/$tiddler&gt;</code></pre><p>This way we can create a different view on a tiddler which does not only show it's title and it's content
 but shows it's content and metadata in editable text fields and allows us to edit this tiddler.
 Also the template concept is used by the ListWidget to show the tiddlers through a specified template.

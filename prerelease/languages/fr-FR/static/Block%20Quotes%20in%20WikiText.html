@@ -73,24 +73,24 @@ Ceci est un paragraphe de type citation en bloc
 &lt;&lt;&lt;
 </code></pre><p>Affichera ceci :</p><blockquote class="tc-quote"><p>Ceci est un paragraphe de type citation en bloc
 écrit en français
-</p></blockquote><p>... Génération du HTML :</p><pre>&lt;blockquote class=&quot;tc-quote&quot;&gt;&lt;p&gt;Ceci est un paragraphe de type citation en bloc
+</p></blockquote><p>... Génération du HTML :</p><pre>&lt;blockquote class="tc-quote"&gt;&lt;p&gt;Ceci est un paragraphe de type citation en bloc
 écrit en français
 &lt;/p&gt;&lt;/blockquote&gt;</pre></div><h2 class="">Attribution</h2><p>Une attribution peut-être ajoutée au bloc comme ceci, comme ceci :</p><div class="doc-example"><pre><code>&lt;&lt;&lt;
 Les ordinateurs sont des vélos pour nos neurones
 &lt;&lt;&lt; Steve Jobs
 </code></pre><p>Affichera ceci :</p><blockquote class="tc-quote"><p>Les ordinateurs sont des vélos pour nos neurones
-</p><cite>Steve Jobs</cite></blockquote><p>... Génération du HTML :</p><pre>&lt;blockquote class=&quot;tc-quote&quot;&gt;&lt;p&gt;Les ordinateurs sont des vélos pour nos neurones
+</p><cite>Steve Jobs</cite></blockquote><p>... Génération du HTML :</p><pre>&lt;blockquote class="tc-quote"&gt;&lt;p&gt;Les ordinateurs sont des vélos pour nos neurones
 &lt;/p&gt;&lt;cite&gt;Steve Jobs&lt;/cite&gt;&lt;/blockquote&gt;</pre></div><h2 class="">Classes CSS</h2><p>Les blocs peuvent hériter des propriétés de classes CSS:</p><div class="doc-example"><pre><code>&lt;&lt;&lt;.myClass.another-class
 Les systèmes d'exploitation sont des murs pour notre esprit
 &lt;&lt;&lt; Personne
 </code></pre><p>Affichera ceci :</p><blockquote class="tc-quote myClass another-class"><p>Les systèmes d'exploitation sont des murs pour notre esprit
-</p><cite>Personne</cite></blockquote><p>... Génération du HTML :</p><pre>&lt;blockquote class=&quot;tc-quote myClass another-class&quot;&gt;&lt;p&gt;Les systèmes d'exploitation sont des murs pour notre esprit
+</p><cite>Personne</cite></blockquote><p>... Génération du HTML :</p><pre>&lt;blockquote class="tc-quote myClass another-class"&gt;&lt;p&gt;Les systèmes d'exploitation sont des murs pour notre esprit
 &lt;/p&gt;&lt;cite&gt;Personne&lt;/cite&gt;&lt;/blockquote&gt;</pre></div><h1 class="">Bloc uniligne</h1><p>La syntaxe des citations uniligne est une extension de la syntaxe des <a class="tc-tiddlylink tc-tiddlylink-missing" href="Listes%2520avec%2520WikiText.html">Listes avec WikiText</a>. Par exemple :</p><div class="doc-example"><pre><code>&gt; Bloc de citation uniligne
 &gt; Un autre bloc uniligne
 </code></pre><p>Affichera ceci :</p><blockquote><div>Bloc de citation uniligne</div><div>Un autre bloc uniligne</div></blockquote><p>... Génération du HTML :</p><pre>&lt;blockquote&gt;&lt;div&gt;Bloc de citation uniligne&lt;/div&gt;&lt;div&gt;Un autre bloc uniligne&lt;/div&gt;&lt;/blockquote&gt;</pre></div><p>Vous pouvez agréger des blocs unilignes comme ceci :</p><pre><code>&gt; Un bloc de niveau 1
 &gt;&gt; Un bloc de niveau 2
 &gt; Un autre bloc de niveau 1
-&quot;&gt;&gt;</code></pre><p>Affichera :</p><blockquote><div>Un bloc de niveau 1<blockquote><div>Un bloc de niveau 2</div></blockquote></div><div>Un autre bloc de niveau 1</div></blockquote><p>Vous pouvez mixer les citations en bloc avec d'autres types de listes. Par exemple :</p><div class="doc-example"><pre><code>* Liste une
+"&gt;&gt;</code></pre><p>Affichera :</p><blockquote><div>Un bloc de niveau 1<blockquote><div>Un bloc de niveau 2</div></blockquote></div><div>Un autre bloc de niveau 1</div></blockquote><p>Vous pouvez mixer les citations en bloc avec d'autres types de listes. Par exemple :</p><div class="doc-example"><pre><code>* Liste une
 ** Liste deux
 **&gt; Un bloc uniligne
 **&gt; Un autre bloc uniligne

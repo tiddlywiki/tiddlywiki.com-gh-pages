@@ -68,14 +68,14 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>This example shows how to create a sub-story within a tiddler that is independent of the main story.</p><p>Here's the code:</p><pre><code>&lt;$navigator story=&quot;MySubStoryList&quot; history=&quot;MySubHistoryList&quot;&gt;
+<div class="tc-tiddler-body tc-reveal"><p>This example shows how to create a sub-story within a tiddler that is independent of the main story.</p><p>Here's the code:</p><pre><code>&lt;$navigator story="MySubStoryList" history="MySubHistoryList"&gt;
 
 Click this link to get started: HelloThere
 
-&lt;$list filter=&quot;[list[MySubStoryList]]&quot; history=&quot;MySubHistoryList&quot;&gt;
+&lt;$list filter="[list[MySubStoryList]]" history="MySubHistoryList"&gt;
 &lt;div&gt;
 
-! &lt;$button message=&quot;tm-close-tiddler&quot; class=&quot;tc-btn-invisible&quot;&gt;{{$:/core/images/close-button}}&lt;/$button&gt; &lt;$view field=&quot;title&quot;/&gt;
+! &lt;$button message="tm-close-tiddler" class="tc-btn-invisible"&gt;{{$:/core/images/close-button}}&lt;/$button&gt; &lt;$view field="title"/&gt;
 
 &lt;$transclude/&gt;
 &lt;/div&gt;

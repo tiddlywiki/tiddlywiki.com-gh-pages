@@ -66,14 +66,14 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>Este ejemplo muestra cómo, dentro de un un tiddler, se pueden mostrar subhistorias independientes de la historia principal.</p><p>Este es el código:</p><pre><code>&lt;$navigator story=&quot;MiSubHistoria&quot; history=&quot;MiSubHistoria&quot;&gt;
+<div class="tc-tiddler-body tc-reveal"><p>Este ejemplo muestra cómo, dentro de un un tiddler, se pueden mostrar subhistorias independientes de la historia principal.</p><p>Este es el código:</p><pre><code>&lt;$navigator story="MiSubHistoria" history="MiSubHistoria"&gt;
 
 Haz clic en este enlace para empezar:[[¡Hola! ¿Qué tal?|HelloThere]]
 
-&lt;$list filter=&quot;[list[MiSubHistoria]]&quot; history=&quot;MiSubHistoria&quot;&gt;
+&lt;$list filter="[list[MiSubHistoria]]" history="MiSubHistoria"&gt;
 &lt;div&gt;
 
-! &lt;$button message=&quot;tm-close-tiddler&quot; class=&quot;tc-btn-invisible&quot;&gt;{{$:/core/images/close-button}}&lt;/$button&gt; &lt;$view field=&quot;es-title&quot;/&gt;
+! &lt;$button message="tm-close-tiddler" class="tc-btn-invisible"&gt;{{$:/core/images/close-button}}&lt;/$button&gt; &lt;$view field="es-title"/&gt;
 
 &lt;$transclude/&gt;
 &lt;/div&gt;

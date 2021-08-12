@@ -63,7 +63,7 @@ Keyboard Codes (Macros)
 \define codeState() $:/state/code/$(currentTiddler)$
 
 \define getText() 
-&lt;$vars tv-wikilinks=&quot;no&quot;&gt;
+&lt;$vars tv-wikilinks="no"&gt;
 
 * event-key: ''$(event-key)$''
 * event-code: ''$(event-code)$''
@@ -72,7 +72,7 @@ Keyboard Codes (Macros)
 \end
 
 \define pinDetails()
-  &lt;$action-setfield $tiddler=&lt;&lt;codeState&gt;&gt; text=&quot;open&quot;/&gt;
+  &lt;$action-setfield $tiddler=&lt;&lt;codeState&gt;&gt; text="open"/&gt;
 \end
 
 \define unpinDetails()
@@ -80,23 +80,23 @@ Keyboard Codes (Macros)
 \end
 
 \define toggleDetails(text)
-&lt;$list filter=&quot;[&lt;codeState&gt;!has[title]]&quot; variable=&quot;ignore&quot;&gt;
-  &lt;$button class=&quot;tc-btn-invisible&quot; actions=&lt;&lt;pinDetails&gt;&gt; &gt;$text$ {{$:/core/images/unfold-button}}&lt;/$button&gt;
+&lt;$list filter="[&lt;codeState&gt;!has[title]]" variable="ignore"&gt;
+  &lt;$button class="tc-btn-invisible" actions=&lt;&lt;pinDetails&gt;&gt; &gt;$text$ {{$:/core/images/unfold-button}}&lt;/$button&gt;
 &lt;/$list&gt;
-&lt;$list filter=&quot;[&lt;codeState&gt;has[title]]&quot; variable=&quot;ignore&quot;&gt;
-  &lt;$button class=&quot;tc-btn-invisible&quot; actions=&lt;&lt;unpinDetails&gt;&gt; &gt;$text$ {{$:/core/images/fold-button}}&lt;/$button&gt;
+&lt;$list filter="[&lt;codeState&gt;has[title]]" variable="ignore"&gt;
+  &lt;$button class="tc-btn-invisible" actions=&lt;&lt;unpinDetails&gt;&gt; &gt;$text$ {{$:/core/images/fold-button}}&lt;/$button&gt;
 &lt;/$list&gt;
 \end
 
 \define actionKey()
-&lt;$action-setfield $tiddler=&quot;$:/key-test/action&quot; text=&lt;&lt;getText&gt;&gt; /&gt;
+&lt;$action-setfield $tiddler="$:/key-test/action" text=&lt;&lt;getText&gt;&gt; /&gt;
 \end
 
 \define showCode()
 
-''&lt;&lt;toggleDetails &quot;&quot;&quot;Toggle this tiddler code&quot;&quot;&quot;&gt;&gt;''
+''&lt;&lt;toggleDetails """Toggle this tiddler code"""&gt;&gt;''
 
-&lt;$list filter=&quot;[&lt;codeState&gt;has[title]]&quot; variable=ignore&gt;
+&lt;$list filter="[&lt;codeState&gt;has[title]]" variable=ignore&gt;
 &lt;pre&gt;&lt;code&gt;&lt;$view /&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/$list&gt;
 \end

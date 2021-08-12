@@ -72,9 +72,9 @@ color:#333333;">
 <div class="tc-tiddler-body tc-reveal"><h2 class="">Using Actions</h2><p>When you select an option below the following acitons will occur:</p><ul><li>the value is written to <a class="tc-tiddlylink tc-tiddlylink-missing" href="%2524%253A%252Ftemp%252Ftest%252Fvalue.html">$:/temp/test/value</a></li><li>the <strong>id</strong> field of tiddler: <a class="tc-tiddlylink tc-tiddlylink-missing" href="%2524%253A%252Ftemp%252Ftest.html">$:/temp/test</a> will be updated</li><li>a notification showing the <strong>actionValue</strong> will be shown</li></ul><p><label class="tc-radio "><input type="radio"><span> Option a </span></label></p><p><label class="tc-radio "><input type="radio"><span> Option b </span></label></p><p><label class="tc-radio "><input type="radio"><span> Option c </span></label></p><p>The wikitext of this example is shown below:</p><pre><code>\define newText() value: $(actionValue)$
 
 \define radioActions()
-&lt;$action-sendmessage $message=&quot;tm-notify&quot; $param=&quot;RadioWidget ExampleTemplate&quot; value=&lt;&lt;actionValue&gt;&gt; current=&lt;&lt;currentTiddler&gt;&gt; /&gt;
-&lt;$action-createtiddler $basetitle=&quot;$:/temp/test/value&quot; $overwrite=&quot;yes&quot; text=&lt;&lt;newText&gt;&gt;/&gt;
-&lt;$action-navigate $to=&quot;$:/temp/test/value&quot;/&gt;
+&lt;$action-sendmessage $message="tm-notify" $param="RadioWidget ExampleTemplate" value=&lt;&lt;actionValue&gt;&gt; current=&lt;&lt;currentTiddler&gt;&gt; /&gt;
+&lt;$action-createtiddler $basetitle="$:/temp/test/value" $overwrite="yes" text=&lt;&lt;newText&gt;&gt;/&gt;
+&lt;$action-navigate $to="$:/temp/test/value"/&gt;
 \end
 
 !! Using Actions
@@ -85,13 +85,13 @@ When you select an option below the following acitons will occur:
 * the ''id'' field of tiddler: $:/temp/test will be updated
 * a notification showing the ''actionValue'' will be shown
 
-&lt;$tiddler tiddler=&quot;$:/temp/test&quot;&gt;
+&lt;$tiddler tiddler="$:/temp/test"&gt;
 
-&lt;$radio field=&quot;id&quot; value=&quot;a&quot; actions=&lt;&lt;radioActions&gt;&gt; &gt; Option a &lt;/$radio&gt;
+&lt;$radio field="id" value="a" actions=&lt;&lt;radioActions&gt;&gt; &gt; Option a &lt;/$radio&gt;
 
-&lt;$radio field=&quot;id&quot; value=&quot;b&quot; actions=&lt;&lt;radioActions&gt;&gt; &gt; Option b &lt;/$radio&gt;
+&lt;$radio field="id" value="b" actions=&lt;&lt;radioActions&gt;&gt; &gt; Option b &lt;/$radio&gt;
 
-&lt;$radio field=&quot;id&quot; value=&quot;c&quot; actions=&lt;&lt;radioActions&gt;&gt; &gt; Option c &lt;/$radio&gt;
+&lt;$radio field="id" value="c" actions=&lt;&lt;radioActions&gt;&gt; &gt; Option c &lt;/$radio&gt;
 
 &lt;/$tiddler&gt;
 

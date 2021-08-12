@@ -67,14 +67,14 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>Cet exemple montre comment créer un déroulé imbriqué avec un tiddler indépendant du déroulé principal.</p><p>Voilà le code :</p><pre><code>&lt;$navigator story=&quot;MySubStoryList&quot; history=&quot;MySubHistoryList&quot;&gt;
+<div class="tc-tiddler-body tc-reveal"><p>Cet exemple montre comment créer un déroulé imbriqué avec un tiddler indépendant du déroulé principal.</p><p>Voilà le code :</p><pre><code>&lt;$navigator story="MySubStoryList" history="MySubHistoryList"&gt;
 
 Cliquez sur ce lien pour commencer: HelloThere
 
-&lt;$list filter=&quot;[list[MySubStoryList]]&quot; history=&quot;MySubHistoryList&quot;&gt;
+&lt;$list filter="[list[MySubStoryList]]" history="MySubHistoryList"&gt;
 &lt;div&gt;
 
-! &lt;$button message=&quot;tm-close-tiddler&quot; class=&quot;tc-btn-invisible&quot;&gt;{{$:/core/images/close-button}}&lt;/$button&gt; &lt;$view field=&quot;title&quot;/&gt;
+! &lt;$button message="tm-close-tiddler" class="tc-btn-invisible"&gt;{{$:/core/images/close-button}}&lt;/$button&gt; &lt;$view field="title"/&gt;
 
 &lt;$transclude/&gt;
 &lt;/div&gt;

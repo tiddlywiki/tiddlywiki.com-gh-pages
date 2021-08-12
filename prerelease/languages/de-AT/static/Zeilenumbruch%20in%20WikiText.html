@@ -18,7 +18,7 @@
 </title>
 </head>
 <body class="tc-body">
-<p><div class="tc-static-alert"><div class="tc-static-alert-inner">Diese Seite ist Teil der &quot;reinen&quot; HTML Version von TiddlyWiki auf <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/languages/de-AT" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/languages/de-AT</a></div></div>
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">Diese Seite ist Teil der "reinen" HTML Version von TiddlyWiki auf <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/languages/de-AT" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/languages/de-AT</a></div></div>
 </p>
 <section class="tc-story-river tc-static-story-river">
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-WikiText" data-tags="WikiText" data-tiddler-title="Zeilenumbruch in WikiText"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="mehr" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="Weitere Aktionen"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="Bearbeiten" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Bearbeite diesen Tiddler"></button><button aria-label="Schließen" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Schließe diesen Tiddler"></button></span><span><h2 class="tc-title">Zeilenumbruch in WikiText</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
@@ -32,12 +32,12 @@ WikiText
 <span class="tc-drop-down tc-reveal" hidden="true"></span></span></div>
 </div>
 
-<div class="tc-tiddler-body tc-reveal"><h2 class="">Block Syntax</h2><p>Die übliche Behandlung von <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Absatz%2520in%2520WikiText.html">Absätzen in WikiText</a> ignoriert einzelne Zeilenumbrüche. Zwei Zeilenumbrüche werden als neuer Absatz interpretiert. </p><p>Um trotzdem Texte mit &quot;hartem&quot; Zeilenumbruch darstellen zu können, zum Beispiel: &quot;Gedichte&quot;, kann folgende Formatierung verwendet werden:</p><pre><code>&quot;&quot;&quot;
+<div class="tc-tiddler-body tc-reveal"><h2 class="">Block Syntax</h2><p>Die übliche Behandlung von <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Absatz%2520in%2520WikiText.html">Absätzen in WikiText</a> ignoriert einzelne Zeilenumbrüche. Zwei Zeilenumbrüche werden als neuer Absatz interpretiert. </p><p>Um trotzdem Texte mit "hartem" Zeilenumbruch darstellen zu können, zum Beispiel: "Gedichte", kann folgende Formatierung verwendet werden:</p><pre><code>"""
 Loch in die Erde,
 Bronze rin.
 Glocke fertig,
 bim, bim, bim.
-&quot;&quot;&quot;</code></pre><p>Dargestellt als:</p><p>Loch in die Erde,<br>Bronze rin.<br>Glocke fertig,<br>bim, bim, bim.<br></p><p>Erzeugter HTML Code:</p><pre>&lt;p&gt;Loch in die Erde,&lt;br&gt;Bronze rin.&lt;br&gt;Glocke fertig,&lt;br&gt;bim, bim, bim.&lt;br&gt;&lt;/p&gt;</pre><h2 class="">HTML Syntax</h2><p>In normalem Fließtext sollten keine zusätzlichen &quot;harten&quot; Zeilenumbrüche eingefügt werden, da diese bei unterschiedlichen Anzeigen zB: Handy's falsch dargestellt werden. </p><p>In Ausnahmefällen sollte es jedoch möglich sein, einen &quot;harten&quot; Zeilenumbruch zu setzen. Dafür kann der HTML <code>&lt;br&gt;</code> &quot;tag&quot; verwendet werden. </p><pre><code>Erste Zeile &lt;br/&gt;
+"""</code></pre><p>Dargestellt als:</p><p>Loch in die Erde,<br>Bronze rin.<br>Glocke fertig,<br>bim, bim, bim.<br></p><p>Erzeugter HTML Code:</p><pre>&lt;p&gt;Loch in die Erde,&lt;br&gt;Bronze rin.&lt;br&gt;Glocke fertig,&lt;br&gt;bim, bim, bim.&lt;br&gt;&lt;/p&gt;</pre><h2 class="">HTML Syntax</h2><p>In normalem Fließtext sollten keine zusätzlichen "harten" Zeilenumbrüche eingefügt werden, da diese bei unterschiedlichen Anzeigen zB: Handy's falsch dargestellt werden. </p><p>In Ausnahmefällen sollte es jedoch möglich sein, einen "harten" Zeilenumbruch zu setzen. Dafür kann der HTML <code>&lt;br&gt;</code> "tag" verwendet werden. </p><pre><code>Erste Zeile &lt;br/&gt;
 Zweite Zeile</code></pre><p>Dargestellt als: </p><p>Erste Zeile <br>
 Zweite Zeile</p><p>HTML Code: </p><pre><code>&lt;p&gt;Erste Zeile &lt;br/&gt;Zweite Zeile&lt;/p&gt;</code></pre></div>
 

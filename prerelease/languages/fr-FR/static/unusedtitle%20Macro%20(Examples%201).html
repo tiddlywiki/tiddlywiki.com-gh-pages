@@ -58,53 +58,53 @@ unusedtitle Macro (Examples 1)
 
 
 
-<div class="tc-tiddler-body tc-reveal"><pre><code>&lt;&lt;unusedtitle template:&quot;$count:2$-new&quot;&gt;&gt;</code></pre><p><button class="">
+<div class="tc-tiddler-body tc-reveal"><pre><code>&lt;&lt;unusedtitle template:"$count:2$-new"&gt;&gt;</code></pre><p><button class="">
 
 Create Tiddler
-</button></p><pre><code>&lt;&lt;unusedtitle baseName:&quot;new&quot; template:&quot;$count:2$-$basename$&quot;&gt;&gt;</code></pre><p><button class="">
+</button></p><pre><code>&lt;&lt;unusedtitle baseName:"new" template:"$count:2$-$basename$"&gt;&gt;</code></pre><p><button class="">
 
 New Tiddler
-</button></p><pre><code>&lt;&lt;unusedtitle baseName:&quot;new&quot; separator:&quot;-&quot; template:&quot;$count:2$$separator$$basename$&quot;&gt;&gt;</code></pre><p><button class="">
+</button></p><pre><code>&lt;&lt;unusedtitle baseName:"new" separator:"-" template:"$count:2$$separator$$basename$"&gt;&gt;</code></pre><p><button class="">
 
 Create Tiddler
 </button></p><hr><p><details>
     <summary>Show the code</summary>
     <pre><code>\define testCreate()
-&lt;$action-createtiddler $basetitle=&lt;&lt;unusedtitle template:&quot;$count:2$-new&quot;&gt;&gt;/&gt;
+&lt;$action-createtiddler $basetitle=&lt;&lt;unusedtitle template:"$count:2$-new"&gt;&gt;/&gt;
 \end
 
 \define testCreate1()
-&lt;$action-createtiddler $basetitle=&lt;&lt;unusedtitle baseName:&quot;new&quot; separator:&quot;-&quot; template:&quot;$count:2$$separator$$basename$&quot;&gt;&gt;/&gt;
+&lt;$action-createtiddler $basetitle=&lt;&lt;unusedtitle baseName:"new" separator:"-" template:"$count:2$$separator$$basename$"&gt;&gt;/&gt;
 \end
 
 \define testNew()
-&lt;$action-sendmessage $message=&quot;tm-new-tiddler&quot; title=&lt;&lt;unusedtitle baseName:&quot;new&quot; template:&quot;$count:2$-$basename$&quot;&gt;&gt; /&gt;
+&lt;$action-sendmessage $message="tm-new-tiddler" title=&lt;&lt;unusedtitle baseName:"new" template:"$count:2$-$basename$"&gt;&gt; /&gt;
 \end
 
 ```
-&lt;&lt;unusedtitle template:&quot;$count:2$-new&quot;&gt;&gt;
+&lt;&lt;unusedtitle template:"$count:2$-new"&gt;&gt;
 ```
 
 &lt;$button actions=&lt;&lt;testCreate&gt;&gt; &gt;
-&lt;$action-setfield $tiddler=&quot;$:/state/tab/sidebar--595412856&quot; text=&quot;$:/core/ui/SideBar/Recent&quot;/&gt;
+&lt;$action-setfield $tiddler="$:/state/tab/sidebar--595412856" text="$:/core/ui/SideBar/Recent"/&gt;
 Create Tiddler
 &lt;/$button&gt;
 
 ```
-&lt;&lt;unusedtitle baseName:&quot;new&quot; template:&quot;$count:2$-$basename$&quot;&gt;&gt;
+&lt;&lt;unusedtitle baseName:"new" template:"$count:2$-$basename$"&gt;&gt;
 ```
 
 &lt;$button actions=&lt;&lt;testNew&gt;&gt;&gt;
-&lt;$action-setfield $tiddler=&quot;$:/state/tab/sidebar--595412856&quot; text=&quot;$:/core/ui/SideBar/Recent&quot;/&gt;
+&lt;$action-setfield $tiddler="$:/state/tab/sidebar--595412856" text="$:/core/ui/SideBar/Recent"/&gt;
 New Tiddler
 &lt;/$button&gt;
 
 ```
-&lt;&lt;unusedtitle baseName:&quot;new&quot; separator:&quot;-&quot; template:&quot;$count:2$$separator$$basename$&quot;&gt;&gt;
+&lt;&lt;unusedtitle baseName:"new" separator:"-" template:"$count:2$$separator$$basename$"&gt;&gt;
 ```
 
 &lt;$button actions=&lt;&lt;testCreate1&gt;&gt;&gt;
-&lt;$action-setfield $tiddler=&quot;$:/state/tab/sidebar--595412856&quot; text=&quot;$:/core/ui/SideBar/Recent&quot;/&gt;
+&lt;$action-setfield $tiddler="$:/state/tab/sidebar--595412856" text="$:/core/ui/SideBar/Recent"/&gt;
 Create Tiddler
 &lt;/$button&gt;
 

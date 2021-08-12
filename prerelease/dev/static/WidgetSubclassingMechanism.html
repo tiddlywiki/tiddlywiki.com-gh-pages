@@ -37,12 +37,12 @@ Widget base class
 
 /*jslint node: true, browser: true */
 /*global $tw: false */
-&quot;use strict&quot;;
+"use strict";
 
-exports.baseClass = &quot;checkbox&quot;; // Extend the &lt;$checkbox&gt; widget
+exports.baseClass = "checkbox"; // Extend the &lt;$checkbox&gt; widget
 
 // Specify a different name to make the subclass available as a new widget instead of overwriting the baseclass:
-// exports.name = &quot;my-enhanced-checkbox&quot;;
+// exports.name = "my-enhanced-checkbox";
 
 exports.constructor = function(parseTreeNode,options) {
 	this.initialise(parseTreeNode,options);
@@ -54,7 +54,7 @@ exports.prototype.handleChangeEvent = function(event) {
 	// Call the base class handleChangeEvent function
 	Object.getPrototypeOf(Object.getPrototypeOf(this)).handleChangeEvent.call(this,event);
 	// Print our message
-	console.log(&quot;Checkbox status:&quot;,this.inputDomNode.checked);
+	console.log("Checkbox status:",this.inputDomNode.checked);
 };
 
 })();</code></pre></div>
