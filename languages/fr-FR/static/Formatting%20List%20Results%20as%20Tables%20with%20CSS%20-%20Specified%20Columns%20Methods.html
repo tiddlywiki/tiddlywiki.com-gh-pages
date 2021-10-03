@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.23" />
+<meta name="tiddlywiki-version" content="5.2.0" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -11,7 +11,10 @@
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
-<title>Formatting List Results as Tables with CSS - Specified Columns Methods: TiddlyWiki — un carnet de notes web personnel et non linéaire
+<title>Formatting List Results as Tables with CSS - Specified Columns Methods: TiddlyWiki
+
+— un carnet de notes web personnel et non linéaire
+
 </title>
 </head>
 <body class="tc-body">
@@ -21,7 +24,7 @@
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Learning" data-tags="Learning" data-tiddler-title="Formatting List Results as Tables with CSS - Specified Columns Methods"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-label="plus" class="tc-btn-invisible" title="Actions supplémentaires"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="éditer" class="tc-btn-invisible" title="Édite ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="fermer" class="tc-btn-invisible" title="Ferme ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+<span class=" tc-reveal"><button aria-expanded="false" aria-label="plus" class="tc-btn-invisible" title="Actions supplémentaires"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="éditer" class="tc-btn-invisible" title="Édite ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="fermer" class="tc-btn-invisible" title="Ferme ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -48,7 +51,7 @@ Formatting List Results as Tables with CSS - Specified Columns Methods
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  Apprendre TiddlyWiki
@@ -76,7 +79,7 @@ color:#333333;">
    -webkit-column-count: 4;
    -webkit-column-gap:1em;
 }</code></pre><p>Note the various places you need to indicate the number of columns</p><h3 class="">2) Then format your output like this:</h3><pre><code>@@.fourcolumns
-&lt;$list filter=&quot;[tag[Filter Operators]]&quot; variable=&quot;foo&quot;&gt;&lt;br&gt;
+&lt;$list filter="[tag[Filter Operators]]" variable="foo"&gt;&lt;br&gt;
 &lt;&lt;foo&gt;&gt;
 &lt;/$list&gt;
 @@</code></pre><h2 class="">Example showing partial list of filter operators</h2><p><style>
@@ -108,6 +111,8 @@ allbefore Operator
 <br>
 append Operator
 <br>
+average Operator
+<br>
 backlinks Operator
 <br>
 before Operator
@@ -119,6 +124,8 @@ butfirst Operator
 butlast Operator
 <br>
 ceil Operator
+<br>
+charcode Operator
 <br>
 commands Operator
 <br>
@@ -133,18 +140,11 @@ cycle Operator
 days Operator
 <br>
 decodehtml Operator
-<br>
-decodeuri Operator
-<br>
-decodeuricomponent Operator
 
 </p></div>
 
 <div class="tc-tiddler-plugin-info tc-reveal"><p>
-</p></div>
-</div>
-
-</p>
+</p></div></div></p>
 </section>
 </body>
 </html>

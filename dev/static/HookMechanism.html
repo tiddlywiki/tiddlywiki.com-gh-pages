@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.23" />
+<meta name="tiddlywiki-version" content="5.2.0" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -11,13 +11,16 @@
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
-<title>HookMechanism: TiddlyWiki/Dev — documentation for developers</title>
+<title>HookMechanism: TiddlyWiki/Dev
+
+— documentation for developers
+</title>
 </head>
 <body class="tc-body">
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/dev/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/dev/</a></div></div>
 </p>
 <section class="tc-story-river tc-static-story-river">
-<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists " data-tags="" data-tiddler-title="HookMechanism"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span></span><span><h2 class="tc-title">HookMechanism</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists " data-tags="" data-tiddler-title="HookMechanism"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">HookMechanism</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a>13th December 2020 at 4:18pm</div></div><div class=" tc-reveal">
 <div class="tc-tags-wrapper"></div>
 </div>
@@ -26,16 +29,13 @@
 name: name of hook function (by convention prefixed with `th-`)
 handler: function to be called when hook is invoked
 */</span>
-$tw.hooks.addHook(name,handler);</code></pre><p>The handler function will be called with parameters that depend on the specific hook in question, but they always follow the pattern <code>handler(value,params...)</code></p><ul><li><strong>value</strong>: an optional value that is to be transformed by the hook function</li><li><strong>params</strong>: one or more optional parameters that are passed to the hook function</li></ul><p>If required by the hook in question, the handler function must return the modified <strong>value</strong>.</p><p>Multiple handlers can be assigned to the same name using repeated calls. When a hook is invoked by name all registered functions will be called sequentially in their order of addition.</p><p>Note that the <strong>value</strong> passed to the subsequent hook function will be the return value of the previous hook function.</p><p>Though not essential care should be taken to ensure that hooks are added before they are invoked. For example: <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Hook%253A%2520th-opening-default-tiddlers-list.html">Hook: th-opening-default-tiddlers-list</a> should ideally be added before the story startup module is invoked otherwise any hook specified additions to the default tiddlers will not be seen on the initial loading of the page, though will be visible if the user clicks the home button.</p><h2 class="">Example</h2><p>A working example of a hook that adds &quot;test&quot; to the default tiddlers.</p><pre class="js hljs"><code>$tw.hooks.addHook(<span class="hljs-string">"th-opening-default-tiddlers-list"</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">list</span>) </span>{ 
+$tw.hooks.addHook(name,handler);</code></pre><p>The handler function will be called with parameters that depend on the specific hook in question, but they always follow the pattern <code>handler(value,params...)</code></p><ul><li><strong>value</strong>: an optional value that is to be transformed by the hook function</li><li><strong>params</strong>: one or more optional parameters that are passed to the hook function</li></ul><p>If required by the hook in question, the handler function must return the modified <strong>value</strong>.</p><p>Multiple handlers can be assigned to the same name using repeated calls. When a hook is invoked by name all registered functions will be called sequentially in their order of addition.</p><p>Note that the <strong>value</strong> passed to the subsequent hook function will be the return value of the previous hook function.</p><p>Though not essential care should be taken to ensure that hooks are added before they are invoked. For example: <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Hook%253A%2520th-opening-default-tiddlers-list.html">Hook: th-opening-default-tiddlers-list</a> should ideally be added before the story startup module is invoked otherwise any hook specified additions to the default tiddlers will not be seen on the initial loading of the page, though will be visible if the user clicks the home button.</p><h2 class="">Example</h2><p>A working example of a hook that adds "test" to the default tiddlers.</p><pre class="js hljs"><code>$tw.hooks.addHook(<span class="hljs-string">"th-opening-default-tiddlers-list"</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">list</span>) </span>{ 
     list.push(<span class="hljs-string">"test"</span>);
     <span class="hljs-keyword">return</span> list; 
 });</code></pre></div>
 
 <div class="tc-tiddler-plugin-info tc-reveal"><p>
-</p></div>
-</div>
-
-</p>
+</p></div></div></p>
 </section>
 </body>
 </html>

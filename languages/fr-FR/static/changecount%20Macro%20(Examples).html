@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.23" />
+<meta name="tiddlywiki-version" content="5.2.0" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -11,7 +11,10 @@
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
-<title>changecount Macro (Examples): TiddlyWiki — un carnet de notes web personnel et non linéaire
+<title>changecount Macro (Examples): TiddlyWiki
+
+— un carnet de notes web personnel et non linéaire
+
 </title>
 </head>
 <body class="tc-body">
@@ -21,7 +24,7 @@
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-changecount%20Macro tc-tagged-Macro%20Examples" data-tags="[[changecount Macro]] [[Macro Examples]]" data-tiddler-title="changecount Macro (Examples)"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-label="plus" class="tc-btn-invisible" title="Actions supplémentaires"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="éditer" class="tc-btn-invisible" title="Édite ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="fermer" class="tc-btn-invisible" title="Ferme ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+<span class=" tc-reveal"><button aria-expanded="false" aria-label="plus" class="tc-btn-invisible" title="Actions supplémentaires"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="éditer" class="tc-btn-invisible" title="Édite ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="fermer" class="tc-btn-invisible" title="Ferme ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -48,7 +51,7 @@ changecount Macro (Examples)
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  changecount Macro
@@ -59,7 +62,7 @@ color:#333333;">
 </span><span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  Macro Examples
@@ -91,7 +94,7 @@ color:#333333;">
 <span class=" tc-reveal" hidden="true"></span>
 </div></p><p>The value will increase if you edit this tiddler and store it again, even without making any changes to its content.</p><p>To access the <code class="doc-var">changecount</code> of a different tiddler, use a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlerWidget.html"><code class="doc-widget">$tiddler</code></a> widget:</p><p><div class="doc-example">
 <span class=" tc-reveal">
-	<pre><code>&lt;$tiddler tiddler=&quot;Draft of 'New Tiddler'&quot;&gt;
+	<pre><code>&lt;$tiddler tiddler="Draft of 'New Tiddler'"&gt;
 &lt;&lt;changecount&gt;&gt;
 &lt;/$tiddler&gt;</code></pre>
 </span>
@@ -107,10 +110,7 @@ color:#333333;">
 </p></div>
 
 <div class="tc-tiddler-plugin-info tc-reveal"><p>
-</p></div>
-</div>
-
-</p>
+</p></div></div></p>
 </section>
 </body>
 </html>

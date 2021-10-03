@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.23" />
+<meta name="tiddlywiki-version" content="5.2.0" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -11,16 +11,19 @@
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
-<title>Formatting List Results as Tables with CSS - Variable Column Method: TiddlyWiki — a non-linear personal web notebook</title>
+<title>Formatting List Results as Tables with CSS - Variable Column Method: TiddlyWiki
+
+— a non-linear personal web notebook
+</title>
 </head>
 <body class="tc-body">
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river tc-static-story-river">
-<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Learning" data-tags="Learning" data-tiddler-title="Formatting List Results as Tables with CSS - Variable Column Method"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span></span><span><h2 class="tc-title">Formatting List Results as Tables with CSS - Variable Column Method</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Learning" data-tags="Learning" data-tiddler-title="Formatting List Results as Tables with CSS - Variable Column Method"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Formatting List Results as Tables with CSS - Variable Column Method</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a>20th December 2016 at 4:28pm</div></div><div class=" tc-reveal">
-<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="Learning">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 Learning
@@ -35,10 +38,10 @@ Learning
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>Sometimes you want the results of a <code>&lt;$list&gt;</code> widget to be formatted in the form of multiple columns, instead of just one straight listing. This method uses CSS to set up listing as  columns. It is responsive, that is,  re-positioning to display fewer columns if the window is too small.</p><p>You don't directly specify a fixed number of columns but instead specify the max-width for the list (which could be a transclusion of the tiddler width) and the width for each item. It lists from left to right, then wraps to a new row.</p><p>For other table-making techniques see also:</p><ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Formatting%2520List%2520Results%2520as%2520Tables%2520with%2520CSS%2520-%2520Specified%2520Columns%2520Methods.html">Formatting List Results as Tables with CSS - Specified Columns Methods</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Formatting%2520List%2520Results%2520as%2520Tables%2520(no%2520CSS).html">Formatting List Results as Tables (no CSS)</a></li></ul><h2 class="">Example listing using 50 existing TiddlyWiki tags</h2><pre><code>&lt;div class=&quot;dynamic-table&quot;&gt;
-  &lt;$list filter=&quot;[has[tags]tags[]sort[title]first[50]]&quot;&gt;
-    &lt;span class=&quot;item&quot;&gt;
-      &lt;$transclude tiddler=&quot;$:/core/ui/TagTemplate&quot;/&gt;
+<div class="tc-tiddler-body tc-reveal"><p>Sometimes you want the results of a <code>&lt;$list&gt;</code> widget to be formatted in the form of multiple columns, instead of just one straight listing. This method uses CSS to set up listing as  columns. It is responsive, that is,  re-positioning to display fewer columns if the window is too small.</p><p>You don't directly specify a fixed number of columns but instead specify the max-width for the list (which could be a transclusion of the tiddler width) and the width for each item. It lists from left to right, then wraps to a new row.</p><p>For other table-making techniques see also:</p><ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Formatting%2520List%2520Results%2520as%2520Tables%2520with%2520CSS%2520-%2520Specified%2520Columns%2520Methods.html">Formatting List Results as Tables with CSS - Specified Columns Methods</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Formatting%2520List%2520Results%2520as%2520Tables%2520(no%2520CSS).html">Formatting List Results as Tables (no CSS)</a></li></ul><h2 class="">Example listing using 50 existing TiddlyWiki tags</h2><pre><code>&lt;div class="dynamic-table"&gt;
+  &lt;$list filter="[has[tags]tags[]sort[title]first[50]]"&gt;
+    &lt;span class="item"&gt;
+      &lt;$transclude tiddler="$:/core/ui/TagTemplate"/&gt;
     &lt;/span&gt;
   &lt;/$list&gt;
 &lt;/div&gt;</code></pre><h2 class="">Example stylesheet to use with listing</h2><pre><code>&lt;style&gt;
@@ -63,8 +66,8 @@ Learning
 &lt;/style&gt;</code></pre><h2 class="">Results</h2><p><div class="dynamic-table">
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="$:/deprecated">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 $:/deprecated
@@ -73,8 +76,8 @@ $:/deprecated
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="$:/tags/EditTemplate">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 $:/tags/EditTemplate
@@ -83,8 +86,8 @@ $:/tags/EditTemplate
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="$:/tags/Macro">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 $:/tags/Macro
@@ -93,8 +96,8 @@ $:/tags/Macro
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="$:/tags/MenuBar">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 $:/tags/MenuBar
@@ -103,8 +106,8 @@ $:/tags/MenuBar
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="$:/tags/RawMarkupWikified/TopBody">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 $:/tags/RawMarkupWikified/TopBody
@@ -113,8 +116,8 @@ $:/tags/RawMarkupWikified/TopBody
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="$:/tags/SideBar">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 $:/tags/SideBar
@@ -123,8 +126,8 @@ $:/tags/SideBar
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="$:/tags/Stylesheet">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 $:/tags/Stylesheet
@@ -133,8 +136,8 @@ $:/tags/Stylesheet
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="$:/tags/TiddlerInfo">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 $:/tags/TiddlerInfo
@@ -143,8 +146,8 @@ $:/tags/TiddlerInfo
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="$:/tags/ViewTemplate">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 $:/tags/ViewTemplate
@@ -153,8 +156,8 @@ $:/tags/ViewTemplate
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="About">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 About
@@ -163,8 +166,8 @@ About
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="abs Operator">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 abs Operator
@@ -173,8 +176,8 @@ abs Operator
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="ActionCreateTiddlerWidget">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 ActionCreateTiddlerWidget
@@ -183,8 +186,8 @@ ActionCreateTiddlerWidget
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="ActionWidgets">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 ActionWidgets
@@ -193,8 +196,8 @@ ActionWidgets
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="add Operator">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 add Operator
@@ -203,8 +206,8 @@ add Operator
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="addprefix Operator">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 addprefix Operator
@@ -213,8 +216,8 @@ addprefix Operator
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="addsuffix Operator">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 addsuffix Operator
@@ -223,8 +226,8 @@ addsuffix Operator
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="after Operator">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 after Operator
@@ -233,8 +236,8 @@ after Operator
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="all Operator">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 all Operator
@@ -243,8 +246,8 @@ all Operator
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="allafter Operator">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 allafter Operator
@@ -253,8 +256,8 @@ allafter Operator
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="allbefore Operator">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 allbefore Operator
@@ -263,8 +266,8 @@ allbefore Operator
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="AlphaReleaseNotes">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 AlphaReleaseNotes
@@ -273,8 +276,8 @@ AlphaReleaseNotes
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="Android">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 Android
@@ -283,8 +286,8 @@ Android
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="append Operator">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 append Operator
@@ -293,8 +296,8 @@ append Operator
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="Articles">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 Articles
@@ -303,8 +306,18 @@ Articles
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="average Operator">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#333333;
+color:#333333;">
+average Operator
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span>
+    </span>
+  
+    <span class="item">
+      <span class="tc-tag-list-item" data-tag-title="backlinks Operator">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 backlinks Operator
@@ -313,8 +326,8 @@ backlinks Operator
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="before Operator">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 before Operator
@@ -323,8 +336,8 @@ before Operator
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="BetaReleaseNotes">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 BetaReleaseNotes
@@ -333,8 +346,8 @@ BetaReleaseNotes
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="Binary Mathematics Operators">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 Binary Mathematics Operators
@@ -343,8 +356,8 @@ Binary Mathematics Operators
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="butlast Operator">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 butlast Operator
@@ -353,8 +366,8 @@ butlast Operator
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="ceil Operator">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 ceil Operator
@@ -363,8 +376,8 @@ ceil Operator
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="changecount Macro">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 changecount Macro
@@ -373,8 +386,18 @@ changecount Macro
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="charcode Operator">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#333333;
+color:#333333;">
+charcode Operator
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span>
+    </span>
+  
+    <span class="item">
+      <span class="tc-tag-list-item" data-tag-title="Chrome">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 Chrome
@@ -383,8 +406,8 @@ Chrome
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="colour Macro">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 colour Macro
@@ -393,8 +416,8 @@ colour Macro
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="colour-picker Macro">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 colour-picker Macro
@@ -403,8 +426,8 @@ colour-picker Macro
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="Commands">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 Commands
@@ -413,8 +436,8 @@ Commands
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="commands Operator">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 commands Operator
@@ -423,8 +446,8 @@ commands Operator
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="Common Operators">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 Common Operators
@@ -433,8 +456,8 @@ Common Operators
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="Community">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 Community
@@ -443,8 +466,8 @@ Community
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="Community Editions">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 Community Editions
@@ -453,8 +476,8 @@ Community Editions
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="Community Palettes">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 Community Palettes
@@ -463,8 +486,8 @@ Community Palettes
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="Community Plugins">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 Community Plugins
@@ -473,8 +496,8 @@ Community Plugins
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="Community plugins">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 Community plugins
@@ -483,8 +506,8 @@ Community plugins
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="Community Plugns">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 Community Plugns
@@ -493,8 +516,8 @@ Community Plugns
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="Community Resources">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 Community Resources
@@ -503,8 +526,8 @@ Community Resources
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="Community Themes">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 Community Themes
@@ -513,8 +536,8 @@ Community Themes
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="compare Operator">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 compare Operator
@@ -523,8 +546,8 @@ compare Operator
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:#FF8383;
+      <span class="tc-tag-list-item" data-tag-title="Concepts">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:#FF8383;
 fill:#333333;
 color:#333333;">
 Concepts
@@ -533,31 +556,11 @@ Concepts
     </span>
   
     <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+      <span class="tc-tag-list-item" data-tag-title="Conditional Operators">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 Conditional Operators
-</span>
-<span class="tc-drop-down tc-reveal" hidden="true"></span></span>
-    </span>
-  
-    <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
-fill:#333333;
-color:#333333;">
-Configuration Variables
-</span>
-<span class="tc-drop-down tc-reveal" hidden="true"></span></span>
-    </span>
-  
-    <span class="item">
-      <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
-fill:#333333;
-color:#333333;">
-contains Operator
 </span>
 <span class="tc-drop-down tc-reveal" hidden="true"></span></span>
     </span>
@@ -584,10 +587,7 @@ contains Operator
 </style></p></div>
 
 <div class="tc-tiddler-plugin-info tc-reveal"><p>
-</p></div>
-</div>
-
-</p>
+</p></div></div></p>
 </section>
 </body>
 </html>

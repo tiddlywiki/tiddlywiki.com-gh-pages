@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.23" />
+<meta name="tiddlywiki-version" content="5.2.0" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -11,22 +11,25 @@
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
-<title>action-listops: TiddlyWiki — a non-linear personal web notebook</title>
+<title>action-listops: TiddlyWiki
+
+— a non-linear personal web notebook
+</title>
 </head>
 <body class="tc-body">
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river tc-static-story-river">
-<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-ActionWidgets tc-tagged-Widgets" data-tags="ActionWidgets Widgets" data-tiddler-title="ActionListopsWidget"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span></span><span><h2 class="tc-title">ActionListopsWidget</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-ActionWidgets tc-tagged-Widgets" data-tags="ActionWidgets Widgets" data-tiddler-title="ActionListopsWidget"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">ActionListopsWidget</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a>28th December 2015 at 8:33am</div></div><div class=" tc-reveal">
-<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="ActionWidgets">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 ActionWidgets
 </span>
-<span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="Widgets">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
 Widgets
@@ -120,23 +123,23 @@ Widgets
 </button>
 </div>
 </div></p><pre><code>&lt;$button&gt;
-&lt;$action-listops $field=&quot;myfield&quot; $subfilter=&quot;efg hlm pqr&quot;/&gt;
+&lt;$action-listops $field="myfield" $subfilter="efg hlm pqr"/&gt;
 Populate 'myfield'
 &lt;/$button&gt;
 &lt;$button&gt;
-&lt;$action-listops $field=&quot;myfield&quot; $subfilter=&quot;abc xyz&quot;/&gt;
+&lt;$action-listops $field="myfield" $subfilter="abc xyz"/&gt;
 Append More Items
 &lt;/$button&gt;
 &lt;$button&gt;
-&lt;$action-listops $field=&quot;myfield&quot; $subfilter=&quot;-abc -hlm&quot;/&gt;
+&lt;$action-listops $field="myfield" $subfilter="-abc -hlm"/&gt;
 Remove Items
 &lt;/$button&gt;
 &lt;$button&gt;
-&lt;$action-listops $field=&quot;myfield&quot; $filter=&quot;[[]]&quot;/&gt;
+&lt;$action-listops $field="myfield" $filter="[[]]"/&gt;
 Clear 'myfield'
 &lt;/$button&gt;
 
-&lt;$list filter=&quot;[list[!!myfield]]&quot;&gt;
+&lt;$list filter="[list[!!myfield]]"&gt;
 
 &lt;/$list&gt;</code></pre><p>That renders as:</p><p><button class="">
 
@@ -160,15 +163,15 @@ Clear 'myfield'
 </button>
 </div>
 </div></p><pre><code>&lt;$button&gt;
-&lt;$action-listops $field=&quot;myfield&quot; $subfilter=&quot;-efg ijk xyz [[this is a title]] +[sort[]]&quot;/&gt;
+&lt;$action-listops $field="myfield" $subfilter="-efg ijk xyz [[this is a title]] +[sort[]]"/&gt;
 Mangle List
 &lt;/$button&gt;
 &lt;$button&gt;
-&lt;$action-listops $field=&quot;myfield&quot; $subfilter=&quot;-xyz -[[this is a title]] +[!sort[]]&quot;/&gt;
+&lt;$action-listops $field="myfield" $subfilter="-xyz -[[this is a title]] +[!sort[]]"/&gt;
 Unmangle List
 &lt;/$button&gt;
 
-&lt;$list filter=&quot;[list[!!myfield]]&quot;&gt;
+&lt;$list filter="[list[!!myfield]]"&gt;
 
 &lt;/$list&gt;</code></pre><p>That renders as:</p><p><button class="">
 
@@ -184,31 +187,31 @@ Unmangle List
 </button>
 </div>
 </div></p><pre><code>&lt;$button&gt;
-&lt;$action-listops $tags=&quot;+[append{Days of the Week!!short}] $:/tag1 $:/tag2 $:/tag3&quot;/&gt;
+&lt;$action-listops $tags="+[append{Days of the Week!!short}] $:/tag1 $:/tag2 $:/tag3"/&gt;
 Populate 'tags'
 &lt;/$button&gt;
 &lt;$button&gt;
-&lt;$action-listops $tags=&quot;+[!remove:2{!!tags}]&quot;/&gt;
+&lt;$action-listops $tags="+[!remove:2{!!tags}]"/&gt;
 Remove Last Two Tags
 &lt;/$button&gt;
 &lt;$button&gt;
-&lt;$action-listops $tags=&quot;+[!prefix[$:/]]&quot;/&gt;
+&lt;$action-listops $tags="+[!prefix[$:/]]"/&gt;
 Remove System Tags
 &lt;/$button&gt;
 &lt;$button&gt;
-&lt;$action-listops $tags=&quot;-Mon -Tue&quot;/&gt;
+&lt;$action-listops $tags="-Mon -Tue"/&gt;
 Remove Mon and Tue
 &lt;/$button&gt;
 &lt;$button&gt;
-&lt;$action-listops $tags=&quot;+[prefix[$:/]] ActionWidgets Widgets&quot;/&gt;
+&lt;$action-listops $tags="+[prefix[$:/]] ActionWidgets Widgets"/&gt;
 Remove User Tags
 &lt;/$button&gt;
 &lt;$button&gt;
-&lt;$action-listops $tags=&quot;+[[]] ActionWidgets Widgets&quot;/&gt;
+&lt;$action-listops $tags="+[[]] ActionWidgets Widgets"/&gt;
 Clear Tags
 &lt;/$button&gt;
 
-&lt;$list filter=&quot;[list[!!tags]]&quot;&gt;
+&lt;$list filter="[list[!!tags]]"&gt;
 
 &lt;/$list&gt;</code></pre><p>That renders as:</p><p><button class="">
 
@@ -236,10 +239,7 @@ Clear Tags
 </button></p><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">ActionWidgets</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Widgets.html">Widgets</a></div></div></div>
 
 <div class="tc-tiddler-plugin-info tc-reveal"><p>
-</p></div>
-</div>
-
-</p>
+</p></div></div></p>
 </section>
 </body>
 </html>

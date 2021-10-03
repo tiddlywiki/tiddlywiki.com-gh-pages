@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.23" />
+<meta name="tiddlywiki-version" content="5.2.0" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -11,7 +11,10 @@
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
-<title>Using Stylesheets: TiddlyWiki — un carnet de notes web personnel et non linéaire
+<title>Using Stylesheets: TiddlyWiki
+
+— un carnet de notes web personnel et non linéaire
+
 </title>
 </head>
 <body class="tc-body">
@@ -21,7 +24,7 @@
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Customise%20TiddlyWiki" data-tags="[[Customise TiddlyWiki]]" data-tiddler-title="Using Stylesheets"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-label="plus" class="tc-btn-invisible" title="Actions supplémentaires"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="éditer" class="tc-btn-invisible" title="Édite ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="fermer" class="tc-btn-invisible" title="Ferme ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+<span class=" tc-reveal"><button aria-expanded="false" aria-label="plus" class="tc-btn-invisible" title="Actions supplémentaires"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="éditer" class="tc-btn-invisible" title="Édite ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="fermer" class="tc-btn-invisible" title="Ferme ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -46,7 +49,7 @@ Utilisation des feuilles de style
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  Personnaliser TiddlyWiki
@@ -69,20 +72,17 @@ color:#333333;">
 }</code></pre><h1 class="">Outrepasser les réglages du thème</h1><p>Les feuilles de style personnalisées sont appliquées indépendamment de celles du thème. Toutefois, il est souvent nécessaire aux règles css de votre feuille de style d'être plus spécifiques que celles du thème auquel vous désirez vous substituer. Ainsi, <code>html body.tc-body</code> sera plus pointu que <code>body.tc-body</code>.</p><h1 class="">Les types de feuille de style</h1><p>Il est en général bien mieux de faire appel au <code>text/css</code> pour les feuilles de styles. Cela les interprète comme des feuilles de style à part entière, et assure que <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> ne leur applique aucun processus wiki.</p><p>Si vous souhaitez utiliser macros et transclusions au sein de vos feuilles de style vous devrez y substituer le type <a class="tc-tiddlylink tc-tiddlylink-missing" href="WikiTexte.html">WikiTexte</a> par défaut <code>text/vnd.tiddlywiki</code>. Ce qui permettra a une interprétation <a class="tc-tiddlylink tc-tiddlylink-missing" href="WikiTexte.html">WikiTexte</a> d'être complètement appliquée. Voilà un exemple :</p><pre><code>\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline html
 
 body.tc-body pre {
-	&lt;&lt;box-shadow &quot;inset 0 1px 0 #fff&quot;&gt;&gt;
+	&lt;&lt;box-shadow "inset 0 1px 0 #fff"&gt;&gt;
 }</code></pre><p>Le pragma <code>\rules</code> au début du tiddler restreint l'application <a class="tc-tiddlylink tc-tiddlylink-missing" href="WikiTexte.html">WikiTexte</a> aux seules macros et transclusions. Sont ainsi évités les déclenchements de processus <a class="tc-tiddlylink tc-tiddlylink-missing" href="WikiTexte.html">WikiTexte</a> erronés indésirables.</p><p>Un tiddler feuille de style est interprété de façon telle qu'il est, dans un premier temps wikifié et la portion de texte en résultant est extraite pour être considéré comme du CSS. Toute balise HTML que vous utiliseriez dans votre feuille de style est ainsi ignorée. Par exemple, les éléments HTML générés par le <a class="tc-tiddlylink tc-tiddlylink-resolves" href="RevealWidget.html">RevealWidget</a> n'affecteront pas le résultat en sortie. Comme dans l'exemple suivant, vous pouvez entourer les règles de balises <code>&lt;pre&gt;</code> pour les afficher comme des blocs de code sans affecter leur interprétation, incluant la prise en compte de la macro entourée.</p><pre><code>\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline html
 
 &lt;pre&gt;body.tc-body pre {
-	&lt;&lt;box-shadow &quot;inset 0 1px 0 #fff&quot;&gt;&gt;
+	&lt;&lt;box-shadow "inset 0 1px 0 #fff"&gt;&gt;
 }
 &lt;/pre&gt;</code></pre><h2 class="">Macros feuille de style</h2><p>Le noyau de TiddlyWiki offre plusieurs <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Stylesheet%2520Macros.html">macros globales that are helpful dans l'élaboration des feuilles de style </a>.
 </p></div>
 
 <div class="tc-tiddler-plugin-info tc-reveal"><p>
-</p></div>
-</div>
-
-</p>
+</p></div></div></p>
 </section>
 </body>
 </html>

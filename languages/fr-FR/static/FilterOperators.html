@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.23" />
+<meta name="tiddlywiki-version" content="5.2.0" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -11,7 +11,10 @@
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
-<title>FilterOperators: TiddlyWiki — un carnet de notes web personnel et non linéaire
+<title>FilterOperators: TiddlyWiki
+
+— un carnet de notes web personnel et non linéaire
+
 </title>
 </head>
 <body class="tc-body">
@@ -21,7 +24,7 @@
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Concepts tc-tagged-Filters" data-tags="Concepts Filters" data-tiddler-title="FilterOperators"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-label="plus" class="tc-btn-invisible" title="Actions supplémentaires"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="éditer" class="tc-btn-invisible" title="Édite ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="fermer" class="tc-btn-invisible" title="Ferme ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+<span class=" tc-reveal"><button aria-expanded="false" aria-label="plus" class="tc-btn-invisible" title="Actions supplémentaires"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="éditer" class="tc-btn-invisible" title="Édite ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="fermer" class="tc-btn-invisible" title="Ferme ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -46,7 +49,7 @@ Opérateurs de filtre
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:#FF8383;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:#FF8383;
 fill:#333333;
 color:#333333;">
  Concepts
@@ -57,7 +60,7 @@ color:#333333;">
 </span><span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  Filtres
@@ -94,12 +97,20 @@ color:#333333;">
 <td>find all titles of a fundamental category <svg class="tc-image-done-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M42.26 111.032c-2.051.001-4.103-.78-5.668-2.345L2.662 74.758a8 8 0 01-.005-11.32c3.118-3.117 8.192-3.12 11.32.007l28.278 28.278 72.124-72.124a8.002 8.002 0 0111.314-.001c3.118 3.118 3.124 8.19 0 11.315l-77.78 77.78a7.978 7.978 0 01-5.658 2.343z" fill-rule="evenodd"></path></svg></td>
 <td align="center"></td>
 </tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="average%2520Operator.html">average</a></td>
+<td>treating each input title as a number, compute their arithmetic mean </td>
+<td align="center"></td>
+</tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="backlinks%2520Operator.html">backlinks</a></td>
 <td>find the titles that link to each input title </td>
 <td align="center"></td>
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="ceil%2520Operator.html">ceil</a></td>
 <td>rounds a list of numbers up to the next largest integer </td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="charcode%2520Operator.html">charcode</a></td>
+<td>generates string characters from their numeric character codes </td>
 <td align="center"></td>
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="contains%2520Operator.html">contains</a></td>
@@ -119,7 +130,7 @@ color:#333333;">
 <td align="center"></td>
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="duplicateslugs%2520Operator.html">duplicateslugs</a></td>
-<td>returns each item in the list in a human-readable form for use in URLs or filenames </td>
+<td>find titles that yield duplicate slugs </td>
 <td align="center"></td>
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="each%2520Operator.html">each</a></td>
@@ -230,6 +241,10 @@ color:#333333;">
 <td>find the largest of a list of numbers </td>
 <td align="center"></td>
 </tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="median%2520Operator.html">median</a></td>
+<td>treating each input title as a number, compute their median value </td>
+<td align="center"></td>
+</tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="min%2520Operator.html">min</a></td>
 <td>treating each input title as a number, take the minimum of its value and the numeric value of the operand </td>
 <td align="center"></td>
@@ -310,6 +325,10 @@ color:#333333;">
 <td>returns each item in the list split into separate strings according to the specified regular expression <code class="doc-place">R</code> </td>
 <td align="center"></td>
 </tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="standard-deviation%2520Operator.html">standard-deviation</a></td>
+<td>treating each input title as a number, compute their standard-deviation </td>
+<td align="center"></td>
+</tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="subfilter%2520Operator.html">subfilter</a></td>
 <td>select titles from the operand interpreted as a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Expression.html">filter expression</a> </td>
 <td align="center"><code>!</code></td>
@@ -344,6 +363,10 @@ color:#333333;">
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="uppercase%2520Operator.html">uppercase</a></td>
 <td>returns each item in the list as uppercase </td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="variance%2520Operator.html">variance</a></td>
+<td>treating each input title as a number, compute their variance </td>
 <td align="center"></td>
 </tr>
 <tr class="doc-table-subheading"><th align="center" colspan="3">Opérateurs de classement</th></tr>
@@ -610,6 +633,10 @@ color:#333333;">
 <td>select the titles of all the Node.js commands </td>
 <td align="center"></td>
 </tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="deserializers%2520Operator.html">deserializers</a></td>
+<td> </td>
+<td align="center"></td>
+</tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="editiondescription%2520Operator.html">editiondescription</a></td>
 <td>select the descriptions of the input editions </td>
 <td align="center"></td>
@@ -620,6 +647,10 @@ color:#333333;">
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="getvariable%2520Operator.html">getvariable</a></td>
 <td>select all values of variables named in the input titles </td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="moduleproperty%2520Operator.html">modulesproperty</a></td>
+<td>retrieve a module property </td>
 <td align="center"></td>
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="modules%2520Operator.html">modules</a></td>
@@ -653,10 +684,7 @@ color:#333333;">
 </table></p><p>La rédaction d'une étape typique s'écrit <code>[opérateur[paramètre]]</code>, même si tous les opérateurs ne nécessitent pas de <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Parameter.html">paramètre</a>.</p><p>La plupart des étapes agissent sur les <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Title%2520Selection.html">titres d'une sélection</a> qu'ils ont en entrée, mais quelques uns <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Selection%2520Constructors.html">construisent une sélection entièrement neuve</a> à la place. Pour des règles précises, voir <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Syntax.html">Syntaxe des filtres</a>.</p></div>
 
 <div class="tc-tiddler-plugin-info tc-reveal"><p>
-</p></div>
-</div>
-
-</p>
+</p></div></div></p>
 </section>
 </body>
 </html>

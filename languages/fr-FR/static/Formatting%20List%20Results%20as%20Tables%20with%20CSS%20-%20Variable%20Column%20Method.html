@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.23" />
+<meta name="tiddlywiki-version" content="5.2.0" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -11,7 +11,10 @@
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
-<title>Formatting List Results as Tables with CSS - Variable Column Method: TiddlyWiki — un carnet de notes web personnel et non linéaire
+<title>Formatting List Results as Tables with CSS - Variable Column Method: TiddlyWiki
+
+— un carnet de notes web personnel et non linéaire
+
 </title>
 </head>
 <body class="tc-body">
@@ -21,7 +24,7 @@
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Learning" data-tags="Learning" data-tiddler-title="Formatting List Results as Tables with CSS - Variable Column Method"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-label="plus" class="tc-btn-invisible" title="Actions supplémentaires"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="éditer" class="tc-btn-invisible" title="Édite ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="fermer" class="tc-btn-invisible" title="Ferme ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+<span class=" tc-reveal"><button aria-expanded="false" aria-label="plus" class="tc-btn-invisible" title="Actions supplémentaires"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="éditer" class="tc-btn-invisible" title="Édite ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="fermer" class="tc-btn-invisible" title="Ferme ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -48,7 +51,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  Apprendre TiddlyWiki
@@ -66,10 +69,10 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>Sometimes you want the results of a <code>&lt;$list&gt;</code> widget to be formatted in the form of multiple columns, instead of just one straight listing. This method uses CSS to set up listing as  columns. It is responsive, that is,  re-positioning to display fewer columns if the window is too small.</p><p>You don't directly specify a fixed number of columns but instead specify the max-width for the list (which could be a transclusion of the tiddler width) and the width for each item. It lists from left to right, then wraps to a new row.</p><p>For other table-making techniques see also:</p><ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Formatting%2520List%2520Results%2520as%2520Tables%2520with%2520CSS%2520-%2520Specified%2520Columns%2520Methods.html">Formatting List Results as Tables with CSS - Specified Columns Methods</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Formatting%2520List%2520Results%2520as%2520Tables%2520(no%2520CSS).html">Formatting List Results as Tables (no CSS)</a></li></ul><h2 class="">Example listing using 50 existing TiddlyWiki tags</h2><pre><code>&lt;div class=&quot;dynamic-table&quot;&gt;
-  &lt;$list filter=&quot;[has[tags]tags[]sort[title]first[50]]&quot;&gt;
-    &lt;span class=&quot;item&quot;&gt;
-      &lt;$transclude tiddler=&quot;$:/core/ui/TagTemplate&quot;/&gt;
+<div class="tc-tiddler-body tc-reveal"><p>Sometimes you want the results of a <code>&lt;$list&gt;</code> widget to be formatted in the form of multiple columns, instead of just one straight listing. This method uses CSS to set up listing as  columns. It is responsive, that is,  re-positioning to display fewer columns if the window is too small.</p><p>You don't directly specify a fixed number of columns but instead specify the max-width for the list (which could be a transclusion of the tiddler width) and the width for each item. It lists from left to right, then wraps to a new row.</p><p>For other table-making techniques see also:</p><ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Formatting%2520List%2520Results%2520as%2520Tables%2520with%2520CSS%2520-%2520Specified%2520Columns%2520Methods.html">Formatting List Results as Tables with CSS - Specified Columns Methods</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Formatting%2520List%2520Results%2520as%2520Tables%2520(no%2520CSS).html">Formatting List Results as Tables (no CSS)</a></li></ul><h2 class="">Example listing using 50 existing TiddlyWiki tags</h2><pre><code>&lt;div class="dynamic-table"&gt;
+  &lt;$list filter="[has[tags]tags[]sort[title]first[50]]"&gt;
+    &lt;span class="item"&gt;
+      &lt;$transclude tiddler="$:/core/ui/TagTemplate"/&gt;
     &lt;/span&gt;
   &lt;/$list&gt;
 &lt;/div&gt;</code></pre><h2 class="">Example stylesheet to use with listing</h2><pre><code>&lt;style&gt;
@@ -97,7 +100,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  $:/tags/EditTemplate
@@ -112,7 +115,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  $:/tags/Macro
@@ -127,7 +130,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  $:/tags/MenuBar
@@ -142,7 +145,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  $:/tags/RawMarkupWikified/TopBody
@@ -157,7 +160,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  $:/tags/SearchResults
@@ -172,7 +175,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  $:/tags/SideBar
@@ -187,7 +190,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  $:/tags/Stylesheet
@@ -202,7 +205,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  $:/tags/TiddlerInfo
@@ -217,7 +220,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  $:/tags/TopRightBar
@@ -232,7 +235,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  $:/tags/ViewTemplate
@@ -247,7 +250,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  à commiter
@@ -262,7 +265,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  À propos
@@ -277,7 +280,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  abs Operator
@@ -292,7 +295,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  ActionCreateTiddlerWidget
@@ -307,7 +310,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  ActionWidgets
@@ -322,7 +325,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  add Operator
@@ -337,7 +340,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  addprefix Operator
@@ -352,7 +355,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  addsuffix Operator
@@ -367,7 +370,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  after Operator
@@ -382,7 +385,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  all Operator
@@ -397,7 +400,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  allafter Operator
@@ -412,7 +415,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  allbefore Operator
@@ -427,7 +430,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  AlphaReleaseNotes
@@ -442,7 +445,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  Android
@@ -457,7 +460,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  append Operator
@@ -472,7 +475,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  Articles
@@ -487,7 +490,22 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ average Operator
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span>
+    </span>
+  
+    <span class="item">
+      <span class="tc-tag-list-item">
+
+
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  backlinks Operator
@@ -502,7 +520,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  before Operator
@@ -517,7 +535,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  BetaReleaseNotes
@@ -532,7 +550,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  Binary Mathematics Operators
@@ -547,7 +565,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  butlast Operator
@@ -562,7 +580,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  ceil Operator
@@ -577,7 +595,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  changecount Macro
@@ -592,7 +610,22 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ charcode Operator
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span>
+    </span>
+  
+    <span class="item">
+      <span class="tc-tag-list-item">
+
+
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  Chrome
@@ -607,7 +640,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  colour Macro
@@ -622,7 +655,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  colour-picker Macro
@@ -637,7 +670,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  Commandes
@@ -652,7 +685,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  commands Operator
@@ -667,7 +700,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  Common Operators
@@ -682,7 +715,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  Communauté
@@ -697,7 +730,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  Community Editions
@@ -712,7 +745,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  Community Palettes
@@ -727,7 +760,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  Community Plugins
@@ -742,7 +775,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  Community plugins
@@ -757,7 +790,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  Community Plugns
@@ -772,7 +805,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  Community Resources
@@ -787,7 +820,7 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  Community Themes
@@ -802,40 +835,10 @@ color:#333333;">
       <span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  compare Operator
-</button>
-<span class=" tc-reveal" hidden="true"></span>
-
-
-</span>
-    </span>
-  
-    <span class="item">
-      <span class="tc-tag-list-item">
-
-
-<button class="tc-btn-invisible tc-tag-label" style="background-color:#FF8383;
-fill:#333333;
-color:#333333;">
- Concepts
-</button>
-<span class=" tc-reveal" hidden="true"></span>
-
-
-</span>
-    </span>
-  
-    <span class="item">
-      <span class="tc-tag-list-item">
-
-
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
-fill:#333333;
-color:#333333;">
- Conditional Operators
 </button>
 <span class=" tc-reveal" hidden="true"></span>
 
@@ -865,10 +868,7 @@ color:#333333;">
 </style></p></div>
 
 <div class="tc-tiddler-plugin-info tc-reveal"><p>
-</p></div>
-</div>
-
-</p>
+</p></div></div></p>
 </section>
 </body>
 </html>

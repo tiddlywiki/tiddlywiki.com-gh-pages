@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.23" />
+<meta name="tiddlywiki-version" content="5.2.0" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -11,7 +11,10 @@
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
-<title>days Operator (Examples): TiddlyWiki — Cuaderno de notas personal no-lineal en la web</title>
+<title>days Operator (Examples): TiddlyWiki
+
+— Cuaderno de notas personal no-lineal en la web
+</title>
 </head>
 <body class="tc-body">
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
@@ -20,7 +23,7 @@
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Operator%20Examples tc-tagged-days%20Operator" data-tags="[[Operator Examples]] [[days Operator]]" data-tiddler-title="days Operator (Examples)"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-label="Más" class="tc-btn-invisible" title="Otras acciones"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Editar" class="tc-btn-invisible" title="Permite editar este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+<span class=" tc-reveal"><button aria-expanded="false" aria-label="Más" class="tc-btn-invisible" title="Otras acciones"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Editar" class="tc-btn-invisible" title="Permite editar este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -47,7 +50,7 @@ days Operator (Examples)
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  days Operator
@@ -58,7 +61,7 @@ color:#333333;">
 </span><span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  Operator Examples
@@ -99,15 +102,21 @@ color:#333333;">
 </div></p><p>The filter can be used to highlight new items in a list. For example:
 <div class="doc-example"><pre><code>
 &lt;ul&gt;
-  &lt;$list filter=&quot;[tag[ReleaseNotes]!&lt;currentTiddler&gt;!sort[modified]]&quot;&gt;
+  &lt;$list filter="[tag[ReleaseNotes]!&lt;currentTiddler&gt;!sort[modified]]"&gt;
     &lt;li&gt;
-      &lt;$link&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;
-         &lt;$list filter=&quot;[&lt;currentTiddler&gt;days[-180]]&quot;&gt; @@color:red;^^new^^@@&lt;/$list&gt;
-         &lt;$list filter=&quot;[&lt;currentTiddler&gt;days[-500]!days[-180]]&quot;&gt; @@color:black;^^recent^^@@&lt;/$list&gt;
+      &lt;$link&gt;&lt;$view field="title"/&gt;&lt;/$link&gt;
+         &lt;$list filter="[&lt;currentTiddler&gt;days[-180]]"&gt; @@color:red;^^new^^@@&lt;/$list&gt;
+         &lt;$list filter="[&lt;currentTiddler&gt;days[-500]!days[-180]]"&gt; @@color:black;^^recent^^@@&lt;/$list&gt;
     &lt;/li&gt;
   &lt;/$list&gt;
 &lt;/ul&gt;
 </code></pre><p>Este es su aspecto:</p><p><ul>
+  
+    <li>
+      <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Release%25205.2.0.html">Release 5.2.0</a>
+          <span class="tc-inline-style" style="color:red;"><sup>new</sup></span>
+         
+    </li>
   
     <li>
       <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Release%25205.1.23.html">Release 5.1.23</a>
@@ -257,10 +266,7 @@ color:#333333;">
 </p></div>
 
 <div class="tc-tiddler-plugin-info tc-reveal"><p>
-</p></div>
-</div>
-
-</p>
+</p></div></div></p>
 </section>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.23" />
+<meta name="tiddlywiki-version" content="5.2.0" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -11,7 +11,10 @@
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
-<title>unusedtitle Macro (Examples): TiddlyWiki — un carnet de notes web personnel et non linéaire
+<title>unusedtitle Macro (Examples): TiddlyWiki
+
+— un carnet de notes web personnel et non linéaire
+
 </title>
 </head>
 <body class="tc-body">
@@ -21,7 +24,7 @@
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-unusedtitle%20Macro tc-tagged-Macro%20Examples" data-tags="[[unusedtitle Macro]] [[Macro Examples]]" data-tiddler-title="unusedtitle Macro (Examples)"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-label="plus" class="tc-btn-invisible" title="Actions supplémentaires"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="éditer" class="tc-btn-invisible" title="Édite ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="fermer" class="tc-btn-invisible" title="Ferme ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+<span class=" tc-reveal"><button aria-expanded="false" aria-label="plus" class="tc-btn-invisible" title="Actions supplémentaires"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="éditer" class="tc-btn-invisible" title="Édite ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="fermer" class="tc-btn-invisible" title="Ferme ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -44,11 +47,11 @@ unusedtitle Macro (Examples)
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
 </div><div class=" tc-reveal" hidden="true"></div>
-<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a></div></div><div class=" tc-reveal">
+<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a>28 février 2021 à 14h12</div></div><div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  Macro Examples
@@ -59,7 +62,7 @@ color:#333333;">
 </span><span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  unusedtitle Macro
@@ -90,9 +93,10 @@ color:#333333;">
 </span>
 <span class=" tc-reveal" hidden="true"></span>
 </div>
+<strong>The following example works best if there is an open tiddler in draft mode, or there is a tiddler named "New Tiddler".</strong> So you can see the automatic numbering.
 <div class="doc-example">
 <span class=" tc-reveal">
-	<pre><code>&lt;&lt;unusedtitle AnotherBase&gt;&gt;</code></pre>
+	<pre><code>&lt;&lt;unusedtitle separator:"-"&gt;&gt;</code></pre>
 </span>
 <span class=" tc-reveal" hidden="true"></span>
 
@@ -105,7 +109,7 @@ color:#333333;">
 </div>
 <div class="doc-example">
 <span class=" tc-reveal">
-	<pre><code>&lt;&lt;unusedtitle TiddlyWiki&gt;&gt;</code></pre>
+	<pre><code>&lt;&lt;unusedtitle baseName:"anotherBase"&gt;&gt;</code></pre>
 </span>
 <span class=" tc-reveal" hidden="true"></span>
 
@@ -116,13 +120,35 @@ color:#333333;">
 </span>
 <span class=" tc-reveal" hidden="true"></span>
 </div>
-</p></div>
+<div class="doc-example">
+<span class=" tc-reveal">
+	<pre><code>&lt;&lt;unusedtitle baseName:"About" separator:"-"&gt;&gt;</code></pre>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+
+<span class=" tc-reveal">
+	<dl>
+	<dd><button class="">Essayez</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div>
+<div class="doc-example">
+<span class=" tc-reveal">
+	<pre><code>&lt;&lt;unusedtitle template:"$count:2$-test"&gt;&gt;</code></pre>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+
+<span class=" tc-reveal">
+	<dl>
+	<dd><button class="">Essayez</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div></p><hr><p>Working buttons can be found at: <a class="tc-tiddlylink tc-tiddlylink-resolves" href="unusedtitle%2520Macro%2520(Examples%25201).html">unusedtitle Macro (Examples 1)</a>. You'll have to examine the code to see, what's going on.</p></div>
 
 <div class="tc-tiddler-plugin-info tc-reveal"><p>
-</p></div>
-</div>
-
-</p>
+</p></div></div></p>
 </section>
 </body>
 </html>

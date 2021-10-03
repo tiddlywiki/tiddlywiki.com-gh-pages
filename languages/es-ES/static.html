@@ -3,14 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.23" />
+<meta name="tiddlywiki-version" content="5.2.0" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <meta name="mobile-web-app-capable" content="yes"/>
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
-<title>TiddlyWiki — Cuaderno de notas personal no-lineal en la web</title>
+<title>TiddlyWiki
+
+— Cuaderno de notas personal no-lineal en la web
+</title>
 <div id="styleArea">
 <style data-tiddler-title="$:/boot/boot.css" data-tiddler-type="text/css" type="text/css">/*
 Basic styles used before we boot up the parsing engine
@@ -542,17 +545,19 @@ summary {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 }input[type="search"] {
-  outline-offset: initial;
+	outline-offset: initial;
 }html button {
 	line-height: 1.2;
 	color: ;
 	fill: ;
 	background: ;
 	border-color: ;
+}button:disabled svg {
+	fill: #bbb;
 }/*
 ** Basic element styles
 */html, body {
-	font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;;
 	text-rendering: optimizeLegibility; /* Enables kerning and ligatures etc. */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -575,7 +580,7 @@ summary {
 	font-size: 2em;
 }h1, h2, h3, h4, h5, h6 {
 	line-height: 1.2;
-	font-weight: 300;
+	font-weight: normal;
 }pre {
 	display: block;
 	margin-top: 1em;
@@ -612,7 +617,7 @@ summary {
 	margin-left: 50px;
 	margin-right: 50px;
 	padding: 10px;
-    border-radius: 8px;
+	border-radius: 8px;
 }blockquote.tc-big-quote cite:before {
 	content: "\2014 \2009";
 }blockquote.tc-big-quote:before {
@@ -624,8 +629,8 @@ summary {
 	margin-right: 0.25em;
 	vertical-align: -0.4em;
 	position: absolute;
-    left: -50px;
-    top: 42px;
+	left: -50px;
+	top: 42px;
 }blockquote.tc-big-quote:after {
 	font-family: Georgia, serif;
 	color: #bbb;
@@ -635,8 +640,8 @@ summary {
 	margin-right: 0.25em;
 	vertical-align: -0.4em;
 	position: absolute;
-    right: -80px;
-    bottom: -20px;
+	right: -80px;
+	bottom: -20px;
 }dl dt {
 	font-weight: bold;
 	margin-top: 6px;
@@ -650,7 +655,7 @@ input:not([type]) {
 	color: #333333;
 	background: #ffffff;
 }input[type="checkbox"] {
-  vertical-align: middle;
+	vertical-align: middle;
 }input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
@@ -776,6 +781,8 @@ a.tc-tiddlylink:hover {
 }.tc-tiddler-dragger-cover {
 	position: absolute;
 	background-color: #f4f4f4;
+}.tc-page-container > .tc-dropzone {
+	min-height: 100vh;
 }.tc-dropzone {
 	position: relative;
 }.tc-dropzone.tc-dragover:before {
@@ -827,6 +834,9 @@ a.tc-tiddlylink:hover {
 	cursor: pointer;
 	color: #333333;
 	fill: #333333;
+}button:disabled.tc-btn-invisible  {
+	cursor: default; 
+	color: #bbb;
 }.tc-btn-boxed {
 	font-size: 0.6em;
 	padding: 0.2em;
@@ -864,8 +874,7 @@ a.tc-tiddlylink:hover {
 	width: 1em;
 	fill: #bbb;
 }.tc-btn-text {
-	padding: 0;
-	margin: 0;
+	margin-left: 7px;
 }/* used for documentation "fake" buttons */
 .tc-btn-standard {
 	line-height: 1.8;
@@ -893,7 +902,7 @@ a.tc-tiddlylink:hover {
 	vertical-align: middle;
 	fill: #ffffff;
 }.tc-primary-btn {
- 	background: #5778d8;
+	background: #5778d8;
 }.tc-sidebar-lists input {
 	color: #333333;
 }.tc-sidebar-lists button {
@@ -953,9 +962,10 @@ a.tc-tiddlylink:hover {
 */.tc-tag-list-item {
 	position: relative;
 	display: inline-block;
-	margin-right: 7px;
 }.tc-tags-wrapper {
 	margin: 4px 0 14px 0;
+}.tc-tags-wrapper .tc-tag-list-item {
+	margin-right: 7px;
 }.tc-missing-tiddler-label {
 	font-style: italic;
 	font-weight: normal;
@@ -970,7 +980,7 @@ a.tc-tiddlylink:hover {
 	display: inline-block;
 	padding: 0.16em 0.7em;
 	font-size: 0.9em;
-	font-weight: 400;
+	font-weight: normal;
 	line-height: 1.2em;
 	color: #ffffff;
 	white-space: nowrap;
@@ -991,7 +1001,7 @@ a.tc-tiddlylink:hover {
 }.tc-tag-label svg, .tc-tag-label img {
 	height: 1em;
 	width: 1em;
-	margin-right: 3px; 
+	margin-right: 3px;
 	margin-bottom: 1px;
 	vertical-align: bottom;
 }.tc-edit-tags button.tc-remove-tag-button svg {
@@ -1032,7 +1042,7 @@ a.tc-tiddlylink:hover {
 	color: #acacac;
 	fill: #acacac;
 }.tc-sidebar-header .tc-title a.tc-tiddlylink-resolves {
-	font-weight: 300;
+	font-weight: normal;
 }.tc-sidebar-header .tc-sidebar-lists p {
 	margin-top: 3px;
 	margin-bottom: 3px;
@@ -1048,7 +1058,7 @@ a.tc-tiddlylink:hover {
 	margin-top: 14px;
 	font-size: 1.5em;
 }.tc-page-controls .tc-drop-down {
-  font-size: 1rem;
+	font-size: 1rem;
 }.tc-page-controls button {
 	margin-right: 0.5em;
 }.tc-page-controls a.tc-tiddlylink:hover {
@@ -1124,6 +1134,7 @@ a.tc-tiddlylink:hover {
 	border: 1px solid #ffffff;
 }
 .tc-tiddler-info {
+	overflow: hidden;
 	padding: 14px 42px 14px 42px;
 	background-color: #f8f8f8;
 	border-top: 1px solid #dddddd;
@@ -1142,8 +1153,9 @@ a.tc-tiddlylink:hover {
 	width: 1%; /* Makes this column be as narrow as possible */
 	text-align: right;
 	font-style: italic;
-	font-weight: 200;
+	font-weight: normal;
 }.tc-view-field-value {
+	word-break: break-all;
 }@media (max-width: 959px) {
 	.tc-tiddler-frame {
 		padding: 14px 14px 14px 14px;
@@ -1161,7 +1173,7 @@ a.tc-tiddlylink:hover {
 	}
 }.tc-site-title,
 .tc-titlebar {
-	font-weight: 300;
+	font-weight: normal;
 	font-size: 2.35em;
 	line-height: 1.35em;
 	color: #182955;
@@ -1181,12 +1193,12 @@ a.tc-tiddlylink:hover {
 }.tc-subtitle {
 	font-size: 0.9em;
 	color: #c0c0c0;
-	font-weight: 300;
+	font-weight: normal;
 }.tc-subtitle .tc-tiddlylink {
 	margin-right: .3em;
 }.tc-tiddler-missing .tc-title {
-  font-style: italic;
-  font-weight: normal;
+	font-style: italic;
+	font-weight: normal;
 }.tc-tiddler-frame .tc-tiddler-controls {
 	float: right;
 }.tc-tiddler-controls .tc-drop-down {
@@ -1204,9 +1216,9 @@ a.tc-tiddlylink:hover {
 }.tc-tiddler-controls button svg, .tc-tiddler-controls button img {
 	height: 0.75em;
 }.tc-search button svg, .tc-search a svg {
-    height: 1.2em;
-    width: 1.2em;
-    margin: 0 0.25em;
+	height: 1.2em;
+	width: 1.2em;
+	margin: 0 0.25em;
 }.tc-tiddler-controls button.tc-selected svg,
 .tc-page-controls button.tc-selected svg  {
 	fill: #444444;
@@ -1308,6 +1320,11 @@ a.tc-tiddlylink:hover {
 	width: auto;
 }.tc-editor-toolbar .tc-search-results {
 	padding: 0;
+}.tc-editor-toolbar button.tc-editortoolbar-stamp-button + .tc-popup .tc-drop-down > p {
+	margin: 0;
+	padding: 0;
+}.tc-editor-toolbar button.tc-editortoolbar-stamp-button + .tc-popup .tc-drop-down a.tc-tiddlylink {
+	font-weight: normal;
 }/*
 ** Adjustments for fluid-fixed mode
 */@media (min-width: 960px) {.tc-story-river {
@@ -1330,23 +1347,23 @@ a.tc-tiddlylink:hover {
 	}}/*
 ** Toolbar buttons
 */.tc-page-controls svg.tc-image-new-button {
-  fill: ;
+	fill: ;
 }.tc-page-controls svg.tc-image-options-button {
-  fill: ;
+	fill: ;
 }.tc-page-controls svg.tc-image-save-button {
-  fill: ;
+	fill: ;
 }.tc-tiddler-controls button svg.tc-image-info-button {
-  fill: ;
+	fill: ;
 }.tc-tiddler-controls button svg.tc-image-edit-button {
-  fill: ;
+	fill: ;
 }.tc-tiddler-controls button svg.tc-image-close-button {
-  fill: ;
+	fill: ;
 }.tc-tiddler-controls button svg.tc-image-delete-button {
-  fill: ;
+	fill: ;
 }.tc-tiddler-controls button svg.tc-image-cancel-button {
-  fill: ;
+	fill: ;
 }.tc-tiddler-controls button svg.tc-image-done-button {
-  fill: ;
+	fill: ;
 }/*
 ** Tiddler edit mode
 */.tc-tiddler-edit-frame em.tc-edit {
@@ -1423,6 +1440,45 @@ a.tc-tiddlylink:hover {
 	display: inline-block;
 	width: 10%;
 }/*
+** Tiddler editor dropzone
+*/.tc-dropzone-editor {
+	position:relative;
+}.tc-dropzone-editor.tc-dragover .tc-editor-toolbar::after{
+	z-index: 10000;
+	top:0;
+	left:0;
+	right:0;
+	height: 100%;
+	background: rgba(0,200,0,0.7);
+	content: "Suéltalo aquí o pulsa ESC para cancelar";
+	pointer-events: none;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #ffffff;
+	border: 4px dashed #999999;
+	font-weight: bold;
+	font-size: 150%;
+	opacity: 0.8;
+	color: #333333;
+}.tc-editor-importpopup {
+	width: 100%;
+	height: 100%;
+}.tc-editor-import {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #f5f5f5;
+	box-shadow: 2px 2px 10px #333333;
+	padding: 10px;
+	width: 96%;
+	border: 1px solid #cccccc;
+	text-align:center;
+}.tc-editor-import img {
+	max-height: 500px;
+}/*
 ** Storyview Classes
 */.tc-viewswitcher .tc-image-button {
 	margin-right: .3em;
@@ -1455,6 +1511,8 @@ a.tc-tiddlylink:hover {
 	margin-left: 14px;
 }.tc-drop-down button svg, .tc-drop-down a svg  {
 	fill: #333333;
+}.tc-drop-down button:disabled svg {
+	fill: #bbb;
 }.tc-drop-down button.tc-btn-invisible:hover svg {
 	fill: #ffffff;
 }.tc-drop-down .tc-drop-down-info {
@@ -1475,10 +1533,10 @@ a.tc-tiddlylink:hover {
 	line-height: 1.4;
 }.tc-drop-down .tc-tab-set .tc-tab-buttons button {
 	display: inline-block;
-    width: auto;
-    margin-bottom: 0px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+	width: auto;
+	margin-bottom: 0px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
 }.tc-drop-down .tc-prompt {
 	padding: 0 14px;
 }.tc-drop-down .tc-chooser {
@@ -1636,6 +1694,8 @@ a.tc-tiddlylink:hover {
 	text-align: right;
 	background-color: #f5f5f5;
 	border-top: 1px solid #dddddd;
+}.tc-modal-prevent-scroll {
+	overflow: hidden;
 }/*
 ** Centered modals
 */
@@ -1685,7 +1745,7 @@ a.tc-tiddlylink:hover {
 	color: #666666;
 	padding: 3px 5px 3px 5px;
 	margin-right: 0.3em;
-	font-weight: 300;
+	font-weight: normal;
 	border: none;
 	background: inherit;
 	background-color: #d8d8d8;
@@ -1770,9 +1830,9 @@ a.tc-tiddlylink:hover {
 	border-left: 1px solid #bbb;
 	border-right: 1px solid #bbb;
 }.tc-manager-list-item {}.tc-manager-list-item-heading {
-    display: block;
-    width: 100%;
-    text-align: left;	
+	display: block;
+	width: 100%;
+	text-align: left;
 	border-bottom: 1px solid #bbb;
 	padding: 3px;
 }.tc-manager-list-item-heading-selected {
@@ -1786,20 +1846,20 @@ a.tc-tiddlylink:hover {
 }.tc-manager-list-item-content {
 	display: flex;
 }.tc-manager-list-item-content-sidebar {
-    flex: 1 0;
-    background: #f8f8f8;
-    border-right: 0.5em solid #bbb;
-    border-bottom: 0.5em solid #bbb;
-    white-space: nowrap;
+	flex: 1 0;
+	background: #f8f8f8;
+	border-right: 0.5em solid #bbb;
+	border-bottom: 0.5em solid #bbb;
+	white-space: nowrap;
 }.tc-manager-list-item-content-item-heading {
 	display: block;
 	width: 100%;
 	text-align: left;
-    background: #bbb;
+	background: #bbb;
 	text-transform: uppercase;
 	font-size: 0.6em;
 	font-weight: bold;
-    padding: 0.5em 0 0.5em 0;
+	padding: 0.5em 0 0.5em 0;
 }.tc-manager-list-item-content-item-body {
 	padding: 0 0.5em 0 0.5em;
 }.tc-manager-list-item-content-item-body > pre {
@@ -1807,10 +1867,10 @@ a.tc-tiddlylink:hover {
 	border: none;
 	background: inherit;
 }.tc-manager-list-item-content-tiddler {
-    flex: 3 1;
-    border-left: 0.5em solid #bbb;
-    border-right: 0.5em solid #bbb;
-    border-bottom: 0.5em solid #bbb;
+	flex: 3 1;
+	border-left: 0.5em solid #bbb;
+	border-right: 0.5em solid #bbb;
+	border-bottom: 0.5em solid #bbb;
 }.tc-manager-list-item-content-item-body > table {
 	border: none;
 	padding: 0;
@@ -1857,14 +1917,14 @@ a.tc-tiddlylink:hover {
 	position: absolute;
 	top: 7px;
 	right: 7px;
-    line-height: 0;
+	line-height: 0;
 }.tc-alert-toolbar svg {
 	fill: #b99e2f;
 }.tc-alert-subtitle {
 	color: #b99e2f;
 	font-weight: bold;
-    font-size: 0.8em;
-    margin-bottom: 0.5em;
+	font-size: 0.8em;
+	margin-bottom: 0.5em;
 }.tc-alert-body > p {
 	margin: 0;
 }.tc-alert-highlight {
@@ -1917,9 +1977,9 @@ a.tc-tiddlylink:hover {
 	background-color: #ffffff;
 	margin: 0.5em 0 0.5em 0;
 	padding: 4px;
-    align-items: center;
+	align-items: center;
 }.tc-plugin-info-sub-plugins .tc-plugin-info {
-    margin: 0.5em;
+	margin: 0.5em;
 	background: #ffffff;
 }.tc-plugin-info-sub-plugin-indicator {
 	margin: -16px 1em 0 2em;
@@ -1927,8 +1987,8 @@ a.tc-tiddlylink:hover {
 	color: #ffffff;
 	background: #333333;
 	border-radius: 8px;
-    padding: 2px 7px;
-    font-size: 0.75em;
+	padding: 2px 7px;
+	font-size: 0.75em;
 }.tc-plugin-info-sub-plugins .tc-plugin-info-dropdown {
 	margin-left: 1em;
 	margin-right: 1em;
@@ -1946,7 +2006,7 @@ a.tc-tiddlylink:hover {
 }a.tc-tiddlylink.tc-plugin-info:hover > .tc-plugin-info-chunk > svg {
 	fill: #ffffff;
 }.tc-plugin-info-chunk {
-    margin: 2px;
+	margin: 2px;
 }.tc-plugin-info-chunk.tc-plugin-info-toggle {
 	flex-grow: 0;
 	flex-shrink: 0;
@@ -1962,7 +2022,7 @@ a.tc-tiddlylink:hover {
 	line-height: 1.2;
 	flex-grow: 0;
 	flex-shrink: 0;
-    text-align: right;
+	text-align: right;
 }.tc-plugin-info-chunk.tc-plugin-info-description h1 {
 	font-size: 1em;
 	line-height: 1.2;
@@ -1995,7 +2055,7 @@ a.tc-tiddlylink:hover {
 	background: #ffffff;
 }.tc-plugin-info-sub-plugins {
 	padding: 0.5em;
-    margin: 0 1em 1em 1em;
+	margin: 0 1em 1em 1em;
 	background: #ffffdd;
 }.tc-install-plugin {
 	font-weight: bold;
@@ -2026,7 +2086,7 @@ a.tc-tiddlylink:hover {
 }.tc-message-box svg {
 	width: 1em;
 	height: 1em;
-    vertical-align: text-bottom;
+	vertical-align: text-bottom;
 }/*
 ** Pictures
 */.tc-bordered-image {
@@ -2117,11 +2177,11 @@ a.tc-tiddlylink:hover {
 	font-weight: normal;
 }.tc-table-of-contents li li li {
 	font-size: 0.95em;
-	font-weight: 200;
+	font-weight: normal;
 	line-height: 1.5;
 }.tc-table-of-contents li li li li {
 	font-size: 0.95em;
-	font-weight: 200;
+	font-weight: normal;
 }.tc-tabbed-table-of-contents {
 	display: -webkit-flex;
 	display: flex;
@@ -2287,10 +2347,10 @@ a.tc-tiddlylink:hover {
 	font-weight: normal;
 	font-style: italic;
 }.tc-diff-tiddlers pre {
-    margin: 0;
-    padding: 0;
-    border: none;
-    background: none;
+	margin: 0;
+	padding: 0;
+	border: none;
+	background: none;
 }/*
 ** Errors
 */.tc-error {
@@ -2299,26 +2359,26 @@ a.tc-tiddlylink:hover {
 }/*
 ** Tree macro
 */.tc-tree div {
-    	padding-left: 14px;
+	padding-left: 14px;
 }.tc-tree ol {
-    	list-style-type: none;
-    	padding-left: 0;
-    	margin-top: 0;
+	list-style-type: none;
+	padding-left: 0;
+	margin-top: 0;
 }.tc-tree ol ol {
-    	padding-left: 1em;    
-}.tc-tree button { 
-    	color: #acacac;
+	padding-left: 1em;
+}.tc-tree button {
+	color: #acacac;
 }.tc-tree svg {
-     	fill: #acacac;
+	fill: #acacac;
 }.tc-tree span svg {
-    	width: 1em;
-    	height: 1em;
-    	vertical-align: baseline;
+	width: 1em;
+	height: 1em;
+	vertical-align: baseline;
 }.tc-tree li span {
-    	color: lightgray;
+	color: lightgray;
 }select {
-        color: ;
-        background: ;
+	color: ;
+	background: ;
 }/*
 ** Utility classes for SVG icons
 */.tc-fill-background {
@@ -2338,7 +2398,14 @@ a.tc-tiddlylink:hover {
 	flex-grow: 2;
 }/*
 ** Other utility classes
-*/.tc-small-gap {
+*/.tc-tiny-gap {
+	margin-left: .25em;
+	margin-right: .25em;
+}.tc-tiny-gap-left {
+	margin-left: .25em;
+}.tc-tiny-gap-right {
+	margin-right: .25em;
+}.tc-small-gap {
 	margin-left: .5em;
 	margin-right: .5em;
 }.tc-small-gap-left {
@@ -2758,10 +2825,6 @@ a .doc-attr {
     font-size: 0.75em;
 }.doc-link-badge:hover {
     text-decoration: underline;
-}.doc-plain-list ul,
-.doc-plain-list ol {
-	list-style: none;
-	padding-left: 0;
 }
 
 
@@ -2908,22 +2971,7 @@ a .doc-attr {
 <body class="tc-body">
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
 </p>
-<div class="tc-page-container tc-page-view-classic tc-language-es-ES"><div class="tc-dropzone"><div class="tc-sidebar-scrollable" style="overflow-y:auto;overflow-x:auto;-webkit-overflow-scrolling:touch;"><div><div class="tc-sidebar-header"><div class=" tc-reveal"><div class=" tc-reveal"><h1 class="tc-site-title"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a></h1></div><div class=" tc-reveal"><div class="tc-site-subtitle">Cuaderno de notas personal no-lineal en la web</div></div><div class=" tc-reveal"><p><div class="tc-page-controls"><button aria-label="Nuevo tiddler" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fnew-tiddler" title="Crea un tiddler nuevo"><svg class="tc-image-new-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M56 72H8.007C3.591 72 0 68.418 0 64c0-4.41 3.585-8 8.007-8H56V8.007C56 3.591 59.582 0 64 0c4.41 0 8 3.585 8 8.007V56h47.993c4.416 0 8.007 3.582 8.007 8 0 4.41-3.585 8-8.007 8H72v47.993c0 4.416-3.582 8.007-8 8.007-4.41 0-8-3.585-8-8.007V72z" fill-rule="evenodd"></path></svg></button><button aria-label="Panel de Control" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fcontrol-panel " title="Abre el Panel de Control">
-
-<svg class="tc-image-options-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M110.488 76a47.712 47.712 0 01-5.134 12.384l6.724 6.724c3.123 3.123 3.132 8.192.011 11.313l-5.668 5.668c-3.12 3.12-8.186 3.117-11.313-.01l-6.724-6.725c-3.82 2.258-7.98 4-12.384 5.134v9.505c0 4.417-3.578 8.007-7.992 8.007h-8.016C55.58 128 52 124.415 52 119.993v-9.505a47.712 47.712 0 01-12.384-5.134l-6.724 6.725c-3.123 3.122-8.192 3.131-11.313.01l-5.668-5.668c-3.12-3.12-3.116-8.186.01-11.313l6.725-6.724c-2.257-3.82-4-7.98-5.134-12.384H8.007C3.591 76 0 72.422 0 68.01v-8.017C0 55.58 3.585 52 8.007 52h9.505a47.712 47.712 0 015.134-12.383l-6.724-6.725c-3.123-3.122-3.132-8.191-.011-11.312l5.668-5.669c3.12-3.12 8.186-3.116 11.313.01l6.724 6.725c3.82-2.257 7.98-4 12.384-5.134V8.007C52 3.591 55.578 0 59.992 0h8.016C72.42 0 76 3.585 76 8.007v9.505a47.712 47.712 0 0112.384 5.134l6.724-6.724c3.123-3.123 8.192-3.132 11.313-.01l5.668 5.668c3.12 3.12 3.116 8.186-.01 11.312l-6.725 6.725c2.257 3.82 4 7.979 5.134 12.383h9.505c4.416 0 8.007 3.578 8.007 7.992v8.017c0 4.411-3.585 7.991-8.007 7.991h-9.505zM64 96c17.673 0 32-14.327 32-32 0-17.673-14.327-32-32-32-17.673 0-32 14.327-32 32 0 17.673 14.327 32 32 32z" fill-rule="evenodd"></path></svg>
-
-
-</button><button aria-label="Guardar cambios" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fsave-wiki" title="Confirma y guarda todos los cambios realizados en el wiki">
-
-
-
-<span class="tc-dirty-indicator">
-
-<svg class="tc-image-save-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M120.783 34.33c4.641 8.862 7.266 18.948 7.266 29.646 0 35.347-28.653 64-64 64-35.346 0-64-28.653-64-64 0-35.346 28.654-64 64-64 18.808 0 35.72 8.113 47.43 21.03l2.68-2.68c3.13-3.13 8.197-3.132 11.321-.008 3.118 3.118 3.121 8.193-.007 11.32l-4.69 4.691zm-12.058 12.058a47.876 47.876 0 013.324 17.588c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48c14.39 0 27.3 6.332 36.098 16.362L58.941 73.544 41.976 56.578c-3.127-3.127-8.201-3.123-11.32-.005-3.123 3.124-3.119 8.194.006 11.319l22.617 22.617a7.992 7.992 0 005.659 2.347c2.05 0 4.101-.783 5.667-2.349l44.12-44.12z" fill-rule="evenodd"></path></svg>
-
-
-</span>
-</button></div></p></div><div class=" tc-reveal"><div class="tc-sidebar-lists tc-sidebar-search"><p><div class="tc-search"><span class=" tc-keyboard"><span class=" tc-keyboard"><span class=" tc-keyboard"><span class=" tc-keyboard"><span class=" tc-keyboard"><span class=" tc-keyboard"><span class=" tc-keyboard"><span class=" tc-keyboard"><input class="tc-popup-handle" type="search" value=""></span></span></span></span></span></span></span></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Búsqueda avanzada" class="tc-btn-invisible" title="Búsqueda avanzada"><svg class="tc-image-advanced-search-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><g fill-rule="evenodd"><path d="M74.565 87.985A47.776 47.776 0 0148 96C21.49 96 0 74.51 0 48S21.49 0 48 0s48 21.49 48 48c0 9.854-2.97 19.015-8.062 26.636l34.347 34.347a9.443 9.443 0 010 13.36 9.446 9.446 0 01-13.36 0l-34.36-34.358zM48 80c17.673 0 32-14.327 32-32 0-17.673-14.327-32-32-32-17.673 0-32 14.327-32 32 0 17.673 14.327 32 32 32z"></path><circle cx="48" cy="48" r="8"></circle><circle cx="28" cy="48" r="8"></circle><circle cx="68" cy="48" r="8"></circle></g></svg></button></span></div><div class="tc-block-dropdown-wrapper tc-reveal" hidden="true"></div></p></div></div><div class=" tc-reveal"><div class="tc-sidebar-lists tc-sidebar-tabs"><p>
+<div class="tc-page-container tc-page-view-classic tc-language-es-ES"><div class="tc-dropzone"><div class="tc-sidebar-scrollable" style="overflow-y:auto;overflow-x:auto;-webkit-overflow-scrolling:touch;"><div><div class="tc-sidebar-header"><div class=" tc-reveal"><div class=" tc-reveal"><h1 class="tc-site-title"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a></h1></div><div class=" tc-reveal"><div class="tc-site-subtitle">Cuaderno de notas personal no-lineal en la web</div></div><div class=" tc-reveal"><p><div class="tc-page-controls"><button aria-label="Nuevo tiddler" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fnew-tiddler" title="Crea un tiddler nuevo"><svg class="tc-image-new-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M56 72H8.007C3.591 72 0 68.418 0 64c0-4.41 3.585-8 8.007-8H56V8.007C56 3.591 59.582 0 64 0c4.41 0 8 3.585 8 8.007V56h47.993c4.416 0 8.007 3.582 8.007 8 0 4.41-3.585 8-8.007 8H72v47.993c0 4.416-3.582 8.007-8 8.007-4.41 0-8-3.585-8-8.007V72z" fill-rule="evenodd"></path></svg></button><button aria-label="Panel de Control" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fcontrol-panel " title="Abre el Panel de Control"><svg class="tc-image-options-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M110.488 76a47.712 47.712 0 01-5.134 12.384l6.724 6.724c3.123 3.123 3.132 8.192.011 11.313l-5.668 5.668c-3.12 3.12-8.186 3.117-11.313-.01l-6.724-6.725c-3.82 2.258-7.98 4-12.384 5.134v9.505c0 4.417-3.578 8.007-7.992 8.007h-8.016C55.58 128 52 124.415 52 119.993v-9.505a47.712 47.712 0 01-12.384-5.134l-6.724 6.725c-3.123 3.122-8.192 3.131-11.313.01l-5.668-5.668c-3.12-3.12-3.116-8.186.01-11.313l6.725-6.724c-2.257-3.82-4-7.98-5.134-12.384H8.007C3.591 76 0 72.422 0 68.01v-8.017C0 55.58 3.585 52 8.007 52h9.505a47.712 47.712 0 015.134-12.383l-6.724-6.725c-3.123-3.122-3.132-8.191-.011-11.312l5.668-5.669c3.12-3.12 8.186-3.116 11.313.01l6.724 6.725c3.82-2.257 7.98-4 12.384-5.134V8.007C52 3.591 55.578 0 59.992 0h8.016C72.42 0 76 3.585 76 8.007v9.505a47.712 47.712 0 0112.384 5.134l6.724-6.724c3.123-3.123 8.192-3.132 11.313-.01l5.668 5.668c3.12 3.12 3.116 8.186-.01 11.312l-6.725 6.725c2.257 3.82 4 7.979 5.134 12.383h9.505c4.416 0 8.007 3.578 8.007 7.992v8.017c0 4.411-3.585 7.991-8.007 7.991h-9.505zM64 96c17.673 0 32-14.327 32-32 0-17.673-14.327-32-32-32-17.673 0-32 14.327-32 32 0 17.673 14.327 32 32 32z" fill-rule="evenodd"></path></svg></button><button aria-label="Guardar cambios" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fsave-wiki" title="Confirma y guarda todos los cambios realizados en el wiki"><span class="tc-dirty-indicator"><svg class="tc-image-save-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M120.783 34.33c4.641 8.862 7.266 18.948 7.266 29.646 0 35.347-28.653 64-64 64-35.346 0-64-28.653-64-64 0-35.346 28.654-64 64-64 18.808 0 35.72 8.113 47.43 21.03l2.68-2.68c3.13-3.13 8.197-3.132 11.321-.008 3.118 3.118 3.121 8.193-.007 11.32l-4.69 4.691zm-12.058 12.058a47.876 47.876 0 013.324 17.588c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48c14.39 0 27.3 6.332 36.098 16.362L58.941 73.544 41.976 56.578c-3.127-3.127-8.201-3.123-11.32-.005-3.123 3.124-3.119 8.194.006 11.319l22.617 22.617a7.992 7.992 0 005.659 2.347c2.05 0 4.101-.783 5.667-2.349l44.12-44.12z" fill-rule="evenodd"></path></svg></span></button></div></p></div><div class=" tc-reveal"><div class="tc-sidebar-lists tc-sidebar-search"><p><div class="tc-search"><span class=" tc-keyboard"><span class=" tc-keyboard"><span class=" tc-keyboard"><span class=" tc-keyboard"><span class=" tc-keyboard"><span class=" tc-keyboard"><span class=" tc-keyboard"><span class=" tc-keyboard"><input class="tc-popup-handle" type="search" value=""></span></span></span></span></span></span></span></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Búsqueda avanzada" class="tc-btn-invisible" title="Búsqueda avanzada"><svg class="tc-image-advanced-search-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><g fill-rule="evenodd"><path d="M74.565 87.985A47.776 47.776 0 0148 96C21.49 96 0 74.51 0 48S21.49 0 48 0s48 21.49 48 48c0 9.854-2.97 19.015-8.062 26.636l34.347 34.347a9.443 9.443 0 010 13.36 9.446 9.446 0 01-13.36 0l-34.36-34.358zM48 80c17.673 0 32-14.327 32-32 0-17.673-14.327-32-32-32-17.673 0-32 14.327-32 32 0 17.673 14.327 32 32 32z"></path><circle cx="48" cy="48" r="8"></circle><circle cx="28" cy="48" r="8"></circle><circle cx="68" cy="48" r="8"></circle></g></svg></button></span></div><div class="tc-block-dropdown-wrapper tc-reveal" hidden="true"></div></p></div></div><div class=" tc-reveal"><div class="tc-sidebar-lists tc-sidebar-tabs"><p>
 
 <div class="tc-tab-set tc-sidebar-tabs-main">
 <div class="tc-tab-buttons tc-sidebar-tabs-main">
@@ -2977,7 +3025,7 @@ Información para traductores
 </p></div></div></div></div></div></div><section class="tc-story-river"><section class="story-backdrop"></section><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-TableOfContents" data-tags="TableOfContents" data-tiddler-title="HelloThere"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-label="Más" class="tc-btn-invisible" title="Otras acciones"><svg class="tc-image-down-arrow tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M64.177 100.069a7.889 7.889 0 01-5.6-2.316l-55.98-55.98a7.92 7.92 0 010-11.196c3.086-3.085 8.105-3.092 11.196 0l50.382 50.382 50.382-50.382a7.92 7.92 0 0111.195 0c3.086 3.086 3.092 8.104 0 11.196l-55.98 55.98a7.892 7.892 0 01-5.595 2.316z"></path></svg></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Editar" class="tc-btn-invisible" title="Permite editar este tiddler"><svg class="tc-image-edit-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><g fill-rule="evenodd"><path d="M95.627 10.059l-5.656 5.657 11.313 11.313 5.657-5.656-11.314-11.314zm5.657-5.657l1.966-1.966c3.123-3.122 8.194-3.129 11.319-.005 3.117 3.118 3.122 8.192-.005 11.32l-1.966 1.965-11.314-11.314zm-16.97 16.97l-60.25 60.25a8.12 8.12 0 00-.322.342c-.1.087-.198.179-.295.275-5.735 5.735-10.702 22.016-10.702 22.016s16.405-5.09 22.016-10.702c.095-.096.186-.193.272-.292a8.12 8.12 0 00.345-.325l60.25-60.25-11.314-11.313zM35.171 124.19c6.788-.577 13.898-2.272 23.689-5.348 1.825-.573 3.57-1.136 6.336-2.04 16-5.226 21.877-6.807 28.745-7.146 8.358-.413 13.854 2.13 17.58 8.699a4 4 0 006.959-3.946c-5.334-9.406-13.745-13.296-24.933-12.744-7.875.39-14.057 2.052-30.835 7.533-2.739.894-4.46 1.45-6.25 2.012-19.46 6.112-30.77 7.072-39.597 1.747a4 4 0 10-4.132 6.85c6.333 3.82 13.754 5.12 22.438 4.383z"></path></g></svg></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"><svg class="tc-image-close-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M65.086 75.41l-50.113 50.113c-3.121 3.121-8.192 3.126-11.316.002-3.118-3.118-3.123-8.19.002-11.316l50.114-50.114L3.659 13.982C.538 10.86.533 5.79 3.657 2.666c3.118-3.118 8.19-3.123 11.316.002l50.113 50.114L115.2 2.668c3.121-3.121 8.192-3.126 11.316-.002 3.118 3.118 3.123 8.19-.002 11.316L76.4 64.095l50.114 50.114c3.121 3.121 3.126 8.192.002 11.316-3.118 3.118-8.19 3.123-11.316-.002L65.086 75.409z" fill-rule="evenodd"></path></svg></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+<span class=" tc-reveal"><button aria-expanded="false" aria-label="Más" class="tc-btn-invisible" title="Otras acciones"><svg class="tc-image-down-arrow tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M64.177 100.069a7.889 7.889 0 01-5.6-2.316l-55.98-55.98a7.92 7.92 0 010-11.196c3.086-3.085 8.105-3.092 11.196 0l50.382 50.382 50.382-50.382a7.92 7.92 0 0111.195 0c3.086 3.086 3.092 8.104 0 11.196l-55.98 55.98a7.892 7.892 0 01-5.595 2.316z"></path></svg></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Editar" class="tc-btn-invisible" title="Permite editar este tiddler"><svg class="tc-image-edit-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><g fill-rule="evenodd"><path d="M95.627 10.059l-5.656 5.657 11.313 11.313 5.657-5.656-11.314-11.314zm5.657-5.657l1.966-1.966c3.123-3.122 8.194-3.129 11.319-.005 3.117 3.118 3.122 8.192-.005 11.32l-1.966 1.965-11.314-11.314zm-16.97 16.97l-60.25 60.25a8.12 8.12 0 00-.322.342c-.1.087-.198.179-.295.275-5.735 5.735-10.702 22.016-10.702 22.016s16.405-5.09 22.016-10.702c.095-.096.186-.193.272-.292a8.12 8.12 0 00.345-.325l60.25-60.25-11.314-11.313zM35.171 124.19c6.788-.577 13.898-2.272 23.689-5.348 1.825-.573 3.57-1.136 6.336-2.04 16-5.226 21.877-6.807 28.745-7.146 8.358-.413 13.854 2.13 17.58 8.699a4 4 0 006.959-3.946c-5.334-9.406-13.745-13.296-24.933-12.744-7.875.39-14.057 2.052-30.835 7.533-2.739.894-4.46 1.45-6.25 2.012-19.46 6.112-30.77 7.072-39.597 1.747a4 4 0 10-4.132 6.85c6.333 3.82 13.754 5.12 22.438 4.383z"></path></g></svg></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"><svg class="tc-image-close-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M65.086 75.41l-50.113 50.113c-3.121 3.121-8.192 3.126-11.316.002-3.118-3.118-3.123-8.19.002-11.316l50.114-50.114L3.659 13.982C.538 10.86.533 5.79 3.657 2.666c3.118-3.118 8.19-3.123 11.316.002l50.113 50.114L115.2 2.668c3.121-3.121 8.192-3.126 11.316-.002 3.118 3.118 3.123 8.19-.002 11.316L76.4 64.095l50.114 50.114c3.121 3.121 3.126 8.192.002 11.316-3.118 3.118-8.19 3.123-11.316-.002L65.086 75.409z" fill-rule="evenodd"></path></svg></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -3002,7 +3050,7 @@ Información para traductores
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  TableOfContents
@@ -3045,7 +3093,7 @@ Grok TiddlyWiki
 <div class="tc-thumbnail-image" style="width:168px;height:95px;"><div class=" tc-reveal" style="width:168px;height:95px;">
 <img src="New Release Banner.png">
 </div><div class="tc-thumbnail-background tc-reveal" hidden="true" style="width:168px;height:95px;background-color:;"></div></div><div class="tc-thumbnail-icon" style="fill:#fff;color:#fff;"></div><div class="tc-thumbnail-caption">
-Qué hay de nuevo en 5.1.23
+Qué hay de nuevo en 5.2.0
 </div>
 </div></a><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Community%2520Links%2520Aggregator.html"><div class="tc-thumbnail-wrapper">
 <div class="tc-thumbnail-image" style="width:168px;height:95px;"><div class=" tc-reveal" style="width:168px;height:95px;">
@@ -3095,13 +3143,10 @@ TiddlyWiki Classic
 </p></div>
 
 <div class="tc-tiddler-plugin-info tc-reveal"><p>
-</p></div>
-</div>
-
-<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists tc-tiddler-exists tc-tiddler-shadow tc-tiddler-overridden-shadow  tc-tagged-Working%20with%20TiddlyWiki" data-tags="[[Working with TiddlyWiki]]" data-tiddler-title="GettingStarted"><div class="tc-tiddler-title">
+</p></div></div><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists tc-tiddler-exists tc-tiddler-shadow tc-tiddler-overridden-shadow  tc-tagged-Working%20with%20TiddlyWiki" data-tags="[[Working with TiddlyWiki]]" data-tiddler-title="GettingStarted"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-label="Más" class="tc-btn-invisible" title="Otras acciones"><svg class="tc-image-down-arrow tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M64.177 100.069a7.889 7.889 0 01-5.6-2.316l-55.98-55.98a7.92 7.92 0 010-11.196c3.086-3.085 8.105-3.092 11.196 0l50.382 50.382 50.382-50.382a7.92 7.92 0 0111.195 0c3.086 3.086 3.092 8.104 0 11.196l-55.98 55.98a7.892 7.892 0 01-5.595 2.316z"></path></svg></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Editar" class="tc-btn-invisible" title="Permite editar este tiddler"><svg class="tc-image-edit-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><g fill-rule="evenodd"><path d="M95.627 10.059l-5.656 5.657 11.313 11.313 5.657-5.656-11.314-11.314zm5.657-5.657l1.966-1.966c3.123-3.122 8.194-3.129 11.319-.005 3.117 3.118 3.122 8.192-.005 11.32l-1.966 1.965-11.314-11.314zm-16.97 16.97l-60.25 60.25a8.12 8.12 0 00-.322.342c-.1.087-.198.179-.295.275-5.735 5.735-10.702 22.016-10.702 22.016s16.405-5.09 22.016-10.702c.095-.096.186-.193.272-.292a8.12 8.12 0 00.345-.325l60.25-60.25-11.314-11.313zM35.171 124.19c6.788-.577 13.898-2.272 23.689-5.348 1.825-.573 3.57-1.136 6.336-2.04 16-5.226 21.877-6.807 28.745-7.146 8.358-.413 13.854 2.13 17.58 8.699a4 4 0 006.959-3.946c-5.334-9.406-13.745-13.296-24.933-12.744-7.875.39-14.057 2.052-30.835 7.533-2.739.894-4.46 1.45-6.25 2.012-19.46 6.112-30.77 7.072-39.597 1.747a4 4 0 10-4.132 6.85c6.333 3.82 13.754 5.12 22.438 4.383z"></path></g></svg></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"><svg class="tc-image-close-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M65.086 75.41l-50.113 50.113c-3.121 3.121-8.192 3.126-11.316.002-3.118-3.118-3.123-8.19.002-11.316l50.114-50.114L3.659 13.982C.538 10.86.533 5.79 3.657 2.666c3.118-3.118 8.19-3.123 11.316.002l50.113 50.114L115.2 2.668c3.121-3.121 8.192-3.126 11.316-.002 3.118 3.118 3.123 8.19-.002 11.316L76.4 64.095l50.114 50.114c3.121 3.121 3.126 8.192.002 11.316-3.118 3.118-8.19 3.123-11.316-.002L65.086 75.409z" fill-rule="evenodd"></path></svg></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+<span class=" tc-reveal"><button aria-expanded="false" aria-label="Más" class="tc-btn-invisible" title="Otras acciones"><svg class="tc-image-down-arrow tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M64.177 100.069a7.889 7.889 0 01-5.6-2.316l-55.98-55.98a7.92 7.92 0 010-11.196c3.086-3.085 8.105-3.092 11.196 0l50.382 50.382 50.382-50.382a7.92 7.92 0 0111.195 0c3.086 3.086 3.092 8.104 0 11.196l-55.98 55.98a7.892 7.892 0 01-5.595 2.316z"></path></svg></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Editar" class="tc-btn-invisible" title="Permite editar este tiddler"><svg class="tc-image-edit-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><g fill-rule="evenodd"><path d="M95.627 10.059l-5.656 5.657 11.313 11.313 5.657-5.656-11.314-11.314zm5.657-5.657l1.966-1.966c3.123-3.122 8.194-3.129 11.319-.005 3.117 3.118 3.122 8.192-.005 11.32l-1.966 1.965-11.314-11.314zm-16.97 16.97l-60.25 60.25a8.12 8.12 0 00-.322.342c-.1.087-.198.179-.295.275-5.735 5.735-10.702 22.016-10.702 22.016s16.405-5.09 22.016-10.702c.095-.096.186-.193.272-.292a8.12 8.12 0 00.345-.325l60.25-60.25-11.314-11.313zM35.171 124.19c6.788-.577 13.898-2.272 23.689-5.348 1.825-.573 3.57-1.136 6.336-2.04 16-5.226 21.877-6.807 28.745-7.146 8.358-.413 13.854 2.13 17.58 8.699a4 4 0 006.959-3.946c-5.334-9.406-13.745-13.296-24.933-12.744-7.875.39-14.057 2.052-30.835 7.533-2.739.894-4.46 1.45-6.25 2.012-19.46 6.112-30.77 7.072-39.597 1.747a4 4 0 10-4.132 6.85c6.333 3.82 13.754 5.12 22.438 4.383z"></path></g></svg></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"><svg class="tc-image-close-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M65.086 75.41l-50.113 50.113c-3.121 3.121-8.192 3.126-11.316.002-3.118-3.118-3.123-8.19.002-11.316l50.114-50.114L3.659 13.982C.538 10.86.533 5.79 3.657 2.666c3.118-3.118 8.19-3.123 11.316.002l50.113 50.114L115.2 2.668c3.121-3.121 8.192-3.126 11.316-.002 3.118 3.118 3.123 8.19-.002 11.316L76.4 64.095l50.114 50.114c3.121 3.121 3.126 8.192.002 11.316-3.118 3.118-8.19 3.123-11.316-.002L65.086 75.409z" fill-rule="evenodd"></path></svg></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -3126,7 +3171,7 @@ Puesta en marcha
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  Trabajar con TiddlyWiki
@@ -3213,13 +3258,10 @@ Descargar el wiki completo <svg class="tc-image-save-button tc-image-button" hei
 </p></blockquote></div>
 
 <div class="tc-tiddler-plugin-info tc-reveal"><p>
-</p></div>
-</div>
-
-<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-TableOfContents" data-tags="TableOfContents" data-tiddler-title="Community"><div class="tc-tiddler-title">
+</p></div></div><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-TableOfContents" data-tags="TableOfContents" data-tiddler-title="Community"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-label="Más" class="tc-btn-invisible" title="Otras acciones"><svg class="tc-image-down-arrow tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M64.177 100.069a7.889 7.889 0 01-5.6-2.316l-55.98-55.98a7.92 7.92 0 010-11.196c3.086-3.085 8.105-3.092 11.196 0l50.382 50.382 50.382-50.382a7.92 7.92 0 0111.195 0c3.086 3.086 3.092 8.104 0 11.196l-55.98 55.98a7.892 7.892 0 01-5.595 2.316z"></path></svg></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Editar" class="tc-btn-invisible" title="Permite editar este tiddler"><svg class="tc-image-edit-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><g fill-rule="evenodd"><path d="M95.627 10.059l-5.656 5.657 11.313 11.313 5.657-5.656-11.314-11.314zm5.657-5.657l1.966-1.966c3.123-3.122 8.194-3.129 11.319-.005 3.117 3.118 3.122 8.192-.005 11.32l-1.966 1.965-11.314-11.314zm-16.97 16.97l-60.25 60.25a8.12 8.12 0 00-.322.342c-.1.087-.198.179-.295.275-5.735 5.735-10.702 22.016-10.702 22.016s16.405-5.09 22.016-10.702c.095-.096.186-.193.272-.292a8.12 8.12 0 00.345-.325l60.25-60.25-11.314-11.313zM35.171 124.19c6.788-.577 13.898-2.272 23.689-5.348 1.825-.573 3.57-1.136 6.336-2.04 16-5.226 21.877-6.807 28.745-7.146 8.358-.413 13.854 2.13 17.58 8.699a4 4 0 006.959-3.946c-5.334-9.406-13.745-13.296-24.933-12.744-7.875.39-14.057 2.052-30.835 7.533-2.739.894-4.46 1.45-6.25 2.012-19.46 6.112-30.77 7.072-39.597 1.747a4 4 0 10-4.132 6.85c6.333 3.82 13.754 5.12 22.438 4.383z"></path></g></svg></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"><svg class="tc-image-close-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M65.086 75.41l-50.113 50.113c-3.121 3.121-8.192 3.126-11.316.002-3.118-3.118-3.123-8.19.002-11.316l50.114-50.114L3.659 13.982C.538 10.86.533 5.79 3.657 2.666c3.118-3.118 8.19-3.123 11.316.002l50.113 50.114L115.2 2.668c3.121-3.121 8.192-3.126 11.316-.002 3.118 3.118 3.123 8.19-.002 11.316L76.4 64.095l50.114 50.114c3.121 3.121 3.126 8.192.002 11.316-3.118 3.118-8.19 3.123-11.316-.002L65.086 75.409z" fill-rule="evenodd"></path></svg></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+<span class=" tc-reveal"><button aria-expanded="false" aria-label="Más" class="tc-btn-invisible" title="Otras acciones"><svg class="tc-image-down-arrow tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M64.177 100.069a7.889 7.889 0 01-5.6-2.316l-55.98-55.98a7.92 7.92 0 010-11.196c3.086-3.085 8.105-3.092 11.196 0l50.382 50.382 50.382-50.382a7.92 7.92 0 0111.195 0c3.086 3.086 3.092 8.104 0 11.196l-55.98 55.98a7.892 7.892 0 01-5.595 2.316z"></path></svg></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Editar" class="tc-btn-invisible" title="Permite editar este tiddler"><svg class="tc-image-edit-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><g fill-rule="evenodd"><path d="M95.627 10.059l-5.656 5.657 11.313 11.313 5.657-5.656-11.314-11.314zm5.657-5.657l1.966-1.966c3.123-3.122 8.194-3.129 11.319-.005 3.117 3.118 3.122 8.192-.005 11.32l-1.966 1.965-11.314-11.314zm-16.97 16.97l-60.25 60.25a8.12 8.12 0 00-.322.342c-.1.087-.198.179-.295.275-5.735 5.735-10.702 22.016-10.702 22.016s16.405-5.09 22.016-10.702c.095-.096.186-.193.272-.292a8.12 8.12 0 00.345-.325l60.25-60.25-11.314-11.313zM35.171 124.19c6.788-.577 13.898-2.272 23.689-5.348 1.825-.573 3.57-1.136 6.336-2.04 16-5.226 21.877-6.807 28.745-7.146 8.358-.413 13.854 2.13 17.58 8.699a4 4 0 006.959-3.946c-5.334-9.406-13.745-13.296-24.933-12.744-7.875.39-14.057 2.052-30.835 7.533-2.739.894-4.46 1.45-6.25 2.012-19.46 6.112-30.77 7.072-39.597 1.747a4 4 0 10-4.132 6.85c6.333 3.82 13.754 5.12 22.438 4.383z"></path></g></svg></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"><svg class="tc-image-close-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M65.086 75.41l-50.113 50.113c-3.121 3.121-8.192 3.126-11.316.002-3.118-3.118-3.123-8.19.002-11.316l50.114-50.114L3.659 13.982C.538 10.86.533 5.79 3.657 2.666c3.118-3.118 8.19-3.123 11.316.002l50.113 50.114L115.2 2.668c3.121-3.121 8.192-3.126 11.316-.002 3.118 3.118 3.123 8.19-.002 11.316L76.4 64.095l50.114 50.114c3.121 3.121 3.126 8.192.002 11.316-3.118 3.118-8.19 3.123-11.316-.002L65.086 75.409z" fill-rule="evenodd"></path></svg></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -3244,7 +3286,7 @@ Comunidad
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  TableOfContents
@@ -3312,20 +3354,17 @@ Eventos
 </div>
 <div class="tc-tab-divider "></div>
 <div class="tc-tab-content ">
-<div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><p>Las últimas noticias, artículos, recursos y ejemplos.</p><div class="tc-link-info"><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TW-Scripts%2520by%2520Mohammad.html">TW-Scripts by Mohammad</a></h1><p><div class="tc-subtitle">Posted hace 8 meses</div></p><p>TW-Scripts is one of the most comprehensive collections of solutions for Tiddlywiki 5.</p><p><a class="tc-tiddlylink-external" href="https://kookma.github.io/TW-Scripts/" rel="noopener noreferrer" target="_blank">https://kookma.github.io/TW-Scripts/</a></p><p>TW-Scripts includes:</p><ul><li>Collected solutions to questions in <a class="tc-tiddlylink-external" href="https://groups.google.com/group/TiddlyWiki" rel="noopener noreferrer" target="_blank">Tiddlywiki Google groups</a></li><li>Learn through examples</li><li>Templates, stylesheets</li><li>Wikitext, macros, and snippets</li><li>Tips and tricks</li><li>Search tools </li></ul></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/RegExp%2520in%2520Tiddlywiki%2520by%2520Mohammad.html">RegExp in Tiddlywiki by Mohammad</a></h1><p><div class="tc-subtitle">Posted hace 8 meses</div></p><p>RegExp in Tiddlywiki contains practical use cases of reular expression in Tiddlywiki. </p><p><a class="tc-tiddlylink-external" href="http://tw-regexp.tiddlyspot.com/" rel="noopener noreferrer" target="_blank">http://tw-regexp.tiddlyspot.com/</a></p><p>The regular expression is a way to describe complex search patterns using sequences of characters .</p><p>RegExp in Tiddlywiki has four main parts</p><ul><li>Using regular expression to match a pattern in tiddler title</li><li>Using regular expression to match a pattern in tiddler fields excluding tiddler text (body)</li><li>Using regular expression to match a pattern in tiddler body (text field)</li><li>Using regular expression for validation like username, password, etc.</li></ul></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/GitHub%2520Saver%2520Tutorial%2520by%2520Mohammad.html">GitHub Saver Tutorial by Mohammad</a></h1><p><div class="tc-subtitle">Posted hace 8 meses</div></p><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/GitHub.html">GitHub</a> Saver is a step by step tutorial shows how to integrate Tiddlywiki 5 and <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/GitHub.html">GitHub</a> Pages to create websites hosted on <a class="tc-tiddlylink-external" href="https://github.com/" rel="noopener noreferrer" target="_blank">https://github.com/</a>.</p><p><a class="tc-tiddlylink-external" href="https://kookma.github.io/TW5-GitHub-Saver/" rel="noopener noreferrer" target="_blank">https://kookma.github.io/TW5-GitHub-Saver/</a></p><p>This instruction is based on Tiddlywiki single html file model, while it can use subfolder for extra materials like images, audios, videos, pdfs,... in separate folders.</p><h2 class="">Other tutorials</h2><dl><dt>Tiddlywiki, Travis-CI and <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/GitHub.html">GitHub</a> Pages</dt><dd><a class="tc-tiddlylink-external" href="https://kookma.github.io/Tiddlywiki-Travis-CI/" rel="noopener noreferrer" target="_blank">https://kookma.github.io/Tiddlywiki-Travis-CI/</a></dd><dd>This wiki shows how to set up websites hosted on <a class="tc-tiddlylink-external" href="https://pages.github.com/" rel="noopener noreferrer" target="_blank">GitHub Pages</a> using <a class="tc-tiddlylink-external" href="https://travis-ci.org" rel="noopener noreferrer" target="_blank">Travis-CI</a> and <a class="tc-tiddlylink-external" href="https://tiddlywiki.com" rel="noopener noreferrer" target="_blank">Tiddlywiki 5</a> on Node.js.</dd><dt>Tiddlywiki and <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/GitHub.html">GitHub</a> Pages</dt><dd><a class="tc-tiddlylink-external" href="https://kookma.github.io/Tiddlywiki-and-GitHub-Pages/" rel="noopener noreferrer" target="_blank">https://kookma.github.io/Tiddlywiki-and-GitHub-Pages/</a></dd><dd>This instruction is based on local edit, save and push to <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/GitHub.html">GitHub</a>. It does NOT use the new <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/GitHub.html">GitHub</a> Saver mechanism (requires TW 5.1.20+) which lets edit and save directly from Tiddlywiki!</dd></dl></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522TW5%2520Magick%2522%2520by%2520Stephan%2520Hradek.html">&quot;TW5 Magick&quot; by Stephan Hradek</a></h1><p><div class="tc-subtitle">Posted hace 8 meses</div></p><p>Stephan Hradek's growing catalogue of tips, tutorials, and other resources. Stephan has also developed several plugins and macros that you can find at <a class="tc-tiddlylink-external" href="http://tiddlystuff.tiddlyspot.com/" rel="noopener noreferrer" target="_blank">http://tiddlystuff.tiddlyspot.com/</a>.</p><p><a class="tc-tiddlylink-external" href="http://tw5magick.tiddlyspot.com/" rel="noopener noreferrer" target="_blank">http://tw5magick.tiddlyspot.com/</a></p><blockquote class="tc-quote"><p>Some things in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> seem like Magic. As my preferred nick is Skeeve, I felt that TW5 Magick is a proper name for this collection of some of the &quot;magic&quot; tricks one can do with <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>.
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522TiddlyWiki%2520Posts%2522%2520by%2520Jeffrey%2520Kishner.html">&quot;TiddlyWiki Posts&quot; by Jeffrey Kishner</a></h1><p><div class="tc-subtitle">Posted hace 8 meses</div></p><p>A collection of articles covering integration with Fargo, Font Awesome and Google Calendar, and tips for managing task lists.</p><p><a class="tc-tiddlylink-external" href="http://blog.jeffreykishner.com/tiddlywiki/" rel="noopener noreferrer" target="_blank">http://blog.jeffreykishner.com/tiddlywiki/</a></p><blockquote class="tc-quote"><p>I have become a regular user of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> and have become so accustomed to using Font Awesome icons in Fargo that I wanted to incorporate the icons into my wikis as well.
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522TB5%2520-%2520a%2520pocket%2520full%2520of%2520tips%2522%2520by%2520Tobias%2520Beer.html">&quot;TB5 - a pocket full of tips&quot; by Tobias Beer</a></h1><p><div class="tc-subtitle">Posted hace 8 meses</div></p><p>An enormous collection of tips beautifully curated by Tobias Beer. It is actually a collection of sites, with sub-sites dedicated to topics such as filtering (<a class="tc-tiddlylink-external" href="http://tobibeer.github.io/tw/filters/" rel="noopener noreferrer" target="_blank">http://tobibeer.github.io/tw/filters/</a>).</p><p><a class="tc-tiddlylink-external" href="http://tobibeer.github.io/tb5/" rel="noopener noreferrer" target="_blank">http://tobibeer.github.io/tb5/</a></p><blockquote class="tc-quote"><p>A collection of references and sandbox for testing concepts around <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> 5...
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522Lucky%2520Sushi%2522%2520online%2520shop%2520by%2520sini-Kit.html">&quot;Lucky Sushi&quot; online shop by sini-Kit</a></h1><p><div class="tc-subtitle">Posted hace 8 meses</div></p><p>A complete online shop made in TiddlyWiki!</p><p><a class="tc-tiddlylink-external" href="http://luckysushi.ru/habarovsk/heeg.html#index" rel="noopener noreferrer" target="_blank">http://luckysushi.ru/habarovsk/heeg.html#index</a></p></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522Heeg.ru%2522%2520by%2520sini-Kit.html">&quot;Heeg.ru&quot; by sini-Kit</a></h1><p><div class="tc-subtitle">Posted hace 8 meses</div></p><p>A guide in Russian to creating an online shop with <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>. No serverside code is needed, instead orders are handled by Disqus.</p><p><a class="tc-tiddlylink-external" href="http://heeg.ru/" rel="noopener noreferrer" target="_blank">http://heeg.ru/</a></p></div></div></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><p>Las últimas noticias, artículos, recursos y ejemplos.</p><div class="tc-link-info"><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TW-Scripts%2520by%2520Mohammad.html">TW-Scripts by Mohammad</a></h1><p><div class="tc-subtitle">Posted hace 8 meses</div></p><p>TW-Scripts is one of the most comprehensive collections of solutions for Tiddlywiki 5.</p><p><a class="tc-tiddlylink-external" href="https://kookma.github.io/TW-Scripts/" rel="noopener noreferrer" target="_blank">https://kookma.github.io/TW-Scripts/</a></p><p>TW-Scripts includes:</p><ul><li>Collected solutions to questions in <a class="tc-tiddlylink-external" href="https://groups.google.com/group/TiddlyWiki" rel="noopener noreferrer" target="_blank">Tiddlywiki Google groups</a></li><li>Learn through examples</li><li>Templates, stylesheets</li><li>Wikitext, macros, and snippets</li><li>Tips and tricks</li><li>Search tools </li></ul></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/RegExp%2520in%2520Tiddlywiki%2520by%2520Mohammad.html">RegExp in Tiddlywiki by Mohammad</a></h1><p><div class="tc-subtitle">Posted hace 8 meses</div></p><p>RegExp in Tiddlywiki contains practical use cases of reular expression in Tiddlywiki. </p><p><a class="tc-tiddlylink-external" href="http://tw-regexp.tiddlyspot.com/" rel="noopener noreferrer" target="_blank">http://tw-regexp.tiddlyspot.com/</a></p><p>The regular expression is a way to describe complex search patterns using sequences of characters .</p><p>RegExp in Tiddlywiki has four main parts</p><ul><li>Using regular expression to match a pattern in tiddler title</li><li>Using regular expression to match a pattern in tiddler fields excluding tiddler text (body)</li><li>Using regular expression to match a pattern in tiddler body (text field)</li><li>Using regular expression for validation like username, password, etc.</li></ul></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/GitHub%2520Saver%2520Tutorial%2520by%2520Mohammad.html">GitHub Saver Tutorial by Mohammad</a></h1><p><div class="tc-subtitle">Posted hace 8 meses</div></p><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/GitHub.html">GitHub</a> Saver is a step by step tutorial shows how to integrate Tiddlywiki 5 and <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/GitHub.html">GitHub</a> Pages to create websites hosted on <a class="tc-tiddlylink-external" href="https://github.com/" rel="noopener noreferrer" target="_blank">https://github.com/</a>.</p><p><a class="tc-tiddlylink-external" href="https://kookma.github.io/TW5-GitHub-Saver/" rel="noopener noreferrer" target="_blank">https://kookma.github.io/TW5-GitHub-Saver/</a></p><p>This instruction is based on Tiddlywiki single html file model, while it can use subfolder for extra materials like images, audios, videos, pdfs,... in separate folders.</p><h2 class="">Other tutorials</h2><dl><dt>Tiddlywiki, Travis-CI and <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/GitHub.html">GitHub</a> Pages</dt><dd><a class="tc-tiddlylink-external" href="https://kookma.github.io/Tiddlywiki-Travis-CI/" rel="noopener noreferrer" target="_blank">https://kookma.github.io/Tiddlywiki-Travis-CI/</a></dd><dd>This wiki shows how to set up websites hosted on <a class="tc-tiddlylink-external" href="https://pages.github.com/" rel="noopener noreferrer" target="_blank">GitHub Pages</a> using <a class="tc-tiddlylink-external" href="https://travis-ci.org" rel="noopener noreferrer" target="_blank">Travis-CI</a> and <a class="tc-tiddlylink-external" href="https://tiddlywiki.com" rel="noopener noreferrer" target="_blank">Tiddlywiki 5</a> on Node.js.</dd><dt>Tiddlywiki and <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/GitHub.html">GitHub</a> Pages</dt><dd><a class="tc-tiddlylink-external" href="https://kookma.github.io/Tiddlywiki-and-GitHub-Pages/" rel="noopener noreferrer" target="_blank">https://kookma.github.io/Tiddlywiki-and-GitHub-Pages/</a></dd><dd>This instruction is based on local edit, save and push to <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/GitHub.html">GitHub</a>. It does NOT use the new <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/GitHub.html">GitHub</a> Saver mechanism (requires TW 5.1.20+) which lets edit and save directly from Tiddlywiki!</dd></dl></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522TW5%2520Magick%2522%2520by%2520Stephan%2520Hradek.html">"TW5 Magick" by Stephan Hradek</a></h1><p><div class="tc-subtitle">Posted hace 8 meses</div></p><p>Stephan Hradek's growing catalogue of tips, tutorials, and other resources. Stephan has also developed several plugins and macros that you can find at <a class="tc-tiddlylink-external" href="http://tiddlystuff.tiddlyspot.com/" rel="noopener noreferrer" target="_blank">http://tiddlystuff.tiddlyspot.com/</a>.</p><p><a class="tc-tiddlylink-external" href="http://tw5magick.tiddlyspot.com/" rel="noopener noreferrer" target="_blank">http://tw5magick.tiddlyspot.com/</a></p><blockquote class="tc-quote"><p>Some things in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> seem like Magic. As my preferred nick is Skeeve, I felt that TW5 Magick is a proper name for this collection of some of the "magic" tricks one can do with <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>.
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522TiddlyWiki%2520Posts%2522%2520by%2520Jeffrey%2520Kishner.html">"TiddlyWiki Posts" by Jeffrey Kishner</a></h1><p><div class="tc-subtitle">Posted hace 8 meses</div></p><p>A collection of articles covering integration with Fargo, Font Awesome and Google Calendar, and tips for managing task lists.</p><p><a class="tc-tiddlylink-external" href="http://blog.jeffreykishner.com/tiddlywiki/" rel="noopener noreferrer" target="_blank">http://blog.jeffreykishner.com/tiddlywiki/</a></p><blockquote class="tc-quote"><p>I have become a regular user of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> and have become so accustomed to using Font Awesome icons in Fargo that I wanted to incorporate the icons into my wikis as well.
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522TB5%2520-%2520a%2520pocket%2520full%2520of%2520tips%2522%2520by%2520Tobias%2520Beer.html">"TB5 - a pocket full of tips" by Tobias Beer</a></h1><p><div class="tc-subtitle">Posted hace 8 meses</div></p><p>An enormous collection of tips beautifully curated by Tobias Beer. It is actually a collection of sites, with sub-sites dedicated to topics such as filtering (<a class="tc-tiddlylink-external" href="http://tobibeer.github.io/tw/filters/" rel="noopener noreferrer" target="_blank">http://tobibeer.github.io/tw/filters/</a>).</p><p><a class="tc-tiddlylink-external" href="http://tobibeer.github.io/tb5/" rel="noopener noreferrer" target="_blank">http://tobibeer.github.io/tb5/</a></p><blockquote class="tc-quote"><p>A collection of references and sandbox for testing concepts around <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> 5...
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522Lucky%2520Sushi%2522%2520online%2520shop%2520by%2520sini-Kit.html">"Lucky Sushi" online shop by sini-Kit</a></h1><p><div class="tc-subtitle">Posted hace 8 meses</div></p><p>A complete online shop made in TiddlyWiki!</p><p><a class="tc-tiddlylink-external" href="http://luckysushi.ru/habarovsk/heeg.html#index" rel="noopener noreferrer" target="_blank">http://luckysushi.ru/habarovsk/heeg.html#index</a></p></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522Heeg.ru%2522%2520by%2520sini-Kit.html">"Heeg.ru" by sini-Kit</a></h1><p><div class="tc-subtitle">Posted hace 8 meses</div></p><p>A guide in Russian to creating an online shop with <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>. No serverside code is needed, instead orders are handled by Disqus.</p><p><a class="tc-tiddlylink-external" href="http://heeg.ru/" rel="noopener noreferrer" target="_blank">http://heeg.ru/</a></p></div></div></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div>
 </div>
 </div>
 
 </p></div>
 
 <div class="tc-tiddler-plugin-info tc-reveal"><p>
-</p></div>
-</div>
-
-<section class="story-frontdrop"></section></section><div class="tc-alerts"></div><p><div class="tc-drafts-list tc-reveal"></div></p><p>
+</p></div></div><section class="story-frontdrop"></section></section><div class="tc-alerts"></div><p><div class="tc-drafts-list tc-reveal"></div></p><p>
 <nav class="tc-menubar tc-adjust-top-of-scroll">
 <div class="tc-menubar-narrow">
 <ul class="tc-menubar-list">
@@ -3399,8 +3438,7 @@ Eventos
 
 <li class="tc-menubar-item" style="">
 
-
-	<a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="static/GettingStarted.html">
+<a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="static/GettingStarted.html">
 	
 	GettingStarted
 	
@@ -3416,8 +3454,7 @@ Eventos
 <li class="tc-menubar-item" style="">
 
 	
-	
-	<button class="">
+	<button aria-expanded="false" class="">
 	
 	Contents
 	 

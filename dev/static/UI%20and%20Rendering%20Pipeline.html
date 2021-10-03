@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.23" />
+<meta name="tiddlywiki-version" content="5.2.0" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -11,16 +11,19 @@
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
-<title>UI and Rendering Pipeline: TiddlyWiki/Dev — documentation for developers</title>
+<title>UI and Rendering Pipeline: TiddlyWiki/Dev
+
+— documentation for developers
+</title>
 </head>
 <body class="tc-body">
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/dev/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/dev/</a></div></div>
 </p>
 <section class="tc-story-river tc-static-story-river">
-<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-doc" data-tags="doc" data-tiddler-title="UI and Rendering Pipeline"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span></span><span><h2 class="tc-title">UI and Rendering Pipeline</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-doc" data-tags="doc" data-tiddler-title="UI and Rendering Pipeline"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">UI and Rendering Pipeline</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a>17th July 2014 at 7:52pm</div></div><div class=" tc-reveal">
-<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="doc">
+<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#4e432f;
 color:#4e432f;">
 doc
@@ -38,9 +41,9 @@ The parse-tree consists of nested nodes like</p><pre class="js hljs"><code>{<spa
 {type: "raw", html: &lt;string&gt;} - raw HTML</code></pre><p>The core plug-in provides a recursive descent <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> parser which loads it's individual rules from individual modules.
 Thus a developer can provide additional rules by using <code>module-type: wikirule</code>. Each rule can produce a list of parse-tree nodes.
 A simple example for a wikirule producing a <code>&lt;hr&gt;</code> from <code>---</code> can be found in <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fmodules%252Fparsers%252Fwikiparser%252Frules%252Fhorizrule.js.html">horizrule.js</a></p><p>HTML tags can be embedded into <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> because of the <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fmodules%252Fparsers%252Fwikiparser%252Frules%252Fhtml.js.html">html rule</a>.
-This rule matches HTML tag syntax and creates <code>type: &quot;element&quot;</code> nodes.
+This rule matches HTML tag syntax and creates <code>type: "element"</code> nodes.
 But the html-rule has another special purpose. By parsing the HTML tag syntax it implicitly parses <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> widgets.
-It the recognises them by the $ character at the beginning of the tag name and instead of producing &quot;element&quot; nodes 
+It the recognises them by the $ character at the beginning of the tag name and instead of producing "element" nodes 
 it uses the tag name for the type:</p><pre class="js hljs"><code>{<span class="hljs-attr">type</span>: <span class="hljs-string">"list"</span>, <span class="hljs-attr">tag</span>: <span class="hljs-string">"$list"</span>, <span class="hljs-attr">attributes</span>: {}, <span class="hljs-attr">children</span>: []} - a list element</code></pre><p>The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Widgets.html">Widgets</a> part will reveal why this makes sense and how each node is transformed into a widget.
 Another special characteristic of the html-rule or the parse nodes in general is the attributes property.
 Attributes in the parse-tree are not stored as simple strings but they are nodes of its own to make indirect text references available as attributes as described in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Widgets.html">Widgets</a>:</p><pre class="js hljs"><code>{<span class="hljs-attr">type</span>: <span class="hljs-string">"string"</span>, <span class="hljs-attr">value</span>: &lt;string&gt;} - literal string
@@ -49,10 +52,10 @@ We talked about widgets as parts of the <a class="tc-tiddlylink tc-tiddlylink-re
 The core plug-in provides a basic widget object which gets the parse node it should represent and a DOM node. The widget then must create the DOM structure which represents the parse node and add it to the provided DOM node.
 A LinkWidget for example would create the DOM node for a <code>&lt;a&gt;...&lt;/a&gt;</code> tag and put it in the provided DOM node.
 When a widget gets a parse node with child nodes it must create the corresponding child widgets.</p><p>All this functionality is basically provided with the base widget. But when creating the widget for a parse node it loads additional modules with <code>module-type: widget</code>. These modules can export multiple widgets which extend the base widget and can override it's methods like the rendering and refresh functions.
-As described in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Parser.html">Parser</a> each parse node contains a &quot;type&quot; property. This type directly determines which widget module is used.</p><pre class="js hljs"><code>{<span class="hljs-attr">type</span>: <span class="hljs-string">"text"</span>, <span class="hljs-attr">text</span>: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">string</span>&gt;</span>} - a text node</span></code></pre><p>Would be transformed to a <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fmodules%252Fwidgets%252Ftext.js.html">TextWidget</a>.
-(Note that the TextWidget module exports a property &quot;text&quot;.)</p><p>So in fact when talking about widgets in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a>, they are not a feature added to <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> but the ability to directly use a specific widget instead of the parser choosing a widget type.</p><p>In the beginning we talked about widgets and how they enable dynamic behaviour. But up until now we only described how widgets create DOM nodes from parse nodes.
+As described in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Parser.html">Parser</a> each parse node contains a "type" property. This type directly determines which widget module is used.</p><pre class="js hljs"><code>{<span class="hljs-attr">type</span>: <span class="hljs-string">"text"</span>, <span class="hljs-attr">text</span>: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">string</span>&gt;</span>} - a text node</span></code></pre><p>Would be transformed to a <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fmodules%252Fwidgets%252Ftext.js.html">TextWidget</a>.
+(Note that the TextWidget module exports a property "text".)</p><p>So in fact when talking about widgets in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a>, they are not a feature added to <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> but the ability to directly use a specific widget instead of the parser choosing a widget type.</p><p>In the beginning we talked about widgets and how they enable dynamic behaviour. But up until now we only described how widgets create DOM nodes from parse nodes.
 Widgets add dynamic behaviour in two ways.</p><h3 class="">Messages</h3><p>Messages are events that are triggered by the user. They are generated by widgets for example when the user clicks on a ButtonWidget.
-Each message has a type property like &quot;tm-delete-tiddler&quot; and a parameter.</p><pre class="js hljs"><code>{<span class="hljs-attr">type</span>: <span class="hljs-string">"tm-delete-tiddler"</span>, <span class="hljs-attr">param</span>: <span class="hljs-string">"MyOldTiddler"</span>}</code></pre><p>When such a message is created by a widget it sends the message to it's parent widget which sends it to it's own parent widget and so on.
+Each message has a type property like "tm-delete-tiddler" and a parameter.</p><pre class="js hljs"><code>{<span class="hljs-attr">type</span>: <span class="hljs-string">"tm-delete-tiddler"</span>, <span class="hljs-attr">param</span>: <span class="hljs-string">"MyOldTiddler"</span>}</code></pre><p>When such a message is created by a widget it sends the message to it's parent widget which sends it to it's own parent widget and so on.
 On this way each widget can try to dispatch the message.
 This concept is realised in the base widget object.
 It provides a function <code>dispatchEvent(message)</code> which is called by the children to bubble the message up the widget tree.
@@ -61,8 +64,8 @@ If the listener returns false, the message is send to the parent widget.</p><p>T
 </p><h3 class="">Selective Update</h3><p>With <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Messages.html">Messages</a> a widget is able to put some kind of events into the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> application which is one part of the dynamic behaviour of widgets.
 The other part is selective updating.
 Widgets are often dependant on tiddler states.
-The <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/#ListWidget" rel="noopener noreferrer" target="_blank">ListWidget</a> for example can be configured to list all tiddlers which are tagged with &quot;important&quot;.
-Now, when such a tiddler is changed and it's &quot;important&quot; tag is removed, this change should reflect in the ListWidget.
+The <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/#ListWidget" rel="noopener noreferrer" target="_blank">ListWidget</a> for example can be configured to list all tiddlers which are tagged with "important".
+Now, when such a tiddler is changed and it's "important" tag is removed, this change should reflect in the ListWidget.
 To allow widgets to react on such changes, each widget can provide a function <code>refresh(changedTiddlers)</code>.
 The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="RootWidget%2520and%2520Rendering%2520Startup.html">RootWidget</a> is registered to the wiki store, using the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Event%2520Mechanism.html">Event Mechanism</a>. When an change event occurs it starts to call the refresh function of its children with a list of the changed tiddlers.
 Each widget can then decide if it has to change or re-render its DOM representation and call the refresh function of its own children.
@@ -75,7 +78,7 @@ This raises the question, how these multiple tiddlers are build up to a single U
 But before answering this question we need to introduce text references and transclusion.</p><h3 class="">TextReference</h3><p>A text reference describes a special notation to indirectly refer to the contents of a specified tiddler field.
 The syntax of a text reference is:</p><pre><code>&lt;tiddlertitle&gt;
 &lt;tiddlertitle&gt;!!&lt;fieldname&gt;
-!!&lt;fieldname&gt; - specifies a field of the current tiddlers</code></pre><p>To obtain the actual text, the core plug-in adds a function to the wiki store <code>getTextReference(textRef,defaultText,currTiddlerTitle)</code>. The &quot;currentTiddlerTitle&quot; is the title of a tiddler which is used when no tiddlerTitle is specified in the text reference.
+!!&lt;fieldname&gt; - specifies a field of the current tiddlers</code></pre><p>To obtain the actual text, the core plug-in adds a function to the wiki store <code>getTextReference(textRef,defaultText,currTiddlerTitle)</code>. The "currentTiddlerTitle" is the title of a tiddler which is used when no tiddlerTitle is specified in the text reference.
 What the currentTiddler should be, depends on where the text reference is used.
 If it is for example used as a widget attribute, the current tiddler is the tiddler which contains this widget.
 Text references are used by widgets (attributes), filteroperators (parameter) and in transclusions.
@@ -83,17 +86,17 @@ These elements use the <code>getTextReference(textRef,defaultText,currTiddlerTit
 This is realized with a transclude widget which parses the tiddler to be included and adds the resulting nodes as children of its own parse node.
 The trick with transclusion is, that it shows the content of a different tiddler but by default it does not change the current tiddler.
 This enables us to create tiddlers with text references and use them as a templates.</p><p>For example:
-Tiddler <code>MyTask</code> having the fields and the content of:</p><pre><code>important: &quot;very&quot;
-assoc.person: &quot;Hans Dampf&quot;
+Tiddler <code>MyTask</code> having the fields and the content of:</p><pre><code>important: "very"
+assoc.person: "Hans Dampf"
 
-&lt;$transclude tiddler=&quot;TaskHeaderTemplate&quot; /&gt;
+&lt;$transclude tiddler="TaskHeaderTemplate" /&gt;
 
-Hans needs some more Dampf.</code></pre><p>And Tiddler <code>TaskHeaderTemplate</code> with a content of:</p><pre><code>&lt;$view field=&quot;assoc.person&quot;/&gt; has a &lt;$view field=&quot;important&quot;/&gt; important task for us:</code></pre><p>When showing tiddler <code>MyTask</code> it would result in:</p><pre><code>Hans Dampf has a very important task for us:
+Hans needs some more Dampf.</code></pre><p>And Tiddler <code>TaskHeaderTemplate</code> with a content of:</p><pre><code>&lt;$view field="assoc.person"/&gt; has a &lt;$view field="important"/&gt; important task for us:</code></pre><p>When showing tiddler <code>MyTask</code> it would result in:</p><pre><code>Hans Dampf has a very important task for us:
 
 Hans needs some more Dampf.</code></pre><p>Transclusion and templates is one of the most important concepts in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a>.
 It allows us to include other tiddlers using the metadata for our current tiddler.
-It also allows us to transclude a template tiddler with a third tiddler set as the currentTiddler with the TiddlerWidget:</p><pre><code>&lt;$tiddler tiddler=&quot;MyTiddler&quot;&gt;
-&lt;$transclude tiddler=&quot;EditTemplate&quot; /&gt;
+It also allows us to transclude a template tiddler with a third tiddler set as the currentTiddler with the TiddlerWidget:</p><pre><code>&lt;$tiddler tiddler="MyTiddler"&gt;
+&lt;$transclude tiddler="EditTemplate" /&gt;
 &lt;/$tiddler&gt;</code></pre><p>This way we can create a different view on a tiddler which does not only show it's title and it's content
 but shows it's content and metadata in editable text fields and allows us to edit this tiddler.
 Also the template concept is used by the ListWidget to show the tiddlers through a specified template.
@@ -111,10 +114,7 @@ The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Event%2520Mechanism.ht
 </p></div>
 
 <div class="tc-tiddler-plugin-info tc-reveal"><p>
-</p></div>
-</div>
-
-</p>
+</p></div></div></p>
 </section>
 </body>
 </html>

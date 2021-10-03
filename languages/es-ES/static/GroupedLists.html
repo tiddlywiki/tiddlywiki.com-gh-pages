@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.23" />
+<meta name="tiddlywiki-version" content="5.2.0" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -11,7 +11,10 @@
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
-<title>GroupedLists: TiddlyWiki — Cuaderno de notas personal no-lineal en la web</title>
+<title>GroupedLists: TiddlyWiki
+
+— Cuaderno de notas personal no-lineal en la web
+</title>
 </head>
 <body class="tc-body">
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
@@ -20,7 +23,7 @@
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-ListWidget tc-tagged-Lists" data-tags="ListWidget Lists" data-tiddler-title="GroupedLists"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-label="Más" class="tc-btn-invisible" title="Otras acciones"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Editar" class="tc-btn-invisible" title="Permite editar este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+<span class=" tc-reveal"><button aria-expanded="false" aria-label="Más" class="tc-btn-invisible" title="Otras acciones"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Editar" class="tc-btn-invisible" title="Permite editar este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -47,7 +50,7 @@ GroupedLists
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lists
@@ -58,7 +61,7 @@ color:#333333;">
 </span><span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  ListWidget
@@ -77,11 +80,11 @@ color:#333333;">
 
 
 <div class="tc-tiddler-body tc-reveal"><p>The following sidebar tabs give examples of grouped lists created by nesting.</p><h2 class="">Types Tab</h2><p>For the <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fui%252FMoreSideBar%252FTypes.html">Types</a> tab, the outer list filter as shown below selects each discrete value found in the <code>type</code> field. The inner list filter selects all the (non-system) tiddlers with that type.</p><p><pre><code>&lt;$list filter={{$:/core/Filters/TypedTiddlers!!filter}}&gt;
-&lt;div class=&quot;tc-menu-list-item&quot;&gt;
-&lt;$view field=&quot;type&quot;/&gt;
-&lt;$list filter=&quot;[type{!!type}!is[system]sort[title]]&quot;&gt;
-&lt;div class=&quot;tc-menu-list-subitem&quot;&gt;
-&lt;$link to={{!!title}}&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;
+&lt;div class="tc-menu-list-item"&gt;
+&lt;$view field="type"/&gt;
+&lt;$list filter="[type{!!type}!is[system]sort[title]]"&gt;
+&lt;div class="tc-menu-list-subitem"&gt;
+&lt;$link to={{!!title}}&gt;&lt;$view field="title"/&gt;&lt;/$link&gt;
 &lt;/div&gt;
 &lt;/$list&gt;
 &lt;/div&gt;
@@ -92,15 +95,15 @@ color:#333333;">
      of the same name if you need to change 
      how titles are displayed on the timeline 
      --&gt;
-&lt;$view field=&quot;title&quot;/&gt;
+&lt;$view field="title"/&gt;
 \end
-\define timeline(limit:&quot;100&quot;,format:&quot;DDth MMM YYYY&quot;,subfilter:&quot;&quot;,dateField:&quot;modified&quot;)
-&lt;div class=&quot;tc-timeline&quot;&gt;
-&lt;$list filter=&quot;[!is[system]$subfilter$has[$dateField$]!sort[$dateField$]limit[$limit$]eachday[$dateField$]]&quot;&gt;
-&lt;div class=&quot;tc-menu-list-item&quot;&gt;
-&lt;$view field=&quot;$dateField$&quot; format=&quot;date&quot; template=&quot;$format$&quot;/&gt;
-&lt;$list filter=&quot;[sameday:$dateField${!!$dateField$}!is[system]$subfilter$!sort[$dateField$]]&quot;&gt;
-&lt;div class=&quot;tc-menu-list-subitem&quot;&gt;
+\define timeline(limit:"100",format:"DDth MMM YYYY",subfilter:"",dateField:"modified")
+&lt;div class="tc-timeline"&gt;
+&lt;$list filter="[!is[system]$subfilter$has[$dateField$]!sort[$dateField$]limit[$limit$]eachday[$dateField$]]"&gt;
+&lt;div class="tc-menu-list-item"&gt;
+&lt;$view field="$dateField$" format="date" template="$format$"/&gt;
+&lt;$list filter="[sameday:$dateField${!!$dateField$}!is[system]$subfilter$!sort[$dateField$]]"&gt;
+&lt;div class="tc-menu-list-subitem"&gt;
 &lt;$link to={{!!title}}&gt;&lt;&lt;timeline-title&gt;&gt;&lt;/$link&gt;
 &lt;/div&gt;
 &lt;/$list&gt;
@@ -111,10 +114,7 @@ color:#333333;">
 </code></pre></p></div>
 
 <div class="tc-tiddler-plugin-info tc-reveal"><p>
-</p></div>
-</div>
-
-</p>
+</p></div></div></p>
 </section>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.23" />
+<meta name="tiddlywiki-version" content="5.2.0" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -11,7 +11,10 @@
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
-<title>Subhistorias: TiddlyWiki — Cuaderno de notas personal no-lineal en la web</title>
+<title>Subhistorias: TiddlyWiki
+
+— Cuaderno de notas personal no-lineal en la web
+</title>
 </head>
 <body class="tc-body">
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
@@ -20,7 +23,7 @@
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Learning" data-tags="Learning" data-tiddler-title="Creating SubStories"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-label="Más" class="tc-btn-invisible" title="Otras acciones"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Editar" class="tc-btn-invisible" title="Permite editar este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+<span class=" tc-reveal"><button aria-expanded="false" aria-label="Más" class="tc-btn-invisible" title="Otras acciones"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Editar" class="tc-btn-invisible" title="Permite editar este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -45,7 +48,7 @@ Crear subhistorias en TiddlyWiki
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  Aprende a usar TiddlyWiki
@@ -63,14 +66,14 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>Este ejemplo muestra cómo, dentro de un un tiddler, se pueden mostrar subhistorias independientes de la historia principal.</p><p>Este es el código:</p><pre><code>&lt;$navigator story=&quot;MiSubHistoria&quot; history=&quot;MiSubHistoria&quot;&gt;
+<div class="tc-tiddler-body tc-reveal"><p>Este ejemplo muestra cómo, dentro de un un tiddler, se pueden mostrar subhistorias independientes de la historia principal.</p><p>Este es el código:</p><pre><code>&lt;$navigator story="MiSubHistoria" history="MiSubHistoria"&gt;
 
 Haz clic en este enlace para empezar:[[¡Hola! ¿Qué tal?|HelloThere]]
 
-&lt;$list filter=&quot;[list[MiSubHistoria]]&quot; history=&quot;MiSubHistoria&quot;&gt;
+&lt;$list filter="[list[MiSubHistoria]]" history="MiSubHistoria"&gt;
 &lt;div&gt;
 
-! &lt;$button message=&quot;tm-close-tiddler&quot; class=&quot;tc-btn-invisible&quot;&gt;{{$:/core/images/close-button}}&lt;/$button&gt; &lt;$view field=&quot;es-title&quot;/&gt;
+! &lt;$button message="tm-close-tiddler" class="tc-btn-invisible"&gt;{{$:/core/images/close-button}}&lt;/$button&gt; &lt;$view field="es-title"/&gt;
 
 &lt;$transclude/&gt;
 &lt;/div&gt;
@@ -102,7 +105,7 @@ Grok TiddlyWiki
 <div class="tc-thumbnail-image" style="width:168px;height:95px;"><div class=" tc-reveal" style="width:168px;height:95px;">
 <img src="New Release Banner.png">
 </div><div class="tc-thumbnail-background tc-reveal" hidden="true" style="width:168px;height:95px;background-color:;"></div></div><div class="tc-thumbnail-icon" style="fill:#fff;color:#fff;"></div><div class="tc-thumbnail-caption">
-Qué hay de nuevo en 5.1.23
+Qué hay de nuevo en 5.2.0
 </div>
 </div></a><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Community%2520Links%2520Aggregator.html"><div class="tc-thumbnail-wrapper">
 <div class="tc-thumbnail-image" style="width:168px;height:95px;"><div class=" tc-reveal" style="width:168px;height:95px;">
@@ -153,10 +156,7 @@ TiddlyWiki Classic
 </p></div>
 
 <div class="tc-tiddler-plugin-info tc-reveal"><p>
-</p></div>
-</div>
-
-</p>
+</p></div></div></p>
 </section>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.23" />
+<meta name="tiddlywiki-version" content="5.2.0" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -11,7 +11,10 @@
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
-<title>Example web.config for IIS: TiddlyWiki — un carnet de notes web personnel et non linéaire
+<title>Example web.config for IIS: TiddlyWiki
+
+— un carnet de notes web personnel et non linéaire
+
 </title>
 </head>
 <body class="tc-body">
@@ -21,7 +24,7 @@
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists " data-tags="" data-tiddler-title="Example web.config for IIS"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-label="plus" class="tc-btn-invisible" title="Actions supplémentaires"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="éditer" class="tc-btn-invisible" title="Édite ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="fermer" class="tc-btn-invisible" title="Ferme ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+<span class=" tc-reveal"><button aria-expanded="false" aria-label="plus" class="tc-btn-invisible" title="Actions supplémentaires"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="éditer" class="tc-btn-invisible" title="Édite ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="fermer" class="tc-btn-invisible" title="Ferme ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -55,27 +58,27 @@ Example web.config for IIS
 
 
 
-<div class="tc-tiddler-body tc-reveal"><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+<div class="tc-tiddler-body tc-reveal"><pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;configuration&gt;
     &lt;system.webServer&gt;
         &lt;handlers&gt;
             &lt;add 
-                name=&quot;httpplatformhandler&quot;
-                path=&quot;*&quot;
-                verb=&quot;*&quot;
-                modules=&quot;httpPlatformHandler&quot;
-                resourceType=&quot;Unspecified&quot;
-                requireAccess=&quot;Script&quot; /&gt;
+                name="httpplatformhandler"
+                path="*"
+                verb="*"
+                modules="httpPlatformHandler"
+                resourceType="Unspecified"
+                requireAccess="Script" /&gt;
         &lt;/handlers&gt;
         &lt;httpPlatform 
-           stdoutLogEnabled=&quot;true&quot;
-           stdoutLogFile=&quot;.\node.log&quot;
-           startupTimeLimit=&quot;20&quot;
-           processPath=&quot;C:\Program Files\nodejs\node.exe&quot;
-           arguments=&quot;.\node_modules\tiddlywiki\tiddlywiki.js ./wiki --listen port=PORT path-prefix=/MyApp&quot;&gt;
+           stdoutLogEnabled="true"
+           stdoutLogFile=".\node.log"
+           startupTimeLimit="20"
+           processPath="C:\Program Files\nodejs\node.exe"
+           arguments=".\node_modules\tiddlywiki\tiddlywiki.js ./wiki --listen port=PORT path-prefix=/MyApp"&gt;
             &lt;environmentVariables&gt;
-                &lt;environmentVariable name=&quot;PORT&quot; value=&quot;%HTTP_PLATFORM_PORT%&quot; /&gt;
-                &lt;environmentVariable name=&quot;NODE_ENV&quot; value=&quot;Production&quot; /&gt;
+                &lt;environmentVariable name="PORT" value="%HTTP_PLATFORM_PORT%" /&gt;
+                &lt;environmentVariable name="NODE_ENV" value="Production" /&gt;
             &lt;/environmentVariables&gt;            
         &lt;/httpPlatform&gt;
     &lt;/system.webServer&gt;
@@ -83,10 +86,7 @@ Example web.config for IIS
 </code></pre></div>
 
 <div class="tc-tiddler-plugin-info tc-reveal"><p>
-</p></div>
-</div>
-
-</p>
+</p></div></div></p>
 </section>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.23" />
+<meta name="tiddlywiki-version" content="5.2.0" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -11,7 +11,10 @@
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
-<title>Filter Operators: 티들리위키 — 줄 없는 개인 웹 공책</title>
+<title>Filter Operators: 티들리위키
+
+— 줄 없는 개인 웹 공책
+</title>
 </head>
 <body class="tc-body">
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">이 문서는 <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/languages/ko-KR/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/languages/ko-KR/</a>에서 티들리위키의 정적 HTML 표현의 일부입니다</div></div>
@@ -20,7 +23,7 @@
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Filters" data-tags="Filters" data-tiddler-title="Filter Operators"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-label="더 보기" class="tc-btn-invisible" title="더 많은 동작을 봅니다"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="편집" class="tc-btn-invisible" title="이 티들러를 편집합니다"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="닫기" class="tc-btn-invisible" title="이 티들러를 닫습니다"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+<span class=" tc-reveal"><button aria-expanded="false" aria-label="더 보기" class="tc-btn-invisible" title="더 많은 동작을 봅니다"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="편집" class="tc-btn-invisible" title="이 티들러를 편집합니다"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="닫기" class="tc-btn-invisible" title="이 티들러를 닫습니다"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -47,7 +50,7 @@ Filter Operators
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  Filters
@@ -83,6 +86,11 @@ color:#333333;">
 <td align="center"></td>
 <td align="center"></td>
 </tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="charcode%2520Operator.html">charcode</a></td>
+<td>generates string characters from their numeric character codes</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="contains%2520Operator.html">contains</a></td>
 <td>filter the input by searching list fields for a value</td>
 <td align="center"></td>
@@ -99,7 +107,7 @@ color:#333333;">
 <td align="center"><code>!</code></td>
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="duplicateslugs%2520Operator.html">duplicateslugs</a></td>
-<td>returns each item in the list in a human-readable form for use in URLs or filenames</td>
+<td>find titles that yield duplicate slugs</td>
 <td align="center"></td>
 <td align="center"></td>
 </tr><tr>
@@ -596,6 +604,11 @@ color:#333333;">
 <td align="center"></td>
 <td align="center"></td>
 </tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="average%2520Operator.html">average</a></td>
+<td>treating each input title as a number, compute their arithmetic mean</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="ceil%2520Operator.html">ceil</a></td>
 <td>rounds a list of numbers up to the next largest integer</td>
 <td align="center"></td>
@@ -638,6 +651,11 @@ color:#333333;">
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="maxall%2520Operator.html">maxall</a></td>
 <td>find the largest of a list of numbers</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="median%2520Operator.html">median</a></td>
+<td>treating each input title as a number, compute their median value</td>
 <td align="center"></td>
 <td align="center"></td>
 </tr><tr>
@@ -691,6 +709,11 @@ color:#333333;">
 <td align="center"></td>
 <td align="center"></td>
 </tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="standard-deviation%2520Operator.html">standard-deviation</a></td>
+<td>treating each input title as a number, compute their standard-deviation</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="subtract%2520Operator.html">subtract</a></td>
 <td>treating each input title as a number, subtract from each the numeric value of the operand</td>
 <td align="center"></td>
@@ -708,6 +731,11 @@ color:#333333;">
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="untrunc%2520Operator.html">untrunc</a></td>
 <td>rounds a list of numbers to the next integer with largest absolute value, that is, away from zero</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="variance%2520Operator.html">variance</a></td>
+<td>treating each input title as a number, compute their variance</td>
 <td align="center"></td>
 <td align="center"></td>
 </tr>
@@ -740,6 +768,11 @@ color:#333333;">
 <td align="center"></td>
 <td align="center"></td>
 </tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="deserializers%2520Operator.html">deserializers</a></td>
+<td></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="editiondescription%2520Operator.html">editiondescription</a></td>
 <td>select the descriptions of the input editions</td>
 <td align="center"></td>
@@ -752,6 +785,11 @@ color:#333333;">
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="getvariable%2520Operator.html">getvariable</a></td>
 <td>select all values of variables named in the input titles</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="moduleproperty%2520Operator.html">modulesproperty</a></td>
+<td>retrieve a module property</td>
 <td align="center"></td>
 <td align="center"></td>
 </tr><tr>
@@ -794,10 +832,7 @@ color:#333333;">
 </p></div>
 
 <div class="tc-tiddler-plugin-info tc-reveal"><p>
-</p></div>
-</div>
-
-</p>
+</p></div></div></p>
 </section>
 </body>
 </html>
