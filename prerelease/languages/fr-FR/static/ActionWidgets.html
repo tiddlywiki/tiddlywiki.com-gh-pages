@@ -131,6 +131,12 @@ action-setfield
 </a>
 </li>
 
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionSetMultipleFieldsWidget.html">
+action-setmultiplefields
+</a>
+</li>
+
 </ul></p><p>There are two ways to use action widgets:</p><ul><li>Placing them within an action string attribute (typically called <code>actions</code>) on the triggering widget (this is the preferred way)</li><li>Embedding the actions within the triggering widget (an older technique that is now deprecated)</li></ul><h2 class="">Using action string attributes</h2><p>The action widgets are passed as a string to the <code>actions</code> attribute of the triggering widget. Usually, it is more convenient to use a macro to assign the action widgets to a variable. For example, here is a button that triggers two actions of sending different messages:</p><pre><code>\define my-actions()
 &lt;$action-sendmessage $message="tm-home"/&gt;
 &lt;$action-sendmessage $message="tm-full-screen"/&gt;
