@@ -81,10 +81,13 @@ color:#333333;">
 
 
 <div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The <strong>action-setmultiplefields</strong> widget is an <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">action widget</a> that assigns multiple fields to a tiddler where the names and values of the fields are specified as separate filters. <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">ActionWidgets</a> are used within triggering widgets such as the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ButtonWidget.html">ButtonWidget</a>.</p><h1 class="">Content and Attributes</h1><p>The <strong>action-setmultiplefields</strong> widget is invisible. Any content within it is ignored.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">$tiddler</td><td align="left">Optional title of the tiddler to modify (defaults to the current tiddler)</td></tr><tr class="evenRow"><td align="left">$fields</td><td align="left">Optional filter evaluating to the names of a list of fields to assign. Either <code>$fields</code> or <code>$indexes</code> must be specified</td></tr><tr class="oddRow"><td align="left">$indexes</td><td align="left">Optional filter evaluating to the names of a list of indexes to assign. Either <code>$fields</code> or <code>$indexes</code> must be specified</td></tr><tr class="evenRow"><td align="left">$values</td><td align="left">Filter evaluating to the values to be assigned to the fields or indexes</td></tr><tr class="oddRow"><td align="left">$timestamp</td><td align="left">Specifies whether the timestamp(s) of the target tiddler will be updated (<strong>modified</strong> and <strong>modifier</strong>, plus <strong>created</strong> and <strong>creator</strong> for newly created tiddlers). Can be "yes" (the default) or "no"</td></tr></tbody></table><h1 class="">Examples</h1><p>Here is an example of button that uses the data in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Days%2520of%2520the%2520Week.html">Days of the Week</a> to assign fields <code>day-Monday</code>, <code>day-Tuesday</code> etc. to the tiddler "<a class="tc-tiddlylink tc-tiddlylink-resolves" href="HelloThere.html">HelloThere</a>":</p><div class="doc-example"><pre><code>&lt;$button&gt;
-&lt;$action-setmultiplefields $tiddler="HelloThere" $fields="[list[Days of the Week]addprefix[day-]]" $values="[list[Days of the Week]]"&gt;&gt;/&gt;
+&lt;$action-setmultiplefields $tiddler="HelloThere" $fields="[list[Days of the Week]addprefix[day-]]" $values="[list[Days of the Week]]"/&gt;
 Click me!
 &lt;/$button&gt;</code></pre><p>Affichera ceci :</p><p><button class="">
-</button></p></div></div>
+
+Click me!
+</button>
+</p></div></div>
 
 <div class="tc-tiddler-plugin-info tc-reveal"><p>
 </p></div></div></p>
