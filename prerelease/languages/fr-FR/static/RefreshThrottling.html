@@ -70,9 +70,7 @@ color:#333333;">
 
 
 <div class="tc-tiddler-body tc-reveal"><p>The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="RefreshMechanism.html">RefreshMechanism</a> allows the refresh cycle to be throttled (or deferred) when rapid changes occur to the same tiddler. It is used to maintain responsiveness while editing a draft tiddler, but can also be used on other tiddlers.</p><p>The rules governing refresh throttling are:</p><ul><li>When a change notification occurs, throttling will only take place if all of the modified tiddlers meet at least one of these criteria:<ul><li>Has the field <code>draft.of</code></li><li>Has the field <code>throttle.refresh</code></li><li>Has a title prefixed with <code>$:/temp/volatile/</code></li></ul></li><li>If the refresh cycle is to be throttled, a timer is set for the internal specified in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Hidden%2520Setting%253A%2520Typing%2520Refresh%2520Delay.html">$:/config/Drafts/TypingTimeout</a> (cancelling any preciously set timer)<ul><li>When the timer fires, the refresh cycle is triggered, passing the aggregated titles of all the deferred refresh cycles</li></ul></li></ul></div>
-
-<div class="tc-tiddler-plugin-info tc-reveal"><p>
-</p></div></div></p>
+</div></p>
 </section>
 </body>
 </html>
