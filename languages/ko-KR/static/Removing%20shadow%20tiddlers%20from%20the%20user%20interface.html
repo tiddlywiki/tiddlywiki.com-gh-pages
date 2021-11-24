@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.2.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>Removing shadow tiddlers from the user interface: 티들리위키
+
+— 줄 없는 개인 웹 공책
+</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">이 문서는 <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/languages/ko-KR/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/languages/ko-KR/</a>에서 티들리위키의 정적 HTML 표현의 일부입니다</div></div>
+</p>
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Page%20and%20tiddler%20layout%20customisation" data-tags="[[Page and tiddler layout customisation]]" data-tiddler-title="Removing shadow tiddlers from the user interface"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-expanded="false" aria-label="더 보기" class="tc-btn-invisible" title="더 많은 동작을 봅니다"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="편집" class="tc-btn-invisible" title="이 티들러를 편집합니다"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="닫기" class="tc-btn-invisible" title="이 티들러를 닫습니다"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+</span>
+
+<span>
+
+<span class="tc-tiddler-title-icon" style="fill:;">
+
+</span>
+
+
+
+<h2 class="tc-title">
+
+Removing shadow tiddlers from the user interface
+
+</h2>
+
+</span>
+
+</div>
+
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a>2021년 11월 24일 오후 9:02</div></div><div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+
+
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ Page and tiddler layout customisation
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span></div>
+</div>
+
+
+
+
+
+
+
+
+<div class="tc-tiddler-body tc-reveal"><p>In the More &gt; Shadows tab you will find a list of all the shadow tiddlers. In this list you will find many tiddlers with the prefix <code>$:/core/ui/</code>. These are the core tiddlers that define the user interface. These tiddlers are tagged with <a class="tc-tiddlylink tc-tiddlylink-resolves" href="SystemTags.html">SystemTags</a>, and removing or adding these tags will adjust the tiddler and page layouts.</p><p>For example, <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fui%252FSideBar%252FMore.html">$:/core/ui/SideBar/More</a> is the tiddler for the More tab in the Sidebar, and it is tagged with the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="SystemTag%253A%2520%2524%253A%252Ftags%252FMoreSideBar.html">SystemTag: $:/tags/MoreSideBar</a> so that it appears in the Sidebar. Removing the tag from that tiddler will remove the More tab from the Sidebar, and reinserting the Sidebar tag to that tiddler will make it reappear in the Sidebar. </p><p>You can use the same process for any of the core user interface tiddlers with the <code>$:/core/ui/</code> prefix. For example, removing the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="SystemTag%253A%2520%2524%253A%252Ftags%252FViewTemplate.html">SystemTag: $:/tags/ViewTemplate</a> from the tiddler <code>$:/core/ui/ViewTemplate/subtitle</code> will remove the subtitles from all tiddlers.</p><p>If you modify a shadow tiddler in this way you will overwrite the pre-installed value. If you want to revert, just delete the modified tiddler to restore the underlying shadow tiddler.
+</p></div>
+
+<div class="tc-tiddler-plugin-info tc-reveal"><p>
+</p></div></div></p>
+</section>
+</body>
+</html>
+
