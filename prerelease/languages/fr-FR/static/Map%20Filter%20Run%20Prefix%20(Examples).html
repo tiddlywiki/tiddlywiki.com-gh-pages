@@ -47,7 +47,7 @@ Map Filter Run Prefix (Examples)
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
 </div><div class=" tc-reveal" hidden="true"></div>
-<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a>25 novembre 2021 à 14h55</div></div><div class=" tc-reveal">
+<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a>25 novembre 2021 à 15h27</div></div><div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
@@ -111,9 +111,8 @@ color:#333333;">
 	</dl>
 </span>
 <span class=" tc-reveal" hidden="true"></span>
-</div></p><p>For each title in a shopping list, prefix it with its position in the list:
-<div class="doc-example">
-<code>[tag[shopping]] :map[&lt;currentTiddler&gt;addprefix[-]addprefix&lt;index&gt;]</code>
+</div></p><h2 class="">Comparison between <code>:map</code> and <code>:and</code>/<code>+</code> filter run prefixes</h2><p>The functionality of the <code>:map</code> filter run prefix has some overlap with the <code>:and</code> prefix (alias <code>+</code>). They will sometimes return the same results as each other. In at least these cases, the results will be different:</p><ol><li>The <code>:and</code> filter run can modify the number of items (either increase or decrease). The <code>:map</code> run will never alter the number of items.</li><li>The number of items in the <code>:and</code> filter run will also decrease due to de-duplication. The <code>:map</code> run will not de-duplicate.</li><li>Explicit references to the "currentTiddler" variable will behave differently</li><li>Implicit references to the "currentTiddler" using <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TextReference.html">TextReference</a> will behave differently.</li></ol><table><tbody><tr class="evenRow"><td align="center"><code>:map</code></td><td align="center"><code>:and</code></td></tr><tr class="oddRow"><th colspan="2">results are the same</th></tr><tr class="evenRow"><td valign="top"><div class="doc-example">
+<code>[range[5]] :map[add[1]]</code>
 
 
 <span class=" tc-reveal">
@@ -122,7 +121,177 @@ color:#333333;">
 	</dl>
 </span>
 <span class=" tc-reveal" hidden="true"></span>
-</div></p></div>
+</div></td><td valign="top"><div class="doc-example">
+<code>[range[5]] :and[add[1]]</code>
+
+
+<span class=" tc-reveal">
+	<dl>
+	<dd><button class="">Essayez</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div></td></tr><tr class="oddRow"><td valign="top"><div class="doc-example">
+<code>[range[5]] :map[addsuffix[ hello]]</code>
+
+
+<span class=" tc-reveal">
+	<dl>
+	<dd><button class="">Essayez</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div></td><td valign="top"><div class="doc-example">
+<code>[range[5]] :and[addsuffix[ hello]]</code>
+
+
+<span class=" tc-reveal">
+	<dl>
+	<dd><button class="">Essayez</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div></td></tr><tr class="evenRow"><td valign="top"><div class="doc-example">
+<code>[tag[shopping]] :map[get[quantity]]</code>
+
+
+<span class=" tc-reveal">
+	<dl>
+	<dd><button class="">Essayez</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div></td><td valign="top"><div class="doc-example">
+<code>[tag[shopping]] :and[get[quantity]]</code>
+
+
+<span class=" tc-reveal">
+	<dl>
+	<dd><button class="">Essayez</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div></td></tr><tr class="oddRow"><th colspan="2">decrease in the number of items</th></tr><tr class="evenRow"><td valign="top"><div class="doc-example">
+<code>[range[5]] :map[sum[]]</code>
+
+
+<span class=" tc-reveal">
+	<dl>
+	<dd><button class="">Essayez</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div></td><td valign="top"><div class="doc-example">
+<code>[range[5]] :and[sum[]]</code>
+
+
+<span class=" tc-reveal">
+	<dl>
+	<dd><button class="">Essayez</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div></td></tr><tr class="oddRow"><td valign="top"><div class="doc-example">
+<code>[range[5]] :map[join[,]]</code>
+
+
+<span class=" tc-reveal">
+	<dl>
+	<dd><button class="">Essayez</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div></td><td valign="top"><div class="doc-example">
+<code>[range[5]] :and[join[,]]</code>
+
+
+<span class=" tc-reveal">
+	<dl>
+	<dd><button class="">Essayez</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div></td></tr><tr class="evenRow"><th colspan="2">increase in the number of items</th></tr><tr class="oddRow"><td valign="top"><div class="doc-example">
+<code>[[1,2,3]] [[4,5]] :map[split[,]]</code>
+
+
+<span class=" tc-reveal">
+	<dl>
+	<dd><button class="">Essayez</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div></td><td valign="top"><div class="doc-example">
+<code>[[1,2,3]] [[4,5]] :and[split[,]]</code>
+
+
+<span class=" tc-reveal">
+	<dl>
+	<dd><button class="">Essayez</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div></td></tr><tr class="evenRow"><th colspan="2">de-duplication</th></tr><tr class="oddRow"><td valign="top"><div class="doc-example">
+<code>[range[5]] :map[[hello]]</code>
+
+
+<span class=" tc-reveal">
+	<dl>
+	<dd><button class="">Essayez</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div></td><td valign="top"><div class="doc-example">
+<code>[range[5]] :and[[hello]]</code>
+
+
+<span class=" tc-reveal">
+	<dl>
+	<dd><button class="">Essayez</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div></td></tr><tr class="evenRow"><th colspan="2">currentTiddler</th></tr><tr class="oddRow"><td valign="top"><div class="doc-example">
+<code>[tag[shopping]] :map[&lt;currentTiddler&gt;]</code>
+
+
+<span class=" tc-reveal">
+	<dl>
+	<dd><button class="">Essayez</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div></td><td valign="top"><div class="doc-example">
+<code>[tag[shopping]] :and[&lt;currentTiddler&gt;]</code>
+
+
+<span class=" tc-reveal">
+	<dl>
+	<dd><button class="">Essayez</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div></td></tr><tr class="evenRow"><td valign="top"><div class="doc-example">
+<code>[tag[shopping]] :map[{!!quantity}]</code>
+
+
+<span class=" tc-reveal">
+	<dl>
+	<dd><button class="">Essayez</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div></td><td valign="top"><div class="doc-example">
+<code>[tag[shopping]] :and[{!!quantity}]</code>
+
+
+<span class=" tc-reveal">
+	<dl>
+	<dd><button class="">Essayez</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div></td></tr></tbody></table></div>
 </div></p>
 </section>
 </body>
