@@ -21,7 +21,7 @@
 </p>
 <section class="tc-story-river tc-static-story-river">
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Filter%20Run%20Prefix%20Examples tc-tagged-Filter%20Syntax tc-tagged-Cascade%20Filter%20Run%20Prefix" data-tags="[[Filter Run Prefix Examples]] [[Filter Syntax]] [[Cascade Filter Run Prefix]]" data-tiddler-title="Cascade Filter Run Prefix (Examples)"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><span class="tc-tiddler-title-icon" style="fill:;"></span><h2 class="tc-title">Cascade Filter Run Prefix (Examples)</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
-<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a>30th November 2021 at 1:23pm</div></div><div class=" tc-reveal">
+<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a>4th December 2021 at 1:09am</div></div><div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="Cascade Filter Run Prefix">
 <span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
@@ -71,6 +71,56 @@ $:/tags/TiddlerColourFilter
 
 <span class=" tc-reveal">
 	<code>[all[shadows+tiddlers]] :cascade[all[shadows+tiddlers]tag[$:/tags/TiddlerColourFilter]get[text]] +[!is[blank]limit[10]]</code>
+	
+	<dl>
+	<dd><button class="">Try it</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div></p><h2 class="">Extended example</h2><p>This example illustrates step-by-step how the <code class="doc-operator">:cascade</code> filter run works.</p><p>A filter expression whose output returns a list of filters is required. Typically such a filter expression will construct the list of filters by querying some field in a set of tiddlers (likely via tag). To keep this example self-contained, 3 filters are stored in the <em>filter1</em>, <em>filter2</em> and <em>filter3</em> fields of this tiddler. <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TextReference.html">Text references</a> and instances of the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="append%2520Operator.html">append operator</a> are used to combine the fields into a list of filters.</p><p>The filter <code>[{!!filter1}append{!!filter2}append{!!filter3}]</code>, generates this list of filters:</p><p><ul>
+
+<li><pre>[prefix[ca]then[ca]]</pre></li>
+
+<li><pre>[suffix[at]then[at]]</pre></li>
+
+<li><pre>other</pre></li>
+
+</ul></p><p>For this example, <code>cat can bat bug</code> will be used as the input titles. Each input title will be evaluated by <code class="doc-operator">:cascade</code> against each of the above filters in turn. To help understand what <code class="doc-operator">:cascade</code> sees internally, the following table uses the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Map%2520Filter%2520Run%2520Prefix.html">Map Filter Run Prefix</a> to show the result of each individual filter.</p><table><tbody><tr class="evenRow"><td valign="top"><div class="doc-example">
+
+<span class=" tc-reveal">
+	<code>cat can bat bug :map[prefix[ca]then[ca]]</code>
+	
+	<dl>
+	<dd><button class="">Try it</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div></td><td valign="top"><div class="doc-example">
+
+<span class=" tc-reveal">
+	<code>cat can bat bug :map[suffix[at]then[at]]</code>
+	
+	<dl>
+	<dd><button class="">Try it</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div></td><td valign="top"><div class="doc-example">
+
+<span class=" tc-reveal">
+	<code>cat can bat bug :map[[other]]</code>
+	
+	<dl>
+	<dd><button class="">Try it</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div></td></tr></tbody></table><p>Click "Try it" on the above 3 examples. The first non-blank value from each row as read from left to right will be returned when <code class="doc-operator">:cascade</code> is used. Click "Try it" below to see the final result:
+ 
+<div class="doc-example">
+
+<span class=" tc-reveal">
+	<code>cat can bat bug :cascade[{!!filter1}append{!!filter2}append{!!filter3}]</code>
 	
 	<dl>
 	<dd><button class="">Try it</button></dd>
