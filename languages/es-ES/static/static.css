@@ -1952,12 +1952,15 @@ a.tc-tiddlylink:hover {
 	width: 100%;
 }.tc-plugin-info {
 	display: flex;
+	text-shadow: none;
 	border: 1px solid #bbb;
 	fill: #bbb;
 	background-color: #ffffff;
 	margin: 0.5em 0 0.5em 0;
 	padding: 4px;
 	align-items: center;
+}.tc-sidebar-lists a.tc-tiddlylink.tc-plugin-info {
+	color: #5778d8;
 }.tc-plugin-info-sub-plugins .tc-plugin-info {
 	margin: 0.5em;
 	background: #ffffff;
@@ -2564,6 +2567,31 @@ svg.railroad-diagram path.arrow {
     stroke-width: 2;
 }
 
+.tc-custom-tiddler-template {
+	border: 3px solid #bbb;
+	border-radius: 1em;
+	margin-bottom: 1em;
+}.tc-custom-tiddler-template-inner {
+	background: #bbb;
+	padding: 1em;
+}.tc-custom-tiddler-template-list {
+	position: relative;
+	height: 33vh;
+}.tc-custom-tiddler-template-list .tc-custom-tiddler-template-list-item {
+	position: absolute;
+	width: 100%;
+	transform-origin: 50% 0;
+	top: 50px;
+	left: 0;
+	
+  -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+     -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+
+}.tc-custom-tiddler-template-list .tc-custom-tiddler-template-list-item .tc-tiddler-frame {
+	margin: 0;
+}
+
 [data-tiddler-title="Custom styles by data-tiddler-title"] {
   border: 1px solid blue;
 }[data-tags*="example-test"] {
@@ -2719,7 +2747,7 @@ a .doc-attr {
 	padding-bottom: 0;
 	margin-top: 0.2em;
 }.doc-example input[type=search] { 
-  width: 60%;
+  width: 95%;
 }
 .doc-example pre:first-child {
 	margin-top: 0;
@@ -2807,6 +2835,26 @@ a .doc-attr {
     font-size: 0.75em;
 }.doc-link-badge:hover {
     text-decoration: underline;
+}.doc-tiddler-fields {
+	background-color: #f7f7f9;
+	border: 1px solid #ffffff;
+	border-radius: 4px;
+    padding: 0 0.5em;
+}.doc-tiddler-fields h2 svg {
+	height: 1em;
+}.doc-tiddler-fields table, 
+.doc-tiddler-fields h2 {
+	margin: 0.5em 0;
+}.doc-tiddler-fields table {
+	background-color: #ffffff;
+}@media screen {
+	.doc-tiddler-fields {
+		
+  -webkit-box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+     -moz-box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+          box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+
+	}
 }
 
 

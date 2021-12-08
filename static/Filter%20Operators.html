@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.2.0" />
+<meta name="tiddlywiki-version" content="5.2.1" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -20,7 +20,7 @@
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river tc-static-story-river">
-<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Filters" data-tags="Filters" data-tiddler-title="Filter Operators"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Filter Operators</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Filters" data-tags="Filters" data-tiddler-title="Filter Operators"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><span class="tc-tiddler-title-icon" style="fill:;"></span><h2 class="tc-title">Filter Operators</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a>30th August 2021 at 1:02am</div></div><div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="Filters">
 <span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
@@ -362,6 +362,11 @@ Filters
 <td>sort the input by the result of evaluating a subfilter for each item</td>
 <td align="center"></td>
 <td align="center"><code>!</code></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="zth%2520Operator.html">zth</a></td>
+<td>select the <code class="doc-place">Z</code>th input title</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr class="doc-table-subheading"><th align="center" colspan="4">Listops Operators</th></tr>
 <tr>
@@ -569,8 +574,28 @@ Filters
 <td align="center"></td>
 <td align="center"></td>
 </tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="acos%2520Operator.html">acos</a></td>
+<td>calculate the arccosine value (in radians) of a list of numbers</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="add%2520Operator.html">add</a></td>
 <td>treating each input title as a number, add to each the numeric value of the operand</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="asin%2520Operator.html">asin</a></td>
+<td>calculate the arcsine value (in radians) of a list of numbers</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="atan%2520Operator.html">atan</a></td>
+<td>calculate the arctangent value (in radians) of a list of numbers</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="atan2%2520Operator.html">atan2</a></td>
+<td>returns the angle in the plane (in radians) between the positive x-axis and the ray from (0,0) to the point (x,y), for [<code class="doc-place">Y</code>]atan2[<code class="doc-place">X</code>]</td>
 <td align="center"></td>
 <td align="center"></td>
 </tr><tr>
@@ -588,6 +613,11 @@ Filters
 <td>filter the input by comparing each item against the operand</td>
 <td align="center"></td>
 <td align="center"><code>!</code></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="cos%2520Operator.html">cos</a></td>
+<td>calculate the cosine value of a list of angles (given in radians)</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="divide%2520Operator.html">divide</a></td>
 <td>treating each input title as a number, divide them by the numeric value of the operand</td>
@@ -679,6 +709,11 @@ Filters
 <td align="center"></td>
 <td align="center"></td>
 </tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="sin%2520Operator.html">sin</a></td>
+<td>calculate the sine value of a list of angles (given in radians)</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="standard-deviation%2520Operator.html">standard-deviation</a></td>
 <td>treating each input title as a number, compute their standard-deviation</td>
 <td align="center"></td>
@@ -691,6 +726,11 @@ Filters
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="sum%2520Operator.html">sum</a></td>
 <td>produce the sum of the input numbers</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="tan%2520Operator.html">tan</a></td>
+<td>calculate the tangent value of a list of angles (given in radians)</td>
 <td align="center"></td>
 <td align="center"></td>
 </tr><tr>
@@ -800,9 +840,7 @@ Filters
 </tr>
 </table></p><p>A typical step is written as <code>[operator[parameter]]</code>, although not all of the operators need a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Parameter.html">parameter</a>.</p><p>Most steps process the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Title%2520Selection.html">selection of titles</a> that are supplied as their input, but a few <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Selection%2520Constructors.html">construct an entirely new selection</a> instead. For the exact rules, see <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Syntax.html">Filter Syntax</a>.
 </p></div>
-
-<div class="tc-tiddler-plugin-info tc-reveal"><p>
-</p></div></div></p>
+</div></p>
 </section>
 </body>
 </html>

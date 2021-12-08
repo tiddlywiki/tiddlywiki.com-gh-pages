@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.2.0" />
+<meta name="tiddlywiki-version" content="5.2.1" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -20,8 +20,8 @@
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river tc-static-story-river">
-<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Operator%20Examples tc-tagged-search-replace%20Operator" data-tags="[[Operator Examples]] [[search-replace Operator]]" data-tiddler-title="search-replace Operator (Examples)"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">search-replace Operator (Examples)</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
-<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a>18th November 2020 at 10:33am</div></div><div class=" tc-reveal">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Operator%20Examples tc-tagged-search-replace%20Operator" data-tags="[[Operator Examples]] [[search-replace Operator]]" data-tiddler-title="search-replace Operator (Examples)"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><span class="tc-tiddler-title-icon" style="fill:;"></span><h2 class="tc-title">search-replace Operator (Examples)</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a>1st November 2021 at 12:52pm</div></div><div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="Operator Examples">
 <span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
@@ -89,6 +89,27 @@ search-replace Operator
 	</dl>
 </span>
 <span class=" tc-reveal" hidden="true"></span>
+</div></p><p>You can reference the portion of the input that matches the regular expression with <code>$&amp;</code>:
+<div class="doc-example">
+
+<span class=" tc-reveal">
+	<code>[[John Smith]search-replace::regexp[John .*],[His name is $&amp;]]</code>
+	
+	<dl>
+	<dd><button class="">Try it</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div></p><p><div class="doc-example">
+
+<span class=" tc-reveal">
+	<code>[[This is an exciting feature]search-replace::regexp[exciting],[amazing and $&amp;]]</code>
+	
+	<dl>
+	<dd><button class="">Try it</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
 </div></p><p>To replace everything but a match using a regular expression and the <strong>multiline</strong> (m) flag:
 <code>\define myregexp2() ^(?!Unlike).*$</code>
 <div class="doc-example">
@@ -138,9 +159,7 @@ search-replace Operator
 <li><a class="tc-tiddlylink tc-tiddlylink-missing" href="A%2520Tale%2520of%2520Two%2520Cities.html">Tale of Two Cities, A </a></li>
 
 </ul></p></div></p></div>
-
-<div class="tc-tiddler-plugin-info tc-reveal"><p>
-</p></div></div></p>
+</div></p>
 </section>
 </body>
 </html>

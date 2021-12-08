@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.2.0" />
+<meta name="tiddlywiki-version" content="5.2.1" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -84,9 +84,7 @@ color:#333333;">
 </p></div><h2 class="">Field Mode</h2><p>Using the checkbox widget in field mode requires the <strong>field</strong> attribute to specify the name of the field. The <strong>checked</strong> and <strong>unchecked</strong> attributes specify the values to be assigned to the field to correspond to its checked and unchecked states respectively. The <strong>default</strong> attribute is used as a fallback value if the field is not defined.</p><p>This example creates a checkbox that is checked if the field <strong>status</strong> is equal to <strong>open</strong> and unchecked if the field is equal to <strong>closed</strong>. If the field is undefined then it defaults to <strong>closed</strong>, meaning that the checkbox will be unchecked if the <strong>status</strong> field is missing.</p><div class="doc-example"><pre><code>&lt;$checkbox field="status" checked="open" unchecked="closed" default="closed"&gt; Is it open?&lt;/$checkbox&gt;&lt;br&gt;''status:'' {{!!status}}</code></pre><p>Affichera ceci :</p><p><label class=""><input type="checkbox"><span> Is it open?</span></label><br><strong>status:</strong> 
 </p></div><h2 class="">Index Mode</h2><p>To use the checkbox widget in index mode set the <strong>index</strong> attribute to the index of a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="DataTiddlers.html">DataTiddler</a>. The <strong>checked</strong> and <strong>unchecked</strong> attributes specify the values to be assigned to the index and correspond to its checked and unchecked states respectively. The <strong>default</strong> attribute is used as a fallback value if the index is undefined.</p><p>The example below creates a checkbox that is checked if the index by the name of this tiddler in the tiddler <a class="tc-tiddlylink tc-tiddlylink-missing" href="ExampleData.html">ExampleData</a> is equal to <strong>selected</strong> and unchecked if the index is an empty string. If the index is undefined then it defaults to an empty string, meaning the checkbox will be unchecked if the index is missing.</p><div class="doc-example"><pre><code>&lt;$checkbox tiddler="ExampleData" index=&lt;&lt;currentTiddler&gt;&gt; checked="selected" unchecked="" default=""&gt; Selected?&lt;/$checkbox&gt;</code></pre><p>Affichera ceci :</p><p><label class=""><input type="checkbox"><span> Selected?</span></label>
 </p></div></div>
-
-<div class="tc-tiddler-plugin-info tc-reveal"><p>
-</p></div></div></p>
+</div></p>
 </section>
 </body>
 </html>
