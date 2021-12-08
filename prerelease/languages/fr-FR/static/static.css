@@ -1131,6 +1131,8 @@ a.tc-tiddlylink:hover {
 	width: 100%;
 }.tc-view-field-name {
 	width: 1%; /* Makes this column be as narrow as possible */
+	white-space: nowrap;
+	vertical-align: top;
 	text-align: right;
 	font-style: italic;
 	font-weight: normal;
