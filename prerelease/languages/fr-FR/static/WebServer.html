@@ -95,6 +95,12 @@ color:#333333;">
 the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="NamedCommandParameters.html">NamedCommandParameters</a> are optional, so the simplest form is:</p><pre><code>tiddlywiki mywikifolder --listen</code></pre><p>Visit <a class="tc-tiddlylink-external" href="http://127.0.0.1:8080/" rel="noopener noreferrer" target="_blank">http://127.0.0.1:8080/</a> to access the wiki. Access is anonymous, so anyone can read or write to the wiki.</p><p>This will typically be available only to users on the local machine. For information on how to open the instance to the local network see the Web Server <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WebServer%2520Parameter%253A%2520host.html">host</a> parameter entry. </p><h2 class="">Authenticated Access</h2><p>Adding <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WebServer%2520Parameter%253A%2520username.html">username</a> and <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WebServer%2520Parameter%253A%2520password.html">password</a> parameters enforces basic authentication for both reading and writing:</p><pre><code>tiddlywiki mywikifolder --listen username=test password=tset</code></pre><p>Visiting the wiki will prompt for a username and password, and access is denied if they do not match the provided credentials.</p><h2 class="">Anonymous Read, Authenticated Write</h2><p>This example adds the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WebServer%2520Authorization.html">authorization</a> parameters <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WebServer%2520Parameter%253A%2520readers.html">readers</a> and <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WebServer%2520Parameter%253A%2520writers.html">writers</a> to grant read access to anonymous users, but require authentication as "joe" in order to gain write access.</p><blockquote><div>Note that anonymous users can trigger a username/password prompt by visiting the route <code>\login-basic</code> (eg <a class="tc-tiddlylink-external" href="http://127.0.0.1:8080/login-basic" rel="noopener noreferrer" target="_blank">http://127.0.0.1:8080/login-basic</a>).</div></blockquote><pre><code>tiddlywiki mywikifolder --listen "readers=(anon)" writers=joe username=joe password=bloggs</code></pre><p>Note  the double quotes that are required for parameters containing special characters.</p><h1 class="">Arguments</h1><p>The full list of available optional parameters is:</p><p><ul class="">
 
 <li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="WebServer%2520Parameter%253A%2520admin.html">
+admin
+</a>
+</li>
+
+<li>
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WebServer%2520Parameter%253A%2520anon-username.html">
 anon-username
 </a>
@@ -155,6 +161,12 @@ readers
 </li>
 
 <li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="WebServer%2520Parameter%253A%2520required-plugins.html">
+required-plugins
+</a>
+</li>
+
+<li>
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WebServer%2520Parameter%253A%2520root-render-type.html">
 root-render-type
 </a>
@@ -205,6 +217,12 @@ tls-cert
 <li>
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WebServer%2520Parameter%253A%2520tls-key.html">
 tls-key
+</a>
+</li>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="WebServer%2520Parameter%253A%2520tls-passphrase.html">
+tls-passphrase
 </a>
 </li>
 
