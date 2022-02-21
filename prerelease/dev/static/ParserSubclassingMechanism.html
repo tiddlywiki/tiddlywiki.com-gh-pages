@@ -25,32 +25,32 @@
 <div class="tc-tags-wrapper"></div>
 </div>
 
-<div class="tc-tiddler-body tc-reveal"><h2 class="">Introduction</h2><p>The wikitext parser subclassing mechanism makes it possible for custom parsers to use the wiki text parsing engine, but to customise the rules that are used.</p><h2 class="">Example</h2><p>Here is an example of a subclass of the checkbox widget that adds logging to the event handler:</p><pre class="js hljs"><code>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+<div class="tc-tiddler-body tc-reveal"><h2 class="">Introduction</h2><p>The wikitext parser subclassing mechanism makes it possible for custom parsers to use the wiki text parsing engine, but to customise the rules that are used.</p><h2 class="">Example</h2><p>Here is an example of a subclass of the checkbox widget that adds logging to the event handler:</p><pre class="hljs"><code class="js hljs">(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>){
 
 <span class="hljs-comment">/*jslint node: true, browser: true */</span>
 <span class="hljs-comment">/*global $tw: false */</span>
-<span class="hljs-meta">"use strict"</span>;
+<span class="hljs-meta">&quot;use strict&quot;</span>;
 
-<span class="hljs-keyword">var</span> WikiParser = <span class="hljs-built_in">require</span>(<span class="hljs-string">"$:/core/modules/parsers/wikiparser/wikiparser.js"</span>)[<span class="hljs-string">"text/vnd.tiddlywiki"</span>],
-    HtmlParser = $tw.modules.createClassFromModule(<span class="hljs-built_in">require</span>(<span class="hljs-string">"$:/core/modules/parsers/wikiparser/rules/html.js"</span>),$tw.WikiRuleBase),
-    EntityParser = $tw.modules.createClassFromModule(<span class="hljs-built_in">require</span>(<span class="hljs-string">"$:/core/modules/parsers/wikiparser/rules/entity.js"</span>),$tw.WikiRuleBase);
+<span class="hljs-keyword">var</span> <span class="hljs-title class_">WikiParser</span> = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;$:/core/modules/parsers/wikiparser/wikiparser.js&quot;</span>)[<span class="hljs-string">&quot;text/vnd.tiddlywiki&quot;</span>],
+	<span class="hljs-title class_">HtmlParser</span> = $tw.<span class="hljs-property">modules</span>.<span class="hljs-title function_">createClassFromModule</span>(<span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;$:/core/modules/parsers/wikiparser/rules/html.js&quot;</span>),$tw.<span class="hljs-property">WikiRuleBase</span>),
+	<span class="hljs-title class_">EntityParser</span> = $tw.<span class="hljs-property">modules</span>.<span class="hljs-title function_">createClassFromModule</span>(<span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;$:/core/modules/parsers/wikiparser/rules/entity.js&quot;</span>),$tw.<span class="hljs-property">WikiRuleBase</span>);
 
-<span class="hljs-keyword">var</span> MyCustomWikiParser = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">type,text,options</span>) </span>{
-    <span class="hljs-keyword">var</span> parser = <span class="hljs-keyword">new</span> WikiParser(type,text,$tw.utils.extend({},options,{
-        <span class="hljs-comment">// Force the parser to parse in inline mode</span>
-        <span class="hljs-attr">parseAsInline</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-comment">// Specify which rules will be used</span>
-        <span class="hljs-attr">rules</span>: {
-            <span class="hljs-attr">pragma</span>: [],
-            <span class="hljs-attr">block</span>: [],
-            <span class="hljs-attr">inline</span>: [HtmlParser,EntityParser]
-        }
-    }));
-    <span class="hljs-keyword">this</span>.tree = parser.tree;
-    <span class="hljs-keyword">this</span>.prototype = parser.prototype;
+<span class="hljs-keyword">var</span> <span class="hljs-title class_">MyCustomWikiParser</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params">type,text,options</span>) {
+	<span class="hljs-keyword">var</span> parser = <span class="hljs-keyword">new</span> <span class="hljs-title class_">WikiParser</span>(type,text,$tw.<span class="hljs-property">utils</span>.<span class="hljs-title function_">extend</span>({},options,{
+		<span class="hljs-comment">// Force the parser to parse in inline mode</span>
+		<span class="hljs-attr">parseAsInline</span>: <span class="hljs-literal">true</span>,
+		<span class="hljs-comment">// Specify which rules will be used</span>
+		<span class="hljs-attr">rules</span>: {
+			<span class="hljs-attr">pragma</span>: [],
+			<span class="hljs-attr">block</span>: [],
+			<span class="hljs-attr">inline</span>: [<span class="hljs-title class_">HtmlParser</span>,<span class="hljs-title class_">EntityParser</span>]
+		}
+	}));
+	<span class="hljs-variable language_">this</span>.<span class="hljs-property">tree</span> = parser.<span class="hljs-property">tree</span>;
+	<span class="hljs-variable language_">this</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span> = parser.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>;
 };
 
-exports[<span class="hljs-string">"text/vnd.my-custom-type"</span>] = MyCustomWikiParser;
+<span class="hljs-built_in">exports</span>[<span class="hljs-string">&quot;text/vnd.my-custom-type&quot;</span>] = <span class="hljs-title class_">MyCustomWikiParser</span>;
 
 })();</code></pre></div>
 </div></p>

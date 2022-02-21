@@ -31,18 +31,18 @@ HookMechanism
 <span class="tc-drop-down tc-reveal" hidden="true"></span></span></div>
 </div>
 
-<div class="tc-tiddler-body tc-reveal"><p>This hook provides a notification that a DOM element is about to be rendered by the "element" widget. The hook can optionally provide an alternate parse tree that will be rendered in place of the intended element.</p><p>Note the element widget only renders those HTML elements that were parsed as plain HTML elements within wikitext (i.e. using the <code>&lt;tagname&gt;</code> syntax). This means that this hook is not invoked for elements created by other widgets.</p><p>Hook function parameters:</p><ul><li><strong>newParseTreeNodes</strong>: optional parse tree nodes provided by a previously called hook</li><li><strong>widget</strong>: instance of the element widget invoking the hook</li></ul><p>Return value:</p><ul><li><strong>newParseTreeNodes</strong>: optionally new parse tree nodes to replace the intended element, or a falsey value to leave the element untouched</li></ul><p>Here is an example of a handler for this hook:</p><pre class="js hljs"><code>$tw.hooks.addHook(<span class="hljs-string">"th-rendering-element"</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">parseTreeNodes,widget</span>) </span>{
-    <span class="hljs-comment">// Return the previous mapping if there is one</span>
-    <span class="hljs-keyword">if</span>(parseTreeNodes) {
-        <span class="hljs-keyword">return</span> parseTreeNodes;
-    }
-    <span class="hljs-comment">// Detect the elements we're interested in</span>
-    <span class="hljs-keyword">if</span>(someCondition()) {
-        <span class="hljs-comment">// Replace them with a parse tree</span>
-        <span class="hljs-keyword">return</span> generateParseTreeNodes();
-    }
-    <span class="hljs-comment">// Otherwise do nothing</span>
-    <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
+<div class="tc-tiddler-body tc-reveal"><p>This hook provides a notification that a DOM element is about to be rendered by the "element" widget. The hook can optionally provide an alternate parse tree that will be rendered in place of the intended element.</p><p>Note the element widget only renders those HTML elements that were parsed as plain HTML elements within wikitext (i.e. using the <code>&lt;tagname&gt;</code> syntax). This means that this hook is not invoked for elements created by other widgets.</p><p>Hook function parameters:</p><ul><li><strong>newParseTreeNodes</strong>: optional parse tree nodes provided by a previously called hook</li><li><strong>widget</strong>: instance of the element widget invoking the hook</li></ul><p>Return value:</p><ul><li><strong>newParseTreeNodes</strong>: optionally new parse tree nodes to replace the intended element, or a falsey value to leave the element untouched</li></ul><p>Here is an example of a handler for this hook:</p><pre class="hljs"><code class="js hljs">$tw.<span class="hljs-property">hooks</span>.<span class="hljs-title function_">addHook</span>(<span class="hljs-string">&quot;th-rendering-element&quot;</span>,<span class="hljs-keyword">function</span>(<span class="hljs-params">parseTreeNodes,widget</span>) {
+	<span class="hljs-comment">// Return the previous mapping if there is one</span>
+	<span class="hljs-keyword">if</span>(parseTreeNodes) {
+		<span class="hljs-keyword">return</span> parseTreeNodes;
+	}
+	<span class="hljs-comment">// Detect the elements we&#x27;re interested in</span>
+	<span class="hljs-keyword">if</span>(<span class="hljs-title function_">someCondition</span>()) {
+		<span class="hljs-comment">// Replace them with a parse tree</span>
+		<span class="hljs-keyword">return</span> <span class="hljs-title function_">generateParseTreeNodes</span>();
+	}
+	<span class="hljs-comment">// Otherwise do nothing</span>
+	<span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
 });</code></pre></div>
 </div></p>
 </section>

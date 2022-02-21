@@ -480,12 +480,25 @@ var assetList = [
         "name": "Highlight",
         "description": "Highlight.js syntax highlighting",
         "author": "Joao Bolila",
-        "list": "readme usage howto license",
+        "list": "readme usage license",
         "version": "5.2.2-prerelease",
         "plugin-type": "plugin",
         "dependents": "",
         "type": "application/json",
-        "readme": "This plugin provides syntax highlighting of code blocks using v9.18.1 of [[highlight.js|https://github.com/isagalaev/highlight.js]] from Ivan Sagalaev.\n\n! Usage\n\nWhen the plugin is installed it automatically applies highlighting to all codeblocks defined with triple backticks or with the CodeBlockWidget.\n\nThe language can optionally be specified after the opening triple braces:\n\n<$codeblock code=\"\"\"```css\n * { margin: 0; padding: 0; } /* micro reset */\n\nhtml { font-size: 62.5%; }\nbody { font-size: 14px; font-size: 1.4rem; } /* =14px */\nh1   { font-size: 24px; font-size: 2.4rem; } /* =24px */\n```\"\"\"/>\n\nIf no language is specified highlight.js will attempt to automatically detect the language.\n\n! Built-in Language Brushes\n\nThe plugin includes support for the following languages (referred to as \"brushes\" by highlight.js):\n\n* apache\n* arduino\n* arm assembly\n* asciidoc\n* autohotkey\n* awk\n* bash\n* cmake\n* coffeescript\n* cpp\n* cs\n* css\n* diff\n* dockerfile\n* erlang\n* elixir\n* fortran\n* go\n* gradle\n* haskell\n* html\n* http\n* ini\n* intel x86 assembly\n* java\n* javascript\n* json\n* kotlin\n* less\n* lua\n* makefile\n* markdown\n* mathematica\n* matlab\n* nginx\n* objectivec\n* perl\n* php\n* plaintext\n* powershell\n* properties\n* python\n* R\n* ruby\n* rust\n* scss\n* shell session\n* sql\n* swift\n* toml\n* typescript\n* vala\n* vim script\n* xml\n* yaml\n\nYou can also specify the language as a MIME content type (eg `text/html` or `text/css`). The mapping is accomplished via mapping tiddlers whose titles start with `$:/config/HighlightPlugin/TypeMappings/`.\n",
+        "readme": "\\define highlightVersion() 11.4.0\n\nThis plugin provides syntax highlighting of code blocks using version <<highlightVersion>> of [[highlight.js|https://github.com/isagalaev/highlight.js]] from Ivan Sagalaev. This plugin does not work on browsers that do not fully support ~JavaScript ES6 (2015). If you need highlight.js running on those legacy browsers, you would need to install the \"Highlight (Legacy)\" plugin instead. Here's a [[ES6 compatibility table|https://caniuse.com/?search=es6]].\n\n! Built-in Language Brushes\n\nThe plugin includes support for the following common languages (referred to as \"brushes\" by highlight.js):\n\n* bash\n* c\n* cpp\n* csharp\n* css\n* diff\n* go\n* html, xml\n* java\n* javascript\n* json\n* kotlin\n* less\n* lua\n* makefile\n* markdown\n* objectivec\n* perl\n* php\n* plaintext\n* python\n* R\n* ruby\n* rust\n* scss\n* sql\n* shell session\n* swift\n* toml, ini\n* typescript\n* visual basic .net\n* yaml\n\nAnd these additional ones:\n\n* apache config\n* dockerfile\n* fortran\n* latex\n* nginx config\n\nThe mapping between a MIME type and a highlight.js language specifier is accomplished via mapping tiddlers whose titles start with `$:/config/HighlightPlugin/TypeMappings/`.\n",
+        "requires-reload": "yes"
+    },
+    {
+        "title": "$:/plugins/tiddlywiki/highlight-legacy",
+        "name": "Highlight (Legacy)",
+        "description": "Highlight.js syntax highlighting for legacy browsers",
+        "author": "Joao Bolila",
+        "list": "readme usage license",
+        "version": "5.2.2-prerelease",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "This plugin provides syntax highlighting of code blocks using v9.18.1 of [[highlight.js|https://github.com/isagalaev/highlight.js]] from Ivan Sagalaev. This legacy version should be installed in place of the regular Highlight plugin when you require your wiki to be opened in browsers that do not fully support <$text text=\"JavaScript\"/> ES6 (2015). Here's a [[ES6 compatibility table|https://caniuse.com/?search=es6]].\n\n! Built-in Language Brushes\n\nThe plugin includes support for the following languages (referred to as \"brushes\" by highlight.js):\n\n* apache\n* arduino\n* arm assembly\n* asciidoc\n* autohotkey\n* awk\n* bash\n* cmake\n* coffeescript\n* cpp\n* cs\n* css\n* diff\n* dockerfile\n* erlang\n* elixir\n* fortran\n* go\n* gradle\n* haskell\n* html\n* http\n* ini\n* intel x86 assembly\n* java\n* javascript\n* json\n* kotlin\n* less\n* lua\n* makefile\n* markdown\n* mathematica\n* matlab\n* nginx\n* objectivec\n* perl\n* php\n* plaintext\n* powershell\n* properties\n* python\n* R\n* ruby\n* rust\n* scss\n* shell session\n* sql\n* swift\n* toml\n* typescript\n* vala\n* vim script\n* xml\n* yaml\n\nThe mapping between a MIME type and a highlight.js language specifier is accomplished via mapping tiddlers whose titles start with `$:/config/HighlightPlugin/TypeMappings/`.\n",
         "requires-reload": "yes"
     },
     {

@@ -28,12 +28,12 @@
 <div class="tc-tiddler-body tc-reveal"><p>It is straightforward to allow any HTML file to interoperate with <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a>'s drag and drop implementation.</p><p>This example shows how to attach draggable data to a DOM element. The data is provided in two different forms:</p><ul><li>the string data is used if the element is dragged onto a text editing area</li><li>the tiddler data is used if the element is dragged into <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a>'s import area</li></ul><p><button class="">
 
 Download this sample code
-</button></p><pre class="html hljs"><code><span class="hljs-meta">&lt;!doctype <span class="hljs-meta-keyword">html</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+</button></p><pre class="hljs"><code class="html hljs"><span class="hljs-meta">&lt;!doctype <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Drag and Drop Interoperability with TiddlyWiki Demo<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css">
         <span class="hljs-selector-id">#draggable</span> {
             <span class="hljs-attribute">padding</span>: <span class="hljs-number">1em</span>;
             <span class="hljs-attribute">margin</span>: <span class="hljs-number">1em</span>;
@@ -42,22 +42,22 @@ Download this sample code
     </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"draggable"</span> <span class="hljs-attr">draggable</span>=<span class="hljs-string">"true"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;draggable&quot;</span> <span class="hljs-attr">draggable</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
         Drag me to a TiddlyWiki window
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
 
-    <span class="hljs-keyword">var</span> titleString = <span class="hljs-string">"This is the string that appears when the block is dragged to a text input"</span>;
+    <span class="hljs-keyword">var</span> titleString = <span class="hljs-string">&quot;This is the string that appears when the block is dragged to a text input&quot;</span>;
     <span class="hljs-keyword">var</span> tiddlerData = [
-        {<span class="hljs-attr">title</span>: <span class="hljs-string">"Tiddler One"</span>, <span class="hljs-attr">text</span>: <span class="hljs-string">"This is one of the payload tiddlers"</span>},
-        {<span class="hljs-attr">title</span>: <span class="hljs-string">"Tiddler Two"</span>, <span class="hljs-attr">text</span>: <span class="hljs-string">"This is another of the payload tiddlers"</span>, <span class="hljs-string">"custom-field"</span>: <span class="hljs-string">"A custom field value"</span>}
+        {<span class="hljs-attr">title</span>: <span class="hljs-string">&quot;Tiddler One&quot;</span>, <span class="hljs-attr">text</span>: <span class="hljs-string">&quot;This is one of the payload tiddlers&quot;</span>},
+        {<span class="hljs-attr">title</span>: <span class="hljs-string">&quot;Tiddler Two&quot;</span>, <span class="hljs-attr">text</span>: <span class="hljs-string">&quot;This is another of the payload tiddlers&quot;</span>, <span class="hljs-string">&quot;custom-field&quot;</span>: <span class="hljs-string">&quot;A custom field value&quot;</span>}
     ];
 
-    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"draggable"</span>).addEventListener(<span class="hljs-string">"dragstart"</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
-        event.dataTransfer.setData(<span class="hljs-string">"URL"</span>,<span class="hljs-string">"data:text/vnd.tiddler,"</span> + <span class="hljs-built_in">encodeURIComponent</span>(<span class="hljs-built_in">JSON</span>.stringify(tiddlerData)));
-        event.dataTransfer.setData(<span class="hljs-string">"Text"</span>,titleString);
-        event.stopPropagation();
+    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;draggable&quot;</span>).<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;dragstart&quot;</span>,<span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) {
+        event.<span class="hljs-property">dataTransfer</span>.<span class="hljs-title function_">setData</span>(<span class="hljs-string">&quot;URL&quot;</span>,<span class="hljs-string">&quot;data:text/vnd.tiddler,&quot;</span> + <span class="hljs-built_in">encodeURIComponent</span>(<span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(tiddlerData)));
+        event.<span class="hljs-property">dataTransfer</span>.<span class="hljs-title function_">setData</span>(<span class="hljs-string">&quot;Text&quot;</span>,titleString);
+        event.<span class="hljs-title function_">stopPropagation</span>();
         <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
     });
     
