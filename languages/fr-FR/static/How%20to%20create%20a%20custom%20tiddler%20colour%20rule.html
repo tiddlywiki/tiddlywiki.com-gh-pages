@@ -101,64 +101,7 @@ color:#333333;">
 <span class=" tc-reveal" hidden="true"></span>
 
 
-</span>, so we need to create a configuration tiddler with that tag.</p><p>We also need to make sure that it is inserted at the correct point in the cascade:</p><ul><li>The new rule must be after the "colour-field" rule to ensure that tiddlers with an explicit <strong>color</strong> field will respect the value of that field</li><li>The new rule must be before the "default" icon otherwise it will never be seen if the default colour is specified</li></ul><p>The control panel "Cascades" tab shows that this can be achieved by inserting the new step immediately before the default step using the <code>list-before</code> field.</p><p>The full list of fields in the configuration tiddler is:</p><p>
-<div class="doc-tiddler-fields">
-<h2>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" href="%2524%253A%252F_tw5.com%252FCustomTiddlerColourCascadeDemo.html">
-<span class="tc-tiddler-title-icon"></span>$:/_tw5.com/CustomTiddlerColourCascadeDemo
-</a>
-</h2>
-<table class="tc-view-field-table">
-<tbody>
-<tr class="tc-view-field">
-<td class="tc-view-field-name">
-created
-</td>
-<td class="tc-view-field-value">
-20211206114433294
-</td>
-</tr><tr class="tc-view-field">
-<td class="tc-view-field-name">
-list-before
-</td>
-<td class="tc-view-field-value">
-$:/config/TiddlerColourFilters/default
-</td>
-</tr><tr class="tc-view-field">
-<td class="tc-view-field-name">
-modified
-</td>
-<td class="tc-view-field-value">
-20211206114433294
-</td>
-</tr><tr class="tc-view-field">
-<td class="tc-view-field-name">
-tags
-</td>
-<td class="tc-view-field-value">
-$:/tags/TiddlerColourFilter
-</td>
-</tr><tr class="tc-view-field">
-<td class="tc-view-field-name">
-text
-</td>
-<td class="tc-view-field-value">
-[tag[TableOfContents]then[#1e90ff]]
-[tag[Working with TiddlyWiki]then[darkorchid]]
-
-</td>
-</tr><tr class="tc-view-field">
-<td class="tc-view-field-name">
-type
-</td>
-<td class="tc-view-field-value">
-text/vnd.tiddlywiki
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</p></div>
+</span>, so we need to create a configuration tiddler with that tag.</p><p>We also need to make sure that it is inserted at the correct point in the cascade:</p><ul><li>The new rule must be after the "colour-field" rule to ensure that tiddlers with an explicit <strong>color</strong> field will respect the value of that field</li><li>The new rule must be before the "default" icon otherwise it will never be seen if the default colour is specified</li></ul><p>The control panel "Cascades" tab shows that this can be achieved by inserting the new step immediately before the default step using the <code>list-before</code> field.</p><p>The full list of fields in the configuration tiddler is:</p></div>
 </div></p>
 </section>
 </body>
