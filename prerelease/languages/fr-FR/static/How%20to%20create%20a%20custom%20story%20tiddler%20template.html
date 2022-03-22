@@ -110,7 +110,107 @@ color:#333333;">
 <span class=" tc-reveal" hidden="true"></span>
 
 
-</span>, so we need to create a configuration tiddler with that tag.</p><p>We also need to make sure that it is inserted at the correct point in the cascade:</p><ul><li>The new rule must be after the "draft" rule to ensure that draft tiddlers with the tag <a class="tc-tiddlylink tc-tiddlylink-missing" href="%2524%253A%252Ftags%252FTiddlerList.html">$:/tags/TiddlerList</a> can be edited</li><li>The new rule must be before the "default" rule otherwise it will never be executed</li></ul><p>The control panel "Cascades" tab shows that this can be achieved by inserting the new step immediately before the default step using the <code>list-before</code> field.</p><p>The full list of fields in the configuration tiddler is:</p><p>Finally, we need to create the demo tiddler itself:</p></div>
+</span>, so we need to create a configuration tiddler with that tag.</p><p>We also need to make sure that it is inserted at the correct point in the cascade:</p><ul><li>The new rule must be after the "draft" rule to ensure that draft tiddlers with the tag <a class="tc-tiddlylink tc-tiddlylink-missing" href="%2524%253A%252Ftags%252FTiddlerList.html">$:/tags/TiddlerList</a> can be edited</li><li>The new rule must be before the "default" rule otherwise it will never be executed</li></ul><p>The control panel "Cascades" tab shows that this can be achieved by inserting the new step immediately before the default step using the <code>list-before</code> field.</p><p>The full list of fields in the configuration tiddler is:</p><p>
+<div class="doc-tiddler-fields">
+<h2>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="%2524%253A%252F_tw5.com%252FCustomStoryTiddlerTemplateDemo%252FFilter.html">
+<span class="tc-tiddler-title-icon"></span>$:/_tw5.com/CustomStoryTiddlerTemplateDemo/Filter
+</a>
+</h2>
+<table class="tc-view-field-table">
+<tbody>
+<tr class="tc-view-field">
+<td class="tc-view-field-name">
+code-body
+</td>
+<td class="tc-view-field-value">
+yes
+</td>
+</tr><tr class="tc-view-field">
+<td class="tc-view-field-name">
+list-before
+</td>
+<td class="tc-view-field-value">
+$:/config/StoryTiddlerTemplateFilters/default
+</td>
+</tr><tr class="tc-view-field">
+<td class="tc-view-field-name">
+tags
+</td>
+<td class="tc-view-field-value">
+$:/tags/StoryTiddlerTemplateFilter
+</td>
+</tr><tr class="tc-view-field">
+<td class="tc-view-field-name">
+text
+</td>
+<td class="tc-view-field-value">
+[tag[$:/tags/TiddlerList]then[$:/_tw5.com/CustomStoryTiddlerTemplateDemo/Template]]
+
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</p><p>Finally, we need to create the demo tiddler itself:</p><p>
+<div class="doc-tiddler-fields">
+<h2>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="Demo%2520Tiddler%2520List%2520with%2520Custom%2520Story%2520Tiddler%2520Template.html">
+<span class="tc-tiddler-title-icon"></span>Demo Tiddler List with Custom Story Tiddler Template
+</a>
+</h2>
+<table class="tc-view-field-table">
+<tbody>
+<tr class="tc-view-field">
+<td class="tc-view-field-name">
+created
+</td>
+<td class="tc-view-field-value">
+20211204122107920
+</td>
+</tr><tr class="tc-view-field">
+<td class="tc-view-field-name">
+filter
+</td>
+<td class="tc-view-field-value">
+HelloThere Community GettingStarted Features Reference Plugins Learning
+</td>
+</tr><tr class="tc-view-field">
+<td class="tc-view-field-name">
+modified
+</td>
+<td class="tc-view-field-value">
+20211204131610322
+</td>
+</tr><tr class="tc-view-field">
+<td class="tc-view-field-name">
+tags
+</td>
+<td class="tc-view-field-value">
+$:/tags/TiddlerList
+</td>
+</tr><tr class="tc-view-field">
+<td class="tc-view-field-name">
+text
+</td>
+<td class="tc-view-field-value">
+This is a demo tiddler with a custom story tiddler template that displays the tiddlers named in the list field as a fan.
+
+See [[How to create a custom story tiddler template]] for details.
+
+</td>
+</tr><tr class="tc-view-field">
+<td class="tc-view-field-name">
+type
+</td>
+<td class="tc-view-field-value">
+text/vnd.tiddlywiki
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</p></div>
 </div></p>
 </section>
 </body>
