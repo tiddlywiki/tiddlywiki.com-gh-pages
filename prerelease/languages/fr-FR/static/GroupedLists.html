@@ -59,6 +59,7 @@ color:#333333;">
 &lt;$view field="title"/&gt;
 \end
 \define timeline(limit:"100",format:"DDth MMM YYYY",subfilter:"",dateField:"modified")
+\whitespace trim
 &lt;div class="tc-timeline"&gt;
 &lt;$list filter="[!is[system]$subfilter$has[$dateField$]!sort[$dateField$]limit[$limit$]eachday[$dateField$]]"&gt;
 &lt;div class="tc-menu-list-item"&gt;

@@ -2962,61 +2962,7 @@ color:#333333;">
 Intro
 </span>
 <span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div><div class="tc-tiddler-body tc-reveal"><p>
-
-
-<div class="tc-tab-set tc-vertical">
-<div class="tc-tab-buttons tc-vertical">
-<button class="">
-
-
-
-Android
-
-</button><button class="">
-
-
-
-Chrome
-
-</button><button class="">
-
-
-
-Firefox
-
-</button><button class="">
-
-
-
-Internet Explorer
-
-</button><button class="">
-
-
-
-iPad/iPhone
-
-</button><button class="">
-
-
-
-Node.js
-
-</button><button class="">
-
-
-
-Safari
-
-</button>
-</div>
-<div class="tc-tab-divider tc-vertical"></div>
-<div class="tc-tab-content tc-vertical">
-<div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div>
-</div>
-</div>
-
-
+<div class="tc-tab-set tc-vertical"><div class="tc-tab-buttons tc-vertical"><button class="">Android</button><button class="">Chrome</button><button class="">Firefox</button><button class="">Internet Explorer</button><button class="">iPad/iPhone</button><button class="">Node.js</button><button class="">Safari</button></div><div class="tc-tab-divider tc-vertical"></div><div class="tc-tab-content tc-vertical"><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div></div></div>
 </p><h3 class="">Weitere Links:</h3><ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Liste%20aller%20HowTo's">Liste aller HowTo's</a>: Diese Liste ist vor allem dann wichtig, wenn Sie über "statische" Seiten hier her kommen. </li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Speichern%20mit%20Verschl%C3%BCsselung">Speichern mit Verschlüsselung</a>: TiddlyWiki kann verschlüsselt gespeichert werden. Wichtig: Vergessen Sie das Passwort nicht!</li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Speichern%20auf%20TiddlySpot">Speichern auf TiddlySpot</a>: <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlySpot">TiddlySpot</a> ist ein freier Service, mit dem Sie Ihr Wiki online stellen können.</li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki%20und%20TiddlyDesktop">TiddlyWiki und TiddlyDesktop</a>: <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyDesktop">TiddlyDesktop</a> ist eine "echte" Applikation mit der Sie mehrere Wikis verwalten und speichern können. </li><li>Running <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki%20on%20NW.js">TiddlyWiki on NW.js</a>, turning a single <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> into a native application on your desktop</li></ul></div>
 </div>
 </a><a name="ErsteSchritte - Android">
@@ -4795,39 +4741,7 @@ fill:#333333;
 color:#333333;">
 Makros
 </span>
-<span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div><div class="tc-tiddler-body tc-reveal"><p>Das Inhaltsverzeichnis Makro (englisch: table of content) erstellt einen hierarchischen Baum von Verknüpfungen (Links), basierend auf ihren Tags.</p><p>Der Basis Eintrag in das Verzeichnis wird als "root tag" bezeichnet. Die weiteren Ebenen werden von Tiddlern gebildet, die mit den "root tags" getaggt sind. Einträge können sortiert werden, indem im <code>list</code> Feld eines Tags die Reihenfolge der Tiddler festgelegt wird. (Die Sortierung muss momentan per Hand vorgenommen werden). Siehe auch: <a class="tc-tiddlylink tc-tiddlylink-missing" href="#Tagging">Tagging</a></p><p>Der Text für die Einträge wird aus dem <code>caption</code> Feld des Tiddlers genommen. Ist dieser nicht vorhanden, dann wird der Tiddler Titel angezeigt.Dieser Tiddler hat ein <code>caption</code> Feld mit dem Inhalt: <strong>toc-Inhaltsverzeichnis</strong>. Im (i)nfo Button unter Felder können Sie alle Felder sehen!</p><p>Die Einträge werden als Links dargestellt, außer, der Tiddler hat ein weiteres Feld mit dem Namen: <code>toc-link</code> und dem Wert: <code>no</code>. In den folgenden Beispielen ist dies der Fall für den Tiddler: <strong><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#EinsB">EinsB</a>.</strong></p><p>Es gibt mehrere Varianten des "toc" Makros:</p><ul><li><code>&lt;&lt;toc&gt;&gt;</code> erstellt eine hierarchische Liste mit Links.</li><li><code>&lt;&lt;toc-expandable&gt;&gt;</code> erstellt einen erweiterbaren Baum mit Links.</li><li><code>&lt;&lt;toc-selective-expandable&gt;&gt;</code> erstellt einen erweiterbaren Baum, bei dem der "erweitern" Button nur dann vorhanden ist, wenn der Zweig weitere Elemente hat. </li></ul><p>Die Makros erzeugen HTML <code>&lt;ol&gt;</code> Elemente (geordnete Listen):</p><ul><li>Die <code>&lt;ol&gt;</code> Elemente haben eine CSS Klasse: <code>tc-toc</code>.</li><li>Die erweiterbaren Elemente habe zusätzlich die Klasse: <code>tc-toc-expandable</code>.</li><li>Die "selective-expandable" Variante hat die Klasse: <code>tc-toc-selective-expandable</code></li></ul><h2 class="">Parameter</h2><table><thead><tr class="evenRow"><td align="left">Position</td><td align="left">Name</td><td align="left">Beschreibung</td><td align="left">Standard</td></tr></thead><tbody><tr class="oddRow"><td align="left">1</td><td align="left">tag</td><td align="left">Der "root tag" legt die erste Ebene der Hierarchie fest</td><td align="center"></td></tr><tr class="evenRow"><td align="left">2</td><td align="left">sort</td><td align="left">Optional können die Einträge sortiert werden. zB: <code>sort[title]</code></td><td align="center"></td></tr></tbody></table><p>Der "tag" und "sort" Parameter werden kombiniert und legen den Filterausdruck fest:</p><pre><code>[tag[$tag$]$sort$]</code></pre><h2 class="">Beispiele</h2><p>
-
-<div class="tc-tab-set ">
-<div class="tc-tab-buttons ">
-<button class=" tc-tab-selected">
-
-
-
-Einfach
-
-</button><button class="">
-
-
-
-Erweiterbar
-
-</button><button class="">
-
-
-
-Selectiv Erweiterbar
-
-</button><button class="">
-
-
-
-Sorted Expandable
-
-</button>
-</div>
-<div class="tc-tab-divider "></div>
-<div class="tc-tab-content ">
-<div class=" tc-reveal"><h3 class="">Einfaches Inhaltsverzeichnis</h3><pre><code>&lt;div class="tc-table-of-contents"&gt;
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div><div class="tc-tiddler-body tc-reveal"><p>Das Inhaltsverzeichnis Makro (englisch: table of content) erstellt einen hierarchischen Baum von Verknüpfungen (Links), basierend auf ihren Tags.</p><p>Der Basis Eintrag in das Verzeichnis wird als "root tag" bezeichnet. Die weiteren Ebenen werden von Tiddlern gebildet, die mit den "root tags" getaggt sind. Einträge können sortiert werden, indem im <code>list</code> Feld eines Tags die Reihenfolge der Tiddler festgelegt wird. (Die Sortierung muss momentan per Hand vorgenommen werden). Siehe auch: <a class="tc-tiddlylink tc-tiddlylink-missing" href="#Tagging">Tagging</a></p><p>Der Text für die Einträge wird aus dem <code>caption</code> Feld des Tiddlers genommen. Ist dieser nicht vorhanden, dann wird der Tiddler Titel angezeigt.Dieser Tiddler hat ein <code>caption</code> Feld mit dem Inhalt: <strong>toc-Inhaltsverzeichnis</strong>. Im (i)nfo Button unter Felder können Sie alle Felder sehen!</p><p>Die Einträge werden als Links dargestellt, außer, der Tiddler hat ein weiteres Feld mit dem Namen: <code>toc-link</code> und dem Wert: <code>no</code>. In den folgenden Beispielen ist dies der Fall für den Tiddler: <strong><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#EinsB">EinsB</a>.</strong></p><p>Es gibt mehrere Varianten des "toc" Makros:</p><ul><li><code>&lt;&lt;toc&gt;&gt;</code> erstellt eine hierarchische Liste mit Links.</li><li><code>&lt;&lt;toc-expandable&gt;&gt;</code> erstellt einen erweiterbaren Baum mit Links.</li><li><code>&lt;&lt;toc-selective-expandable&gt;&gt;</code> erstellt einen erweiterbaren Baum, bei dem der "erweitern" Button nur dann vorhanden ist, wenn der Zweig weitere Elemente hat. </li></ul><p>Die Makros erzeugen HTML <code>&lt;ol&gt;</code> Elemente (geordnete Listen):</p><ul><li>Die <code>&lt;ol&gt;</code> Elemente haben eine CSS Klasse: <code>tc-toc</code>.</li><li>Die erweiterbaren Elemente habe zusätzlich die Klasse: <code>tc-toc-expandable</code>.</li><li>Die "selective-expandable" Variante hat die Klasse: <code>tc-toc-selective-expandable</code></li></ul><h2 class="">Parameter</h2><table><thead><tr class="evenRow"><td align="left">Position</td><td align="left">Name</td><td align="left">Beschreibung</td><td align="left">Standard</td></tr></thead><tbody><tr class="oddRow"><td align="left">1</td><td align="left">tag</td><td align="left">Der "root tag" legt die erste Ebene der Hierarchie fest</td><td align="center"></td></tr><tr class="evenRow"><td align="left">2</td><td align="left">sort</td><td align="left">Optional können die Einträge sortiert werden. zB: <code>sort[title]</code></td><td align="center"></td></tr></tbody></table><p>Der "tag" und "sort" Parameter werden kombiniert und legen den Filterausdruck fest:</p><pre><code>[tag[$tag$]$sort$]</code></pre><h2 class="">Beispiele</h2><p><div class="tc-tab-set "><div class="tc-tab-buttons "><button class=" tc-tab-selected">Einfach</button><button class="">Erweiterbar</button><button class="">Selectiv Erweiterbar</button><button class="">Sorted Expandable</button></div><div class="tc-tab-divider "></div><div class="tc-tab-content "><div class=" tc-reveal"><h3 class="">Einfaches Inhaltsverzeichnis</h3><pre><code>&lt;div class="tc-table-of-contents"&gt;
 &lt;&lt;toc "tocBeispiel"&gt;&gt;
 &lt;/div&gt;
 </code></pre><p>Dargestellt als:</p><p><div class="tc-table-of-contents">
@@ -4957,11 +4871,7 @@ Sorted Expandable
     
   
 </ol>
-</div></p></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div>
-</div>
-</div>
-
-</p></div>
+</div></p></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div></div></div></p></div>
 </div>
 </a><a name="TabsMakro">
 <div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Makros" data-tags="Makros" data-tiddler-title="TabsMakro"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="mehr" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="Weitere Aktionen"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="Bearbeiten" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Bearbeite diesen Tiddler"></button><button aria-label="Schließen" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Schließe diesen Tiddler"></button></span><span><span class="tc-tiddler-title-icon" style="fill:;"></span><h2 class="tc-title">TabsMakro</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
@@ -4973,75 +4883,7 @@ Makros
 </span>
 <span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div><div class="tc-tiddler-body tc-reveal"><p>Das <code>&lt;&lt;tabs&gt;&gt;</code> Makro stellt eine Liste von Tiddlern als "Reiter" dar. Der Anwender kann zwischen den Reitern wechseln, indem er sie anklickt. </p><p>Als Reiter Text wird der Tiddler Titel verwendet. Außer es ist ein Feld mit dem Namen: <code>caption</code> im Tiddler enthalten, dann wird der <code>caption</code> Text angezeigt.</p><p>Standardmäßig werden die Reiter horizontal angeordnet. Sie können diese Ausrichtung jedoch mit einem Parameter <code>tc-vertical</code> ändern.</p><h2 class="">Parameter</h2><table><thead><tr class="evenRow"><td align="left">Position</td><td align="left">Name</td><td align="left">Beschreibung</td><td align="left">Standard</td></tr></thead><tbody><tr class="oddRow"><td align="left">1</td><td align="left">tabsList</td><td align="left">Filter mit der die Liste der Tiddler erstellt wird</td><td align="center"></td></tr><tr class="evenRow"><td align="left">2</td><td align="left">default</td><td align="left">Name des Tiddlers, der den "Standard Reiter" festlegt</td><td align="center"></td></tr><tr class="oddRow"><td align="left">3</td><td align="left">state</td><td align="left">Status Variable, um mehreren Reiter im selben Tiddler unterscheiden zu können. Es wird empfohlen, das System-TIddler prefix zu verwenden.</td><td align="left"><strong><a class="tc-tiddlylink tc-tiddlylink-missing" href="#%24%3A%2Fstate%2Ftab">$:/state/tab</a></strong></td></tr><tr class="evenRow"><td align="left">4</td><td align="left">class</td><td align="left">Optionale <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#CSS%20Klassen">CSS-Klasse</a>, die dem einhüllenden DIV zugewiesen wird.</td><td align="center"></td></tr><tr class="oddRow"><td align="left">5</td><td align="left">template</td><td align="left">Optionale Vorlage, mit der der Reiter dargestellt werden soll.</td><td align="center"></td></tr></tbody></table><p>In der Vorlage ist der Titel des aktuellen Reiters in der Widget Variable <code>currentTab</code> enthalten.</p><h1 class="">Beispiele</h1><p>Hier sind einige Beispiele für das <code>&lt;&lt;tabs&gt;&gt;</code> Makro</p><pre><code>&lt;&lt;tabs "ReiterEins ReiterZwei ReiterDrei" "ReiterZwei" "$:/state/tab1"&gt;&gt;
 
-&lt;&lt;tabs "[tag[TabsMakro]]" "ReiterDrei" "$:/state/tab2" "tc-vertical"&gt;&gt;</code></pre><p>
-
-<div class="tc-tab-set ">
-<div class="tc-tab-buttons ">
-<button class="">
-
-
-
-
-ReiterEins
-
-
-</button><button class=" tc-tab-selected">
-
-
-
-
-ReiterZwei
-
-
-</button><button class="">
-
-
-
-hohoho
-
-</button>
-</div>
-<div class="tc-tab-divider "></div>
-<div class="tc-tab-content ">
-<div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#ReiterZwei">ReiterZwei</a>, enthält kein <code>caption</code> Feld, deshalb wird der Tiddler Titel angezeigt.</p></div><div class=" tc-reveal" hidden="true"></div>
-</div>
-</div>
-
-</p><p>
-
-<div class="tc-tab-set tc-vertical">
-<div class="tc-tab-buttons tc-vertical">
-<button class="">
-
-
-
-
-ReiterEins
-
-
-</button><button class="">
-
-
-
-
-ReiterZwei
-
-
-</button><button class=" tc-tab-selected">
-
-
-
-hohoho
-
-</button>
-</div>
-<div class="tc-tab-divider tc-vertical"></div>
-<div class="tc-tab-content tc-vertical">
-<div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><p>Inhalt von <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#ReiterDrei">ReiterDrei</a>. Dieser Tiddler hat ein Feld mit dem Namen: <code>caption</code>, welches den Text: tabs-Reiter, enthält.</p></div>
-</div>
-</div>
-
-</p></div>
+&lt;&lt;tabs "[tag[TabsMakro]]" "ReiterDrei" "$:/state/tab2" "tc-vertical"&gt;&gt;</code></pre><p><div class="tc-tab-set "><div class="tc-tab-buttons "><button class="">ReiterEins</button><button class=" tc-tab-selected">ReiterZwei</button><button class="">hohoho</button></div><div class="tc-tab-divider "></div><div class="tc-tab-content "><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#ReiterZwei">ReiterZwei</a>, enthält kein <code>caption</code> Feld, deshalb wird der Tiddler Titel angezeigt.</p></div><div class=" tc-reveal" hidden="true"></div></div></div></p><p><div class="tc-tab-set tc-vertical"><div class="tc-tab-buttons tc-vertical"><button class="">ReiterEins</button><button class="">ReiterZwei</button><button class=" tc-tab-selected">hohoho</button></div><div class="tc-tab-divider tc-vertical"></div><div class="tc-tab-content tc-vertical"><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><p>Inhalt von <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#ReiterDrei">ReiterDrei</a>. Dieser Tiddler hat ein Feld mit dem Namen: <code>caption</code>, welches den Text: tabs-Reiter, enthält.</p></div></div></div></p></div>
 </div>
 </a><a name="Tags">
 <div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Lexikon" data-tags="Lexikon" data-tiddler-title="Tags"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="mehr" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="Weitere Aktionen"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="Bearbeiten" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Bearbeite diesen Tiddler"></button><button aria-label="Schließen" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Schließe diesen Tiddler"></button></span><span><span class="tc-tiddler-title-icon" style="fill:;"></span><h2 class="tc-title">Tags</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
