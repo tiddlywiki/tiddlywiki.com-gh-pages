@@ -2398,92 +2398,6 @@ a.tc-tiddlylink:hover {
 }.tc-word-break {
 	word-break: break-all;
 }
-/* Left will inherit from right (so we don't need to duplicate code */
-.github-fork-ribbon {
-  /* The right and left lasses determine the side we attach our banner to */
-  position: absolute;/* Add a bit of padding to give some substance outside the "stitching" */
-  padding: 2px 0;/* Set the base colour */
-  background-color: #a00;/* Set a gradient: transparent black at the top to almost-transparent black at the bottom */
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.00)), to(rgba(0, 0, 0, 0.15)));
-  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.15));
-  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.15));
-  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.15));
-  background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.15));
-  background-image: linear-gradient(top, rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.15));
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#000000', EndColorStr='#000000');/* Add a drop shadow */
-  -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5);z-index: 999;
-  pointer-events: auto;
-}.github-fork-ribbon a, .github-fork-ribbon a.tc-tiddlylink,
-.github-fork-ribbon a:hover, .github-fork-ribbon a.tc-tiddlylink:hover  {
-  /* Set the font */
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  color: white;/* Set the text properties */
-  text-decoration: none;
-  text-shadow: 0 -1px rgba(0,0,0,0.5);
-  text-align: center;/* Set the geometry. If you fiddle with these you'll also need to tweak the top and right values in #github-fork-ribbon. */
-  width: 200px;
-  line-height: 20px;/* Set the layout properties */
-  display: inline-block;
-  padding: 2px 0;/* Add "stitching" effect */
-  border-width: 1px 0;
-  border-style: dotted;
-  border-color: rgba(255,255,255,0.7);
-}.github-fork-ribbon-wrapper {
-  width: 150px;
-  height: 150px;
-  position: absolute;
-  overflow: hidden;
-  top: 0;
-  z-index: 999;
-  pointer-events: none;
-}.github-fork-ribbon-wrapper.fixed {
-  position: fixed;
-}.github-fork-ribbon-wrapper.left {
-  left: 0;
-}.github-fork-ribbon-wrapper.right {
-  right: 0;
-}.github-fork-ribbon-wrapper.left-bottom {
-  position: fixed;
-  top: inherit;
-  bottom: 0;
-  left: 0;
-}.github-fork-ribbon-wrapper.right-bottom {
-  position: fixed;
-  top: inherit;
-  bottom: 0;
-  right: 0;
-}.github-fork-ribbon-wrapper.right .github-fork-ribbon {
-  top: 42px;
-  right: -43px;/* Rotate the banner 45 degrees */
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-}.github-fork-ribbon-wrapper.left .github-fork-ribbon {
-  top: 42px;
-  left: -43px;/* Rotate the banner -45 degrees */
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}.github-fork-ribbon-wrapper.left-bottom .github-fork-ribbon {
-  top: 80px;
-  left: -43px;/* Rotate the banner -45 degrees */
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-}.github-fork-ribbon-wrapper.right-bottom .github-fork-ribbon {
-  top: 80px;
-  right: -43px;/* Rotate the banner -45 degrees */
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
 /*!
   Theme: Default
   Description: Original highlight.js style
@@ -2551,4 +2465,150 @@ a.tc-tiddlylink:hover {
   font-style: italic;
 }.hljs-strong {
   font-weight: bold;
+}
+nav.tc-menubar {
+	position: fixed;
+	z-index: 850;
+	display: inline-block;
+	top: 0;
+	right: 0;
+	left: 0;
+}nav.tc-menubar ul.tc-menubar-list {
+	position: relative;
+	list-style-type: none;
+	margin: 0;
+	padding: 0 0 0 42px;
+	background: #e5f8fd;
+	background: #5778d8;
+	
+  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+     -moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+
+}@media (max-width: 959px) {html nav.tc-menubar ul.tc-menubar-list {
+		padding: 0 0 0 8px;
+	}}nav.tc-menubar li.tc-menubar-item {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}nav.tc-menubar .tc-menubar-narrow li.tc-menubar-item {
+	display: block;
+}nav.tc-menubar li.tc-menubar-item > a,
+nav.tc-menubar li.tc-menubar-item > button {
+	display: inline-block;
+/*	text-transform: uppercase; */
+	line-height: 1;
+	font-weight: 700;
+	color: #4e432f;
+	color: #fff;
+	fill: #4e432f;
+	fill: #fff;
+	text-decoration: none;
+	padding: 0.5em;
+	margin: 0;
+	background: none;
+	border: none;
+	cursor: pointer;
+	border-radius: 0;
+	text-decoration: none;
+}nav.tc-menubar li.tc-menubar-item > a.tc-selected,
+nav.tc-menubar li.tc-menubar-item > button.tc-selected {
+	background: #4e432f;
+	background: #fff;
+	color: #e5f8fd;
+	color: #5778d8;
+	fill: #e5f8fd;
+	fill: #5778d8;
+}nav.tc-menubar li.tc-menubar-item svg {
+	transition: none;
+	width: 1em;
+	height: 1em;
+	fill: #4e432f;
+	fill: #fff;
+}nav.tc-menubar li.tc-menubar-item .tc-menubar-dropdown-arrow svg {
+	width: 0.5em;
+	height: 0.5em;
+}nav.tc-menubar li.tc-menubar-item > a.tc-selected svg,
+nav.tc-menubar li.tc-menubar-item > button.tc-selected svg {
+	fill: #e5f8fd;
+	fill: #5778d8;
+}nav.tc-menubar li.tc-menubar-item > a:hover,
+nav.tc-menubar li.tc-menubar-item > button:hover svg,
+nav.tc-menubar li.tc-menubar-item > button:hover {
+	background: #4e432f;
+	background: #fff;
+	color: #e5f8fd;
+	color: #5778d8;
+	fill: #e5f8fd;
+	fill: #5778d8;
+	border-radius: 0;
+	text-decoration: none;
+}nav.tc-menubar li.tc-menubar-item > a:active,
+nav.tc-menubar li.tc-menubar-item > button:active svg,
+nav.tc-menubar li.tc-menubar-item > button:active {
+	background: #4e432f;
+	background: #fff;
+	color: #e5f8fd;
+	color: #5778d8;
+	fill: #e5f8fd;
+	fill: #5778d8;
+	border-radius: 0;
+	text-decoration: none;
+}nav.tc-menubar .tc-drop-down,
+nav.tc-menubar .tc-block-dropdown {
+	max-width: 70vw;
+	max-height: 70vh;
+	overflow: auto;
+}nav.tc-menubar .tc-drop-down a {
+	text-decoration: none;
+}nav.tc-menubar .tc-drop-down .tc-table-of-contents button {
+	display: inline-block;
+	width: auto;
+}nav.tc-menubar .tc-drop-down ol {
+	margin: 0;
+}nav.tc-menubar .tc-drop-down .tc-menubar-dropdown-sidebar a,
+nav.tc-menubar .tc-drop-down .tc-menubar-dropdown-sidebar button {
+	display: inline;
+	width: auto;
+}nav.tc-menubar .tc-more-sidebar > .tc-tab-set > .tc-tab-buttons > button {
+	display: block;
+	width: 100%;
+}@media (max-width: 620px) {.tc-menubar-wide {
+		display: none;
+	}}@media (min-width: 621px) {nav.tc-menubar li.tc-menubar-item.tc-menubar-narrow,
+	.tc-menubar-narrow {
+		display: none;
+	}}@media (max-width: 959px) {.tc-sidebar-scrollable {
+		margin-top: 2em;
+	}}@media (max-width: 620px) {.tc-sidebar-scrollable {
+		margin-top: 2em;
+	}
+}
+@media print {nav.tc-menubar {
+		display: none;
+	}}
+.tc-sites-icon {
+	width: 1em;
+	height: 1em;
+}.tc-sites-menu {
+	font-size: 1.2em;
+}.tc-sites-menu ol {
+	margin: 0;
+	list-style-type: none;
+	padding-left: 0;
+}.tc-sites-menu ol li a {
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+}.tc-sites-menu ol li .tc-sites-menu-disabled {
+	padding: 0.25em 14px 0.25em 14px;
+}.tc-sites-menu-this-site {
+	color: #e5f8fd;
+	background: #bbb;
+	font-size: 0.6em;
+	border-radius: 1em;
+	padding: 2px 6px;
+	margin-left: 1em;
+	vertical-align: top;
+}.tc-sites-menu-icon {
+	margin-right: 0.5em;
 }
