@@ -28,7 +28,6 @@ color:#333333;">Widgets</span><span class="tc-drop-down tc-reveal" hidden="true"
 
 
 
-
 <div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The list widget displays a sequence of tiddlers that match a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filters.html">tiddler filter</a>. It can be used for many purposes:</p><ul><li>Displaying custom lists of links, like in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki5.html">TiddlyWiki5</a>'s sidebar</li><li>Custom lists, such as "all tiddlers tagged 'task' that are not tagged 'done'"</li><li>Listing each of the tags applied to a tiddler</li><li>Handling the main story river</li></ul><p>The tiddlers are displayed by transcluding each in turn through a template. There are several ways to specify the template and for controlling the behaviour of the list.</p><h1 class="">Examples</h1><p><strong>plain list</strong></p><pre><code>&lt;$list filter="[tag[ListWidget]sort[title]]"/&gt;</code></pre><p>Displays as:</p><blockquote class="tc-quote"><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="GroupedLists.html">GroupedLists</a></div></blockquote><p><strong>custom item output</strong></p><pre><code>&lt;$list filter="[tag[ListWidget]sort[title]]"&gt;
 &lt;&lt;currentTiddler&gt;&gt;
 {{||$:/core/ui/ViewTemplate/tags}}
@@ -70,21 +69,6 @@ color:#333333;">ListWidget</span><span class="tc-drop-down tc-reveal" hidden="tr
 </div>
 
 </p></blockquote><p>Note that using the <code>counter</code> attribute can degrade the performance of the list widget in certain circumstances. In particular, it prevents an optimisation that normally occurs when dynamically adding or removing entries.</p><h2 class="">Edit mode</h2><p>The <code>&lt;$list&gt;</code> widget can optionally render draft tiddlers through a different template to handle editing, see <a class="tc-tiddlylink tc-tiddlylink-resolves" href="DraftMechanism.html">DraftMechanism</a>.</p><h2 class=""><code>storyview</code> attribute</h2><p>The <code>storyview</code> attribute specifies the name of an optional module that can animate changes to the list (including navigation). The core ships with the following storyview modules:</p><ul><li><code>classic</code>: renders the list as an ordered sequence of tiddlers</li><li><code>zoomin</code>: just renders the current tiddler from the list, with a zoom animation for navigating between tiddlers</li><li><code>pop</code>: shrinks items in and out of place</li></ul><p>In order for the storyviews to animate correctly each entry in the list should be a single block mode DOM element.</p><h2 class="">History and navigation</h2><p>The optional <code>history</code> attribute specifies the name of a tiddler that is used to track the current tiddler for navigation purposes. When the history tiddler changes the list view responds by telling the listview to handle navigating to the new tiddler. See <a class="tc-tiddlylink tc-tiddlylink-resolves" href="HistoryMechanism.html">HistoryMechanism</a> for details.</p><h2 class="">Additional Notes and Edge Cases</h2><ul><li>If the <code>filter</code> attribute is not present then a default of <code>[!is[system]sort[title]]</code> is used</li><li>If the list widget is completely empty (ie only whitespace between the opening and closing tags), then it behaves as if the content were a <code>DIV</code> or a <code>SPAN</code> containing a link to the current tiddler (it’s a <code>DIV</code> if the list widget is in block mode, or a SPAN if it is in inline mode)</li><li>If the <code>template</code> attribute is not present then the content of the list widget will be used as the template, unless the widget is completely empty in which case a default template is used</li></ul></div>
-
-<div class="tc-comments-segment">
-<div class="tc-comment-button tc-reveal">
-<button class="tc-btn-invisible">
-add comment <svg class="tc-image-add-comment tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M56 56H36a8 8 0 100 16h20v20a8 8 0 1016 0V72h20a8 8 0 100-16H72V36a8 8 0 10-16 0v20zm-12.595 58.362c-6.683 7.659-20.297 12.903-36.006 12.903-2.196 0-4.35-.102-6.451-.3 9.652-3.836 17.356-12.24 21.01-22.874C8.516 94.28 0 79.734 0 63.5 0 33.953 28.206 10 63 10s63 23.953 63 53.5S97.794 117 63 117c-6.841 0-13.428-.926-19.595-2.638z" fill-rule="evenodd"></path></svg>
-</button>
-</div>
-
-<div class="tc-comments">
-<ol class="tc-comment-list">
-
-</ol>
-</div>
-
-</div>
 </div></p>
 </section>
 </body>

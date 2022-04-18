@@ -28,23 +28,7 @@ color:#333333;">RefreshMechanism</span><span class="tc-drop-down tc-reveal" hidd
 
 
 
-
 <div class="tc-tiddler-body tc-reveal"><p>The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="RefreshMechanism.html">RefreshMechanism</a> allows the refresh cycle to be throttled (or deferred) when rapid changes occur to the same tiddler. It is used to maintain responsiveness while editing a draft tiddler, but can also be used on other tiddlers.</p><p>The rules governing refresh throttling are:</p><ul><li>When a change notification occurs, throttling will only take place if all of the modified tiddlers meet at least one of these criteria:<ul><li>Has the field <code>draft.of</code></li><li>Has the field <code>throttle.refresh</code></li><li>Has a title prefixed with <code>$:/temp/volatile/</code></li></ul></li><li>If the refresh cycle is to be throttled, a timer is set for the internal specified in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Hidden%2520Setting%253A%2520Typing%2520Refresh%2520Delay.html">$:/config/Drafts/TypingTimeout</a> (cancelling any preciously set timer)<ul><li>When the timer fires, the refresh cycle is triggered, passing the aggregated titles of all the deferred refresh cycles</li></ul></li></ul></div>
-
-<div class="tc-comments-segment">
-<div class="tc-comment-button tc-reveal">
-<button class="tc-btn-invisible">
-add comment <svg class="tc-image-add-comment tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M56 56H36a8 8 0 100 16h20v20a8 8 0 1016 0V72h20a8 8 0 100-16H72V36a8 8 0 10-16 0v20zm-12.595 58.362c-6.683 7.659-20.297 12.903-36.006 12.903-2.196 0-4.35-.102-6.451-.3 9.652-3.836 17.356-12.24 21.01-22.874C8.516 94.28 0 79.734 0 63.5 0 33.953 28.206 10 63 10s63 23.953 63 53.5S97.794 117 63 117c-6.841 0-13.428-.926-19.595-2.638z" fill-rule="evenodd"></path></svg>
-</button>
-</div>
-
-<div class="tc-comments">
-<ol class="tc-comment-list">
-
-</ol>
-</div>
-
-</div>
 </div></p>
 </section>
 </body>

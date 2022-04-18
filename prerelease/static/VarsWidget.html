@@ -26,7 +26,6 @@ color:#333333;">Widgets</span><span class="tc-drop-down tc-reveal" hidden="true"
 
 
 
-
 <div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The <code class="doc-widget">$vars</code> widget allows multiple variables to be set in one operation. In some situations it can result in simpler code than using the more flexible <a class="tc-tiddlylink tc-tiddlylink-resolves" href="SetWidget.html"><code class="doc-widget">$set</code></a> widget. It differs from the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="LetWidget.html"><code class="doc-widget">$let</code></a> in that variables cannot interfere with the evaluation of other variables within the same <code class="doc-widget">$vars</code>.</p><h1 class="">Content and Attributes</h1><p>The content of the <code class="doc-widget">$vars</code> widget is the scope for the value assigned to the variable.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left"><em>{attributes not starting with $}</em></td><td align="left">Each attribute name specifies a variable name. The attribute value is assigned to the variable</td></tr></tbody></table><p>Attributes will not interfere with the evaluation of other attributes. So if one attribute sets <code class="doc-attr">currentTiddler</code>, and another attribute uses <code class="doc-attr">currentTiddler</code> in its evaluation, it will use the value of <code class="doc-attr">currentTiddler</code> that exists outside the widget's scope.</p><h1 class="">Examples</h1><p>Consider a case where you need to set multiple variables.</p><p>Using the <code class="doc-widget">$vars</code> widget, this situation may be handled in the following way:</p><pre><code>\define helloworld() Hello world!
 
 &lt;$vars greeting="Hi" me={{!!title}} sentence=&lt;&lt;helloworld&gt;&gt;&gt;
@@ -38,21 +37,6 @@ color:#333333;">Widgets</span><span class="tc-drop-down tc-reveal" hidden="true"
 &lt;/$set&gt;
 &lt;/$set&gt;
 &lt;/$set&gt;</code></pre><h1 class="">Remarks</h1><p>It should be noted that this widget differs from the <code class="doc-widget">$set</code> widget in the following ways:</p><ul><li>A fallback (also known as "emptyValue") cannot be specified</li><li>Filters cannot be used to produce a conditional variable assignement</li><li>Variable names must be literal strings</li></ul></div>
-
-<div class="tc-comments-segment">
-<div class="tc-comment-button tc-reveal">
-<button class="tc-btn-invisible">
-add comment <svg class="tc-image-add-comment tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M56 56H36a8 8 0 100 16h20v20a8 8 0 1016 0V72h20a8 8 0 100-16H72V36a8 8 0 10-16 0v20zm-12.595 58.362c-6.683 7.659-20.297 12.903-36.006 12.903-2.196 0-4.35-.102-6.451-.3 9.652-3.836 17.356-12.24 21.01-22.874C8.516 94.28 0 79.734 0 63.5 0 33.953 28.206 10 63 10s63 23.953 63 53.5S97.794 117 63 117c-6.841 0-13.428-.926-19.595-2.638z" fill-rule="evenodd"></path></svg>
-</button>
-</div>
-
-<div class="tc-comments">
-<ol class="tc-comment-list">
-
-</ol>
-</div>
-
-</div>
 </div></p>
 </section>
 </body>
