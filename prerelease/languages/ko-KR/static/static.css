@@ -2593,7 +2593,9 @@ svg.railroad-diagram path.arrow {
 	vertical-align: top;
 }.tc-sites-menu-icon {
 	margin-right: 0.5em;
-}.tc-double-spaced-list li {
+	width: 1em;
+}
+.tc-double-spaced-list li {
 	padding-bottom: .5em;
 	padding-top: .5em;
 }.tc-link-info-item {
