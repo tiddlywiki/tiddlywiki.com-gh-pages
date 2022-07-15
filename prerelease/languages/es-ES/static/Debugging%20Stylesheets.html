@@ -507,22 +507,36 @@ a.doc-deprecated-version.tc-tiddlylink {
 </code>
 	}
 }
-
 .doc-github-contributors {
 	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+}
+ol.doc-github-contributors li {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction:column;
+	width:82px;
+	height:82px;
+	margin:3px 3px 10px 3px;
+	text-decoration:none;
+}
+.doc-github-contributors a img { 
+	border-radius: 50%; 
+	background:#eee;
+}
+.doc-github-contributor-username {
+	display:inline-block;
+	font-size:12px;
+	font-weight:500;
+	text-align:center;
+	width:75px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
-.doc-github-contributors a {
-	text-decoration: none;
-	font-size: 14px;
-	line-height: 18px;
-	vertical-align: baseline;
-}
-
-.doc-github-contributors a img,
-.doc-github-contributors a .doc-github-contributor-username {
-	vertical-align: middle;
-}
 [test="2"]{list-style:disc;}</style><li test="2"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%2524%253A%252Feditions%252Ftw5.com%252Fdoc-styles.html">$:/editions/tw5.com/doc-styles</a></li><style>[data-tiddler-title="Custom styles by data-tiddler-title"] {
   border: 1px solid blue;
 }
