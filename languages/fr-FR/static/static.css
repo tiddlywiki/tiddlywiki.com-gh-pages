@@ -70,7 +70,6 @@ Error message and password prompt
 .tc-password-wrapper input {
 	width: 100%;
 }
-
 .tc-sidebar-header {
 	text-shadow: 0 1px 0 rgba(255,255,255, 0.8);
 }.tc-tiddler-info {
@@ -219,8 +218,6 @@ background-image: -ms-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,25
           box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 
 }
-
-
 /*
 ** Start with the normalize CSS reset, and then belay some of its effects
 *//*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
@@ -666,6 +663,8 @@ input[type="search"]::-webkit-search-results-decoration {
 	color: HighlightText;
 	background-color: ;
 	color: ;
+}form.tc-form-inline {
+	display: inline;
 }/*
 Markdown likes putting code elements inside pre elements
 */
@@ -705,6 +704,8 @@ pre > code {
 .tc-tiddler-body > iframe {
 	width: 100%;
 	height: 600px;
+}:root {
+	color-scheme: light;
 }/*
 ** Links
 */button.tc-tiddlylink,
@@ -775,7 +776,7 @@ a.tc-tiddlylink:hover {
 	right: 0;
 	background: rgba(0,200,0,0.7);
 	text-align: center;
-	content: "Déposer ici (ou appuyer sur « escape » pour annuler)";
+	content: "Déposer ici (ou taper sur la touche « Escape » pour annuler)";
 }.tc-droppable > .tc-droppable-placeholder {
 	display: none;
 }.tc-droppable.tc-dragover > .tc-droppable-placeholder {
@@ -964,7 +965,7 @@ a.tc-tiddlylink:hover {
 	font-weight: normal;
 	line-height: 1.2em;
 	color: #ffffff;
-	white-space: nowrap;
+	white-space: break-spaces;
 	vertical-align: baseline;
 	background-color: #ec6;
 	border-radius: 1em;
@@ -989,7 +990,6 @@ a.tc-tiddlylink:hover {
 	font-size: 0.7em;
 	vertical-align: middle;
 }.tc-tag-manager-table .tc-tag-label {
-	white-space: normal;
 }.tc-tag-manager-tag {
 	width: 100%;
 }button.tc-btn-invisible.tc-remove-tag-button {
@@ -1238,6 +1238,11 @@ a.tc-tiddlylink:hover {
 	background-color: #f8f8f8;
 }.tc-tiddler-frame iframe.tc-edit-texteditor {
 	background-color: #ffffff;
+}.tc-tiddler-frame .tc-edit-fields input.tc-edit-fieldeditor,
+.tc-tiddler-frame .tc-edit-fields select.tc-edit-fieldeditor,
+.tc-tiddler-frame .tc-edit-fields textarea.tc-edit-fieldeditor {
+	margin: 0;
+	padding: 2px 3px;
 }.tc-tiddler-frame .tc-binary-warning {
 	width: 100%;
 	height: 5em;
@@ -1438,7 +1443,7 @@ a.tc-tiddlylink:hover {
 	right:0;
 	height: 100%;
 	background: rgba(0,200,0,0.7);
-	content: "Déposer ici (ou appuyer sur « escape » pour annuler)";
+	content: "Déposer ici (ou taper sur la touche « Escape » pour annuler)";
 	pointer-events: none;
 	position: absolute;
 	display: flex;
@@ -1812,6 +1817,8 @@ a.tc-tiddlylink:hover {
 	
 }.tc-manager-control {
 	margin: 0.5em 0;
+}.tc-manager-control select {
+	max-width: 100%;
 }.tc-manager-list {
 	width: 100%;
 	border-top: 1px solid #bbb;
@@ -2219,7 +2226,7 @@ a.tc-tiddlylink:hover {
 	flex: 1 0 50%;
 }/*
 ** Dirty indicator
-*/body.tc-dirty span.tc-dirty-indicator, body.tc-dirty span.tc-dirty-indicator svg {
+*/html body.tc-dirty span.tc-dirty-indicator, html body.tc-dirty span.tc-dirty-indicator svg {
 	fill: #ff0000;
 	color: #ff0000;
 }/*
@@ -2413,10 +2420,6 @@ a.tc-tiddlylink:hover {
 }.tc-word-break {
 	word-break: break-all;
 }
-
-
-
-
 nav.tc-menubar {
 	position: fixed;
 	z-index: 850;
@@ -2538,8 +2541,6 @@ nav.tc-menubar .tc-drop-down .tc-menubar-dropdown-sidebar button {
 @media print {nav.tc-menubar {
 		display: none;
 	}}
-
-
 /* CSS modified for TiddlyWiki */svg.railroad-diagram {
 	background-color: #ffffff;
 	border-radius: 5px;
@@ -2573,9 +2574,7 @@ svg.railroad-diagram text.comment {
 }
 svg.railroad-diagram path.arrow {
     stroke-width: 2;
-}
-
-.tc-sites-icon {
+}.tc-sites-icon {
 	width: 1em;
 	height: 1em;
 }.tc-sites-menu {
@@ -2606,8 +2605,6 @@ svg.railroad-diagram path.arrow {
 	margin-right: 0.5em;
 	width: 1em;
 }
-
-
 .tc-double-spaced-list li {
 	padding-bottom: .5em;
 	padding-top: .5em;
@@ -2729,11 +2726,9 @@ svg.railroad-diagram path.arrow {
 	display: flex;
 	flex-wrap: wrap;
 }.tc-btn-download {
-	width: 250px;
-	padding: 10px;
+	padding: 10px 30px;
 	border-radius: 5px;
 	background: #1462ff;
-	border-radius: 5px;
         border: none;
 	box-shadow: 0 2px 2px 0 #4a74c9;
 	overflow: hidden;
@@ -2745,8 +2740,6 @@ svg.railroad-diagram path.arrow {
 }.tc-btn-download:active {
 	background: #1475ff;
 }
-
-
 .tc-custom-tiddler-template {
 	border: 3px solid #bbb;
 	border-radius: 1em;
@@ -2770,9 +2763,7 @@ svg.railroad-diagram path.arrow {
 
 }.tc-custom-tiddler-template-list .tc-custom-tiddler-template-list-item .tc-tiddler-frame {
 	margin: 0;
-}
-
-/* adapted from http://edward.oconnor.cx/2007/08/tex-poshlet */
+}/* adapted from http://edward.oconnor.cx/2007/08/tex-poshlet */
 
 .latex {
   text-transform: uppercase;
@@ -2790,14 +2781,10 @@ svg.railroad-diagram path.arrow {
   margin-left: -0.36em;
   margin-right: -0.15em;
 }
-
-
 .monStyle {
   color:#ff0000;
   background-color:#ffff00;
 }
-
-
 .inline-button {
   height: 13px; 
   width: 13px; 
@@ -2805,8 +2792,6 @@ svg.railroad-diagram path.arrow {
   display:inline-block; 
   fill:grey;
 }
-
-
 .doc-def {
 	font-style: normal;
 	font-weight: bold;
@@ -2997,20 +2982,36 @@ a .doc-attr {
           box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
 
 	}
-}.doc-github-contributors {
-	list-style: none;
-}.doc-github-contributors a {
-	text-decoration: none;
-	font-size: 14px;
-	line-height: 18px;
-	vertical-align: baseline;
-}.doc-github-contributors a img,
-.doc-github-contributors a .doc-github-contributor-username {
-	vertical-align: middle;
 }
-
-
-.tc-thumbnail-tabs .tc-tab-buttons {
+.doc-github-contributors {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+}
+ol.doc-github-contributors li {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction:column;
+	width:82px;
+	height:82px;
+	margin:3px 3px 10px 3px;
+	text-decoration:none;
+}
+.doc-github-contributors a img { 
+	border-radius: 50%; 
+	background:#eee;
+}
+.doc-github-contributor-username {
+	display:inline-block;
+	font-size:12px;
+	font-weight:500;
+	text-align:center;
+	width:75px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}.tc-thumbnail-tabs .tc-tab-buttons {
 	background: #ecf2ff;
     text-align: center;
 }.tc-thumbnail-tabs .tc-tab-buttons button {
@@ -3060,9 +3061,7 @@ a .doc-attr {
 }.tc-thumbnail-tabs .tc-btn-pushed {
 	background-color: #333333;
 	fill: #ffffff;
-}
-
-[data-tiddler-title="Custom styles by data-tiddler-title"] {
+}[data-tiddler-title="Custom styles by data-tiddler-title"] {
   border: 1px solid blue;
 }[data-tags*="example-test"] {
   border: 2px solid pink;
@@ -3084,4 +3083,3 @@ a .doc-attr {
   border-radius: 3px;
   font-family: Monaco, Consolas, "Lucida Console", "DejaVu Sans Mono", monospace;
 }
-

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.2.2" />
+<meta name="tiddlywiki-version" content="5.2.3" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -11,37 +11,22 @@
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
-<title>Debugging Stylesheets: TiddlyWiki
-
-— a non-linear personal web notebook
-</title>
+<title>Debugging Stylesheets: TiddlyWiki — a non-linear personal web notebook</title>
 </head>
 <body class="tc-body">
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river tc-static-story-river">
-<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Using%20Stylesheets" data-tags="[[Using Stylesheets]]" data-tiddler-title="Debugging Stylesheets"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><span class="tc-tiddler-title-icon" style="fill:;"></span><h2 class="tc-title">Debugging Stylesheets</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
-<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a>25th November 2021 at 5:59pm</div></div><div class=" tc-reveal">
-<div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="Using Stylesheets">
-<span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Using%20Stylesheets" data-tags="[[Using Stylesheets]]" data-tiddler-title="Debugging Stylesheets" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Debugging Stylesheets</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 25th November 2021 at 5:59pm</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="Using Stylesheets"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
-color:#333333;">
-Using Stylesheets
-</span>
-<span class="tc-drop-down tc-reveal" hidden="true"></span></span></div>
-</div>
+color:#333333;">Using Stylesheets</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div>
 
 
 
 
 
 
-
-
-<div class="tc-tiddler-body tc-reveal"><p>The core shadow tiddler <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fsnippets%252FDebugStylesheets.html">$:/snippets/DebugStylesheets</a> contains a simple tool for tracking down certain problems with mismatched brackets and other nested structures.</p><p>In the list below, any stylesheets containing an error will be marked with a red cross:</p><p><style>[test]{list-style:'❌'}</style>
-<ul>
-
-<style>.tc-double-spaced-list li {
+<div class="tc-tiddler-body tc-reveal"><p>The core shadow tiddler <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fsnippets%252FDebugStylesheets.html">$:/snippets/DebugStylesheets</a> contains a simple tool for tracking down certain problems with mismatched brackets and other nested structures.</p><p>In the list below, any stylesheets containing an error will be marked with a red cross:</p><p><style>[test]{list-style:'❌'}</style><ul><style>.tc-double-spaced-list li {
 	padding-bottom: .5em;
 	padding-top: .5em;
 }
@@ -220,11 +205,9 @@ div.content {
 }
 
 .tc-btn-download {
-	width: 250px;
-	padding: 10px;
+	padding: 10px 30px;
 	border-radius: 5px;
 	background: #1462ff;
-	border-radius: 5px;
         border: none;
 	box-shadow: 0 2px 2px 0 #4a74c9;
 	overflow: hidden;
@@ -238,10 +221,7 @@ div.content {
 .tc-btn-download:active {
 	background: #1475ff;
 }
-[test="1"]{list-style:disc;}</style>
-<li test="1"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%2524%253A%252F_tw5.com-styles.html">$:/_tw5.com-styles</a></li>
-
-<style>.doc-def {
+[test="1"]{list-style:disc;}</style><li test="1"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%2524%253A%252F_tw5.com-styles.html">$:/_tw5.com-styles</a></li><style>.doc-def {
 	font-style: normal;
 	font-weight: bold;
 }
@@ -493,26 +473,37 @@ a.doc-deprecated-version.tc-tiddlylink {
 </code>
 	}
 }
-
 .doc-github-contributors {
 	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+}
+ol.doc-github-contributors li {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction:column;
+	width:82px;
+	height:82px;
+	margin:3px 3px 10px 3px;
+	text-decoration:none;
+}
+.doc-github-contributors a img { 
+	border-radius: 50%; 
+	background:#eee;
+}
+.doc-github-contributor-username {
+	display:inline-block;
+	font-size:12px;
+	font-weight:500;
+	text-align:center;
+	width:75px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
-.doc-github-contributors a {
-	text-decoration: none;
-	font-size: 14px;
-	line-height: 18px;
-	vertical-align: baseline;
-}
-
-.doc-github-contributors a img,
-.doc-github-contributors a .doc-github-contributor-username {
-	vertical-align: middle;
-}
-[test="2"]{list-style:disc;}</style>
-<li test="2"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%2524%253A%252Feditions%252Ftw5.com%252Fdoc-styles.html">$:/editions/tw5.com/doc-styles</a></li>
-
-<style>[data-tiddler-title="Custom styles by data-tiddler-title"] {
+[test="2"]{list-style:disc;}</style><li test="2"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%2524%253A%252Feditions%252Ftw5.com%252Fdoc-styles.html">$:/editions/tw5.com/doc-styles</a></li><style>[data-tiddler-title="Custom styles by data-tiddler-title"] {
   border: 1px solid blue;
 }
 
@@ -541,11 +532,7 @@ a.doc-deprecated-version.tc-tiddlylink {
   font-family: Monaco, Consolas, "Lucida Console", "<a class="tc-tiddlylink tc-tiddlylink-missing" href="DejaVu.html">DejaVu</a> Sans Mono", monospace;
 }
 
-[test="3"]{list-style:disc;}</style>
-<li test="3"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Custom%2520data-styles.html">Custom data-styles</a></li>
-
-</ul>
-</p></div>
+[test="3"]{list-style:disc;}</style><li test="3"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Custom%2520data-styles.html">Custom data-styles</a></li></ul></p></div>
 
 </div></p>
 </section>
