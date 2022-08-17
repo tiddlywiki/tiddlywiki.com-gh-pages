@@ -522,14 +522,17 @@ summary {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
-}input[type="search"] {
-	outline-offset: initial;
-}html button {
+}/*
+** Button default styles. Makes them look consistent for all browsers
+*/
+html button {
 	line-height: 1.2;
 	color: ;
 	fill: ;
 	background: ;
-	border-color: ;
+	border: 1px solid ;
+	border-radius: 3px;
+	padding: 2px 5px;
 }button:disabled svg {
 	fill: #bbb;
 }/*
@@ -623,15 +626,21 @@ summary {
 }dl dt {
 	font-weight: bold;
 	margin-top: 6px;
-}button, textarea, input, select {
-	outline-color: #5778d8;
+}/*
+** Definition for text input elements so they look consistent for all browsers
+*/textarea, input, select {
+	border: 2px solid #cccccc;
+	background-color: #f8f8f8;
+}/* Input elements accessibility -- overwrite the reset */
+:focus-visible {
+	outline: 2px solid #5778d8;
+	outline-offset: -2px;    /* same as in reset.css [type='search'] but for more elements */
 }textarea,
 input[type=text],
 input[type=search],
 input[type=""],
 input:not([type]) {
 	color: #4e432f;
-	background: #e5f8fd;
 }input[type="checkbox"] {
 	vertical-align: middle;
 }input[type="search"]::-webkit-search-decoration,
@@ -1204,6 +1213,7 @@ a.tc-tiddlylink:hover {
 	font-weight: normal;
 }.tc-tiddler-frame .tc-tiddler-controls {
 	float: right;
+	padding: 3px; /* make space for outline */
 }.tc-tiddler-controls .tc-drop-down {
 	font-size: 0.6em;
 }.tc-tiddler-controls .tc-drop-down .tc-drop-down {
