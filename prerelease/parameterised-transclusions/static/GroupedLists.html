@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.2.4-prerelease" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>GroupedLists: TiddlyWiki Pre-release — 5.2.4-prerelease</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-ListWidget tc-tagged-Lists" data-tags="ListWidget Lists" data-tiddler-title="GroupedLists" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">GroupedLists</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 21st February 2015 at 11:01pm</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="Lists"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#333333;
+color:#333333;">Lists</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="ListWidget"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#333333;
+color:#333333;">ListWidget</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div>
+
+
+
+
+
+
+<div class="tc-tiddler-body tc-reveal"><p>The following sidebar tabs give examples of grouped lists created by nesting.</p><h2 class="">Types Tab</h2><p>For the <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fui%252FMoreSideBar%252FTypes.html">Types</a> tab, the outer list filter as shown below selects each discrete value found in the <code>type</code> field. The inner list filter selects all the (non-system) tiddlers with that type.</p><p><pre><code>\whitespace trim
+&lt;$list filter={{$:/core/Filters/TypedTiddlers!!filter}}&gt;
+&lt;div class="tc-menu-list-item"&gt;
+&lt;$view field="type"/&gt;
+&lt;$list filter="[type{!!type}!is[system]sort[title]]"&gt;
+&lt;div class="tc-menu-list-subitem"&gt;
+&lt;$link to={{!!title}}&gt;&lt;$view field="title"/&gt;&lt;/$link&gt;
+&lt;/div&gt;
+&lt;/$list&gt;
+&lt;/div&gt;
+&lt;/$list&gt;
+</code></pre></p><h2 class="">Recent Tab</h2><p>The list in the <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fui%252FSideBar%252FRecent.html">Recent</a> tab is generated using the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="timeline%2520Macro.html"><code class="doc-var">timeline</code></a> macro. Here, the outer list filter selects each discrete day found in the <code>modified</code> field, while the inner list filter selects all the tiddlers dated the same day in the <code>modified</code> field.</p><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fmacros%252Ftimeline.html">$:/core/macros/timeline</a>:</p><p><pre><code>\define timeline-title()
+\whitespace trim
+&lt;!-- Override this macro with a global macro 
+     of the same name if you need to change 
+     how titles are displayed on the timeline 
+     --&gt;
+&lt;$view field="title"/&gt;
+\end
+\define timeline(limit:"100",format:"DDth MMM YYYY",subfilter:"",dateField:"modified")
+\whitespace trim
+&lt;div class="tc-timeline"&gt;
+&lt;$list filter="[!is[system]$subfilter$has[$dateField$]!sort[$dateField$]limit[$limit$]eachday[$dateField$]]"&gt;
+&lt;div class="tc-menu-list-item"&gt;
+&lt;$view field="$dateField$" format="date" template="$format$"/&gt;
+&lt;$list filter="[sameday:$dateField${!!$dateField$}!is[system]$subfilter$!sort[$dateField$]]"&gt;
+&lt;div class="tc-menu-list-subitem"&gt;
+&lt;$link to={{!!title}}&gt;&lt;&lt;timeline-title&gt;&gt;&lt;/$link&gt;
+&lt;/div&gt;
+&lt;/$list&gt;
+&lt;/div&gt;
+&lt;/$list&gt;
+&lt;/div&gt;
+\end
+</code></pre></p></div>
+
+</div></p>
+</section>
+</body>
+</html>
+
