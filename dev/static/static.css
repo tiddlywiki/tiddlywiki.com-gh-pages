@@ -2557,6 +2557,14 @@ a.tc-tiddlylink:hover {
 }.hljs-strong {
   font-weight: bold;
 }
+.tc-innerwiki-wrapper {
+	border: 1px solid #666;
+	
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+     -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+
+}
 nav.tc-menubar {
 	position: fixed;
 	z-index: 850;

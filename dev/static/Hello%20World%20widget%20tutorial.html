@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.2.3" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>Hello World widget tutorial: TiddlyWiki/Dev — documentation for developers</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/dev/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/dev/</a></div></div>
+</p>
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists " data-tags="" data-tiddler-title="Hello World widget tutorial" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Hello World widget tutorial</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 16th February 2019 at 5:56pm</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"></div></div><div class="tc-tiddler-body tc-reveal"><p>Now let's create a widget which actually has output.</p><p>When tiddlywiki encounters a widget definition like <code>&lt;$hello&gt;</code> it will create an object which is an instance of the class which is exported by the widget code. </p><p>In addition to creating an instance of the class, tiddlywiki will call the render method of the resulting object. The render method is expected to create a dom node which will be display in place of the widget.</p><p>In the <code>donothing</code> example the core widget was exported. The core widget class doesn't have a render method which creates a dom node and that's why there is no output. Getting output requires writing a widget class which inherits from the core <code>Widget</code> class. Code in the render method of this class will display the hello world message.</p><p>The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="hello.js.html">hello.js</a> tiddler has code which accomplishes that:
+<pre class="hljs"><code class="javascript hljs"><span class="hljs-comment">/*\
+
+Hello, World widget
+
+\*/</span>
+(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>){
+
+<span class="hljs-comment">/*jslint node: true, browser: true */</span>
+<span class="hljs-comment">/*global $tw: false */</span>
+<span class="hljs-meta">&quot;use strict&quot;</span>;
+
+<span class="hljs-keyword">var</span> <span class="hljs-title class_">Widget</span> = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;$:/core/modules/widgets/widget.js&quot;</span>).<span class="hljs-property">widget</span>;
+
+<span class="hljs-keyword">var</span> <span class="hljs-title class_">MyWidget</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params">parseTreeNode,options</span>) {
+	<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">initialise</span>(parseTreeNode,options);
+};
+
+<span class="hljs-comment">/*
+Inherit from the base widget class
+*/</span>
+<span class="hljs-title class_">MyWidget</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Widget</span>();
+
+<span class="hljs-comment">/*
+Render this widget into the DOM
+*/</span>
+<span class="hljs-title class_">MyWidget</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">render</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params">parent,nextSibling</span>) {
+	<span class="hljs-variable language_">this</span>.<span class="hljs-property">parentDomNode</span> = parent;
+	<span class="hljs-keyword">var</span> textNode = <span class="hljs-variable language_">this</span>.<span class="hljs-property">document</span>.<span class="hljs-title function_">createTextNode</span>(<span class="hljs-string">&quot;Hello, World!&quot;</span>);
+	parent.<span class="hljs-title function_">insertBefore</span>(textNode,nextSibling);
+	<span class="hljs-variable language_">this</span>.<span class="hljs-property">domNodes</span>.<span class="hljs-title function_">push</span>(textNode);
+};
+
+<span class="hljs-built_in">exports</span>.<span class="hljs-property">hello</span> = <span class="hljs-title class_">MyWidget</span>;
+
+})();
+</code></pre>
+The code for importing the core widget class remains, but now we also have code to create our own class which inherits from it. In addition an implementation of the <code>render</code> method is included. Here is the result:
+
+<div class=" tc-innerwiki-wrapper" style="overflow:hidden;position:relative;box-sizing:content-box;"><svg viewBox="0 0 600 400" style="width:100%;position:absolute;z-index:1;pointer-events:none;">
+	
+	
+	
+
+</svg><img src="undefined" style="width:100%;"></div>
+
+
+</p></div>
+</div></p>
+</section>
+</body>
+</html>
+

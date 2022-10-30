@@ -1,0 +1,557 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.2.3" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>Child widgets tutorial: TiddlyWiki/Dev — documentation for developers</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/dev/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/dev/</a></div></div>
+</p>
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists " data-tags="" data-tiddler-title="Child widgets tutorial" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Child widgets tutorial</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 22nd February 2019 at 11:11pm</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"></div></div><div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>Until now the examples have covered only simple, leaf widgets, but widgets can be arranged into a hierarchy. Compared to a leaf-only widget, widget classes which support having children must contain code to instantiate the children.</p><p>Not all widgets need to support having children. Widgets whose only purpose is to integrate third party javascript libraries, for example may not need it.</p><h1 class="">wiki text ⇨ parse tree ⇨ widget tree ⇨ DOM tree</h1><ol><li><a class="tc-tiddlylink-external" href="https://tiddlywiki.com/#WikiText" rel="noopener noreferrer" target="_blank">wiki text</a> - Users write content in tiddlers using wiki text.</li><li><a class="tc-tiddlylink-external" href="https://tiddlywiki.com/dev/#ParsingMechanism" rel="noopener noreferrer" target="_blank">parse tree</a> - A parse tree is a JSON data structure describing the wiki text. Wiki text can be converted into a parse tree using <code>this.wiki.parseText</code>.</li><li><strong>widget tree</strong> - Most items in the parse tree correspond to one or more items in the widget tree. The <code>this.makeChildWidgets</code> method is used to convert the parse tree into a widget tree.</li><li><a class="tc-tiddlylink-external" href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction" rel="noopener noreferrer" target="_blank">DOM tree</a> - A DOM tree is a standard javascript datastructure used by browsers to display a web page. The <code>this.renderChildren</code> method is used to instantiate the widget class and then render each widget in the widget tree. If a given widget will be visible in the browser, then one or more DOM nodes will be created.</li></ol><h1 class="">Examples</h1><h2 class="">Simple trees without nesting</h2><p><a class="tc-tiddlylink-external" href="https://tiddlywiki.com/#Widgets%20in%20WikiText" rel="noopener noreferrer" target="_blank">Widgets in wiki text</a> have a syntax similar to html (i.e. <code>&lt;$list/&gt;</code>). But all <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/#WikiText" rel="noopener noreferrer" target="_blank">wiki markup</a> is seen by the tiddlywiki code as widgets.</p><p>Even a simple string with no special syntax will be treated as a widget. In this case a widget of type <code>text</code>:</p><p><table>
+<thead>
+<tr><th>wiki text</th><th>html</th><th>renders as</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hello</code></td>
+<td>
+
+hello
+
+</td>
+<td>hello</td>
+</tr>
+</tbody>
+</table></p><p><table>
+<thead>
+<tr><th>parse tree</th><th>widget tree</th></tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align: text-top">
+<pre><code>
+
+[
+    {
+        "type": "text",
+        "text": "hello",
+        "start": 0,
+        "end": 5
+    }
+]
+
+</code></pre>
+</td>
+<td style="vertical-align: text-top">
+<pre><code>
+
+{
+    "type": "widget",
+    "children": [
+        {
+            "type": "text",
+            "text": "hello"
+        }
+    ]
+}
+
+</code></pre>
+</td>
+</tr>
+</tbody>
+</table></p><p>The above bare string of text is mostly just a synonym for this widget syntax:</p><p><table>
+<thead>
+<tr><th>wiki text</th><th>html</th><th>renders as</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;$text text=hello/&gt;</code></td>
+<td>
+
+hello
+
+</td>
+<td>hello</td>
+</tr>
+</tbody>
+</table></p><p><table>
+<thead>
+<tr><th>parse tree</th><th>widget tree</th></tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align: text-top">
+<pre><code>
+
+[
+    {
+        "type": "text",
+        "start": 0,
+        "attributes": {
+            "text": {
+                "start": 6,
+                "name": "text",
+                "type": "string",
+                "value": "hello",
+                "end": 17
+            }
+        },
+        "orderedAttributes": [
+            {
+                "start": 6,
+                "name": "text",
+                "type": "string",
+                "value": "hello",
+                "end": 17
+            }
+        ],
+        "tag": "$text",
+        "isSelfClosing": true,
+        "end": 19,
+        "isBlock": false
+    }
+]
+
+</code></pre>
+</td>
+<td style="vertical-align: text-top">
+<pre><code>
+
+{
+    "type": "widget",
+    "children": [
+        {
+            "type": "text",
+            "attributes": {
+                "text": "hello"
+            }
+        }
+    ]
+}
+
+</code></pre>
+</td>
+</tr>
+</tbody>
+</table></p><p>Some of the details of the parseTree and widgetTree are different in the two examples, but the general structure is the same and the rendered output is the same.</p><p>In these two simple examples, there is no nesting and so no child widgets are created. </p><h2 class="">Trees with one level of nesting</h2><p>This next example shows the structure for bold wiki syntax. It is still simple, but does introduce one level of nesting: <code>element</code>→<code>text</code></p><p>The wiki syntax for bold converts to the standard html element <code>strong</code>. Any standard html element is represented in tiddlywiki as a widget of type <code>element</code>:</p><p><table>
+<thead>
+<tr><th>wiki text</th><th>html</th><th>renders as</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><code>''bold''</code></td>
+<td>
+
+&lt;strong&gt;bold&lt;/strong&gt;
+
+</td>
+<td><strong>bold</strong></td>
+</tr>
+</tbody>
+</table></p><p><table>
+<thead>
+<tr><th>parse tree</th><th>widget tree</th></tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align: text-top">
+<pre><code>
+
+[
+    {
+        "type": "element",
+        "tag": "strong",
+        "children": [
+            {
+                "type": "text",
+                "text": "bold",
+                "start": 2,
+                "end": 6
+            }
+        ]
+    }
+]
+
+</code></pre>
+</td>
+<td style="vertical-align: text-top">
+<pre><code>
+
+{
+    "type": "widget",
+    "children": [
+        {
+            "type": "element",
+            "tag": "strong",
+            "children": [
+                {
+                    "type": "text",
+                    "text": "bold"
+                }
+            ]
+        }
+    ]
+}
+
+</code></pre>
+</td>
+</tr>
+</tbody>
+</table></p><p>Another example showing one level of nesting (<code>link</code>→<code>text</code>):</p><p><table>
+<thead>
+<tr><th>wiki text</th><th>html</th><th>renders as</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;$link to=atiddler&gt;link&lt;/$link&gt;</code></td>
+<td>
+
+&lt;a class="tc-tiddlylink tc-tiddlylink-missing" href="atiddler.html"&gt;link&lt;/a&gt;
+
+</td>
+<td><a class="tc-tiddlylink tc-tiddlylink-missing" href="atiddler.html">link</a></td>
+</tr>
+</tbody>
+</table></p><p><table>
+<thead>
+<tr><th>parse tree</th><th>widget tree</th></tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align: text-top">
+<pre><code>
+
+[
+    {
+        "type": "link",
+        "start": 0,
+        "attributes": {
+            "to": {
+                "start": 6,
+                "name": "to",
+                "type": "string",
+                "value": "atiddler",
+                "end": 18
+            }
+        },
+        "orderedAttributes": [
+            {
+                "start": 6,
+                "name": "to",
+                "type": "string",
+                "value": "atiddler",
+                "end": 18
+            }
+        ],
+        "tag": "$link",
+        "end": 19,
+        "isBlock": false,
+        "children": [
+            {
+                "type": "text",
+                "text": "link",
+                "start": 19,
+                "end": 23
+            }
+        ]
+    }
+]
+
+</code></pre>
+</td>
+<td style="vertical-align: text-top">
+<pre><code>
+
+{
+    "type": "widget",
+    "children": [
+        {
+            "type": "link",
+            "attributes": {
+                "to": "atiddler"
+            },
+            "children": [
+                {
+                    "type": "text",
+                    "text": "link"
+                }
+            ]
+        }
+    ]
+}
+
+</code></pre>
+</td>
+</tr>
+</tbody>
+</table></p><h2 class="">Widgets with no DOM contribution</h2><p>Not all widgets contribute items to the DOM. The purpose of some widgets is to affect the display of descendant widgets by changing some state. The <code>$set</code> widget for example sets a variable which will be accessible to the descendant widgets:</p><p><table>
+<thead>
+<tr><th>wiki text</th><th>html</th><th>renders as</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;$set name=myvar value=hi/&gt;</code></td>
+<td>
+
+
+
+</td>
+<td></td>
+</tr>
+</tbody>
+</table></p><p><table>
+<thead>
+<tr><th>parse tree</th><th>widget tree</th></tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align: text-top">
+<pre><code>
+
+[
+    {
+        "type": "set",
+        "start": 0,
+        "attributes": {
+            "name": {
+                "start": 5,
+                "name": "name",
+                "type": "string",
+                "value": "myvar",
+                "end": 16
+            },
+            "value": {
+                "start": 16,
+                "name": "value",
+                "type": "string",
+                "value": "hi",
+                "end": 25
+            }
+        },
+        "orderedAttributes": [
+            {
+                "start": 5,
+                "name": "name",
+                "type": "string",
+                "value": "myvar",
+                "end": 16
+            },
+            {
+                "start": 16,
+                "name": "value",
+                "type": "string",
+                "value": "hi",
+                "end": 25
+            }
+        ],
+        "tag": "$set",
+        "isSelfClosing": true,
+        "end": 27,
+        "isBlock": false
+    }
+]
+
+</code></pre>
+</td>
+<td style="vertical-align: text-top">
+<pre><code>
+
+{
+    "type": "widget",
+    "children": [
+        {
+            "type": "set",
+            "attributes": {
+                "name": "myvar",
+                "value": "hi"
+            }
+        }
+    ]
+}
+
+</code></pre>
+</td>
+</tr>
+</tbody>
+</table></p><p>Nothing is rendered and there is no html, but the parse tree and widget tree contain information about the variable.</p><h2 class="">Dynamic widget children using this.wiki.parseText</h2><p>In all the examples so far, there has been a close mapping between the nesting structure of the parse tree and the widget tree. If the item is in the parse tree, then it is in the widget tree. If the parse tree item has children, then the widget tree has the same number of children.</p><p>However, there are several examples of widgets in which more levels of nesting are created dynamically during the widget rendering process</p><p>The <code>$macrocall</code> widget is one example:</p><p><table>
+<thead>
+<tr><th>wiki text</th><th>html</th><th>renders as</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;$macrocall $name=now/&gt;</code></td>
+<td>
+
+16:12, 30th October 2022
+
+</td>
+<td>16:12, 30th October 2022</td>
+</tr>
+</tbody>
+</table></p><p><table>
+<thead>
+<tr><th>parse tree</th><th>widget tree</th></tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align: text-top">
+<pre><code>
+
+[
+    {
+        "type": "macrocall",
+        "start": 0,
+        "attributes": {
+            "$name": {
+                "start": 11,
+                "name": "$name",
+                "type": "string",
+                "value": "now",
+                "end": 21
+            }
+        },
+        "orderedAttributes": [
+            {
+                "start": 11,
+                "name": "$name",
+                "type": "string",
+                "value": "now",
+                "end": 21
+            }
+        ],
+        "tag": "$macrocall",
+        "isSelfClosing": true,
+        "end": 23,
+        "isBlock": false
+    }
+]
+
+</code></pre>
+</td>
+<td style="vertical-align: text-top">
+<pre><code>
+
+{
+    "type": "widget",
+    "children": [
+        {
+            "type": "macrocall",
+            "attributes": {
+                "$name": "now"
+            },
+            "children": [
+                {
+                    "type": "vars",
+                    "children": [
+                        {
+                            "type": "text",
+                            "text": "16:12, 30th October 2022"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+</code></pre>
+</td>
+</tr>
+</tbody>
+</table></p><p>The parse tree has just a single type=$macrocall element with no children. The widget tree has that same type=$macrocall element, but it also has a child widget which wasn't in the parse tree.</p><p>In all cases, the <code>$macrocall</code> widget calls the given macro and then calls <code>this.wiki.parseText</code> on the output. This results in a new parse tree which is used to make the child widgets.</p><p>In this particular case, the <code>now</code> macro is called. It returns a simple string of text, so when it is parsed the result causes the creation of a single child text widget containing the current date and time.</p><h2 class="">Widgets which do not support nesting</h2><p>Just as some widgets can cause widget trees to have more nesting than the parse tree, some widgets can cause widget trees to have less nesting.</p><p>This happens when there is no use for the widget to have any children. The <code>$text</code> widget, for example, has no use for displaying any descendants.</p><p>This behavior is accomplished by not calling the <code>makeChildWidgets</code> method. Without that method call, the child widgets are not created from the child parse tree items. For example:</p><p><table>
+<thead>
+<tr><th>wiki text</th><th>html</th><th>renders as</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;$text text="hi"&gt;ignored child text&lt;/$text&gt;</code></td>
+<td>
+
+hi
+
+</td>
+<td>hi</td>
+</tr>
+</tbody>
+</table></p><p><table>
+<thead>
+<tr><th>parse tree</th><th>widget tree</th></tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align: text-top">
+<pre><code>
+
+[
+    {
+        "type": "text",
+        "start": 0,
+        "attributes": {
+            "text": {
+                "start": 6,
+                "name": "text",
+                "type": "string",
+                "value": "hi",
+                "end": 16
+            }
+        },
+        "orderedAttributes": [
+            {
+                "start": 6,
+                "name": "text",
+                "type": "string",
+                "value": "hi",
+                "end": 16
+            }
+        ],
+        "tag": "$text",
+        "end": 17,
+        "isBlock": false,
+        "children": [
+            {
+                "type": "text",
+                "text": "ignored child text",
+                "start": 17,
+                "end": 35
+            }
+        ]
+    }
+]
+
+</code></pre>
+</td>
+<td style="vertical-align: text-top">
+<pre><code>
+
+{
+    "type": "widget",
+    "children": [
+        {
+            "type": "text",
+            "attributes": {
+                "text": "hi"
+            }
+        }
+    ]
+}
+
+</code></pre>
+</td>
+</tr>
+</tbody>
+</table></p><p>Since the <code>$text</code> widget does not have a call to <code>makeChildWidgets</code>, 'ignored child text' above is present in the parse tree, but not in the widget tree.</p><h1 class="">Reference</h1><table><tbody><tr class="evenRow"><th>method</th><th>when to call</th><th>what it does</th></tr><tr class="oddRow"><td><code>makeChildWidgets</code></td><td>directly or indirectly from <code>render</code> method</td><td>converts child parse tree items into widget tree items</td></tr><tr class="evenRow"><td><code>renderChildren</code></td><td>directly or indirectly from <code>render</code> method, after the <code>makeChildWidgets</code> call</td><td>calls the <code>render</code> method of the child widget</td></tr><tr class="oddRow"><td><code>refreshChildren</code></td><td>directly or indirectly from <code>refresh</code> method, only needed if <code>refreshSelf</code> is not called</td><td>calls the <code>refresh</code> method of of the child widgets so they can check if refresh is needed</td></tr><tr class="evenRow"><td><code>this.wiki.parseText</code></td><td>pass the output parse tree to <code>makeChildWidgets</code></td><td>converts the given text to a parse tree...only needed for dynamically constructed parsetree</td></tr></tbody></table><table><tbody><tr class="evenRow"><th>example call</th><th>purpose</th><th>widgets using this approach</th></tr><tr class="oddRow"><td><code>this.makeChildWidgets()</code></td><td>construct child widgets from the static parse tree</td><td><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fmodules%252Fwidgets%252Flink.js.html">$link</a>, <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fmodules%252Fwidgets%252Fbutton.js.html">$button</a>, etc.</td></tr><tr class="evenRow"><td><code>this.makeChildWidgets(parseTreeNodes)</code></td><td>construct child widgets from a dynamic parse tree</td><td><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fmodules%252Fwidgets%252Flist.js.html">$list</a>, <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fmodules%252Fwidgets%252Ftransclude.js.html">$transclude</a>, <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fmodules%252Fwidgets%252Fmacrocall.js.html">$macrocall</a>, etc</td></tr><tr class="oddRow"><td><code>this.renderChildren(parent, nextSibling)</code></td><td>when the widget adds nothing to the dom, just pass the <code>render</code> arguments through to the children</td><td><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fmodules%252Fwidgets%252Fset.js.html">$set</a>, <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fmodules%252Fwidgets%252Fimportvariables.js.html">$importvariables</a>, <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fmodules%252Fwidgets%252Ftiddler.js.html">$tiddler</a>, <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fmodules%252Fwidgets%252Fwikify.js.html">$wikify</a>, etc.</td></tr><tr class="evenRow"><td><code>this.renderChildren(domNode, null)</code></td><td>passes the dom node generated by this widget into the children</td><td><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fmodules%252Fwidgets%252Flink.js.html">$link</a>, <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fmodules%252Fwidgets%252Fbutton.js.html">$button</a>, etc</td></tr></tbody></table></div>
+</div></p>
+</section>
+</body>
+</html>
+
