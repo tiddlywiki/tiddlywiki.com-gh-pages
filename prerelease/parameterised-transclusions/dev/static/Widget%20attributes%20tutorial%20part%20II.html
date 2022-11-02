@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.3.0-prerelease" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>Widget attributes tutorial part II: TiddlyWiki/Dev — documentation for developers</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/dev/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/dev/</a></div></div>
+</p>
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists " data-tags="" data-tiddler-title="Widget attributes tutorial part II" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Widget attributes tutorial part II</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 17th February 2019 at 1:21am</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"></div></div><div class="tc-tiddler-body tc-reveal"><p>This example will build on the previous one. The only modification will be to add a check to the <code>refresh</code> method. The <code>refreshSelf</code> will only be called if a change to the attributes is detected.</p><p>The <code>computeAttributes</code> method returns a Javascript object containing properties for each attribute which has changed. So a check like <code>if (changedAttributes.attr1 || changedAttributes.attr2 || changedAttributes.attr3)</code> etc. can be used to detect the change.  See the refresh method in <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fmodules%252Fwidgets%252Fview.js.html">$:/core/modules/widgets/view.js</a> for an example showing the check for multiple attributes.</p><p>For this example, <code>message</code> is the only attribute implemented.</p><pre class="hljs"><code class="javascript hljs"><span class="hljs-comment">/*
+Refresh if the attribute value changed since render
+*/</span>
+<span class="hljs-title class_">MyWidget</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">refresh</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params">changedTiddlers</span>) {
+	<span class="hljs-comment">// Find which attributes have changed</span>
+	<span class="hljs-keyword">var</span> changedAttributes = <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">computeAttributes</span>();
+	<span class="hljs-keyword">if</span> (changedAttributes.<span class="hljs-property">message</span>) {
+		<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">refreshSelf</span>();
+		<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+	} <span class="hljs-keyword">else</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+	}
+};</code></pre><p>The full code can be seen at <a class="tc-tiddlylink tc-tiddlylink-resolves" href="hello-attribute-optimized.js.html">hello-attribute-optimized.js</a> and here is the result (<a class="tc-tiddlylink tc-tiddlylink-resolves" href="Widget%2520attributes%2520demo%2520II.html">Widget attributes demo II</a>):</p><p>
+<div class=" tc-innerwiki-wrapper" style="overflow:hidden;position:relative;box-sizing:content-box;"><svg viewBox="0 0 600 400" style="width:100%;position:absolute;z-index:1;pointer-events:none;">
+	
+	
+	
+
+	
+
+</svg><img src="undefined" style="width:100%;"></div>
+
+</p><p>The visible behavior here should be identical to the unoptimized behavior of the previous tutorial.
+</p></div>
+</div></p>
+</section>
+</body>
+</html>
+

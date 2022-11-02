@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.3.0-prerelease" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>Widget refresh tutorial part II: TiddlyWiki/Dev — documentation for developers</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/dev/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/dev/</a></div></div>
+</p>
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists " data-tags="" data-tiddler-title="Widget refresh tutorial part II" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Widget refresh tutorial part II</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 17th February 2019 at 1:43am</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"></div></div><div class="tc-tiddler-body tc-reveal"><p>This example is like <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Widget%2520refresh%2520tutorial%2520part%2520I.html">Widget refresh tutorial part I</a> except the widget output will be automatically refreshed when the tiddler field changes.</p><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="tiddlerfield.js.html">tiddlerfield.js</a> is the same as <a class="tc-tiddlylink tc-tiddlylink-resolves" href="tiddlerfield-norefresh.js.html">tiddlerfield-norefresh.js</a>, except this <code>refresh</code> method is added:</p><pre class="hljs"><code class="javascript hljs"><span class="hljs-comment">/*
+A widget with optimized performance will selectively refresh, but here we refresh always
+*/</span>
+<span class="hljs-title class_">MyWidget</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">refresh</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params">changedTiddlers</span>) {
+	<span class="hljs-comment">// Regenerate and rerender the widget and</span>
+	<span class="hljs-comment">// replace the existing DOM node</span>
+	<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">refreshSelf</span>();
+	<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+};</code></pre><p>The <code>refreshSelf</code> method called above is implemented by the core widget class and it takes care of cleaning the old dom node and calling the render function.</p><p>Here is the result (<a class="tc-tiddlylink tc-tiddlylink-resolves" href="Widget%2520refresh%2520demo%2520II.html">Widget refresh demo II</a>):</p><p>
+<div class=" tc-innerwiki-wrapper" style="overflow:hidden;position:relative;box-sizing:content-box;"><svg viewBox="0 0 600 400" style="width:100%;position:absolute;z-index:1;pointer-events:none;">
+	
+	
+	
+	
+
+</svg><img src="undefined" style="width:100%;"></div>
+
+</p><p>And now any typing into the input box will cause both the <code>tiddlerfield</code> and the <code>view</code> widget output to refresh immediately.</p><p>Note this is a naive version of <code>refresh</code>. It unconditionally refreshes itself. This is far from optimal since the <code>refresh</code> method for all visible widgets is called every time the tiddler store changes. But the way we've defined our widget, the output ONLY depends on the tiddler titled <code>text</code>.</p><p>In tiddlywiki the tiddler store is used for everything and almost any interaction will result in an update to the store. This means almost any interaction will cause the refresh method to be called. If you type into the search box, for example, the <code>tiddlerfield</code> widget will be refreshed with every keystroke.</p><p>Adding and removing dom elements is a relatively expensive operation, so if someone has used the list widget to create a few hundred instances of this widget, then such tiddlywiki interactions might gain a noticable lag. Therefore, it usually makes sense to avoid modifying the dom when possible by writing a smarter <code>refresh</code> method. </p><p><strong>Exercise</strong> - change the refresh method above to only call <code>refreshSelf</code> when the <code>changedTiddlers</code> input array contains <code>test</code> as one of its entries (Hint: see the refresh method in <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fmodules%252Fwidgets%252Fview.js.html">$:/core/modules/widgets/view.js</a> for an example).
+</p></div>
+</div></p>
+</section>
+</body>
+</html>
+
