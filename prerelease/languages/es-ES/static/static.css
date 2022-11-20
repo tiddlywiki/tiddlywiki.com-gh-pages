@@ -739,6 +739,9 @@ Table utility classes
 CSV parser plugin
 */.tc-csv-table {
 	white-space: nowrap;
+}.tc-csv-table th,
+.tc-csv-table td {
+	white-space: pre-line;
 }/*
 Tiddler frame in story river
 */.tc-tiddler-frame img,
