@@ -38,14 +38,11 @@ color:#333333;">Widget list</span><span class="tc-drop-down tc-reveal" hidden="t
 &lt;/$list&gt;
 &lt;/div&gt;
 &lt;/$list&gt;
-</code></pre></p><h2 class="">Onglet 'récent'</h2><p>Dans l'onglet <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fui%252FSideBar%252FRecent.html">Récent</a> la liste est générée en utilisant la macro <a class="tc-tiddlylink tc-tiddlylink-missing" href="Macro%2520timeline.html"><code class="doc-var">timeline</code></a>. Ici, la sortie de liste filtre chaque jour trouvé dans le champ <code>modifié</code>, tandis que l'entrée de liste filtre tous les tiddlers datés du même jour dans le champ <code>modifié</code>.</p><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fmacros%252Ftimeline.html">$:/core/macros/timeline</a> :</p><p><pre><code>\define timeline-title()
-\whitespace trim
-&lt;!-- Override this macro with a global macro 
-     of the same name if you need to change 
-     how titles are displayed on the timeline 
-     --&gt;
-&lt;$view field="title"/&gt;
-\end
+</code></pre></p><h2 class="">Onglet 'récent'</h2><p>Dans l'onglet <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fui%252FSideBar%252FRecent.html">Récent</a> la liste est générée en utilisant la macro <a class="tc-tiddlylink tc-tiddlylink-missing" href="Macro%2520timeline.html"><code class="doc-var">timeline</code></a>. Ici, la sortie de liste filtre chaque jour trouvé dans le champ <code>modifié</code>, tandis que l'entrée de liste filtre tous les tiddlers datés du même jour dans le champ <code>modifié</code>.</p><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fmacros%252Ftimeline.html">$:/core/macros/timeline</a> :</p><p><pre><code>&lt;!-- Override one or both of the following two macros with a global or local macro of the same name 
+if you need to change how titles are displayed on a timeline --&gt;
+
+\define timeline-title() &lt;$view field="title"/&gt;
+\define timeline-link() &lt;$link to={{!!title}}&gt;&lt;&lt;timeline-title&gt;&gt;&lt;/$link&gt;
 \define timeline(limit:"100",format:"DDth MMM YYYY",subfilter:"",dateField:"modified")
 \whitespace trim
 &lt;div class="tc-timeline"&gt;
@@ -54,7 +51,7 @@ color:#333333;">Widget list</span><span class="tc-drop-down tc-reveal" hidden="t
 &lt;$view field="$dateField$" format="date" template="$format$"/&gt;
 &lt;$list filter="[sameday:$dateField${!!$dateField$}!is[system]$subfilter$!sort[$dateField$]]"&gt;
 &lt;div class="tc-menu-list-subitem"&gt;
-&lt;$link to={{!!title}}&gt;&lt;&lt;timeline-title&gt;&gt;&lt;/$link&gt;
+&lt;&lt;timeline-link&gt;&gt;
 &lt;/div&gt;
 &lt;/$list&gt;
 &lt;/div&gt;
