@@ -1409,6 +1409,8 @@ a.tc-tiddlylink:hover {
 	fill: ;
 }.tc-tiddler-controls button svg.tc-image-done-button {
 	fill: ;
+}.tc-page-controls svg.tc-image-layout-button {
+	fill: ;
 }/*
 ** Tiddler edit mode
 */.tc-tiddler-edit-frame em.tc-edit {
