@@ -2793,6 +2793,7 @@ svg.railroad-diagram path.arrow {
 	right: 0;
 	overflow: hidden;
 	top: 0;
+	z-index: 849;
 	pointer-events: none;
 }.tc-card-ribbon {
 	transition: top 0.3s ease-in-out;
