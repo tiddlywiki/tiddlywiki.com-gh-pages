@@ -1675,7 +1675,10 @@ a.tc-tiddlylink:hover {
 	left: 0;
 	right: 0;
 	margin: auto;
-}/*
+}/* Make search dropdown visible on small screens. issue #7003 */
+@media (max-width: 960px) {.tc-sidebar-search .tc-block-dropdown-wrapper {
+		position: initial;
+	}}/*
 ** Modals
 */.tc-modal-wrapper {
 	position: fixed;
