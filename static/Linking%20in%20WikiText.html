@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.2.3" />
+<meta name="tiddlywiki-version" content="5.2.4" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -17,7 +17,7 @@
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river tc-static-story-river">
-<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-WikiText" data-tags="WikiText" data-tiddler-title="Linking in WikiText" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Linking in WikiText</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 30th December 2021 at 2:59pm</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="WikiText"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-WikiText" data-tags="WikiText" data-tiddler-title="Linking in WikiText" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Linking in WikiText</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 30th December 2021 at 2:59pm</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="WikiText"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">WikiText</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div>
 
@@ -53,7 +53,7 @@ color:#333333;">WikiText</span><span class="tc-drop-down tc-reveal" hidden="true
 &lt;/$link&gt;</code></pre><p>Since both the link title ("link to myself") and the link target ("Linking in WikiText") are used as widget attributes, no <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> expansion takes place.</p><p>For example, an attempt to use a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TextReference.html">reference</a> and a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Variables.html">variable</a> to dynamically generate a link like this:</p><p><table class="doc-bad-example">
 <tbody>
 <tr class="evenRow">
-<td><span class="tc-inline-style" style="font-size:1.5em;">⚠</span> Warning:<br> Don't do it this way!</td>
+<td><span style="font-size:1.5em;">⚠</span> Warning:<br> Don't do it this way!</td>
 <td><p><code>[[{{!!caption}}|&lt;&lt;currentTiddler&gt;&gt;]]</code>
 </p></td>
 </tr>
@@ -61,7 +61,7 @@ color:#333333;">WikiText</span><span class="tc-drop-down tc-reveal" hidden="true
 </table></p><p>is the same as trying to use the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="LinkWidget.html">LinkWidget</a> and <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TextWidget.html">TextWidget</a> like this:</p><p><table class="doc-bad-example">
 <tbody>
 <tr class="evenRow">
-<td><span class="tc-inline-style" style="font-size:1.5em;">⚠</span> Warning:<br> Don't do it this way!</td>
+<td><span style="font-size:1.5em;">⚠</span> Warning:<br> Don't do it this way!</td>
 <td><pre><code>&lt;$link to="&lt;&lt;currentTiddler&gt;&gt;"&gt;
   &lt;$text text="{{!!caption}}"/&gt;
 &lt;/$link&gt;</code></pre></td>
@@ -70,7 +70,7 @@ color:#333333;">WikiText</span><span class="tc-drop-down tc-reveal" hidden="true
 </table></p><p>This will not work as desired. Content inside of quoted widget attributes is <a class="tc-tiddlylink tc-tiddlylink-resolves" href="HTML%2520in%2520WikiText.html">treated as a literal value</a> and protected from <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> expansion, so it will render like this:</p><p><table class="doc-bad-example">
 <tbody>
 <tr class="evenRow">
-<td><span class="tc-inline-style" style="font-size:1.5em;">⚠</span> Warning:<br> Don't do it this way!</td>
+<td><span style="font-size:1.5em;">⚠</span> Warning:<br> Don't do it this way!</td>
 <td><p><a class="tc-tiddlylink tc-tiddlylink-missing" href="%253C%253CcurrentTiddler%253E%253E.html">{{!!caption}}</a>
 </p></td>
 </tr>

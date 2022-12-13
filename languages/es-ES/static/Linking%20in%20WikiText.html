@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.2.3" />
+<meta name="tiddlywiki-version" content="5.2.4" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -42,7 +42,7 @@ Linking in WikiText
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 30 diciembre 2021 a las 14:59</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 30 diciembre 2021 a las 14:59</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
@@ -84,7 +84,7 @@ color:#333333;">
 &lt;/$link&gt;</code></pre><p>Since both the link title ("link to myself") and the link target ("Linking in WikiText") are used as widget attributes, no <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> expansion takes place.</p><p>For example, an attempt to use a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TextReference.html">reference</a> and a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Variables.html">variable</a> to dynamically generate a link like this:</p><p><table class="doc-bad-example">
 <tbody>
 <tr class="evenRow">
-<td><span class="tc-inline-style" style="font-size:1.5em;">⚠</span> Warning:<br> Don't do it this way!</td>
+<td><span style="font-size:1.5em;">⚠</span> Warning:<br> Don't do it this way!</td>
 <td><p><code>[[{{!!caption}}|&lt;&lt;currentTiddler&gt;&gt;]]</code>
 </p></td>
 </tr>
@@ -92,7 +92,7 @@ color:#333333;">
 </table></p><p>is the same as trying to use the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="LinkWidget.html">LinkWidget</a> and <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TextWidget.html">TextWidget</a> like this:</p><p><table class="doc-bad-example">
 <tbody>
 <tr class="evenRow">
-<td><span class="tc-inline-style" style="font-size:1.5em;">⚠</span> Warning:<br> Don't do it this way!</td>
+<td><span style="font-size:1.5em;">⚠</span> Warning:<br> Don't do it this way!</td>
 <td><pre><code>&lt;$link to="&lt;&lt;currentTiddler&gt;&gt;"&gt;
   &lt;$text text="{{!!caption}}"/&gt;
 &lt;/$link&gt;</code></pre></td>
@@ -101,7 +101,7 @@ color:#333333;">
 </table></p><p>This will not work as desired. Content inside of quoted widget attributes is <a class="tc-tiddlylink tc-tiddlylink-resolves" href="HTML%2520in%2520WikiText.html">treated as a literal value</a> and protected from <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> expansion, so it will render like this:</p><p><table class="doc-bad-example">
 <tbody>
 <tr class="evenRow">
-<td><span class="tc-inline-style" style="font-size:1.5em;">⚠</span> Warning:<br> Don't do it this way!</td>
+<td><span style="font-size:1.5em;">⚠</span> Warning:<br> Don't do it this way!</td>
 <td><p><a class="tc-tiddlylink tc-tiddlylink-missing" href="%253C%253CcurrentTiddler%253E%253E.html">{{!!caption}}</a>
 </p></td>
 </tr>
