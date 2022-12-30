@@ -304,7 +304,7 @@ Error message and password prompt
 </noscript>
 <!--~~ Ordinary tiddlers ~~-->
 <script class="tiddlywiki-tiddler-store" type="application/json">[
-{"title":"$:/build","commit":"9f69161709259dda51c01ce081850f6ec1dc3cb4","text":"Prerelease built from branch 'master' at commit 9f69161709259dda51c01ce081850f6ec1dc3cb4 of https://github.com/Jermolene/TiddlyWiki5 at 2022-12-24 16:55:02 UTC\n"},
+{"title":"$:/build","commit":"0b39e47ce88c7620b7a66c1553a71efaff06edb9","text":"Prerelease built from branch 'master' at commit 0b39e47ce88c7620b7a66c1553a71efaff06edb9 of https://github.com/Jermolene/TiddlyWiki5 at 2022-12-30 09:36:16 UTC\n"},
 {"title":"$:/config/DefaultSidebarTab","created":"20150719185223155","modified":"20150719185226532","text":"Preview"},
 {"title":"$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home","modified":"20150719172915740","text":"show"},
 {"title":"$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/new-tiddler","modified":"20150719172917795","text":"hide"},
@@ -2980,6 +2980,7 @@ $tw.boot.initStartup = function(options) {
 	$tw.utils.registerFileType("video/webm","base64",".webm");
 	$tw.utils.registerFileType("video/mp4","base64",".mp4");
 	$tw.utils.registerFileType("audio/mp3","base64",".mp3");
+	$tw.utils.registerFileType("audio/mpeg","base64");
 	$tw.utils.registerFileType("text/markdown","utf8",[".md",".markdown"],{deserializerType:"text/x-markdown"});
 	$tw.utils.registerFileType("text/x-markdown","utf8",[".md",".markdown"]);
 	$tw.utils.registerFileType("application/enex+xml","utf8",".enex");
