@@ -1013,9 +1013,6 @@ a.tc-tiddlylink:hover {
 }.tc-sidebar-scrollable .tc-tag-label {
 	text-shadow: none;
 }.tc-untagged-separator {
-	width: 10em;
-	left: 0;
-	margin-left: 0;
 	border: 0;
 	height: 1px;
 	background: #d8d8d8;
@@ -2443,7 +2440,7 @@ a.tc-tiddlylink:hover {
 	flex-grow: 2;
 }/*
 ** Other utility classes
-*/.tc-tiny-gap {
+*//* Horizontal gaps */.tc-tiny-gap {
 	margin-left: .25em;
 	margin-right: .25em;
 }.tc-tiny-gap-left {
@@ -2466,8 +2463,9 @@ a.tc-tiddlylink:hover {
 	margin-right: 1em;
 }.tc-word-break {
 	word-break: break-all;
-}
-nav.tc-menubar {
+}/* Vertical gaps */.tc-tiny-v-gap-bottom {
+	margin-bottom: 3px;
+}nav.tc-menubar {
 	position: fixed;
 	z-index: 850;
 	display: inline-block;

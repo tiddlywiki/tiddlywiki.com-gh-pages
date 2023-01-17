@@ -1031,9 +1031,6 @@ a.tc-tiddlylink:hover {
 }.tc-sidebar-scrollable .tc-tag-label {
 	text-shadow: none;
 }.tc-untagged-separator {
-	width: 10em;
-	left: 0;
-	margin-left: 0;
 	border: 0;
 	height: 1px;
 	background: #d8d8d8;
@@ -2444,7 +2441,7 @@ a.tc-tiddlylink:hover {
 	flex-grow: 2;
 }/*
 ** Other utility classes
-*/.tc-tiny-gap {
+*//* Horizontal gaps */.tc-tiny-gap {
 	margin-left: .25em;
 	margin-right: .25em;
 }.tc-tiny-gap-left {
@@ -2467,8 +2464,9 @@ a.tc-tiddlylink:hover {
 	margin-right: 1em;
 }.tc-word-break {
 	word-break: break-all;
-}
-li.Done {
+}/* Vertical gaps */.tc-tiny-v-gap-bottom {
+	margin-bottom: 3px;
+}li.Done {
 list-style-image:url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20class%3D%22tc-list-image-done%20tc-list-image%22%20height%3D%2215%22%20width%3D%2215%22%3E%0A%3Cpath%20id%3D%22path3757%22%20stroke-linejoin%3D%22round%22%20d%3D%22M3.5168%2C8.809%2C6.3999%2C12.172%2C12.747%2C5.9087%22%20stroke%3D%22%2331a837%22%20stroke-linecap%3D%22round%22%20stroke-width%3D%222.5%22%20fill%3D%22none%22%2F%3E%0A%3C%2Fsvg%3E);
 font-weight:normal;
 }li.Check {

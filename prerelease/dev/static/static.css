@@ -1013,9 +1013,6 @@ a.tc-tiddlylink:hover {
 }.tc-sidebar-scrollable .tc-tag-label {
 	text-shadow: none;
 }.tc-untagged-separator {
-	width: 10em;
-	left: 0;
-	margin-left: 0;
 	border: 0;
 	height: 1px;
 	background: #d8d8d8;
@@ -2426,7 +2423,7 @@ a.tc-tiddlylink:hover {
 	flex-grow: 2;
 }/*
 ** Other utility classes
-*/.tc-tiny-gap {
+*//* Horizontal gaps */.tc-tiny-gap {
 	margin-left: .25em;
 	margin-right: .25em;
 }.tc-tiny-gap-left {
@@ -2449,8 +2446,9 @@ a.tc-tiddlylink:hover {
 	margin-right: 1em;
 }.tc-word-break {
 	word-break: break-all;
-}
-/* Left will inherit from right (so we don't need to duplicate code */
+}/* Vertical gaps */.tc-tiny-v-gap-bottom {
+	margin-bottom: 3px;
+}/* Left will inherit from right (so we don't need to duplicate code */
 .github-fork-ribbon {
   /* The right and left lasses determine the side we attach our banner to */
   position: absolute;/* Add a bit of padding to give some substance outside the "stitching" */
