@@ -2179,6 +2179,9 @@ a.tc-tiddlylink:hover {
 	white-space: nowrap;
 }.tc-table-of-contents button {
 	color: #9f8860;
+}button + .tc-toc-caption,
+button > .tc-toc-caption{
+	margin-left: .25em;
 }.tc-table-of-contents svg {
 	width: 0.7em;
 	height: 0.7em;
