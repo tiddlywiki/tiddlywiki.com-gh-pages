@@ -1847,7 +1847,7 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 <script class="tiddlywiki-tiddler-store" type="application/json">[
 {"title":"$:/_Sidebar/TableOfContents","tags":"$:/tags/SideBar","caption":"Contents","text":"\\define toc-body(tag,sort:\"\",exclude,path)\n\u003Col class=\"tc-toc\">\n  \u003C$list filter=\"\"\"[all[shadows+tiddlers]tag\u003C__tag__>!has[draft.of]$sort$] -[\u003C__tag__>] -[enlist\u003C__exclude__>]\"\"\">\n    \u003C$vars item=\u003C\u003CcurrentTiddler>> path={{{ [\u003C__path__>addsuffix[/]addsuffix\u003C__tag__>] }}} excluded=\"\"\"[enlist\u003C__exclude__>] -[\u003C__tag__>]\"\"\">\n      \u003Cli>\n        \u003C$link to={{{ [enlist{!!story-tiddlers}] }}}>\n\t\t\t\t\t\u003C$list filter=\"[enlist{!!story-tiddlers}addprefix[$:/state/viewtemplate/visibility/]text[2]limit[1]]\" variable=\"listItem\" emptyMessage=\"\"\"\u003Cdiv style=\"display:inline-block;width:4px;height:1em;background-color:transparent;\">\u003C/div>\"\"\">\n\t\t\t\t\t\t\u003Cdiv style=\"display:inline-block;width:4px;height:1em;background-color:red;\">\u003C/div>\n\t\t\t\t\t\u003C/$list>\n          \u003C$view field='caption'>\n\t          \u003C$view field='title'/>\n          \u003C/$view>\n        \u003C/$link>\n        \u003C$macrocall $name=\"toc-body\" tag=\u003C\u003Citem>> sort=\u003C\u003C__sort__>> exclude=\u003C\u003Cexcluded>> path=\u003C\u003Cpath>>/>\n      \u003C/li>\n    \u003C/$vars>\n  \u003C/$list>\n\u003C/ol>\n\\end\n\n\\define toc(tag,sort:\"\")\n\u003C$macrocall $name=\"toc-body\"  tag=\u003C\u003C__tag__>> sort=\u003C\u003C__sort__>> />\n\\end\n\n\u003Cdiv class='tc-table-of-contents'>\n\n\u003C\u003Ctoc \"TableOfContents\">>\n\n\u003C/div>\n"},
-{"title":"$:/build","commit":"3d0ec5b1bdc157f87d65b8c9b76e681c14337eb4","text":"Prerelease built from branch 'master' at commit 3d0ec5b1bdc157f87d65b8c9b76e681c14337eb4 of https://github.com/Jermolene/TiddlyWiki5 at 2023-01-23 17:18:41 UTC\n"},
+{"title":"$:/build","commit":"4e5c957e975459350cd7df3038e5fb3c7aea859f","text":"Prerelease built from branch 'master' at commit 4e5c957e975459350cd7df3038e5fb3c7aea859f of https://github.com/Jermolene/TiddlyWiki5 at 2023-01-23 19:38:10 UTC\n"},
 {"title":"$:/config/AnimationDuration","text":"0"},
 {"title":"$:/config/DynaView/PreserveScrollPosition","text":"yes"},
 {"title":"$:/config/DynaView/RestoreScrollPositionAtStartup","text":"yes"},
@@ -3260,7 +3260,7 @@ $tw.utils.stringifyList = function(value) {
 		var result = new Array(value.length);
 		for(var t=0, l=value.length; t<l; t++) {
 			var entry = value[t] || "";
-			if(entry.match(/[\s\xA0]/mg)) {
+			if(entry.match(/[^\S\xA0]/mg)) {
 				result[t] = "[[" + entry + "]]";
 			} else {
 				result[t] = entry;
