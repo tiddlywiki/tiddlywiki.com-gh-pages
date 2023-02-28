@@ -1373,7 +1373,7 @@ a.tc-tiddlylink:hover {
 		bottom: 0;
 		right: 0;
 		width: 400px;
-	}body.tc-body .tc-storyview-zoomin-tiddler {
+	}body.tc-body .tc-page-container.tc-page-view-zoomin .tc-tiddler-frame {
 		width: 100%;
 		width: calc(100% - 42px);
 	}}/*
@@ -1516,11 +1516,11 @@ a.tc-tiddlylink:hover {
 ** Storyview Classes
 */.tc-viewswitcher .tc-image-button {
 	margin-right: .3em;
-}.tc-storyview-zoomin-tiddler {
+}.tc-page-container.tc-page-view-zoomin .tc-tiddler-frame {
 	position: absolute;
 	display: block;
 	width: 100%;
-}@media (min-width: 960px) {.tc-storyview-zoomin-tiddler {
+}@media (min-width: 960px) {.tc-page-container.tc-page-view-zoomin .tc-tiddler-frame {
 		width: calc(100% - 84px);
 	}}/*
 ** Dropdowns
