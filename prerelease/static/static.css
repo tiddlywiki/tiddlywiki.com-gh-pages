@@ -3164,6 +3164,19 @@ svg.railroad-diagram path.arrow {
 	fill: #fff;
 }.tc-btn-download:active {
 	box-shadow: none;
+}/* WikiText rules */.multi-columns,
+.fourcolumns {
+	display: block;
+	column-count: 4;
+	column-gap: 1em;
+	-moz-column-count: 4;
+	-moz-column-gap: 1em;
+	-webkit-column-count: 4;
+	-webkit-column-gap: 1em;
+}@media (max-width: 960px) {
+	.multi-columns {
+		column-count: 2;
+	}
 }
 .tc-custom-tiddler-template {
 	border: 3px solid #bbb;

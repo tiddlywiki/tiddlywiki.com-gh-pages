@@ -71,21 +71,19 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>You can use this construction to cause the wrapped content to be assigned specified CSS classes or styles:</p><div class="doc-example"><pre><code>@@.myStyle
-* List One
-* List Two
+<div class="tc-tiddler-body tc-reveal"><p>Content can be wrapped in <code>@@</code>double at signs<code>@@</code>  to apply specified CSS styles or classes to it. There are multiple ways to use this syntax, as presented below.</p><p>Inline content wrapped in <code>@@</code>double at signs<code>@@</code> without specifying style or class will be assigned the <code>.tc-inline-style</code> and displayed as highlighted text. The foreground and background colours of the highlighted text are defined as <code>highlight-background</code> and <code>highlight-foreground</code> in the current palette.</p><div class="doc-example"><pre><code>@@some highlighted text@@</code></pre><p>Tiene este aspecto:</p><p><span class="tc-inline-style">some highlighted text</span></p><p>... y su código HTML es:</p><pre>&lt;p&gt;&lt;span class="tc-inline-style"&gt;some highlighted text&lt;/span&gt;&lt;/p&gt;</pre></div><p>Style attributes, e.g. <code>color</code>, each followed by <code>;</code> semicolon can be introduced immediately after the opening <code>@@</code>.</p><div class="doc-example"><pre><code>@@color:steelblue;background-color:lightcyan;some styled text@@</code></pre><p>Tiene este aspecto:</p><p><span style="color:steelblue;background-color:lightcyan;">some styled text</span></p><p>... y su código HTML es:</p><pre>&lt;p&gt;&lt;span style="color:steelblue;background-color:lightcyan;"&gt;some styled text&lt;/span&gt;&lt;/p&gt;</pre></div><p>Similarly a style can be applied to a multiline content:</p><div class="doc-example"><pre><code>@@background-color:lightcyan;
+* Item one
+* Item two
 @@
-</code></pre><p>Tiene este aspecto:</p><ul class="myStyle"><li>List One</li><li>List Two</li></ul><p>... y su código HTML es:</p><pre>&lt;ul class="myStyle"&gt;&lt;li&gt;List One&lt;/li&gt;&lt;li&gt;List Two&lt;/li&gt;&lt;/ul&gt;</pre></div><p>Similar syntax is used to assign styles. For example:</p><div class="doc-example"><pre><code>@@background-color:red;
-* List One
-* List Two
+</code></pre><p>Tiene este aspecto:</p><ul style="background-color:lightcyan;"><li>Item one</li><li>Item two</li></ul><p>... y su código HTML es:</p><pre>&lt;ul style="background-color:lightcyan;"&gt;&lt;li&gt;Item one&lt;/li&gt;&lt;li&gt;Item two&lt;/li&gt;&lt;/ul&gt;</pre></div><p>A class may be applied to a multiline content only:</p><div class="doc-example"><pre><code>@@.tc-double-spaced-list
+* Item one
+* Item two
+@@</code></pre><p>Tiene este aspecto:</p><ul class="tc-double-spaced-list"><li>Item one</li><li>Item two</li></ul><p>... y su código HTML es:</p><pre>&lt;ul class="tc-double-spaced-list"&gt;&lt;li&gt;Item one&lt;/li&gt;&lt;li&gt;Item two&lt;/li&gt;&lt;/ul&gt;</pre></div><p>Multiple classes and styles can be used together:</p><div class="doc-example"><pre><code>@@.tc-double-spaced-list
+@@width:400px;background-color:lightcyan;
+* Item one
+* Item two
 @@
-</code></pre><p>Tiene este aspecto:</p><ul style="background-color:red;"><li>List One</li><li>List Two</li></ul><p>... y su código HTML es:</p><pre>&lt;ul style="background-color:red;"&gt;&lt;li&gt;List One&lt;/li&gt;&lt;li&gt;List Two&lt;/li&gt;&lt;/ul&gt;</pre></div><p>Multiple styles and classes can be mixed. For example:</p><div class="doc-example"><pre><code>@@.tc-tiddler-frame
-@@width:400px;
-Some text
-@@
-</code></pre><p>Tiene este aspecto:</p><p class="tc-tiddler-frame" style="width:400px;">Some text
-</p><p>... y su código HTML es:</p><pre>&lt;p class="tc-tiddler-frame" style="width:400px;"&gt;Some text
-&lt;/p&gt;</pre></div></div>
+</code></pre><p>Tiene este aspecto:</p><ul class="tc-double-spaced-list" style="width:400px;background-color:lightcyan;"><li>Item one</li><li>Item two</li></ul><p>... y su código HTML es:</p><pre>&lt;ul class="tc-double-spaced-list" style="width:400px;background-color:lightcyan;"&gt;&lt;li&gt;Item one&lt;/li&gt;&lt;li&gt;Item two&lt;/li&gt;&lt;/ul&gt;</pre></div></div>
 
 </div></p>
 </section>
