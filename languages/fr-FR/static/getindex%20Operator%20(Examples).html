@@ -18,7 +18,7 @@
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river tc-static-story-river">
-<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-getindex%20Operator tc-tagged-Operator%20Examples" data-tags="[[getindex Operator]] [[Operator Examples]]" data-tiddler-title="getindex Operator (Examples)" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="plus" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="Actions supplémentaires"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="éditer" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Édite ce tiddler"></button><button aria-label="fermer" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Ferme ce tiddler"></button></span><span><h2 class="tc-title">getindex Operator (Examples)</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 8 juin 2017 à 15h03</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="getindex Operator"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-getindex%20Operator tc-tagged-Operator%20Examples" data-tags="[[getindex Operator]] [[Operator Examples]]" data-tiddler-title="getindex Operator (Examples)" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="plus" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="Actions supplémentaires"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="éditer" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Édite ce tiddler"></button><button aria-label="fermer" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Ferme ce tiddler"></button></span><span><h2 class="tc-title">getindex Operator (Examples)</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 6 mars 2023 à 14h02</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="getindex Operator"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">getindex Operator</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="Operator Examples"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
@@ -31,7 +31,7 @@ color:#333333;">Operator Examples</span><span class="tc-drop-down tc-reveal" hid
 
 <div class="tc-tiddler-body tc-reveal"><p><div class="doc-example">
 <code>[[$:/palettes/Vanilla]getindex[background]]</code>
-<dd>→ returns the value at index <strong>background</strong> of the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="DataTiddlers.html">DataTiddler</a> <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FVanilla.html">$:/palettes/Vanilla</a></dd>
+<dd>→ returns the value at index <code class="doc-value">background</code> of the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="DataTiddlers.html">DataTiddler</a> <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FVanilla.html">$:/palettes/Vanilla</a></dd>
 
 <span class=" tc-reveal">
 	<dl>
@@ -49,7 +49,53 @@ color:#333333;">Operator Examples</span><span class="tc-drop-down tc-reveal" hid
 	</dl>
 </span>
 <span class=" tc-reveal" hidden="true"></span>
-</div></p></div>
+</div></p><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="ListopsData.html">ListopsData</a> contains an empty index <code class="doc-value">DataIndex</code> which is not returned by the filter operator:
+<div class="doc-example">
+<code>[[ListopsData]getindex[DataIndex]]</code>
+
+
+<span class=" tc-reveal">
+	<dl>
+	<dd><button class="">Essayez</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div></p><p>This filter expression can be used to return the value, even if it is an empty string:
+<div class="doc-example">
+<code>[[ListopsData]] :filter[has:index[DataIndex]] :and[getindex[DataIndex]else[]]</code>
+
+
+<span class=" tc-reveal">
+	<dl>
+	<dd><button class="">Essayez</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div></p><p>There are 5 palettes which define the index <code class="doc-value">diff-equal-background</code>, but none defines a value:
+<div class="doc-example">
+<code>[all[shadows+tiddlers]tag[$:/tags/Palette]] :filter[has:index[diff-equal-background]] :map[getindex[diff-equal-background]else[]]</code>
+
+
+<span class=" tc-reveal">
+	<dl>
+	<dd><button class="">Essayez</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div>
+In the above example, the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Map%2520Filter%2520Run%2520Prefix.html">Map Filter Run Prefix</a> is used instead of <code>:and</code> as it does not de-duplicate its results.</p><p>Another way to check if an index has an empty value is to <a class="tc-tiddlylink tc-tiddlylink-resolves" href="count%2520Operator.html">count</a> the results from the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="getindex%2520Operator.html">getindex Operator</a>:
+<div class="doc-example">
+<code>[[$:/palettes/Vanilla]indexes[]] :filter[[$:/palettes/Vanilla]getindex&lt;currentTiddler&gt;count[]compare:number:eq[0]]</code>
+
+
+<span class=" tc-reveal">
+	<dl>
+	<dd><button class="">Essayez</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div>
+Here, the input to <code>:filter</code> is the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="indexes%2520Operator.html">list of indexes</a> which are contained in <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FVanilla.html">$:/palettes/Vanilla</a>.</p></div>
 
 </div></p>
 </section>
