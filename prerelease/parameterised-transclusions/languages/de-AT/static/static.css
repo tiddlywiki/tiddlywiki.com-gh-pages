@@ -1359,7 +1359,24 @@ a.tc-tiddlylink:hover {
 	font-weight: normal;
 }/*
 ** Adjustments for fluid-fixed mode
-*/@media (min-width: 960px) {}/*
+*/@media (min-width: 960px) {.tc-story-river {
+		padding-right: 0;
+		position: relative;
+		width: auto;
+		left: 0;
+		margin-left: 0px;
+		margin-right: 350px;
+	}.tc-tiddler-frame {
+		width: 100%;
+	}.tc-sidebar-scrollable {
+		left: auto;
+		bottom: 0;
+		right: 0;
+		width: 350px;
+	}body.tc-body .tc-page-container.tc-page-view-zoomin .tc-tiddler-frame {
+		width: 100%;
+		width: calc(100% - 42px);
+	}}/*
 ** Toolbar buttons
 */.tc-page-controls svg.tc-image-new-button {
 	fill: ;
