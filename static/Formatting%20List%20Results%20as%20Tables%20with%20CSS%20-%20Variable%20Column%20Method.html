@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.2.5" />
+<meta name="tiddlywiki-version" content="5.2.6" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -26,7 +26,7 @@ color:#ffffff;"><svg class="tc-image-globe tc-image-button" height="22pt" viewBo
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>Sometimes you want the results of a <code>&lt;$list&gt;</code> widget to be formatted in the form of multiple columns, instead of just one straight listing. This method uses CSS to set up listing as  columns. It is responsive, that is,  re-positioning to display fewer columns if the window is too small.</p><p>You don't directly specify a fixed number of columns but instead specify the max-width for the list (which could be a transclusion of the tiddler width) and the width for each item. It lists from left to right, then wraps to a new row.</p><p>For other table-making techniques see also:</p><ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Formatting%2520List%2520Results%2520as%2520Tables%2520with%2520CSS%2520-%2520Specified%2520Columns%2520Methods.html">Formatting List Results as Tables with CSS - Specified Columns Methods</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Formatting%2520List%2520Results%2520as%2520Tables%2520(no%2520CSS).html">Formatting List Results as Tables (no CSS)</a></li></ul><h2 class="">Example listing using 50 existing TiddlyWiki tags</h2><pre><code>&lt;div class="dynamic-table"&gt;
+<div class="tc-tiddler-body tc-reveal"><p>Sometimes you want the results of a <code>&lt;$list&gt;</code> widget to be formatted in the form of multiple columns, instead of just one straight listing. This method uses CSS to set up listing as  columns. It is responsive, that is,  re-positioning to display fewer columns if the window is too small.</p><p>You don't directly specify a fixed number of columns but instead specify the max-width for the list (which could be a transclusion of the tiddler width) and the width for each item. It lists from left to right, then wraps to a new row.</p><p>For other table-making techniques see also:</p><ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Formatting%2520List%2520Results%2520as%2520Tables%2520with%2520CSS%2520-%2520Specified%2520Columns%2520Methods.html">Formatting List Results as Tables with CSS - Specified Columns Methods</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Formatting%2520List%2520Results%2520as%2520Tables%2520%2528no%2520CSS%2529.html">Formatting List Results as Tables (no CSS)</a></li></ul><h2 class="">Example listing using 50 existing TiddlyWiki tags</h2><pre><code>&lt;div class="dynamic-table"&gt;
   &lt;$list filter="[has[tags]tags[]sort[title]first[50]]"&gt;
     &lt;span class="item"&gt;
       &lt;$transclude tiddler="$:/core/ui/TagTemplate"/&gt;
@@ -228,6 +228,12 @@ color:#333333;">append Operator</span><span class="tc-drop-down tc-reveal" hidde
     </span>
   
     <span class="item">
+      <span class="tc-tag-list-item" data-tag-title="applypatches Operator"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#333333;
+color:#333333;">applypatches Operator</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span>
+    </span>
+  
+    <span class="item">
       <span class="tc-tag-list-item" data-tag-title="Articles"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">Articles</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span>
@@ -345,12 +351,6 @@ color:#333333;">Commands</span><span class="tc-drop-down tc-reveal" hidden="true
       <span class="tc-tag-list-item" data-tag-title="commands Operator"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">commands Operator</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span>
-    </span>
-  
-    <span class="item">
-      <span class="tc-tag-list-item" data-tag-title="Common Operators"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
-fill:#333333;
-color:#333333;">Common Operators</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span>
     </span>
   
 </div></p><p><style>
