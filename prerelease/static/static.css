@@ -3422,6 +3422,17 @@ ol.doc-github-contributors li {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+.doc-tabs.tc-tab-buttons button {
+  font-size: 1rem;
+  padding: 0.5em;
+}
+.doc-tabs button .doc-attr {
+  background-color: unset;
+  color: #666;
+}
+.doc-tab-link .doc-attr {
+  color: unset;
 }.tc-thumbnail-tabs .tc-tab-buttons {
 	background: #ecf2ff;
     text-align: center;
