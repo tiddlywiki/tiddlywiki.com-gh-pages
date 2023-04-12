@@ -2696,7 +2696,9 @@ svg.railroad-diagram path.arrow {
 	margin-right: 0.5em;
 	width: 1em;
 }
-.tc-double-spaced-list li {
+.tc-hero-heading a.tc-tiddlylink {
+	font-weight: bold;
+}.tc-double-spaced-list li {
 	padding-bottom: .5em;
 	padding-top: .5em;
 }.tc-link-info-item {
@@ -2792,22 +2794,36 @@ svg.railroad-diagram path.arrow {
 	background: #ffffff;
 	border-color: rgba(34,36,38,.15);
 	box-shadow: 0 2px 25px 0 rgb(34 36 38 / 5%) inset;
+	gap: 1em;
+}.tc-cards.tc-action-card {
+	text-align: center;
+	background: none;
+}.tc-cards.tc-action-card .tc-card-button {
+	border: 1px solid #333333;
+	background: #333333;
+	margin: 0.5em;
+	border-radius: 6px;
+	padding: 0.5em;
+	color: #ffffff;
+	fill: #ffffff;
+}.tc-cards.tc-action-card .tc-card-button svg {
+	width: 0.65em;
+	height: 0.65em;
+	vertical-align: middle;
 }.tc-tiddlylink.tc-card {
 	font-weight: normal;
 	max-width: 100%;
 	position: relative;
-	display: flex;
-	flex-direction: column;
 	background: #ffffff;
 	color: #333333;
 	width: 200px;
 	min-height: 0;
-	padding: 0 0 0.5em 0;
-	margin: 0.5em;
 	border: none;
 	border-radius: 8px;
 	box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
 	transition: box-shadow 0.3s ease,transform .3s ease;
+}.tc-cards.tc-cards-vertical .tc-tiddlylink.tc-card {
+	width: 100%;
 }@media (max-width: 500px) {
 	
 	.tc-cards {
@@ -2820,8 +2836,15 @@ svg.railroad-diagram path.arrow {
 	box-shadow: none;
 	background-color: #effdff;
 }.tc-card-accent {
-	border-top-left-radius: 8px;
-	border-top-right-radius: 8px;
+	height: 100%;
+	display: flex;
+	align-items: stretch;
+	flex-direction: column;
+	justify-content: stretch;
+	border-radius: 8px;
+}.tc-cards.tc-cards-vertical .tc-card-accent {
+	flex-direction: row;
+	align-items: center;
 }.tc-tiddlylink.tc-card:hover {
 	color: #333333;
 	background: #ffffdd;
@@ -2861,6 +2884,8 @@ svg.railroad-diagram path.arrow {
 	padding: 2px 0;
 	text-align: center;
 }.tc-card-image {
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
 	line-height: 0;
 	overflow: hidden;
 }.tc-card-image img {
@@ -2876,7 +2901,15 @@ svg.railroad-diagram path.arrow {
 	font-weight: 600;
 	transition: color 0.3s ease-in-out;
 	padding: 0 10px;
-	margin: 0.5em 0;
+	margin: 0.5em 0 0.25em 0;
+}.tc-cards.tc-cards-vertical .tc-card-title {
+	font-size: 1em;
+	min-width: 10em;
+	text-align: right;
+}.tc-cards.tc-cards-vertical .tc-card-title svg {
+	width: 1em;
+	height: 1em;
+	vertical-align: text-bottom;
 }.tc-card-subtitle,
 .tc-card-author {
 	font-size: 0.8em;
@@ -2888,10 +2921,13 @@ svg.railroad-diagram path.arrow {
 }.tc-card-body {
 	font-size: 0.9em;
 	line-height: 1.2;
-	padding: 0 10px;
+	padding: 0.25em 10px;
 	margin: 0;
+}.tc-cards.tc-cards-vertical .tc-card-body {
+	font-size: 1em;
 }.tc-card-body-wrapper {
 	position: relative;
+	flex-grow: 1;
 }.tc-tiddlylink.tc-card.tc-card-quote .tc-card-body:before {
 	font-family: Georgia, serif;
 	color: #bbb;
@@ -2939,8 +2975,7 @@ svg.railroad-diagram path.arrow {
 	.multi-columns {
 		column-count: 2;
 	}
-}
-.tc-custom-tiddler-template {
+}.tc-custom-tiddler-template {
 	border: 3px solid #bbb;
 	border-radius: 1em;
 	margin-bottom: 1em;
@@ -3184,6 +3219,17 @@ ol.doc-github-contributors li {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+.doc-tabs.tc-tab-buttons button {
+  font-size: 1rem;
+  padding: 0.5em;
+}
+.doc-tabs button .doc-attr {
+  background-color: unset;
+  color: #666;
+}
+.doc-tab-link .doc-attr {
+  color: unset;
 }.tc-thumbnail-tabs .tc-tab-buttons {
 	background: #ecf2ff;
     text-align: center;
