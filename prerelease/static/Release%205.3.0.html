@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.3.0-prerelease" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>5.3.0: TiddlyWiki Pre-release — 5.3.0-prerelease</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-ReleaseNotes" data-tags="ReleaseNotes" data-tiddler-title="Release 5.3.0" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Release 5.3.0</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 19th April 2023 at 10:31am</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="ReleaseNotes"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#333333;
+color:#333333;">ReleaseNotes</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div>
+
+
+
+
+
+
+<div class="tc-tiddler-body tc-reveal"><p><em><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/compare/master...parameterised-transclusions" rel="noopener noreferrer" target="_blank">See GitHub for detailed change history of this release</a></em></p><h1 class="">About v5.3.0</h1><p>This pre-release introduces a number of significant improvements and new features related to some of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a>'s most fundamental components: macros, widgets, operators and transclusion.</p><h1 class="">Introduction to v5.3.0</h1><p>The motivation of these changes is to fix one of TiddlyWiki 5's early design flaws: the reliance on macros using textual substitution as the primary way to modularise and reuse wikitext and filters.</p><p>Experience has shown that while macros are a good match for a small number of tasks, they are brittle and error prone for many common operations. See <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macro%2520Pitfalls.html">Macro Pitfalls</a> for a discussion of the problems that accompany this approach. Over the years we have introduced mitigations for the worst problems but these have come at a cost of increased complexity.</p><p>The changes in this release provide powerful new ways to achieve common tasks, and unlock completely new capabilities that were previously impossible in wikitext.</p><ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Procedures.html">Procedures</a>, which are essentially what macros should have been; they work in exactly the same way except that parameters are exposed as simple variables (without the double underscores) and no textual substitution takes place</li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Custom%2520Widgets.html">Custom Widgets</a>, allowing the creation of widgets in wikitext, and the redefinition of built-in widgets</li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Functions.html">Functions</a>, a new way to encapsulate filter expressions with named parameters, including the ability to make custom filter operators</li><li>Parameterised <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Transclusion.html">Transclusions</a>, allowing strings and wikitext trees to be passed to transclusions</li></ul><p>The approach taken by this release is to add new functionality by extending and augmenting the system without disturbing existing functionality. All of these changes are thus intended to be backwards compatible. While they represent a new field of opportunities for wikitext authors, it is possible for authors to ignore all these new features and continue to use TiddlyWiki 5 in the way that they have always done.</p><p>These changes lay the groundwork for macros and related features to be deprecated (which is the point at which users are advised not to use old features, and instead given clear pointers to the equivalent modern functionality).</p><p>The new transclusion architecture is not by itself sufficient to enable us to fully deprecate macros yet. To handle the remaining use cases we propose a new backtick quoted attribute format that allows for the substitution of variable values. See <a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/issues/6663" rel="noopener noreferrer" target="_blank">https://github.com/Jermolene/TiddlyWiki5/issues/6663</a> for details.</p><h1 class="">Plugin Improvements</h1><ul><li></li></ul><h1 class="">Translation improvement</h1><p>Improvements to the following translations:</p><ul><li></li></ul><h1 class="">Accessibility Improvements</h1><ul><li></li></ul><h1 class="">Usability Improvements</h1><ul><li></li></ul><h1 class="">Widget Improvements</h1><ul><li></li></ul><h1 class="">Filter improvements</h1><ul><li></li></ul><h1 class="">Hackability Improvements</h1><ul><li></li></ul><h1 class="">Bug Fixes</h1><ul><li></li></ul><h1 class="">Developer Improvements</h1><ul><li></li></ul><h1 class="">Node.js Improvements</h1><ul><li></li></ul><h1 class="">Performance Improvements</h1><ul><li></li></ul><h1 class="">Acknowledgements</h1><p><a class="tc-tiddlylink-external" href="https://github.com/Jermolene" rel="noopener noreferrer" target="_blank">@Jermolene</a> would like to thank the contributors to this release who have generously given their time to help improve <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a>:</p><p><ol class="doc-github-contributors">
+
+</ol></p></div>
+
+</div></p>
+</section>
+</body>
+</html>
+

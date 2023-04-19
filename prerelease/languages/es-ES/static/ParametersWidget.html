@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.3.0-prerelease" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>parameters: TiddlyWiki — Cuaderno de notas personal no-lineal en la web</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Widgets" data-tags="Widgets" data-tiddler-title="ParametersWidget" role="article"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-expanded="false" aria-label="Más" class="tc-btn-invisible" title="Otras acciones"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Editar" class="tc-btn-invisible" title="Permite editar este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+</span>
+
+<span>
+
+<span class="tc-tiddler-title-icon" style="fill:;">
+
+</span>
+
+
+
+<h2 class="tc-title">
+
+ParametersWidget
+
+</h2>
+
+</span>
+
+</div>
+
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 19 abril 2023 a las 10:31</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+
+
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ Widgets
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span></div></div>
+
+
+
+
+
+
+<div class="tc-tiddler-body tc-reveal"><p><a class="tc-tiddlylink tc-tiddlylink-missing doc-from-version" href="Release%25205.3.0.html"><svg class="tc-image-warning tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M57.072 11c3.079-5.333 10.777-5.333 13.856 0l55.426 96c3.079 5.333-.77 12-6.928 12H8.574c-6.158 0-10.007-6.667-6.928-12l55.426-96zM64 37c-4.418 0-8 3.582-8 7.994v28.012C56 77.421 59.59 81 64 81c4.418 0 8-3.582 8-7.994V44.994C72 40.579 68.41 37 64 37zm0 67a8 8 0 100-16 8 8 0 000 16z" fill-rule="evenodd"></path></svg> New in: 5.3.0</a> The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ParametersWidget.html"><code class="doc-widget">$parameters</code></a> widget is used within transcluded content to declare the parameters to be made available to the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TranscludeWidget.html"><code class="doc-widget">$transclude</code></a> widget.</p><p>There are shortcuts for common scenarios that can often make it unnecessary to use the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ParametersWidget.html"><code class="doc-widget">$parameters</code></a> widget directly:</p><ul><li>the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Pragma%253A%2520%255Cparameters.html">Pragma: \parameters</a></li><li>the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Pragma%253A%2520%255Cprocedure.html">Pragma: \procedure</a> for declaring procedure</li><li>the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Pragma%253A%2520%255Cwidget.html">Pragma: \widget</a> for declaring custom widgets</li></ul><p>The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ParametersWidget.html"><code class="doc-widget">$parameters</code></a> widget must be used directly in the following situations:</p><ul><li>When the default value of a parameter must be computed dynamically</li><li>When the <code>$depth</code> attribute is used to retrieve parameters from a parent transclusion (see below)</li></ul><h1 class="">Content and Attributes</h1><p>The content of the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ParametersWidget.html"><code class="doc-widget">$parameters</code></a> widget is the scope within which the values of the parameters can be accessed as ordinary variables.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">$depth</td><td align="left">The index of the parent transclusion from which to obtain the parameters (defaults to 1). See below</td></tr><tr class="evenRow"><td align="left">$parseMode</td><td align="left">Optional name of a variable in which is made available the parse mode of the content of the parent transclusion (the parse mode can be "inline" or "block")</td></tr><tr class="oddRow"><td align="left">$parseTreeNodes</td><td align="left">Optional name of a variable in which is made available the JSON representation of the parse tree nodes contained within the parent transclusion</td></tr><tr class="evenRow"><td align="left">$slotFillParseTreeNodes</td><td align="left">Optional name of a variable in which is made available the JSON representation of the parse tree nodes corresponding to each fill widget contained within the parent transclusion (as an object where the keys are the slot names and the values are the parse tree nodes)</td></tr><tr class="oddRow"><td align="left">$params</td><td align="left">Optional name of a variable in which is made available the JSON representation of the parameters passed to the parent transclusion (as an object where the keys are the parameter names and the values are the coresponding values)</td></tr><tr class="evenRow"><td align="left"><em>{attributes not starting with $}</em></td><td align="left">Any attributes that do not start with a dollar are used as parameters, with the value specifying the default to be used for missing parameters</td></tr><tr class="oddRow"><td align="left"><em>{other attributes starting with $}</em></td><td align="left">Other attributes starting with a single dollar sign are reserved for future use</td></tr><tr class="evenRow"><td align="left"><em>{attributes starting with $$}</em></td><td align="left">Attributes starting with two dollar signs are used as parameters to the transclusion, but with the name changed to use a single dollar sign. The value specifies the default to be used for missing parameters</td></tr></tbody></table><dl class="doc-note"><dt>Note</dt><dd>Note the special treatment required for parameters names that start with a <code>$</code>; this can be avoided by using one of the pragmas</dd></dl><h2 class=""><code>$depth</code> Attribute</h2><p>By default, the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ParametersWidget.html"><code class="doc-widget">$parameters</code></a> widget retrieves parameters from the immediate parent transclusion. The <code>$depth</code> attribute permits access to the parameters of parent transclusions by specifying an index to the parent to be inspected ("1" is the immediate parent, "2" is the parent of that parent, etc.). This is useful in some situations where an intervening transclusion prevents immediate access to desired parameters.</p><h2 class=""><code>$parseMode</code>, <code>$parseTreeNodes</code>, <code>$slotFillParseTreeNodes</code> and <code>$params</code> Attributes</h2><p>These attributes provide low level access to the contents of the transcluding widget:</p><ul><li>The <code>$params</code> attribute provides access to the raw parameters provided to the transcluding widget. Represented in JSON as an object with keys of the parameter names and values of the corresponding parameter values</li><li>The <code>$parseMode</code> attribute contains <code>block</code> or <code>inline</code> to indicate whether the contents was parsed in block or inline mode</li><li>The <code>$parseTreeNodes</code> attribute provides access to the raw parse tree nodes that represent the contents of the transcluding widget. Represented in JSON as an array of parse tree nodes</li><li>The <code>$slotFillParseTreeNodes</code> attribute provides access to the raw parse tree nodes corresponding to the filled slots within the contents of the transcluding widget. Represented in JSON as an object with keys of the slot name and values being an array of parse tree nodes</li></ul><h1 class="">Examples</h1><p>Here the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ParametersWidget.html"><code class="doc-widget">$parameters</code></a> widget is used to declare a parameter whose default value is transcluded from another tiddler.</p><div class="doc-example"><pre><code>\procedure mymacro
+&lt;$parameters name={{$:/SiteTitle}} age="21"&gt;
+My name is &lt;&lt;name&gt;&gt; and my age is &lt;&lt;age&gt;&gt;.
+&lt;/$parameters&gt;
+\end
+
+&lt;$transclude $variable="mymacro" age="19"/&gt;</code></pre><p>Este es su aspecto:</p><p>\procedure mymacro
+
+My name is <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> and my age is 21.
+
+\end</p><p>
+</p></div></div>
+
+</div></p>
+</section>
+</body>
+</html>
+

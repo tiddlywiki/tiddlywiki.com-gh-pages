@@ -2416,6 +2416,24 @@ button > .tc-toc-caption{
 	color: ;
 	background: ;
 }/*
+** Classes for displaying globals
+*/.tc-global-tiddler-body {
+	padding: 0.25em;
+	border: 1px solid #4e432f;
+	background-color: #bbb;
+	border-radius: 3px;
+}.tc-global-tiddler-body-heading {
+	margin: 0 0 0.25em 0;
+	font-weight: normal;
+}.tc-global-tiddler-body-type {
+	margin: 0 0 0.25em 0;
+	border-bottom: 1px solid #4e432f;
+}.tc-global-tiddler-body-details {
+	background-color: #e5f8fd;
+}.tc-global-tiddler-body pre {
+	margin: 0;
+	border: 1px solid #4e432f;
+}/*
 ** Utility classes for SVG icons
 */.tc-fill-background {
 	fill: #e5f8fd;
