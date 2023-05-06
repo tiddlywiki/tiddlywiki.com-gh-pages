@@ -37,6 +37,10 @@ Download this sample code
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;draggable&quot;</span> <span class="hljs-attr">draggable</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
         Drag me to a TiddlyWiki window
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;copy&quot;</span>&gt;</span>
+        Click to copy two tiddlers to the clipboard
+    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+
 <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
 
@@ -52,7 +56,19 @@ Download this sample code
         event.<span class="hljs-title function_">stopPropagation</span>();
         <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
     });
-    
+
+    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;copy&quot;</span>).<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;click&quot;</span>,<span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) {
+
+    <span class="hljs-keyword">function</span> <span class="hljs-title function_">listener</span>(<span class="hljs-params">event</span>) {
+        event.<span class="hljs-property">clipboardData</span>.<span class="hljs-title function_">setData</span>(<span class="hljs-string">&quot;URL&quot;</span>,<span class="hljs-string">&quot;data:text/vnd.tiddler,&quot;</span> + <span class="hljs-built_in">encodeURIComponent</span>(<span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(tiddlerData)));
+        event.<span class="hljs-title function_">preventDefault</span>();
+    }
+
+    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;copy&quot;</span>,listener);
+    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">execCommand</span>(<span class="hljs-string">&quot;copy&quot;</span>);
+    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">removeEventListener</span>(<span class="hljs-string">&quot;copy&quot;</span>,listener);
+
+    });
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre></div>
 </div></p>
