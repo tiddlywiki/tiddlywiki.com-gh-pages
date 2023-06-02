@@ -304,7 +304,7 @@ Error message and password prompt
 </noscript>
 <!--~~ Ordinary tiddlers ~~-->
 <script class="tiddlywiki-tiddler-store" type="application/json">[
-{"title":"$:/build","commit":"a371ea0555811367e4ce16919097cb53938b43f6","text":"Prerelease built from branch 'master' at commit a371ea0555811367e4ce16919097cb53938b43f6 of https://github.com/Jermolene/TiddlyWiki5 at 2023-06-01 14:32:23 UTC\n"},
+{"title":"$:/build","commit":"48b22abdaab62c281c207127c66883b50898f9dd","text":"Prerelease built from branch 'master' at commit 48b22abdaab62c281c207127c66883b50898f9dd of https://github.com/Jermolene/TiddlyWiki5 at 2023-06-02 09:43:53 UTC\n"},
 {"title":"$:/config/DefaultSidebarTab","created":"20150719185223155","modified":"20150719185226532","text":"Preview"},
 {"title":"$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home","modified":"20150719172915740","text":"show"},
 {"title":"$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/new-tiddler","modified":"20150719172917795","text":"hide"},
@@ -2652,7 +2652,11 @@ $tw.loadPluginFolder = function(filepath,excludeRegExp) {
 			console.log("Warning: missing plugin.info file in " + filepath);
 			return null;
 		}
-		var pluginInfo = $tw.utils.parseJSONSafe(fs.readFileSync(infoPath,"utf8"));
+		var pluginInfo = $tw.utils.parseJSONSafe(fs.readFileSync(infoPath,"utf8"),function() {return null;});
+		if(!pluginInfo) {
+			console.log("warning: invalid JSON in plugin.info file at " + infoPath);
+			pluginInfo = {};
+		}
 		// Read the plugin files
 		var pluginFiles = $tw.loadTiddlersFromPath(filepath,excludeRegExp);
 		// Save the plugin tiddlers into the plugin info
@@ -2769,7 +2773,11 @@ $tw.loadWikiTiddlers = function(wikiPath,options) {
 		pluginFields;
 	// Bail if we don't have a wiki info file
 	if(fs.existsSync(wikiInfoPath)) {
-		wikiInfo = $tw.utils.parseJSONSafe(fs.readFileSync(wikiInfoPath,"utf8"));
+		wikiInfo = $tw.utils.parseJSONSafe(fs.readFileSync(wikiInfoPath,"utf8"),function() {return null;});
+		if(!wikiInfo) {
+			console.log("warning: invalid JSON in tiddlywiki.info file at " + wikiInfoPath);
+			wikiInfo = {};
+		}
 	} else {
 		return null;
 	}
