@@ -1340,6 +1340,9 @@ a.tc-tiddlylink:hover {
 }.tc-editor-toolbar button svg {
 	width: 1.6em;
 	height: 1.2em;
+}.tc-editor-toolbar .tc-drop-down a,
+.tc-editor-toolbar .tc-drop-down button {
+	padding: 0;
 }.tc-editor-toolbar button:hover {
 	background-color: #444444;
 	fill: #ffffff;
