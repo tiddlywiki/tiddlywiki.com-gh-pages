@@ -81,7 +81,37 @@ color:#333333;">
 	</dl>
 </span>
 <span class=" tc-reveal" hidden="true"></span>
-</div></p><h1 class="">Substitute variables</h1><p>This example uses the following variables:</p><ul><li>name: <pre><code>Bugs Bunny</code></pre></li><li>address: <pre><code>Rabbit Hole Hill</code></pre></li></ul><p><code>[[Hi, I'm $(name)$ and I live in $(address)$]substitute[]]</code> evaluates to  <code>Hi, I'm Bugs Bunny and I live in Rabbit Hole Hill</code> </p><h1 class="">Substitute variables and operator parameters</h1><p>This example uses the following variable:</p><ul><li>time: <pre><code>morning</code></pre></li></ul><p><code>[[Something in the $(time)$ at $2$ about $1$ ]substitute[Maths],[the Library]]</code> evaluates to  <code>Something in the morning at the Library about Maths </code> </p><h1 class="">Substitute a filter expression and a variable</h1><p>This example uses the following variables:</p><ul><li>field: <pre><code>modified</code></pre></li><li>sentence: <pre><code>This tiddler was last $(field)$ on ${[{!!modified}format:date[DDth MMM YYYY]]}$</code></pre></li></ul><p><code>[&lt;sentence&gt;substitute[]]</code> evaluates to  <code>This tiddler was last modified on 14 junio 2023</code> </p></div>
+</div></p><h1 class="">Substitute variables</h1><p>This example uses the following variables:</p><ul><li>name: <pre><code>Bugs Bunny</code></pre></li><li>address: <pre><code>Rabbit Hole Hill</code></pre></li></ul><p><div class="doc-example">
+
+<span class=" tc-reveal">
+	<code>[[Hi, I'm $(name)$ and I live in $(address)$]substitute[]]</code>
+	
+	<dl>
+	<dd><button class="">Try it</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div></p><h1 class="">Substitute variables and operator parameters</h1><p>This example uses the following variable:</p><ul><li>time: <pre><code>morning</code></pre></li></ul><p><div class="doc-example">
+
+<span class=" tc-reveal">
+	<code>[[Something in the $(time)$ at $2$ about $1$ ]substitute[Maths],[the Library]]</code>
+	
+	<dl>
+	<dd><button class="">Try it</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div></p><h1 class="">Substitute a filter expression and a variable</h1><p>This example uses the following variables:</p><ul><li>field: <pre><code>modified</code></pre></li><li>sentence: <pre><code>This tiddler was last $(field)$ on ${[{!!modified}format:date[DDth MMM YYYY]]}$</code></pre></li></ul><p><div class="doc-example">
+
+<span class=" tc-reveal">
+	<code>[&lt;sentence&gt;substitute[]]</code>
+	
+	<dl>
+	<dd><button class="">Try it</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div></p></div>
 
 </div></p>
 </section>
