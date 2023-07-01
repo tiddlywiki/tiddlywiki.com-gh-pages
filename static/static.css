@@ -1340,6 +1340,8 @@ a.tc-tiddlylink:hover {
 }.tc-editor-toolbar button svg {
 	width: 1.6em;
 	height: 1.2em;
+}.tc-editor-toolbar .tc-drop-down button.tc-btn-mini {
+	padding: 2px 4px;
 }.tc-editor-toolbar button:hover {
 	background-color: #444444;
 	fill: #ffffff;
@@ -2433,9 +2435,43 @@ button > .tc-toc-caption{
 	color: ;
 	background: ;
 }/*
+** Translink macro
+*/.tc-translink {
+	background-color: #f5f5f5;
+	border: 1px solid #cccccc;
+	padding: 0 3px;
+	border-radius: 3px;
+}div.tc-translink > div {
+	margin: 1em;
+}div.tc-translink > div > a:first-child > h1 {
+	font-size: 1.2em;
+	font-weight: bold;
+}span.tc-translink > a:first-child {
+	font-weight: bold;
+}/*
+** Classes for displaying globals
+*/.tc-global-tiddler-body {
+	padding: 0.25em;
+	border: 1px solid #333333;
+	background-color: #bbb;
+	border-radius: 3px;
+}.tc-global-tiddler-body-heading {
+	margin: 0 0 0.25em 0;
+	font-weight: normal;
+}.tc-global-tiddler-body-type {
+	margin: 0 0 0.25em 0;
+	border-bottom: 1px solid #333333;
+}.tc-global-tiddler-body-details {
+	background-color: #ffffff;
+}.tc-global-tiddler-body pre {
+	margin: 0;
+	border: 1px solid #333333;
+}/*
 ** Utility classes for SVG icons
 */.tc-fill-background {
 	fill: #ffffff;
+}.tc-network-activity-background {
+	fill: #448844;
 }/*
 ** Flexbox utility classes
 */.tc-flex {
@@ -2476,7 +2512,8 @@ button > .tc-toc-caption{
 	word-break: break-all;
 }/* Vertical gaps */.tc-tiny-v-gap-bottom {
 	margin-bottom: 3px;
-}nav.tc-menubar {
+}
+nav.tc-menubar {
 	position: fixed;
 	z-index: 850;
 	display: inline-block;
@@ -3185,6 +3222,14 @@ ol.doc-github-contributors li {
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
+.doc-op-comparison {
+	table-layout: fixed;
+	width: 80%;
+}
+.doc-op-comparison th .doc-operator {
+	background-color: unset;
+	color: #666;
+}
 .doc-tabs.tc-tab-buttons button {
   font-size: 1rem;
   padding: 0.5em;
@@ -3195,7 +3240,8 @@ ol.doc-github-contributors li {
 }
 .doc-tab-link .doc-attr {
   color: unset;
-}.tc-thumbnail-tabs .tc-tab-buttons {
+}
+.tc-thumbnail-tabs .tc-tab-buttons {
 	background: #ecf2ff;
     text-align: center;
 }.tc-thumbnail-tabs .tc-tab-buttons button {

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.2.7" />
+<meta name="tiddlywiki-version" content="5.3.0" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -42,7 +42,7 @@ format Operator (Examples)
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 11 junio 2022 a las 10:47</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 26 febrero 2023 a las 13:56</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="background-color:;
@@ -104,6 +104,17 @@ color:#333333;">
 	</dl>
 </span>
 <span class=" tc-reveal" hidden="true"></span>
+</div></p><p>Get the date and time exactly 24 hours (86,400,000 milliseconds) from now:
+<div class="doc-example">
+
+<span class=" tc-reveal">
+	<code>[&lt;now [UTC]YYYY0MM0DD0hh0mm0ss0XXX&gt;format:date[TIMESTAMP]add[86400000]format:timestamp[DDth mmm YYYY 0hh:0mm:0ss]]</code>
+	
+	<dl>
+	<dd><button class="">Try it</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
 </div></p><p>A tiddler title with spaces formatted as a title list:
 <div class="doc-example">
 
@@ -158,9 +169,9 @@ color:#333333;">
 	</dl>
 </span>
 <span class=" tc-reveal" hidden="true"></span>
-</div></p><p>For example, to save titles tagged <code>TableOfContents</code> to the titles field of the tiddler <a class="tc-tiddlylink tc-tiddlylink-missing" href="format%2520titlelist%2520test.html">format titlelist test</a>:</p><div class="doc-example"><pre><code>&lt;$button&gt; test
+</div></p><p>For example, to save titles tagged <code>TableOfContents</code> to the titles field of the tiddler <a class="tc-tiddlylink tc-tiddlylink-missing" href="format%2520titlelist%2520test.html">format titlelist test</a>:</p><div class="doc-example"><pre><code>&lt;$button&gt;Try it
 &lt;$action-setfield $tiddler="format titlelist test" titles={{{ [tag[TableOfContents]format:titlelist[]join[ ]] }}}/&gt;
-&lt;/$button&gt;</code></pre><p>Este es su aspecto:</p><p><button class=""> test
+&lt;/$button&gt;</code></pre><p>Este es su aspecto:</p><p><button class="">Try it
 
 </button>
 </p></div></div>

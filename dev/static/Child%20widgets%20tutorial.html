@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.2.7" />
+<meta name="tiddlywiki-version" content="5.3.0" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -392,10 +392,10 @@ hello
 <td><code>&lt;$macrocall $name=now/&gt;</code></td>
 <td>
 
-15:18, 30th June 2023
+11:45, 1st July 2023
 
 </td>
-<td>15:18, 30th June 2023</td>
+<td>11:45, 1st July 2023</td>
 </tr>
 </tbody>
 </table></p><p><table>
@@ -451,11 +451,16 @@ hello
             },
             "children": [
                 {
-                    "type": "vars",
+                    "type": "transclude",
+                    "attributes": {
+                        "$variable": "now",
+                        "$type": "text/vnd.tiddlywiki",
+                        "$output": "text/html"
+                    },
                     "children": [
                         {
                             "type": "text",
-                            "text": "15:18, 30th June 2023"
+                            "text": "11:45, 1st July 2023"
                         }
                     ]
                 }
