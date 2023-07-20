@@ -11,7 +11,7 @@
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
-<title>tw5-server: TiddlyWiki — un carnet de notes web personnel et non linéaire
+<title>tw5server: TiddlyWiki — un carnet de notes web personnel et non linéaire
 </title>
 </head>
 <body class="tc-body">
@@ -49,12 +49,8 @@ color:#333333;">Windows</span><span class="tc-drop-down tc-reveal" hidden="true"
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>A local server for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki5.html">TiddlyWiki5</a> that saves and backups wikis, inspired by
-<a class="tc-tiddlylink tc-tiddlylink-missing" href="%2520https%253A%252F%252Fgist.github.com%252Fjimfoltz%252Fee791c1bdd30ce137bc23cce826096da.html">tw5-server.rb </a>.</p><p>tw5-server provides features of:</p><ul><li>Server for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki5.html">TiddlyWiki5</a>, as well as other files (e.g. images used in TW5 <code>[img[images/*.png]]</code>);</li><li>Easy to save wiki via browsers;</li><li>Backup wiki in compress format (.gz), to save disk space;</li><li>Auto clean backups: keep one newest per previous month, keep all backups in current month.</li><li>Upload files/images to server, for use in tiddlywiki as external links.</li><li>Offer binary executable for Linux, macos and windows.</li></ul><p>Download executable script and binary at the github.com <a class="tc-tiddlylink-external" href="https://github.com/hffqyd/tw5-server" rel="noopener noreferrer" target="_blank">tw5-server</a>.</p><h1 class="">Usage</h1><pre><code># python script:
-python tw5-server.py -p 8000 -d ./ -b backup_dir
-
-# binary file:
-tw5server -a:192.168.0.10 -p:8000 -d:./ -b:backup
+<div class="tc-tiddler-body tc-reveal"><p>A local mini binary server for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki5.html">TiddlyWiki5</a> that saves and backups wikis and uploads files for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a>, inspired by
+<a class="tc-tiddlylink tc-tiddlylink-missing" href="%2520https%253A%252F%252Fgist.github.com%252Fjimfoltz%252Fee791c1bdd30ce137bc23cce826096da.html">tw5-server.rb </a>.</p><p>tw5server provides features of:</p><ul><li>Server for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki5.html">TiddlyWiki5</a>, as well as other files (e.g. images used in TW5 <code>[img[images/*.png]]</code>);</li><li>Easy to save wiki via browsers;</li><li>Backup wiki in compress format (.gz), to save disk space;</li><li>Auto clean backups: keep one newest per previous month, keep all backups in current month.</li><li>Upload files/images to server via pressing button or drag-and-drop, for use in tiddlywiki as external links.</li><li>Offer binary executable for Linux, macos, Android and windows.</li></ul><p>Download executable binary at the github.com <a class="tc-tiddlylink-external" href="https://github.com/hffqyd/tw5-server" rel="noopener noreferrer" target="_blank">tw5-server</a>.</p><h1 class="">Usage</h1><pre><code>tw5server -a:192.168.0.10 -p:8000 -d:./ -b:backup
 
 -h usage help
 -a address, defautl localhost
@@ -64,7 +60,8 @@ tw5server -a:192.168.0.10 -p:8000 -d:./ -b:backup
 -l log saving messages to stdout
 
 Backups auto-clean strategy:
-Keep all backups in current month, keep only the newest one for previous months.</code></pre><p>In Unix/Linux, just excute <code>./tw5-server.py</code> (with <code>chmod +x tw5-server.py</code>).</p><p>Then go to <a class="tc-tiddlylink-external" href="http://localhost:8000" rel="noopener noreferrer" target="_blank">http://localhost:8000</a> (or other address:port specified in command) in your web browser, and click on your wiki html file.
+Keep all backups in current month, keep only the newest one for previous months.</code></pre><p>In Unix/Linux, maybe first <code>chmod +x tw5server</code>), then run it.
+For Android version, run it in Termux, or some other terminals.</p><p>Then go to <a class="tc-tiddlylink-external" href="http://localhost:8000" rel="noopener noreferrer" target="_blank">http://localhost:8000</a> (or other address:port specified in command) in your web browser, and click on your wiki html file.
 </p></div>
 
 </div></p>
