@@ -304,7 +304,7 @@ Error message and password prompt
 </noscript>
 <!--~~ Ordinary tiddlers ~~-->
 <script class="tiddlywiki-tiddler-store" type="application/json">[
-{"title":"$:/build","commit":"3e213569e2d977be5036113294050b5e4c37dc90","text":"Prerelease built from branch 'master' at commit 3e213569e2d977be5036113294050b5e4c37dc90 of https://github.com/Jermolene/TiddlyWiki5 at 2023-07-30 21:52:13 UTC\n"},
+{"title":"$:/build","commit":"d0da1ef9d9274b96ec514bd3e2b939653a2508ed","text":"Prerelease built from branch 'master' at commit d0da1ef9d9274b96ec514bd3e2b939653a2508ed of https://github.com/Jermolene/TiddlyWiki5 at 2023-07-31 10:52:56 UTC\n"},
 {"title":"$:/config/DefaultSidebarTab","created":"20150719185223155","modified":"20150719185226532","text":"Preview"},
 {"title":"$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home","modified":"20150719172915740","text":"show"},
 {"title":"$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/new-tiddler","modified":"20150719172917795","text":"hide"},
@@ -1147,9 +1147,8 @@ var globalCheck =[
 	"    configurable: true",
 	"  });",
 	"  if(Object.keys(__temp__).length){",
-	"    console.log(Object.keys(__temp__));",
+	"    console.log(\"Warning: Global assignment detected\",Object.keys(__temp__));",
 	"    delete Object.prototype.__temp__;",
-	"    throw \"Global assignment is not allowed within modules on node.\";",
 	"  }",
 	"  delete Object.prototype.__temp__;",
 ].join('\n');
