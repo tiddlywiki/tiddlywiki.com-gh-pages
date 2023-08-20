@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.3.0" />
+<meta name="tiddlywiki-version" content="5.3.1" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -26,77 +26,7 @@ color:#333333;">Operator Examples</span><span class="tc-drop-down tc-reveal" hid
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p><div class="doc-example">
-
-<span class=" tc-reveal">
-	<code>[all[shadows+tiddlers]tag[$:/tags/PageControls]lookup[$:/config/PageControlButtons/Visibility/]]</code>
-	<dd>→ Retrieve the visibility status of each page control button</dd>
-	<dl>
-	<dd><button class="">Try it</button></dd>
-	</dl>
-</span>
-<span class=" tc-reveal" hidden="true"></span>
-</div></p><p><div class="doc-example">
-
-<span class=" tc-reveal">
-	<code>[all[shadows+tiddlers]tag[$:/tags/PageControls]lookup:show[$:/config/PageControlButtons/Visibility/]]</code>
-	<dd>→ Retrieve the visibility status of each page control button, this time with a default value</dd>
-	<dl>
-	<dd><button class="">Try it</button></dd>
-	</dl>
-</span>
-<span class=" tc-reveal" hidden="true"></span>
-</div></p><p><div class="doc-example">
-
-<span class=" tc-reveal">
-	<code>[all[tiddlers]has[plugin-type]removeprefix[$:/plugins/tiddlywiki/]lookup:missing-description:field[$:/plugins/tiddlywiki/],[description]]</code>
-	<dd>→ Retrieve the description of all plugin-tiddlers that are in the <code>$:/plugins/tiddlywiki/</code> namespace.</dd>
-	<dl>
-	<dd><button class="">Try it</button></dd>
-	</dl>
-</span>
-<span class=" tc-reveal" hidden="true"></span>
-</div></p><p><div class="doc-example">
-
-<span class=" tc-reveal">
-	<code>OriginalTiddlerPaths +[lookup:missing-index:index[$:/config/],[HelloThere]]</code>
-	<dd>→ Lookup the original tiddler path on disk for the <a class="tc-tiddlylink tc-tiddlylink-missing" href="Hello%2520There.html">Hello There</a> tiddler.</dd>
-	<dl>
-	<dd><button class="">Try it</button></dd>
-	</dl>
-</span>
-<span class=" tc-reveal" hidden="true"></span>
-</div></p><p><div class="doc-example">
-
-<span class=" tc-reveal">
-	<code>OriginalTiddlerPaths +[lookup:missing-index:index[$:/config/],[MissingTiddler]]</code>
-	<dd>→ Lookup the original tiddler path on disk for the <a class="tc-tiddlylink tc-tiddlylink-missing" href="MissingTiddler.html">MissingTiddler</a> tiddler.</dd>
-	<dl>
-	<dd><button class="">Try it</button></dd>
-	</dl>
-</span>
-<span class=" tc-reveal" hidden="true"></span>
-</div></p><p><div class="doc-example">
-
-<span class=" tc-reveal">
-	<code>HistoryList MissingHistoryList +[lookup:missing-0:index[$:/]]</code>
-	<dd>→ Retrieve index <code>0</code> from the <code>$:/HistoryList</code> and <code>$:/MissingHistoryList</code>.</dd>
-	<dl>
-	<dd><button class="">Try it</button></dd>
-	</dl>
-</span>
-<span class=" tc-reveal" hidden="true"></span>
-</div></p><p><div class="doc-example">
-
-<span class=" tc-reveal">
-	<code>OriginalTiddlerPaths MissingTiddlerPaths +[lookup:missing-tiddler:index[$:/config/],[$:/key-test]]</code>
-	<dd>→ Retrieve index <code>$:/key-test</code> from <code>$:/config/OriginalTiddlerPaths</code> and <code>$:/config/MissingTiddlerPaths</code>.</dd>
-	<dl>
-	<dd><button class="">Try it</button></dd>
-	</dl>
-</span>
-<span class=" tc-reveal" hidden="true"></span>
-</div></p></div>
+<div class="tc-tiddler-body tc-reveal"><p><div class="doc-example"><span class=" tc-reveal"><code>[all[shadows+tiddlers]tag[$:/tags/PageControls]lookup[$:/config/PageControlButtons/Visibility/]]</code><dd>→ Retrieve the visibility status of each page control button</dd><dl><dd><button class="">Try it</button></dd></dl></span><span class=" tc-reveal" hidden="true"></span></div></p><p><div class="doc-example"><span class=" tc-reveal"><code>[all[shadows+tiddlers]tag[$:/tags/PageControls]lookup:show[$:/config/PageControlButtons/Visibility/]]</code><dd>→ Retrieve the visibility status of each page control button, this time with a default value</dd><dl><dd><button class="">Try it</button></dd></dl></span><span class=" tc-reveal" hidden="true"></span></div></p><p><div class="doc-example"><span class=" tc-reveal"><code>[all[tiddlers]has[plugin-type]removeprefix[$:/plugins/tiddlywiki/]lookup:missing-description:field[$:/plugins/tiddlywiki/],[description]]</code><dd>→ Retrieve the description of all plugin-tiddlers that are in the <code>$:/plugins/tiddlywiki/</code> namespace.</dd><dl><dd><button class="">Try it</button></dd></dl></span><span class=" tc-reveal" hidden="true"></span></div></p><p><div class="doc-example"><span class=" tc-reveal"><code>OriginalTiddlerPaths +[lookup:missing-index:index[$:/config/],[HelloThere]]</code><dd>→ Lookup the original tiddler path on disk for the <a class="tc-tiddlylink tc-tiddlylink-missing" href="Hello%2520There.html">Hello There</a> tiddler.</dd><dl><dd><button class="">Try it</button></dd></dl></span><span class=" tc-reveal" hidden="true"></span></div></p><p><div class="doc-example"><span class=" tc-reveal"><code>OriginalTiddlerPaths +[lookup:missing-index:index[$:/config/],[MissingTiddler]]</code><dd>→ Lookup the original tiddler path on disk for the <a class="tc-tiddlylink tc-tiddlylink-missing" href="MissingTiddler.html">MissingTiddler</a> tiddler.</dd><dl><dd><button class="">Try it</button></dd></dl></span><span class=" tc-reveal" hidden="true"></span></div></p><p><div class="doc-example"><span class=" tc-reveal"><code>HistoryList MissingHistoryList +[lookup:missing-0:index[$:/]]</code><dd>→ Retrieve index <code>0</code> from the <code>$:/HistoryList</code> and <code>$:/MissingHistoryList</code>.</dd><dl><dd><button class="">Try it</button></dd></dl></span><span class=" tc-reveal" hidden="true"></span></div></p><p><div class="doc-example"><span class=" tc-reveal"><code>OriginalTiddlerPaths MissingTiddlerPaths +[lookup:missing-tiddler:index[$:/config/],[$:/key-test]]</code><dd>→ Retrieve index <code>$:/key-test</code> from <code>$:/config/OriginalTiddlerPaths</code> and <code>$:/config/MissingTiddlerPaths</code>.</dd><dl><dd><button class="">Try it</button></dd></dl></span><span class=" tc-reveal" hidden="true"></span></div></p></div>
 
 </div></p>
 </section>
