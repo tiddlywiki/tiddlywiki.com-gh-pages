@@ -632,12 +632,12 @@
         "name": "QR Code",
         "description": "QR Code generator",
         "author": "Zeno Zeng",
-        "list": "readme usage examples license",
+        "list": "readme docs examples license",
         "version": "5.3.2-prerelease",
         "plugin-type": "plugin",
         "dependents": "",
         "type": "application/json",
-        "readme": "The QR code plugin provides a macro that enables any text to be rendered as a [[QR code|https://en.wikipedia.org/wiki/QR_code]]. QR codes are a type of 2-dimensional bar code that encodes arbitrary data: text, numbers, links. QR code readers are available or built-in for smartphones, making them a convenient means to transfer information between devices\n\nThe QR code plugin adds the following features to TiddlyWiki:\n\n* A new [[makeqr Macro]] that renders specified text as a QR code image that can be displayed or printed\n* A new toolbar button that can display several QR code renderings of the content of a tiddler:\n** Raw content\n** Rendered, formatted content\n** URL of tiddler\n\nThe QR code plugin is based on the library [[qrcode.js by Zeno Zeng|https://github.com/zenozeng/node-yaqrcode]].",
+        "readme": "The QR Code Plugin contains several features for working with QR codes and other types of barcode.\n\n* The ''makeqr'' macro enables any text to be rendered as a [[QR code|https://en.wikipedia.org/wiki/QR_code]]. QR codes are a type of 2-dimensional bar code that encodes arbitrary data: text, numbers, links. QR code readers are available or built-in for smartphones, making them a convenient means to transfer information between devices\n* The `<$barcodereader>` widget that enables barcodes to be decoded from the device camera or direct from an image file\n* A new toolbar button that can display several QR code renderings of the content of a tiddler:\n** Raw content\n** Rendered, formatted content\n** URL of tiddler\n\nThis plugin uses the following open source libraries:\n\n* [[qrcode.js by Zeno Zeng|https://github.com/zenozeng/node-yaqrcode]]\n* [[Html5-QRCode by Minhaz|https://github.com/mebjas/html5-qrcode]]\n",
         "requires-reload": "yes"
     },
     {

@@ -2766,7 +2766,11 @@ nav.tc-menubar .tc-drop-down .tc-menubar-dropdown-sidebar button {
 	right: 1em;
 	bottom: 0;
     z-index: 2000;
-}/* CSS modified for TiddlyWiki */svg.railroad-diagram {
+}.tc-drop-down .tc-qrcode-drop-down img {
+	width: 100%;
+	height: 100%;
+}
+/* CSS modified for TiddlyWiki */svg.railroad-diagram {
 	background-color: #ffffff;
 	border-radius: 5px;
 }
