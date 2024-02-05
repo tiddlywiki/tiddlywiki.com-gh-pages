@@ -220,7 +220,7 @@ Error message and password prompt
 </noscript>
 <!--~~ Ordinary tiddlers ~~-->
 <script class="tiddlywiki-tiddler-store" type="application/json">[
-{"title":"$:/build","commit":"2b1efac6eea82783c47cc2673b86aced4e9c0bdf","text":"Prerelease built from branch 'master' at commit 2b1efac6eea82783c47cc2673b86aced4e9c0bdf of https://github.com/Jermolene/TiddlyWiki5 at 2024-02-05 17:02:32 UTC\n"},
+{"title":"$:/build","commit":"b0bb911103dfd113bb0608a8db3f75998127ae66","text":"Prerelease built from branch 'master' at commit b0bb911103dfd113bb0608a8db3f75998127ae66 of https://github.com/Jermolene/TiddlyWiki5 at 2024-02-05 17:50:05 UTC\n"},
 {"title":"$:/codemirrordemo/sidebar/cheatsheet","caption":"Keymap","tags":"$:/tags/SideBar","text":"\n|Shortcut |Function |h\n|Shift-Tab |indentLess |\n|Shift-Ctrl-K |deleteLine |\n|Alt-Q |wrapLines |\n|Alt-T |transposeChars |\n|Alt-Left |goSubwordLeft |\n|Alt-Right |goSubwordRight |\n|Ctrl-Up |scrollLineUp |\n|Ctrl-Down |scrollLineDown |\n|Alt-L |selectLine |\n|Shift-Alt-L |splitSelectionByLine |\n|Ctrl-Esc |singleSelectionTop |\n|Shift-Enter |insertLineAfter |\n|Shift-Ctrl-Enter |insertLineBefore |\n|Ctrl-D |selectNextOccurrence |\n|Shift-Ctrl-Space |selectScope |\n|Shift-Ctrl-M |selectBetweenBrackets |\n|Alt-M |goToBracket |\n|Shift-Ctrl-Up |swapLineUp |\n|Shift-Ctrl-Down |swapLineDown |\n|Ctrl-/ |toggleCommentIndented |\n|Ctrl-J |joinLines |\n|Shift-Ctrl-D |duplicateLine |\n|F9 |sortLines |\n|Ctrl-F9 |sortLinesInsensitive |\n|F2 |nextBookmark |\n|Shift-F2 |prevBookmark |\n|Ctrl-F2 |toggleBookmark |\n|Shift-Ctrl-F2 |clearBookmarks |\n|Alt-F2 |selectBookmarks |\n|Backspace |smartBackspace |\n|Ctrl-K Ctrl-K |delLineRight |\n|Ctrl-K Alt-U |upcaseAtCursor |\n|Ctrl-K Alt-L |downcaseAtCursor |\n|Ctrl-K Ctrl-Space |setSublimeMark |\n|Ctrl-K Ctrl-A |selectToSublimeMark |\n|Ctrl-K Alt-D |deleteToSublimeMark |\n|Ctrl-K Ctrl-X |swapWithSublimeMark |\n|Ctrl-K Ctrl-Y |sublimeYank |\n|Ctrl-K Ctrl-C |showInCenter |\n|Ctrl-K Ctrl-G |clearBookmarks |\n|Ctrl-K Ctrl-Backspace |delLineLeft |\n|Ctrl-K Ctrl-0 |unfoldAll |\n|Ctrl-K Ctrl-J |unfoldAll |\n|Ctrl-Alt-Up |addCursorToPrevLine |\n|Ctrl-Alt-Down |addCursorToNextLine |\n|Ctrl-F3 |findUnder |\n|Shift-Ctrl-F3 |findUnderPrevious |\n|Shift-Ctrl-[ |fold |\n|Shift-Ctrl-] |unfold |\n|Ctrl-H |replace |\n\n"},
 {"title":"$:/config/codemirror/keyMap","type":"string","text":"sublime\n"},
 {"title":"$:/config/codemirror/lineNumbers","type":"bool","text":"true\n"},
@@ -2898,8 +2898,12 @@ $tw.boot.initStartup = function(options) {
 	$tw.utils.registerFileType("text/x-markdown","utf8",[".md",".markdown"]);
 	$tw.utils.registerFileType("application/enex+xml","utf8",".enex");
 	$tw.utils.registerFileType("application/vnd.openxmlformats-officedocument.wordprocessingml.document","base64",".docx");
+	$tw.utils.registerFileType("application/msword","base64",".doc");
 	$tw.utils.registerFileType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet","base64",".xlsx");
+	$tw.utils.registerFileType("application/excel","base64",".xls");
+	$tw.utils.registerFileType("application/vnd.ms-excel","base64",".xls");
 	$tw.utils.registerFileType("application/vnd.openxmlformats-officedocument.presentationml.presentation","base64",".pptx");
+	$tw.utils.registerFileType("application/mspowerpoint","base64",".ppt");
 	$tw.utils.registerFileType("text/x-bibtex","utf8",".bib",{deserializerType:"application/x-bibtex"});
 	$tw.utils.registerFileType("application/x-bibtex","utf8",".bib");
 	$tw.utils.registerFileType("application/epub+zip","base64",".epub");
