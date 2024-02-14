@@ -60,14 +60,7 @@ SelectWidget
 <span class=" tc-reveal" hidden="true"></span>
 
 
-</span></div></div>
-
-
-
-
-
-
-<div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The select widget displays a popup menu based on a <a class="tc-tiddlylink-external" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select" rel="noopener noreferrer" target="_blank">HTML select element</a>. The popup (or dropdown) contains a list of items defined by <code>&lt;option&gt;</code> and <code>&lt;optgroup&gt;</code> elements. 
+</span></div></div><div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The select widget displays a popup menu based on a <a class="tc-tiddlylink-external" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select" rel="noopener noreferrer" target="_blank">HTML select element</a>. The popup (or dropdown) contains a list of items defined by <code>&lt;option&gt;</code> and <code>&lt;optgroup&gt;</code> elements. 
 Every time the user selects a new value in the menu, the selected value is written to the text of a specified tiddler field or index and any <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">ActionWidgets</a> within the <code>actions</code> attribute are triggered. Conversely, if the tiddler value is changed independently the select widget is automatically updated to reflect the new value.</p><p>In multiple selection mode, the list of selected values is bound to the specified tiddler field or index. Browsers generally use the <kbd>ctrl</kbd> or <kbd>cmd</kbd> keys for multiple selection.</p><p>For example, this select widget displays a list of the tags in this wiki:</p><div class="doc-example"><pre><code>&lt;$select tiddler=&lt;&lt;qualify 'select-demo'&gt;&gt; default='HelloThere'&gt;
 &lt;$list filter='[all[shadows+tiddlers]tags[]sort[title]]'&gt;
 &lt;option value=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;$view field='title'/&gt;&lt;/option&gt;
@@ -408,6 +401,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 
 <option value="fields Operator">fields Operator</option>
 
+<option value="Filter Expression">Filter Expression</option>
+
 <option value="Filter Filter Run Prefix">Filter Filter Run Prefix</option>
 
 <option value="filter Operator">filter Operator</option>
@@ -415,8 +410,6 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option value="Filter Operators">Filter Operators</option>
 
 <option value="Filter Run Prefix">Filter Run Prefix</option>
-
-<option value="Filter Run Prefix Examples">Filter Run Prefix Examples</option>
 
 <option value="Filter Syntax">Filter Syntax</option>
 
@@ -599,6 +592,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option value="move Operator">move Operator</option>
 
 <option value="multiply Operator">multiply Operator</option>
+
+<option value="Named Filter Run Prefix">Named Filter Run Prefix</option>
 
 <option value="navigator-message">navigator-message</option>
 

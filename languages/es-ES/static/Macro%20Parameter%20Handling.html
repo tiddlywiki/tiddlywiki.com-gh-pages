@@ -60,14 +60,7 @@ Macro Parameter Handling
 <span class=" tc-reveal" hidden="true"></span>
 
 
-</span></div></div>
-
-
-
-
-
-
-<div class="tc-tiddler-body tc-reveal"><h2 class="">Introduction</h2><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macros.html">Macros</a> parameters are handled in two different ways:</p><ol><li>Textual substitution is always performed for each parameter before the macro contents is used</li><li>When the macro contents are wikified the parameters are made available as variables. The variable names are formed by wrapping the parameter name with double underscores</li></ol><p>Somewhat confusingly, in some situations both of these mechanisms will occur; this is related to the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macro%2520Pitfalls.html">pitfalls of using macros</a>.</p><h2 class="">Textual Substitution of Parameters and variables</h2><p>The following substitutions take place before the text of a macro is used:</p><ul><li>The pattern <code>$param$</code> is replaced with the value of the named parameter</li><li>The pattern <code>$(variable)$</code> is replaced with the value of the named variable</li></ul><p>The actual value of the parameter or variable is substituted for the placeholder whenever the macro is called:</p><div class="doc-example"><pre><code>\define say-hi-using-parameters(name,address)
+</span></div></div><div class="tc-tiddler-body tc-reveal"><h2 class="">Introduction</h2><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macros.html">Macros</a> parameters are handled in two different ways:</p><ol><li>Textual substitution is always performed for each parameter before the macro contents is used</li><li>When the macro contents are wikified the parameters are made available as variables. The variable names are formed by wrapping the parameter name with double underscores</li></ol><p>Somewhat confusingly, in some situations both of these mechanisms will occur; this is related to the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macro%2520Pitfalls.html">pitfalls of using macros</a>.</p><h2 class="">Textual Substitution of Parameters and variables</h2><p>The following substitutions take place before the text of a macro is used:</p><ul><li>The pattern <code>$param$</code> is replaced with the value of the named parameter</li><li>The pattern <code>$(variable)$</code> is replaced with the value of the named variable</li></ul><p>The actual value of the parameter or variable is substituted for the placeholder whenever the macro is called:</p><div class="doc-example"><pre><code>\define say-hi-using-parameters(name,address)
 Hi, I'm $name$ and I live in $address$.
 \end
 

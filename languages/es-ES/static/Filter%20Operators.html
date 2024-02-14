@@ -42,7 +42,7 @@ Filter Operators
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 17 diciembre 2021 a las 14:12</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 10 abril 2023 a las 11:41</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
@@ -51,14 +51,7 @@ Filter Operators
 <span class=" tc-reveal" hidden="true"></span>
 
 
-</span></div></div>
-
-
-
-
-
-
-<div class="tc-tiddler-body tc-reveal"><p>A <dfn class="doc-def">filter operator</dfn> is a predefined keyword attached to an individual <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Step.html">step</a> of a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filters.html">filter</a>. It defines the particular action of that step.</p><p><strong>Important:</strong> Each first <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Step.html">step</a> of a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Run.html">filter run</a> not given any input titles receives the output of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="all%2520Operator.html">[all[tiddlers]]</a> as its input.</p><p>The following table lists all core operators, the most common ones marked ✓. The <code>!</code> column indicates whether an operator allows <strong>negation</strong> using the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Step.html"><code>!</code> prefix</a>. For specifics as to each operator's negated output please refer to its documentation. </p><p>Most steps process the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Title%2520Selection.html">selection of titles</a> that are supplied as their input, but a few <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Selection%2520Constructors.html">construct an entirely new selection</a> instead, as indicated by the last column. A <code>C?</code> indicates it might construct a new selection, depending on usage. For specifics as to each operator's selection creation please refer to its documentation. </p><p><table>
+</span></div></div><div class="tc-tiddler-body tc-reveal"><p>A <dfn class="doc-def">filter operator</dfn> is a predefined keyword attached to an individual step of a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filters.html">filter</a>. It defines the particular action of that step.</p><p><strong>Important:</strong> In general, each first <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Step.html">filter step</a> of a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Run.html">filter run</a> not given any input titles receives the output of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="all%2520Operator.html">[all[tiddlers]]</a> as its input.</p><p><strong>Table legend:</strong></p><table class="tc-table-no-border tc-first-col-min-width"><tbody><tr class="evenRow"><td align="right" valign="top">✓</td><td align="left" valign="top">...</td><td align="left" valign="bottom">Used to mark the most common ones</td></tr><tr class="oddRow"><td align="right" valign="top"><code>!</code></td><td align="left" valign="top">...</td><td align="left" valign="bottom">The column indicates whether an operator allows <strong>negation</strong> using the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Step.html"><code>!</code> prefix</a>.<br>For specifics as to each operator's negated output please refer to its documentation</td></tr><tr class="evenRow"><td align="right" valign="top"><code>C</code></td><td align="left" valign="top">...</td><td align="left" valign="bottom">Most steps process the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Title%2520Selection.html">selection of titles</a> that are supplied as their input, but a few <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Selection%2520Constructors.html">construct an entirely new selection</a> instead, as indicated by the last column.<br>A <code>C?</code> indicates it might construct a new selection, depending on usage. For specifics as to each operator's selection creation please refer to its documentation</td></tr></tbody></table><p>The following table lists all core operators:</p><p><table>
 <tr>
 <th align="left">Operator</th>
 <th align="left">Purpose</th>
@@ -128,7 +121,7 @@ Filter Operators
 <td align="center"></td>
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="enlist%2520Operator.html">enlist</a></td>
-<td>select titles from the operand interpreted as a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Title%2520List.html">title list</a></td>
+<td>select titles from the parameter interpreted as a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Title%2520List.html">title list</a></td>
 <td align="center"></td>
 <td align="center"><code>!</code></td>
 <td align="center"><code>C</code></td>
@@ -266,7 +259,7 @@ Filter Operators
 <td align="center"></td>
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="match%2520Operator.html">match</a></td>
-<td>returns each item in the list that matches the operand string</td>
+<td>returns each item in the list that matches the parameter string</td>
 <td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
@@ -332,7 +325,7 @@ Filter Operators
 <td align="center"></td>
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="subfilter%2520Operator.html">subfilter</a></td>
-<td>select titles from the operand interpreted as a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Expression.html">filter expression</a></td>
+<td>select titles from the parameter interpreted as a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Expression.html">filter expression</a></td>
 <td align="center"></td>
 <td align="center"><code>!</code></td>
 <td align="center"><code>C?</code></td>
@@ -510,7 +503,7 @@ Filter Operators
 <td align="center"></td>
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="cycle%2520Operator.html">cycle</a></td>
-<td>toggle in the input, the titles specified in the first operand in a cyclical manner</td>
+<td>toggle the titles specified in the first parameter in a cyclical manner</td>
 <td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
@@ -564,7 +557,7 @@ Filter Operators
 <td align="center"></td>
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="remove%2520Operator.html">remove</a></td>
-<td>remove a list of titles specified in the operand from the input</td>
+<td>remove a list of titles specified in the parameter from the input</td>
 <td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
@@ -576,13 +569,13 @@ Filter Operators
 <td align="center"></td>
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="sortby%2520Operator.html">sortby</a></td>
-<td>sort the current list in the order of the list referenced in the operand</td>
+<td>sort the current list in the order of the list referenced in the parameter</td>
 <td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="toggle%2520Operator.html">toggle</a></td>
-<td>toggle the title specified in the operand in the input</td>
+<td>toggle the title specified in the parameter in the input</td>
 <td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
@@ -614,7 +607,7 @@ Filter Operators
 <td align="center"></td>
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="compare%2520Operator.html">compare</a></td>
-<td>filter the input by comparing each item against the operand</td>
+<td>filter the input by comparing each item against the parameter</td>
 <td align="center"></td>
 <td align="center"><code>!</code></td>
 <td align="center"></td>
@@ -790,7 +783,7 @@ Filter Operators
 <td align="center"></td>
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="add%2520Operator.html">add</a></td>
-<td>treating each input title as a number, add to each the numeric value of the operand</td>
+<td>treating each input title as a number, add to each the numeric value of the parameter</td>
 <td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
@@ -826,7 +819,7 @@ Filter Operators
 <td align="center"></td>
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="compare%2520Operator.html">compare</a></td>
-<td>filter the input by comparing each item against the operand</td>
+<td>filter the input by comparing each item against the parameter</td>
 <td align="center"></td>
 <td align="center"><code>!</code></td>
 <td align="center"></td>
@@ -838,7 +831,7 @@ Filter Operators
 <td align="center"></td>
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="divide%2520Operator.html">divide</a></td>
-<td>treating each input title as a number, divide them by the numeric value of the operand</td>
+<td>treating each input title as a number, divide it by the numeric value of the parameter</td>
 <td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
@@ -862,13 +855,13 @@ Filter Operators
 <td align="center"></td>
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="log%2520Operator.html">log</a></td>
-<td>treating each input title as a number, return its logarithm with base equal to the numeric value of the operand if specified, otherwise base <code>e</code></td>
+<td>treating each input title as a number, return its logarithm with base equal to the numeric value of the parameter if specified, otherwise base <code>e</code></td>
 <td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="max%2520Operator.html">max</a></td>
-<td>treating each input title as a number, take the maximum of its value and the numeric value of the operand</td>
+<td>treating each input title as a number, take the maximum of its value and the numeric value of the parameter</td>
 <td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
@@ -886,7 +879,7 @@ Filter Operators
 <td align="center"></td>
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="min%2520Operator.html">min</a></td>
-<td>treating each input title as a number, take the minimum of its value and the numeric value of the operand</td>
+<td>treating each input title as a number, take the minimum of its value and the numeric value of the parameter</td>
 <td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
@@ -898,7 +891,7 @@ Filter Operators
 <td align="center"></td>
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="multiply%2520Operator.html">multiply</a></td>
-<td>treating each input title as a number, multiply it by the numeric value of the operand</td>
+<td>treating each input title as a number, multiply it by the numeric value of the parameter</td>
 <td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
@@ -910,7 +903,7 @@ Filter Operators
 <td align="center"></td>
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="power%2520Operator.html">power</a></td>
-<td>treating each input title as a number, raise it to the power of the numeric value of the operand</td>
+<td>treating each input title as a number, raise it to the power of the numeric value of the parameter</td>
 <td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
@@ -928,7 +921,7 @@ Filter Operators
 <td align="center"></td>
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="remainder%2520Operator.html">remainder</a></td>
-<td>treating each input title as a number, return the remainder when divided by the numeric value of the operand</td>
+<td>treating each input title as a number, return the remainder when divided by the numeric value of the parameter</td>
 <td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
@@ -958,7 +951,7 @@ Filter Operators
 <td align="center"></td>
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="subtract%2520Operator.html">subtract</a></td>
-<td>treating each input title as a number, subtract from each the numeric value of the operand</td>
+<td>treating each input title as a number, subtract from each the numeric value of the parameter</td>
 <td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
@@ -1105,7 +1098,7 @@ Filter Operators
 <td align="center"></td>
 <td align="center"><code>C</code></td>
 </tr>
-</table></p><p>A typical step is written as <code>[operator[parameter]]</code>, although not all of the operators need a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Parameter.html">parameter</a>. </p><p>For the exact rules, see <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Syntax.html">Filter Syntax</a>.</p></div>
+</table></p><p>A typical step is written as <code>[operator[parameter]]</code>, although not all of the operators need a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Parameter.html">parameter</a>.</p><p>For the exact rules, see <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Syntax.html">Filter Syntax</a>.</p></div>
 
 </div></p>
 </section>
