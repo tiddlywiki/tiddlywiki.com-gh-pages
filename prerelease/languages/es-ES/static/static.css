@@ -1288,8 +1288,6 @@ a.tc-tiddlylink:hover {
 	margin: 14px 0 14px 0;
 }.tc-remove-tag-button {
 	padding-left: 4px;
-}.tc-tiddler-preview {
-	overflow: auto;
 }.tc-tiddler-editor {
 	display: grid;
 }.tc-tiddler-frame .tc-tiddler-editor.tc-tiddler-preview {
