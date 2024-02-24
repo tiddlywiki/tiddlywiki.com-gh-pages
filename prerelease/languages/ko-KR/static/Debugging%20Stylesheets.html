@@ -626,18 +626,23 @@ tr.doc-table-subheading {
 	fill: #881122;
 }
 
-a.doc-from-version.tc-tiddlylink {
-    display: inline-block;
-    border-radius: 1em;
-	background: #bbb;
-	color: #ffffff;
-	fill: #ffffff;
-    padding: 0 0.4em;
-    font-size: 0.7em;
-    text-transform: uppercase;
+a.doc-from-version {
+    background-color: #bbb;
+    color: #000000;
+    padding: 3px;
+    border-radius: 4px;
     font-weight: bold;
-    line-height: 1.5;
-    vertical-align: text-bottom;
+    font-size: 0.75em;
+}
+
+a.doc-from-version.doc-from-version-new {
+    background-color: #ffff00;
+    color: #000000;
+}
+
+a.doc-from-version svg {
+    fill: currentColor;
+    vertical-align: sub;
 }
 
 a.doc-deprecated-version.tc-tiddlylink {
