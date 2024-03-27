@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.3.4-prerelease" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>WidgetMessage: tm-http-request Example - Basic Authentication: 티들리위키 — 줄 없는 개인 웹 공책</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">이 문서는 <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/languages/ko-KR/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/languages/ko-KR/</a>에서 티들리위키의 정적 HTML 표현의 일부입니다</div></div>
+</p>
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-%24%3A%2Ftags%2FGlobal" data-tags="$:/tags/Global" data-tiddler-title="WidgetMessage: tm-http-request Example - Basic Authentication" role="article"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-expanded="false" aria-label="더 보기" class="tc-btn-invisible" title="더 많은 동작을 봅니다"></button><span class=" tc-reveal" hidden="true"></span></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="편집" class="tc-btn-invisible" title="이 티들러를 편집합니다"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><span class="tc-popup-keep"><button aria-expanded="false" aria-label="QR code" class="tc-btn-invisible" title="Generate QR code for this tiddler"></button></span><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal"><button aria-label="닫기" class="tc-btn-invisible" title="이 티들러를 닫습니다"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+</span>
+
+<span>
+
+<span class="tc-tiddler-title-icon">
+
+</span>
+
+
+
+<h2 class="tc-title">
+
+WidgetMessage: tm-http-request Example - Basic Authentication
+
+</h2>
+
+</span>
+
+</div>
+
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> </div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+
+
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
+ $:/tags/Global
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span></div></div><div class="tc-tiddler-body tc-reveal"><h2 class="">HTTP Basic Authentication</h2><p><a class="tc-tiddlylink-external" href="https://en.wikipedia.org/wiki/Basic_access_authentication" rel="noopener noreferrer" target="_blank">HTTP Basic Authentication</a> is a simple scheme for HTTP clients pass a username and password to an HTTP server.</p><p>The credentials are passed via the "Authorization" header as the string "Basic " (note the space) followed by the base64-encoded username and password joined with a colon.</p><p>Here is a simple, illustrative example:</p><pre><code>\procedure get-tiddler-list-from-tiddlywiki-server(url,username,password)
+	\procedure completion-get-json()
+	\import [subfilter{$:/core/config/GlobalImportFilter}]
+		&lt;$action-log msg="In completion-get-json"/&gt;
+		&lt;$action-log/&gt;
+	\end completion-get-json
+	&lt;$action-sendmessage
+		$message="tm-http-request"
+		url=&lt;&lt;url&gt;&gt;
+		method="GET"
+		header-Authorization={{{ [&lt;username&gt;addsuffix[:]addsuffix&lt;password&gt;encodebase64[]addprefix[Basic ]] }}}
+		oncompletion=&lt;&lt;completion-get-json&gt;&gt;
+	/&gt;
+\end get-tiddler-list-from-tiddlywiki-server
+
+&lt;$button&gt;
+&lt;&lt;get-tiddler-list-from-tiddlywiki-server url:"http://127.0.0.1:8080" username:"Joe" password:"Bloggs"&gt;&gt;
+Download
+&lt;/$button&gt;</code></pre></div>
+
+</div></p>
+</section>
+</body>
+</html>
+
