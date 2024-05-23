@@ -1847,7 +1847,7 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 <script class="tiddlywiki-tiddler-store" type="application/json">[
 {"title":"$:/_Sidebar/TableOfContents","tags":"$:/tags/SideBar","caption":"Contents","text":"\\define toc-body(tag,sort:\"\",exclude,path)\n\u003Col class=\"tc-toc\">\n  \u003C$list filter=\"\"\"[all[shadows+tiddlers]tag\u003C__tag__>!has[draft.of]$sort$] -[\u003C__tag__>] -[enlist\u003C__exclude__>]\"\"\">\n    \u003C$vars item=\u003C\u003CcurrentTiddler>> path={{{ [\u003C__path__>addsuffix[/]addsuffix\u003C__tag__>] }}} excluded=\"\"\"[enlist\u003C__exclude__>] -[\u003C__tag__>]\"\"\">\n      \u003Cli>\n        \u003C$link to={{{ [enlist{!!story-tiddlers}] }}}>\n\t\t\t\t\t\u003C$list filter=\"[enlist{!!story-tiddlers}addprefix[$:/state/viewtemplate/visibility/]text[2]limit[1]]\" variable=\"listItem\" emptyMessage=\"\"\"\u003Cdiv style=\"display:inline-block;width:4px;height:1em;background-color:transparent;\">\u003C/div>\"\"\">\n\t\t\t\t\t\t\u003Cdiv style=\"display:inline-block;width:4px;height:1em;background-color:red;\">\u003C/div>\n\t\t\t\t\t\u003C/$list>\n          \u003C$view field='caption'>\n\t          \u003C$view field='title'/>\n          \u003C/$view>\n        \u003C/$link>\n        \u003C$macrocall $name=\"toc-body\" tag=\u003C\u003Citem>> sort=\u003C\u003C__sort__>> exclude=\u003C\u003Cexcluded>> path=\u003C\u003Cpath>>/>\n      \u003C/li>\n    \u003C/$vars>\n  \u003C/$list>\n\u003C/ol>\n\\end\n\n\\define toc(tag,sort:\"\")\n\u003C$macrocall $name=\"toc-body\"  tag=\u003C\u003C__tag__>> sort=\u003C\u003C__sort__>> />\n\\end\n\n\u003Cdiv class='tc-table-of-contents'>\n\n\u003C\u003Ctoc \"TableOfContents\">>\n\n\u003C/div>\n"},
-{"title":"$:/build","commit":"18d23048daae971f62bd0c3f53224172f977790b","text":"Prerelease built from branch 'master' at commit 18d23048daae971f62bd0c3f53224172f977790b of https://github.com/Jermolene/TiddlyWiki5 at 2024-05-23 15:50:02 UTC\n"},
+{"title":"$:/build","commit":"074d35c3889616ac4b447de568ffd83d6f20f304","text":"Prerelease built from branch 'master' at commit 074d35c3889616ac4b447de568ffd83d6f20f304 of https://github.com/Jermolene/TiddlyWiki5 at 2024-05-23 17:16:22 UTC\n"},
 {"title":"$:/config/AnimationDuration","text":"0"},
 {"title":"$:/config/DynaView/PreserveScrollPosition","text":"yes"},
 {"title":"$:/config/DynaView/RestoreScrollPositionAtStartup","text":"yes"},
@@ -3027,15 +3027,15 @@ $tw.utils.each = function(object,callback) {
 	var next,f,length;
 	if(object) {
 		if(Object.prototype.toString.call(object) == "[object Array]") {
-			for (f=0, length=object.length; f<length; f++) {
+			for(f=0, length=object.length; f<length; f++) {
 				next = callback(object[f],f,object);
 				if(next === false) {
 					break;
 				}
-		    }
+			}
 		} else {
 			var keys = Object.keys(object);
-			for (f=0, length=keys.length; f<length; f++) {
+			for(f=0, length=keys.length; f<length; f++) {
 				var key = keys[f];
 				next = callback(object[key],key,object);
 				if(next === false) {
@@ -3160,7 +3160,7 @@ Extend an object with the properties from a list of source objects
 $tw.utils.extend = function(object /*, sourceObjectList */) {
 	$tw.utils.each(Array.prototype.slice.call(arguments,1),function(source) {
 		if(source) {
-			for (var p in source) {
+			for(var p in source) {
 				object[p] = source[p];
 			}
 		}
@@ -3174,7 +3174,7 @@ Fill in any null or undefined properties of an object with the properties from a
 $tw.utils.deepDefaults = function(object /*, sourceObjectList */) {
 	$tw.utils.each(Array.prototype.slice.call(arguments,1),function(source) {
 		if(source) {
-			for (var p in source) {
+			for(var p in source) {
 				if(object[p] === null || object[p] === undefined) {
 					object[p] = source[p];
 				}
@@ -3778,8 +3778,8 @@ $tw.modules.execute = function(moduleName,moduleRoot) {
 	} else {
 		/*
 		CommonJS optional require.main property:
-		 In a browser we offer a fake main module which points back to the boot function
-		 (Theoretically, this may allow TW to eventually load itself as a module in the browser)
+			In a browser we offer a fake main module which points back to the boot function
+			(Theoretically, this may allow TW to eventually load itself as a module in the browser)
 		*/
 		Object.defineProperty(sandbox.require, "main", {
 			value: (typeof(require) !== "undefined") ? require.main : {TiddlyWiki: _boot},
@@ -3821,9 +3821,9 @@ $tw.modules.execute = function(moduleName,moduleRoot) {
 				moduleInfo.exports = moduleInfo.definition;
 			}
 		} catch(e) {
-			if (e instanceof SyntaxError) {
+			if(e instanceof SyntaxError) {
 				var line = e.lineNumber || e.line; // Firefox || Safari
-				if (typeof(line) != "undefined" && line !== null) {
+				if(typeof(line) != "undefined" && line !== null) {
 					$tw.utils.error("Syntax error in boot module " + name + ":" + line + ":\n" + e.stack);
 				} else if(!$tw.browser) {
 					// this is the only way to get node.js to display the line at which the syntax error appeared,
@@ -4418,7 +4418,7 @@ Define all modules stored in ordinary tiddlers
 $tw.Wiki.prototype.defineTiddlerModules = function() {
 	this.each(function(tiddler,title) {
 		if(tiddler.hasField("module-type")) {
-			switch (tiddler.fields.type) {
+			switch(tiddler.fields.type) {
 				case "application/javascript":
 					// We only define modules that haven't already been defined, because in the browser modules in system tiddlers are defined in inline script
 					if(!$tw.utils.hop($tw.modules.titles,tiddler.fields.title)) {
@@ -4928,7 +4928,7 @@ $tw.loadTiddlersFromSpecification = function(filepath,excludeRegExp) {
 		arrayOfFiles = arrayOfFiles || [];
 		var files = fs.readdirSync(dirPath);
 		files.forEach(function(file) {
-			if (recurse && fs.statSync(dirPath + path.sep + file).isDirectory()) {
+			if(recurse && fs.statSync(dirPath + path.sep + file).isDirectory()) {
 				arrayOfFiles = getAllFiles(dirPath + path.sep + file, recurse, arrayOfFiles);
 			} else if(fs.statSync(dirPath + path.sep + file).isFile()){
 				arrayOfFiles.push(path.join(dirPath, path.sep, file));
@@ -5168,7 +5168,7 @@ $tw.loadWikiTiddlers = function(wikiPath,options) {
 		}
 		$tw.wiki.addTiddlers(tiddlerFile.tiddlers);
 	});
-	if ($tw.boot.wikiPath == wikiPath) {
+	if($tw.boot.wikiPath == wikiPath) {
 		// Save the original tiddler file locations if requested
 		var output = {}, relativePath, fileInfo;
 		for(var title in $tw.boot.files) {
@@ -5522,14 +5522,14 @@ $tw.boot.doesTaskMatchPlatform = function(taskModule) {
 	var platforms = taskModule.platforms;
 	if(platforms) {
 		for(var t=0; t<platforms.length; t++) {
-			switch (platforms[t]) {
+			switch(platforms[t]) {
 				case "browser":
-					if ($tw.browser) {
+					if($tw.browser) {
 						return true;
 					}
 					break;
 				case "node":
-					if ($tw.node) {
+					if($tw.node) {
 						return true;
 					}
 					break;
@@ -5612,7 +5612,7 @@ Invoke the hook by key
 $tw.hooks.invokeHook = function(hookName /*, value,... */) {
 	var args = Array.prototype.slice.call(arguments,1);
 	if($tw.utils.hop($tw.hooks.names,hookName)) {
-		for (var i = 0; i < $tw.hooks.names[hookName].length; i++) {
+		for(var i = 0; i < $tw.hooks.names[hookName].length; i++) {
 			args[0] = $tw.hooks.names[hookName][i].apply(null,args);
 		}
 	}

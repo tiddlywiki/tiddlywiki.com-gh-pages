@@ -154,7 +154,7 @@ Error message and password prompt
 <script class="tiddlywiki-tiddler-store" type="application/json">[
 {"title":"$:_TaskStylesheet","created":"20140923174845752","creator":"pmario","modified":"20140923175216429","modifier":"pmario","tags":"$:/tags/Stylesheet","type":"text/vnd.tiddlywiki","text":"\\define datauri(title)\n\u003C$macrocall $name=\"makedatauri\" type={{$title$!!type}} text={{$title$}}/>\n\\end\n\nli.Done {\nlist-style-image:url(\u003C\u003Cdatauri \"list-done.svg\" >>);\nfont-weight:normal;\n}\n\nli.Check {\nlist-style-image:url(\u003C\u003Cdatauri \"list-check.svg\">>);\nfont-weight:normal;\n}\n\nli.ToDo {\nlist-style-image:url(\u003C\u003Cdatauri \"list-task.svg\" >>);\nfont-weight:bold;\n}\n"},
 {"title":"$:/_tags/ListIcon","created":"20140923175452015","creator":"pmario","modified":"20140923180722213","modifier":"pmario","tags":"SystemTag","type":"text/vnd.tiddlywiki","text":"Dieser Tag wird als SystemTag bezeichnet. Er dient dazu Tag basierte Listen erstellen zu können. Der Tag selbst soll aber für den Endanwender unsichtbar bleiben.\n\nDie Kennung für einen System-Tag ist `$:/`. Der Rest des Tags ist nur eine Namenskonvention, die je nach Anwendungsfall unterschiedlich sein kann. \n\nDer Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben angezeigt wird. In der Community wird sich diese Konvention wahrscheinlich für \"Benutzerdefinierte ~SystemTags\" durchsetzen.\n\n\u003C\u003Clist-links filter:\"[tag{!!title}]\">>"},
-{"title":"$:/build","commit":"18d23048daae971f62bd0c3f53224172f977790b","text":"Prerelease built from branch 'master' at commit 18d23048daae971f62bd0c3f53224172f977790b of https://github.com/Jermolene/TiddlyWiki5 at 2024-05-23 15:50:02 UTC\n"},
+{"title":"$:/build","commit":"074d35c3889616ac4b447de568ffd83d6f20f304","text":"Prerelease built from branch 'master' at commit 074d35c3889616ac4b447de568ffd83d6f20f304 of https://github.com/Jermolene/TiddlyWiki5 at 2024-05-23 17:16:22 UTC\n"},
 {"title":"$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home","created":"20140909085347212","modified":"20140909085346177","type":"text/vnd.tiddlywiki","text":"show"},
 {"title":"$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/language","created":"20140909193620416","modified":"20140912115601698","modifier":"pmario","type":"text/vnd.tiddlywiki","text":"show"},
 {"title":"$:/config/PageControlButtons/Visibility/$:/editions/tw5.com/github-fork-ribbon","created":"20140918071202599","modified":"20140918071201447","modifier":"pmario","type":"text/vnd.tiddlywiki","text":"show"},
@@ -693,15 +693,15 @@ $tw.utils.each = function(object,callback) {
 	var next,f,length;
 	if(object) {
 		if(Object.prototype.toString.call(object) == "[object Array]") {
-			for (f=0, length=object.length; f<length; f++) {
+			for(f=0, length=object.length; f<length; f++) {
 				next = callback(object[f],f,object);
 				if(next === false) {
 					break;
 				}
-		    }
+			}
 		} else {
 			var keys = Object.keys(object);
-			for (f=0, length=keys.length; f<length; f++) {
+			for(f=0, length=keys.length; f<length; f++) {
 				var key = keys[f];
 				next = callback(object[key],key,object);
 				if(next === false) {
@@ -826,7 +826,7 @@ Extend an object with the properties from a list of source objects
 $tw.utils.extend = function(object /*, sourceObjectList */) {
 	$tw.utils.each(Array.prototype.slice.call(arguments,1),function(source) {
 		if(source) {
-			for (var p in source) {
+			for(var p in source) {
 				object[p] = source[p];
 			}
 		}
@@ -840,7 +840,7 @@ Fill in any null or undefined properties of an object with the properties from a
 $tw.utils.deepDefaults = function(object /*, sourceObjectList */) {
 	$tw.utils.each(Array.prototype.slice.call(arguments,1),function(source) {
 		if(source) {
-			for (var p in source) {
+			for(var p in source) {
 				if(object[p] === null || object[p] === undefined) {
 					object[p] = source[p];
 				}
@@ -1444,8 +1444,8 @@ $tw.modules.execute = function(moduleName,moduleRoot) {
 	} else {
 		/*
 		CommonJS optional require.main property:
-		 In a browser we offer a fake main module which points back to the boot function
-		 (Theoretically, this may allow TW to eventually load itself as a module in the browser)
+			In a browser we offer a fake main module which points back to the boot function
+			(Theoretically, this may allow TW to eventually load itself as a module in the browser)
 		*/
 		Object.defineProperty(sandbox.require, "main", {
 			value: (typeof(require) !== "undefined") ? require.main : {TiddlyWiki: _boot},
@@ -1487,9 +1487,9 @@ $tw.modules.execute = function(moduleName,moduleRoot) {
 				moduleInfo.exports = moduleInfo.definition;
 			}
 		} catch(e) {
-			if (e instanceof SyntaxError) {
+			if(e instanceof SyntaxError) {
 				var line = e.lineNumber || e.line; // Firefox || Safari
-				if (typeof(line) != "undefined" && line !== null) {
+				if(typeof(line) != "undefined" && line !== null) {
 					$tw.utils.error("Syntax error in boot module " + name + ":" + line + ":\n" + e.stack);
 				} else if(!$tw.browser) {
 					// this is the only way to get node.js to display the line at which the syntax error appeared,
@@ -2084,7 +2084,7 @@ Define all modules stored in ordinary tiddlers
 $tw.Wiki.prototype.defineTiddlerModules = function() {
 	this.each(function(tiddler,title) {
 		if(tiddler.hasField("module-type")) {
-			switch (tiddler.fields.type) {
+			switch(tiddler.fields.type) {
 				case "application/javascript":
 					// We only define modules that haven't already been defined, because in the browser modules in system tiddlers are defined in inline script
 					if(!$tw.utils.hop($tw.modules.titles,tiddler.fields.title)) {
@@ -2594,7 +2594,7 @@ $tw.loadTiddlersFromSpecification = function(filepath,excludeRegExp) {
 		arrayOfFiles = arrayOfFiles || [];
 		var files = fs.readdirSync(dirPath);
 		files.forEach(function(file) {
-			if (recurse && fs.statSync(dirPath + path.sep + file).isDirectory()) {
+			if(recurse && fs.statSync(dirPath + path.sep + file).isDirectory()) {
 				arrayOfFiles = getAllFiles(dirPath + path.sep + file, recurse, arrayOfFiles);
 			} else if(fs.statSync(dirPath + path.sep + file).isFile()){
 				arrayOfFiles.push(path.join(dirPath, path.sep, file));
@@ -2834,7 +2834,7 @@ $tw.loadWikiTiddlers = function(wikiPath,options) {
 		}
 		$tw.wiki.addTiddlers(tiddlerFile.tiddlers);
 	});
-	if ($tw.boot.wikiPath == wikiPath) {
+	if($tw.boot.wikiPath == wikiPath) {
 		// Save the original tiddler file locations if requested
 		var output = {}, relativePath, fileInfo;
 		for(var title in $tw.boot.files) {
@@ -3188,14 +3188,14 @@ $tw.boot.doesTaskMatchPlatform = function(taskModule) {
 	var platforms = taskModule.platforms;
 	if(platforms) {
 		for(var t=0; t<platforms.length; t++) {
-			switch (platforms[t]) {
+			switch(platforms[t]) {
 				case "browser":
-					if ($tw.browser) {
+					if($tw.browser) {
 						return true;
 					}
 					break;
 				case "node":
-					if ($tw.node) {
+					if($tw.node) {
 						return true;
 					}
 					break;
@@ -3278,7 +3278,7 @@ Invoke the hook by key
 $tw.hooks.invokeHook = function(hookName /*, value,... */) {
 	var args = Array.prototype.slice.call(arguments,1);
 	if($tw.utils.hop($tw.hooks.names,hookName)) {
-		for (var i = 0; i < $tw.hooks.names[hookName].length; i++) {
+		for(var i = 0; i < $tw.hooks.names[hookName].length; i++) {
 			args[0] = $tw.hooks.names[hookName][i].apply(null,args);
 		}
 	}
