@@ -42,7 +42,7 @@ lingo Macro
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 2015년 2월 21일 오후 3:57</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 2023년 10월 28일 오후 12:34</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
@@ -60,7 +60,35 @@ lingo Macro
 <span class=" tc-reveal" hidden="true"></span>
 
 
-</span></div></div><div class="tc-tiddler-body tc-reveal"><p>The <dfn class="doc-def">lingo</dfn> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macros.html">macro</a> relates to the translation of TiddlyWiki's user interface into other languages. It returns a piece of text in the user's currently selected language.</p><p>Translatable text is supplied by language plugins containing tiddlers with specific titles that start with <code>$:/language/</code>.</p><h2 class="">Parameters</h2><dl><dt>title</dt><dd>The title of the shadow tiddler that contains the text. The prefix <code>$:/language/</code> is added automatically</dd></dl><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="lingo%2520Macro%2520%2528Examples%2529.html">Examples</a></p></div>
+</span></div></div><div class="tc-tiddler-body tc-reveal"><p>The <dfn class="doc-def">lingo</dfn> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macros.html">macro</a> relates to the translation of TiddlyWiki's user interface into other languages. It returns a piece of text in the user's currently selected language.</p><p>Translatable text is supplied by：</p><ol><li>Language plugins</li><li>Any l10n (localization) strings outside of the language plugins</li></ol><h2 class="">Language plugins</h2><p>You can directly pass title to <code>lingo</code> macro, when there is a language plugin containing a tiddler with such title that start with <code>$:/language/</code>. </p><dl><dt>title</dt><dd>The title of the shadow tiddler that contains the text. The prefix <code>$:/language/</code> is added automatically</dd></dl><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="lingo%2520%2528for%2520language%2520plugin%2529%2520Macro%2520%2528Examples%2529.html">Examples</a></p><h2 class="">Any l10n strings</h2><p>To translate any text that directly placed in user's wiki, instead of in a language plugin, you can set the <code>lingo-base</code> variable to teach <dfn class="doc-def">lingo</dfn> macro the place to look for.</p><h3 class="">Parameters</h3><dl><dt>key</dt><dd>The last part of title of the tiddler that contains the text. The <code>&lt;&lt;lingo-base&gt;&gt;</code> prefix and current language name prefix is added automatically</dd><dt>lingo-base-fallback</dt><dd>Optional lingo-base when it is not possible to define <code>lingo-base</code> variable (for example, when using this macro in the caption field), you can set the lingo base by passing this parameter</dd></dl><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="lingo%2520%2528for%2520custom%2520base%2529%2520Macro%2520%2528Examples%2529.html">Examples</a></p><h2 class="">Example file structure for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki%2520on%2520Node.js.html">TiddlyWiki on Node.js</a></h2><h3 class="">Suggested file structure</h3><p>When developing a plugin, you may want to organize your language files like this on the file system as <a class="tc-tiddlylink tc-tiddlylink-resolves" href="MultiTiddlerFiles.html">MultiTiddlerFiles</a>:</p><pre><code>├── language
+│   ├── en-GB
+│   │   ├── Translations.multids
+│   │   └── SomeLongText.tid
+│   └── zh-Hans
+│       ├── Translations.multids
+│       └── SomeLongText.tid
+├── other files
+└── plugin.info</code></pre><p>See <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fplugins%252Ftiddlywiki%252Fmenubar%252Ftree.html">$:/plugins/tiddlywiki/menubar/tree</a> for an example.</p><h3 class="">Define Multiple Translations in One Tiddler</h3><p>And the content of <code>language/en-GB/Translations.multids</code> may looks like this:</p><pre><code>title: $:/plugins/yourName/pluginName/language/en-GB/
+
+OpenInteractiveCard: Open Interactive Card
+OpenStaticCard: Open Static Card</code></pre><p>Later you can use it like:</p><pre><code>title: someTiddler
+caption: &lt;&lt;lingo OpenStaticCard "$:/plugins/yourName/pluginName/language/"&gt;&gt;
+
+\define lingo-base() $:/plugins/yourName/pluginName/language/
+\whitespace trim
+
+&lt;&lt;lingo OpenInteractiveCard&gt;&gt;</code></pre><h3 class="">Define Long Text in a regular Tiddler</h3><p>You can also use a regular tiddler for long text, like <code>SomeLongText.tid</code> in the example above, to store a multi-paragraph long text:</p><pre><code>title: $:/plugins/yourName/pluginName/language/en-GB/SomeLongText
+
+!!! SubTitle
+
+This is a long text.</code></pre><p>Later you can use it like:</p><pre><code>title: someTiddler
+
+\define lingo-base() $:/plugins/yourName/pluginName/language/
+
+!! &lt;&lt;lingo "OpenInteractiveCard"&gt;&gt;
+
+&lt;&lt;lingo SomeLongText&gt;&gt;</code></pre><p>Note that lingo macro will use the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText%2520Parser%2520Modes.html">parse mode</a> in the current position where this procedure is invoked.
+</p></div>
 
 </div></p>
 </section>

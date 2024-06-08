@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.3.4-prerelease" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>lingo Macro (file structure): TiddlyWiki — un carnet de notes web personnel et non linéaire
+</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-lingo%20Macro tc-tagged-Macro%20Examples" data-tags="[[lingo Macro]] [[Macro Examples]]" data-tiddler-title="lingo Macro (file structure)" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="plus" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="Actions supplémentaires"></button><span class=" tc-reveal" hidden="true"></span><button aria-label="éditer" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Édite ce tiddler"></button><span class="tc-popup-keep"><button aria-expanded="false" aria-label="QR code" class="tc-btn-invisible tc-btn-%24%3A%2Fplugins%2Ftiddlywiki%2Fqrcode%2FViewToolbarButton" title="Generate QR code for this tiddler"></button></span><div class=" tc-reveal" hidden="true"></div><button aria-label="fermer" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Ferme ce tiddler"></button></span><span><h2 class="tc-title">lingo Macro (file structure)</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 6 février 2024 à 12h24</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="lingo Macro"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="fill:#333333;color:#333333;">lingo Macro</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item" data-tag-title="Macro Examples"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="fill:#333333;color:#333333;">Macro Examples</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div><div class="tc-tiddler-body tc-reveal"><h2 class="">Example file structure for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki%2520on%2520Node.js.html">TiddlyWiki on Node.js</a></h2><h3 class="">Suggested file structure</h3><p>When developing a plugin, you may want to organize your language files like this on the file system as <a class="tc-tiddlylink tc-tiddlylink-resolves" href="MultiTiddlerFiles.html">MultiTiddlerFiles</a>:</p><pre><code>├── language
+│   ├── en-GB
+│   │   ├── Translations.multids
+│   │   └── SomeLongText.tid
+│   └── zh-Hans
+│       ├── Translations.multids
+│       └── SomeLongText.tid
+├── other files
+└── plugin.info</code></pre><p>See <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fplugins%252Ftiddlywiki%252Fmenubar%252Ftree.html">$:/plugins/tiddlywiki/menubar/tree</a> for an example.</p><h3 class="">Define Multiple Translations in One Tiddler</h3><p>And the content of <code>language/en-GB/Translations.multids</code> may looks like this:</p><pre><code>title: $:/plugins/yourName/pluginName/language/en-GB/
+
+OpenInteractiveCard: Open Interactive Card
+OpenStaticCard: Open Static Card</code></pre><p>Later you can use it like:</p><pre><code>title: someTiddler
+caption: &lt;&lt;lingo OpenStaticCard "$:/plugins/yourName/pluginName/language/"&gt;&gt;
+
+\define lingo-base() $:/plugins/yourName/pluginName/language/
+\whitespace trim
+
+&lt;&lt;lingo OpenInteractiveCard&gt;&gt;</code></pre><h3 class="">Define Long Text in a regular Tiddler</h3><p>You can also use a regular tiddler for long text, like <code>SomeLongText.tid</code> in the example above, to store a multi-paragraph long text:</p><pre><code>title: $:/plugins/yourName/pluginName/language/en-GB/SomeLongText
+
+!!! SubTitle
+
+This is a long text.</code></pre><p>Later you can use it like:</p><pre><code>title: someTiddler
+
+\define lingo-base() $:/plugins/yourName/pluginName/language/
+
+!! &lt;&lt;lingo "OpenInteractiveCard"&gt;&gt;
+
+&lt;&lt;lingo SomeLongText&gt;&gt;</code></pre><p>Note that lingo macro will use the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText%2520Parser%2520Modes.html">parse mode</a> in the current position where this procedure is invoked.
+</p></div>
+
+</div></p>
+</section>
+</body>
+</html>
+
