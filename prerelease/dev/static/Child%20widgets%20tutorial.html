@@ -118,7 +118,8 @@ hello
         "tag": "$text",
         "isSelfClosing": true,
         "end": 19,
-        "isBlock": false
+        "isBlock": false,
+        "rule": "html"
     }
 ]
 
@@ -178,7 +179,10 @@ hello
                 "start": 2,
                 "end": 6
             }
-        ]
+        ],
+        "start": 0,
+        "end": 8,
+        "rule": "bold"
     }
 ]
 
@@ -254,7 +258,9 @@ hello
             }
         ],
         "tag": "$link",
-        "end": 19,
+        "end": 31,
+        "openTagStart": 0,
+        "openTagEnd": 19,
         "isBlock": false,
         "children": [
             {
@@ -263,7 +269,10 @@ hello
                 "start": 19,
                 "end": 23
             }
-        ]
+        ],
+        "closeTagEnd": 31,
+        "closeTagStart": 23,
+        "rule": "html"
     }
 ]
 
@@ -357,7 +366,8 @@ hello
         "tag": "$set",
         "isSelfClosing": true,
         "end": 27,
-        "isBlock": false
+        "isBlock": false,
+        "rule": "html"
     }
 ]
 
@@ -392,10 +402,10 @@ hello
 <td><code>&lt;$macrocall $name=now/&gt;</code></td>
 <td>
 
-14:07, 8th June 2024
+15:54, 8th June 2024
 
 </td>
-<td>14:07, 8th June 2024</td>
+<td>15:54, 8th June 2024</td>
 </tr>
 </tbody>
 </table></p><p><table>
@@ -432,7 +442,8 @@ hello
         "tag": "$macrocall",
         "isSelfClosing": true,
         "end": 23,
-        "isBlock": false
+        "isBlock": false,
+        "rule": "html"
     }
 ]
 
@@ -460,7 +471,7 @@ hello
                     "children": [
                         {
                             "type": "text",
-                            "text": "14:07, 8th June 2024"
+                            "text": "15:54, 8th June 2024"
                         }
                     ]
                 }
@@ -520,7 +531,9 @@ hi
             }
         ],
         "tag": "$text",
-        "end": 17,
+        "end": 43,
+        "openTagStart": 0,
+        "openTagEnd": 17,
         "isBlock": false,
         "children": [
             {
@@ -529,7 +542,10 @@ hi
                 "start": 17,
                 "end": 35
             }
-        ]
+        ],
+        "closeTagEnd": 43,
+        "closeTagStart": 35,
+        "rule": "html"
     }
 ]
 
