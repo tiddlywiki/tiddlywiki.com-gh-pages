@@ -645,13 +645,7 @@ a.tc-tiddlylink:hover {
 	right: 0;
 	background: rgba(0,200,0,0.7);
 	text-align: center;
-	content: "
-	
-	
-		
-		Déposer ici (ou taper sur la touche « Escape » pour annuler)
-	
-";
+	content: "Déposer ici (ou taper sur la touche « Escape » pour annuler)";
 }.tc-droppable > .tc-droppable-placeholder {
 	display: none;
 }.tc-droppable.tc-dragover > .tc-droppable-placeholder {
@@ -1345,13 +1339,7 @@ a.tc-tiddlylink:hover {
 	right:0;
 	height: 100%;
 	background: rgba(0,200,0,0.7);
-	content: "
-	
-	
-		
-		Déposer ici (ou taper sur la touche « Escape » pour annuler)
-	
-";
+	content: "Déposer ici (ou taper sur la touche « Escape » pour annuler)";
 	pointer-events: none;
 	position: absolute;
 	display: flex;

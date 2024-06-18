@@ -670,7 +670,7 @@ var assetList = [
         "plugin-type": "plugin",
         "dependents": "",
         "type": "application/json",
-        "readme": "\\define lingo-base() $:/plugins/tiddlywiki/menubar/language/\n\n<<lingo readme>>\n",
+        "readme": "!! Introduction\n\nThis plugin provides a menu bar with the following features:\n\n* Menu items take the form of simple text links, dropdowns, or entirely custom content\n* Menu items can be individually enabled via the control panel\n* Responds to reduced screen width by abbreviating the menu items to a \"hamburger\" dropdown\n\n!! Menu Item Tiddlers\n\nMenu items are tagged <<tag $:/tags/MenuBar>>. The following fields are used by this plugin:\n\n|!Field Name |!Purpose |\n|title |Each menu item must have a unique title (not shown to the user) |\n|description |Description for use in listings |\n|tags |Must contain `$:/tags/MenuBar` |\n|caption |The text that is displayed for the menu item. Avoid links, using `~` to suppress CamelCase links if required |\n|target |For simple link menu items specifies a tiddler title as the target of the link |\n|is-dropdown |Set to `yes` to indicate a dropdown menu item |\n|dropdown-position |Optional position for the dropdown (can be ''left'', ''above'', ''aboveleft'', ''aboveright'', ''right'', ''belowleft'', ''belowright'' or ''below'') |\n|text |For dropdown menu items, specifies the body of the dropdown |\n|custom-menu-content |Optional wikitext to be displayed in place of the caption |\n|custom-menu-styles-wide |Optional string of styles to be applied to menu item when the menubar is wide |\n|custom-menu-styles-narrow |Optional string of styles to be applied to menu item when the menubar is narrow |\n\nCustom menu items should make sure that the clickable link or button is an immediate child, and not wrapped in another element.\n\nNote that menu items can be pushed to the right of the menu bar setting the ''custom-menu-styles'' field to `float: right;`.\n",
         "requires-reload": "no"
     },
     {
@@ -831,7 +831,7 @@ var assetList = [
         "plugin-type": "plugin",
         "dependents": "",
         "type": "application/json",
-        "readme": "\\define lingo-base() $:/plugins/tiddlywiki/tiddlyweb/language/\n\n<<lingo readme>>\n",
+        "readme": "This plugin runs in the browser to synchronise tiddler changes to and from a TiddlyWeb-compatible server (including TiddlyWiki 5 itself, running on Node.js). It is inert when run under Node.js. Disabling this plugin via the browser can not be undone via the browser since this plugin provides the mechanism to synchronize settings with the server.\n\nChanges made while offline are saved in memory and automatically synchonised with the server when the connection is re-established. However, if the browser tab is closed or another URL is loaded, the in-memory changes will be lost. The [[https://tiddlywiki.com/#BrowserStorage Plugin]] may be added to provide temporary filesystem storage of tiddler changes made while offline and enable them to be synchronised with the server the next time the wiki is loaded in the same browser.  \n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/tiddlyweb]]\n",
         "requires-reload": "yes"
     },
     {
