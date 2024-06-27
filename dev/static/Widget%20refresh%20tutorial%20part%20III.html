@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.3.3" />
+<meta name="tiddlywiki-version" content="5.3.4" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -17,7 +17,7 @@
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/dev/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/dev/</a></div></div>
 </p>
 <section class="tc-story-river tc-static-story-river">
-<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists " data-tags="" data-tiddler-title="Widget refresh tutorial part III" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Widget refresh tutorial part III</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 29th October 2022 at 8:10pm</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"></div></div><div class="tc-tiddler-body tc-reveal"><p>This tutorial is intended to demonstrate a few examples of when calls to the <code>refresh</code> method happen vs. when a widget is recreated from scratch.</p><p>This is accomplished with a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="refreshcount.js.html">refreshcount.js</a> widget which sets a counter to zero when the widget is created and increments the counter every time the <code>refresh</code> method is called. Here is the full code:</p><pre class="hljs"><code class="javascript hljs"><span class="hljs-comment">/*\
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists " data-tags="" data-tiddler-title="Widget refresh tutorial part III" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><span class=" tc-reveal" hidden="true"></span><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Widget refresh tutorial part III</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 29th October 2022 at 8:10pm</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"></div></div><div class="tc-tiddler-body tc-reveal"><p>This tutorial is intended to demonstrate a few examples of when calls to the <code>refresh</code> method happen vs. when a widget is recreated from scratch.</p><p>This is accomplished with a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="refreshcount.js.html">refreshcount.js</a> widget which sets a counter to zero when the widget is created and increments the counter every time the <code>refresh</code> method is called. Here is the full code:</p><pre class="hljs"><code class="javascript hljs"><span class="hljs-comment">/*\
 
 widget to count the number of times this widget refreshes
 
@@ -65,10 +65,35 @@ Render this widget into the DOM
 <span class="hljs-variable language_">this</span>.<span class="hljs-property">refreshCount</span>++;</code></pre><p>In the following example (see <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Widget%2520refresh%2520demo%2520III.html">Widget refresh demo III</a> for the code), two instances of the <code>refreshcount</code> widget are created. One at the top level and the other inside a list widget whose filter results depend on the value in the <code>text</code> field of the <code>test</code> widget. The tiddler store can be modified in a few ways via two buttons and an input box:
 
 <div class=" tc-innerwiki-wrapper" style="overflow:hidden;position:relative;box-sizing:content-box;"><svg viewBox="0 0 600 400" style="width:100%;position:absolute;z-index:1;pointer-events:none;">
-	
-	
-	
-	
+	[
+    {
+        "title": "$:/DefaultTiddlers",
+        "text": "[[refresh count widget]]"
+    }
+]
+	[
+    {
+        "title": "test",
+        "text": "Text field of tiddler='test'"
+    }
+]
+	[
+    {
+        "title": "refreshcount.js",
+        "text": "/*\\\n\nwidget to count the number of times this widget refreshes\n\n\\*/\n(function() {\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\"use strict\";\n\nvar Widget = require(\"$:/core/modules/widgets/widget.js\").widget;\n\nvar MyWidget = function(parseTreeNode, options) {\n\tthis.refreshCount = 0;\n\tthis.initialise(parseTreeNode, options);\n};\n\n/*\nInherit from the base widget class\n*/\nMyWidget.prototype = new Widget();\n\n/*\nRender this widget into the DOM\n*/\nMyWidget.prototype.render = function(parent, nextSibling) {\n\tthis.parentDomNode = parent;\n\tvar textNode = this.document.createTextNode(this.refreshCount + \" refreshes\");\n\tparent.insertBefore(textNode, nextSibling);\n\tthis.domNodes.push(textNode);\n};\n\nMyWidget.prototype.refresh = function(changedTiddlers) {\n\t// Regenerate and rerender the widget and replace the existing DOM node\n\tthis.refreshCount++;\n\tthis.refreshSelf();\n\treturn true;\n};\n\nexports.refreshcount = MyWidget;\n\n})();\n",
+        "created": "20190201005026324",
+        "modified": "20190202143451303",
+        "module-type": "widget",
+        "tags": "",
+        "type": "application/javascript"
+    }
+]
+	[
+    {
+        "title": "refresh count widget",
+        "text": "\n\n*&lt;$button set=\"test!!test\" setTo=\"hello\"&gt;Modify a different tiddler&lt;/$button&gt;\n*&lt;$button set=\"!!test\" setTo=\"hello\"&gt;Modify this tiddler&lt;/$button&gt;\n*&lt;$edit-text focus=yes tiddler=test tag=input/&gt;\n\n&lt;div&gt;\n&lt;div style=\"display:inline-block;width: 49%;vertical-align: text-top;word-wrap: break-word;}\"&gt;\n\n```\n&lt;$refreshcount/&gt;\n```\n\nRenders as:\n\n&lt;$refreshcount/&gt;\n&lt;/div&gt;\n\n&lt;div style=\"display:inline-block;width: 49%;vertical-align: text-top;word-wrap: break-word;}\"&gt;\n\n```\n&lt;$list filter=\"[[test]get[text]]\"&gt;\n&lt;&lt;currentTiddler&gt;&gt;&lt;br&gt;\n&lt;$refreshcount/&gt;\n&lt;/$list&gt;\n```\n\nRenders as:\n\n&lt;$list filter=\"[[test]get[text]]\"&gt;\n&lt;&lt;currentTiddler&gt;&gt;&lt;br&gt;\n&lt;$refreshcount/&gt;\n&lt;/$list&gt;\n"
+    }
+]
 &lt;/div&gt;
 &lt;/div&gt;
 </svg><img src="undefined" style="width:100%;"></div>

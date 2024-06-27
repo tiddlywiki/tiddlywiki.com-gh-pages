@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.3.3" />
+<meta name="tiddlywiki-version" content="5.3.4" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -20,7 +20,7 @@
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-WikiText" data-tags="WikiText" data-tiddler-title="Block Quotes in WikiText" role="article"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-expanded="false" aria-label="Más" class="tc-btn-invisible" title="Otras acciones"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Editar" class="tc-btn-invisible" title="Permite editar este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><span class="tc-popup-keep"><button aria-expanded="false" aria-label="QR code" class="tc-btn-invisible" title="Generate QR code for this tiddler"></button></span><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+<span class=" tc-reveal"><button aria-expanded="false" aria-label="Más" class="tc-btn-invisible" title="Otras acciones"></button><span class=" tc-reveal" hidden="true"></span></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Editar" class="tc-btn-invisible" title="Permite editar este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><span class="tc-popup-keep"><button aria-expanded="false" aria-label="QR code" class="tc-btn-invisible" title="Generate QR code for this tiddler"></button></span><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -42,7 +42,7 @@ Block Quotes in WikiText
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 17 abril 2017 a las 16:51</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 12 mayo 2024 a las :09</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
@@ -83,7 +83,35 @@ A dramatic quote
 **&gt; A quote
 **&gt; Another quote
 * List Three
-</code></pre><p>Tiene este aspecto:</p><ul><li>List One<ul><li>List Two<blockquote><div>A quote</div><div>Another quote</div></blockquote></li></ul></li><li>List Three</li></ul><p>... y su código HTML es:</p><pre>&lt;ul&gt;&lt;li&gt;List One&lt;ul&gt;&lt;li&gt;List Two&lt;blockquote&gt;&lt;div&gt;A quote&lt;/div&gt;&lt;div&gt;Another quote&lt;/div&gt;&lt;/blockquote&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;List Three&lt;/li&gt;&lt;/ul&gt;</pre></div></div>
+</code></pre><p>Tiene este aspecto:</p><ul><li>List One<ul><li>List Two<blockquote><div>A quote</div><div>Another quote</div></blockquote></li></ul></li><li>List Three</li></ul><p>... y su código HTML es:</p><pre>&lt;ul&gt;&lt;li&gt;List One&lt;ul&gt;&lt;li&gt;List Two&lt;blockquote&gt;&lt;div&gt;A quote&lt;/div&gt;&lt;div&gt;Another quote&lt;/div&gt;&lt;/blockquote&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;List Three&lt;/li&gt;&lt;/ul&gt;</pre></div><h1 class="">Advanced Wikitext and Block Quotes</h1><p>You can also mix block quotes with paragraphs and other block wikitext. Be mindful of block mode - if other quoted content follows a paragraph, end it with a blank line. The final paragraph in the quote does not need to end with a blank line. If using indentation, make sure <u>not to indent the blank lines</u>. The parser will interpret this as additional inline content and not return to block mode. For example:</p><div class="doc-example"><pre><code>&lt;&lt;&lt; Mixing Block Quotes with Inline Wikitext
+A paragraph appears before other //wikitext//, which needs to end with a blank line.
+
+    * List One
+    ** List Two
+    **&gt; A quote
+"""
+A poem
+with line beaks
+needs to have
+a blank line after
+the final quotes
+if followed
+by other content
+"""
+
+    &lt;&lt;&lt;&lt; Deep Block Quote
+        A paragraph before other //wikitext//, which ends with a blank line.
+
+        ! A Header
+        Another paragraph, which needs to end with a blank line.
+
+            !! Sub Header
+            A final paragraph, which __does not__ need to end with a blank line as the Block Quote ends.
+    &lt;&lt;&lt;&lt;
+&lt;&lt;&lt;
+</code></pre><p>Tiene este aspecto:</p><blockquote class="tc-quote"><cite>Mixing Block Quotes with Inline Wikitext</cite><p>A paragraph appears before other <em>wikitext</em>, which needs to end with a blank line.</p><ul><li>List One<ul><li>List Two<blockquote><div>A quote</div></blockquote></li></ul></li></ul><p>A poem<br>with line beaks<br>needs to have<br>a blank line after<br>the final quotes<br>if followed<br>by other content<br></p><blockquote class="tc-quote"><cite>Deep Block Quote</cite><p>A paragraph before other <em>wikitext</em>, which ends with a blank line.</p><h1 class="">A Header</h1><p>Another paragraph, which needs to end with a blank line.</p><h2 class="">Sub Header</h2><p>A final paragraph, which <u>does not</u> need to end with a blank line as the Block Quote ends.
+</p><blockquote class="tc-quote"><blockquote class="tc-quote"><p>... y su código HTML es:</p><pre>&lt;blockquote class="tc-quote"&gt;&lt;cite&gt;Mixing Block Quotes with Inline Wikitext&lt;/cite&gt;&lt;p&gt;A paragraph appears before other &lt;em&gt;wikitext&lt;/em&gt;, which needs to end with a blank line.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;List One&lt;ul&gt;&lt;li&gt;List Two&lt;blockquote&gt;&lt;div&gt;A quote&lt;/div&gt;&lt;/blockquote&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;A poem&lt;br&gt;with line beaks&lt;br&gt;needs to have&lt;br&gt;a blank line after&lt;br&gt;the final quotes&lt;br&gt;if followed&lt;br&gt;by other content&lt;br&gt;&lt;/p&gt;&lt;blockquote class="tc-quote"&gt;&lt;cite&gt;Deep Block Quote&lt;/cite&gt;&lt;p&gt;A paragraph before other &lt;em&gt;wikitext&lt;/em&gt;, which ends with a blank line.&lt;/p&gt;&lt;h1 class=""&gt;A Header&lt;/h1&gt;&lt;p&gt;Another paragraph, which needs to end with a blank line.&lt;/p&gt;&lt;h2 class=""&gt;Sub Header&lt;/h2&gt;&lt;p&gt;A final paragraph, which &lt;u&gt;does not&lt;/u&gt; need to end with a blank line as the Block Quote ends.
+&lt;/p&gt;&lt;blockquote class="tc-quote"&gt;&lt;blockquote class="tc-quote"&gt;&lt;/blockquote&gt;&lt;/blockquote&gt;&lt;/blockquote&gt;&lt;/blockquote&gt;</pre><p>&lt;/div&gt;</p></blockquote></blockquote></blockquote></blockquote></div></div>
 
 </div></p>
 </section>
