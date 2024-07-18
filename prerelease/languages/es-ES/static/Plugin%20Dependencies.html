@@ -54,7 +54,8 @@ Plugin Dependencies
 </span></div></div><div class="tc-tiddler-body tc-reveal"><p>The simplest form of dependency between plugins is that one plugin can declare itself to be a sub-plugin of another plugin by specifying that plugin in the <code>parent-plugin</code> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Plugin%2520Fields.html">field</a>. Sub-plugins are displayed in the control panel plugin chooser within the expandable area of their parent plugin. For example, the official plugin library includes the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="CodeMirror%2520Plugin.html">CodeMirror Plugin</a> and also more than a dozen sub-plugins that extend the <a class="tc-tiddlylink tc-tiddlylink-missing" href="CodeMirror.html">CodeMirror</a> plugin with optional functionality. Note that sub-plugins cannot themselves have further sub-plugins.</p><p>Plugins can also use their <code>dependents</code> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Plugin%2520Fields.html">field</a> to list the titles of any other plugins that should also be installed. Note that the list is not resolved recursively: dependents of dependents will not be installed.</p><p>When installing a plugin from the plugin library, both the <code>parent-plugin</code> and <code>dependents</code> fields are used to determine any additional plugins to be installed.</p><p>Note that the <code>dependents</code> field is also used by the <a class="tc-tiddlylink tc-tiddlylink-missing" href="ThemeMechanism.html">ThemeMechanism</a> and the <a class="tc-tiddlylink tc-tiddlylink-missing" href="LanguageMechanism.html">LanguageMechanism</a> to switch in dependent theme/language plugins.
 </p></div>
 
-</div></p>
+
+<ul class="multi-columns"></ul></div></p>
 </section>
 </body>
 </html>

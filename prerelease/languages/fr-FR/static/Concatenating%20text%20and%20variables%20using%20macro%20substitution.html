@@ -36,7 +36,10 @@
 </tbody>
 </table></p><p>But if you do, you will find that <code>&lt;&lt;currentTiddler&gt;&gt;</code> doesn't get rendered, but instead gets passed literally.</p><p>Instead, you could use the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="MacroCallWidget.html">MacroCallWidget</a> widget, like this:</p><pre><code>&lt;$macrocall $name="linkup" link=&lt;&lt;currentTiddler&gt;&gt; /&gt;</code></pre><p>In this case, we passed the value of a variable directly to our macro. This is often a general way to go about this task. If you wanted to create more links based on other variables you could re-use the macro for each situation.</p><p>If, as in this case, the only variable you are using is <code>currentTiddler</code> then you could write a simple macro, like this:</p><pre><code>\define linkup() [[Additional Info|$(currentTiddler)$-Contact]]</code></pre><p>Notice that in this case we don't pass an argument. Instead, we reference the variable using the special syntax <code>$(variable)$</code>.  Since we don't pass an argument, we can invoke it without the <code>&lt;$macrocall&gt;</code> widget more simply, like this:</p><pre><code>&lt;&lt;linkup&gt;&gt;</code></pre></div>
 
-</div></p>
+
+<ul class="multi-columns">
+
+</ul></div></p>
 </section>
 </body>
 </html>

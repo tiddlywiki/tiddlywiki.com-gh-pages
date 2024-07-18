@@ -21,7 +21,8 @@
 &lt;$codeblock code={{$title$}}/&gt;
 \end</code></pre><p>That works for simple cases like <code>&lt;&lt;mymacro "HelloThere"&gt;&gt;</code> but is subtly brittle.  For example, the macro above would fail with tiddler titles containing double closing curly braces. Trying to use it with the title <code>foo}}bar</code> would lead to the macro being expanded to the following invalid syntax:</p><pre><code>&lt;$codeblock code={{foo}}bar}}/&gt;</code></pre><p>As a result of this issue, for many years  the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> 5 user interface failed if a variety of combinations of special characters were encountered in tiddler titles.</p><p>This issue has been mitigated over the years, particularly by providing access to the macro parameters as variables. However, for backwards compatibility, this was done without affecting the existing syntax, which required us to adopt the clumsy protocol of wrapping the parameter name in double underscores to get the name of the corresponding variable.</p><h1 class="">Performance of Global Macros</h1><p>Global <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macro%2520Definitions.html">Macro Definitions</a> defined with the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="SystemTag%253A%2520%2524%253A%252Ftags%252FMacro.html">SystemTag: $:/tags/Macro</a> suffer from poor performance because every macro has to be parsed regardless of whether it is actually used.</p><p>Furthermore, the way that definitions are imported means that updating a tiddler tagged <a class="tc-tiddlylink tc-tiddlylink-resolves" href="SystemTag%253A%2520%2524%253A%252Ftags%252FMacro.html">SystemTag: $:/tags/Macro</a> will cause the entire page to be refreshed.</p></div>
 
-</div></p>
+
+<ul class="multi-columns"></ul></div></p>
 </section>
 </body>
 </html>
