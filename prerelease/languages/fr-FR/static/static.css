@@ -1138,7 +1138,7 @@ a.tc-tiddlylink:hover {
 	font-size: 15px;
 	line-height: 22px;
 }.tc-titlebar, .tc-tiddler-edit-title {
-	overflow: hidden; /* https://github.com/Jermolene/TiddlyWiki5/issues/282 */
+	overflow: hidden; /* https://github.com/TiddlyWiki/TiddlyWiki5/issues/282 */
 }/*
 * Tiddler in a new window.
 * Also see: .tc-single-tiddler-window .tc-tiddler-body, above

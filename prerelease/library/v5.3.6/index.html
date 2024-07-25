@@ -73,7 +73,7 @@ var assetList = [
         "plugin-type": "plugin",
         "dependents": "",
         "type": "application/json",
-        "readme": "This plugin adds a number of `$:/info/` tiddlers containing information about the current browser.\n\nIt allows you to create content that is presented in a way that is responsive to different browsers.\n\nFor example, https://tiddlywiki.com uses this plugin to present the user with the best options for getting started depending on their browser.\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/browser-sniff]]\n",
+        "readme": "This plugin adds a number of `$:/info/` tiddlers containing information about the current browser.\n\nIt allows you to create content that is presented in a way that is responsive to different browsers.\n\nFor example, https://tiddlywiki.com uses this plugin to present the user with the best options for getting started depending on their browser.\n\n[[Source code|https://github.com/TiddlyWiki/TiddlyWiki5/blob/master/plugins/tiddlywiki/browser-sniff]]\n",
         "requires-reload": "yes"
     },
     {
@@ -86,7 +86,7 @@ var assetList = [
         "plugin-type": "plugin",
         "dependents": "",
         "type": "application/json",
-        "readme": "This plugin enables ~TiddlyWiki to save tiddlers in [[browser local storage|https://en.wikipedia.org/wiki/Web_storage#localStorage]]. This means that changes are stored within the browser, and automatically re-applied any time the base wiki is reloaded.\n\nAt startup, the plugin reads tiddlers from local storage. Any tiddlers that are identical to those built into the file are deleted from local storage. Once the wiki is up and running, any tiddler changes are written straight to local storage.\n\n!! Optional use with ~TiddlyWeb plugin\n\nFor wikis served from a ~TiddlyWeb compatible server, including the ~TiddlyWiki Node JS server, this plugin may be added to provide temporary local storage of tiddler changes when the [[tiddlyweb sync adapter|https://github.com/Jermolene/TiddlyWiki5/tree/master/plugins/tiddlywiki/tiddlyweb]] is unable to successfully synchronise with the server, and to automatically synchronise tiddlers saved offline in browser storage once connection is re-established. The use of browser storage allows for tiddlers saved offline to be synchronised with the server even in the case where the browser is closed or the user (purposely, accidentally, or automatically in the case of a mobile browser periodically refreshing) navigates away from the wiki.\n\nChanges will be synchronised with the server the next time the wiki is loaded in the browser. Tiddlers are removed from browser-storage once synchronised to the server.\n\nBy default only state tiddlers are saved by this plugin. On the settings tab, you can update the Save Filter to save all content and system tiddlers. The third example provided is a good choice. \n\n!!! Limitations\n\n* ''Deleted tiddlers:'' Tiddler deletions while offline are not synchronised with the server due to technical limitations. The intent of using this plugin with a ~TiddlyWeb server is to prevent the loss of new or modified content while temporarily offline. \n* ''Title changes:'' Tiddlers are saved by title, so a change to a tiddler title will be saved and synchronised to the server, but it will not overwrite the tiddler with the original title. \n* ''Browser storage:'' While useful as a safety measure for //temporary// offline usage, as noted below, browser storage itself has limitations that could still result in losing data in some cases.   \n\n!!Browser local storage is not a panacea for TiddlyWiki:\n\n* Browsers limit the amount of local storage available to a page, typically to 5 or 10MB\n* Keeping personal data in browser local storage can lead to unexpected privacy violations\n* Browsers reserve the right to without warning delete data stored in local storage at any time\n* Browsers tie local storage to a URL which can lead to problems if you move a wiki to a URL previously occupied by a different wiki\n\nPlease use this plugin with caution. There are a number of unresolved issues and open questions:\n\n* Innerwikis read the local storage of their parent wikis\n* This plugin does not interfere with the existing saver mechanism, so you'll still get warnings when refreshing the page, even if your changes are safely committed to local storage\n* There is a possibility that tiddlers might be transferred between different wikis if they are accessed via the same URL. This is particularly likely when running in local client server configuration under Node.js\n",
+        "readme": "This plugin enables ~TiddlyWiki to save tiddlers in [[browser local storage|https://en.wikipedia.org/wiki/Web_storage#localStorage]]. This means that changes are stored within the browser, and automatically re-applied any time the base wiki is reloaded.\n\nAt startup, the plugin reads tiddlers from local storage. Any tiddlers that are identical to those built into the file are deleted from local storage. Once the wiki is up and running, any tiddler changes are written straight to local storage.\n\n!! Optional use with ~TiddlyWeb plugin\n\nFor wikis served from a ~TiddlyWeb compatible server, including the ~TiddlyWiki Node JS server, this plugin may be added to provide temporary local storage of tiddler changes when the [[tiddlyweb sync adapter|https://github.com/TiddlyWiki/TiddlyWiki5/tree/master/plugins/tiddlywiki/tiddlyweb]] is unable to successfully synchronise with the server, and to automatically synchronise tiddlers saved offline in browser storage once connection is re-established. The use of browser storage allows for tiddlers saved offline to be synchronised with the server even in the case where the browser is closed or the user (purposely, accidentally, or automatically in the case of a mobile browser periodically refreshing) navigates away from the wiki.\n\nChanges will be synchronised with the server the next time the wiki is loaded in the browser. Tiddlers are removed from browser-storage once synchronised to the server.\n\nBy default only state tiddlers are saved by this plugin. On the settings tab, you can update the Save Filter to save all content and system tiddlers. The third example provided is a good choice. \n\n!!! Limitations\n\n* ''Deleted tiddlers:'' Tiddler deletions while offline are not synchronised with the server due to technical limitations. The intent of using this plugin with a ~TiddlyWeb server is to prevent the loss of new or modified content while temporarily offline. \n* ''Title changes:'' Tiddlers are saved by title, so a change to a tiddler title will be saved and synchronised to the server, but it will not overwrite the tiddler with the original title. \n* ''Browser storage:'' While useful as a safety measure for //temporary// offline usage, as noted below, browser storage itself has limitations that could still result in losing data in some cases.   \n\n!!Browser local storage is not a panacea for TiddlyWiki:\n\n* Browsers limit the amount of local storage available to a page, typically to 5 or 10MB\n* Keeping personal data in browser local storage can lead to unexpected privacy violations\n* Browsers reserve the right to without warning delete data stored in local storage at any time\n* Browsers tie local storage to a URL which can lead to problems if you move a wiki to a URL previously occupied by a different wiki\n\nPlease use this plugin with caution. There are a number of unresolved issues and open questions:\n\n* Innerwikis read the local storage of their parent wikis\n* This plugin does not interfere with the existing saver mechanism, so you'll still get warnings when refreshing the page, even if your changes are safely committed to local storage\n* There is a possibility that tiddlers might be transferred between different wikis if they are accessed via the same URL. This is particularly likely when running in local client server configuration under Node.js\n",
         "requires-reload": "yes"
     },
     {
@@ -99,7 +99,7 @@ var assetList = [
         "plugin-type": "plugin",
         "dependents": "",
         "type": "application/json",
-        "readme": "This experimental plugin provides a new story visualisation that displays individual tiddlers as resizable tiles on an infinite canvas.\n\nCecily is based on an earlier plugin for TiddlyWiki Classic: http://jermolene.com/cecily\n\nCecily is currently in the early stages of development with little functionality yet implemented.\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/cecily]]\n",
+        "readme": "This experimental plugin provides a new story visualisation that displays individual tiddlers as resizable tiles on an infinite canvas.\n\nCecily is based on an earlier plugin for TiddlyWiki Classic: http://jermolene.com/cecily\n\nCecily is currently in the early stages of development with little functionality yet implemented.\n\n[[Source code|https://github.com/TiddlyWiki/TiddlyWiki5/blob/master/plugins/tiddlywiki/cecily]]\n",
         "requires-reload": "yes"
     },
     {
@@ -112,7 +112,7 @@ var assetList = [
         "plugin-type": "plugin",
         "dependents": "",
         "type": "application/json",
-        "readme": "This plugin provides facilities for working with TiddlyWiki Classic. It is used in the build process for TiddlyWiki Classic.\n\nThe additional features are:\n\n* A ''tiddlerdeserializer'' module for reading TiddlyWiki Classic `.recipe` files\n* Templates for building TiddlyWiki Classic.\n\nSee https://github.com/TiddlyWiki/tiddlywiki.com for more details.\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/classictools]]\n",
+        "readme": "This plugin provides facilities for working with TiddlyWiki Classic. It is used in the build process for TiddlyWiki Classic.\n\nThe additional features are:\n\n* A ''tiddlerdeserializer'' module for reading TiddlyWiki Classic `.recipe` files\n* Templates for building TiddlyWiki Classic.\n\nSee https://github.com/TiddlyWiki/tiddlywiki.com for more details.\n\n[[Source code|https://github.com/TiddlyWiki/TiddlyWiki5/blob/master/plugins/tiddlywiki/classictools]]\n",
         "requires-reload": "yes"
     },
     {
@@ -125,7 +125,7 @@ var assetList = [
         "plugin-type": "plugin",
         "dependents": "",
         "type": "application/json",
-        "readme": "This plugin provides an enhanced text editor component based on [[CodeMirror|http://codemirror.net]]. The basic configuration is designed to be as lightweight as possible and is just around 235kb of size. Additional features can be installed with ~CodeMirror ~AddOns from the plugin library.\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/codemirror]]\n\nBased on ~CodeMirror version 5.58.3\n",
+        "readme": "This plugin provides an enhanced text editor component based on [[CodeMirror|http://codemirror.net]]. The basic configuration is designed to be as lightweight as possible and is just around 235kb of size. Additional features can be installed with ~CodeMirror ~AddOns from the plugin library.\n\n[[Source code|https://github.com/TiddlyWiki/TiddlyWiki5/blob/master/plugins/tiddlywiki/codemirror]]\n\nBased on ~CodeMirror version 5.58.3\n",
         "requires-reload": "yes"
     },
     {
@@ -401,7 +401,7 @@ var assetList = [
         "plugin-type": "plugin",
         "dependents": "",
         "type": "application/json",
-        "readme": "The D3 plugin is a proof-of-concept demo of integration with the D3.js data visualisation framework (http://d3js.org).\n\nIt is not currently in a state where it can be used for anything useful.\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/d3]]\n",
+        "readme": "The D3 plugin is a proof-of-concept demo of integration with the D3.js data visualisation framework (http://d3js.org).\n\nIt is not currently in a state where it can be used for anything useful.\n\n[[Source code|https://github.com/TiddlyWiki/TiddlyWiki5/blob/master/plugins/tiddlywiki/d3]]\n",
         "requires-reload": "yes"
     },
     {
@@ -468,7 +468,7 @@ var assetList = [
         "plugin-type": "plugin",
         "dependents": "",
         "type": "application/json",
-        "readme": "The filesystem plugin is used under Node.js to synchronise tiddler changes back to the file system. It is inert when used in the browser.\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/filesystem]]\n",
+        "readme": "The filesystem plugin is used under Node.js to synchronise tiddler changes back to the file system. It is inert when used in the browser.\n\n[[Source code|https://github.com/TiddlyWiki/TiddlyWiki5/blob/master/plugins/tiddlywiki/filesystem]]\n",
         "requires-reload": "yes"
     },
     {
@@ -508,7 +508,7 @@ var assetList = [
         "plugin-type": "plugin",
         "dependents": "",
         "type": "application/json",
-        "readme": "This plugin provides a diagonal ribbon across the corner of the window. It resembles the design used by ~GitHub for their \"Fork me on ~GitHub\" ribbons.\n\nThe ribbon can be positioned over any corner, and can incorporate user defined text, colours and a link.\n\nThe CSS stylesheet is adapted from work by [[Simon Whitaker|https://github.com/simonwhitaker/github-fork-ribbon-css/]]\n\n[[Plugin source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/github-fork-ribbon]]\n",
+        "readme": "This plugin provides a diagonal ribbon across the corner of the window. It resembles the design used by ~GitHub for their \"Fork me on ~GitHub\" ribbons.\n\nThe ribbon can be positioned over any corner, and can incorporate user defined text, colours and a link.\n\nThe CSS stylesheet is adapted from work by [[Simon Whitaker|https://github.com/simonwhitaker/github-fork-ribbon-css/]]\n\n[[Plugin source code|https://github.com/TiddlyWiki/TiddlyWiki5/blob/master/plugins/tiddlywiki/github-fork-ribbon]]\n",
         "requires-reload": "no"
     },
     {
@@ -522,7 +522,7 @@ var assetList = [
         "plugin-type": "plugin",
         "dependents": "",
         "type": "application/json",
-        "readme": "This plugin enables you to use Google Analytics to track access to your online TiddlyWiki document.\n\nBy default, the user is not asked for permission before initialising Google Analytics. This plugin also optionally integrates with the \"Consent Banner\" plugin (also found in the official plugin library) so that Google Analytics is not initialised until the user grants explicit permission.\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/googleanalytics]]\n",
+        "readme": "This plugin enables you to use Google Analytics to track access to your online TiddlyWiki document.\n\nBy default, the user is not asked for permission before initialising Google Analytics. This plugin also optionally integrates with the \"Consent Banner\" plugin (also found in the official plugin library) so that Google Analytics is not initialised until the user grants explicit permission.\n\n[[Source code|https://github.com/TiddlyWiki/TiddlyWiki5/blob/master/plugins/tiddlywiki/googleanalytics]]\n",
         "requires-reload": "yes"
     },
     {
@@ -549,7 +549,7 @@ var assetList = [
         "plugin-type": "plugin",
         "dependents": "",
         "type": "application/json",
-        "readme": "This plugin provides an overlay help panel at the bottom right of the window.\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/help]]\n",
+        "readme": "This plugin provides an overlay help panel at the bottom right of the window.\n\n[[Source code|https://github.com/TiddlyWiki/TiddlyWiki5/blob/master/plugins/tiddlywiki/help]]\n",
         "requires-reload": "no"
     },
     {
@@ -631,7 +631,7 @@ var assetList = [
         "plugin-type": "plugin",
         "dependents": "",
         "type": "application/json",
-        "readme": "This is a TiddlyWiki plugin for mathematical and chemical typesetting based on [ext[KaTeX from Khan Academy|https://katex.org/]] (v0.16) and [ext[mhchem|https://github.com/mhchem/MathJax-mhchem]] through a [ext[Katex extension|https://github.com/KaTeX/KaTeX/tree/master/contrib/mhchem]].\n\nIt is completely self-contained, and doesn't need an Internet connection in order to work. It works both in the browser and under Node.js.\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/katex]]\n",
+        "readme": "This is a TiddlyWiki plugin for mathematical and chemical typesetting based on [ext[KaTeX from Khan Academy|https://katex.org/]] (v0.16) and [ext[mhchem|https://github.com/mhchem/MathJax-mhchem]] through a [ext[Katex extension|https://github.com/KaTeX/KaTeX/tree/master/contrib/mhchem]].\n\nIt is completely self-contained, and doesn't need an Internet connection in order to work. It works both in the browser and under Node.js.\n\n[[Source code|https://github.com/TiddlyWiki/TiddlyWiki5/blob/master/plugins/tiddlywiki/katex]]\n",
         "requires-reload": "yes"
     },
     {
@@ -657,7 +657,7 @@ var assetList = [
         "plugin-type": "plugin",
         "dependents": "",
         "type": "application/json",
-        "readme": "This is a TiddlyWiki plugin for parsing Markdown text, using the [[Remarkable|https://github.com/jonschlinkert/remarkable]] library. If the KaTeX TiddlyWiki plugin is installed, KaTeX support is enabled using the [[remarkable-katex|https://github.com/bradhowes/remarkable-katex]] Remarkable plugin.\n\nIt is completely self-contained, and doesn't need an Internet connection in order to work. It works both in the browser and under Node.js.\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/markdown-legacy]]\n",
+        "readme": "This is a TiddlyWiki plugin for parsing Markdown text, using the [[Remarkable|https://github.com/jonschlinkert/remarkable]] library. If the KaTeX TiddlyWiki plugin is installed, KaTeX support is enabled using the [[remarkable-katex|https://github.com/bradhowes/remarkable-katex]] Remarkable plugin.\n\nIt is completely self-contained, and doesn't need an Internet connection in order to work. It works both in the browser and under Node.js.\n\n[[Source code|https://github.com/TiddlyWiki/TiddlyWiki5/blob/master/plugins/tiddlywiki/markdown-legacy]]\n",
         "requires-reload": "yes"
     },
     {
@@ -697,7 +697,7 @@ var assetList = [
         "plugin-type": "plugin",
         "dependents": "",
         "type": "application/json",
-        "readme": "This plugin provides a ''saver'' module for saving changes when using TiddlyWiki directly under NW.js (previously known as node-webkit).\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/nodewebkitsaver]]\n",
+        "readme": "This plugin provides a ''saver'' module for saving changes when using TiddlyWiki directly under NW.js (previously known as node-webkit).\n\n[[Source code|https://github.com/TiddlyWiki/TiddlyWiki5/blob/master/plugins/tiddlywiki/nodewebkitsaver]]\n",
         "requires-reload": "yes"
     },
     {
@@ -791,7 +791,7 @@ var assetList = [
         "plugin-type": "plugin",
         "dependents": "",
         "type": "application/json",
-        "readme": "This plugin provides a new story visualisation that displays individual tiddlers as a stack of cards. It is currently experimental and incomplete.\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/stacked-view]]\n",
+        "readme": "This plugin provides a new story visualisation that displays individual tiddlers as a stack of cards. It is currently experimental and incomplete.\n\n[[Source code|https://github.com/TiddlyWiki/TiddlyWiki5/blob/master/plugins/tiddlywiki/stacked-view]]\n",
         "requires-reload": "yes"
     },
     {
@@ -804,7 +804,7 @@ var assetList = [
         "plugin-type": "plugin",
         "dependents": "",
         "type": "application/json",
-        "readme": "This plugin provides a ''saver'' module for saving changes under the [[Tahoe Least Authority File System|https://tahoe-lafs.org/]].\n\nAt this point it is largely for experimentation by @zooko.\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/tahoelafs]]\n",
+        "readme": "This plugin provides a ''saver'' module for saving changes under the [[Tahoe Least Authority File System|https://tahoe-lafs.org/]].\n\nAt this point it is largely for experimentation by @zooko.\n\n[[Source code|https://github.com/TiddlyWiki/TiddlyWiki5/blob/master/plugins/tiddlywiki/tahoelafs]]\n",
         "requires-reload": "yes"
     },
     {
@@ -831,7 +831,7 @@ var assetList = [
         "plugin-type": "plugin",
         "dependents": "",
         "type": "application/json",
-        "readme": "This plugin runs in the browser to synchronise tiddler changes to and from a TiddlyWeb-compatible server (including TiddlyWiki 5 itself, running on Node.js). It is inert when run under Node.js. Disabling this plugin via the browser can not be undone via the browser since this plugin provides the mechanism to synchronize settings with the server.\n\nChanges made while offline are saved in memory and automatically synchonised with the server when the connection is re-established. However, if the browser tab is closed or another URL is loaded, the in-memory changes will be lost. The [[https://tiddlywiki.com/#BrowserStorage Plugin]] may be added to provide temporary filesystem storage of tiddler changes made while offline and enable them to be synchronised with the server the next time the wiki is loaded in the same browser.  \n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/tiddlyweb]]\n",
+        "readme": "This plugin runs in the browser to synchronise tiddler changes to and from a TiddlyWeb-compatible server (including TiddlyWiki 5 itself, running on Node.js). It is inert when run under Node.js. Disabling this plugin via the browser can not be undone via the browser since this plugin provides the mechanism to synchronize settings with the server.\n\nChanges made while offline are saved in memory and automatically synchonised with the server when the connection is re-established. However, if the browser tab is closed or another URL is loaded, the in-memory changes will be lost. The [[https://tiddlywiki.com/#BrowserStorage Plugin]] may be added to provide temporary filesystem storage of tiddler changes made while offline and enable them to be synchronised with the server the next time the wiki is loaded in the same browser.  \n\n[[Source code|https://github.com/TiddlyWiki/TiddlyWiki5/blob/master/plugins/tiddlywiki/tiddlyweb]]\n",
         "requires-reload": "yes"
     },
     {
@@ -858,7 +858,7 @@ var assetList = [
         "plugin-type": "plugin",
         "dependents": "",
         "type": "application/json",
-        "readme": "This experimental plugin provides support for parsing and rendering tiddlers written in TiddlyWiki Classic format (`text/x-tiddlywiki`).\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/tw2parser]]\n",
+        "readme": "This experimental plugin provides support for parsing and rendering tiddlers written in TiddlyWiki Classic format (`text/x-tiddlywiki`).\n\n[[Source code|https://github.com/TiddlyWiki/TiddlyWiki5/blob/master/plugins/tiddlywiki/tw2parser]]\n",
         "requires-reload": "yes"
     },
     {
