@@ -37,8 +37,7 @@ tc-page-container tc-language-$(languageTitle)$ your-plugin-name-container
 	&lt;/$messagecatcher&gt;
 &lt;/$navigator&gt;</code></pre><p>It includes</p><ol><li>Import macros that is globally available in standard layout, so wikitext that works on standard layout also works on your layout.</li><li>Define the top-level css class, some style may depends on them. You can add your plugin's name in css class here.</li><li>Handle navigation when click on links. If your layout does not contains a story view (for example, you are writing a calendar or whiteboard layout), then the combination of <code>redirected-navigate-actions</code> <code>$navigator</code> and <code>$messagecatcher</code> will redirect user back to standard layout, and open the tiddler there.</li><li>Add some <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Ftags%252FPageTemplate.html">PageTemplate</a> back, for example the <code>$:/core/ui/CommandPaletteTemplate</code> or <code>$:/core/ui/PageTemplate/sidebar</code>, if you want them exist on your layout.</li></ol></div>
 
-
-<ul class="multi-columns"></ul></div></p>
+</div></p>
 </section>
 </body>
 </html>

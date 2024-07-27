@@ -53,10 +53,7 @@ Behaviour of variables invoked via filter expression function call
 
 </span></div></div><div class="tc-tiddler-body tc-reveal"><table class="tc-first-col-min-width"><tbody><tr class="evenRow"><th>how declared</th><th>behaviour</th></tr><tr class="oddRow"><td>\define, <a class="tc-tiddlylink tc-tiddlylink-resolves" href="SetWidget.html"><code class="doc-widget">$set</code></a>, <a class="tc-tiddlylink tc-tiddlylink-resolves" href="LetWidget.html"><code class="doc-widget">$let</code></a>, <a class="tc-tiddlylink tc-tiddlylink-resolves" href="VarsWidget.html"><code class="doc-widget">$vars</code></a>, \procedure, \widget</td><td>Every function is a variable, but only variables defined using \function are invokable using the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="function%2520Operator.html"><code class="doc-operator">function</code></a> filter operator. Attempts to use a non-function variable is the same as if the function doesn't exist. The behavior in this case is like the identity function. All filter input is passed unchanged to the output.</td></tr><tr class="evenRow"><td>\function</td><td>The body text of the function is treated as a filter expression and evaluated. This filter expression can itself contain a function call. Filter expressions can be factored out into functions arbitrarily deep.</td></tr></tbody></table></div>
 
-
-<ul class="multi-columns">
-
-</ul></div></p>
+</div></p>
 </section>
 </body>
 </html>

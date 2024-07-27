@@ -44,8 +44,7 @@
 [&lt;jsondata&gt;jsonextract[d],[f],[-2]] --&gt; false
 [&lt;jsondata&gt;jsonextract[d],[f],[-4]] --&gt; "six"</code></pre><p>Indexes can be dynamically composed from variables and transclusions:</p><pre><code>[&lt;jsondata&gt;jsonextract&lt;variable&gt;,{!!field},[0]]</code></pre><p>A subtlety is that the special case of a single blank parameter is used to identify the root object. Thus:</p><pre><code>[&lt;jsondata&gt;jsonextract[]] --&gt; {"a":"one","b":"","c":"three","d":{"e":"four","f":["five","six",true,false,null],"g":{"x":"max","y":"may","z":"maize"}}}</code></pre></div>
 
-
-<ul class="multi-columns"></ul></div></p>
+</div></p>
 </section>
 </body>
 </html>

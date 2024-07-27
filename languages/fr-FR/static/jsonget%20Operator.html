@@ -48,10 +48,7 @@
 [&lt;jsondata&gt;jsonget[d],[g]] --&gt; "max","may","maize"</code></pre><p>The <a class="tc-tiddlylink tc-tiddlylink-missing" href="Op%25C3%25A9rateur%2520jsonindexes.html"><code class="doc-operator">jsonindexes</code></a> operator retrieves the corresponding indexes:</p><pre><code>[&lt;jsondata&gt;jsonindexes[d],[f]] --&gt; "0", "1", "2", "3", "4"
 [&lt;jsondata&gt;jsonindexes[d],[g]] --&gt; "x", "y", "z"</code></pre><p>If the object or array contains nested child objects or arrays then the values are retrieved recursively and returned flattened into a list. For example:</p><pre><code>[&lt;jsondata&gt;jsonget[d]] --&gt; "four","five","six","true","false","null","max","may","maize"</code></pre><p>A subtlety is that the special case of a single blank parameter is used to identify the root object. Thus:</p><pre><code>[&lt;jsondata&gt;jsonindexes[]] --&gt; "a", "b", "c", "d"</code></pre></div>
 
-
-<ul class="multi-columns">
-
-</ul></div></p>
+</div></p>
 </section>
 </body>
 </html>
