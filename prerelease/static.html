@@ -521,10 +521,13 @@ input[type="search"]::-webkit-search-results-decoration {
 Markdown likes putting code elements inside pre elements
 */
 pre > code {
-	padding: 0;
+	display: block;
+	padding: 0.5em;
 	border: none;
+	white-space: pre-wrap;
 	background-color: inherit;
 	color: inherit;
+	overflow-x: auto;
 }/*
 Table defaults
 */table {
