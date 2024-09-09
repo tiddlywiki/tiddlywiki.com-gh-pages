@@ -42,7 +42,7 @@ Then Filter Run Prefix (Examples)
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 17 junio 2023 a las 18:37</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle tc-clearfix"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 17 junio 2023 a las 18:37</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
@@ -51,7 +51,7 @@ Then Filter Run Prefix (Examples)
 <span class=" tc-reveal" hidden="true"></span>
 
 
-</span></div></div><div class="tc-tiddler-body tc-reveal"><h2 class="">Conditional Execution</h2><p>The <code class="doc-operator">:then</code> filter run prefix can be used to avoid the need for nested <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ListWidget.html">ListWidget</a>s or <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macro%2520Definitions%2520in%2520WikiText.html">Macro Definitions in WikiText</a>.</p><div class="doc-example"><pre><code>&lt;$edit-text field="search" placeholder="Search title"/&gt;
+</span></div></div><div class="tc-tiddler-body tc-clearfix tc-reveal"><h2 class="">Conditional Execution</h2><p>The <code class="doc-operator">:then</code> filter run prefix can be used to avoid the need for nested <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ListWidget.html">ListWidget</a>s or <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macro%2520Definitions%2520in%2520WikiText.html">Macro Definitions in WikiText</a>.</p><div class="doc-example"><pre><code>&lt;$edit-text field="search" placeholder="Search title"/&gt;
 
 &lt;$let searchTerm={{!!search}}&gt;
 &lt;$list filter="[&lt;searchTerm&gt;minlength[3]] :then[!is[system]search:title&lt;searchTerm&gt;]" template="$:/core/ui/ListItemTemplate"/&gt;

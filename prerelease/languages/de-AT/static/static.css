@@ -1145,8 +1145,6 @@ a.tc-tiddlylink:hover {
 	display: block;
 }.tc-edit-bitmapeditor-height {
 	display: block;
-}.tc-tiddler-body {
-	clear: both;
 }.tc-single-tiddler-window .tc-tiddler-body,
 .tc-tiddler-frame .tc-tiddler-body {
 	font-size: 15px;
@@ -2027,6 +2025,12 @@ a.tc-tiddlylink:hover {
 ** Floats
 */.tc-float-right {
 	float: right;
+}/* Float tc-clearfix. Needs to be used by elements that allow float:right in their content.
+** So the floating element does not overflow
+*/.tc-clearfix:after {
+	content: "";
+	clear: both;
+	display: table;
 }/*
 ** Chooser
 */.tc-chooser {
@@ -2494,8 +2498,7 @@ a.tc-tiddlylink:hover {
 	word-break: break-all;
 }/* Vertical gaps */.tc-tiny-v-gap-bottom {
 	margin-bottom: 3px;
-}
-.tc-sidebar-header {
+}.tc-sidebar-header {
 	text-shadow: 0 1px 0 rgba(255,255,255, 0.8);
 }.tc-tiddler-info {
 	 -webkit-box-shadow: inset 1px 2px 3px rgba(0,0,0,0.1);
