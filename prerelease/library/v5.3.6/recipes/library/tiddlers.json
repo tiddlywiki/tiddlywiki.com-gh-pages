@@ -628,7 +628,7 @@
         "title": "$:/plugins/tiddlywiki/markdown",
         "name": "Markdown",
         "description": "Markdown parser based on markdown-it",
-        "list": "readme config syntax license",
+        "list": "readme config settings syntax license",
         "stability": "STABILITY_2_STABLE",
         "version": "5.3.6-prerelease",
         "plugin-type": "plugin",
