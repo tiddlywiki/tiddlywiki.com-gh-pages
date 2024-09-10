@@ -1145,8 +1145,6 @@ a.tc-tiddlylink:hover {
 	display: block;
 }.tc-edit-bitmapeditor-height {
 	display: block;
-}.tc-tiddler-body {
-	overflow-x: auto;
 }.tc-single-tiddler-window .tc-tiddler-body,
 .tc-tiddler-frame .tc-tiddler-body {
 	font-size: 15px;
@@ -1685,7 +1683,6 @@ a.tc-tiddlylink:hover {
 	display: none;
 }.tc-tab-content {
 	margin-top: 14px;
-	overflow-x: auto;
 }.tc-tab-content.tc-vertical  {
 	display: inline-block;
 	vertical-align: top;
