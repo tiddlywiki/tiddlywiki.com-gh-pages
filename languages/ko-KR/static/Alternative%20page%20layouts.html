@@ -42,7 +42,7 @@ Alternative page layouts
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 2024년 6월 27일 오전 6:06</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 2024년 8월 1일 오전 2:06</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
@@ -57,9 +57,8 @@ Alternative page layouts
 tc-page-container tc-language-$(languageTitle)$ your-plugin-name-container
 \end
 \procedure redirected-navigate-actions()
-  &lt;$action-setfield $tiddler="$:/layout" text="" $timestamp="no"&gt;
-    &lt;$action-navigate $to=&lt;&lt;event-navigateTo&gt;&gt; $scroll="yes" /&gt;
-  &lt;/$action-setfield&gt;
+  &lt;$action-setfield $tiddler="$:/layout" text="" $timestamp="no" /&gt;
+  &lt;$action-navigate $to=&lt;&lt;event-navigateTo&gt;&gt; $scroll="yes" /&gt;
 \end
 
 &lt;$navigator story="$:/StoryList" history="$:/HistoryList" openLinkFromInsideRiver={{$:/config/Navigation/openLinkFromInsideRiver}} openLinkFromOutsideRiver={{$:/config/Navigation/openLinkFromOutsideRiver}} relinkOnRename={{$:/config/RelinkOnRename}}&gt;
