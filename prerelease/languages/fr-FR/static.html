@@ -2049,6 +2049,16 @@ a.tc-tiddlylink:hover {
 	content: "";
 	clear: both;
 	display: table;
+}/* Fix overflow in table and toc */
+.tc-tiddler-body .tc-tabbed-table-of-contents {
+	overflow-x: auto;
+}.tc-tiddler-body > table {
+  display: block;
+  overflow: auto;
+}
+.tc-tiddler-body > table tbody {
+  display: table;
+  width: 100%;
 }/*
 ** Chooser
 */.tc-chooser {
