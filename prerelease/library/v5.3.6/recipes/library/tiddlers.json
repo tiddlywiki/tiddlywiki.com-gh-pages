@@ -1133,6 +1133,19 @@
         "icon": "data:image/svg+xml,%3Csvg%20width%3D%22600%22%20height%3D%22400%22%20viewBox%3D%220%200%2027%2018%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%3Cdesc%3EFlag%20of%20Greece%3C%2Fdesc%3E%0A%20%20%3Crect%20width%3D%2227%22%20height%3D%2218%22%20fill%3D%22%230d5eaf%22%2F%3E%0A%20%20%3Cpath%20fill%3D%22none%22%20stroke-width%3D%222%22%20stroke%3D%22white%22%20d%3D%22M5%2C0V11%20M0%2C5H10%20M10%2C3H27%20M10%2C7H27%20M0%2C11H27%20M0%2C15H27%22%2F%3E%0A%3C%2Fsvg%3E"
     },
     {
+        "title": "$:/languages/en-PH",
+        "name": "en-PH",
+        "plugin-type": "language",
+        "description": "English (PH)",
+        "author": "JC John Sese Cuneta",
+        "core-version": ">=5.3.5",
+        "version": "5.3.6-prerelease",
+        "dependents": "",
+        "type": "application/json",
+        "requires-reload": "no",
+        "icon": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%221200%22%20height%3D%22600%22%20viewBox%3D%22-28%20-45%20180%2090%22%20fill%3D%22%23fcd116%22%3E%0A%09%3Ctitle%3EFlag%20of%20the%20Philippines%3C%2Ftitle%3E%0A%09%3Cpath%20fill%3D%22%230038a8%22%20d%3D%22m-28-45h180V0L0%2044z%22%2F%3E%0A%09%3Cpath%20fill%3D%22%23ce1126%22%20d%3D%22m0%200h152v45H-28z%22%2F%3E%0A%09%3Cpath%20fill%3D%22%23fff%22%20d%3D%22m49.942%200L-28%2045v-90z%22%2F%3E%0A%09%3Ccircle%20r%3D%229%22%2F%3E%0A%09%3Cg%20id%3D%22c%22%3E%0A%09%09%3Cg%20id%3D%22b%22%3E%0A%09%09%09%3Cpath%20id%3D%22a%22%20d%3D%22m0%200-3.164-15.909.945-.946zl-1.169-17.831L0-19l1.169%201.169zl2.219-16.855.945.946z%22%2F%3E%0A%09%09%09%3Cuse%20transform%3D%22scale(-1)%22%20xlink%3Ahref%3D%22%23a%22%2F%3E%0A%09%09%3C%2Fg%3E%0A%09%09%3Cuse%20transform%3D%22rotate(90)%22%20xlink%3Ahref%3D%22%23b%22%2F%3E%0A%09%3C%2Fg%3E%0A%09%3Cuse%20transform%3D%22rotate(45)%22%20xlink%3Ahref%3D%22%23c%22%2F%3E%0A%09%3Cpath%20id%3D%22s%22%20d%3D%22m40.942%200-3.382%201.176L37.487%204.755l-2.163-2.853-3.427%201.037L33.942%200l-2.045-2.939%203.427%201.037%202.163-2.853L37.56-1.176z%22%2F%3E%0A%09%3Cuse%20transform%3D%22rotate(120%2C-2.019%2C0)%22%20xlink%3Ahref%3D%22%23s%22%2F%3E%0A%09%3Cuse%20transform%3D%22rotate(240%2C-2.019%2C0)%22%20xlink%3Ahref%3D%22%23s%22%2F%3E%0A%3C%2Fsvg%3E%0A"
+    },
+    {
         "title": "$:/languages/en-US",
         "name": "en-US",
         "plugin-type": "language",
