@@ -3109,39 +3109,54 @@ svg.railroad-diagram path.arrow {
 	height: 1em;
 }.tc-wrapper-flex {
 	display: flex;
-}.tc-saving-sidebar {
-	margin: 0;
-	padding: 0;
-	min-width: 200px;
-	overflow: auto;
-}.tc-saving-sidebar a {
+}.tc-btn-download {
+	padding: 10px 30px;
+	border-radius: 5px;
+	background: #34c734;
+	border: none;
+	box-shadow: 1px 2px 2px 0 #bbbbbb;
+	overflow: hidden;
+	cursor: pointer;
+	font-size: 1.2em;
+	line-height: 1.4em;
+	color: #fff;
+	fill: #fff;
+}.tc-btn-download:active {
+	box-shadow: none;
+}/* WikiText rules */.multi-columns,
+.fourcolumns {
 	display: block;
+	column-count: 4;
+	column-gap: 1em;
+	-moz-column-count: 4;
+	-moz-column-gap: 1em;
+	-webkit-column-count: 4;
+	-webkit-column-gap: 1em;
 }@media (max-width: 960px) {
-	.tc-wrapper-flex {
-		flex-direction: column;
+	.multi-columns {
+		column-count: 2;
 	}
-	.tc-saving-sidebar {
-		width: 100%;
-		height: auto;
-	}
-	.tc-saving-sidebar a {
-		float: left;
-	}
-}.tc-saving-sidebar-category {
-	margin-bottom: 10px;
-}.tc-saving-sidebar-category-title {
-	font-weight: bold;
-	margin-bottom: 5px;
-	font-size: 16px;
-}.tc-saving-sidebar-category-item {
-	margin-left: 10px;
-}.tc-saving-introduction {
-	display: flex;
-	justify-content: center;
-	text-align: center;
-	align-items: center;
-	padding: 4em;
-	font-style: italic;
+}.tc-custom-tiddler-template {
+	border: 3px solid #bbbbbb;
+	border-radius: 1em;
+	margin-bottom: 1em;
+}.tc-custom-tiddler-template-inner {
+	background: #bbbbbb;
+	padding: 1em;
+}.tc-custom-tiddler-template-list {
+	position: relative;
+	height: 33vh;
+}.tc-custom-tiddler-template-list .tc-custom-tiddler-template-list-item {
+	position: absolute;
+	width: 100%;
+	transform-origin: 50% 0;
+	top: 50px;
+	left: 0;
+	 -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}.tc-custom-tiddler-template-list .tc-custom-tiddler-template-list-item .tc-tiddler-frame {
+	margin: 0;
 }.tc-cards {
 	display: flex;
 	flex-wrap: wrap;
@@ -3158,6 +3173,7 @@ svg.railroad-diagram path.arrow {
 }.tc-cards.tc-action-card {
 	text-align: center;
 	background: none;
+}.tc-cards.tc-cards-vertical {
 }.tc-cards.tc-action-card .tc-card-button {
 	border: 1px solid #333333;
 	background: #333333;
@@ -3172,7 +3188,8 @@ svg.railroad-diagram path.arrow {
 	vertical-align: middle;
 }.tc-tiddlylink.tc-card {
 	font-weight: normal;
-	max-width: 100%;
+	flex-grow: 1;
+	max-width: 250px;
 	position: relative;
 	background: #ffffff;
 	color: #333333;
@@ -3204,7 +3221,12 @@ svg.railroad-diagram path.arrow {
 	border-radius: 8px;
 }.tc-cards.tc-cards-vertical .tc-card-accent {
 	flex-direction: row;
+	justify-content: start;
+	padding: 5px 7px;
 	align-items: center;
+}.tc-cards.tc-cards-vertical .tc-card-icon {
+	line-height: 0;
+	order: 1;
 }.tc-tiddlylink.tc-card:hover {
 	color: #333333;
 	background: #ffffdd;
@@ -3255,6 +3277,10 @@ svg.railroad-diagram path.arrow {
 	transition: transform 0.3s ease-in-out;
 }.tc-tiddlylink.tc-card:hover .tc-card-image img {
 	transform: scale(1.05);
+}.tc-card .tc-card-icon svg {
+	transition: transform 0.3s ease-in-out;
+}.tc-card:hover .tc-card-icon svg {
+	transform: scale(1.1);
 }.tc-card-title {
 	font-size: 1.2em;
 	line-height: 1.2;
@@ -3263,9 +3289,9 @@ svg.railroad-diagram path.arrow {
 	padding: 0 10px;
 	margin: 0.5em 0 0.25em 0;
 }.tc-cards.tc-cards-vertical .tc-card-title {
-	font-size: 1em;
+	font-size: 1.1em;
 	min-width: 10em;
-	text-align: right;
+	order: 2;
 }.tc-cards.tc-cards-vertical .tc-card-title svg {
 	width: 1em;
 	height: 1em;
@@ -3308,54 +3334,6 @@ svg.railroad-diagram path.arrow {
 	margin: 0.25em 0;
 }.tc-card a:active, .tc-card a:focus, .tc-btn-download:active, .tc-btn-download:focus{
 	outline: none; 
-}.tc-btn-download {
-	padding: 10px 30px;
-	border-radius: 5px;
-	background: #34c734;
-	border: none;
-	box-shadow: 1px 2px 2px 0 #bbbbbb;
-	overflow: hidden;
-	cursor: pointer;
-	font-size: 1.2em;
-	line-height: 1.4em;
-	color: #fff;
-	fill: #fff;
-}.tc-btn-download:active {
-	box-shadow: none;
-}/* WikiText rules */.multi-columns,
-.fourcolumns {
-	display: block;
-	column-count: 4;
-	column-gap: 1em;
-	-moz-column-count: 4;
-	-moz-column-gap: 1em;
-	-webkit-column-count: 4;
-	-webkit-column-gap: 1em;
-}@media (max-width: 960px) {
-	.multi-columns {
-		column-count: 2;
-	}
-}.tc-custom-tiddler-template {
-	border: 3px solid #bbbbbb;
-	border-radius: 1em;
-	margin-bottom: 1em;
-}.tc-custom-tiddler-template-inner {
-	background: #bbbbbb;
-	padding: 1em;
-}.tc-custom-tiddler-template-list {
-	position: relative;
-	height: 33vh;
-}.tc-custom-tiddler-template-list .tc-custom-tiddler-template-list-item {
-	position: absolute;
-	width: 100%;
-	transform-origin: 50% 0;
-	top: 50px;
-	left: 0;
-	 -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
-	-moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
-	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
-}.tc-custom-tiddler-template-list .tc-custom-tiddler-template-list-item .tc-tiddler-frame {
-	margin: 0;
 }.doc-def {
 	font-style: normal;
 	font-weight: bold;
