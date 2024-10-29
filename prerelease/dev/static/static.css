@@ -504,6 +504,9 @@ input[type="search"]::-webkit-search-results-decoration {
 }.tc-inline-style {
 	background: #ffff00;
 	color: #000000;
+}/* Markdown uses mark element to highlight */mark {
+	background: #ffff00;
+	color: #000000;
 }form.tc-form-inline {
 	display: inline;
 }/*
