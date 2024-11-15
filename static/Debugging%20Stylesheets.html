@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.3.5" />
+<meta name="tiddlywiki-version" content="5.3.6" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -11,13 +11,13 @@
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
-<title>Debugging Stylesheets: TiddlyWiki — a non-linear personal web notebook</title>
+<title>Debugging Stylesheets: TiddlyWiki  v5.3.6 — a non-linear personal web notebook</title>
 </head>
 <body class="tc-body">
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river tc-static-story-river">
-<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Using%20Stylesheets" data-tags="[[Using Stylesheets]]" data-tiddler-title="Debugging Stylesheets" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><span class=" tc-reveal" hidden="true"></span><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Debugging Stylesheets</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 25th November 2021 at 5:59pm</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="Using Stylesheets"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="fill:#333333;color:#333333;"><span class="tc-tag-exists">Using Stylesheets</span></span><span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div><div class="tc-tiddler-body tc-reveal"><p>The core shadow tiddler <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fsnippets%252FDebugStylesheets.html">$:/snippets/DebugStylesheets</a> contains a simple tool for tracking down certain problems with mismatched brackets and other nested structures.</p><p>In the list below, any stylesheets containing an error will be marked with a red cross:</p><p><style>[test]{list-style:'❌'}</style><ul><style>.tc-hero-heading a.tc-tiddlylink {
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Using%20Stylesheets" data-tags="[[Using Stylesheets]]" data-tiddler-title="Debugging Stylesheets" role="article"><div class="tc-tiddler-title tc-clearfix"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><span class=" tc-reveal" hidden="true"></span><button aria-label="Edit this tiddler" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Debugging Stylesheets</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle tc-clearfix">25th November 2021 at 5:59pm</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="Using Stylesheets"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="fill:#333333;color:#333333;"><span class="tc-tag-exists">Using Stylesheets</span></span><span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div><div class="tc-tiddler-body tc-clearfix tc-reveal"><p>The core shadow tiddler <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fsnippets%252FDebugStylesheets.html">$:/snippets/DebugStylesheets</a> contains a simple tool for tracking down certain problems with mismatched brackets and other nested structures.</p><p>In the list below, any stylesheets containing an error will be marked with a red cross:</p><p><style>[test]{list-style:'❌'}</style><ul><style>.tc-hero-heading a.tc-tiddlylink {
 	font-weight: bold;
 }
 
@@ -55,9 +55,11 @@
 	padding-left: 5px;
 	margin-top: 6px;
 	margin-bottom: 12px;
-	 -webkit-box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+	<code>
+-webkit-box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
 	-moz-box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
-	box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+		box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+</code>
 }
 
 @media (max-width: 960px) {
@@ -104,7 +106,7 @@
 	border-radius: 5px;
 	background: #34c734;
 	border: none;
-	box-shadow: 1px 2px 2px 0 #bbb;
+	box-shadow: 1px 2px 2px 0 #bbbbbb;
 	overflow: hidden;
 	cursor: pointer;
 	font-size: 1.2em;
@@ -272,8 +274,8 @@ td svg {
 	margin-top: 0;
 }
 .doc-example-result {
-	border-left: 5px solid #bbb;
-	border-right: 5px solid #bbb;
+	border-left: 5px solid #bbbbbb;
+	border-right: 5px solid #bbbbbb;
 	margin-left: 0;
 	margin-right: 0;
 	padding: 0 10px;
@@ -318,7 +320,7 @@ tr.doc-table-subheading {
 }
 
 .doc-icon-block {
-	border-left: 4px solid #bbb;
+	border-left: 4px solid #bbbbbb;
 	margin: 15px 0 15px 3em;
 	padding-left: 0.6em;
 	position: relative;
@@ -331,8 +333,8 @@ tr.doc-table-subheading {
 }
 
 .doc-icon-block.doc-note {
-	border-left: 4px solid #bbb;
-	background: #bbb11;
+	border-left: 4px solid #bbbbbb;
+	background: #bbbbbb11;
 }
 
 .doc-icon-block.doc-tip {
@@ -354,7 +356,7 @@ tr.doc-table-subheading {
 }
 
 a.doc-from-version {
-    background-color: #bbb;
+    background-color: #bbbbbb;
     color: #000000;
     padding: 3px;
     border-radius: 4px;
@@ -429,9 +431,11 @@ a.doc-deprecated-version.tc-tiddlylink {
 
 @media screen {
 	.doc-tiddler-fields {
-		 -webkit-box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+		<code>
+-webkit-box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
 	-moz-box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
-	box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+		box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+</code>
 	}
 }
 .doc-github-contributors {

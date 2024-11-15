@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.3.5" />
+<meta name="tiddlywiki-version" content="5.3.6" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -11,7 +11,7 @@
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
-<title>5.3.2: TiddlyWiki — Cuaderno de notas personal no-lineal en la web</title>
+<title>5.3.2: TiddlyWiki  v5.3.6 — Cuaderno de notas personal no-lineal en la web</title>
 </head>
 <body class="tc-body">
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
@@ -20,7 +20,7 @@
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-ReleaseNotes" data-tags="ReleaseNotes" data-tiddler-title="Release 5.3.2" role="article"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-expanded="false" aria-label="Más" class="tc-btn-invisible" title="Otras acciones"></button><span class=" tc-reveal" hidden="true"></span></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Editar" class="tc-btn-invisible" title="Permite editar este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+<span class=" tc-reveal"><button aria-expanded="false" aria-label="Más" class="tc-btn-invisible" title="Otras acciones"></button><span class=" tc-reveal" hidden="true"></span></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Permite editar este tiddler" class="tc-btn-invisible" title="Permite editar este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -42,7 +42,7 @@ Release 5.3.2
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a> 13 diciembre 2023 a las 8:06</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle tc-clearfix">13 diciembre 2023 a las 8:06</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
@@ -51,14 +51,14 @@ Release 5.3.2
 <span class=" tc-reveal" hidden="true"></span>
 
 
-</span></div></div><div class="tc-tiddler-body tc-reveal"><p><em><a class="tc-tiddlylink-external" href="https://github.com/TiddlyWiki/TiddlyWiki5/compare/v5.3.1...v5.3.2" rel="noopener noreferrer" target="_blank">See GitHub for detailed change history of this release</a></em></p><p><img src="https://raw.githubusercontent.com/Jermolene/TiddlyWiki5/51862f812851afda0ed3540f8463f51def0d4f9a/editions/tw5.com/tiddlers/images/New%20Release%20Banner.png" width="140" style="float:left;margin-right:0.5em;">Congratulations to <a class="tc-tiddlylink-external" href="https://talk.tiddlywiki.org/u/catter-fly" rel="noopener noreferrer" target="_blank">catter-fly</a> for their winning design for the banner for this release (here is the <a class="tc-tiddlylink-external" href="https://talk.tiddlywiki.org/t/banner-image-competition-for-v5-3-2/8569" rel="noopener noreferrer" target="_blank">competition thread</a>).
-<div style="clear:both;"></div></p><h1 class="">Major Improvements</h1><h2 class="">Conditional Shortcut Syntax</h2><p><a class="doc-link-badge" href="https://github.com/TiddlyWiki/TiddlyWiki5/pull/7710" rel="noopener noreferrer" target="_blank" style="background-color:#ffe246;">added</a> a new <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Conditional%2520Shortcut%2520Syntax.html">shortcut syntax</a> for concisely expressing if-then-else logic. This is the first of a new type of wikitext syntax based on tokens delimited with <code>&lt;%</code> and <code>%&gt;</code>. We plan to introduce other structures using the same format such as a "case" statement.</p><p>These new token-based shortcuts allow a richer structure and expressivity than existing features such as widgets or pragmas. For example:</p><pre><code>&lt;% if [&lt;animal&gt;match[Elephant]] %&gt;
+</span></div></div><div class="tc-tiddler-body tc-clearfix tc-reveal"><p><em><a class="tc-tiddlylink-external" href="https://github.com/TiddlyWiki/TiddlyWiki5/compare/v5.3.1...v5.3.2" rel="noopener noreferrer" target="_blank">See GitHub for detailed change history of this release</a></em></p><p><img src="https://raw.githubusercontent.com/Jermolene/TiddlyWiki5/51862f812851afda0ed3540f8463f51def0d4f9a/editions/tw5.com/tiddlers/images/New%20Release%20Banner.png" width="140" style="float:left;margin-right:0.5em;">Congratulations to <a class="tc-tiddlylink-external" href="https://talk.tiddlywiki.org/u/catter-fly" rel="noopener noreferrer" target="_blank">catter-fly</a> for their winning design for the banner for this release (here is the <a class="tc-tiddlylink-external" href="https://talk.tiddlywiki.org/t/banner-image-competition-for-v5-3-2/8569" rel="noopener noreferrer" target="_blank">competition thread</a>).
+<div style="clear:both;"></div></p><h1 class="">Major Improvements</h1><h2 class="">Conditional Shortcut Syntax</h2><p><a class="doc-link-badge" href="https://github.com/TiddlyWiki/TiddlyWiki5/pull/7710" rel="noopener noreferrer" target="_blank" style="background-color:#ffe246;">added</a> a new <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Conditional%2520Shortcut%2520Syntax.html">shortcut syntax</a> for concisely expressing if-then-else logic. This is the first of a new type of wikitext syntax based on tokens delimited with <code>&lt;%</code> and <code>%&gt;</code>. We plan to introduce other structures using the same format such as a "case" statement.</p><p>These new token-based shortcuts allow a richer structure and expressivity than existing features such as widgets or pragmas. For example:</p><pre><code>&lt;%if [&lt;animal&gt;match[Elephant]] %&gt;
   It is an elephant
-&lt;% elseif [&lt;animal&gt;match[Giraffe]] %&gt;
+&lt;%elseif [&lt;animal&gt;match[Giraffe]] %&gt;
 	It is a giraffe
-&lt;% else %&gt;
+&lt;%else%&gt;
 	It is completely unknown
-&lt;% endif %&gt;</code></pre><p>Behind the scenes, the conditional shortcut syntax is rendered as the equivalent <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ListWidget.html">ListWidgets</a>.</p><h2 class="">Explicit Templates for the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ListWidget.html">ListWidget</a></h2><p><a class="doc-link-badge" href="https://github.com/TiddlyWiki/TiddlyWiki5/pull/7784" rel="noopener noreferrer" target="_blank" style="background-color:#ffe246;">added</a> support for <code>&lt;$list-template&gt;</code> and <code>&lt;$list-empty&gt;</code> as immediate children of the <code class="doc-widget">$ListWidget</code> widget to specify the list item template and/or the empty template.</p><p>This new feature is designed to replace a common pattern of using the <code>emptyMessage</code> attribute of the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ListWidget.html">ListWidget</a> to render complex wikitext that thus has to be quoted. Working with wikitext within quotes is awkward and error prone. The new structure can be somewhat faster because it allows the empty message to be parsed in advanced of rendering.</p><p>For example:</p><pre><code>&lt;$list filter=&lt;&lt;filter&gt;&gt;&gt;
+&lt;%endif%&gt;</code></pre><p>Behind the scenes, the conditional shortcut syntax is rendered as the equivalent <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ListWidget.html">ListWidgets</a>.</p><h2 class="">Explicit Templates for the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ListWidget.html">ListWidget</a></h2><p><a class="doc-link-badge" href="https://github.com/TiddlyWiki/TiddlyWiki5/pull/7784" rel="noopener noreferrer" target="_blank" style="background-color:#ffe246;">added</a> support for <code>&lt;$list-template&gt;</code> and <code>&lt;$list-empty&gt;</code> as immediate children of the <code class="doc-widget">$ListWidget</code> widget to specify the list item template and/or the empty template.</p><p>This new feature is designed to replace a common pattern of using the <code>emptyMessage</code> attribute of the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ListWidget.html">ListWidget</a> to render complex wikitext that thus has to be quoted. Working with wikitext within quotes is awkward and error prone. The new structure can be somewhat faster because it allows the empty message to be parsed in advanced of rendering.</p><p>For example:</p><pre><code>&lt;$list filter=&lt;&lt;filter&gt;&gt;&gt;
 	&lt;$list-template&gt;
 		&lt;$text text=&lt;&lt;currentTiddler&gt;&gt;/&gt;
 	&lt;/$list-template&gt;
