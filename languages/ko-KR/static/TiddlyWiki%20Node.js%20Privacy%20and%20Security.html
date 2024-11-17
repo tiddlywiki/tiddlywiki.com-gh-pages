@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.3.6" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>TiddlyWiki Node.js Privacy and Security: 티들리위키 — 줄 없는 개인 웹 공책</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">이 문서는 <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/languages/ko-KR/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/languages/ko-KR/</a>에서 티들리위키의 정적 HTML 표현의 일부입니다</div></div>
+</p>
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-TiddlyWiki%20Privacy%20and%20Security" data-tags="[[TiddlyWiki Privacy and Security]]" data-tiddler-title="TiddlyWiki Node.js Privacy and Security" role="article"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-expanded="false" aria-label="더 보기" class="tc-btn-invisible" title="더 많은 동작을 봅니다"></button><span class=" tc-reveal" hidden="true"></span></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="이 티들러를 편집합니다" class="tc-btn-invisible" title="이 티들러를 편집합니다"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="닫기" class="tc-btn-invisible" title="이 티들러를 닫습니다"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+</span>
+
+<span>
+
+<span class="tc-tiddler-title-icon">
+
+</span>
+
+
+
+<h2 class="tc-title">
+
+TiddlyWiki Node.js Privacy and Security
+
+</h2>
+
+</span>
+
+</div>
+
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle tc-clearfix"></div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+
+
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
+ TiddlyWiki Privacy and Security
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span></div></div><div class="tc-tiddler-body tc-clearfix tc-reveal"><h3 class="">Node.js Configuration</h3><p>Using TiddlyWiki in the Node.js configuration requires more technical knowledge than the single file configuration.  There are several important areas with respect to security and privacy.</p><ul><li>Most obviously, there is the matter of how user data is stored on disc as individual <code>.tid</code> files. Just as with the single file configuration, these are just ordinary files, and so can be used with third party tools that provide encryption.</li><li>Consideration must also be given to how data is transmitted across the network. By default, the Node.js configuration does not use SSL and so network traffic can be observed by others.<ul><li>The impact of this is mitigated by the fact that, by default, only users on the same machine can connect to the server.</li><li>TiddlyWiki itself does offer the option of setting up an SSL connection.  However, it is generally advised to use an external proxy server to provide SSL services. nginx is popular for this purpose.</li></ul></li></ul></div>
+
+
+</div></p>
+</section>
+</body>
+</html>
+
