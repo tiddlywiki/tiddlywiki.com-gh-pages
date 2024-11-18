@@ -179,18 +179,24 @@ Debugging Stylesheets
 	}
 }
 
-@media (min-width: 960px) {
-
-	.tc-flex-columns {
-		display: flex;
-		gap: 1em;
-	}
-
-	.tc-flex-columns.tc-flex-columns-2 &gt; div {
-		width: 50%;
-	}
-
+.tc-grid-columns {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
+	gap: 1em;
+	width: 100%; /* Ensures container stretches fully */
 }
+
+.tc-grid-columns.tc-grid-columns-2 &gt; div {
+	border-radius: 1em;
+	padding: 1em;
+	background-color: #ffe476;
+}
+
+.tc-grid-columns.tc-grid-columns-2 &gt; div:nth-child(odd) {
+	color: #333333;
+	background-color: #ffc9c9;
+}
+
 
 .tc-saving-sidebar-category { margin-bottom:10px; }
 .tc-saving-sidebar-category-title { margin-bottom:5px; font-weight:bold; }
