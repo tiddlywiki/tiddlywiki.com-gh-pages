@@ -309,7 +309,7 @@ Error message and password prompt
 </noscript>
 <!--~~ Ordinary tiddlers ~~-->
 <script class="tiddlywiki-tiddler-store" type="application/json">[
-{"title":"$:/build","commit":"42b2b9fd20c5f9e8c66d428475d6478343a49733","text":"Prerelease built from branch 'master' at commit 42b2b9fd20c5f9e8c66d428475d6478343a49733 of https://github.com/TiddlyWiki/TiddlyWiki5 at 2024-12-05 12:36:24 UTC\n"},
+{"title":"$:/build","commit":"673a0f560568fba73b62e287619c370688acf53b","text":"Prerelease built from branch 'master' at commit 673a0f560568fba73b62e287619c370688acf53b of https://github.com/TiddlyWiki/TiddlyWiki5 at 2024-12-05 12:40:31 UTC\n"},
 {"title":"$:/config/DefaultSidebarTab","created":"20150719185223155","modified":"20150719185226532","text":"Preview"},
 {"title":"$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home","modified":"20150719172915740","text":"show"},
 {"title":"$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/new-tiddler","modified":"20150719172917795","text":"hide"},
@@ -2050,17 +2050,15 @@ $tw.Wiki = function(options) {
 	// Unpack the currently registered plugins, creating shadow tiddlers for their constituent tiddlers
 	this.unpackPluginTiddlers = function() {
 		var self = this;
-		// Sort the plugin titles by the `plugin-priority` field
-		pluginTiddlers.sort(function(a,b) {
-			if("plugin-priority" in a.fields && "plugin-priority" in b.fields) {
-				return a.fields["plugin-priority"] - b.fields["plugin-priority"];
-			} else if("plugin-priority" in a.fields) {
+		// Sort the plugin titles by the `plugin-priority` field, if this field is missing, default to 1
+		pluginTiddlers.sort(function(a, b) {
+			var priorityA = "plugin-priority" in a.fields ? a.fields["plugin-priority"] : 1;
+			var priorityB = "plugin-priority" in b.fields ? b.fields["plugin-priority"] : 1;
+			if (priorityA !== priorityB) {
+				return priorityA - priorityB;
+			} else if (a.fields.title < b.fields.title) {
 				return -1;
-			} else if("plugin-priority" in b.fields) {
-				return +1;
-			} else if(a.fields.title < b.fields.title) {
-				return -1;
-			} else if(a.fields.title === b.fields.title) {
+			} else if (a.fields.title === b.fields.title) {
 				return 0;
 			} else {
 				return +1;
