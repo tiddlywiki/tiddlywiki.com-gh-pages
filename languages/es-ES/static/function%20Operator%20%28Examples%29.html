@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.3.6" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>function Operator (Examples): TiddlyWiki  v5.3.6 — Cuaderno de notas personal no-lineal en la web</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Operator%20Examples tc-tagged-function%20Operator" data-tags="[[Operator Examples]] [[function Operator]]" data-tiddler-title="function Operator (Examples)" role="article"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-expanded="false" aria-label="Más" class="tc-btn-invisible" title="Otras acciones"></button><span class=" tc-reveal" hidden="true"></span></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Permite editar este tiddler" class="tc-btn-invisible" title="Permite editar este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+</span>
+
+<span>
+
+<span class="tc-tiddler-title-icon">
+
+</span>
+
+
+
+<h2 class="tc-title">
+
+function Operator (Examples)
+
+</h2>
+
+</span>
+
+</div>
+
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle tc-clearfix"></div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+
+
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
+ function Operator
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span><span class="tc-tag-list-item">
+
+
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
+ Operator Examples
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span></div></div><div class="tc-tiddler-body tc-clearfix tc-reveal"><p>These examples use the following predefined variable: </p><ul><li><strong>subTiddler</strong>: <code>$:/SiteTitle</code></li></ul><p>They also use the following predefined functions:</p><pre><code>\function get.destField(subTiddler,field) [&lt;subTiddler&gt;get&lt;field&gt;]
+
+\function get.sourceField(subTiddler,field) [&lt;subTiddler&gt;shadowsource[]get[text]jsonget[tiddlers],&lt;subTiddler&gt;,&lt;field&gt;]
+
+\function get.sourceFields(subTiddler) [&lt;subTiddler&gt;shadowsource[]]:map:flat[&lt;subTiddler&gt;subtiddlerfields{!!title}]
+
+\function has.diff(subTiddler,field) [get.destField&lt;subTiddler&gt;,&lt;field&gt;else[]]:filter[get.sourceField&lt;subTiddler&gt;,&lt;field&gt;else[]!match{!!title}]
+
+\function diff.fields(subTiddler) [get.sourceFields&lt;subTiddler&gt;] [&lt;subTiddler&gt;fields:exclude[created creator modified modifier]] :filter[has.diff&lt;subTiddler&gt;,{!!title}]</code></pre><p><div class="doc-example"><span class=" tc-reveal"><code>[function[get.destField],&lt;subTiddler&gt;,[text]]</code><dd>→ get the overriden value of the field <code class="doc-field">text</code>.</dd><dl><dd><button class="">Try it</button></dd></dl></span><span class=" tc-reveal" hidden="true"></span></div></p><p>The function <code>get.destField</code> use the operator <a class="tc-tiddlylink tc-tiddlylink-resolves" href="get%2520Operator.html"><code class="doc-operator">get</code></a> to get the overriden value of the field <code class="doc-field">text</code> for <a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="%2524%253A%252FSiteTitle.html">$:/SiteTitle</a>.</p><p><div class="doc-example"><span class=" tc-reveal"><code>[function[get.sourceField],&lt;subTiddler&gt;,[text]]</code><dd>→ get the original value of the field <code class="doc-field">text</code></dd><dl><dd><button class="">Try it</button></dd></dl></span><span class=" tc-reveal" hidden="true"></span></div></p><p>The function <code>get.sourceField</code> use the operator <a class="tc-tiddlylink tc-tiddlylink-resolves" href="shadowsource%2520Operator.html"><code class="doc-operator">shadowsource</code></a> to get the title of the plugin in which the shadow tiddler is defined (<span><a class="tc-tiddlylink tc-tiddlylink-resolves" href="%2524%253A%252Flanguages%252Fes-ES.html">$:/languages/es-ES</a></span>). It then use the operator <a class="tc-tiddlylink tc-tiddlylink-resolves" href="get%2520Operator.html"><code class="doc-operator">get</code></a> to retrieve the content of the field <code class="doc-field">text</code>, in which is defined every tiddlers for that plugin, in a json format. Next, the operator <a class="tc-tiddlylink tc-tiddlylink-resolves" href="jsonget%2520Operator.html"><code class="doc-operator">jsonget</code></a> is used to retrieve the value of the original field <code class="doc-field">text</code> for <a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="%2524%253A%252FSiteTitle.html">$:/SiteTitle</a>.</p><p><div class="doc-example"><span class=" tc-reveal"><code>[function[get.sourceFields],&lt;subTiddler&gt;]</code><dd>→ get the original list of fields.</dd><dl><dd><button class="">Try it</button></dd></dl></span><span class=" tc-reveal" hidden="true"></span></div></p><p>The function <code>get.sourceFields</code> use the operator <a class="tc-tiddlylink tc-tiddlylink-resolves" href="shadowsource%2520Operator.html"><code class="doc-operator">shadowsource</code></a> to get the title of the plugin in which the shadow tiddler is defined. The subsequent <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Map%2520Filter%2520Run%2520Prefix.html">Map Filter Run Prefix</a> iterate over the plugin title, and use the operator <a class="tc-tiddlylink tc-tiddlylink-resolves" href="subtiddlerfields%2520Operator.html"><code class="doc-operator">subtiddlerfields</code></a> to output every fields of the shadow tiddler <a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="%2524%253A%252FSiteTitle.html">$:/SiteTitle</a>, whose title is retrieved using a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TextReference.html">TextReference</a>.</p><p><div class="doc-example"><span class=" tc-reveal"><code>[function[has.diff],&lt;subTiddler&gt;,[text]]</code><dd>→ compare the original value of the field <code class="doc-field">text</code> with the value set in the overriding tiddler. If the value is different, output the overriden value</dd><dl><dd><button class="">Try it</button></dd></dl></span><span class=" tc-reveal" hidden="true"></span></div></p><p>The function <code>has.diff</code> use the operator <a class="tc-tiddlylink tc-tiddlylink-resolves" href="get%2520Operator.html"><code class="doc-operator">get</code></a> to retrieve the current value for the field <code class="doc-field">text</code>. If this field is missing or empty, the operator <a class="tc-tiddlylink tc-tiddlylink-resolves" href="else%2520Operator.html"><code class="doc-operator">else</code></a> output an empty <em class="doc-em">string</em>. Next, the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Filter%2520Run%2520Prefix.html">Filter Filter Run Prefix</a> use the function <code>get.sourceField</code> to get the original value for that field, and the operator <a class="tc-tiddlylink tc-tiddlylink-resolves" href="match%2520Operator.html"><code class="doc-operator">match</code></a> is used to check if the value does not match the current value for that field, using a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TextReference.html">TextReference</a>. If the values do not match, it means that the value for that field was changed, and the value of the field is output. Otherwise, the <code>:filter</code> filter run prevent the field value to be output.</p><p><div class="doc-example"><span class=" tc-reveal"><code>[function[diff.fields],&lt;subTiddler&gt;]</code><dd>→ list the overriden fields</dd><dl><dd><button class="">Try it</button></dd></dl></span><span class=" tc-reveal" hidden="true"></span></div></p><p>The function <code>diff.fields</code> use the the function <code>get.sourceFields</code> to list every fields in the original <a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="%2524%253A%252FSiteTitle.html">$:/SiteTitle</a>.  It then use the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="fields%2520Operator.html"><code class="doc-operator">fields</code></a> operator to get every fields on the overriding tiddler, excluding the fields that are automatically set when a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ShadowTiddlers.html">ShadowTiddler</a> is overriden (<code class="doc-field">created</code>, <code class="doc-field">creator</code>, <code class="doc-field">modified</code>, <code class="doc-field">modifier</code>). The subsequent <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Filter%2520Run%2520Prefix.html">Filter Filter Run Prefix</a> use the function <code>has.diff</code> to output only the title of the fields that were overidden.</p><p><div class="doc-icon-block doc-tip"><div><strong>Tip</strong></div><div class="doc-block-icon"><svg class="tc-image-tip tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M64 128.242c35.346 0 64-28.654 64-64 0-35.346-28.654-64-64-64-35.346 0-64 28.654-64 64 0 35.346 28.654 64 64 64zm11.936-36.789c-.624 4.129-5.73 7.349-11.936 7.349-6.206 0-11.312-3.22-11.936-7.349C54.33 94.05 58.824 95.82 64 95.82c5.175 0 9.67-1.769 11.936-4.366zm0 4.492c-.624 4.13-5.73 7.349-11.936 7.349-6.206 0-11.312-3.22-11.936-7.349 2.266 2.597 6.76 4.366 11.936 4.366 5.175 0 9.67-1.769 11.936-4.366zm0 4.456c-.624 4.129-5.73 7.349-11.936 7.349-6.206 0-11.312-3.22-11.936-7.349 2.266 2.597 6.76 4.366 11.936 4.366 5.175 0 9.67-1.769 11.936-4.366zm0 4.492c-.624 4.13-5.73 7.349-11.936 7.349-6.206 0-11.312-3.22-11.936-7.349 2.266 2.597 6.76 4.366 11.936 4.366 5.175 0 9.67-1.769 11.936-4.366zM64.3 24.242c11.618 0 23.699 7.82 23.699 24.2S75.92 71.754 75.92 83.576c0 5.873-5.868 9.26-11.92 9.26s-12.027-3.006-12.027-9.26C51.973 71.147 40 65.47 40 48.442s12.683-24.2 24.301-24.2z" fill-rule="evenodd"></path></svg></div>Theses functions can be used together to highlight the changes made to <a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="%2524%253A%252FSiteTitle.html">$:/SiteTitle</a>:</div></p><div class="doc-example"><pre><code>&lt;$list filter="[diff.fields&lt;subTiddler&gt;]" variable=field&gt;
+  &lt;$diff-text source={{{ [get.sourceField&lt;subTiddler&gt;,&lt;field&gt;] }}} dest={{{ [get.destField&lt;subTiddler&gt;,&lt;field&gt;] }}} &gt;
+    &lt;code&gt;&lt;&lt;field&gt;&gt;&lt;/code&gt;: &lt;&lt;diff-count&gt;&gt; difference&lt;%if [&lt;diff-count&gt;!match[1]]%&gt;s&lt;%endif%&gt;
+  &lt;/$diff-text&gt;
+&lt;/$list&gt;</code></pre><p>Este es su aspecto:</p><p>
+  <div>
+    <code>type</code>: 1 difference
+  <pre><code><ins class="tc-diff-insert">text/vnd.tiddlywiki</ins></code></pre></div>
+
+  <div>
+    <code>text</code>: 3 differences
+  <pre><code><del class="tc-diff-delete">Mi </del><span class="tc-diff-equal">TiddlyWiki</span><del class="tc-diff-delete"><span class="tc-diff-invisible">↩︎
+</span></del><ins class="tc-diff-insert"> @@font-size:small; v&lt;&lt;version&gt;&gt;@@</ins></code></pre></div>
+
+</p></div></div>
+
+
+</div></p>
+</section>
+</body>
+</html>
+
