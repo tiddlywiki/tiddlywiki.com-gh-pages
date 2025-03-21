@@ -273,6 +273,10 @@ var _bootprefix = (function($tw) {
 $tw = $tw || Object.create(null);
 $tw.boot = $tw.boot || Object.create(null);
 
+// Config
+$tw.config = $tw.config || Object.create(null);
+$tw.config.maxEditFileSize = 100 * 1024 * 1024; // 100MB
+
 // Detect platforms
 if(!("browser" in $tw)) {
 	$tw.browser = typeof(window) !== "undefined" && typeof(document) !== "undefined" ? {} : null;
@@ -2280,8 +2284,16 @@ $tw.loadTiddlersFromFile = function(filepath,fields) {
 		extensionInfo = $tw.utils.getFileExtensionInfo(ext),
 		type = extensionInfo ? extensionInfo.type : null,
 		typeInfo = type ? $tw.config.contentTypeInfo[type] : null,
-		data = fs.readFileSync(filepath,typeInfo ? typeInfo.encoding : "utf8"),
-		tiddlers = $tw.wiki.deserializeTiddlers(ext,data,fields),
+		fileSize = fs.statSync(filepath).size,
+		data;
+	if(fileSize > $tw.config.maxEditFileSize) {
+		data = "File " + filepath + "not loaded because it is too large";
+		console.log("Warning: " + data);
+		ext = ".txt";
+	} else {
+		data = fs.readFileSync(filepath,typeInfo ? typeInfo.encoding : "utf8");
+	}
+	var tiddlers = $tw.wiki.deserializeTiddlers(ext,data,fields),
 		metadata = $tw.loadMetadataForFile(filepath);
 	if(metadata) {
 		if(type === "application/json") {

@@ -309,7 +309,7 @@ Error message and password prompt
 </noscript>
 <!--~~ Ordinary tiddlers ~~-->
 <script class="tiddlywiki-tiddler-store" type="application/json">[
-{"title":"$:/build","commit":"0b3efc2771125937c4f5175ff81fef8f8529820b","text":"Prerelease built from branch 'master' at commit 0b3efc2771125937c4f5175ff81fef8f8529820b of https://github.com/TiddlyWiki/TiddlyWiki5 at 2025-03-21 13:38:25 UTC\n"},
+{"title":"$:/build","commit":"55dbce10f461c41240d2c6ee5a49bd6ed0edc15b","text":"Prerelease built from branch 'master' at commit 55dbce10f461c41240d2c6ee5a49bd6ed0edc15b of https://github.com/TiddlyWiki/TiddlyWiki5 at 2025-03-21 14:51:01 UTC\n"},
 {"title":"$:/config/DefaultSidebarTab","created":"20150719185223155","modified":"20150719185226532","text":"Preview"},
 {"title":"$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home","modified":"20150719172915740","text":"show"},
 {"title":"$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/new-tiddler","modified":"20150719172917795","text":"hide"},
@@ -474,6 +474,10 @@ var _bootprefix = (function($tw) {
 
 $tw = $tw || Object.create(null);
 $tw.boot = $tw.boot || Object.create(null);
+
+// Config
+$tw.config = $tw.config || Object.create(null);
+$tw.config.maxEditFileSize = 100 * 1024 * 1024; // 100MB
 
 // Detect platforms
 if(!("browser" in $tw)) {
@@ -2482,8 +2486,16 @@ $tw.loadTiddlersFromFile = function(filepath,fields) {
 		extensionInfo = $tw.utils.getFileExtensionInfo(ext),
 		type = extensionInfo ? extensionInfo.type : null,
 		typeInfo = type ? $tw.config.contentTypeInfo[type] : null,
-		data = fs.readFileSync(filepath,typeInfo ? typeInfo.encoding : "utf8"),
-		tiddlers = $tw.wiki.deserializeTiddlers(ext,data,fields),
+		fileSize = fs.statSync(filepath).size,
+		data;
+	if(fileSize > $tw.config.maxEditFileSize) {
+		data = "File " + filepath + "not loaded because it is too large";
+		console.log("Warning: " + data);
+		ext = ".txt";
+	} else {
+		data = fs.readFileSync(filepath,typeInfo ? typeInfo.encoding : "utf8");
+	}
+	var tiddlers = $tw.wiki.deserializeTiddlers(ext,data,fields),
 		metadata = $tw.loadMetadataForFile(filepath);
 	if(metadata) {
 		if(type === "application/json") {
