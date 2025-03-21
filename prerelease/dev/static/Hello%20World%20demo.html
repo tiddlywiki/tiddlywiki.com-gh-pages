@@ -28,7 +28,7 @@
 	[
     {
         "title": "hello.js",
-        "text": "/*\\\n\nHello, World widget\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\"use strict\";\n\nvar Widget = require(\"$:/core/modules/widgets/widget.js\").widget;\n\nvar MyWidget = function(parseTreeNode,options) {\n\tthis.initialise(parseTreeNode,options);\n};\n\n/*\nInherit from the base widget class\n*/\nMyWidget.prototype = new Widget();\n\n/*\nRender this widget into the DOM\n*/\nMyWidget.prototype.render = function(parent,nextSibling) {\n\tthis.parentDomNode = parent;\n\tvar textNode = this.document.createTextNode(\"Hello, World!\");\n\tparent.insertBefore(textNode,nextSibling);\n\tthis.domNodes.push(textNode);\n};\n\nexports.hello = MyWidget;\n\n})();\n",
+        "text": "/*\\\n\nHello, World widget\n\n\\*/\n\n\"use strict\";\n\nvar Widget = require(\"$:/core/modules/widgets/widget.js\").widget;\n\nvar MyWidget = function(parseTreeNode,options) {\n\tthis.initialise(parseTreeNode,options);\n};\n\n/*\nInherit from the base widget class\n*/\nMyWidget.prototype = new Widget();\n\n/*\nRender this widget into the DOM\n*/\nMyWidget.prototype.render = function(parent,nextSibling) {\n\tthis.parentDomNode = parent;\n\tvar textNode = this.document.createTextNode(\"Hello, World!\");\n\tparent.insertBefore(textNode,nextSibling);\n\tthis.domNodes.push(textNode);\n};\n\nexports.hello = MyWidget;\n",
         "created": "20190201114558816",
         "modified": "20190201224846870",
         "module-type": "widget",
