@@ -55,7 +55,19 @@ ViewWidget
 &lt;$view tiddler="$:/core" subtiddler="$:/DefaultTiddlers"/&gt;
 
 </code></pre><p>Este es su aspecto:</p>GettingStarted
-</div><h1 class="">Examples</h1><p>Given this <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Saturday.html">Saturday</a> example tiddler:</p><table><tbody><tr class="evenRow"><th>tiddler</th><th>raw content</th><th>rendered content</th></tr><tr class="oddRow"><td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Saturday.html">Saturday</a></td><td>&lt;&lt;.this-is-operator-example&gt;&gt;
+</div><p>To transclude a subtiddler with codeblock visual style, wrap it with pre, and set the mode and format attributes:</p><div class="doc-example"><pre><code>
+&lt;pre&gt;
+&lt;$view tiddler="$:/core" subtiddler="$:/core/ui/ControlPanel/ViewTemplateTags" mode=block format=text/&gt;
+&lt;/pre&gt;
+
+</code></pre><p>Este es su aspecto:</p><p><pre>
+\define lingo-base() $:/language/ControlPanel/ViewTemplateTags/
+
+&lt;&lt;lingo Hint&gt;&gt;
+
+{{$:/tags/ViewTemplateTagsFilter||$:/snippets/ListTaggedCascade}}
+
+</pre></p></div><h1 class="">Examples</h1><p>Given this <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Saturday.html">Saturday</a> example tiddler:</p><table><tbody><tr class="evenRow"><th>tiddler</th><th>raw content</th><th>rendered content</th></tr><tr class="oddRow"><td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Saturday.html">Saturday</a></td><td>&lt;&lt;.this-is-operator-example&gt;&gt;
 </td><td>This example tiddler is used to illustrate some of the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Operators.html">Filter Operators</a>.
 </td></tr></tbody></table><p>Here is how <code>&lt;$view tiddler=Saturday format=&lt;&lt;format&gt;&gt;/&gt;</code> renders for each format:
 <table>
