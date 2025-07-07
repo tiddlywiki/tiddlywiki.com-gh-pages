@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.3.6" />
+<meta name="tiddlywiki-version" content="5.3.7" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -22,10 +22,6 @@
 widget to count the number of times this widget refreshes
 
 \*/</span>
-(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
-
-<span class="hljs-comment">/*jslint node: true, browser: true */</span>
-<span class="hljs-comment">/*global $tw: false */</span>
 <span class="hljs-meta">&quot;use strict&quot;</span>;
 
 <span class="hljs-keyword">var</span> <span class="hljs-title class_">Widget</span> = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;$:/core/modules/widgets/widget.js&quot;</span>).<span class="hljs-property">widget</span>;
@@ -58,8 +54,6 @@ Render this widget into the DOM
 };
 
 <span class="hljs-built_in">exports</span>.<span class="hljs-property">refreshcount</span> = <span class="hljs-title class_">MyWidget</span>;
-
-})();
 </code></pre><p>These are the key parts of the code from above:</p><pre class="hljs"><code class="javascript hljs"><span class="hljs-variable language_">this</span>.<span class="hljs-property">refreshCount</span> = <span class="hljs-number">0</span>;
 <span class="hljs-variable language_">this</span>.<span class="hljs-property">document</span>.<span class="hljs-title function_">createTextNode</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">refreshCount</span> + <span class="hljs-string">&quot; refreshes&quot;</span>);
 <span class="hljs-variable language_">this</span>.<span class="hljs-property">refreshCount</span>++;</code></pre><p>In the following example (see <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Widget%2520refresh%2520demo%2520III.html">Widget refresh demo III</a> for the code), two instances of the <code>refreshcount</code> widget are created. One at the top level and the other inside a list widget whose filter results depend on the value in the <code>text</code> field of the <code>test</code> widget. The tiddler store can be modified in a few ways via two buttons and an input box:
@@ -80,7 +74,7 @@ Render this widget into the DOM
 	[
     {
         "title": "refreshcount.js",
-        "text": "/*\\\n\nwidget to count the number of times this widget refreshes\n\n\\*/\n(function() {\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\"use strict\";\n\nvar Widget = require(\"$:/core/modules/widgets/widget.js\").widget;\n\nvar MyWidget = function(parseTreeNode, options) {\n\tthis.refreshCount = 0;\n\tthis.initialise(parseTreeNode, options);\n};\n\n/*\nInherit from the base widget class\n*/\nMyWidget.prototype = new Widget();\n\n/*\nRender this widget into the DOM\n*/\nMyWidget.prototype.render = function(parent, nextSibling) {\n\tthis.parentDomNode = parent;\n\tvar textNode = this.document.createTextNode(this.refreshCount + \" refreshes\");\n\tparent.insertBefore(textNode, nextSibling);\n\tthis.domNodes.push(textNode);\n};\n\nMyWidget.prototype.refresh = function(changedTiddlers) {\n\t// Regenerate and rerender the widget and replace the existing DOM node\n\tthis.refreshCount++;\n\tthis.refreshSelf();\n\treturn true;\n};\n\nexports.refreshcount = MyWidget;\n\n})();\n",
+        "text": "/*\\\n\nwidget to count the number of times this widget refreshes\n\n\\*/\n\"use strict\";\n\nvar Widget = require(\"$:/core/modules/widgets/widget.js\").widget;\n\nvar MyWidget = function(parseTreeNode, options) {\n\tthis.refreshCount = 0;\n\tthis.initialise(parseTreeNode, options);\n};\n\n/*\nInherit from the base widget class\n*/\nMyWidget.prototype = new Widget();\n\n/*\nRender this widget into the DOM\n*/\nMyWidget.prototype.render = function(parent, nextSibling) {\n\tthis.parentDomNode = parent;\n\tvar textNode = this.document.createTextNode(this.refreshCount + \" refreshes\");\n\tparent.insertBefore(textNode, nextSibling);\n\tthis.domNodes.push(textNode);\n};\n\nMyWidget.prototype.refresh = function(changedTiddlers) {\n\t// Regenerate and rerender the widget and replace the existing DOM node\n\tthis.refreshCount++;\n\tthis.refreshSelf();\n\treturn true;\n};\n\nexports.refreshcount = MyWidget;\n",
         "created": "20190201005026324",
         "modified": "20190202143451303",
         "module-type": "widget",

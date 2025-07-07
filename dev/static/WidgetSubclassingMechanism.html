@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.3.6" />
+<meta name="tiddlywiki-version" content="5.3.7" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -25,10 +25,7 @@ module-type: widget-subclass
 Widget base class
 
 \*/
-(function(){
 
-/*jslint node: true, browser: true */
-/*global $tw: false */
 "use strict";
 
 exports.baseClass = "checkbox"; // Extend the &lt;$checkbox&gt; widget
@@ -48,8 +45,7 @@ exports.prototype.handleChangeEvent = function(event) {
 	// Print our message
 	console.log("Checkbox status:",this.inputDomNode.checked);
 };
-
-})();</code></pre></div>
+</code></pre></div>
 </div></p>
 </section>
 </body>

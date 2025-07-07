@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.3.6" />
+<meta name="tiddlywiki-version" content="5.3.7" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -23,11 +23,8 @@
 Hello, World widget
 
 \*/</span>
-(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>){
-
-<span class="hljs-comment">/*jslint node: true, browser: true */</span>
-<span class="hljs-comment">/*global $tw: false */</span>
-<span class="hljs-meta">&quot;use strict&quot;</span>;
+<span class="hljs-meta">
+&quot;use strict&quot;</span>;
 
 <span class="hljs-keyword">var</span> <span class="hljs-title class_">Widget</span> = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;$:/core/modules/widgets/widget.js&quot;</span>).<span class="hljs-property">widget</span>;
 
@@ -51,8 +48,6 @@ Render this widget into the DOM
 };
 
 <span class="hljs-built_in">exports</span>.<span class="hljs-property">hello</span> = <span class="hljs-title class_">MyWidget</span>;
-
-})();
 </code></pre>
 The code for importing the core widget class remains, but now we also have code to create our own class which inherits from it. In addition an implementation of the <code>render</code> method is included. Here is the result:
 
@@ -66,7 +61,7 @@ The code for importing the core widget class remains, but now we also have code 
 	[
     {
         "title": "hello.js",
-        "text": "/*\\\n\nHello, World widget\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\"use strict\";\n\nvar Widget = require(\"$:/core/modules/widgets/widget.js\").widget;\n\nvar MyWidget = function(parseTreeNode,options) {\n\tthis.initialise(parseTreeNode,options);\n};\n\n/*\nInherit from the base widget class\n*/\nMyWidget.prototype = new Widget();\n\n/*\nRender this widget into the DOM\n*/\nMyWidget.prototype.render = function(parent,nextSibling) {\n\tthis.parentDomNode = parent;\n\tvar textNode = this.document.createTextNode(\"Hello, World!\");\n\tparent.insertBefore(textNode,nextSibling);\n\tthis.domNodes.push(textNode);\n};\n\nexports.hello = MyWidget;\n\n})();\n",
+        "text": "/*\\\n\nHello, World widget\n\n\\*/\n\n\"use strict\";\n\nvar Widget = require(\"$:/core/modules/widgets/widget.js\").widget;\n\nvar MyWidget = function(parseTreeNode,options) {\n\tthis.initialise(parseTreeNode,options);\n};\n\n/*\nInherit from the base widget class\n*/\nMyWidget.prototype = new Widget();\n\n/*\nRender this widget into the DOM\n*/\nMyWidget.prototype.render = function(parent,nextSibling) {\n\tthis.parentDomNode = parent;\n\tvar textNode = this.document.createTextNode(\"Hello, World!\");\n\tparent.insertBefore(textNode,nextSibling);\n\tthis.domNodes.push(textNode);\n};\n\nexports.hello = MyWidget;\n",
         "created": "20190201114558816",
         "modified": "20190201224846870",
         "module-type": "widget",

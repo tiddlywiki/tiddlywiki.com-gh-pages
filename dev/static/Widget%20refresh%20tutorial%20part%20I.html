@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.3.6" />
+<meta name="tiddlywiki-version" content="5.3.7" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -40,7 +40,7 @@
 	[
     {
         "title": "tiddlerfield-norefresh.js",
-        "text": "/*\\\n\nHello, World widget\n\n\\*/\n(function() {\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\"use strict\";\n\nvar Widget = require(\"$:/core/modules/widgets/widget.js\").widget;\n\nvar MyWidget = function(parseTreeNode, options) {\n\tthis.initialise(parseTreeNode, options);\n};\n\n/*\nInherit from the base widget class\n*/\nMyWidget.prototype = new Widget();\n\n/*\nRender this widget into the DOM\n*/\nMyWidget.prototype.render = function(parent, nextSibling) {\n\tthis.parentDomNode = parent;\n\tvar text = this.wiki.getTiddlerText(\"test\", \"&lt;empty&gt;\")\n\tvar textNode = this.document.createTextNode(text);\n\tparent.insertBefore(textNode, nextSibling);\n\tthis.domNodes.push(textNode);\n};\n\nexports.tiddlerfield = MyWidget;\n\n})();\n",
+        "text": "/*\\\n\nHello, World widget\n\n\\*/\n\"use strict\";\n\nvar Widget = require(\"$:/core/modules/widgets/widget.js\").widget;\n\nvar MyWidget = function(parseTreeNode, options) {\n\tthis.initialise(parseTreeNode, options);\n};\n\n/*\nInherit from the base widget class\n*/\nMyWidget.prototype = new Widget();\n\n/*\nRender this widget into the DOM\n*/\nMyWidget.prototype.render = function(parent, nextSibling) {\n\tthis.parentDomNode = parent;\n\tvar text = this.wiki.getTiddlerText(\"test\", \"&lt;empty&gt;\")\n\tvar textNode = this.document.createTextNode(text);\n\tparent.insertBefore(textNode, nextSibling);\n\tthis.domNodes.push(textNode);\n};\n\nexports.tiddlerfield = MyWidget;\n",
         "created": "20190201233714872",
         "modified": "20190202030615781",
         "module-type": "widget",

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.3.6" />
+<meta name="tiddlywiki-version" content="5.3.7" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -34,7 +34,7 @@
 	[
     {
         "title": "refreshcount.js",
-        "text": "/*\\\n\nwidget to count the number of times this widget refreshes\n\n\\*/\n(function() {\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\"use strict\";\n\nvar Widget = require(\"$:/core/modules/widgets/widget.js\").widget;\n\nvar MyWidget = function(parseTreeNode, options) {\n\tthis.refreshCount = 0;\n\tthis.initialise(parseTreeNode, options);\n};\n\n/*\nInherit from the base widget class\n*/\nMyWidget.prototype = new Widget();\n\n/*\nRender this widget into the DOM\n*/\nMyWidget.prototype.render = function(parent, nextSibling) {\n\tthis.parentDomNode = parent;\n\tvar textNode = this.document.createTextNode(this.refreshCount + \" refreshes\");\n\tparent.insertBefore(textNode, nextSibling);\n\tthis.domNodes.push(textNode);\n};\n\nMyWidget.prototype.refresh = function(changedTiddlers) {\n\t// Regenerate and rerender the widget and replace the existing DOM node\n\tthis.refreshCount++;\n\tthis.refreshSelf();\n\treturn true;\n};\n\nexports.refreshcount = MyWidget;\n\n})();\n",
+        "text": "/*\\\n\nwidget to count the number of times this widget refreshes\n\n\\*/\n\"use strict\";\n\nvar Widget = require(\"$:/core/modules/widgets/widget.js\").widget;\n\nvar MyWidget = function(parseTreeNode, options) {\n\tthis.refreshCount = 0;\n\tthis.initialise(parseTreeNode, options);\n};\n\n/*\nInherit from the base widget class\n*/\nMyWidget.prototype = new Widget();\n\n/*\nRender this widget into the DOM\n*/\nMyWidget.prototype.render = function(parent, nextSibling) {\n\tthis.parentDomNode = parent;\n\tvar textNode = this.document.createTextNode(this.refreshCount + \" refreshes\");\n\tparent.insertBefore(textNode, nextSibling);\n\tthis.domNodes.push(textNode);\n};\n\nMyWidget.prototype.refresh = function(changedTiddlers) {\n\t// Regenerate and rerender the widget and replace the existing DOM node\n\tthis.refreshCount++;\n\tthis.refreshSelf();\n\treturn true;\n};\n\nexports.refreshcount = MyWidget;\n",
         "created": "20190201005026324",
         "modified": "20190202143451303",
         "module-type": "widget",

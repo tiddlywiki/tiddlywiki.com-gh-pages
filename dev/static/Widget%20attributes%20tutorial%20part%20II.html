@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.3.6" />
+<meta name="tiddlywiki-version" content="5.3.7" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -40,7 +40,7 @@ Refresh if the attribute value changed since render
 	[
     {
         "title": "hello-attribute-optimized.js",
-        "text": "/*\\\n\nHello, World widget\n\n\\*/\n(function() {\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\"use strict\";\n\nvar Widget = require(\"$:/core/modules/widgets/widget.js\").widget;\n\nvar MyWidget = function(parseTreeNode, options) {\n\tthis.initialise(parseTreeNode, options);\n};\n\n/*\nInherit from the base widget class\n*/\nMyWidget.prototype = new Widget();\n\n/*\nRender this widget into the DOM\n*/\nMyWidget.prototype.render = function(parent, nextSibling) {\n\tthis.parentDomNode = parent;\n\tthis.computeAttributes();\n\tvar message = this.getAttribute(\"message\", \"World\");\n\tvar textNode = this.document.createTextNode(\"Hello, \" + message + \"!\");\n\tparent.insertBefore(textNode, nextSibling);\n\tthis.domNodes.push(textNode);\n};\n\n/*\nRefresh if the attribute value changed since render\n*/\nMyWidget.prototype.refresh = function(changedTiddlers) {\n\t// Find which attributes have changed\n\tvar changedAttributes = this.computeAttributes();\n\tif (changedAttributes.message) {\n\t\tthis.refreshSelf();\n\t\treturn true;\n\t} else {\n\t\treturn false;\n\t}\n};\n\nexports.hello = MyWidget;\n\n})();\n",
+        "text": "/*\\\n\nHello, World widget\n\n\\*/\n\"use strict\";\n\nvar Widget = require(\"$:/core/modules/widgets/widget.js\").widget;\n\nvar MyWidget = function(parseTreeNode, options) {\n\tthis.initialise(parseTreeNode, options);\n};\n\n/*\nInherit from the base widget class\n*/\nMyWidget.prototype = new Widget();\n\n/*\nRender this widget into the DOM\n*/\nMyWidget.prototype.render = function(parent, nextSibling) {\n\tthis.parentDomNode = parent;\n\tthis.computeAttributes();\n\tvar message = this.getAttribute(\"message\", \"World\");\n\tvar textNode = this.document.createTextNode(\"Hello, \" + message + \"!\");\n\tparent.insertBefore(textNode, nextSibling);\n\tthis.domNodes.push(textNode);\n};\n\n/*\nRefresh if the attribute value changed since render\n*/\nMyWidget.prototype.refresh = function(changedTiddlers) {\n\t// Find which attributes have changed\n\tvar changedAttributes = this.computeAttributes();\n\tif (changedAttributes.message) {\n\t\tthis.refreshSelf();\n\t\treturn true;\n\t} else {\n\t\treturn false;\n\t}\n};\n\nexports.hello = MyWidget;\n",
         "created": "20190205024846183",
         "modified": "20190205025110882",
         "module-type": "widget",
