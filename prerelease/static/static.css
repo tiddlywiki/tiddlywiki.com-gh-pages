@@ -3923,6 +3923,9 @@ ol.doc-github-contributors li {
 }.tc-thumbnail-tabs .tc-btn-pushed {
 	background-color: #333333;
 	fill: #ffffff;
+}.community-survey-sidebar-image {
+	width: 100%;
+	box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }[data-tiddler-title="Custom styles by data-tiddler-title"] {
   border: 1px solid blue;
 }[data-tags*="example-test"] {
