@@ -1164,7 +1164,7 @@
     },
     {
         "title": "$:/languages/fa-IR",
-        "name": "fa",
+        "name": "fa-IR",
         "plugin-type": "language",
         "description": "فارسی (ایران)",
         "author": "amirography",
