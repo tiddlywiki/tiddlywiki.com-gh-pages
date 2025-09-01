@@ -3673,11 +3673,9 @@ ol.doc-github-contributors li {
 	transform: rotate(-0deg) scale(1.03);
 }}.yellow-note h2.tc-title, [data-tiddler-title="Hire the founder of TiddlyWiki"] h2.tc-title {
 	margin: 0.5em 0;
-	font-size: 1.5em;
-	line-height: 1.75;
-	font-family: "Noteworthy", Georgia, serif;
 	color: #334;
-}[data-tiddler-title="Hire the founder of TiddlyWiki"] .tc-tags-wrapper {
+	font-weight: bold;
+}[data-tiddler-title="Hire the founder of TiddlyWiki"] .tc-tags-wrapper, [data-tiddler-title="Hire the founder of TiddlyWiki"] .tc-subtitle {
 	display: none;
 }.yellow-note p, [data-tiddler-title="Hire the founder of TiddlyWiki"] p {
 	margin: 0.5em 0;
@@ -3709,7 +3707,7 @@ ol.doc-github-contributors li {
 	max-width: 8.5em;
 }.yellow-note-sidebar .yellow-note {
 	padding: 0.5em;
-	margin: 0.8em 0;
+	margin: 1em 0;
 	transform: rotate(-0.9deg) scale(0.95);
 }.yellow-note-sidebar:hover .yellow-note {
 	transform: rotate(0deg) scale(1);
