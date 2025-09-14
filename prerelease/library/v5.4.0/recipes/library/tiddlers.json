@@ -453,6 +453,7 @@
         "name": "Filesystem",
         "description": "Synchronize changes from the node.js server to the local filesystem",
         "list": "readme",
+        "platform": "server",
         "stability": "STABILITY_2_STABLE",
         "version": "5.4.0-prerelease",
         "plugin-type": "plugin",
