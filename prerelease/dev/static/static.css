@@ -3076,7 +3076,7 @@ a .doc-attr {
 	width: 1em;
 	height: 1em;
     vertical-align: text-bottom;
-}.doc-link-badge {
+}html button.doc-link-badge, html a.doc-link-badge {
     text-decoration: none;
     background-color: #7eba4c;
     color: #4e432f;
@@ -3084,8 +3084,12 @@ a .doc-attr {
     border-radius: 4px;
     font-weight: bold;
     font-size: 0.75em;
-}.doc-link-badge:hover {
+}html button.doc-link-badge:hover, html a.doc-link-badge:hover {
     text-decoration: underline;
+}.doc-github-link svg {
+	width: 1.2em;
+	height: 1.2em;
+	vertical-align: middle;
 }.doc-changenote-body {
 	margin-left: 2em;
 	font-style: italic;
