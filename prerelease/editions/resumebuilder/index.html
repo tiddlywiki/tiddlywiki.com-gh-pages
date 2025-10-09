@@ -309,7 +309,7 @@ Error message and password prompt
 </noscript>
 <!--~~ Ordinary tiddlers ~~-->
 <script class="tiddlywiki-tiddler-store" type="application/json">[
-{"title":"$:/build","commit":"64fce6207584c5713c7521dd60589143aeac354b","text":"Prerelease built from branch 'master' at commit 64fce6207584c5713c7521dd60589143aeac354b of https://github.com/TiddlyWiki/TiddlyWiki5 at 2025-10-08 11:37:49 UTC\n"},
+{"title":"$:/build","commit":"6e493755bea4273e40c3bb54e3d680a395d827a0","text":"Prerelease built from branch 'master' at commit 6e493755bea4273e40c3bb54e3d680a395d827a0 of https://github.com/TiddlyWiki/TiddlyWiki5 at 2025-10-09 16:59:00 UTC\n"},
 {"title":"$:/config/DefaultSidebarTab","created":"20150719185223155","modified":"20150719185226532","text":"Preview"},
 {"title":"$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home","modified":"20150719172915740","text":"show"},
 {"title":"$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/new-tiddler","modified":"20150719172917795","text":"hide"},
@@ -3213,11 +3213,13 @@ $tw.boot.executeNextStartupTask = function(callback) {
 			$tw.boot.log(s.join(" "));
 			// Execute task
 			if(!$tw.utils.hop(task,"synchronous") || task.synchronous) {
-				task.startup();
-				if(task.name) {
-					$tw.boot.executedStartupModules[task.name] = true;
+				const thenable = task.startup();
+				if(thenable && typeof thenable.then === "function"){
+					thenable.then(asyncTaskCallback);
+					return true;
+				} else {
+					return asyncTaskCallback();
 				}
-				return $tw.boot.executeNextStartupTask(callback);
 			} else {
 				task.startup(asyncTaskCallback);
 				return true;
