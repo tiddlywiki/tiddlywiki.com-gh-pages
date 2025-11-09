@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.4.0-prerelease" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>Release Notes and Changes Internals: TiddlyWiki  v5.4.0-prerelease — un carnet de notes web personnel et non linéaire
+</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists " data-tags="" data-tiddler-title="Release Notes and Changes Internals" role="article"><div class="tc-tiddler-title tc-clearfix"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="plus" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="Actions supplémentaires"></button><span class=" tc-reveal" hidden="true"></span><button aria-label="Édite ce tiddler" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Édite ce tiddler"></button><button aria-label="fermer" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Ferme ce tiddler"></button></span><span><h2 class="tc-title">Release Notes and Changes Internals</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle tc-clearfix"></div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"></div></div><div class="tc-tiddler-body tc-clearfix tc-reveal"><h1 class="">Release Notes</h1><p>Release notes describe the changes in a release, and the impact of those changes.</p><p>Release note fields:</p><ul><li><code>caption</code> - the plain version number (eg <code>5.4.0</code>)</li><li><code>created</code> - in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="DateFormat.html">DateFormat</a></li><li><code>modified</code> - in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="DateFormat.html">DateFormat</a></li><li><code>released</code> - in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="DateFormat.html">DateFormat</a> – only present if the release has been published</li><li><code>tags</code> - must include <code>ReleaseNotes</code></li><li><code>title</code> - the title of the release note (eg <code>Release 5.4.0</code>)</li><li><code>description</code> - a brief description of the release</li><li><code>text</code> - see below</li></ul><p>The text of the release note should consist of the definition of a variable <code>release-introduction</code> followed by the invocation of the <code>releasenote</code> procedure. For example:</p><pre><code>\define release-introduction()
+Release v5.4.0 includes major improvements in a number of areas. See the [[project plan|https://github.com/orgs/TiddlyWiki/projects/4]] for more details.
+\end release-introduction
+
+&lt;&lt;releasenote 5.4.0&gt;&gt;</code></pre><h1 class="">Change Notes</h1><p>Change notes describe a discrete change within a release. Change note fields:</p><ul><li><code>title</code> - by convention titles are formed <code>$:/changenotes/&lt;version&gt;/&lt;unique identifier&gt;</code>. The unique identifier is typically the primary <a class="tc-tiddlylink tc-tiddlylink-resolves" href="GitHub.html">GitHub</a> PR or issue like <code>#1234</code> or a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="GitHub.html">GitHub</a> commit ID such as <code>98f850609d29bc36ded83f90c0d5be231649254b</code></li><li><code>tags</code> - must include <code>$:/tags/ChangeNote</code></li><li><code>change-type</code> - the type of change as a single string; see <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Release%2520Notes%2520and%2520Changes.html">here</a> for valid values</li><li><code>change-category</code> - the category of the change; see <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Release%2520Notes%2520and%2520Changes.html">here</a> for valid values</li><li><code>text</code> - full description of the change</li><li><code>description</code> - brief description of the change</li><li><code>release</code> - the release with which this change note is associated (eg <code>5.4.0</code>)</li><li><code>github-links</code> - a list of the GitHub links associated with this change</li><li><code>github-contributors</code> - a list of the GitHub handles of the developers responsible for the PR/commits</li></ul><h1 class="">Impact Notes</h1><p>Impact notes describe the impact of a particular change. There can be multiple impact notes for a given change.</p><p>Impact note fields:</p><ul><li><code>title</code> - by convention, the title of the associated change note with <code>/deprecations/</code> and a unique ID appended <code>$:/changenotes/5.4.0/#8702/deprecations/darkmode-info-tiddler</code></li><li><code>changenote</code> - the title of the associated change note</li><li><code>created</code> - in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="DateFormat.html">DateFormat</a></li><li><code>modified</code> - in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="DateFormat.html">DateFormat</a></li><li><code>tags</code> - must include <code>$:/tags/ImpactNote</code></li><li><code>description</code> - a brief description of the impact</li><li><code>impact-type</code> - the type of impact; see <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Release%2520Notes%2520and%2520Changes.html">here</a> for valid values</li><li><code>text</code> - description of the impact if required</li></ul></div>
+
+
+</div></p>
+</section>
+</body>
+</html>
+
