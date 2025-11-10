@@ -42,7 +42,7 @@ substitute Operator (Examples)
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle tc-clearfix">14 junio 2023 a las 23:34</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle tc-clearfix">21 octubre 2025 a las 14:04</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
@@ -60,7 +60,33 @@ substitute Operator (Examples)
 <span class=" tc-reveal" hidden="true"></span>
 
 
-</span></div></div><div class="tc-tiddler-body tc-clearfix tc-reveal"><h1 class="">Substitute <code class="doc-operator">substitute[]</code> operator parameters</h1><p><div class="doc-example"><span class=" tc-reveal"><code>[[Hi, I'm $1$ and I live in $2$]substitute[Bugs Bunny],[Rabbit Hole Hill]]</code><dl><dd><button class="">Try it</button></dd></dl></span><span class=" tc-reveal" hidden="true"></span></div></p><h1 class="">Substitute variables</h1><p>This example uses the following variables:</p><ul><li>name: <pre><code>Bugs Bunny</code></pre></li><li>address: <pre><code>Rabbit Hole Hill</code></pre></li></ul><p><div class="doc-example"><span class=" tc-reveal"><code>[[Hi, I'm $(name)$ and I live in $(address)$]substitute[]]</code><dl><dd><button class="">Try it</button></dd></dl></span><span class=" tc-reveal" hidden="true"></span></div></p><h1 class="">Substitute variables and operator parameters</h1><p>This example uses the following variable:</p><ul><li>time: <pre><code>morning</code></pre></li></ul><p><div class="doc-example"><span class=" tc-reveal"><code>[[Something in the $(time)$ at $2$ about $1$ ]substitute[Maths],[the Library]]</code><dl><dd><button class="">Try it</button></dd></dl></span><span class=" tc-reveal" hidden="true"></span></div></p><h1 class="">Substitute a filter expression and a variable</h1><p>This example uses the following variables:</p><ul><li>field: <pre><code>modified</code></pre></li><li>sentence: <pre><code>This tiddler was last $(field)$ on ${[{!!modified}format:date[DDth MMM YYYY]]}$</code></pre></li></ul><p><div class="doc-example"><span class=" tc-reveal"><code>[&lt;sentence&gt;substitute[]]</code><dl><dd><button class="">Try it</button></dd></dl></span><span class=" tc-reveal" hidden="true"></span></div></p></div>
+</span></div></div><div class="tc-tiddler-body tc-clearfix tc-reveal"><h2 class="">Substitute operator parameters</h2><p>The following example uses a <strong>function definition</strong> and a <strong>function call</strong> with a <strong>filter expression</strong></p><div class="doc-example"><pre><code>\function f.text() [[Hi, I'm $1$ and I live in $2$]substitute[Bugs Bunny],[Rabbit Hole Hill]]
+
+&lt;&lt;f.text&gt;&gt;
+</code></pre><p>Este es su aspecto:</p><p>\function f.text() <a class="tc-tiddlylink tc-tiddlylink-missing" href="Hi%252C%2520I%2527m%2520%25241%2524%2520and%2520I%2520live%2520in%2520%25242%2524%255Dsubstitute%255BBugs%2520Bunny%255D%252C%255BRabbit%2520Hole%2520Hill.html">Hi, I'm $1$ and I live in $2$]substitute[Bugs Bunny],[Rabbit Hole Hill</a></p></div><hr><p>The following example uses a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Transclusion%2520in%2520WikiText.html">filtered transclusion</a> with a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Syntax.html">filter expression</a> creating a link and a text output.</p><div class="doc-example"><pre><code>link: {{{ [[Hi, I'm $1$ and I live in $2$]substitute[Bugs Bunny],[Rabbit Hole Hill]] }}}
+
+text: &lt;$text text={{{ [[Hi, I'm $1$ and I live in $2$]substitute[Bugs Bunny],[Rabbit Hole Hill]] }}}/&gt;
+</code></pre><p>Este es su aspecto:</p><p>link: <span><a class="tc-tiddlylink tc-tiddlylink-missing" href="Hi%252C%2520I%2527m%2520Bugs%2520Bunny%2520and%2520I%2520live%2520in%2520Rabbit%2520Hole%2520Hill.html">Hi, I'm Bugs Bunny and I live in Rabbit Hole Hill</a></span></p><p>text: Hi, I'm Bugs Bunny and I live in Rabbit Hole Hill</p></div><h2 class="">Substitute variables and parameters</h2><p>The following example uses <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Pragma%253A%2520%255Cprocedure.html">variable definitions</a> "name", "address", a <strong>filtered transclusion</strong> assigned to a <strong>text-widget</strong>. The variables "name" and "address" are used as <strong>substitute parameters</strong>.</p><div class="doc-example"><pre><code>\procedure name() Bugs Bunny
+\procedure address() Rabbit Hole Hill
+
+&lt;$text text={{{ [[Hi, I'm $1$ and I live in $2$]substitute&lt;name&gt;,&lt;address&gt;] }}}/&gt;
+</code></pre><p>Este es su aspecto:</p><p>\procedure name() Bugs Bunny
+\procedure address() Rabbit Hole Hill</p>Hi, I'm  and I live in </div><h2 class="">Substitute $(variables)$</h2><p>The following examples use the variables "name" and "address" and directly substitute the with the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Substituted%2520Attribute%2520Values.html">attribute substitution</a> syntax. </p><div class="doc-example"><pre><code>\procedure name() Bugs Bunny
+\procedure address() Rabbit Hole Hill
+
+&lt;$text text=`Hi, I'm  and I live in `/&gt;
+</code></pre><p>Este es su aspecto:</p><p>\procedure name() Bugs Bunny
+\procedure address() Rabbit Hole Hill</p>Hi, I'm  and I live in </div><h2 class="">Substitute a filter expression and a variable</h2><p>The following example uses a procedure, that defines the text with substitution placeholders. <code>$(field)$</code> is defined as a variable. <code>${ ... }$</code> is filtered <a class="tc-tiddlylink tc-tiddlylink-resolves" href="substitute%2520Operator.html"><code class="doc-operator">substitution placeholder</code></a>.</p><div class="doc-example"><pre><code>\procedure field() modified
+
+\procedure sentence() This tiddler was last  on ${[{!!modified}format:date[DDth MMM YYYY]]}$
+
+&lt;$text text={{{ [&lt;sentence&gt;substitute[]] }}}/&gt;
+
+---
+
+&lt;$text text=`This tiddler was last  on ${[{!!modified}format:date[DDth MMM YYYY]]}$`/&gt;
+
+</code></pre><p>Este es su aspecto:</p><p>\procedure field() modified</p><p>\procedure sentence() This tiddler was last  on ${[{!!modified}format:date[DDth MMM YYYY]]}$</p><hr>This tiddler was last  on 21 octubre 2025</div></div>
 
 
 </div></p>
