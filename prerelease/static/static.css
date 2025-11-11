@@ -2244,16 +2244,12 @@ a.tc-tiddlylink:hover {
 	width: 3em;
 	height: 3em;
 	
--webkit-filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
-	-moz-filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
 		filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
 
 }.tc-thumbnail-wrapper:hover .tc-thumbnail-icon svg,
 .tc-thumbnail-wrapper:hover .tc-thumbnail-icon img {
 	color: #fff;
 	
--webkit-filter: drop-shadow(3px 3px 4px rgba(0,0,0,0.6));
-	-moz-filter: drop-shadow(3px 3px 4px rgba(0,0,0,0.6));
 		filter: drop-shadow(3px 3px 4px rgba(0,0,0,0.6));
 
 }.tc-thumbnail-icon {
@@ -2663,8 +2659,6 @@ body.tc-dynaview.tc-dynaview-zoom-factor-4 .tc-dynaview-zoom-visible-4 {opacity:
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
 	
--webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-	-moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
 		box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
 
 	border: 1px solid #ffffff;
@@ -2788,8 +2782,6 @@ nav.tc-menubar {
 	background: #ffffff;
 	background: #5778d8;
 	
--webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
-	-moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 		box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 
 }@media (max-width: 959px) {html nav.tc-menubar ul.tc-menubar-list {
@@ -2933,8 +2925,6 @@ svg.railroad-diagram path.arrow {
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
 	
--webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-	-moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
 		box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
 
 	border: 1px solid #228877;
@@ -3228,8 +3218,6 @@ svg.railroad-diagram path.arrow {
 	margin-top: 6px;
 	margin-bottom: 12px;
 	
--webkit-box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
-	-moz-box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
 		box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
 
 }@media (max-width: 960px) {
@@ -3329,8 +3317,6 @@ svg.railroad-diagram path.arrow {
 	top: 50px;
 	left: 0;
 	
--webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
-	-moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
 		box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
 
 }.tc-custom-tiddler-template-list .tc-custom-tiddler-template-list-item .tc-tiddler-frame {
@@ -3714,8 +3700,6 @@ a .doc-attr {
 }@media screen {
 	.doc-tiddler-fields {
 		
--webkit-box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
-	-moz-box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
 		box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
 
 	}
