@@ -3581,7 +3581,7 @@ ol.doc-github-contributors li {
 	fill: #cece86;
 }.yellow-note-sidebar-wrapper {
 	overflow-y: hidden;
-	max-height: 0em;
+	max-height: 15em;
 	transition: max-height 600ms ease-in-out;
 }.yellow-note-sidebar {
 	font-size: 2em;
