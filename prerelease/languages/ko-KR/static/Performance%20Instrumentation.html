@@ -14,10 +14,10 @@
 <title>Performance Instrumentation: 티들리위키 — 줄 없는 개인 웹 공책</title>
 </head>
 <body class="tc-body">
-<p><div class="tc-static-alert"><div class="tc-static-alert-inner">이 문서는 <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/languages/ko-KR/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/languages/ko-KR/</a>에서 티들리위키의 정적 HTML 표현의 일부입니다</div></div>
-</p>
+<div><p><div class="tc-static-alert"><div class="tc-static-alert-inner">이 문서는 <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/languages/ko-KR/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/languages/ko-KR/</a>에서 티들리위키의 정적 HTML 표현의 일부입니다</div></div>
+</p></div>
 <section class="tc-story-river tc-static-story-river">
-<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Features" data-tags="Features" data-tiddler-title="Performance Instrumentation" role="article"><div class="tc-tiddler-title">
+<div><p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Features" data-tags="Features" data-tiddler-title="Performance Instrumentation" role="article"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
 <span class="tc-reveal"><button aria-expanded="false" aria-label="더 보기" class="tc-btn-invisible" title="더 많은 동작을 봅니다"></button><span class="tc-reveal" hidden="true"></span></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal"><button aria-label="이 티들러를 편집합니다" class="tc-btn-invisible" title="이 티들러를 편집합니다"></button></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal"><button aria-label="닫기" class="tc-btn-invisible" title="이 티들러를 닫습니다"></button></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span>
@@ -56,7 +56,7 @@ performance: styleRefresh: 9.14ms
 performance: mainRefresh: 68.10ms </code></pre><p>The information above should be interpreted as follows:</p><ul><li>mainRender is the time taken for the initial display of the page template</li><li>styleRefresh is the time taken to refresh the page stylesheet</li><li>mainRefresh is the time taken to refresh the main page template</li></ul><p>As an example, try switching between the sidebar tabs to compare how long they take to render.</p><p>More detailed information on filter execution timings is also available. With performance instrumentation enabled, type the following <a class="tc-tiddlylink tc-tiddlylink-resolves" href="JavaScript.html">JavaScript</a> command in the browser developer console:</p><pre><code>$tw.perf.log()</code></pre><p>A table is displayed with the following information:</p><ul><li><strong>name</strong> - the string "Filter: " plus the text of the filter</li><li><strong>invocations</strong> - the number of invocations of the filter since startup</li><li><strong>totalTime</strong> - the total time in milliseconds spent evaluating this filter since startup</li><li><strong>percentTime</strong> - the percentage of the execution time of this filter against the total execution time of all filters</li></ul></div>
 
 
-</div></p>
+</div></p></div>
 </section>
 </body>
 </html>

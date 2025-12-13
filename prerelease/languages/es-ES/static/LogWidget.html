@@ -14,10 +14,10 @@
 <title>LogWidget: TiddlyWiki  v5.4.0-prerelease — Cuaderno de notas personal no-lineal en la web</title>
 </head>
 <body class="tc-body">
-<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
-</p>
+<div><p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
+</p></div>
 <section class="tc-story-river tc-static-story-river">
-<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Widgets tc-tagged-Debugging%20Widgets" data-tags="Widgets [[Debugging Widgets]]" data-tiddler-title="LogWidget" role="article"><div class="tc-tiddler-title">
+<div><p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Widgets tc-tagged-Debugging%20Widgets" data-tags="Widgets [[Debugging Widgets]]" data-tiddler-title="LogWidget" role="article"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
 <span class="tc-reveal"><button aria-expanded="false" aria-label="Más" class="tc-btn-invisible" title="Otras acciones"></button><span class="tc-reveal" hidden="true"></span></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal"><button aria-label="Permite editar este tiddler" class="tc-btn-invisible" title="Permite editar este tiddler"></button></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"></button></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span>
@@ -64,7 +64,7 @@ LogWidget
 In addition there are optional attributes that can be used:</p><table><tbody><tr class="evenRow"><th align="left">Optional Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td>$$filter</td><td align="left">All variables matching this filter will also be logged.</td></tr><tr class="evenRow"><td align="left">$$message</td><td align="left">A message to display as the title of the information logged. Useful when several <code>log</code> widgets are used in sequence.</td></tr><tr class="oddRow"><td align="left">$$all</td><td>Set to "yes" to log all variables in a collapsed table. Note that if there is nothing specified to log, all variables are always logged instead.</td></tr></tbody></table><h1 class="">Example</h1><p>Here is an example of logging two variables:</p><pre><code>&lt;$log myVar=&lt;&lt;myVar&gt;&gt; otherVar=&lt;&lt;otherVar&gt;&gt;/&gt;</code></pre><p>To log all variables:</p><pre><code>&lt;$log /&gt;</code></pre><p>To log two variables as well as all core variables (which start with <code>tv-</code>):</p><pre><code>&lt;$log myVar=&lt;&lt;myVar&gt;&gt; other={{!!status}} $$filter="[prefix[tv-]]"/&gt;</code></pre></div>
 
 
-</div></p>
+</div></p></div>
 </section>
 </body>
 </html>
