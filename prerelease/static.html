@@ -433,9 +433,11 @@ html button {
 	border-radius: 3px;
 	font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
 }blockquote {
-	border-left: 5px solid #bbbbbb;
-	margin-left: 25px;
-	padding-left: 10px;
+	border-inline-start: 5px solid #bbbbbb;
+		-webkit-margin-start: 25px;
+	margin-inline-start: 25px;
+		-webkit-padding-start: 10px;
+	padding-inline-start: 10px;
 	quotes: "\201C""\201D""\2018""\2019";
 }blockquote > div {
 	margin-top: 1em;
@@ -444,9 +446,11 @@ html button {
 	font-family: Georgia, serif;
 	position: relative;
 	background: #f5f5f5;
-	border-left: none;
-	margin-left: 50px;
-	margin-right: 50px;
+	border-inline-start: none;
+		-webkit-margin-start: 50px;
+	margin-inline-start: 50px;
+	-webkit-margin-end: ;
+	margin-inline-end: ;
 	padding: 10px;
 	border-radius: 8px;
 }blockquote.tc-big-quote cite:before {
@@ -498,7 +502,12 @@ input[type="search"]::-webkit-search-results-decoration {
 }.tc-muted {
 	color: #bbbbbb;
 }svg.tc-image-button {
-	padding: 0px 1px 1px 0px;
+	padding-top: 0px;
+	padding-bottom: 1px;
+		-webkit-padding-start: 0px;
+	padding-inline-start: 0px;
+	-webkit-padding-end: 1px;
+	padding-inline-end: 1px;
 }.tc-icon-wrapper > svg {
 	width: 1em;
 	height: 1em;
@@ -756,7 +765,8 @@ a.tc-tiddlylink:hover {
 	width: 1em;
 	color: #bbbbbb;
 }.tc-btn-text {
-	margin-left: 7px;
+		-webkit-margin-start: 7px;
+	margin-inline-start: 7px;
 }/* used for documentation "fake" buttons */
 .tc-btn-standard {
 	line-height: 1.8;
@@ -804,7 +814,8 @@ a.tc-tiddlylink:hover {
 	border: none;
 	width: 100%;
 	width: calc(100% + 2px);
-	margin-left: -43px;
+		-webkit-margin-start: -43px;
+	margin-inline-start: -43px;
 	text-align: center;
 	border-top: 2px solid #f8f8f8;
 	margin-top: 4px;
@@ -824,7 +835,8 @@ a.tc-tiddlylink:hover {
 	border: none;
 	width: 23px;
 	text-align: center;
-	margin-left: -35px;
+		-webkit-margin-start: -35px;
+	margin-inline-start: -35px;
 	top: 6px;
 	bottom: 6px;
 }.tc-fold-banner:hover {
@@ -834,7 +846,8 @@ a.tc-tiddlylink:hover {
 		width: calc(100% + 59px);
 	}.tc-fold-banner {
 		width: 16px;
-		margin-left: -16px;
+			-webkit-margin-start: -16px;
+	margin-inline-start: -16px;
 		font-size: 0.75em;
 	}}/*
 ** Tags and missing tiddlers
@@ -967,17 +980,22 @@ a.tc-tiddlylink:hover {
 	}.tc-sidebar-scrollable {
 		position: fixed;
 		top: 0px;
-		left: 770px;
+		inset-inline-start: 770px;
 		bottom: 0;
-		right: 0;
+		inset-inline-end: 0;
 		overflow-y: auto;
 		overflow-x: auto;
 		-webkit-overflow-scrolling: touch;
 		margin: 0 0 0 -42px;
 		padding: 71px 0 28px 42px;
-	}html[dir="rtl"] .tc-sidebar-scrollable {
-		left: auto;
-		right: 770px;
+	}@supports not (inset-inline-start: 0) {
+		.tc-sidebar-scrollable {
+			left: 770px;
+			right: 0;
+		}html[dir="rtl"] .tc-sidebar-scrollable {
+			left: auto;
+			right: 770px;
+		}
 	}.tc-story-river {
 		position: relative;
 		left: 0px;
@@ -1021,7 +1039,10 @@ a.tc-tiddlylink:hover {
 	border-bottom: 1px solid #f8f8f8;
 }@media (max-width: 959px) {.tc-tiddler-info {
 		padding: 14px 14px 14px 14px;
-	}}.tc-view-field-table {
+	}}.tc-tiddler-info-controls {
+	position: absolute;
+	inset-inline-end: 0;
+}.tc-view-field-table {
 	width: 100%;
 }.tc-view-field-name {
 	width: 1%; /* Makes this column be as narrow as possible */
@@ -1057,7 +1078,8 @@ a.tc-tiddlylink:hover {
 	color: #182955;
 }.tc-tiddler-title-icon {
 	vertical-align: middle;
-	margin-right: .1em;
+		-webkit-margin-end: .1em;
+	margin-inline-end: .1em;
 }.tc-tiddler-title-icon svg {
 	width: 0.9em;
 	height: 0.9em;
@@ -1088,7 +1110,7 @@ a.tc-tiddlylink:hover {
 	font-style: italic;
 	font-weight: normal;
 }.tc-tiddler-frame .tc-tiddler-controls {
-	float: right;
+	float: inline-end;
 	padding: 3px; /* make space for outline */
 }.tc-tiddler-controls .tc-drop-down {
 	font-size: 0.6em;
@@ -1403,7 +1425,8 @@ a.tc-tiddlylink:hover {
 }/*
 ** Storyview Classes
 */.tc-viewswitcher .tc-image-button {
-	margin-right: .3em;
+		-webkit-margin-end: .3em;
+	margin-inline-end: .3em;
 }.tc-page-container.tc-page-view-zoomin .tc-tiddler-frame {
 	position: absolute;
 	display: block;
@@ -1450,7 +1473,7 @@ a.tc-tiddlylink:hover {
 	display: block;
 	padding: 0 14px 0 14px;
 	width: 100%;
-	text-align: left;
+	text-align: start;
 	color: #333333;
 	line-height: 1.4;
 }.tc-drop-down .tc-tab-set .tc-tab-buttons button {
@@ -1654,7 +1677,7 @@ a.tc-tiddlylink:hover {
 	display: block;
 	padding-top: 14px;
 	vertical-align: top;
-	text-align: right;
+	text-align: end;
 	margin-bottom: inherit;
 	margin-right: -1px;
 	max-width: 33%;
@@ -1686,18 +1709,18 @@ a.tc-tiddlylink:hover {
 	width: 100%;
 	margin-top: 3px;
 	margin-right: 0;
-	text-align: right;
+	text-align: end;
 	background-color: #d8d8d8;
-	border-left: 1px solid #cccccc;
+	border-inline-start: 1px solid #cccccc;
 	border-bottom: 1px solid #cccccc;
-	border-right: none;
-	border-top-left-radius: 2px;
-	border-bottom-left-radius: 2px;
-	border-top-right-radius: 0;
-	border-bottom-right-radius: 0;
+	border-inline-end: none;
+	border-start-start-radius: 2px;
+	border-end-start-radius: 2px;
+	border-start-end-radius: 0;
+	border-end-end-radius: 0;
 }.tc-tab-buttons.tc-vertical button.tc-tab-selected {
 	background-color: #ffffff;
-	border-right: 1px solid #ffffff;
+	border-inline-end: 1px solid #ffffff;
 }.tc-tab-divider {
 	border-top: 1px solid #d8d8d8;
 }.tc-tab-divider.tc-vertical  {
@@ -1708,8 +1731,9 @@ a.tc-tiddlylink:hover {
 	display: inline-block;
 	vertical-align: top;
 	padding-top: 0;
-	padding-left: 14px;
-	border-left: 1px solid #cccccc;
+		-webkit-padding-start: 14px;
+	padding-inline-start: 14px;
+	border-inline-start: 1px solid #cccccc;
 	-webkit-flex: 1 0 70%;
 	flex: 1 0 70%;
 	overflow: auto;
@@ -1847,7 +1871,7 @@ a.tc-tiddlylink:hover {
 }.tc-alert-toolbar {
 	position: absolute;
 	top: 7px;
-	right: 7px;
+	inset-inline-end: 7px;
 	line-height: 0;
 }.tc-alert-toolbar svg {
 	color: #b99e2f;
@@ -1897,6 +1921,8 @@ a.tc-tiddlylink:hover {
 ** Control panel
 */.tc-control-panel td {
 	padding: 4px;
+}.tc-control-panel table > tbody > tr > td {
+	text-align: start;
 }.tc-control-panel table, .tc-control-panel table input, .tc-control-panel table textarea {
 	width: 100%;
 }.tc-control-panel-setting {
@@ -2076,7 +2102,12 @@ a.tc-tiddlylink:hover {
 }.tc-chooser-item {
 	border-bottom: 1px solid #f0f0f0;
 	border-top: 1px solid #f0f0f0;
-	padding: 2px 4px 2px 14px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+		-webkit-padding-start: 14px;
+	padding-inline-start: 14px;
+	-webkit-padding-end: 4px;
+	padding-inline-end: 4px;
 }.tc-drop-down .tc-chooser-item {
 	padding: 2px;
 }.tc-chosen,
@@ -2095,7 +2126,8 @@ a.tc-tiddlylink:hover {
 .tc-drop-down .tc-chooser-item .tc-tiddlylink:hover {
 	color: #333333;
 }.tc-chosen > .tc-tiddlylink:before {
-	margin-left: -10px;
+		-webkit-margin-start: -10px;
+	margin-inline-start: -10px;
 	position: relative;
 	content: "» ";
 }.tc-chooser-item svg,
@@ -2136,9 +2168,11 @@ a.tc-tiddlylink:hover {
 	color: #acacac;
 }.tc-table-of-contents ol {
 	list-style-type: none;
-	padding-left: 0;
+		-webkit-padding-start: 0;
+	padding-inline-start: 0;
 }.tc-table-of-contents ol ol {
-	padding-left: 1em;
+		-webkit-padding-start: 1em;
+	padding-inline-start: 1em;
 }.tc-table-of-contents li {
 	font-size: 1.0em;
 	font-weight: bold;
@@ -2163,7 +2197,8 @@ a.tc-tiddlylink:hover {
 }.tc-tabbed-table-of-contents .tc-table-of-contents {
 	z-index: 100;
 	display: inline-block;
-	padding-left: 1em;
+		-webkit-padding-start: 1em;
+	padding-inline-start: 1em;
 	max-width: 50%;
 	-webkit-flex: 0 0 auto;
 	flex: 0 0 auto;
@@ -2337,13 +2372,13 @@ a.tc-tiddlylink:hover {
 }/*
 ** Tree macro
 */.tc-tree div {
-	padding-left: 14px;
+	
 }.tc-tree ol {
 	list-style-type: none;
-	padding-left: 0;
+	
 	margin-top: 0;
 }.tc-tree ol ol {
-	padding-left: 1em;
+	
 }.tc-tree button {
 	color: #acacac;
 }.tc-tree svg {
@@ -2419,7 +2454,8 @@ a.tc-tiddlylink:hover {
 	line-height: 0;
 	border-radius: 1em;
 	vertical-align: text-bottom;
-	margin-right: 0.25em;
+		-webkit-margin-end: 0.25em;
+	margin-inline-end: 0.25em;
 }.tc-test-case-result-icon svg {
 	color: #fff;
 }.tc-test-case-result-icon-pass {
@@ -2439,7 +2475,7 @@ a.tc-tiddlylink:hover {
 }.tc-test-case-header > h2 a.tc-tiddlylink-missing {
 	font-style: normal;
 }.tc-test-case-toolbar {
-	float: right;
+	float: inline-end;
 }.tc-test-case-toolbar svg {
 	color: #cccccc;
 }.tc-test-case-toolbar .tc-drop-down {
@@ -2517,27 +2553,69 @@ a.tc-tiddlylink:hover {
 	margin-left: .25em;
 	margin-right: .25em;
 }.tc-tiny-gap-left {
-	margin-left: .25em;
+		-webkit-margin-start: .25em;
+	margin-inline-start: .25em;
 }.tc-tiny-gap-right {
-	margin-right: .25em;
+		-webkit-margin-end: .25em;
+	margin-inline-end: .25em;
 }.tc-small-gap {
 	margin-left: .5em;
 	margin-right: .5em;
 }.tc-small-gap-left {
-	margin-left: .5em;
+		-webkit-margin-start: .5em;
+	margin-inline-start: .5em;
 }.tc-small-gap-right {
-	margin-right: .5em;
+		-webkit-margin-end: .5em;
+	margin-inline-end: .5em;
 }.tc-big-gap {
 	margin-left: 1em;
 	margin-right: 1em;
 }.tc-big-gap-left {
-	margin-left: 1em;
+		-webkit-margin-start: 1em;
+	margin-inline-start: 1em;
 }.tc-big-gap-right {
-	margin-right: 1em;
+		-webkit-margin-end: 1em;
+	margin-inline-end: 1em;
 }.tc-word-break {
 	word-break: break-all;
 }/* Vertical gaps */.tc-tiny-v-gap-bottom {
 	margin-bottom: 3px;
+}/* TODO: Remove the following rule once 2020 baseline is supported */
+@supports not (border-inline-start: 1px solid #000000) {
+	blockquote {
+		border-left: 5px solid #bbbbbb;
+	}blockquote.tc-big-quote {
+		border-left: none;
+	}.tc-tab-buttons.tc-vertical button {
+		border-left: 1px solid #cccccc;
+		border-right: none;
+	}.tc-tab-buttons.tc-vertical button.tc-tab-selected {
+		border-right: 1px solid #ffffff;
+	}.tc-tab-content.tc-vertical {
+		border-left: 1px solid #cccccc;
+	}
+}/* TODO: Remove the following rule once 2021 baseline is supported */
+@supports not (border-start-start-radius: 0px) {
+	.tc-tab-buttons.tc-vertical button {
+		border-top-left-radius: 2px;
+		border-bottom-left-radius: 2px;
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+}/* TODO: Remove the following rule once 2021 baseline is supported */
+@supports not (inset-inline-start: 0) {
+	.tc-tiddler-info-controls {
+		right: 0;
+	}.tc-alert-toolbar {
+		right: 7px;
+	}
+}/* TODO: Remove the following rule once 2023 baseline is supported */
+@supports not (float: inline-end) {
+	.tc-test-case-toolbar {
+		float: right;
+	}.tc-tiddler-frame .tc-tiddler-controls {
+		float: right;
+	}
 }.CodeMirror-dialog{position:absolute;left:0;right:0;background:inherit;z-index:15;padding:.1em .8em;overflow:hidden;color:inherit}.CodeMirror-dialog-top{border-bottom:1px solid #eee;top:0}.CodeMirror-dialog-bottom{border-top:1px solid #eee;bottom:0}.CodeMirror-dialog input{border:none;outline:0;background:0 0;width:20em;color:inherit;font-family:monospace}.CodeMirror-dialog button{font-size:70%}.CodeMirror{font-family:monospace;height:300px;color:#000;direction:ltr}.CodeMirror-lines{padding:4px 0}.CodeMirror pre.CodeMirror-line,.CodeMirror pre.CodeMirror-line-like{padding:0 4px}.CodeMirror-gutter-filler,.CodeMirror-scrollbar-filler{background-color:#fff}.CodeMirror-gutters{border-right:1px solid #ddd;background-color:#f7f7f7;white-space:nowrap}.CodeMirror-linenumber{padding:0 3px 0 5px;min-width:20px;text-align:right;color:#999;white-space:nowrap}.CodeMirror-guttermarker{color:#000}.CodeMirror-guttermarker-subtle{color:#999}.CodeMirror-cursor{border-left:1px solid #000;border-right:none;width:0}.CodeMirror div.CodeMirror-secondarycursor{border-left:1px solid silver}.cm-fat-cursor .CodeMirror-cursor{width:auto;border:0!important;background:#7e7}.cm-fat-cursor div.CodeMirror-cursors{z-index:1}.cm-fat-cursor .CodeMirror-line::selection,.cm-fat-cursor .CodeMirror-line>span::selection,.cm-fat-cursor .CodeMirror-line>span>span::selection{background:0 0}.cm-fat-cursor .CodeMirror-line::-moz-selection,.cm-fat-cursor .CodeMirror-line>span::-moz-selection,.cm-fat-cursor .CodeMirror-line>span>span::-moz-selection{background:0 0}.cm-fat-cursor{caret-color:transparent}@-moz-keyframes blink{50%{background-color:transparent}}@-webkit-keyframes blink{50%{background-color:transparent}}@keyframes blink{50%{background-color:transparent}}.cm-tab{display:inline-block;text-decoration:inherit}.CodeMirror-rulers{position:absolute;left:0;right:0;top:-50px;bottom:0;overflow:hidden}.CodeMirror-ruler{border-left:1px solid #ccc;top:0;bottom:0;position:absolute}.cm-s-default .cm-header{color:#00f}.cm-s-default .cm-quote{color:#090}.cm-negative{color:#d44}.cm-positive{color:#292}.cm-header,.cm-strong{font-weight:700}.cm-em{font-style:italic}.cm-link{text-decoration:underline}.cm-strikethrough{text-decoration:line-through}.cm-s-default .cm-keyword{color:#708}.cm-s-default .cm-atom{color:#219}.cm-s-default .cm-number{color:#164}.cm-s-default .cm-def{color:#00f}.cm-s-default .cm-variable-2{color:#05a}.cm-s-default .cm-type,.cm-s-default .cm-variable-3{color:#085}.cm-s-default .cm-comment{color:#a50}.cm-s-default .cm-string{color:#a11}.cm-s-default .cm-string-2{color:#f50}.cm-s-default .cm-meta{color:#555}.cm-s-default .cm-qualifier{color:#555}.cm-s-default .cm-builtin{color:#30a}.cm-s-default .cm-bracket{color:#997}.cm-s-default .cm-tag{color:#170}.cm-s-default .cm-attribute{color:#00c}.cm-s-default .cm-hr{color:#999}.cm-s-default .cm-link{color:#00c}.cm-s-default .cm-error{color:red}.cm-invalidchar{color:red}.CodeMirror-composing{border-bottom:2px solid}div.CodeMirror span.CodeMirror-matchingbracket{color:#0b0}div.CodeMirror span.CodeMirror-nonmatchingbracket{color:#a22}.CodeMirror-matchingtag{background:rgba(255,150,0,.3)}.CodeMirror-activeline-background{background:#e8f2ff}.CodeMirror{position:relative;overflow:hidden;background:#fff}.CodeMirror-scroll{overflow:scroll!important;margin-bottom:-50px;margin-right:-50px;padding-bottom:50px;height:100%;outline:0;position:relative;z-index:0}.CodeMirror-sizer{position:relative;border-right:50px solid transparent}.CodeMirror-gutter-filler,.CodeMirror-hscrollbar,.CodeMirror-scrollbar-filler,.CodeMirror-vscrollbar{position:absolute;z-index:6;display:none;outline:0}.CodeMirror-vscrollbar{right:0;top:0;overflow-x:hidden;overflow-y:scroll}.CodeMirror-hscrollbar{bottom:0;left:0;overflow-y:hidden;overflow-x:scroll}.CodeMirror-scrollbar-filler{right:0;bottom:0}.CodeMirror-gutter-filler{left:0;bottom:0}.CodeMirror-gutters{position:absolute;left:0;top:0;min-height:100%;z-index:3}.CodeMirror-gutter{white-space:normal;height:100%;display:inline-block;vertical-align:top;margin-bottom:-50px}.CodeMirror-gutter-wrapper{position:absolute;z-index:4;background:0 0!important;border:none!important}.CodeMirror-gutter-background{position:absolute;top:0;bottom:0;z-index:4}.CodeMirror-gutter-elt{position:absolute;cursor:default;z-index:4}.CodeMirror-gutter-wrapper ::selection{background-color:transparent}.CodeMirror-gutter-wrapper ::-moz-selection{background-color:transparent}.CodeMirror-lines{cursor:text;min-height:1px}.CodeMirror pre.CodeMirror-line,.CodeMirror pre.CodeMirror-line-like{-moz-border-radius:0;-webkit-border-radius:0;border-radius:0;border-width:0;background:0 0;font-family:inherit;font-size:inherit;margin:0;white-space:pre;word-wrap:normal;line-height:inherit;color:inherit;z-index:2;position:relative;overflow:visible;-webkit-tap-highlight-color:transparent;-webkit-font-variant-ligatures:contextual;font-variant-ligatures:contextual}.CodeMirror-wrap pre.CodeMirror-line,.CodeMirror-wrap pre.CodeMirror-line-like{word-wrap:break-word;white-space:pre-wrap;word-break:normal}.CodeMirror-linebackground{position:absolute;left:0;right:0;top:0;bottom:0;z-index:0}.CodeMirror-linewidget{position:relative;z-index:2;padding:.1px}.CodeMirror-rtl pre{direction:rtl}.CodeMirror-code{outline:0}.CodeMirror-gutter,.CodeMirror-gutters,.CodeMirror-linenumber,.CodeMirror-scroll,.CodeMirror-sizer{-moz-box-sizing:content-box;box-sizing:content-box}.CodeMirror-measure{position:absolute;width:100%;height:0;overflow:hidden;visibility:hidden}.CodeMirror-cursor{position:absolute;pointer-events:none}.CodeMirror-measure pre{position:static}div.CodeMirror-cursors{visibility:hidden;position:relative;z-index:3}div.CodeMirror-dragcursors{visibility:visible}.CodeMirror-focused div.CodeMirror-cursors{visibility:visible}.CodeMirror-selected{background:#d9d9d9}.CodeMirror-focused .CodeMirror-selected{background:#d7d4f0}.CodeMirror-crosshair{cursor:crosshair}.CodeMirror-line::selection,.CodeMirror-line>span::selection,.CodeMirror-line>span>span::selection{background:#d7d4f0}.CodeMirror-line::-moz-selection,.CodeMirror-line>span::-moz-selection,.CodeMirror-line>span>span::-moz-selection{background:#d7d4f0}.cm-searching{background-color:#ffa;background-color:rgba(255,255,0,.4)}.cm-force-border{padding-right:.1px}@media print{.CodeMirror div.CodeMirror-cursors{visibility:hidden}}.cm-tab-wrap-hack:after{content:''}span.CodeMirror-selectedtext{background:0 0}/* Make the editor resize to fit its content */.CodeMirror {
 	height: auto;
 	border: 1px solid #cccccc;
@@ -3175,10 +3253,16 @@ svg.railroad-diagram path.arrow {
 	border-top: none;
 	height: 1px;
 	background-image: linear-gradient(to right, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%); 
+}/* HACK: :dir should be used here. html[dir="rtl"] rules are used to support browsers released before 2023 */html[dir="rtl"] .tc-sidebar-lists .tc-tab-set .tc-tab-divider {
+	background-image: linear-gradient(to left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
 }.tc-more-sidebar > .tc-tab-set > .tc-tab-buttons > button {
 	background-image: linear-gradient(to right, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
 }.tc-more-sidebar > .tc-tab-set > .tc-tab-buttons > button.tc-tab-selected {
 	background-image: linear-gradient(to right, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
+}html[dir="rtl"] .tc-more-sidebar > .tc-tab-set > .tc-tab-buttons > button {
+    background-image: linear-gradient(to right, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.01) 100%);
+}html[dir="rtl"] .tc-more-sidebar > .tc-tab-set > .tc-tab-buttons > button.tc-tab-selected {
+    background-image: linear-gradient(to right, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.05) 100%)
 }.tc-message-box img {
 	box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }.tc-plugin-info {
@@ -4195,7 +4279,7 @@ a.tc-community-card-pill .tc-community-card-field-image svg {
 * First Character Loss: The first character of a matched word would incorrectly disappear (e.g., "The" became "he"). This was fixed by correctly timing the filtering of the current tiddler's title during match validation, ensuring proper substring handling.
 * False Positive Matches: Unrelated words (like "it is" or "Choose") would incorrectly link to a tiddler title. This was resolved by fixing wrong output merging in the Aho-Corasick failure-link handling, eliminating spurious matches from intermediate nodes, and adding cycle detection.</p><p>Impact:
 * Significantly improved correctness and reliability of automatic linking for all users, especially in multilingual and large wikis.
-</p></div></div><div class="doc-change-note-item"><h3 class="doc-change-note-heading"><a class="tc-tiddlylink tc-tiddlylink-resolves doc-link-badge" href="static/Release%2520Notes%2520and%2520Changes.html" style="background-color:#ffe246;">Bugfix</a>Fix browser storage plugin making wiki dirty</h3><div class="doc-change-note-info-list"><div class="doc-change-note-info-list-item-caption">GitHub: </div><div class="doc-change-note-info-list-item-description"><a class="doc-github-link" href="https://github.com/TiddlyWiki/TiddlyWiki5/pull/9538" rel="noopener noreferrer" target="_blank"><svg class="tc-image-github tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M63.938 1.607c-35.336 0-63.994 28.69-63.994 64.084 0 28.312 18.336 52.329 43.768 60.802 3.202.59 4.37-1.388 4.37-3.088 0-1.518-.056-5.55-.087-10.897-17.802 3.871-21.558-8.591-21.558-8.591-2.911-7.404-7.108-9.375-7.108-9.375-5.81-3.973.44-3.895.44-3.895 6.424.453 9.803 6.606 9.803 6.606 5.709 9.791 14.981 6.963 18.627 5.322.582-4.138 2.236-6.963 4.063-8.564-14.211-1.617-29.153-7.117-29.153-31.672 0-6.995 2.495-12.718 6.589-17.195-.66-1.621-2.856-8.14.629-16.96 0 0 5.37-1.722 17.597 6.57 5.104-1.424 10.58-2.132 16.022-2.16 5.438.028 10.91.736 16.022 2.16 12.22-8.292 17.582-6.57 17.582-6.57 3.493 8.82 1.297 15.339.64 16.96 4.102 4.477 6.578 10.2 6.578 17.195 0 24.618-14.966 30.035-29.22 31.62 2.295 1.98 4.342 5.89 4.342 11.87 0 8.564-.079 15.476-.079 17.576 0 1.715 1.155 3.71 4.4 3.084 25.413-8.493 43.733-32.494 43.733-60.798 0-35.394-28.657-64.084-64.006-64.084" fill-rule="evenodd"></path></svg></a></div></div><div class="doc-change-note-description"><p>Fixed issue where the browser storage plugin caused the wiki to be marked as dirty every time it starts up. The problem was due to the use of a log tiddler titled <code>$:/info/browser/storage/persisted</code>, the fix is to rename it to <code>$:/state/browser/storage/persisted</code>.</p></div></div><div class="doc-release-note-heading"><h2 class="doc-change-note-category">Usability</h2></div><div class="doc-change-note-item"><h3 class="doc-change-note-heading"><a class="tc-tiddlylink tc-tiddlylink-resolves doc-link-badge" href="static/Release%2520Notes%2520and%2520Changes.html" style="background-color:#cba5ff;">Enhancement</a>list-links-draggable defaults to currentTiddler if tiddler parameter is missing</h3><div class="doc-change-note-info-list"><div class="doc-change-note-info-list-item-caption">GitHub: </div><div class="doc-change-note-info-list-item-description"><a class="doc-github-link" href="https://github.com/TiddlyWiki/TiddlyWiki5/pull/9254" rel="noopener noreferrer" target="_blank"><svg class="tc-image-github tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M63.938 1.607c-35.336 0-63.994 28.69-63.994 64.084 0 28.312 18.336 52.329 43.768 60.802 3.202.59 4.37-1.388 4.37-3.088 0-1.518-.056-5.55-.087-10.897-17.802 3.871-21.558-8.591-21.558-8.591-2.911-7.404-7.108-9.375-7.108-9.375-5.81-3.973.44-3.895.44-3.895 6.424.453 9.803 6.606 9.803 6.606 5.709 9.791 14.981 6.963 18.627 5.322.582-4.138 2.236-6.963 4.063-8.564-14.211-1.617-29.153-7.117-29.153-31.672 0-6.995 2.495-12.718 6.589-17.195-.66-1.621-2.856-8.14.629-16.96 0 0 5.37-1.722 17.597 6.57 5.104-1.424 10.58-2.132 16.022-2.16 5.438.028 10.91.736 16.022 2.16 12.22-8.292 17.582-6.57 17.582-6.57 3.493 8.82 1.297 15.339.64 16.96 4.102 4.477 6.578 10.2 6.578 17.195 0 24.618-14.966 30.035-29.22 31.62 2.295 1.98 4.342 5.89 4.342 11.87 0 8.564-.079 15.476-.079 17.576 0 1.715 1.155 3.71 4.4 3.084 25.413-8.493 43.733-32.494 43.733-60.798 0-35.394-28.657-64.084-64.006-64.084" fill-rule="evenodd"></path></svg></a></div></div><div class="doc-change-note-description"><ul><li>If macro <code>list-links-draggable</code> misses the tiddler parameter it points to <code>currentTiddler</code> variable by default now</li><li>Also discussed at <a class="tc-tiddlylink-external" href="https://talk.tiddlywiki.org/t/long-standing-bug-in-list-links-draggable-macro/8057" rel="noopener noreferrer" target="_blank">Talk Tiddlywiki</a></li></ul></div></div><div class="doc-change-note-item"><h3 class="doc-change-note-heading"><a class="tc-tiddlylink tc-tiddlylink-resolves doc-link-badge" href="static/Release%2520Notes%2520and%2520Changes.html" style="background-color:#cba5ff;">Enhancement</a>Set modal's mask-closable attribute to yes by default</h3><div class="doc-change-note-info-list"><div class="doc-change-note-info-list-item-caption">GitHub: </div><div class="doc-change-note-info-list-item-description"><a class="doc-github-link" href="https://github.com/TiddlyWiki/TiddlyWiki5/pull/9313" rel="noopener noreferrer" target="_blank"><svg class="tc-image-github tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M63.938 1.607c-35.336 0-63.994 28.69-63.994 64.084 0 28.312 18.336 52.329 43.768 60.802 3.202.59 4.37-1.388 4.37-3.088 0-1.518-.056-5.55-.087-10.897-17.802 3.871-21.558-8.591-21.558-8.591-2.911-7.404-7.108-9.375-7.108-9.375-5.81-3.973.44-3.895.44-3.895 6.424.453 9.803 6.606 9.803 6.606 5.709 9.791 14.981 6.963 18.627 5.322.582-4.138 2.236-6.963 4.063-8.564-14.211-1.617-29.153-7.117-29.153-31.672 0-6.995 2.495-12.718 6.589-17.195-.66-1.621-2.856-8.14.629-16.96 0 0 5.37-1.722 17.597 6.57 5.104-1.424 10.58-2.132 16.022-2.16 5.438.028 10.91.736 16.022 2.16 12.22-8.292 17.582-6.57 17.582-6.57 3.493 8.82 1.297 15.339.64 16.96 4.102 4.477 6.578 10.2 6.578 17.195 0 24.618-14.966 30.035-29.22 31.62 2.295 1.98 4.342 5.89 4.342 11.87 0 8.564-.079 15.476-.079 17.576 0 1.715 1.155 3.71 4.4 3.084 25.413-8.493 43.733-32.494 43.733-60.798 0-35.394-28.657-64.084-64.006-64.084" fill-rule="evenodd"></path></svg></a></div></div><div class="doc-change-note-description"></div></div><div class="doc-change-note-item"><h3 class="doc-change-note-heading"><a class="tc-tiddlylink tc-tiddlylink-resolves doc-link-badge" href="static/Release%2520Notes%2520and%2520Changes.html" style="background-color:#cba5ff;">Enhancement</a>Improve switcher (UI) accessibility</h3><div class="doc-change-note-info-list"><div class="doc-change-note-info-list-item-caption">GitHub: </div><div class="doc-change-note-info-list-item-description"><a class="doc-github-link" href="https://github.com/TiddlyWiki/TiddlyWiki5/pull/9347" rel="noopener noreferrer" target="_blank"><svg class="tc-image-github tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M63.938 1.607c-35.336 0-63.994 28.69-63.994 64.084 0 28.312 18.336 52.329 43.768 60.802 3.202.59 4.37-1.388 4.37-3.088 0-1.518-.056-5.55-.087-10.897-17.802 3.871-21.558-8.591-21.558-8.591-2.911-7.404-7.108-9.375-7.108-9.375-5.81-3.973.44-3.895.44-3.895 6.424.453 9.803 6.606 9.803 6.606 5.709 9.791 14.981 6.963 18.627 5.322.582-4.138 2.236-6.963 4.063-8.564-14.211-1.617-29.153-7.117-29.153-31.672 0-6.995 2.495-12.718 6.589-17.195-.66-1.621-2.856-8.14.629-16.96 0 0 5.37-1.722 17.597 6.57 5.104-1.424 10.58-2.132 16.022-2.16 5.438.028 10.91.736 16.022 2.16 12.22-8.292 17.582-6.57 17.582-6.57 3.493 8.82 1.297 15.339.64 16.96 4.102 4.477 6.578 10.2 6.578 17.195 0 24.618-14.966 30.035-29.22 31.62 2.295 1.98 4.342 5.89 4.342 11.87 0 8.564-.079 15.476-.079 17.576 0 1.715 1.155 3.71 4.4 3.084 25.413-8.493 43.733-32.494 43.733-60.798 0-35.394-28.657-64.084-64.006-64.084" fill-rule="evenodd"></path></svg></a></div></div><div class="doc-change-note-description"></div></div><div class="doc-release-note-heading"><h2 class="doc-change-note-category">Theme</h2></div><div class="doc-change-note-item"><h3 class="doc-change-note-heading"><a class="tc-tiddlylink tc-tiddlylink-resolves doc-link-badge" href="static/Release%2520Notes%2520and%2520Changes.html" style="background-color:#cba5ff;">Enhancement</a>Muted palette, minor adjustments</h3><div class="doc-change-note-info-list"><div class="doc-change-note-info-list-item-caption">GitHub: </div><div class="doc-change-note-info-list-item-description"><a class="doc-github-link" href="https://github.com/TiddlyWiki/TiddlyWiki5/pull/9015" rel="noopener noreferrer" target="_blank"><svg class="tc-image-github tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M63.938 1.607c-35.336 0-63.994 28.69-63.994 64.084 0 28.312 18.336 52.329 43.768 60.802 3.202.59 4.37-1.388 4.37-3.088 0-1.518-.056-5.55-.087-10.897-17.802 3.871-21.558-8.591-21.558-8.591-2.911-7.404-7.108-9.375-7.108-9.375-5.81-3.973.44-3.895.44-3.895 6.424.453 9.803 6.606 9.803 6.606 5.709 9.791 14.981 6.963 18.627 5.322.582-4.138 2.236-6.963 4.063-8.564-14.211-1.617-29.153-7.117-29.153-31.672 0-6.995 2.495-12.718 6.589-17.195-.66-1.621-2.856-8.14.629-16.96 0 0 5.37-1.722 17.597 6.57 5.104-1.424 10.58-2.132 16.022-2.16 5.438.028 10.91.736 16.022 2.16 12.22-8.292 17.582-6.57 17.582-6.57 3.493 8.82 1.297 15.339.64 16.96 4.102 4.477 6.578 10.2 6.578 17.195 0 24.618-14.966 30.035-29.22 31.62 2.295 1.98 4.342 5.89 4.342 11.87 0 8.564-.079 15.476-.079 17.576 0 1.715 1.155 3.71 4.4 3.084 25.413-8.493 43.733-32.494 43.733-60.798 0-35.394-28.657-64.084-64.006-64.084" fill-rule="evenodd"></path></svg></a></div></div><div class="doc-change-note-description"></div></div><div class="doc-change-note-item"><h3 class="doc-change-note-heading"><a class="tc-tiddlylink tc-tiddlylink-resolves doc-link-badge" href="static/Release%2520Notes%2520and%2520Changes.html" style="background-color:#cba5ff;">Enhancement</a>Replace CSS property macros in Snow White theme</h3><div class="doc-change-note-info-list"><div class="doc-change-note-info-list-item-caption">GitHub: </div><div class="doc-change-note-info-list-item-description"><a class="doc-github-link" href="https://github.com/TiddlyWiki/TiddlyWiki5/pull/9243" rel="noopener noreferrer" target="_blank"><svg class="tc-image-github tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M63.938 1.607c-35.336 0-63.994 28.69-63.994 64.084 0 28.312 18.336 52.329 43.768 60.802 3.202.59 4.37-1.388 4.37-3.088 0-1.518-.056-5.55-.087-10.897-17.802 3.871-21.558-8.591-21.558-8.591-2.911-7.404-7.108-9.375-7.108-9.375-5.81-3.973.44-3.895.44-3.895 6.424.453 9.803 6.606 9.803 6.606 5.709 9.791 14.981 6.963 18.627 5.322.582-4.138 2.236-6.963 4.063-8.564-14.211-1.617-29.153-7.117-29.153-31.672 0-6.995 2.495-12.718 6.589-17.195-.66-1.621-2.856-8.14.629-16.96 0 0 5.37-1.722 17.597 6.57 5.104-1.424 10.58-2.132 16.022-2.16 5.438.028 10.91.736 16.022 2.16 12.22-8.292 17.582-6.57 17.582-6.57 3.493 8.82 1.297 15.339.64 16.96 4.102 4.477 6.578 10.2 6.578 17.195 0 24.618-14.966 30.035-29.22 31.62 2.295 1.98 4.342 5.89 4.342 11.87 0 8.564-.079 15.476-.079 17.576 0 1.715 1.155 3.71 4.4 3.084 25.413-8.493 43.733-32.494 43.733-60.798 0-35.394-28.657-64.084-64.006-64.084" fill-rule="evenodd"></path></svg></a></div></div><div class="doc-change-note-description"></div></div><div class="doc-change-note-item"><h3 class="doc-change-note-heading"><a class="tc-tiddlylink tc-tiddlylink-resolves doc-link-badge" href="static/Release%2520Notes%2520and%2520Changes.html" style="background-color:#cba5ff;">Enhancement</a>Use currentColor to style SVG</h3><div class="doc-change-note-info-list"><div class="doc-change-note-info-list-item-caption">Impact:</div><div class="doc-change-note-info-list-item-description"><div class="doc-change-note-info-list-item-description-summary"><span class="doc-change-note-impact-pill-icon doc-change-note-impact-pill-compatibility-break" style="fill:#228822;color:#ddffdd;"><svg class="tc-image-star-filled tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M61.836 96.823l37.327 27.287c2.72 1.99 6.379-.69 5.343-3.912L90.29 75.988l-1.26 3.91 37.285-27.345c2.718-1.993 1.32-6.327-2.041-6.33l-46.113-.036 3.3 2.416L67.176 4.416c-1.04-3.221-5.563-3.221-6.604 0L46.29 48.603l3.3-2.416-46.113.036c-3.362.003-4.759 4.337-2.04 6.33L38.72 79.898l-1.26-3.91-14.216 44.21c-1.036 3.223 2.622 5.901 5.343 3.912l37.326-27.287h-4.078z"></path></svg></span><span class="doc-change-note-impact-pill-text">compatibility-break</span>: SVG icons will inherit colors instead of using <code>#333333</code> if its parent element has <code>color</code> property set</div><div class="doc-change-note-info-list-item-description-details"></div></div><div class="doc-change-note-info-list-item-caption">GitHub: </div><div class="doc-change-note-info-list-item-description"><a class="doc-github-link" href="https://github.com/TiddlyWiki/TiddlyWiki5/pull/9316" rel="noopener noreferrer" target="_blank"><svg class="tc-image-github tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M63.938 1.607c-35.336 0-63.994 28.69-63.994 64.084 0 28.312 18.336 52.329 43.768 60.802 3.202.59 4.37-1.388 4.37-3.088 0-1.518-.056-5.55-.087-10.897-17.802 3.871-21.558-8.591-21.558-8.591-2.911-7.404-7.108-9.375-7.108-9.375-5.81-3.973.44-3.895.44-3.895 6.424.453 9.803 6.606 9.803 6.606 5.709 9.791 14.981 6.963 18.627 5.322.582-4.138 2.236-6.963 4.063-8.564-14.211-1.617-29.153-7.117-29.153-31.672 0-6.995 2.495-12.718 6.589-17.195-.66-1.621-2.856-8.14.629-16.96 0 0 5.37-1.722 17.597 6.57 5.104-1.424 10.58-2.132 16.022-2.16 5.438.028 10.91.736 16.022 2.16 12.22-8.292 17.582-6.57 17.582-6.57 3.493 8.82 1.297 15.339.64 16.96 4.102 4.477 6.578 10.2 6.578 17.195 0 24.618-14.966 30.035-29.22 31.62 2.295 1.98 4.342 5.89 4.342 11.87 0 8.564-.079 15.476-.079 17.576 0 1.715 1.155 3.71 4.4 3.084 25.413-8.493 43.733-32.494 43.733-60.798 0-35.394-28.657-64.084-64.006-64.084" fill-rule="evenodd"></path></svg></a></div></div><div class="doc-change-note-description"><p>Replaces hardcoded <code>fill</code> attributes with one <code>fill: currentColor</code> rule to solve the compatibility issues of migrating to lucide icons.</p></div></div><div class="doc-release-note-heading"><h2 class="doc-change-note-category">Hackability</h2></div><div class="doc-change-note-item"><h3 class="doc-change-note-heading"><a class="tc-tiddlylink tc-tiddlylink-resolves doc-link-badge" href="static/Release%2520Notes%2520and%2520Changes.html" style="background-color:#cba5ff;">Enhancement</a>Multi-valued variables and let filter run prefix</h3><div class="doc-change-note-info-list"><div class="doc-change-note-info-list-item-caption">GitHub: </div><div class="doc-change-note-info-list-item-description"><a class="doc-github-link" href="https://github.com/TiddlyWiki/TiddlyWiki5/pull/8972" rel="noopener noreferrer" target="_blank"><svg class="tc-image-github tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M63.938 1.607c-35.336 0-63.994 28.69-63.994 64.084 0 28.312 18.336 52.329 43.768 60.802 3.202.59 4.37-1.388 4.37-3.088 0-1.518-.056-5.55-.087-10.897-17.802 3.871-21.558-8.591-21.558-8.591-2.911-7.404-7.108-9.375-7.108-9.375-5.81-3.973.44-3.895.44-3.895 6.424.453 9.803 6.606 9.803 6.606 5.709 9.791 14.981 6.963 18.627 5.322.582-4.138 2.236-6.963 4.063-8.564-14.211-1.617-29.153-7.117-29.153-31.672 0-6.995 2.495-12.718 6.589-17.195-.66-1.621-2.856-8.14.629-16.96 0 0 5.37-1.722 17.597 6.57 5.104-1.424 10.58-2.132 16.022-2.16 5.438.028 10.91.736 16.022 2.16 12.22-8.292 17.582-6.57 17.582-6.57 3.493 8.82 1.297 15.339.64 16.96 4.102 4.477 6.578 10.2 6.578 17.195 0 24.618-14.966 30.035-29.22 31.62 2.295 1.98 4.342 5.89 4.342 11.87 0 8.564-.079 15.476-.079 17.576 0 1.715 1.155 3.71 4.4 3.084 25.413-8.493 43.733-32.494 43.733-60.798 0-35.394-28.657-64.084-64.006-64.084" fill-rule="evenodd"></path></svg></a></div></div><div class="doc-change-note-description"><p>This PR introduces a new filter run prefix <code>:let</code> that assigns the result of the filter run to a variable that is made available for the remaining filter runs of the filter expression. It solves the problem that previously it was impossible to compute values for filter operator parameters; parameters could only be a literal string, text reference or variable reference.</p><p>This PR also introduces multi-valued variables, the ability to store a list of results in a variable, not just a single string. They can be assigned with the new <code>:let</code> filter run prefix, or the existing <code>&lt;$let&gt;</code> widget. The full list of values can be retrieved using round brackets instead of the usual angle brackets. In all other contexts only the first item in the list is used as the variable value.</p><ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Multi-Valued%2520Variables.html">Multi-Valued Variables</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Let%2520Filter%2520Run%2520Prefix.html">Let Filter Run Prefix</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/LetWidget.html">LetWidget</a></li></ul></div></div><div class="doc-change-note-item"><h3 class="doc-change-note-heading"><a class="tc-tiddlylink tc-tiddlylink-resolves doc-link-badge" href="static/Release%2520Notes%2520and%2520Changes.html" style="background-color:#cba5ff;">Enhancement</a>Import UI now conditionally displays file-type-specific import options</h3><div class="doc-change-note-info-list"><div class="doc-change-note-info-list-item-caption">GitHub: </div><div class="doc-change-note-info-list-item-description"><a class="doc-github-link" href="https://github.com/TiddlyWiki/TiddlyWiki5/pull/9465" rel="noopener noreferrer" target="_blank"><svg class="tc-image-github tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M63.938 1.607c-35.336 0-63.994 28.69-63.994 64.084 0 28.312 18.336 52.329 43.768 60.802 3.202.59 4.37-1.388 4.37-3.088 0-1.518-.056-5.55-.087-10.897-17.802 3.871-21.558-8.591-21.558-8.591-2.911-7.404-7.108-9.375-7.108-9.375-5.81-3.973.44-3.895.44-3.895 6.424.453 9.803 6.606 9.803 6.606 5.709 9.791 14.981 6.963 18.627 5.322.582-4.138 2.236-6.963 4.063-8.564-14.211-1.617-29.153-7.117-29.153-31.672 0-6.995 2.495-12.718 6.589-17.195-.66-1.621-2.856-8.14.629-16.96 0 0 5.37-1.722 17.597 6.57 5.104-1.424 10.58-2.132 16.022-2.16 5.438.028 10.91.736 16.022 2.16 12.22-8.292 17.582-6.57 17.582-6.57 3.493 8.82 1.297 15.339.64 16.96 4.102 4.477 6.578 10.2 6.578 17.195 0 24.618-14.966 30.035-29.22 31.62 2.295 1.98 4.342 5.89 4.342 11.87 0 8.564-.079 15.476-.079 17.576 0 1.715 1.155 3.71 4.4 3.084 25.413-8.493 43.733-32.494 43.733-60.798 0-35.394-28.657-64.084-64.006-64.084" fill-rule="evenodd"></path></svg></a></div></div><div class="doc-change-note-description"><p>The import UI now displays import options based on the file types being imported. Import options are only shown when relevant files are detected, an example is:</p><pre><code>tags: $:/tags/ImportOptions
+</p></div></div><div class="doc-change-note-item"><h3 class="doc-change-note-heading"><a class="tc-tiddlylink tc-tiddlylink-resolves doc-link-badge" href="static/Release%2520Notes%2520and%2520Changes.html" style="background-color:#ffe246;">Bugfix</a>Fix browser storage plugin making wiki dirty</h3><div class="doc-change-note-info-list"><div class="doc-change-note-info-list-item-caption">GitHub: </div><div class="doc-change-note-info-list-item-description"><a class="doc-github-link" href="https://github.com/TiddlyWiki/TiddlyWiki5/pull/9538" rel="noopener noreferrer" target="_blank"><svg class="tc-image-github tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M63.938 1.607c-35.336 0-63.994 28.69-63.994 64.084 0 28.312 18.336 52.329 43.768 60.802 3.202.59 4.37-1.388 4.37-3.088 0-1.518-.056-5.55-.087-10.897-17.802 3.871-21.558-8.591-21.558-8.591-2.911-7.404-7.108-9.375-7.108-9.375-5.81-3.973.44-3.895.44-3.895 6.424.453 9.803 6.606 9.803 6.606 5.709 9.791 14.981 6.963 18.627 5.322.582-4.138 2.236-6.963 4.063-8.564-14.211-1.617-29.153-7.117-29.153-31.672 0-6.995 2.495-12.718 6.589-17.195-.66-1.621-2.856-8.14.629-16.96 0 0 5.37-1.722 17.597 6.57 5.104-1.424 10.58-2.132 16.022-2.16 5.438.028 10.91.736 16.022 2.16 12.22-8.292 17.582-6.57 17.582-6.57 3.493 8.82 1.297 15.339.64 16.96 4.102 4.477 6.578 10.2 6.578 17.195 0 24.618-14.966 30.035-29.22 31.62 2.295 1.98 4.342 5.89 4.342 11.87 0 8.564-.079 15.476-.079 17.576 0 1.715 1.155 3.71 4.4 3.084 25.413-8.493 43.733-32.494 43.733-60.798 0-35.394-28.657-64.084-64.006-64.084" fill-rule="evenodd"></path></svg></a></div></div><div class="doc-change-note-description"><p>Fixed issue where the browser storage plugin caused the wiki to be marked as dirty every time it starts up. The problem was due to the use of a log tiddler titled <code>$:/info/browser/storage/persisted</code>, the fix is to rename it to <code>$:/state/browser/storage/persisted</code>.</p></div></div><div class="doc-release-note-heading"><h2 class="doc-change-note-category">Usability</h2></div><div class="doc-change-note-item"><h3 class="doc-change-note-heading"><a class="tc-tiddlylink tc-tiddlylink-resolves doc-link-badge" href="static/Release%2520Notes%2520and%2520Changes.html" style="background-color:#cba5ff;">Enhancement</a>list-links-draggable defaults to currentTiddler if tiddler parameter is missing</h3><div class="doc-change-note-info-list"><div class="doc-change-note-info-list-item-caption">GitHub: </div><div class="doc-change-note-info-list-item-description"><a class="doc-github-link" href="https://github.com/TiddlyWiki/TiddlyWiki5/pull/9254" rel="noopener noreferrer" target="_blank"><svg class="tc-image-github tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M63.938 1.607c-35.336 0-63.994 28.69-63.994 64.084 0 28.312 18.336 52.329 43.768 60.802 3.202.59 4.37-1.388 4.37-3.088 0-1.518-.056-5.55-.087-10.897-17.802 3.871-21.558-8.591-21.558-8.591-2.911-7.404-7.108-9.375-7.108-9.375-5.81-3.973.44-3.895.44-3.895 6.424.453 9.803 6.606 9.803 6.606 5.709 9.791 14.981 6.963 18.627 5.322.582-4.138 2.236-6.963 4.063-8.564-14.211-1.617-29.153-7.117-29.153-31.672 0-6.995 2.495-12.718 6.589-17.195-.66-1.621-2.856-8.14.629-16.96 0 0 5.37-1.722 17.597 6.57 5.104-1.424 10.58-2.132 16.022-2.16 5.438.028 10.91.736 16.022 2.16 12.22-8.292 17.582-6.57 17.582-6.57 3.493 8.82 1.297 15.339.64 16.96 4.102 4.477 6.578 10.2 6.578 17.195 0 24.618-14.966 30.035-29.22 31.62 2.295 1.98 4.342 5.89 4.342 11.87 0 8.564-.079 15.476-.079 17.576 0 1.715 1.155 3.71 4.4 3.084 25.413-8.493 43.733-32.494 43.733-60.798 0-35.394-28.657-64.084-64.006-64.084" fill-rule="evenodd"></path></svg></a></div></div><div class="doc-change-note-description"><ul><li>If macro <code>list-links-draggable</code> misses the tiddler parameter it points to <code>currentTiddler</code> variable by default now</li><li>Also discussed at <a class="tc-tiddlylink-external" href="https://talk.tiddlywiki.org/t/long-standing-bug-in-list-links-draggable-macro/8057" rel="noopener noreferrer" target="_blank">Talk Tiddlywiki</a></li></ul></div></div><div class="doc-change-note-item"><h3 class="doc-change-note-heading"><a class="tc-tiddlylink tc-tiddlylink-resolves doc-link-badge" href="static/Release%2520Notes%2520and%2520Changes.html" style="background-color:#cba5ff;">Enhancement</a>Set modal's mask-closable attribute to yes by default</h3><div class="doc-change-note-info-list"><div class="doc-change-note-info-list-item-caption">GitHub: </div><div class="doc-change-note-info-list-item-description"><a class="doc-github-link" href="https://github.com/TiddlyWiki/TiddlyWiki5/pull/9313" rel="noopener noreferrer" target="_blank"><svg class="tc-image-github tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M63.938 1.607c-35.336 0-63.994 28.69-63.994 64.084 0 28.312 18.336 52.329 43.768 60.802 3.202.59 4.37-1.388 4.37-3.088 0-1.518-.056-5.55-.087-10.897-17.802 3.871-21.558-8.591-21.558-8.591-2.911-7.404-7.108-9.375-7.108-9.375-5.81-3.973.44-3.895.44-3.895 6.424.453 9.803 6.606 9.803 6.606 5.709 9.791 14.981 6.963 18.627 5.322.582-4.138 2.236-6.963 4.063-8.564-14.211-1.617-29.153-7.117-29.153-31.672 0-6.995 2.495-12.718 6.589-17.195-.66-1.621-2.856-8.14.629-16.96 0 0 5.37-1.722 17.597 6.57 5.104-1.424 10.58-2.132 16.022-2.16 5.438.028 10.91.736 16.022 2.16 12.22-8.292 17.582-6.57 17.582-6.57 3.493 8.82 1.297 15.339.64 16.96 4.102 4.477 6.578 10.2 6.578 17.195 0 24.618-14.966 30.035-29.22 31.62 2.295 1.98 4.342 5.89 4.342 11.87 0 8.564-.079 15.476-.079 17.576 0 1.715 1.155 3.71 4.4 3.084 25.413-8.493 43.733-32.494 43.733-60.798 0-35.394-28.657-64.084-64.006-64.084" fill-rule="evenodd"></path></svg></a></div></div><div class="doc-change-note-description"></div></div><div class="doc-change-note-item"><h3 class="doc-change-note-heading"><a class="tc-tiddlylink tc-tiddlylink-resolves doc-link-badge" href="static/Release%2520Notes%2520and%2520Changes.html" style="background-color:#cba5ff;">Enhancement</a>Improve switcher (UI) accessibility</h3><div class="doc-change-note-info-list"><div class="doc-change-note-info-list-item-caption">GitHub: </div><div class="doc-change-note-info-list-item-description"><a class="doc-github-link" href="https://github.com/TiddlyWiki/TiddlyWiki5/pull/9347" rel="noopener noreferrer" target="_blank"><svg class="tc-image-github tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M63.938 1.607c-35.336 0-63.994 28.69-63.994 64.084 0 28.312 18.336 52.329 43.768 60.802 3.202.59 4.37-1.388 4.37-3.088 0-1.518-.056-5.55-.087-10.897-17.802 3.871-21.558-8.591-21.558-8.591-2.911-7.404-7.108-9.375-7.108-9.375-5.81-3.973.44-3.895.44-3.895 6.424.453 9.803 6.606 9.803 6.606 5.709 9.791 14.981 6.963 18.627 5.322.582-4.138 2.236-6.963 4.063-8.564-14.211-1.617-29.153-7.117-29.153-31.672 0-6.995 2.495-12.718 6.589-17.195-.66-1.621-2.856-8.14.629-16.96 0 0 5.37-1.722 17.597 6.57 5.104-1.424 10.58-2.132 16.022-2.16 5.438.028 10.91.736 16.022 2.16 12.22-8.292 17.582-6.57 17.582-6.57 3.493 8.82 1.297 15.339.64 16.96 4.102 4.477 6.578 10.2 6.578 17.195 0 24.618-14.966 30.035-29.22 31.62 2.295 1.98 4.342 5.89 4.342 11.87 0 8.564-.079 15.476-.079 17.576 0 1.715 1.155 3.71 4.4 3.084 25.413-8.493 43.733-32.494 43.733-60.798 0-35.394-28.657-64.084-64.006-64.084" fill-rule="evenodd"></path></svg></a></div></div><div class="doc-change-note-description"></div></div><div class="doc-release-note-heading"><h2 class="doc-change-note-category">Theme</h2></div><div class="doc-change-note-item"><h3 class="doc-change-note-heading"><a class="tc-tiddlylink tc-tiddlylink-resolves doc-link-badge" href="static/Release%2520Notes%2520and%2520Changes.html" style="background-color:#cba5ff;">Enhancement</a>Muted palette, minor adjustments</h3><div class="doc-change-note-info-list"><div class="doc-change-note-info-list-item-caption">GitHub: </div><div class="doc-change-note-info-list-item-description"><a class="doc-github-link" href="https://github.com/TiddlyWiki/TiddlyWiki5/pull/9015" rel="noopener noreferrer" target="_blank"><svg class="tc-image-github tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M63.938 1.607c-35.336 0-63.994 28.69-63.994 64.084 0 28.312 18.336 52.329 43.768 60.802 3.202.59 4.37-1.388 4.37-3.088 0-1.518-.056-5.55-.087-10.897-17.802 3.871-21.558-8.591-21.558-8.591-2.911-7.404-7.108-9.375-7.108-9.375-5.81-3.973.44-3.895.44-3.895 6.424.453 9.803 6.606 9.803 6.606 5.709 9.791 14.981 6.963 18.627 5.322.582-4.138 2.236-6.963 4.063-8.564-14.211-1.617-29.153-7.117-29.153-31.672 0-6.995 2.495-12.718 6.589-17.195-.66-1.621-2.856-8.14.629-16.96 0 0 5.37-1.722 17.597 6.57 5.104-1.424 10.58-2.132 16.022-2.16 5.438.028 10.91.736 16.022 2.16 12.22-8.292 17.582-6.57 17.582-6.57 3.493 8.82 1.297 15.339.64 16.96 4.102 4.477 6.578 10.2 6.578 17.195 0 24.618-14.966 30.035-29.22 31.62 2.295 1.98 4.342 5.89 4.342 11.87 0 8.564-.079 15.476-.079 17.576 0 1.715 1.155 3.71 4.4 3.084 25.413-8.493 43.733-32.494 43.733-60.798 0-35.394-28.657-64.084-64.006-64.084" fill-rule="evenodd"></path></svg></a></div></div><div class="doc-change-note-description"></div></div><div class="doc-change-note-item"><h3 class="doc-change-note-heading"><a class="tc-tiddlylink tc-tiddlylink-resolves doc-link-badge" href="static/Release%2520Notes%2520and%2520Changes.html" style="background-color:#cba5ff;">Enhancement</a>Bidirectional improvements for core classes</h3><div class="doc-change-note-info-list"><div class="doc-change-note-info-list-item-caption">GitHub: </div><div class="doc-change-note-info-list-item-description"><a class="doc-github-link" href="https://github.com/TiddlyWiki/TiddlyWiki5/pull/9148" rel="noopener noreferrer" target="_blank"><svg class="tc-image-github tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M63.938 1.607c-35.336 0-63.994 28.69-63.994 64.084 0 28.312 18.336 52.329 43.768 60.802 3.202.59 4.37-1.388 4.37-3.088 0-1.518-.056-5.55-.087-10.897-17.802 3.871-21.558-8.591-21.558-8.591-2.911-7.404-7.108-9.375-7.108-9.375-5.81-3.973.44-3.895.44-3.895 6.424.453 9.803 6.606 9.803 6.606 5.709 9.791 14.981 6.963 18.627 5.322.582-4.138 2.236-6.963 4.063-8.564-14.211-1.617-29.153-7.117-29.153-31.672 0-6.995 2.495-12.718 6.589-17.195-.66-1.621-2.856-8.14.629-16.96 0 0 5.37-1.722 17.597 6.57 5.104-1.424 10.58-2.132 16.022-2.16 5.438.028 10.91.736 16.022 2.16 12.22-8.292 17.582-6.57 17.582-6.57 3.493 8.82 1.297 15.339.64 16.96 4.102 4.477 6.578 10.2 6.578 17.195 0 24.618-14.966 30.035-29.22 31.62 2.295 1.98 4.342 5.89 4.342 11.87 0 8.564-.079 15.476-.079 17.576 0 1.715 1.155 3.71 4.4 3.084 25.413-8.493 43.733-32.494 43.733-60.798 0-35.394-28.657-64.084-64.006-64.084" fill-rule="evenodd"></path></svg></a></div></div><div class="doc-change-note-description"><p>Make some core classes display properly when Tiddlywiki's language uses bidrectional scripts.</p></div></div><div class="doc-change-note-item"><h3 class="doc-change-note-heading"><a class="tc-tiddlylink tc-tiddlylink-resolves doc-link-badge" href="static/Release%2520Notes%2520and%2520Changes.html" style="background-color:#cba5ff;">Enhancement</a>Replace CSS property macros in Snow White theme</h3><div class="doc-change-note-info-list"><div class="doc-change-note-info-list-item-caption">GitHub: </div><div class="doc-change-note-info-list-item-description"><a class="doc-github-link" href="https://github.com/TiddlyWiki/TiddlyWiki5/pull/9243" rel="noopener noreferrer" target="_blank"><svg class="tc-image-github tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M63.938 1.607c-35.336 0-63.994 28.69-63.994 64.084 0 28.312 18.336 52.329 43.768 60.802 3.202.59 4.37-1.388 4.37-3.088 0-1.518-.056-5.55-.087-10.897-17.802 3.871-21.558-8.591-21.558-8.591-2.911-7.404-7.108-9.375-7.108-9.375-5.81-3.973.44-3.895.44-3.895 6.424.453 9.803 6.606 9.803 6.606 5.709 9.791 14.981 6.963 18.627 5.322.582-4.138 2.236-6.963 4.063-8.564-14.211-1.617-29.153-7.117-29.153-31.672 0-6.995 2.495-12.718 6.589-17.195-.66-1.621-2.856-8.14.629-16.96 0 0 5.37-1.722 17.597 6.57 5.104-1.424 10.58-2.132 16.022-2.16 5.438.028 10.91.736 16.022 2.16 12.22-8.292 17.582-6.57 17.582-6.57 3.493 8.82 1.297 15.339.64 16.96 4.102 4.477 6.578 10.2 6.578 17.195 0 24.618-14.966 30.035-29.22 31.62 2.295 1.98 4.342 5.89 4.342 11.87 0 8.564-.079 15.476-.079 17.576 0 1.715 1.155 3.71 4.4 3.084 25.413-8.493 43.733-32.494 43.733-60.798 0-35.394-28.657-64.084-64.006-64.084" fill-rule="evenodd"></path></svg></a></div></div><div class="doc-change-note-description"></div></div><div class="doc-change-note-item"><h3 class="doc-change-note-heading"><a class="tc-tiddlylink tc-tiddlylink-resolves doc-link-badge" href="static/Release%2520Notes%2520and%2520Changes.html" style="background-color:#cba5ff;">Enhancement</a>Use currentColor to style SVG</h3><div class="doc-change-note-info-list"><div class="doc-change-note-info-list-item-caption">Impact:</div><div class="doc-change-note-info-list-item-description"><div class="doc-change-note-info-list-item-description-summary"><span class="doc-change-note-impact-pill-icon doc-change-note-impact-pill-compatibility-break" style="fill:#228822;color:#ddffdd;"><svg class="tc-image-star-filled tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M61.836 96.823l37.327 27.287c2.72 1.99 6.379-.69 5.343-3.912L90.29 75.988l-1.26 3.91 37.285-27.345c2.718-1.993 1.32-6.327-2.041-6.33l-46.113-.036 3.3 2.416L67.176 4.416c-1.04-3.221-5.563-3.221-6.604 0L46.29 48.603l3.3-2.416-46.113.036c-3.362.003-4.759 4.337-2.04 6.33L38.72 79.898l-1.26-3.91-14.216 44.21c-1.036 3.223 2.622 5.901 5.343 3.912l37.326-27.287h-4.078z"></path></svg></span><span class="doc-change-note-impact-pill-text">compatibility-break</span>: SVG icons will inherit colors instead of using <code>#333333</code> if its parent element has <code>color</code> property set</div><div class="doc-change-note-info-list-item-description-details"></div></div><div class="doc-change-note-info-list-item-caption">GitHub: </div><div class="doc-change-note-info-list-item-description"><a class="doc-github-link" href="https://github.com/TiddlyWiki/TiddlyWiki5/pull/9316" rel="noopener noreferrer" target="_blank"><svg class="tc-image-github tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M63.938 1.607c-35.336 0-63.994 28.69-63.994 64.084 0 28.312 18.336 52.329 43.768 60.802 3.202.59 4.37-1.388 4.37-3.088 0-1.518-.056-5.55-.087-10.897-17.802 3.871-21.558-8.591-21.558-8.591-2.911-7.404-7.108-9.375-7.108-9.375-5.81-3.973.44-3.895.44-3.895 6.424.453 9.803 6.606 9.803 6.606 5.709 9.791 14.981 6.963 18.627 5.322.582-4.138 2.236-6.963 4.063-8.564-14.211-1.617-29.153-7.117-29.153-31.672 0-6.995 2.495-12.718 6.589-17.195-.66-1.621-2.856-8.14.629-16.96 0 0 5.37-1.722 17.597 6.57 5.104-1.424 10.58-2.132 16.022-2.16 5.438.028 10.91.736 16.022 2.16 12.22-8.292 17.582-6.57 17.582-6.57 3.493 8.82 1.297 15.339.64 16.96 4.102 4.477 6.578 10.2 6.578 17.195 0 24.618-14.966 30.035-29.22 31.62 2.295 1.98 4.342 5.89 4.342 11.87 0 8.564-.079 15.476-.079 17.576 0 1.715 1.155 3.71 4.4 3.084 25.413-8.493 43.733-32.494 43.733-60.798 0-35.394-28.657-64.084-64.006-64.084" fill-rule="evenodd"></path></svg></a></div></div><div class="doc-change-note-description"><p>Replaces hardcoded <code>fill</code> attributes with one <code>fill: currentColor</code> rule to solve the compatibility issues of migrating to lucide icons.</p></div></div><div class="doc-release-note-heading"><h2 class="doc-change-note-category">Hackability</h2></div><div class="doc-change-note-item"><h3 class="doc-change-note-heading"><a class="tc-tiddlylink tc-tiddlylink-resolves doc-link-badge" href="static/Release%2520Notes%2520and%2520Changes.html" style="background-color:#cba5ff;">Enhancement</a>Multi-valued variables and let filter run prefix</h3><div class="doc-change-note-info-list"><div class="doc-change-note-info-list-item-caption">GitHub: </div><div class="doc-change-note-info-list-item-description"><a class="doc-github-link" href="https://github.com/TiddlyWiki/TiddlyWiki5/pull/8972" rel="noopener noreferrer" target="_blank"><svg class="tc-image-github tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M63.938 1.607c-35.336 0-63.994 28.69-63.994 64.084 0 28.312 18.336 52.329 43.768 60.802 3.202.59 4.37-1.388 4.37-3.088 0-1.518-.056-5.55-.087-10.897-17.802 3.871-21.558-8.591-21.558-8.591-2.911-7.404-7.108-9.375-7.108-9.375-5.81-3.973.44-3.895.44-3.895 6.424.453 9.803 6.606 9.803 6.606 5.709 9.791 14.981 6.963 18.627 5.322.582-4.138 2.236-6.963 4.063-8.564-14.211-1.617-29.153-7.117-29.153-31.672 0-6.995 2.495-12.718 6.589-17.195-.66-1.621-2.856-8.14.629-16.96 0 0 5.37-1.722 17.597 6.57 5.104-1.424 10.58-2.132 16.022-2.16 5.438.028 10.91.736 16.022 2.16 12.22-8.292 17.582-6.57 17.582-6.57 3.493 8.82 1.297 15.339.64 16.96 4.102 4.477 6.578 10.2 6.578 17.195 0 24.618-14.966 30.035-29.22 31.62 2.295 1.98 4.342 5.89 4.342 11.87 0 8.564-.079 15.476-.079 17.576 0 1.715 1.155 3.71 4.4 3.084 25.413-8.493 43.733-32.494 43.733-60.798 0-35.394-28.657-64.084-64.006-64.084" fill-rule="evenodd"></path></svg></a></div></div><div class="doc-change-note-description"><p>This PR introduces a new filter run prefix <code>:let</code> that assigns the result of the filter run to a variable that is made available for the remaining filter runs of the filter expression. It solves the problem that previously it was impossible to compute values for filter operator parameters; parameters could only be a literal string, text reference or variable reference.</p><p>This PR also introduces multi-valued variables, the ability to store a list of results in a variable, not just a single string. They can be assigned with the new <code>:let</code> filter run prefix, or the existing <code>&lt;$let&gt;</code> widget. The full list of values can be retrieved using round brackets instead of the usual angle brackets. In all other contexts only the first item in the list is used as the variable value.</p><ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Multi-Valued%2520Variables.html">Multi-Valued Variables</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Let%2520Filter%2520Run%2520Prefix.html">Let Filter Run Prefix</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/LetWidget.html">LetWidget</a></li></ul></div></div><div class="doc-change-note-item"><h3 class="doc-change-note-heading"><a class="tc-tiddlylink tc-tiddlylink-resolves doc-link-badge" href="static/Release%2520Notes%2520and%2520Changes.html" style="background-color:#cba5ff;">Enhancement</a>Import UI now conditionally displays file-type-specific import options</h3><div class="doc-change-note-info-list"><div class="doc-change-note-info-list-item-caption">GitHub: </div><div class="doc-change-note-info-list-item-description"><a class="doc-github-link" href="https://github.com/TiddlyWiki/TiddlyWiki5/pull/9465" rel="noopener noreferrer" target="_blank"><svg class="tc-image-github tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M63.938 1.607c-35.336 0-63.994 28.69-63.994 64.084 0 28.312 18.336 52.329 43.768 60.802 3.202.59 4.37-1.388 4.37-3.088 0-1.518-.056-5.55-.087-10.897-17.802 3.871-21.558-8.591-21.558-8.591-2.911-7.404-7.108-9.375-7.108-9.375-5.81-3.973.44-3.895.44-3.895 6.424.453 9.803 6.606 9.803 6.606 5.709 9.791 14.981 6.963 18.627 5.322.582-4.138 2.236-6.963 4.063-8.564-14.211-1.617-29.153-7.117-29.153-31.672 0-6.995 2.495-12.718 6.589-17.195-.66-1.621-2.856-8.14.629-16.96 0 0 5.37-1.722 17.597 6.57 5.104-1.424 10.58-2.132 16.022-2.16 5.438.028 10.91.736 16.022 2.16 12.22-8.292 17.582-6.57 17.582-6.57 3.493 8.82 1.297 15.339.64 16.96 4.102 4.477 6.578 10.2 6.578 17.195 0 24.618-14.966 30.035-29.22 31.62 2.295 1.98 4.342 5.89 4.342 11.87 0 8.564-.079 15.476-.079 17.576 0 1.715 1.155 3.71 4.4 3.084 25.413-8.493 43.733-32.494 43.733-60.798 0-35.394-28.657-64.084-64.006-64.084" fill-rule="evenodd"></path></svg></a></div></div><div class="doc-change-note-description"><p>The import UI now displays import options based on the file types being imported. Import options are only shown when relevant files are detected, an example is:</p><pre><code>tags: $:/tags/ImportOptions
 condition: [match[text/x-markdown]] :or[match[text/markdown]]</code></pre></div></div><div class="doc-release-note-heading"><h2 class="doc-change-note-category">Widget</h2></div><div class="doc-change-note-item"><h3 class="doc-change-note-heading"><a class="tc-tiddlylink tc-tiddlylink-resolves doc-link-badge" href="static/Release%2520Notes%2520and%2520Changes.html" style="background-color:#cba5ff;">Enhancement</a>Add clamp attribute to <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/RevealWidget.html">RevealWidget</a></h3><div class="doc-change-note-info-list"><div class="doc-change-note-info-list-item-caption">GitHub: </div><div class="doc-change-note-info-list-item-description"><a class="doc-github-link" href="https://github.com/TiddlyWiki/TiddlyWiki5/pull/7898" rel="noopener noreferrer" target="_blank"><svg class="tc-image-github tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M63.938 1.607c-35.336 0-63.994 28.69-63.994 64.084 0 28.312 18.336 52.329 43.768 60.802 3.202.59 4.37-1.388 4.37-3.088 0-1.518-.056-5.55-.087-10.897-17.802 3.871-21.558-8.591-21.558-8.591-2.911-7.404-7.108-9.375-7.108-9.375-5.81-3.973.44-3.895.44-3.895 6.424.453 9.803 6.606 9.803 6.606 5.709 9.791 14.981 6.963 18.627 5.322.582-4.138 2.236-6.963 4.063-8.564-14.211-1.617-29.153-7.117-29.153-31.672 0-6.995 2.495-12.718 6.589-17.195-.66-1.621-2.856-8.14.629-16.96 0 0 5.37-1.722 17.597 6.57 5.104-1.424 10.58-2.132 16.022-2.16 5.438.028 10.91.736 16.022 2.16 12.22-8.292 17.582-6.57 17.582-6.57 3.493 8.82 1.297 15.339.64 16.96 4.102 4.477 6.578 10.2 6.578 17.195 0 24.618-14.966 30.035-29.22 31.62 2.295 1.98 4.342 5.89 4.342 11.87 0 8.564-.079 15.476-.079 17.576 0 1.715 1.155 3.71 4.4 3.084 25.413-8.493 43.733-32.494 43.733-60.798 0-35.394-28.657-64.084-64.006-64.084" fill-rule="evenodd"></path></svg></a></div></div><div class="doc-change-note-description"><p>The attribute <code>clamp</code> is added to the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/RevealWidget.html">RevealWidget</a> to force the popup to be displayed inside its container without overflowing. The value can be <code>right</code>, <code>bottom</code> or <code>both</code>.
 Clamping to left and top can be accomplished via the <code>positionAllowNegative</code> attribute.
 </p></div></div><div class="doc-change-note-item"><h3 class="doc-change-note-heading"><a class="tc-tiddlylink tc-tiddlylink-resolves doc-link-badge" href="static/Release%2520Notes%2520and%2520Changes.html" style="background-color:#cba5ff;">Enhancement</a>Allow button widget to use all aria attributes</h3><div class="doc-change-note-info-list"><div class="doc-change-note-info-list-item-caption">GitHub: </div><div class="doc-change-note-info-list-item-description"><a class="doc-github-link" href="https://github.com/TiddlyWiki/TiddlyWiki5/pull/9154" rel="noopener noreferrer" target="_blank"><svg class="tc-image-github tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M63.938 1.607c-35.336 0-63.994 28.69-63.994 64.084 0 28.312 18.336 52.329 43.768 60.802 3.202.59 4.37-1.388 4.37-3.088 0-1.518-.056-5.55-.087-10.897-17.802 3.871-21.558-8.591-21.558-8.591-2.911-7.404-7.108-9.375-7.108-9.375-5.81-3.973.44-3.895.44-3.895 6.424.453 9.803 6.606 9.803 6.606 5.709 9.791 14.981 6.963 18.627 5.322.582-4.138 2.236-6.963 4.063-8.564-14.211-1.617-29.153-7.117-29.153-31.672 0-6.995 2.495-12.718 6.589-17.195-.66-1.621-2.856-8.14.629-16.96 0 0 5.37-1.722 17.597 6.57 5.104-1.424 10.58-2.132 16.022-2.16 5.438.028 10.91.736 16.022 2.16 12.22-8.292 17.582-6.57 17.582-6.57 3.493 8.82 1.297 15.339.64 16.96 4.102 4.477 6.578 10.2 6.578 17.195 0 24.618-14.966 30.035-29.22 31.62 2.295 1.98 4.342 5.89 4.342 11.87 0 8.564-.079 15.476-.079 17.576 0 1.715 1.155 3.71 4.4 3.084 25.413-8.493 43.733-32.494 43.733-60.798 0-35.394-28.657-64.084-64.006-64.084" fill-rule="evenodd"></path></svg></a></div></div><div class="doc-change-note-description"></div></div><div class="doc-change-note-item"><h3 class="doc-change-note-heading"><a class="tc-tiddlylink tc-tiddlylink-resolves doc-link-badge" href="static/Release%2520Notes%2520and%2520Changes.html" style="background-color:#cba5ff;">Enhancement</a>Allow link widget to use all aria attributes</h3><div class="doc-change-note-info-list"><div class="doc-change-note-info-list-item-caption">GitHub: </div><div class="doc-change-note-info-list-item-description"><a class="doc-github-link" href="https://github.com/TiddlyWiki/TiddlyWiki5/pull/9167" rel="noopener noreferrer" target="_blank"><svg class="tc-image-github tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M63.938 1.607c-35.336 0-63.994 28.69-63.994 64.084 0 28.312 18.336 52.329 43.768 60.802 3.202.59 4.37-1.388 4.37-3.088 0-1.518-.056-5.55-.087-10.897-17.802 3.871-21.558-8.591-21.558-8.591-2.911-7.404-7.108-9.375-7.108-9.375-5.81-3.973.44-3.895.44-3.895 6.424.453 9.803 6.606 9.803 6.606 5.709 9.791 14.981 6.963 18.627 5.322.582-4.138 2.236-6.963 4.063-8.564-14.211-1.617-29.153-7.117-29.153-31.672 0-6.995 2.495-12.718 6.589-17.195-.66-1.621-2.856-8.14.629-16.96 0 0 5.37-1.722 17.597 6.57 5.104-1.424 10.58-2.132 16.022-2.16 5.438.028 10.91.736 16.022 2.16 12.22-8.292 17.582-6.57 17.582-6.57 3.493 8.82 1.297 15.339.64 16.96 4.102 4.477 6.578 10.2 6.578 17.195 0 24.618-14.966 30.035-29.22 31.62 2.295 1.98 4.342 5.89 4.342 11.87 0 8.564-.079 15.476-.079 17.576 0 1.715 1.155 3.71 4.4 3.084 25.413-8.493 43.733-32.494 43.733-60.798 0-35.394-28.657-64.084-64.006-64.084" fill-rule="evenodd"></path></svg></a></div></div><div class="doc-change-note-description"><p>Allow <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/LinkWidget.html">LinkWidget</a> to use all aria attributes directly.</p></div></div><div class="doc-change-note-item"><h3 class="doc-change-note-heading"><a class="tc-tiddlylink tc-tiddlylink-resolves doc-link-badge" href="static/Release%2520Notes%2520and%2520Changes.html" style="background-color:#ff9d6c;">Deprecation</a>Remove support for Internet Explorer in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/RangeWidget.html">RangeWidget</a></h3><div class="doc-change-note-info-list"><div class="doc-change-note-info-list-item-caption">Impact:</div><div class="doc-change-note-info-list-item-description"><div class="doc-change-note-info-list-item-description-summary"><span class="doc-change-note-impact-pill-icon doc-change-note-impact-pill-compatibility-break" style="fill:#228822;color:#ddffdd;"><svg class="tc-image-star-filled tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M61.836 96.823l37.327 27.287c2.72 1.99 6.379-.69 5.343-3.912L90.29 75.988l-1.26 3.91 37.285-27.345c2.718-1.993 1.32-6.327-2.041-6.33l-46.113-.036 3.3 2.416L67.176 4.416c-1.04-3.221-5.563-3.221-6.604 0L46.29 48.603l3.3-2.416-46.113.036c-3.362.003-4.759 4.337-2.04 6.33L38.72 79.898l-1.26-3.91-14.216 44.21c-1.036 3.223 2.622 5.901 5.343 3.912l37.326-27.287h-4.078z"></path></svg></span><span class="doc-change-note-impact-pill-text">compatibility-break</span>: <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/RangeWidget.html">RangeWidget</a> will not work on Internet Explorer 10</div><div class="doc-change-note-info-list-item-description-details"></div></div><div class="doc-change-note-info-list-item-caption">GitHub: </div><div class="doc-change-note-info-list-item-description"><a class="doc-github-link" href="https://github.com/TiddlyWiki/TiddlyWiki5/pull/9275" rel="noopener noreferrer" target="_blank"><svg class="tc-image-github tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M63.938 1.607c-35.336 0-63.994 28.69-63.994 64.084 0 28.312 18.336 52.329 43.768 60.802 3.202.59 4.37-1.388 4.37-3.088 0-1.518-.056-5.55-.087-10.897-17.802 3.871-21.558-8.591-21.558-8.591-2.911-7.404-7.108-9.375-7.108-9.375-5.81-3.973.44-3.895.44-3.895 6.424.453 9.803 6.606 9.803 6.606 5.709 9.791 14.981 6.963 18.627 5.322.582-4.138 2.236-6.963 4.063-8.564-14.211-1.617-29.153-7.117-29.153-31.672 0-6.995 2.495-12.718 6.589-17.195-.66-1.621-2.856-8.14.629-16.96 0 0 5.37-1.722 17.597 6.57 5.104-1.424 10.58-2.132 16.022-2.16 5.438.028 10.91.736 16.022 2.16 12.22-8.292 17.582-6.57 17.582-6.57 3.493 8.82 1.297 15.339.64 16.96 4.102 4.477 6.578 10.2 6.578 17.195 0 24.618-14.966 30.035-29.22 31.62 2.295 1.98 4.342 5.89 4.342 11.87 0 8.564-.079 15.476-.079 17.576 0 1.715 1.155 3.71 4.4 3.084 25.413-8.493 43.733-32.494 43.733-60.798 0-35.394-28.657-64.084-64.006-64.084" fill-rule="evenodd"></path></svg></a></div></div><div class="doc-change-note-description"></div></div><div class="doc-change-note-item"><h3 class="doc-change-note-heading"><a class="tc-tiddlylink tc-tiddlylink-resolves doc-link-badge" href="static/Release%2520Notes%2520and%2520Changes.html" style="background-color:#ffe246;">Bugfix</a>Fix widgets generating leading space in class attribute when additional class is empty</h3><div class="doc-change-note-info-list"><div class="doc-change-note-info-list-item-caption">GitHub: </div><div class="doc-change-note-info-list-item-description"><a class="doc-github-link" href="https://github.com/TiddlyWiki/TiddlyWiki5/issues/9427" rel="noopener noreferrer" target="_blank"><svg class="tc-image-github tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M63.938 1.607c-35.336 0-63.994 28.69-63.994 64.084 0 28.312 18.336 52.329 43.768 60.802 3.202.59 4.37-1.388 4.37-3.088 0-1.518-.056-5.55-.087-10.897-17.802 3.871-21.558-8.591-21.558-8.591-2.911-7.404-7.108-9.375-7.108-9.375-5.81-3.973.44-3.895.44-3.895 6.424.453 9.803 6.606 9.803 6.606 5.709 9.791 14.981 6.963 18.627 5.322.582-4.138 2.236-6.963 4.063-8.564-14.211-1.617-29.153-7.117-29.153-31.672 0-6.995 2.495-12.718 6.589-17.195-.66-1.621-2.856-8.14.629-16.96 0 0 5.37-1.722 17.597 6.57 5.104-1.424 10.58-2.132 16.022-2.16 5.438.028 10.91.736 16.022 2.16 12.22-8.292 17.582-6.57 17.582-6.57 3.493 8.82 1.297 15.339.64 16.96 4.102 4.477 6.578 10.2 6.578 17.195 0 24.618-14.966 30.035-29.22 31.62 2.295 1.98 4.342 5.89 4.342 11.87 0 8.564-.079 15.476-.079 17.576 0 1.715 1.155 3.71 4.4 3.084 25.413-8.493 43.733-32.494 43.733-60.798 0-35.394-28.657-64.084-64.006-64.084" fill-rule="evenodd"></path></svg></a></div></div><div class="doc-change-note-description"><p>Fixed a bug in the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/RevealWidget.html">RevealWidget</a>, <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/DroppableWidget.html">DroppableWidget</a>, <a class="tc-tiddlylink tc-tiddlylink-missing" href="static/EventcatcherWidget.html">EventcatcherWidget</a>, and <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/KeyboardWidget.html">KeyboardWidget</a> where an empty class attribute would generate a leading space in the rendered HTML. By trimming the resulting class string, we shorten the HTML and avoid potential confusion.</p></div></div><div class="doc-change-note-item"><h3 class="doc-change-note-heading"><a class="tc-tiddlylink tc-tiddlylink-resolves doc-link-badge" href="static/Release%2520Notes%2520and%2520Changes.html" style="background-color:#91ba66;">Feature</a>Add new editcost parameter to diff-text widget</h3><div class="doc-change-note-info-list"><div class="doc-change-note-info-list-item-caption">GitHub: </div><div class="doc-change-note-info-list-item-description"><a class="doc-github-link" href="https://github.com/TiddlyWiki/TiddlyWiki5/pull/9452" rel="noopener noreferrer" target="_blank"><svg class="tc-image-github tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M63.938 1.607c-35.336 0-63.994 28.69-63.994 64.084 0 28.312 18.336 52.329 43.768 60.802 3.202.59 4.37-1.388 4.37-3.088 0-1.518-.056-5.55-.087-10.897-17.802 3.871-21.558-8.591-21.558-8.591-2.911-7.404-7.108-9.375-7.108-9.375-5.81-3.973.44-3.895.44-3.895 6.424.453 9.803 6.606 9.803 6.606 5.709 9.791 14.981 6.963 18.627 5.322.582-4.138 2.236-6.963 4.063-8.564-14.211-1.617-29.153-7.117-29.153-31.672 0-6.995 2.495-12.718 6.589-17.195-.66-1.621-2.856-8.14.629-16.96 0 0 5.37-1.722 17.597 6.57 5.104-1.424 10.58-2.132 16.022-2.16 5.438.028 10.91.736 16.022 2.16 12.22-8.292 17.582-6.57 17.582-6.57 3.493 8.82 1.297 15.339.64 16.96 4.102 4.477 6.578 10.2 6.578 17.195 0 24.618-14.966 30.035-29.22 31.62 2.295 1.98 4.342 5.89 4.342 11.87 0 8.564-.079 15.476-.079 17.576 0 1.715 1.155 3.71 4.4 3.084 25.413-8.493 43.733-32.494 43.733-60.798 0-35.394-28.657-64.084-64.006-64.084" fill-rule="evenodd"></path></svg></a></div></div><div class="doc-change-note-description"></div></div><div class="doc-change-note-item"><h3 class="doc-change-note-heading"><a class="tc-tiddlylink tc-tiddlylink-resolves doc-link-badge" href="static/Release%2520Notes%2520and%2520Changes.html" style="background-color:#91ba66;">Feature</a>Ensure rows parameter of edit-text widget takes precedence</h3><div class="doc-change-note-info-list"><div class="doc-change-note-info-list-item-caption">GitHub: </div><div class="doc-change-note-info-list-item-description"><a class="doc-github-link" href="https://github.com/TiddlyWiki/TiddlyWiki5/pull/9454" rel="noopener noreferrer" target="_blank"><svg class="tc-image-github tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M63.938 1.607c-35.336 0-63.994 28.69-63.994 64.084 0 28.312 18.336 52.329 43.768 60.802 3.202.59 4.37-1.388 4.37-3.088 0-1.518-.056-5.55-.087-10.897-17.802 3.871-21.558-8.591-21.558-8.591-2.911-7.404-7.108-9.375-7.108-9.375-5.81-3.973.44-3.895.44-3.895 6.424.453 9.803 6.606 9.803 6.606 5.709 9.791 14.981 6.963 18.627 5.322.582-4.138 2.236-6.963 4.063-8.564-14.211-1.617-29.153-7.117-29.153-31.672 0-6.995 2.495-12.718 6.589-17.195-.66-1.621-2.856-8.14.629-16.96 0 0 5.37-1.722 17.597 6.57 5.104-1.424 10.58-2.132 16.022-2.16 5.438.028 10.91.736 16.022 2.16 12.22-8.292 17.582-6.57 17.582-6.57 3.493 8.82 1.297 15.339.64 16.96 4.102 4.477 6.578 10.2 6.578 17.195 0 24.618-14.966 30.035-29.22 31.62 2.295 1.98 4.342 5.89 4.342 11.87 0 8.564-.079 15.476-.079 17.576 0 1.715 1.155 3.71 4.4 3.084 25.413-8.493 43.733-32.494 43.733-60.798 0-35.394-28.657-64.084-64.006-64.084" fill-rule="evenodd"></path></svg></a></div></div><div class="doc-change-note-description"><p>Edit-text widget rows parameter takes precedence
