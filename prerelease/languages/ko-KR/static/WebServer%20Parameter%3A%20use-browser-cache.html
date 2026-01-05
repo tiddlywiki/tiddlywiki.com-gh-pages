@@ -14,10 +14,10 @@
 <title>use-browse-cache: 티들리위키 — 줄 없는 개인 웹 공책</title>
 </head>
 <body class="tc-body">
-<div><p><div class="tc-static-alert"><div class="tc-static-alert-inner">이 문서는 <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/languages/ko-KR/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/languages/ko-KR/</a>에서 티들리위키의 정적 HTML 표현의 일부입니다</div></div>
-</p></div>
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">이 문서는 <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/languages/ko-KR/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/languages/ko-KR/</a>에서 티들리위키의 정적 HTML 표현의 일부입니다</div></div>
+</p>
 <section class="tc-story-river tc-static-story-river">
-<div><p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-WebServer%20Parameters" data-tags="[[WebServer Parameters]]" data-tiddler-title="WebServer Parameter: use-browser-cache" role="article"><div class="tc-tiddler-title">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-WebServer%20Parameters" data-tags="[[WebServer Parameters]]" data-tiddler-title="WebServer Parameter: use-browser-cache" role="article"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
 <span class="tc-reveal"><button aria-expanded="false" aria-label="더 보기" class="tc-btn-invisible" title="더 많은 동작을 봅니다"></button><span class="tc-reveal" hidden="true"></span></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal"><button aria-label="이 티들러를 편집합니다" class="tc-btn-invisible" title="이 티들러를 편집합니다"></button></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal"><button aria-label="닫기" class="tc-btn-invisible" title="이 티들러를 닫습니다"></button></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span>
@@ -54,7 +54,7 @@ WebServer Parameter: use-browser-cache
 </span></div></div><div class="tc-tiddler-body tc-clearfix tc-reveal"><p>The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WebServer%2520Parameters.html">web server configuration parameter</a> <strong>use-browser-cache=yes</strong> activates 200 OK browser caching via the <code>Cache-Control</code> header and a smart a Etag header:</p><ul><li>The server javascript creates an MD5 <code>hash</code> object.</li><li>Adds the data of the current <code>request:response</code> (for example: json text or an image binary) to the hash object.</li><li>Adds the current <code>headers</code> of the response to the hash object.</li><li>If the response data has an <code>encoding</code> value, adds the encoding to the hash object.</li><li>Calculates the final MD5 hash string as a <code>contentDigest</code> javascript variable, and saves it as an <code>Etag: "&lt;&lt;contentDigest&gt;&gt;"</code> header.</li></ul><p>If the incoming request contains a header named <code>if-none-match</code>, then the server will check the generated Etag against all values.</p><p>If any <code>if-none-match</code> value DOES match the current Etag, the server will send a <code>304 NOT MODIFIED</code> response with the current response headers, instead of the data with a <code>200 OK</code> response.</p><p>This saves bandwidth, as the client can be sure they have already received the exact data and has it in their current cache.</p><p>If <strong>use-browser-cache=no</strong> (or any other value including null), then the server will return a <code>Cache-Control: no-store</code> header by default.</p><p>If any customer server route module defines custom <code>Cache-Control</code> header behavior, then the server will pass that header through instead of the default.</p></div>
 
 
-</div></p></div>
+</div></p>
 </section>
 </body>
 </html>
