@@ -86,7 +86,8 @@ Error message and password prompt
 }
 </style>
 </div>
-/* $:/themes/tiddlywiki/vanilla/base *//*
+<style type="text/css">
+/*
 ** Start with the normalize CSS reset, and then belay some of its effects
 *//*! modern-normalize v2.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
@@ -2615,7 +2616,7 @@ a.tc-tiddlylink:hover {
 	}.tc-tiddler-frame .tc-tiddler-controls {
 		float: right;
 	}
-}/* $:/plugins/tiddlywiki/dynannotate/styles */.tc-dynannotation-wrapper {
+}.tc-dynannotation-wrapper {
 	position: relative;
 }.tc-dynannotation-annotation-overlay {
 	position: absolute;
@@ -2659,7 +2660,7 @@ a.tc-tiddlylink:hover {
 	width: 100%;
 	display: none;
 }
-/* $:/plugins/tiddlywiki/internals/styles *//* $:/plugins/tiddlywiki/menubar/styles */nav.tc-menubar {
+nav.tc-menubar {
 	position: fixed;
 	z-index: 850;
 	display: inline-block;
@@ -2770,7 +2771,7 @@ nav.tc-menubar .tc-drop-down .tc-menubar-dropdown-sidebar button {
 @media print {nav.tc-menubar {
 		display: none;
 	}}
-/* $:/plugins/tiddlywiki/railroad/railroad-diagrams.css *//* CSS modified for TiddlyWiki */svg.railroad-diagram {
+/* CSS modified for TiddlyWiki */svg.railroad-diagram {
 	background-color: #ffffff;
 	border-radius: 5px;
 }
@@ -2803,7 +2804,7 @@ svg.railroad-diagram text.comment {
 }
 svg.railroad-diagram path.arrow {
     stroke-width: 2;
-}/* $:/plugins/tiddlywiki/tour/styles */.tc-tour-panel {
+}.tc-tour-panel {
 	position: fixed;
 	bottom: 0;
 	left: 0;
@@ -2983,7 +2984,7 @@ svg.railroad-diagram path.arrow {
 }.tc-tour-settings-tour-step-body {
 	padding: 0.5em;
 }
-/* $:/themes/tiddlywiki/snowwhite/base */.tc-sidebar-header {
+.tc-sidebar-header {
 	text-shadow: 0 1px 0 #ffffff;
 }.tc-tiddler-info {
 	box-shadow: inset 1px 2px 3px rgba(0,0,0,0.1);
@@ -3051,7 +3052,7 @@ svg.railroad-diagram path.arrow {
 }.tc-plugin-info {
 	box-shadow: 1px 1px 3px rgba(0,0,0,0.5)
 }
-/* $:/_tw_shared/styles */.tc-sites-icon {
+.tc-sites-icon {
 	width: 1em;
 	height: 1em;
 }.tc-sites-menu {
@@ -3082,7 +3083,7 @@ svg.railroad-diagram path.arrow {
 	margin-right: 0.5em;
 	width: 1em;
 }
-/* $:/_tw5.com-styles */.tc-hero-heading a.tc-tiddlylink {
+.tc-hero-heading a.tc-tiddlylink {
 	font-weight: bold;
 }.tc-double-spaced-list li {
 	padding-bottom: .5em;
@@ -3193,7 +3194,7 @@ svg.railroad-diagram path.arrow {
 	background: #ffd;
 	background: linear-gradient(#ffd, #ffd) padding-box, repeating-linear-gradient(-45deg, red 0, red 25%, transparent 0, transparent 50%) 0 / .6em .6em;
 }
-/* $:/_tw5.com/CustomStoryTiddlerTemplateDemo/Styles */.tc-custom-tiddler-template {
+.tc-custom-tiddler-template {
 	border: 3px solid #bbbbbb;
 	border-radius: 1em;
 	margin-bottom: 1em;
@@ -3214,7 +3215,7 @@ svg.railroad-diagram path.arrow {
 
 }.tc-custom-tiddler-template-list .tc-custom-tiddler-template-list-item .tc-tiddler-frame {
 	margin: 0;
-}/* $:/cards/styles */.tc-cards {
+}.tc-cards {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -3391,7 +3392,7 @@ svg.railroad-diagram path.arrow {
 	margin: 0.25em 0;
 }.tc-card a:active, .tc-card a:focus, .tc-btn-download:active, .tc-btn-download:focus{
 	outline: none; 
-}/* $:/editions/tw5.com/doc-styles */.doc-def {
+}.doc-def {
 	font-style: normal;
 	font-weight: bold;
 }.doc-em {
@@ -3646,7 +3647,7 @@ ol.doc-github-contributors li {
 .doc-tab-link .doc-attr {
 	color: unset;
 }
-/* $:/HireJeremy/styles */.yellow-note, [data-tiddler-title="Hire the founder of TiddlyWiki"] {
+.yellow-note, [data-tiddler-title="Hire the founder of TiddlyWiki"] {
 	z-index: 800;
 	margin-top: 2em;
 	transform-origin: 50% 50%;
@@ -3744,7 +3745,7 @@ ol.doc-github-contributors li {
 	-webkit-transform-origin: 50% 100%;
 	-ms-transform-origin: 50% 100%;
 	-o-transform-origin: 50% 100%;
-}/* $:/SavingThumbnailsStyles */.tc-thumbnail-tabs .tc-tab-buttons {
+}.tc-thumbnail-tabs .tc-tab-buttons {
 	background: #ecf2ff;
     text-align: center;
 }.tc-thumbnail-tabs .tc-tab-buttons button {
@@ -3794,7 +3795,7 @@ ol.doc-github-contributors li {
 }.tc-thumbnail-tabs .tc-btn-pushed {
 	background-color: #333333;
 	fill: #ffffff;
-}/* $:/tiddlywiki/community/cards/Styles */.tc-community-card {
+}.tc-community-card {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
@@ -3910,7 +3911,7 @@ a.tc-community-card-pill .tc-community-card-field-image svg {
 	gap: 4px;
 	margin: 0;
 	padding: 0;
-}/* $:/tw5.com/releases/styles */.doc-release-note {
+}.doc-release-note {
 }.doc-release-note-heading {
 }.doc-change-note-category, .doc-change-note-heading {
 	font-weight: 600;
@@ -3962,7 +3963,7 @@ a.tc-community-card-pill .tc-community-card-field-image svg {
 	padding: 0.25em;
 	background: #ffffff;
 }
-/* Custom data-styles */[data-tiddler-title="Custom styles by data-tiddler-title"] {
+[data-tiddler-title="Custom styles by data-tiddler-title"] {
   border: 1px solid blue;
 }[data-tags*="example-test"] {
   border: 2px solid pink;
@@ -3984,6 +3985,7 @@ a.tc-community-card-pill .tc-community-card-field-image svg {
   border-radius: 3px;
   font-family: Monaco, Consolas, "Lucida Console", "DejaVu Sans Mono", monospace;
 }
+</style>
 </head>
 <body class="tc-body">
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
