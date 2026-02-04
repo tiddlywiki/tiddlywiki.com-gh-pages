@@ -2355,13 +2355,13 @@ a.tc-tiddlylink:hover {
 }/*
 ** Tree macro
 */.tc-tree div {
-	
+	<<padding-start: "14px">>
 }.tc-tree ol {
 	list-style-type: none;
-	
+	<<padding-start: 0>>
 	margin-top: 0;
 }.tc-tree ol ol {
-	
+	<<padding-start: 1em>>
 }.tc-tree button {
 	color: #acacac;
 }.tc-tree svg {
@@ -3019,9 +3019,9 @@ a .doc-attr {
 	border-left: 4px solid #881122;
 	background: #88112211;
 }.doc-block-icon .tc-image-tip {
-	fill: #5778d8;
+	color: #5778d8;
 }.doc-block-icon .tc-image-warning {
-	fill: #881122;
+	color: #881122;
 }a.doc-from-version {
     background-color: #bbb;
     color: #000000;
@@ -3033,14 +3033,12 @@ a .doc-attr {
     background-color: #ffff00;
     color: #000000;
 }a.doc-from-version svg {
-    fill: currentColor;
     vertical-align: sub;
 }a.doc-deprecated-version.tc-tiddlylink {
     display: inline-block;
     border-radius: 1em;
 	background: red;
 	color: #e5f8fd;
-	fill: #e5f8fd;
     padding: 0 0.4em;
     font-size: 0.7em;
     text-transform: uppercase;
