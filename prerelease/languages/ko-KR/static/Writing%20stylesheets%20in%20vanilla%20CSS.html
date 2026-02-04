@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.4.0-prerelease" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>Writing stylesheets in vanilla CSS: 티들리위키 — 줄 없는 개인 웹 공책</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">이 문서는 <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/languages/ko-KR/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/languages/ko-KR/</a>에서 티들리위키의 정적 HTML 표현의 일부입니다</div></div>
+</p>
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists " data-tags="" data-tiddler-title="Writing stylesheets in vanilla CSS" role="article"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class="tc-reveal"><button aria-expanded="false" aria-label="더 보기" class="tc-btn-invisible" title="더 많은 동작을 봅니다"></button><span class="tc-reveal" hidden="true"></span></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal"><button aria-label="이 티들러를 편집합니다" class="tc-btn-invisible" title="이 티들러를 편집합니다"></button></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal"><button aria-label="닫기" class="tc-btn-invisible" title="이 티들러를 닫습니다"></button></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span>
+</span>
+
+<span>
+
+<span class="tc-tiddler-title-icon">
+
+</span>
+
+
+
+<h2 class="tc-title">
+
+Writing stylesheets in vanilla CSS
+
+</h2>
+
+</span>
+
+</div>
+
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class="tc-reveal"></div><div class="tc-reveal"><div class="tc-subtitle tc-clearfix">2026년 2월 1일 오전 4:39</div></div><div class="tc-reveal"><div class="tc-tags-wrapper"></div></div><div class="tc-tiddler-body tc-clearfix tc-reveal"><p><a class="tc-tiddlylink tc-tiddlylink-resolves doc-from-version doc-from-version-new" href="Release%25205.4.0.html"><span class="tc-tiny-gap-right"><svg class="tc-image-info-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><g fill-rule="evenodd" transform="translate(.05)"><path d="M64 128c35.346 0 64-28.654 64-64 0-35.346-28.654-64-64-64C28.654 0 0 28.654 0 64c0 35.346 28.654 64 64 64zm0-16c26.51 0 48-21.49 48-48S90.51 16 64 16 16 37.49 16 64s21.49 48 48 48z"></path><circle cx="64" cy="32" r="8"></circle><rect height="56" rx="8" width="16" x="56" y="48"></rect></g></svg></span>New in v5.4.0</a> Before v5.4.0, theme developers have to mix wikitext syntax with CSS syntax when writing stylesheets to intergrate Tiddlywiki color palettes and theme settings. With the introduction of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Core%2520CSS%2520Variables.html">Core CSS Variables</a> in v5.4.0, theme developers can intergrate most Tiddlywiki palettes with vanilla CSS.</p><h1 class="">Getting Tiddlywiki palette colors</h1><p>Tiddlywiki's custom properties for colors are prefixed <code>--tpc-</code>. Before v5.4.0, theme developers have to use the following wikitext to get a color value of a palette:</p><pre><code>.tag {
+	background: &lt;&lt;colour tag-background&gt;&gt;;
+}</code></pre><p>Since v5.4.0, theme developers can use the following CSS to get the palette color:</p><pre><code>.tag {
+	background: var(--tp-color-tag-background);
+}</code></pre><h1 class="">Getting and processing Tiddlywiki CSS settings</h1><p>See <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Core%2520CSS%2520Variables.html">Core CSS Variables</a> for the available CSS variables. Before v5.4.0, theme developers have to use macros with filters to get and process theme settings:</p><pre><code>.tc-sidebar-header {
+	padding: 14px;
+	min-height: 32px;
+	margin-top: {{$:/themes/tiddlywiki/vanilla/metrics/storytop}};
+	transition:  min-height {{$:/config/AnimationDuration}}ms ease-in-out, padding-top {{$:/config/AnimationDuration}}ms ease-in-out, padding-bottom {{$:/config/AnimationDuration}}ms ease-in-out;
+}</code></pre><p>Since v5.4.0, the theme settings are also available as the CSS variables, so theme developers can use the following code:</p><pre><code>.tc-sidebar-header {
+	padding: 14px;
+	min-height: 32px;
+	margin-top: var(--tp-story-top);
+	transition: min-height var(--tp-animation-duration) ease-in-out, padding-top var(--tp-animation-duration) ease-in-out, padding-bottom var(--tp-animation-duration) ease-in-out;
+}</code></pre><h1 class="">Limits</h1><p>CSS variables can only be used in rules, while wikitext can be used everywhere. See this example:</p><p>Old way of using wikitext in media query definitions:</p><pre><code>\define sidebarbreakpoint()
+&lt;$text text={{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}/&gt;
+\end
+
+@media (min-width: &lt;&lt;sidebarbreakpoint&gt;&gt;) {
+	/* CSS rules */
+}</code></pre><p>While using CSS variables in media quert definitions doesn't work at all:</p><pre><code>@media (min-width: var(--tp-sidebar-breakpoint)) {
+	/* Doesn't work */
+}</code></pre></div>
+
+
+</div></p>
+</section>
+</body>
+</html>
+

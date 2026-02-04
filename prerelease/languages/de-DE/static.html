@@ -87,7 +87,310 @@ Error message and password prompt
 </style>
 </div>
 <style type="text/css">
-/*
+/* Tiddlywiki's CSS properties */:root {
+	
+	--tpc-alert-background: #ffe476;
+	
+	--tpc-alert-border: #b99e2f;
+	
+	--tpc-alert-highlight: #881122;
+	
+	--tpc-alert-muted-foreground: #b99e2f;
+	
+	--tpc-background: #ffffff;
+	
+	--tpc-blockquote-bar: #bbbbbb;
+	
+	--tpc-button-background: ;
+	
+	--tpc-button-border: ;
+	
+	--tpc-button-foreground: ;
+	
+	--tpc-code-background: #f7f7f9;
+	
+	--tpc-code-border: #e1e1e8;
+	
+	--tpc-code-foreground: #dd1144;
+	
+	--tpc-diff-delete-background: #ffc9c9;
+	
+	--tpc-diff-delete-foreground: #333333;
+	
+	--tpc-diff-equal-background: ;
+	
+	--tpc-diff-equal-foreground: #333333;
+	
+	--tpc-diff-insert-background: #aaefad;
+	
+	--tpc-diff-insert-foreground: #333333;
+	
+	--tpc-diff-invisible-background: ;
+	
+	--tpc-diff-invisible-foreground: #bbbbbb;
+	
+	--tpc-dirty-indicator: #ff0000;
+	
+	--tpc-download-background: #34c734;
+	
+	--tpc-download-foreground: #ffffff;
+	
+	--tpc-dragger-background: #333333;
+	
+	--tpc-dragger-foreground: #ffffff;
+	
+	--tpc-dropdown-background: #ffffff;
+	
+	--tpc-dropdown-border: #bbbbbb;
+	
+	--tpc-dropdown-tab-background: #ececec;
+	
+	--tpc-dropdown-tab-background-selected: #ffffff;
+	
+	--tpc-dropzone-background: rgba(0,200,0,0.7);
+	
+	--tpc-external-link-background: inherit;
+	
+	--tpc-external-link-background-hover: inherit;
+	
+	--tpc-external-link-background-visited: inherit;
+	
+	--tpc-external-link-foreground: #0000ee;
+	
+	--tpc-external-link-foreground-hover: inherit;
+	
+	--tpc-external-link-foreground-visited: #0000aa;
+	
+	--tpc-footnote-target-background: #ecf2ff;
+	
+	--tpc-foreground: #333333;
+	
+	--tpc-highlight-background: #ffff00;
+	
+	--tpc-highlight-foreground: #000000;
+	
+	--tpc-message-background: #ecf2ff;
+	
+	--tpc-message-border: #cfd6e6;
+	
+	--tpc-message-foreground: #547599;
+	
+	--tpc-modal-backdrop: #333333;
+	
+	--tpc-modal-background: #ffffff;
+	
+	--tpc-modal-border: #999999;
+	
+	--tpc-modal-footer-background: #f5f5f5;
+	
+	--tpc-modal-footer-border: #dddddd;
+	
+	--tpc-modal-header-border: #eeeeee;
+	
+	--tpc-muted-foreground: #bbbbbb;
+	
+	--tpc-network-activity-foreground: #448844;
+	
+	--tpc-notification-background: #ffffdd;
+	
+	--tpc-notification-border: #999999;
+	
+	--tpc-page-background: #f4f4f4;
+	
+	--tpc-pre-background: #f5f5f5;
+	
+	--tpc-pre-border: #cccccc;
+	
+	--tpc-primary: #5778d8;
+	
+	--tpc-select-tag-background: ;
+	
+	--tpc-select-tag-foreground: ;
+	
+	--tpc-selection-background: ;
+	
+	--tpc-selection-foreground: ;
+	
+	--tpc-sidebar-button-foreground: #333333;
+	
+	--tpc-sidebar-controls-foreground: #aaaaaa;
+	
+	--tpc-sidebar-controls-foreground-hover: #000000;
+	
+	--tpc-sidebar-foreground: #acacac;
+	
+	--tpc-sidebar-foreground-shadow: #ffffff;
+	
+	--tpc-sidebar-muted-foreground: #c0c0c0;
+	
+	--tpc-sidebar-muted-foreground-hover: #444444;
+	
+	--tpc-sidebar-tab-background: #e0e0e0;
+	
+	--tpc-sidebar-tab-background-selected: #f4f4f4;
+	
+	--tpc-sidebar-tab-border: #cccccc;
+	
+	--tpc-sidebar-tab-border-selected: #d8d8d8;
+	
+	--tpc-sidebar-tab-divider: #e4e4e4;
+	
+	--tpc-sidebar-tab-foreground: #666666;
+	
+	--tpc-sidebar-tab-foreground-selected: ;
+	
+	--tpc-sidebar-tiddler-link-foreground: #999999;
+	
+	--tpc-sidebar-tiddler-link-foreground-hover: #444444;
+	
+	--tpc-site-title-foreground: #182955;
+	
+	--tpc-stability-deprecated: #ff0000;
+	
+	--tpc-stability-experimental: #c07c00;
+	
+	--tpc-stability-legacy: #0000ff;
+	
+	--tpc-stability-stable: #00b700;
+	
+	--tpc-static-alert-foreground: #aaaaaa;
+	
+	--tpc-tab-background: #d8d8d8;
+	
+	--tpc-tab-background-selected: #ffffff;
+	
+	--tpc-tab-border: #cccccc;
+	
+	--tpc-tab-border-selected: #d8d8d8;
+	
+	--tpc-tab-divider: #d8d8d8;
+	
+	--tpc-tab-foreground: #666666;
+	
+	--tpc-tab-foreground-selected: #666666;
+	
+	--tpc-table-border: #dddddd;
+	
+	--tpc-table-footer-background: #a8a8a8;
+	
+	--tpc-table-header-background: #f0f0f0;
+	
+	--tpc-tag-background: #eecc66;
+	
+	--tpc-tag-foreground: #ffffff;
+	
+	--tpc-testcase-accent-level-1: #c1eaff;
+	
+	--tpc-testcase-accent-level-2: #E3B740;
+	
+	--tpc-testcase-accent-level-3: #5FD564;
+	
+	--tpc-tiddler-background: #ffffff;
+	
+	--tpc-tiddler-border: #ffffff;
+	
+	--tpc-tiddler-controls-foreground: #cccccc;
+	
+	--tpc-tiddler-controls-foreground-hover: #888888;
+	
+	--tpc-tiddler-controls-foreground-selected: #444444;
+	
+	--tpc-tiddler-editor-background: #f8f8f8;
+	
+	--tpc-tiddler-editor-border: #cccccc;
+	
+	--tpc-tiddler-editor-border-image: #ffffff;
+	
+	--tpc-tiddler-editor-fields-even: #e0e8e0;
+	
+	--tpc-tiddler-editor-fields-odd: #f0f4f0;
+	
+	--tpc-tiddler-info-background: #f8f8f8;
+	
+	--tpc-tiddler-info-border: #dddddd;
+	
+	--tpc-tiddler-info-tab-background: #f8f8f8;
+	
+	--tpc-tiddler-link-background: #ffffff;
+	
+	--tpc-tiddler-link-foreground: #5778d8;
+	
+	--tpc-tiddler-subtitle-foreground: #c0c0c0;
+	
+	--tpc-tiddler-title-foreground: #182955;
+	
+	--tpc-toolbar-cancel-button: ;
+	
+	--tpc-toolbar-close-button: ;
+	
+	--tpc-toolbar-delete-button: ;
+	
+	--tpc-toolbar-done-button: ;
+	
+	--tpc-toolbar-edit-button: ;
+	
+	--tpc-toolbar-info-button: ;
+	
+	--tpc-toolbar-new-button: ;
+	
+	--tpc-toolbar-options-button: ;
+	
+	--tpc-toolbar-save-button: ;
+	
+	--tpc-untagged-background: #999999;
+	
+	--tpc-very-muted-foreground: #888888;
+	
+	--tpc-wikilist-background: #e5e5e5;
+	
+	--tpc-wikilist-button-background: #acacac;
+	
+	--tpc-wikilist-button-foreground: #000000;
+	
+	--tpc-wikilist-button-open: #4fb82b;
+	
+	--tpc-wikilist-button-open-hover: #009300;
+	
+	--tpc-wikilist-button-remove: #d85778;
+	
+	--tpc-wikilist-button-remove-hover: #ff0000;
+	
+	--tpc-wikilist-button-reveal: #5778d8;
+	
+	--tpc-wikilist-button-reveal-hover: #0000ff;
+	
+	--tpc-wikilist-droplink-dragover: #ffc0c0;
+	
+	--tpc-wikilist-info: #000000;
+	
+	--tpc-wikilist-item: #ffffff;
+	
+	--tpc-wikilist-title: #666666;
+	
+	--tpc-wikilist-title-svg: #666666;
+	
+	--tpc-wikilist-toolbar-background: #d3d3d3;
+	
+	--tpc-wikilist-toolbar-foreground: #888888;
+	
+	--tpc-wikilist-url: #aaaaaa;
+	/* CSS settings */
+	--tp-code-wrapping: pre;
+	--tp-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", sans-serif, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+	--tp-code-font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+	--tp-editor-font-family: ;
+	--tp-font-size: 14px;
+	--tp-line-height: 20px;
+	--tp-body-font-size: 15px;
+	--tp-body-line-height: 22px;
+	--tp-story-left: 0px;
+	--tp-story-top: 0px;
+	--tp-story-right: 770px;
+	--tp-story-width: ;
+	--tp-tiddler-width: 686px;
+	--tp-sidebar-breakpoint: 960px;
+	--tp-sidebar-width: 350px;--tp-animation-duration: {{{ [{$:/config/AnimationDuration}addsuffix[ms]] }}};
+}/*
 ** Start with the normalize CSS reset, and then belay some of its effects
 *//*! modern-normalize v2.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
