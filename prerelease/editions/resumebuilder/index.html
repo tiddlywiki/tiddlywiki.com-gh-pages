@@ -309,7 +309,7 @@ Error message and password prompt
 </noscript>
 <!--~~ Ordinary tiddlers ~~-->
 <script class="tiddlywiki-tiddler-store" type="application/json">[
-{"title":"$:/build","commit":"aff5be71953b2dbe869becb1b1427e443758537a","text":"Prerelease built from branch 'master' at commit aff5be71953b2dbe869becb1b1427e443758537a of https://github.com/TiddlyWiki/TiddlyWiki5 at 2026-03-24 09:00:21 UTC\n"},
+{"title":"$:/build","commit":"3a4a8a206ffac23f95f698a8896a21e4df806467","text":"Prerelease built from branch 'master' at commit 3a4a8a206ffac23f95f698a8896a21e4df806467 of https://github.com/TiddlyWiki/TiddlyWiki5 at 2026-03-24 11:23:16 UTC\n"},
 {"title":"$:/config/DefaultSidebarTab","created":"20150719185223155","modified":"20150719185226532","text":"Preview"},
 {"title":"$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home","modified":"20150719172915740","text":"show"},
 {"title":"$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/new-tiddler","modified":"20150719172917795","text":"hide"},
@@ -634,6 +634,13 @@ $tw.utils.hop = function(object,property) {
 
 /** @deprecated Use Array.isArray instead  */
 $tw.utils.isArray = (value) => Array.isArray(value);
+
+/*
+Determine if a value is a date, even across VM boundaries
+*/
+$tw.utils.isDate = function(value) {
+	return Object.prototype.toString.call(value) === "[object Date]";
+};
 
 /*
 Check if an array is equal by value and by reference.
