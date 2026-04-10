@@ -29,7 +29,29 @@
 &lt;/$list&gt;
 &lt;/div&gt;
 &lt;/$list&gt;
-</code></pre></p><h2 class="">Onglet 'récent'</h2><p>Dans l'onglet <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fui%252FSideBar%252FRecent.html">Récent</a> la liste est générée en utilisant la macro <a class="tc-tiddlylink tc-tiddlylink-missing" href="Macro%2520timeline.html"><code class="doc-var">timeline</code></a>. Ici, la sortie de liste filtre chaque jour trouvé dans le champ <code>modifié</code>, tandis que l'entrée de liste filtre tous les tiddlers datés du même jour dans le champ <code>modifié</code>.</p><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fmacros%252Ftimeline.html">$:/core/macros/timeline</a> :</p><p><pre><code>{{}}</code></pre></p></div>
+</code></pre></p><h2 class="">Onglet 'récent'</h2><p>Dans l'onglet <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fui%252FSideBar%252FRecent.html">Récent</a> la liste est générée en utilisant la macro <a class="tc-tiddlylink tc-tiddlylink-missing" href="Macro%2520timeline.html"><code class="doc-var">timeline</code></a>. Ici, la sortie de liste filtre chaque jour trouvé dans le champ <code>modifié</code>, tandis que l'entrée de liste filtre tous les tiddlers datés du même jour dans le champ <code>modifié</code>.</p><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fmacros%252Ftimeline.html">$:/core/macros/timeline</a> :</p><p><pre><code>&lt;!-- Override one or both of the following two macros with a global or local macro of the same name 
+if you need to change how titles are displayed on a timeline --&gt;
+
+\procedure timeline-title() &lt;$view field="title"/&gt;
+\procedure timeline-link() &lt;$link to={{!!title}}&gt;&lt;&lt;timeline-title&gt;&gt;&lt;/$link&gt;
+\procedure timeline(limit:"100",format:"DDth MMM YYYY",subfilter:"",dateField:"modified")
+\whitespace trim
+&lt;div class="tc-timeline"&gt;
+&lt;$set name="tv-tids" filter=`[!is[system]$(subfilter)$has&lt;dateField&gt;!sort&lt;dateField&gt;limit&lt;limit&gt;]`&gt;
+&lt;$list filter="[enlist&lt;tv-tids&gt;eachday&lt;dateField&gt;]"&gt;
+&lt;div class="tc-menu-list-item"&gt;
+&lt;$view field=&lt;&lt;dateField&gt;&gt; format="date" template=&lt;&lt;format&gt;&gt;/&gt;
+&lt;$list filter=`[enlist&lt;tv-tids&gt;sameday:$(dateField)${!!$(dateField)$}]`&gt;
+&lt;div class="tc-menu-list-subitem"&gt;
+&lt;&lt;timeline-link&gt;&gt;
+&lt;/div&gt;
+&lt;/$list&gt;
+&lt;/div&gt;
+&lt;/$list&gt;
+&lt;/$set&gt;
+&lt;/div&gt;
+\end
+</code></pre></p></div>
 
 
 </div></p>
