@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.3.8" />
+<meta name="tiddlywiki-version" content="5.4.0" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -11,7 +11,7 @@
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
-<title><<.attr filter>>: TiddlyWiki  v5.3.8 — Cuaderno de notas personal no-lineal en la web</title>
+<title><<.attr filter>>: TiddlyWiki  v5.4.0 — Cuaderno de notas personal no-lineal en la web</title>
 </head>
 <body class="tc-body">
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
@@ -20,7 +20,7 @@
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-CheckboxWidget" data-tags="CheckboxWidget" data-tiddler-title="CheckboxWidget (filter Mode)" role="article"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-expanded="false" aria-label="Más" class="tc-btn-invisible" title="Otras acciones"></button><span class=" tc-reveal" hidden="true"></span></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Permite editar este tiddler" class="tc-btn-invisible" title="Permite editar este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal"><button aria-expanded="false" aria-label="Más" class="tc-btn-invisible" title="Otras acciones"></button><span class="tc-reveal" hidden="true"></span></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal"><button aria-label="Permite editar este tiddler" class="tc-btn-invisible" title="Permite editar este tiddler"></button></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"></button></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -42,13 +42,13 @@ CheckboxWidget (filter Mode)
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle tc-clearfix">25 marzo 2023 a las 10:14</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+</div><div class="tc-reveal"></div><div class="tc-reveal"><div class="tc-subtitle tc-clearfix">25 marzo 2023 a las 10:14</div></div><div class="tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  CheckboxWidget
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span></div></div><div class="tc-tiddler-body tc-clearfix tc-reveal"><h2 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="CheckboxWidget%2520%2528filter%2520Mode%2529.html"><code class="doc-attr">filter</code> Mode</a></h2><p>Using the checkbox widget in filter mode requires the <code class="doc-attr">filter</code> attribute to contain a filter whose output will determine the checked state of the checkbox. In filter mode, checking the checkbox will not automatically make changes to any field of any tiddler. Instead, you can use the <code class="doc-attr">actions</code> attribute (or the <code class="doc-attr">checkactions</code> and <code class="doc-attr">uncheckactions</code> attributes) to specify what should happen when the checkbox is toggled. It is your responsibility to make sure the actions cause changes to the tiddlers or fields that the filter results depend on, so that the checkbox becomes properly checked or unchecked after the actions have triggered and the filter has updated.</p><p>If the filter returns an empty result, the checkbox will be unchecked. Otherwise, if the filter result is non-empty, the checkbox will be checked.</p><p>However, if either the <code class="doc-attr">checked</code> or <code class="doc-attr">unchecked</code> attributes (or both) are specified, then their values will be looked for in the filter result, instead of considering any non-empty value to mean <code class="doc-value">checked</code>.</p><p>This example creates the same checkbox as in the <button class="tc-btn-invisible tc-tiddlylink ">listField mode example</button>, selecting between <code class="doc-value">red</code> and <code class="doc-value">green</code> in the <code class="doc-field">colors</code> list field, but using filters and actions to make the change.</p><div class="doc-example"><pre><code>\define checkActions() &lt;$action-listops $field="colors" $subfilter="-red green"/&gt;

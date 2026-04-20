@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.3.8" />
+<meta name="tiddlywiki-version" content="5.4.0" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -20,7 +20,7 @@
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Learning" data-tags="Learning" data-tiddler-title="Formatting List Results as Tables (no CSS)" role="article"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-expanded="false" aria-label="더 보기" class="tc-btn-invisible" title="더 많은 동작을 봅니다"></button><span class=" tc-reveal" hidden="true"></span></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="이 티들러를 편집합니다" class="tc-btn-invisible" title="이 티들러를 편집합니다"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="닫기" class="tc-btn-invisible" title="이 티들러를 닫습니다"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal"><button aria-expanded="false" aria-label="더 보기" class="tc-btn-invisible" title="더 많은 동작을 봅니다"></button><span class="tc-reveal" hidden="true"></span></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal"><button aria-label="이 티들러를 편집합니다" class="tc-btn-invisible" title="이 티들러를 편집합니다"></button></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal"><button aria-label="닫기" class="tc-btn-invisible" title="이 티들러를 닫습니다"></button></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -42,13 +42,13 @@ Formatting List Results as Tables (no CSS)
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle tc-clearfix">2016년 12월 20일 오후 4:17</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+</div><div class="tc-reveal"></div><div class="tc-reveal"><div class="tc-subtitle tc-clearfix">2016년 12월 20일 오후 4:17</div></div><div class="tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  Learning
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span></div></div><div class="tc-tiddler-body tc-clearfix tc-reveal"><p>Sometimes you want the results of a <code>&lt;$list&gt;</code> widget to be formatted in the form of multiple columns instead of just one straight listing. The following method creates an actual table structure and uses the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="nth%2520Operator.html">nth operator</a> to provide break points for the rows.  It is not responsive, that is,  it doesn't re-position to display fewer columns if the window is too small.</p><p>In the first, outer list structure you must provide a count to indicate at item number rows should occur. So, in the following example, each row breaks after 4 items, so the sequence is 1,5,9, etc. Note that this requires you to know in advance the maximum number of items there will be. There is also an internal limit that is set to n-1 items, where n is the number of columns you want. </p><p>Note also that you need to repeat the driving filter operator inside of the internal <code>&lt;$list&gt;</code> widget.  Obviously this technique lends itself to a macro implementation.</p><p>For other table-making techniques see also:</p><ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Formatting%2520List%2520Results%2520as%2520Tables%2520with%2520CSS%2520-%2520Variable%2520Column%2520Method.html">Formatting List Results as Tables with CSS - Variable Column Method</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Formatting%2520List%2520Results%2520as%2520Tables%2520with%2520CSS%2520-%2520Specified%2520Columns%2520Methods.html">Formatting List Results as Tables with CSS - Specified Columns Methods</a></li></ul><h2 class="">Example code for a four-column table with fewer than 70 items</h2><pre><code>&lt;table&gt;

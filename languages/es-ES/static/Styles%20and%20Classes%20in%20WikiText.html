@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.3.8" />
+<meta name="tiddlywiki-version" content="5.4.0" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -11,7 +11,7 @@
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
-<title>Styles and Classes: TiddlyWiki  v5.3.8 — Cuaderno de notas personal no-lineal en la web</title>
+<title>Styles and Classes: TiddlyWiki  v5.4.0 — Cuaderno de notas personal no-lineal en la web</title>
 </head>
 <body class="tc-body">
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
@@ -20,7 +20,7 @@
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-WikiText tc-tagged-How%20to%20apply%20custom%20styles" data-tags="WikiText [[How to apply custom styles]]" data-tiddler-title="Styles and Classes in WikiText" role="article"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-expanded="false" aria-label="Más" class="tc-btn-invisible" title="Otras acciones"></button><span class=" tc-reveal" hidden="true"></span></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Permite editar este tiddler" class="tc-btn-invisible" title="Permite editar este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal"><button aria-expanded="false" aria-label="Más" class="tc-btn-invisible" title="Otras acciones"></button><span class="tc-reveal" hidden="true"></span></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal"><button aria-label="Permite editar este tiddler" class="tc-btn-invisible" title="Permite editar este tiddler"></button></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"></button></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -42,13 +42,13 @@ Styles and Classes in WikiText
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle tc-clearfix">26 julio 2023 a las 10:57</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+</div><div class="tc-reveal"></div><div class="tc-reveal"><div class="tc-subtitle tc-clearfix">26 julio 2023 a las 10:57</div></div><div class="tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  How to apply custom styles
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span><span class="tc-tag-list-item">
@@ -57,7 +57,7 @@ Styles and Classes in WikiText
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  WikiText
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span></div></div><div class="tc-tiddler-body tc-clearfix tc-reveal"><p>CSS styles and classes can be applied to inline or block content wrapped in <code>@@double at signs@@</code>. Classes can be applied to certain block <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> elements.</p><p><em>Inline content</em> wrapped in <code>@@double at signs@@</code> without specifying style or class will be assigned the <code>tc-inline-style</code> class and displayed as highlighted text. The foreground and background colours of the highlighted text are defined as <code>highlight-background</code> and <code>highlight-foreground</code> in the current palette.</p><div class="doc-example"><pre><code>@@Highlighted text@@</code></pre><p>Tiene este aspecto:</p><p><span class="tc-inline-style">Highlighted text</span></p><p>... y su código HTML es:</p><pre>&lt;p&gt;&lt;span class="tc-inline-style"&gt;Highlighted text&lt;/span&gt;&lt;/p&gt;</pre></div><h2 class="">Styles</h2><p>Multiple style attributes, e.g. <code>color</code>, each followed by <code>;</code> semicolon can be introduced immediately after the opening <code>@@</code>, without spaces in between.</p><div class="doc-example"><pre><code>@@color:steelblue;background-color:lightcyan;Text with custom style@@</code></pre><p>Tiene este aspecto:</p><p><span style="color:steelblue;background-color:lightcyan;">Text with custom style</span></p><p>... y su código HTML es:</p><pre>&lt;p&gt;&lt;span style="color:steelblue;background-color:lightcyan;"&gt;Text with custom style&lt;/span&gt;&lt;/p&gt;</pre></div><p>Similarly, styles can be applied to <em>block content</em>. Wrapping block content in <code>@@</code> without specifying style or class has no effect.</p><div class="doc-example"><pre><code>@@background-color:lightcyan;

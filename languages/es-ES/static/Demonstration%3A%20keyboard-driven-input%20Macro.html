@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.3.8" />
+<meta name="tiddlywiki-version" content="5.4.0" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -11,7 +11,7 @@
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
-<title>Demonstration: keyboard-driven-input Macro: TiddlyWiki  v5.3.8 — Cuaderno de notas personal no-lineal en la web</title>
+<title>Demonstration: keyboard-driven-input Macro: TiddlyWiki  v5.4.0 — Cuaderno de notas personal no-lineal en la web</title>
 </head>
 <body class="tc-body">
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
@@ -20,7 +20,7 @@
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Learning tc-tagged-KeyboardDrivenInput" data-tags="Learning KeyboardDrivenInput" data-tiddler-title="Demonstration: keyboard-driven-input Macro" role="article"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-expanded="false" aria-label="Más" class="tc-btn-invisible" title="Otras acciones"></button><span class=" tc-reveal" hidden="true"></span></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Permite editar este tiddler" class="tc-btn-invisible" title="Permite editar este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal"><button aria-expanded="false" aria-label="Más" class="tc-btn-invisible" title="Otras acciones"></button><span class="tc-reveal" hidden="true"></span></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal"><button aria-label="Permite editar este tiddler" class="tc-btn-invisible" title="Permite editar este tiddler"></button></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"></button></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -42,13 +42,13 @@ Demonstration: keyboard-driven-input Macro
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle tc-clearfix">23 noviembre 2021 a las 3:45</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+</div><div class="tc-reveal"></div><div class="tc-reveal"><div class="tc-subtitle tc-clearfix">23 noviembre 2021 a las 3:45</div></div><div class="tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  KeyboardDrivenInput
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span><span class="tc-tag-list-item">
@@ -57,7 +57,7 @@ Demonstration: keyboard-driven-input Macro
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  Aprende a usar TiddlyWiki
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span></div></div><div class="tc-tiddler-body tc-clearfix tc-reveal"><p>The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="keyboard-driven-input%2520Macro.html">keyboard-driven-input Macro</a> is used to create filtered lists that update as the user types. It also allows navigating the lists, and invoking macros using list items, with the keyboard.</p><p>It consists of an <strong><a class="tc-tiddlylink tc-tiddlylink-resolves" href="EditTextWidget.html">edit-text widget</a></strong> wrapped in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="KeyboardWidget.html">keyboard widgets</a>. There are <dfn class="doc-def">keyboard</dfn> widgets to listen for <code>((input-accept))</code>, <code>((input-accept-variant))</code>, and <code>((input-cancel))</code> keyboard shortcuts, but there is no default behaviour in response to these events; macros must be written to suit the use-case. There is also no default visualisation of the filtered options list.</p><h2 class="">Types of keyboard input handled by the <code class="doc-var">keyboard-driven-input</code> macro:</h2><h3 class="">Non-configurable: </h3><p>The following keyboard events invoke macros defined alongside <code class="doc-var">keyboard-driven-input</code> in <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fmacros%252Fkeyboard-driven-input.html">$:/core/macros/keyboard-driven-input</a>.</p><table><thead><tr class="evenRow"><td align="left">Input</td><td align="left">Purpose</td><td align="left">Macro</td></tr></thead><tbody><tr class="oddRow"><td align="left">typing input</td><td align="left">composing a string to be used within list filters</td><td align="left"><code class="doc-var">keyboard-input-actions</code></td></tr><tr class="evenRow"><td align="left"><code>((input-up))</code> (
@@ -75,7 +75,7 @@ Demonstration: keyboard-driven-input Macro
         storeTitle="kdi-demo-storeTitle" 
         selectionStateTitle="kdi-demo-selectionStateTitle" 
         configTiddlerFilter="[[kdi-demo-configtid]]" 
- /&gt;</code></pre><h2 class="">Demo</h2><p>Try typing in here: <span class=" tc-keyboard"><span class=" tc-keyboard"><span class=" tc-keyboard"><span class=" tc-keyboard"><span class=" tc-keyboard"><input value=""></span></span></span></span></span>  </p><p>Observe the changes in the various state tiddlers in the below table. Use <kbd>Up</kbd> and <kbd>Down</kbd> keys to navigate among filter results. If nothing changes, try a shorter input to widen the filter. If the input has zero length, the list will contain all non-system tiddlers.</p><table class="tablestyle"><thead><tr class="evenRow"><td align="left">Parameter name</td><td align="left">Tiddler title</td><td align="left">Contents of <code class="doc-field">text</code> field of the tiddler</td></tr></thead><tbody><tr class="oddRow"><td align="left"><code class="doc-param">tiddler</code></td><td align="left"><span><a class="tc-tiddlylink tc-tiddlylink-missing" href="kdi-demo-tiddler.html">kdi-demo-tiddler</a></span></td><td><pre></pre></td></tr><tr class="evenRow"><td align="left"><code class="doc-param">storeTitle</code></td><td align="left"><span><a class="tc-tiddlylink tc-tiddlylink-missing" href="kdi-demo-storeTitle.html">kdi-demo-storeTitle</a></span></td><td><pre></pre></td></tr><tr class="oddRow"><td align="left"><code class="doc-param">selectionStateTitle</code></td><td align="left"><span><a class="tc-tiddlylink tc-tiddlylink-missing" href="kdi-demo-selectionStateTitle.html">kdi-demo-selectionStateTitle</a></span></td><td><pre></pre></td></tr></tbody></table><p>The <code class="doc-var">keyboard-driven-input</code> macro has many parameters available, including all the attributes of the enclosed <strong>edit-text</strong> widget, which make it very flexible in how it is used and how results can be displayed and interacted with.</p><p>See also: <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Customising%2520search%2520results.html">Customising search results</a> and <a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="%2524%253A%252Fcore%252Fui%252FDefaultSearchResultList.html">$:/core/ui/DefaultSearchResultList</a></p><p><style>
+ /&gt;</code></pre><h2 class="">Demo</h2><p>Try typing in here: <span class="tc-keyboard"><input value=""></span>  </p><p>Observe the changes in the various state tiddlers in the below table. Use <kbd>Up</kbd> and <kbd>Down</kbd> keys to navigate among filter results. If nothing changes, try a shorter input to widen the filter. If the input has zero length, the list will contain all non-system tiddlers.</p><table class="tablestyle"><thead><tr class="evenRow"><td align="left">Parameter name</td><td align="left">Tiddler title</td><td align="left">Contents of <code class="doc-field">text</code> field of the tiddler</td></tr></thead><tbody><tr class="oddRow"><td align="left"><code class="doc-param">tiddler</code></td><td align="left"><span><a class="tc-tiddlylink tc-tiddlylink-missing" href="kdi-demo-tiddler.html">kdi-demo-tiddler</a></span></td><td><pre></pre></td></tr><tr class="evenRow"><td align="left"><code class="doc-param">storeTitle</code></td><td align="left"><span><a class="tc-tiddlylink tc-tiddlylink-missing" href="kdi-demo-storeTitle.html">kdi-demo-storeTitle</a></span></td><td><pre></pre></td></tr><tr class="oddRow"><td align="left"><code class="doc-param">selectionStateTitle</code></td><td align="left"><span><a class="tc-tiddlylink tc-tiddlylink-missing" href="kdi-demo-selectionStateTitle.html">kdi-demo-selectionStateTitle</a></span></td><td><pre></pre></td></tr></tbody></table><p>The <code class="doc-var">keyboard-driven-input</code> macro has many parameters available, including all the attributes of the enclosed <strong>edit-text</strong> widget, which make it very flexible in how it is used and how results can be displayed and interacted with.</p><p>See also: <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Customising%2520search%2520results.html">Customising search results</a> and <a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="%2524%253A%252Fcore%252Fui%252FDefaultSearchResultList.html">$:/core/ui/DefaultSearchResultList</a></p><p><style>
 .tablestyle {width:100%;}
 .tablestyle td + td + td {width: 50%;}
 </style></p></div>

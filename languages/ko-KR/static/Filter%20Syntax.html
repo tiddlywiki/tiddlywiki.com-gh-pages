@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.3.8" />
+<meta name="tiddlywiki-version" content="5.4.0" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -20,7 +20,7 @@
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Filters" data-tags="Filters" data-tiddler-title="Filter Syntax" role="article"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-expanded="false" aria-label="더 보기" class="tc-btn-invisible" title="더 많은 동작을 봅니다"></button><span class=" tc-reveal" hidden="true"></span></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="이 티들러를 편집합니다" class="tc-btn-invisible" title="이 티들러를 편집합니다"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="닫기" class="tc-btn-invisible" title="이 티들러를 닫습니다"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal"><button aria-expanded="false" aria-label="더 보기" class="tc-btn-invisible" title="더 많은 동작을 봅니다"></button><span class="tc-reveal" hidden="true"></span></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal"><button aria-label="이 티들러를 편집합니다" class="tc-btn-invisible" title="이 티들러를 편집합니다"></button></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal"><button aria-label="닫기" class="tc-btn-invisible" title="이 티들러를 닫습니다"></button></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -42,13 +42,13 @@ Filter Syntax
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle tc-clearfix">2023년 7월 10일 오전 7:43</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+</div><div class="tc-reveal"></div><div class="tc-reveal"><div class="tc-subtitle tc-clearfix">2023년 7월 10일 오전 7:43</div></div><div class="tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  Filters
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span></div></div><div class="tc-tiddler-body tc-clearfix tc-reveal"><p><dl><dd class="doc-preamble"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filters.html">Filters</a> follow a grammar that is presented here, using <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Railroad%2520Diagrams.html">railroad diagrams</a>, for those who find formal syntax descriptions helpful. However, you can <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Introduction%2520to%2520filter%2520notation.html">learn to write filters</a> without needing to understand this group of tiddlers.</dd></dl></p><p>A <dfn class="doc-def">filter</dfn> is a pipeline for transforming an <dfn class="doc-def">input</dfn> into an <dfn class="doc-def">output</dfn>. Both the input and the output are <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Title%2520Selection.html">ordered sets of titles</a> of tiddlers and fields.</p><p>Filters are <strong>expressions</strong> constructed from smaller building blocks, called <strong>runs</strong>, which are built using <strong>steps</strong>. Each of which also transforms an input to an output.</p><p>A filter starts with an empty output. Its runs are processed from left to right, progressively modifying the output.</p><p>The "Filter Syntax" description starts with:</p><div><svg class="railroad-diagram" height="62" viewBox="0 0 257 62" width="257"><g transform="translate(.5 .5)"><path d="M 20 21 v 20 m 10 -20 v 20 m -10 -10 h 20.5"></path><path d="M40 31h10"></path><a data-tw-target="Filter Expression"><g><path d="M50 31h0"></path><path d="M206 31h0"></path><rect height="22" width="156" x="50" y="20"></rect><text x="128" y="35">Filter Expression</text></g></a><path d="M206 31h10"></path><path d="M 216 31 h 20 m -10 -10 v 20 m 10 -20 v 20"></path></g></svg></div><p><div class="doc-icon-block doc-tip"><div><strong>Tip</strong></div><div class="doc-block-icon"><svg class="tc-image-tip tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M64 128.242c35.346 0 64-28.654 64-64 0-35.346-28.654-64-64-64-35.346 0-64 28.654-64 64 0 35.346 28.654 64 64 64zm11.936-36.789c-.624 4.129-5.73 7.349-11.936 7.349-6.206 0-11.312-3.22-11.936-7.349C54.33 94.05 58.824 95.82 64 95.82c5.175 0 9.67-1.769 11.936-4.366zm0 4.492c-.624 4.13-5.73 7.349-11.936 7.349-6.206 0-11.312-3.22-11.936-7.349 2.266 2.597 6.76 4.366 11.936 4.366 5.175 0 9.67-1.769 11.936-4.366zm0 4.456c-.624 4.129-5.73 7.349-11.936 7.349-6.206 0-11.312-3.22-11.936-7.349 2.266 2.597 6.76 4.366 11.936 4.366 5.175 0 9.67-1.769 11.936-4.366zm0 4.492c-.624 4.13-5.73 7.349-11.936 7.349-6.206 0-11.312-3.22-11.936-7.349 2.266 2.597 6.76 4.366 11.936 4.366 5.175 0 9.67-1.769 11.936-4.366zM64.3 24.242c11.618 0 23.699 7.82 23.699 24.2S75.92 71.754 75.92 83.576c0 5.873-5.868 9.26-11.92 9.26s-12.027-3.006-12.027-9.26C51.973 71.147 40 65.47 40 48.442s12.683-24.2 24.301-24.2z" fill-rule="evenodd"></path></svg></div>The railroad boxes as the one above can be used to navigate</div></p></div>

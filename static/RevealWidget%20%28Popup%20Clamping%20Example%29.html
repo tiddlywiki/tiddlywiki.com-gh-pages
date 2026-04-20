@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.4.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>RevealWidget (Popup Clamping Example): TiddlyWiki  v5.4.0 — a non-linear personal web notebook</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-RevealWidget" data-tags="RevealWidget" data-tiddler-title="RevealWidget (Popup Clamping Example)" role="article"><div class="tc-tiddler-title tc-clearfix"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><span class="tc-reveal" hidden="true"></span><button aria-label="Edit this tiddler" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">RevealWidget (Popup Clamping Example)</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class="tc-reveal"><div class="tc-subtitle tc-clearfix">12th December 2025 at 9:22am</div></div><div class="tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="RevealWidget"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="fill:#333333;color:#333333;"><span class="tc-tag-exists">RevealWidget</span></span><span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div><div class="tc-tiddler-body tc-clearfix tc-reveal"><p><style>
+.container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  width: 600px;
+  height: 500px;
+  overflow: hidden;
+  background-color: #F8F8F8;
+  position: relative;
+  border: 1px solid #888;
+}
+.grid-item {
+    justify-self: center;
+    align-self: center;
+}
+.grid-popup .tc-drop-down {
+	padding: 1em;
+	min-width: 15em;
+}
+</style></p><p>This example demonstrates the use of <code class="doc-attr">positionAllowNegative</code> and <code class="doc-attr">clamp</code> to clamp a popup inside its parent container.</p><p><code class="doc-attr">clamp</code>=<select value="none">
+<option value="none">none</option>
+<option value="right">right</option>
+<option value="bottom">bottom</option>
+<option value="both">both</option>
+</select></p><p><label class="tc-checkbox "><input type="checkbox"><span> <code class="doc-attr">positionAllowNegative</code></span></label></p><p><code class="doc-attr">position</code>=<select value="below">
+<option value="left">left</option>
+<option value="above">above</option>
+<option value="aboveleft">aboveleft</option>
+<option value="aboveright">aboveright</option>
+<option value="right">right</option>
+<option value="belowleft">belowleft</option>
+<option value="belowright">belowright</option>
+<option value="below">below</option>
+</select></p><p><div class="container">
+	
+		<div class="grid-item">
+			<button aria-expanded="false" class="">Pop Me Up</button>
+		</div>
+	
+		<div class="grid-item">
+			<button aria-expanded="false" class="">Pop Me Up</button>
+		</div>
+	
+		<div class="grid-item">
+			<button aria-expanded="false" class="">Pop Me Up</button>
+		</div>
+	
+		<div class="grid-item">
+			<button aria-expanded="false" class="">Pop Me Up</button>
+		</div>
+	
+		<div class="grid-item">
+			<button aria-expanded="false" class="">Pop Me Up</button>
+		</div>
+	
+		<div class="grid-item">
+			<button aria-expanded="false" class="">Pop Me Up</button>
+		</div>
+	
+		<div class="grid-item">
+			<button aria-expanded="false" class="">Pop Me Up</button>
+		</div>
+	
+		<div class="grid-item">
+			<button aria-expanded="false" class="">Pop Me Up</button>
+		</div>
+	
+		<div class="grid-item">
+			<button aria-expanded="false" class="">Pop Me Up</button>
+		</div>
+	
+		<div class="grid-item">
+			<button aria-expanded="false" class="">Pop Me Up</button>
+		</div>
+	
+		<div class="grid-item">
+			<button aria-expanded="false" class="">Pop Me Up</button>
+		</div>
+	
+		<div class="grid-item">
+			<button aria-expanded="false" class="">Pop Me Up</button>
+		</div>
+	
+		<div class="grid-item">
+			<button aria-expanded="false" class="">Pop Me Up</button>
+		</div>
+	
+		<div class="grid-item">
+			<button aria-expanded="false" class="">Pop Me Up</button>
+		</div>
+	
+		<div class="grid-item">
+			<button aria-expanded="false" class="">Pop Me Up</button>
+		</div>
+	
+		<div class="grid-item">
+			<button aria-expanded="false" class="">Pop Me Up</button>
+		</div>
+	
+		<div class="grid-item">
+			<button aria-expanded="false" class="">Pop Me Up</button>
+		</div>
+	
+		<div class="grid-item">
+			<button aria-expanded="false" class="">Pop Me Up</button>
+		</div>
+	
+		<div class="grid-item">
+			<button aria-expanded="false" class="">Pop Me Up</button>
+		</div>
+	
+		<div class="grid-item">
+			<button aria-expanded="false" class="">Pop Me Up</button>
+		</div>
+	
+		<div class="grid-item">
+			<button aria-expanded="false" class="">Pop Me Up</button>
+		</div>
+	
+		<div class="grid-item">
+			<button aria-expanded="false" class="">Pop Me Up</button>
+		</div>
+	
+		<div class="grid-item">
+			<button aria-expanded="false" class="">Pop Me Up</button>
+		</div>
+	
+		<div class="grid-item">
+			<button aria-expanded="false" class="">Pop Me Up</button>
+		</div>
+	
+		<div class="grid-item">
+			<button aria-expanded="false" class="">Pop Me Up</button>
+		</div>
+	
+	<span class="grid-popup tc-reveal" hidden="true"></span>
+</div>
+</p></div>
+
+
+</div></p>
+</section>
+</body>
+</html>
+

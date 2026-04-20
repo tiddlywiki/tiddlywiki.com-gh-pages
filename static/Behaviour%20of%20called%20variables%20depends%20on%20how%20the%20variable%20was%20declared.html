@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.4.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>Behaviour of called variables depends on how the variable was declared: TiddlyWiki  v5.4.0 — a non-linear personal web notebook</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river tc-static-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Variable%20Usage" data-tags="[[Variable Usage]]" data-tiddler-title="Behaviour of called variables depends on how the variable was declared" role="article"><div class="tc-tiddler-title tc-clearfix"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><span class="tc-reveal" hidden="true"></span><button aria-label="Edit this tiddler" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title">Behaviour of called variables depends on how the variable was declared</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class="tc-reveal"><div class="tc-subtitle tc-clearfix">30th January 2026 at 9:03pm</div></div><div class="tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="Variable Usage"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="fill:#333333;color:#333333;"><span class="tc-tag-exists">Variable Usage</span></span><span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div><div class="tc-tiddler-body tc-clearfix tc-reveal"><p>Called in normal wikitext context: <code>&lt;$transclude $variable=myvar/&gt;</code> or <code>&lt;&lt;myvar&gt;&gt;</code></p><p>Called via widget attribute: <code>&lt;div class=&lt;&lt;myvar&gt;&gt;/&gt;</code></p><p>Called via filter operator parameter: <code>[&lt;myvar&gt;]</code></p><p>Called via function call in a filter expression: <code>[function[.myfun]]</code></p><h2 class="">Examples</h2><p>Below is an example macro, procedure and function definition.  All three forms of parameter substitution <code>$a1$</code>, <code>&lt;&lt;__a1__&gt;&gt;</code>, and <code>&lt;&lt;a1&gt;&gt;</code> are included in each definition. The output helps illustrate when each form of substitution will or will not have affect.</p><pre><code>\define m1(a1) $a1$ - &lt;&lt;__a1__&gt;&gt; - &lt;&lt;a1&gt;&gt;
+\procedure p1(a1) $a1$ - &lt;&lt;__a1__&gt;&gt; - &lt;&lt;a1&gt;&gt;
+\function f1(a1) $a1$ "-" [&lt;__a1__&gt;] ="-" [&lt;a1&gt;] :and[join[ ]]</code></pre><table><tbody><tr class="evenRow"><th align="right">Variable transclusion</th><th align="left">output</th></tr><tr class="oddRow"><td align="right"><code>&lt;&lt;m1 foo&gt;&gt;</code></td><td>foo - foo - </td></tr><tr class="evenRow"><td align="right"><code>&lt;&lt;p1 foo&gt;&gt;</code></td><td>$a1$ -  - foo</td></tr><tr class="oddRow"><td align="right"><code>&lt;&lt;f1 foo&gt;&gt;</code></td><td>$a1$ -  - foo</td></tr><tr class="evenRow"><th align="right">Widget attribute</th><th align="left">output</th></tr><tr class="oddRow"><td align="right"><code>&lt;$text text=&lt;&lt;m1 foo&gt;&gt;/&gt;</code></td><td>foo - &lt;&lt;__a1__&gt;&gt; - &lt;&lt;a1&gt;&gt;</td></tr><tr class="evenRow"><td align="right"><code>&lt;$text text=&lt;&lt;p1 foo&gt;&gt;/&gt;</code></td><td>$a1$ - &lt;&lt;__a1__&gt;&gt; - &lt;&lt;a1&gt;&gt;</td></tr><tr class="oddRow"><td align="right"><code>&lt;$text text=&lt;&lt;f1 foo&gt;&gt;/&gt;</code></td><td>$a1$ -  - foo</td></tr><tr class="evenRow"><th align="right">Filter operator parameter</th><th align="left">output</th></tr><tr class="oddRow"><td align="right"><code>[&lt;m1 foo&gt;]</code></td><td>foo - &lt;&lt;__a1__&gt;&gt; - &lt;&lt;a1&gt;&gt;</td></tr><tr class="evenRow"><td align="right"><code>[&lt;p1 foo&gt;]</code></td><td>$a1$ - &lt;&lt;__a1__&gt;&gt; - &lt;&lt;a1&gt;&gt;</td></tr><tr class="oddRow"><td align="right"><code>[&lt;f1 foo&gt;]</code></td><td>$a1$ -  - foo</td></tr><tr class="evenRow"><th align="right">Function call in filter expression</th><th align="left">output</th></tr><tr class="oddRow"><td align="right"><code>[function[m1],[foo]]</code></td><td>--tp-animation-duration CSS Variable</td></tr><tr class="evenRow"><td align="right"><code>[function[p1],[foo]]</code></td><td>--tp-animation-duration CSS Variable</td></tr><tr class="oddRow"><td align="right"><code>[function[f1],[foo]]</code></td><td>$a1$ -  - foo</td></tr></tbody></table></div>
+
+
+</div></p>
+</section>
+</body>
+</html>
+

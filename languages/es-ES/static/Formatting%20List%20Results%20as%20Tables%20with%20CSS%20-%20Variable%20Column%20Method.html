@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.3.8" />
+<meta name="tiddlywiki-version" content="5.4.0" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -11,7 +11,7 @@
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
-<title>Formatting List Results as Tables with CSS - Variable Column Method: TiddlyWiki  v5.3.8 — Cuaderno de notas personal no-lineal en la web</title>
+<title>Formatting List Results as Tables with CSS - Variable Column Method: TiddlyWiki  v5.4.0 — Cuaderno de notas personal no-lineal en la web</title>
 </head>
 <body class="tc-body">
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
@@ -20,7 +20,7 @@
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Learning" data-tags="Learning" data-tiddler-title="Formatting List Results as Tables with CSS - Variable Column Method" role="article"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-expanded="false" aria-label="Más" class="tc-btn-invisible" title="Otras acciones"></button><span class=" tc-reveal" hidden="true"></span></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Permite editar este tiddler" class="tc-btn-invisible" title="Permite editar este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal"><button aria-expanded="false" aria-label="Más" class="tc-btn-invisible" title="Otras acciones"></button><span class="tc-reveal" hidden="true"></span></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal"><button aria-label="Permite editar este tiddler" class="tc-btn-invisible" title="Permite editar este tiddler"></button></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"></button></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span><span class="tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -42,13 +42,13 @@ Formatting List Results as Tables with CSS - Variable Column Method
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle tc-clearfix">20 diciembre 2016 a las 16:28</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+</div><div class="tc-reveal"></div><div class="tc-reveal"><div class="tc-subtitle tc-clearfix">20 diciembre 2016 a las 16:28</div></div><div class="tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  Aprende a usar TiddlyWiki
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span></div></div><div class="tc-tiddler-body tc-clearfix tc-reveal"><p>Sometimes you want the results of a <code>&lt;$list&gt;</code> widget to be formatted in the form of multiple columns, instead of just one straight listing. This method uses CSS to set up listing as  columns. It is responsive, that is,  re-positioning to display fewer columns if the window is too small.</p><p>You don't directly specify a fixed number of columns but instead specify the max-width for the list (which could be a transclusion of the tiddler width) and the width for each item. It lists from left to right, then wraps to a new row.</p><p>For other table-making techniques see also:</p><ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Formatting%2520List%2520Results%2520as%2520Tables%2520with%2520CSS%2520-%2520Specified%2520Columns%2520Methods.html">Formatting List Results as Tables with CSS - Specified Columns Methods</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Formatting%2520List%2520Results%2520as%2520Tables%2520%2528no%2520CSS%2529.html">Formatting List Results as Tables (no CSS)</a></li></ul><h2 class="">Example listing using 50 existing TiddlyWiki tags</h2><pre><code>&lt;div class="dynamic-table"&gt;
@@ -85,7 +85,20 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  $:/deprecated
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
+
+
+</span>
+    </span>
+  
+    <span class="item">
+      <span class="tc-tag-list-item">
+
+
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
+ $:/tags/ChangeNote
+</button>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -98,7 +111,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  $:/tags/ControlPanel/Appearance
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -111,7 +124,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  $:/tags/EditTemplate
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -124,7 +137,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  $:/tags/Global
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -137,7 +150,20 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  $:/tags/Image
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
+
+
+</span>
+    </span>
+  
+    <span class="item">
+      <span class="tc-tag-list-item">
+
+
+<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
+ $:/tags/ImpactNote
+</button>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -150,7 +176,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  $:/tags/Macro
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -163,7 +189,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  $:/tags/MenuBar
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -176,7 +202,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  $:/tags/RawMarkupWikified/TopBody
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -189,7 +215,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  $:/tags/SearchResults
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -202,7 +228,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  $:/tags/SideBar
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -215,7 +241,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  $:/tags/SideBarSegment
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -228,7 +254,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  $:/tags/StoryTiddlerTemplateFilter
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -241,7 +267,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  $:/tags/Stylesheet
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -254,7 +280,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  $:/tags/TiddlerColourFilter
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -267,7 +293,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  $:/tags/TiddlerIconFilter
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -280,7 +306,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  $:/tags/TiddlerInfo
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -293,7 +319,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  $:/tags/TiddlerList
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -306,7 +332,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  $:/tags/TiddlyWikiSites
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -319,7 +345,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  $:/tags/ViewTemplate
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -332,7 +358,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  $:/tags/ViewTemplateBodyFilter
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -345,7 +371,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  $:/tags/wiki-test-spec
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -358,7 +384,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  $:/tags/wiki-test-spec-failing
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -371,7 +397,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  Acerca de TiddlyWiki
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -384,7 +410,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  abs Operator
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -397,7 +423,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  acos Operator
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -410,7 +436,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  ActionCreateTiddlerWidget
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -423,7 +449,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  ActionListopsWidget
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -436,7 +462,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  ActionWidgets
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -449,7 +475,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  add Operator
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -462,7 +488,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  addprefix Operator
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -475,7 +501,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  addsuffix Operator
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -488,7 +514,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  after Operator
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -501,7 +527,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  all Operator
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -514,7 +540,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  allafter Operator
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -527,7 +553,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  allbefore Operator
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -540,7 +566,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  AlphaReleaseNotes
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -553,7 +579,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  Android
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -566,7 +592,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  append Operator
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -579,7 +605,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  applypatches Operator
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -592,7 +618,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  Artículos
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -605,7 +631,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  asin Operator
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -618,7 +644,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  atan2 Operator
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -631,7 +657,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  average Operator
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -644,7 +670,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  backlinks Operator
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -657,7 +683,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  backtranscludes Operator
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -670,7 +696,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  before Operator
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -683,7 +709,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  BetaReleaseNotes
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -696,33 +722,7 @@ Formatting List Results as Tables with CSS - Variable Column Method
 <button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
  Binary Mathematics Operators
 </button>
-<span class=" tc-reveal" hidden="true"></span>
-
-
-</span>
-    </span>
-  
-    <span class="item">
-      <span class="tc-tag-list-item">
-
-
-<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
- Block Mode WikiText
-</button>
-<span class=" tc-reveal" hidden="true"></span>
-
-
-</span>
-    </span>
-  
-    <span class="item">
-      <span class="tc-tag-list-item">
-
-
-<button aria-expanded="false" class="tc-btn-invisible tc-tag-label" style="fill:#333333;color:#333333;">
- butlast Operator
-</button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-reveal" hidden="true"></span>
 
 
 </span>
